@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url>
+     <loc>https://yfrobotics.github.io/robowiki/self-driving/</loc>
+     <lastmod>2020-10-16</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://yfrobotics.github.io/robowiki/algorithm/</loc>
+     <lastmod>2020-10-16</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://yfrobotics.github.io/robowiki/ml/</loc>
+     <lastmod>2020-10-16</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://yfrobotics.github.io/robowiki/cv/</loc>
+     <lastmod>2020-10-16</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://yfrobotics.github.io/robowiki/raspberrypi/</loc>
+     <lastmod>2020-10-16</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://yfrobotics.github.io/robowiki/arduino/</loc>
+     <lastmod>2020-10-16</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+</urlset>
