@@ -7,9 +7,40 @@ strict: true
 
 # Navigation
 nav:
-    - 首页: index.md
+    - 主页: 
+      - index.md
+      - opensource.md
+      - about.md
     - 自动驾驶:
       - self-driving/index.md
+      - self-driving/intro/define.md
+      - self-driving/intro/category.md
+      - self-driving/intro/history.md
+      - self-driving/intro/future.md
+      - self-driving/system/vehicle.md
+      - self-driving/system/v2x.md
+      - self-driving/system/platform.md
+      - self-driving/system/safety.md
+      - self-driving/system/regulation.md
+      - self-driving/hardware/hw_overview.md
+      - self-driving/hardware/ccu.md
+      - self-driving/hardware/drive_by_wire.md
+      - self-driving/hardware/communication.md
+      - self-driving/hardware/sensors.md
+      - self-driving/hardware/camera.md
+      - self-driving/algorithm/sw_overview.md
+      - self-driving/algorithm/image_processing.md
+      - self-driving/algorithm/laser_processing.md
+      - self-driving/algorithm/localisation.md
+      - self-driving/algorithm/path_planning.md
+      - self-driving/algorithm/decision_making.md
+      - self-driving/algorithm/nlp.md
+      - self-driving/casestudy/uber.md
+      - self-driving/casestudy/tesla.md
+      - self-driving/casestudy/waymo.md
+      - self-driving/casestudy/apollo.md
+      - self-driving/casestudy/uisee.md
+      - self-driving/casestudy/tusimple.md
     - 算法:
       - algorithm/index.md
     - 机器学习:
@@ -22,6 +53,9 @@ nav:
       - arduino/index.md
     - 资源:
       - resources/index.md
+      - resources/conferences.md
+      - resources/projects.md
+      - resources/labs.md
 
 # Theme
 theme:
