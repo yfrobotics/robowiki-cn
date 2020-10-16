@@ -1,0 +1,43 @@
+# Basic
+site_name: RoboWiki
+site_description: RoboWiki - 机器人维基百科
+site_author: YF Robotics Laboratory
+site_url: https://yfrobotics.github.io/robowiki
+strict: true
+
+# Navigation
+nav:
+    - 首页: index.md
+    - 自动驾驶:
+      - self-driving/index.md
+    - 算法:
+      - algorithm/index.md
+    - 机器学习:
+      - ml/index.md
+    - 机器视觉:
+      - cv/index.md
+    - 树莓派:
+      - raspberrypi/index.md
+    - Arduino:
+      - arduino/index.md
+    - 资源:
+      - resources/index.md
+
+# Theme
+theme:
+  name: 'material'
+  language: 'zh'
+  features:
+    - navigation.tabs
+    - navigation.instant
+
+docs_dir: docs
+site_dir: site
+
+# Extra
+extra_javascript: ['https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML','js/mathjaxhelper.js']
+extra_css:
+    - css/extra.css
+
+# Extensions
+markdown_extensions: ['extra']
