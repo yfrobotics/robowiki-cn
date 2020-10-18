@@ -5,6 +5,10 @@ site_author: YF Robotics Laboratory
 site_url: https://yfrobotics.github.io/robowiki
 strict: true
 
+google_analytics:
+  - UA-60989638-5
+  - auto
+
 # Navigation
 nav:
     - 主页: 
@@ -41,6 +45,8 @@ nav:
       - self-driving/casestudy/apollo.md
       - self-driving/casestudy/uisee.md
       - self-driving/casestudy/tusimple.md
+    - 控制:
+      - control/index.md
     - 算法:
       - algorithm/index.md
     - 机器学习:
@@ -54,6 +60,8 @@ nav:
     - 资源:
       - resources/index.md
       - resources/conferences.md
+      - resources/standard.md
+      - resources/competition.md
       - resources/projects.md
       - resources/labs.md
 

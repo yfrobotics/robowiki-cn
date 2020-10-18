@@ -10,7 +10,7 @@
 - CoRL*: Annual Conference on Robot Learning
 - CVPR*: Conference on Computer Vision and Pattern Recognition
 - Humanoid: IEEE RAS/RSJ International Conference on Humanoid Robots
-- ICAR*: IEEE International Conference on Robotics and Automation
+- ICRA*: IEEE International Conference on Robotics and Automation
 - IJCAI*: International Joint Conference on Artificial Intelligence
 - ICMA: IEEE International Conference on Mechatronics and Automation
 - ICCV*: International Conference on Computer Vision
@@ -34,3 +34,6 @@
 - TRO*: IEEE Transactions on Robotics (H-index:131)
 
 注：(*)标为高评级会议/期刊。
+
+## References
+[1] [机器人领域主要国际会议与期刊列表 - 云飞机器人实验室](https://www.yfworld.com/?p=5560)
