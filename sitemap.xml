@@ -1,167 +1,179 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url>
      <loc>https://yfrobotics.github.io/robowiki/</loc>
-     <lastmod>2020-10-16</lastmod>
+     <lastmod>2020-10-18</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://yfrobotics.github.io/robowiki/opensource/</loc>
-     <lastmod>2020-10-16</lastmod>
+     <lastmod>2020-10-18</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://yfrobotics.github.io/robowiki/about/</loc>
-     <lastmod>2020-10-16</lastmod>
+     <lastmod>2020-10-18</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://yfrobotics.github.io/robowiki/self-driving/</loc>
-     <lastmod>2020-10-16</lastmod>
+     <lastmod>2020-10-18</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://yfrobotics.github.io/robowiki/self-driving/intro/define/</loc>
-     <lastmod>2020-10-16</lastmod>
+     <lastmod>2020-10-18</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://yfrobotics.github.io/robowiki/self-driving/intro/category/</loc>
-     <lastmod>2020-10-16</lastmod>
+     <lastmod>2020-10-18</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://yfrobotics.github.io/robowiki/self-driving/intro/history/</loc>
-     <lastmod>2020-10-16</lastmod>
+     <lastmod>2020-10-18</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://yfrobotics.github.io/robowiki/self-driving/intro/future/</loc>
-     <lastmod>2020-10-16</lastmod>
+     <lastmod>2020-10-18</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://yfrobotics.github.io/robowiki/self-driving/system/vehicle/</loc>
-     <lastmod>2020-10-16</lastmod>
+     <lastmod>2020-10-18</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://yfrobotics.github.io/robowiki/self-driving/system/v2x/</loc>
-     <lastmod>2020-10-16</lastmod>
+     <lastmod>2020-10-18</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://yfrobotics.github.io/robowiki/self-driving/system/platform/</loc>
-     <lastmod>2020-10-16</lastmod>
+     <lastmod>2020-10-18</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://yfrobotics.github.io/robowiki/self-driving/system/safety/</loc>
-     <lastmod>2020-10-16</lastmod>
+     <lastmod>2020-10-18</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://yfrobotics.github.io/robowiki/self-driving/system/regulation/</loc>
-     <lastmod>2020-10-16</lastmod>
+     <lastmod>2020-10-18</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://yfrobotics.github.io/robowiki/self-driving/hardware/hw_overview/</loc>
-     <lastmod>2020-10-16</lastmod>
+     <lastmod>2020-10-18</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://yfrobotics.github.io/robowiki/self-driving/hardware/ccu/</loc>
-     <lastmod>2020-10-16</lastmod>
+     <lastmod>2020-10-18</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://yfrobotics.github.io/robowiki/self-driving/hardware/drive_by_wire/</loc>
-     <lastmod>2020-10-16</lastmod>
+     <lastmod>2020-10-18</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://yfrobotics.github.io/robowiki/self-driving/hardware/communication/</loc>
-     <lastmod>2020-10-16</lastmod>
+     <lastmod>2020-10-18</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://yfrobotics.github.io/robowiki/self-driving/hardware/sensors/</loc>
-     <lastmod>2020-10-16</lastmod>
+     <lastmod>2020-10-18</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://yfrobotics.github.io/robowiki/self-driving/hardware/camera/</loc>
-     <lastmod>2020-10-16</lastmod>
+     <lastmod>2020-10-18</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://yfrobotics.github.io/robowiki/self-driving/algorithm/sw_overview/</loc>
-     <lastmod>2020-10-16</lastmod>
+     <lastmod>2020-10-18</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://yfrobotics.github.io/robowiki/self-driving/algorithm/image_processing/</loc>
-     <lastmod>2020-10-16</lastmod>
+     <lastmod>2020-10-18</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://yfrobotics.github.io/robowiki/self-driving/algorithm/laser_processing/</loc>
-     <lastmod>2020-10-16</lastmod>
+     <lastmod>2020-10-18</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://yfrobotics.github.io/robowiki/self-driving/algorithm/localisation/</loc>
-     <lastmod>2020-10-16</lastmod>
+     <lastmod>2020-10-18</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://yfrobotics.github.io/robowiki/self-driving/algorithm/path_planning/</loc>
-     <lastmod>2020-10-16</lastmod>
+     <lastmod>2020-10-18</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://yfrobotics.github.io/robowiki/self-driving/algorithm/decision_making/</loc>
-     <lastmod>2020-10-16</lastmod>
+     <lastmod>2020-10-18</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://yfrobotics.github.io/robowiki/self-driving/algorithm/nlp/</loc>
-     <lastmod>2020-10-16</lastmod>
+     <lastmod>2020-10-18</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://yfrobotics.github.io/robowiki/self-driving/casestudy/uber/</loc>
-     <lastmod>2020-10-16</lastmod>
+     <lastmod>2020-10-18</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://yfrobotics.github.io/robowiki/self-driving/casestudy/tesla/</loc>
-     <lastmod>2020-10-16</lastmod>
+     <lastmod>2020-10-18</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://yfrobotics.github.io/robowiki/self-driving/casestudy/waymo/</loc>
-     <lastmod>2020-10-16</lastmod>
+     <lastmod>2020-10-18</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://yfrobotics.github.io/robowiki/self-driving/casestudy/apollo/</loc>
-     <lastmod>2020-10-16</lastmod>
+     <lastmod>2020-10-18</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://yfrobotics.github.io/robowiki/self-driving/casestudy/uisee/</loc>
-     <lastmod>2020-10-16</lastmod>
+     <lastmod>2020-10-18</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://yfrobotics.github.io/robowiki/self-driving/casestudy/tusimple/</loc>
-     <lastmod>2020-10-16</lastmod>
+     <lastmod>2020-10-18</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://yfrobotics.github.io/robowiki/control/</loc>
+     <lastmod>2020-10-18</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://yfrobotics.github.io/robowiki/algorithm/</loc>
-     <lastmod>2020-10-16</lastmod>
+     <lastmod>2020-10-18</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://yfrobotics.github.io/robowiki/ml/</loc>
-     <lastmod>2020-10-16</lastmod>
+     <lastmod>2020-10-18</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://yfrobotics.github.io/robowiki/cv/</loc>
-     <lastmod>2020-10-16</lastmod>
+     <lastmod>2020-10-18</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://yfrobotics.github.io/robowiki/raspberrypi/</loc>
-     <lastmod>2020-10-16</lastmod>
+     <lastmod>2020-10-18</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://yfrobotics.github.io/robowiki/arduino/</loc>
-     <lastmod>2020-10-16</lastmod>
+     <lastmod>2020-10-18</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://yfrobotics.github.io/robowiki/resources/</loc>
-     <lastmod>2020-10-16</lastmod>
+     <lastmod>2020-10-18</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://yfrobotics.github.io/robowiki/resources/conferences/</loc>
-     <lastmod>2020-10-16</lastmod>
+     <lastmod>2020-10-18</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://yfrobotics.github.io/robowiki/resources/standard/</loc>
+     <lastmod>2020-10-18</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://yfrobotics.github.io/robowiki/resources/competition/</loc>
+     <lastmod>2020-10-18</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://yfrobotics.github.io/robowiki/resources/projects/</loc>
-     <lastmod>2020-10-16</lastmod>
+     <lastmod>2020-10-18</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://yfrobotics.github.io/robowiki/resources/labs/</loc>
-     <lastmod>2020-10-16</lastmod>
+     <lastmod>2020-10-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
 </urlset>
