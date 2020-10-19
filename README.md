@@ -1,6 +1,6 @@
 # RoboWiki (机器人维基百科)
 
-![](https://img.shields.io/github/stars/yfrobotics/robowiki) ![](https://img.shields.io/github/issues/yfrobotics/robowiki) 
+![](https://img.shields.io/github/stars/yfrobotics/robowiki) ![](https://img.shields.io/github/contributors/yfrobotics/robowiki) ![](https://img.shields.io/github/issues/yfrobotics/robowiki) 
 
 (add a project logo)
 
@@ -39,6 +39,7 @@ RoboWiki是由[云飞机器人实验室](http://www.yfworld.com)发起的机器�
 ## 致谢
 
 本项目在设计过程中参照了部分[OI-wiki](https://github.com/OI-wiki/OI-wiki)的设计灵感和理念，在此表示感谢。
+
 
 ## 贡献者名单
 

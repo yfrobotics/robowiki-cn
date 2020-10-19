@@ -1,6 +1,6 @@
-# RoboWiki (机器人维基百科)
+# 机器人维基百科 - RoboWiki
 
-![](https://img.shields.io/github/stars/yfrobotics/robowiki) ![](https://img.shields.io/github/issues/yfrobotics/robowiki) 
+![](https://img.shields.io/github/stars/yfrobotics/robowiki) ![](https://img.shields.io/github/contributors/yfrobotics/robowiki) ![](https://img.shields.io/github/issues/yfrobotics/robowiki) 
 
 (add a project logo)
 
@@ -19,36 +19,20 @@ RoboWiki是由[云飞机器人实验室](http://www.yfworld.com)发起的机器�
 机器人正在不断的进入到我们的生活里。我们相信通过我们的努力，可以做成覆盖全面的机器人知识库，为机器人开发者、研究者、爱好者提供便利。
 
 
-## 环境配置与运行
-
-`sudo python3 -m pip install -r "requirements.txt"`
-
-`mkdocs --version`
-
-`mkdocs serve`
-
-打开浏览器，访问：`localhost:8000`
-
-
-## 贡献方法
-
-- 标准Git工作流：git clone & push pull request
-- 创建一个issue，让别人来解决：create a new issue
-
-
 ## 致谢
 
 本项目在设计过程中参照了部分[OI-wiki](https://github.com/OI-wiki/OI-wiki)的设计灵感和理念，在此表示感谢。
+
 
 ## 贡献者名单
 
 - [automaticdai](https://github.com/automaticdai) - 戴晓天
 - [xinyu-xu-dev](https://github.com/xinyu-xu-dev) - Xinyu Xu
 
+
 ## 赞助者名单
 
 n/a
-
 
 
 ## 版权申明
