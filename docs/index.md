@@ -1,4 +1,4 @@
-# 机器人维基百科 - RoboWiki
+# 机器人维基百科 (RoboWiki)
 
 ![](https://img.shields.io/github/stars/yfrobotics/robowiki) ![](https://img.shields.io/github/contributors/yfrobotics/robowiki) ![](https://img.shields.io/github/issues/yfrobotics/robowiki) 
 

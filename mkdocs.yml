@@ -14,10 +14,10 @@ nav:
     - 首页: 
       - index.md
       - contribute.md
+      - opensource.md
       - about.md
     - 如何开始:
       - begin/index.md
-      - begin/opensource.md
     - 控制:
       - control/index.md
       - control/pid.md
