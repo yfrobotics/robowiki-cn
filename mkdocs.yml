@@ -20,13 +20,24 @@ nav:
       - begin/index.md
     - 控制:
       - control/index.md
-      - control/pid.md
+      - control/modelling.md
+      - control/state.md
+      - control/time.md
+      - PID:
+        - control/pid/pid.md
+        - control/pid/pid_improved.md
+        - control/pid/pid_tuning.md
+      - control/mpc.md
     - 算法:
       - algorithm/index.md
     - 机器学习:
       - ml/index.md
     - 机器视觉:
       - cv/index.md
+    - ROS:
+      - ros/index.md
+    - Jetson:
+      - jetson/index.md
     - 树莓派:
       - raspberrypi/index.md
     - Arduino:
@@ -83,9 +94,12 @@ docs_dir: docs
 site_dir: site
 
 # Extra
-extra_javascript: ['https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML','js/mathjaxhelper.js']
+extra_javascript:
+    - https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML
+    - js/mathjaxhelper.js
 extra_css:
     - css/extra.css
 
 # Extensions
-markdown_extensions: ['extra']
+markdown_extensions:
+  - extra

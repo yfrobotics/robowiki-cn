@@ -31,7 +31,7 @@
 
 **本条目贡献者**：
 
-- Xiaotian Dai
-- Xinyu Xu
+- automaticdai
+- xinyu-xu-dev
 
 ---

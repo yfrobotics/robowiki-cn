@@ -37,3 +37,11 @@
 
 ## References
 [1] [机器人领域主要国际会议与期刊列表 - 云飞机器人实验室](https://www.yfworld.com/?p=5560)
+
+---
+
+**本页面贡献者**：
+
+- automaticdai
+
+---

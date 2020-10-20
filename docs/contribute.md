@@ -2,6 +2,8 @@
 
 ## 贡献方法
 
+[项目GitHub地址](https://github.com/yfrobotics/robowiki)
+
 - 通过提交代码：git clone -> change -> push & pull request
 - 通过创建issue：[Create a new issue](https://github.com/yfrobotics/robowiki/issues)
 

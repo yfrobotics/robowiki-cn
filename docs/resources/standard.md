@@ -91,3 +91,11 @@ VDI 2510-2-2013 Automated guided vehicle systems (AGVS) — Safety of AGVS
 
 ## Reference
 [1] [机器人领域行业标准汇总 - 云飞机器人实验室](https://www.yfworld.com/?p=5753)
+
+---
+
+**本页面贡献者**：
+
+- xinyu-xu-dev
+
+---

@@ -2,7 +2,11 @@
 
 ![](https://img.shields.io/github/stars/yfrobotics/robowiki) ![](https://img.shields.io/github/contributors/yfrobotics/robowiki) ![](https://img.shields.io/github/issues/yfrobotics/robowiki) 
 
-(add a project logo)
+![](logo.png)
+
+<a href="https://github.com/yfrobotics/robowiki">
+  <img src="github.png" alt="HTML tutorial" style="width:42px;height:42px;"> 项目GitHub地址
+</a>
 
 ## 介绍
 

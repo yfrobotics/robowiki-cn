@@ -1,5 +1,7 @@
-# Introduction
+# Introduction to Control
 ![](assets/markdown-img-paste-20170412214456853.png)
+
+本页面目前只有英文版，由我(automaticdai)早期整理而成。我会逐步更换为中文资料，同时欢迎[贡献该条目](/contribute)。
 
 Control theory is an interdisciplinary branch of engineering and mathematics that deals with the behavior of dynamical systems with inputs, and how their behavior is modified by feedback [1].
 
