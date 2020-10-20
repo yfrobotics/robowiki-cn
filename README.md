@@ -2,7 +2,7 @@
 
 ![](https://img.shields.io/github/stars/yfrobotics/robowiki) ![](https://img.shields.io/github/contributors/yfrobotics/robowiki) ![](https://img.shields.io/github/issues/yfrobotics/robowiki) 
 
-![](robowiki.png)
+![](logo.png)
 
 ## 介绍
 
