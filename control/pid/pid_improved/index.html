@@ -1,0 +1,2061 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="RoboWiki - 机器人维基百科">
+      
+      
+        <link rel="canonical" href="https://yfrobotics.github.io/robowiki/control/pid/pid_improved/">
+      
+      
+        <meta name="author" content="YF Robotics Laboratory">
+      
+      <link rel="shortcut icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.0.2">
+    
+    
+      
+        <title>PID Improvement Techniques - RoboWiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.38780c08.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.3f72e892.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../../css/extra.css">
+    
+    
+      
+        
+<script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-60989638-5","auto"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}),document.addEventListener("DOMContentSwitch",function(){ga("send","pageview",document.location.pathname)})</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+      
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#pid-improvement-techniques" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="https://yfrobotics.github.io/robowiki" title="RoboWiki" class="md-header-nav__button md-logo" aria-label="RoboWiki">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            RoboWiki
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              PID Improvement Techniques
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+
+  
+
+<nav class="md-tabs md-tabs--active" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../.." class="md-tabs__link">
+          首页
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../begin/" class="md-tabs__link">
+          如何开始
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../" class="md-tabs__link md-tabs__link--active">
+          控制
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../algorithm/" class="md-tabs__link">
+          算法
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../ml/" class="md-tabs__link">
+          机器学习
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../cv/" class="md-tabs__link">
+          机器视觉
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../ros/" class="md-tabs__link">
+          ROS
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../jetson/" class="md-tabs__link">
+          Jetson
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../raspberrypi/" class="md-tabs__link">
+          树莓派
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../arduino/" class="md-tabs__link">
+          Arduino
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../self-driving/" class="md-tabs__link">
+          自动驾驶
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../resources/" class="md-tabs__link">
+          资源
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://yfrobotics.github.io/robowiki" title="RoboWiki" class="md-nav__button md-logo" aria-label="RoboWiki">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    RoboWiki
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1">
+    
+    <label class="md-nav__link" for="nav-1">
+      首页
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="首页" data-md-level="1">
+      <label class="md-nav__title" for="nav-1">
+        <span class="md-nav__icon md-icon"></span>
+        首页
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../.." class="md-nav__link">
+      机器人维基百科 (RoboWiki)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../contribute/" class="md-nav__link">
+      如何贡献这个维基？
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../opensource/" class="md-nav__link">
+      如何进行开源项目贡献
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../about/" class="md-nav__link">
+      关于 云飞机器人实验室
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      如何开始
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="如何开始" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon"></span>
+        如何开始
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../begin/" class="md-nav__link">
+      如何开始
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+    
+    <label class="md-nav__link" for="nav-3">
+      控制
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="控制" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon"></span>
+        控制
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../" class="md-nav__link">
+      Introduction to Control
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../modelling/" class="md-nav__link">
+      Modelling
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../state/" class="md-nav__link">
+      State Space
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../time/" class="md-nav__link">
+      Time Domain Analysis
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-5" type="checkbox" id="nav-3-5" checked>
+    
+    <label class="md-nav__link" for="nav-3-5">
+      PID
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="PID" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-5">
+        <span class="md-nav__icon md-icon"></span>
+        PID
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../pid/" class="md-nav__link">
+      PID Controller
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        PID Improvement Techniques
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" class="md-nav__link md-nav__link--active">
+      PID Improvement Techniques
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#fixed-sampling-time" class="md-nav__link">
+    Fixed Sampling Time
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#derivative-kick" class="md-nav__link">
+    Derivative Kick
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tuning-changes" class="md-nav__link">
+    Tuning Changes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reset-windup" class="md-nav__link">
+    Reset Windup
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#switch-onoff" class="md-nav__link">
+    Switch On/off
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#initialization-after-switch" class="md-nav__link">
+    Initialization after Switch
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reverse-control" class="md-nav__link">
+    Reverse Control
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#other-improvements" class="md-nav__link">
+    Other Improvements
+  </a>
+  
+    <nav class="md-nav" aria-label="Other Improvements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#input-filtering" class="md-nav__link">
+    Input Filtering
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#timing-compensation" class="md-nav__link">
+    Timing Compensation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#feedforward" class="md-nav__link">
+    Feedforward
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reset-tiebacks" class="md-nav__link">
+    Reset Tiebacks
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#i-term-saturation" class="md-nav__link">
+    $I$ term Saturation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d-term-filtering" class="md-nav__link">
+    $D$ term Filtering
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-dead-zone" class="md-nav__link">
+    Error Dead-zone
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#output-limitation" class="md-nav__link">
+    Output Limitation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dead-band" class="md-nav__link">
+    Dead band
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#anti-windup" class="md-nav__link">
+    Anti Windup
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#event-based-pid-2" class="md-nav__link">
+    Event-based PID [2]
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    References
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../pid_tuning/" class="md-nav__link">
+      PID Parameters Tuning
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../mpc/" class="md-nav__link">
+      MPC
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      算法
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="算法" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon"></span>
+        算法
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../algorithm/" class="md-nav__link">
+      机器人算法
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      机器学习
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="机器学习" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        <span class="md-nav__icon md-icon"></span>
+        机器学习
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../ml/" class="md-nav__link">
+      机器学习概述
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      机器视觉
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="机器视觉" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        <span class="md-nav__icon md-icon"></span>
+        机器视觉
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../cv/" class="md-nav__link">
+      机器视觉概述
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      ROS
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="ROS" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        <span class="md-nav__icon md-icon"></span>
+        ROS
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../ros/" class="md-nav__link">
+      Robot Operating System (ROS)
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+    
+    <label class="md-nav__link" for="nav-8">
+      Jetson
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Jetson" data-md-level="1">
+      <label class="md-nav__title" for="nav-8">
+        <span class="md-nav__icon md-icon"></span>
+        Jetson
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../jetson/" class="md-nav__link">
+      Nvidia Jetson
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
+    
+    <label class="md-nav__link" for="nav-9">
+      树莓派
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="树莓派" data-md-level="1">
+      <label class="md-nav__title" for="nav-9">
+        <span class="md-nav__icon md-icon"></span>
+        树莓派
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../raspberrypi/" class="md-nav__link">
+      Raspberry Pi
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10">
+    
+    <label class="md-nav__link" for="nav-10">
+      Arduino
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Arduino" data-md-level="1">
+      <label class="md-nav__title" for="nav-10">
+        <span class="md-nav__icon md-icon"></span>
+        Arduino
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../arduino/" class="md-nav__link">
+      Arduino
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11">
+    
+    <label class="md-nav__link" for="nav-11">
+      自动驾驶
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="自动驾驶" data-md-level="1">
+      <label class="md-nav__title" for="nav-11">
+        <span class="md-nav__icon md-icon"></span>
+        自动驾驶
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../self-driving/" class="md-nav__link">
+      自动驾驶技术指南
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-11-2" type="checkbox" id="nav-11-2">
+    
+    <label class="md-nav__link" for="nav-11-2">
+      1. 概述
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="1. 概述" data-md-level="2">
+      <label class="md-nav__title" for="nav-11-2">
+        <span class="md-nav__icon md-icon"></span>
+        1. 概述
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../self-driving/intro/define/" class="md-nav__link">
+      1.1 自动驾驶系统定义
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../self-driving/intro/category/" class="md-nav__link">
+      1.2 自主性等级分类
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../self-driving/intro/history/" class="md-nav__link">
+      1.3 历史起源：to C -> to B
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../self-driving/intro/future/" class="md-nav__link">
+      1.4 发展与展望：无人化智能交通
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-11-3" type="checkbox" id="nav-11-3">
+    
+    <label class="md-nav__link" for="nav-11-3">
+      2. 系统
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="2. 系统" data-md-level="2">
+      <label class="md-nav__title" for="nav-11-3">
+        <span class="md-nav__icon md-icon"></span>
+        2. 系统
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../self-driving/system/vehicle/" class="md-nav__link">
+      2.1 自动驾驶车辆
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../self-driving/system/v2x/" class="md-nav__link">
+      2.2 智能交通
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../self-driving/system/platform/" class="md-nav__link">
+      2.3 设计与仿真平台
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../self-driving/system/safety/" class="md-nav__link">
+      2.4 系统安全保障
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../self-driving/system/regulation/" class="md-nav__link">
+      2.5 政策与法律法规
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-11-4" type="checkbox" id="nav-11-4">
+    
+    <label class="md-nav__link" for="nav-11-4">
+      3. 硬件
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="3. 硬件" data-md-level="2">
+      <label class="md-nav__title" for="nav-11-4">
+        <span class="md-nav__icon md-icon"></span>
+        3. 硬件
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../self-driving/hardware/hw_overview/" class="md-nav__link">
+      3.1 硬件总览
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../self-driving/hardware/ccu/" class="md-nav__link">
+      3.2 中控单元 (AI芯片, GPGPU)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../self-driving/hardware/drive_by_wire/" class="md-nav__link">
+      3.3 Drive-by-wire
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../self-driving/hardware/communication/" class="md-nav__link">
+      3.4 车内总线
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../self-driving/hardware/sensors/" class="md-nav__link">
+      3.5 感知传感器
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../self-driving/hardware/camera/" class="md-nav__link">
+      3.6 视觉传感器
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-11-5" type="checkbox" id="nav-11-5">
+    
+    <label class="md-nav__link" for="nav-11-5">
+      4. 算法
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="4. 算法" data-md-level="2">
+      <label class="md-nav__title" for="nav-11-5">
+        <span class="md-nav__icon md-icon"></span>
+        4. 算法
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../self-driving/algorithm/sw_overview/" class="md-nav__link">
+      4.1 系统软件框架总览
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../self-driving/algorithm/image_processing/" class="md-nav__link">
+      4.2 图像识别与分割
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../self-driving/algorithm/laser_processing/" class="md-nav__link">
+      4.3 激光点云数据处理
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../self-driving/algorithm/localisation/" class="md-nav__link">
+      4.4 地图与定位
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../self-driving/algorithm/path_planning/" class="md-nav__link">
+      4.5 路径规划
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../self-driving/algorithm/decision_making/" class="md-nav__link">
+      4.6 决策 (Decision Making Process)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../self-driving/algorithm/nlp/" class="md-nav__link">
+      4.7 自然语言识别与交互
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-11-6" type="checkbox" id="nav-11-6">
+    
+    <label class="md-nav__link" for="nav-11-6">
+      5. 实例
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="5. 实例" data-md-level="2">
+      <label class="md-nav__title" for="nav-11-6">
+        <span class="md-nav__icon md-icon"></span>
+        5. 实例
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../self-driving/casestudy/uber/" class="md-nav__link">
+      5.1 Uber
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../self-driving/casestudy/tesla/" class="md-nav__link">
+      5.2 Tesla
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../self-driving/casestudy/waymo/" class="md-nav__link">
+      5.3 Waymo
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../self-driving/casestudy/apollo/" class="md-nav__link">
+      5.4 百度无人驾驶
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../self-driving/casestudy/uisee/" class="md-nav__link">
+      5.5 驭势科技
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../self-driving/casestudy/tusimple/" class="md-nav__link">
+      5.6 图森未来
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-12" type="checkbox" id="nav-12">
+    
+    <label class="md-nav__link" for="nav-12">
+      资源
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="资源" data-md-level="1">
+      <label class="md-nav__title" for="nav-12">
+        <span class="md-nav__icon md-icon"></span>
+        资源
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../resources/" class="md-nav__link">
+      机器人资源
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../resources/conferences/" class="md-nav__link">
+      机器人会议与期刊列表
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../resources/standard/" class="md-nav__link">
+      机器人领域行业标准
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#fixed-sampling-time" class="md-nav__link">
+    Fixed Sampling Time
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#derivative-kick" class="md-nav__link">
+    Derivative Kick
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tuning-changes" class="md-nav__link">
+    Tuning Changes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reset-windup" class="md-nav__link">
+    Reset Windup
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#switch-onoff" class="md-nav__link">
+    Switch On/off
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#initialization-after-switch" class="md-nav__link">
+    Initialization after Switch
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reverse-control" class="md-nav__link">
+    Reverse Control
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#other-improvements" class="md-nav__link">
+    Other Improvements
+  </a>
+  
+    <nav class="md-nav" aria-label="Other Improvements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#input-filtering" class="md-nav__link">
+    Input Filtering
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#timing-compensation" class="md-nav__link">
+    Timing Compensation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#feedforward" class="md-nav__link">
+    Feedforward
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reset-tiebacks" class="md-nav__link">
+    Reset Tiebacks
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#i-term-saturation" class="md-nav__link">
+    $I$ term Saturation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d-term-filtering" class="md-nav__link">
+    $D$ term Filtering
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-dead-zone" class="md-nav__link">
+    Error Dead-zone
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#output-limitation" class="md-nav__link">
+    Output Limitation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dead-band" class="md-nav__link">
+    Dead band
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#anti-windup" class="md-nav__link">
+    Anti Windup
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#event-based-pid-2" class="md-nav__link">
+    Event-based PID [2]
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    References
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="pid-improvement-techniques">PID Improvement Techniques</h1>
+<p>According to [1], a few improvements can be made to improve the so called Beginner's PID. The author of [1] wrote the PID library for Arduino. Here is a list of his advices:</p>
+<ol>
+<li>Sample Time - The PID algorithm functions best if it is evaluated at a regular
+interval. If the algorithm is aware of this interval, we can also simplify some of
+the internal math.</li>
+<li>Derivative Kick - Not the biggest deal, but easy to get rid of, so we’re going to do
+just that.</li>
+<li>On-The-Fly Tuning Changes - A good PID algorithm is one where tuning
+parameters can be changed without jolting the internal workings.</li>
+<li>Reset Windup Mitigation - We’ll go into what Reset Windup is, and implement a
+solution with side benefits</li>
+<li>On/Off (Auto/Manual) - In most applications, there is a desire to sometimes turn
+off the PID controller and adjust the output by hand, without the controller
+interfering</li>
+<li>Initialization - When the controller first turns on, we want a “bumpless transfer.” That is, we don’t want the output to suddenly jerk to some new value</li>
+<li>Controller Direction - This last one isn’t a change in the name of robustness per se.
+it’s designed to ensure that the user enters tuning parameters with the correct sign</li>
+</ol>
+<p>In this section, I will follow his advices and rewrite my version of code to illustrate the main ideas.</p>
+<h3 id="fixed-sampling-time">Fixed Sampling Time</h3>
+<p>The first thing to make sure is the controller is called at a regular time interval. We can create a periodic control task, making use of ADC sampling interrupts, or we can use OS utilities to test if the specified sampling time has elapsed. With a fixed sampling time, we do not need to calculate the math related to $dt$ every time, and we can incorporate $dt$ into coefficients $K_i$ and $K_d$:</p>
+<pre><code class="c">/* ... */
+
+void pid_init(float kp_, float ki_, float kd_, float dt){
+  k_p = kp_;
+  k_i = ki_ * dt;
+  k_d = kd_ / dt;
+  /* ... */
+}
+
+void pid_controller() {
+  /* ... */
+  e_i += e;
+  float u = k_p * e + k_i * e_i + k_d * (e - e_p);
+  /* ... */
+}
+</code></pre>
+
+<h3 id="derivative-kick">Derivative Kick</h3>
+<p>Since error = set-point - input, any change in the set-point would cause an instantaneous change in error, especially for derivative as this change leads to a close-to-infinity large number. When this number is fed into the PID equation, the result will lead to an undesirable spike in the output.</p>
+<p><img alt="" src="../assets/markdown-img-paste-20170412223043418.png" /></p>
+<p>As $\dot{e} = \dot{r} - \dot{y}$, we can ignore the setpoint as constant, so $\frac{de}{dt} = -\frac{dy}{dt}$. This leads to a "Derivative on Measurement" method.</p>
+<pre><code class="c">/* ... */
+float y_p = 0;
+
+void pid_controller() {
+  /* ... */
+  e_i += e;
+  float u = k_p * e + k_i * e_i + k_d * (y - y_p);
+  /* ... */
+  y_p = y;
+}
+</code></pre>
+
+<h3 id="tuning-changes">Tuning Changes</h3>
+<p>Changing PID parameters while the system is running may cause undesirable behaviors.</p>
+<p><img alt="" src="../assets/markdown-img-paste-20170412223856166.png" /></p>
+<p>The major change comes from the "I" term. The solution is simply multiply k_i every time instead of multiply it on the overall sum. This leads to a smooth solution without additional computation.</p>
+<pre><code class="c">/* ... */
+float ITerm = 0;
+
+void pid_controller() {
+  /* ... */
+  ITerm += k_i * e;
+  float u = k_p * e + ITerm + k_d * (y - y_p);
+  /* ... */
+}
+</code></pre>
+
+<h3 id="reset-windup">Reset Windup</h3>
+<p>The problem of windup comes from the fact that there is limitations on the output that a PID controller can send. For example, for Arduino, the PWM output can only accept values from 0-255. If the output value reaches this range, the controller should stop increasing its output and stop accumulating integral error. If the controller is not aware its output is not the actual output, the output will saturate and will introduce lag when the setpoint drop back again.</p>
+<p><img alt="" src="../assets/markdown-img-paste-20170412224103491.png" /></p>
+<p>The C code after this step:</p>
+<pre><code class="c">/* ... */
+float u_limit_upp = xxx;
+float u_limit_low = xxx;
+
+void pid_controller() {
+  /* ... */
+  if (pid_output_saturated(u)) {
+    pid_output_reset(u);
+    /* roll back the I term */
+    ITerm -= k_i * e;
+  }
+  /* ... */
+}
+
+int pid_output_saturated(float u) {
+  if (u &gt; u_limit_upp || u &lt; u_limit_low) {
+    return 1;
+  }
+  else {
+    return 0;
+  }
+}
+
+int pid_output_reset(float u) {
+  if (u &gt; u_limit_upp) {
+    u = u_limit_upp;
+  } else if (u &lt; u_limit_low) {
+    u = u_limit_low;
+  }
+}
+</code></pre>
+
+<h3 id="switch-onoff">Switch On/off</h3>
+<p>(In very rare situations), we may want to switch on/off a PID controller and manually feed control input to the process. This action may confuse the controller as it totally lose control of the output.</p>
+<p><img alt="" src="../assets/markdown-img-paste-20170412231026842.png" /></p>
+<p>The solution is simple, adding a on/off control variable to enable/disable the controller and stop changing its internal state variables.</p>
+<pre><code class="c">/* ... */
+int pid_switch_on = 1;
+
+void pid_controller() {
+  if (pid_switch_on == 0) {
+    return;
+  }
+  /* ... */
+}
+
+void pid_switch(int new_state) {
+  pid_switch_on = new_state;
+}
+</code></pre>
+
+<h3 id="initialization-after-switch">Initialization after Switch</h3>
+<p>A side effect of using on/off control is that when the controller switches from off to on, an undesirable bump would appear. This is illustrated in the following diagram:</p>
+<p><img alt="" src="../assets/markdown-img-paste-20170413001022770.png" /></p>
+<p>To make the output smooth after switch back on the controller, we can reset the controller internal variables:</p>
+<ul>
+<li>"P": the proportional term does not rely on any past information, so it doesn't need any initilization, so P = 0.</li>
+<li>"D": set last_input = previous_input, so D = 0.</li>
+<li>"I": set ITerm = previous_output, so P + I + D = previous_output.</li>
+</ul>
+<p>The result controller has a smooth response after switch the controller back on:</p>
+<p><img alt="" src="../assets/markdown-img-paste-20170413021327538.png" /></p>
+<h3 id="reverse-control">Reverse Control</h3>
+<p>For some systems, the increasing in input will result decreasing in output. For example, an inceasing speed of a cooling fan will cause the temerature to go down. To handle these systems, we introduce a direction variable to address the difference between direct/reserve control. The only difference of reverse control is the sign of the PID parameters need to be negative instead of postive in the direct case.</p>
+<pre><code class="c">#define DIRECT_CONTROL  (0)
+#define REVERSE_CONTROL (1)
+int direction = DIRECT_CONTROL;
+
+void pid_init() {
+  /* ... */
+  if (direction == REVERSE_CONTROL) {
+    k_p = 0 - k_p;
+    k_i = 0 - k_i;
+    k_d = 0 - k_d;
+  }
+  /* ... */
+}
+
+void pid_setdir(int d_) {
+  direction = d_;
+}
+</code></pre>
+
+<hr />
+<h2 id="other-improvements">Other Improvements</h2>
+<h3 id="input-filtering">Input Filtering</h3>
+<p>To avoid problems of high frequency measurement noise in the derivative part, a low-pass filter is added.</p>
+<p>$$U_D(s) = \frac{K T_D s}{1 + s T_D / N}(\gamma Y_{sp}(s) - Y(s))$$</p>
+<p>$\gamma$ is for set-point weighting, which can be interpreted as feedforward from the set point.</p>
+<h3 id="timing-compensation">Timing Compensation</h3>
+<ul>
+<li>The I and D parts are dependent on the actual interval between two control actions. If the interval is inconsistent, we need to compensate them.</li>
+</ul>
+<h3 id="feedforward">Feedforward</h3>
+<h3 id="reset-tiebacks">Reset Tiebacks</h3>
+<h3 id="i-term-saturation">$I$ term Saturation</h3>
+<h3 id="d-term-filtering">$D$ term Filtering</h3>
+<h3 id="error-dead-zone">Error Dead-zone</h3>
+<h3 id="output-limitation">Output Limitation</h3>
+<h3 id="dead-band">Dead band</h3>
+<h3 id="anti-windup">Anti Windup</h3>
+<hr />
+<h2 id="event-based-pid-2">Event-based PID [2]</h2>
+<p>Event Detector (event-trigged) -&gt; PID Controller (time-trigged)</p>
+<p>Event trig condition should have small complexity to compare with time-trigged controller:</p>
+<p>$|e(t_k) - e(t_{s}) &gt; e_{lim}|$ OR $h_{act} &gt; h_{max}$</p>
+<p>which implies the detector operates at the nominal sampling frequency but the PID calculation only performs when an event is detected. This algorithm, however, requires more calculations due to the fact that each time the PID coefficients need to be recalculated.</p>
+<p>It is important to filter the measurement noise properly and to set the error limit sufficiently large to avoid trigging control due to noise.</p>
+<hr />
+<h2 id="references">References</h2>
+<ol>
+<li>Improving the Beginner’s PID, <a href="http://brettbeauregard.com/blog/2011/04/improving-the-beginners-pid-introduction/">web page link</a></li>
+<li>Årzén, K-E. (1999), A Simple Event-Based PID Controller, Paper presented at 14th IFAC World Congress (1999), Beijing, China.</li>
+</ol>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../pid/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  上一页
+                </span>
+                PID Controller
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../pid_tuning/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  下一页
+                </span>
+                PID Parameters Tuning
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/vendor.77e55a48.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.9554a270.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../../..",
+          features: ['navigation.tabs', 'navigation.instant'],
+          search: Object.assign({
+            worker: "../../../assets/javascripts/worker/search.4ac00218.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+        <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+      
+        <script src="../../../js/mathjaxhelper.js"></script>
+      
+    
+  </body>
+</html>
