@@ -36,12 +36,13 @@ nav:
       - cv/index.md
     - ROS:
       - ros/index.md
-    - Jetson:
-      - jetson/index.md
-    - 树莓派:
-      - raspberrypi/index.md
-    - Arduino:
-      - arduino/index.md
+    - 硬件平台:
+      - Arduino:
+        - arduino/index.md
+      - 树莓派:
+        - raspberrypi/index.md
+      - Jetson:
+        - jetson/index.md
     - 自动驾驶:
       - self-driving/index.md
       - '1. 概述':
