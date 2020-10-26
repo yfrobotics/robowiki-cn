@@ -20,10 +20,11 @@ nav:
       - begin/index.md
     - 控制:
       - control/index.md
-      - control/modelling.md
-      - control/state.md
-      - control/time.md
-      - PID:
+      - 1. Modelling:
+        - control/modelling/modelling.md
+        - control/modelling/state_space.md
+      - control/analysis.md
+      - 3. PID:
         - control/pid/pid.md
         - control/pid/pid_improved.md
         - control/pid/pid_tuning.md
@@ -37,12 +38,10 @@ nav:
     - ROS:
       - ros/index.md
     - 硬件平台:
-      - Arduino:
-        - arduino/index.md
-      - 树莓派:
-        - raspberrypi/index.md
-      - Jetson:
-        - jetson/index.md
+      - hardware.md
+      - arduino/index.md
+      - raspberrypi/index.md
+      - jetson/index.md
     - 自动驾驶:
       - self-driving/index.md
       - '1. 概述':
@@ -97,10 +96,12 @@ site_dir: site
 # Extra
 extra_javascript:
     - https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML
-    - js/mathjaxhelper.js
+    - mathjaxhelper.js
 extra_css:
     - css/extra.css
 
 # Extensions
 markdown_extensions:
   - extra
+  - tables
+  - fenced_code

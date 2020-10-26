@@ -1,4 +1,4 @@
-# PID Improvement Techniques
+# 3.2 PID Improvement Techniques
 
 According to [1], a few improvements can be made to improve the so called Beginner's PID. The author of [1] wrote the PID library for Arduino. Here is a list of his advices:
 
