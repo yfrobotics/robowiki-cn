@@ -2,7 +2,7 @@
 site_name: RoboWiki
 site_description: RoboWiki - 机器人维基百科
 site_author: YF Robotics Laboratory
-site_url: https://yfrobotics.github.io/robowiki
+site_url: https://yfrobotics.github.io/robowiki-cn
 strict: true
 
 google_analytics:
