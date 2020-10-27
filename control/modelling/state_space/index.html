@@ -9,24 +9,24 @@
         <meta name="description" content="RoboWiki - 机器人维基百科">
       
       
-        <link rel="canonical" href="https://yfrobotics.github.io/robowiki-cn/control/modelling/">
+        <link rel="canonical" href="https://yfrobotics.github.io/robowiki-cn/control/modelling/state_space/">
       
       
         <meta name="author" content="YF Robotics Laboratory">
       
-      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <link rel="shortcut icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.0">
     
     
       
-        <title>Modelling - RoboWiki</title>
+        <title>1.1 State Space - RoboWiki</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.bc7e593a.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.bc7e593a.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab28b872.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab28b872.min.css">
         
       
     
@@ -41,7 +41,7 @@
     
     
     
-      <link rel="stylesheet" href="../../css/extra.css">
+      <link rel="stylesheet" href="../../../css/extra.css">
     
     
       
@@ -68,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#modelling" class="md-skip">
+        <a href="#11-state-space" class="md-skip">
           跳转至
         </a>
       
@@ -98,7 +98,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              Modelling
+              1.1 State Space
             
           </span>
         </div>
@@ -156,7 +156,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../.." class="md-tabs__link">
+        <a href="../../.." class="md-tabs__link">
           首页
         </a>
       
@@ -169,7 +169,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../../begin/" class="md-tabs__link">
+        <a href="../../../begin/" class="md-tabs__link">
           如何开始
         </a>
       
@@ -182,7 +182,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../" class="md-tabs__link md-tabs__link--active">
+        <a href="../../" class="md-tabs__link md-tabs__link--active">
           控制
         </a>
       
@@ -195,7 +195,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../../algorithm/" class="md-tabs__link">
+        <a href="../../../algorithm/" class="md-tabs__link">
           算法
         </a>
       
@@ -208,7 +208,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../../ml/" class="md-tabs__link">
+        <a href="../../../ml/" class="md-tabs__link">
           机器学习
         </a>
       
@@ -221,7 +221,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../../cv/" class="md-tabs__link">
+        <a href="../../../cv/" class="md-tabs__link">
           机器视觉
         </a>
       
@@ -234,7 +234,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../../ros/" class="md-tabs__link">
+        <a href="../../../ros/" class="md-tabs__link">
           ROS
         </a>
       
@@ -245,19 +245,13 @@
         
   
   
-    
-    
-  
-  
     <li class="md-tabs__item">
       
-        <a href="../../arduino/" class="md-tabs__link">
+        <a href="../../../hardware/" class="md-tabs__link">
           硬件平台
         </a>
       
     </li>
-  
-
   
 
       
@@ -266,7 +260,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../../self-driving/" class="md-tabs__link">
+        <a href="../../../self-driving/" class="md-tabs__link">
           自动驾驶
         </a>
       
@@ -279,7 +273,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../../resources/" class="md-tabs__link">
+        <a href="../../../resources/" class="md-tabs__link">
           资源
         </a>
       
@@ -341,7 +335,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../.." class="md-nav__link">
+    <a href="../../.." class="md-nav__link">
       机器人维基百科 (RoboWiki)
     </a>
   </li>
@@ -353,7 +347,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../contribute/" class="md-nav__link">
+    <a href="../../../contribute/" class="md-nav__link">
       如何贡献这个维基？
     </a>
   </li>
@@ -365,7 +359,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../opensource/" class="md-nav__link">
+    <a href="../../../opensource/" class="md-nav__link">
       如何进行开源项目贡献
     </a>
   </li>
@@ -377,7 +371,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../about/" class="md-nav__link">
+    <a href="../../../about/" class="md-nav__link">
       关于 云飞机器人实验室
     </a>
   </li>
@@ -415,7 +409,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../begin/" class="md-nav__link">
+    <a href="../../../begin/" class="md-nav__link">
       如何开始
     </a>
   </li>
@@ -455,8 +449,43 @@
 
 
   <li class="md-nav__item">
-    <a href="../" class="md-nav__link">
+    <a href="../../" class="md-nav__link">
       Introduction to Control
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-2" type="checkbox" id="nav-3-2" checked>
+    
+    <label class="md-nav__link" for="nav-3-2">
+      1. Modelling
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="1. Modelling" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-2">
+        <span class="md-nav__icon md-icon"></span>
+        1. Modelling
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modelling/" class="md-nav__link">
+      1.1 Modelling Overview
     </a>
   </li>
 
@@ -476,12 +505,12 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        Modelling
+        1.1 State Space
         <span class="md-nav__icon md-icon"></span>
       </label>
     
     <a href="./" class="md-nav__link md-nav__link--active">
-      Modelling
+      1.1 State Space
     </a>
     
       
@@ -498,90 +527,29 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#differential-equation" class="md-nav__link">
-    Differential Equation
+  <a href="#controllability" class="md-nav__link">
+    Controllability
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#difference-equation" class="md-nav__link">
-    Difference Equation
+  <a href="#observability" class="md-nav__link">
+    Observability
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#transfer-function" class="md-nav__link">
-    Transfer Function
+  <a href="#calculate-gain" class="md-nav__link">
+    Calculate Gain
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#state-space" class="md-nav__link">
-    State Space
-  </a>
-  
-    <nav class="md-nav" aria-label="State Space">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#matlab-code" class="md-nav__link">
-    Matlab Code
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#matlab-functions" class="md-nav__link">
-    Matlab functions
-  </a>
-  
-    <nav class="md-nav" aria-label="Matlab functions">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#transfer-function_1" class="md-nav__link">
-    Transfer Function
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#poles-and-zeros" class="md-nav__link">
-    Poles and Zeros
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#state-space_1" class="md-nav__link">
-    State Space
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#system-analysis" class="md-nav__link">
-    System Analysis
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#reference" class="md-nav__link">
-    Reference
+  <a href="#matlab-code-for-lqr" class="md-nav__link">
+    Matlab code for LQR
   </a>
   
 </li>
@@ -593,15 +561,8 @@
   </li>
 
         
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../state/" class="md-nav__link">
-      State Space
-    </a>
+      </ul>
+    </nav>
   </li>
 
         
@@ -611,8 +572,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../time/" class="md-nav__link">
-      Time Domain Analysis
+    <a href="../../analysis/" class="md-nav__link">
+      2. Analysis
     </a>
   </li>
 
@@ -624,16 +585,16 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-5" type="checkbox" id="nav-3-5">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-4" type="checkbox" id="nav-3-4">
     
-    <label class="md-nav__link" for="nav-3-5">
-      PID
+    <label class="md-nav__link" for="nav-3-4">
+      3. PID
       <span class="md-nav__icon md-icon"></span>
     </label>
-    <nav class="md-nav" aria-label="PID" data-md-level="2">
-      <label class="md-nav__title" for="nav-3-5">
+    <nav class="md-nav" aria-label="3. PID" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-4">
         <span class="md-nav__icon md-icon"></span>
-        PID
+        3. PID
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -644,8 +605,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../pid/pid/" class="md-nav__link">
-      PID Controller
+    <a href="../../pid/pid/" class="md-nav__link">
+      3.1 PID Controller
     </a>
   </li>
 
@@ -656,8 +617,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../pid/pid_improved/" class="md-nav__link">
-      PID Improvement Techniques
+    <a href="../../pid/pid_improved/" class="md-nav__link">
+      3.2 PID Improvement Techniques
     </a>
   </li>
 
@@ -668,8 +629,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../pid/pid_tuning/" class="md-nav__link">
-      PID Parameters Tuning
+    <a href="../../pid/pid_tuning/" class="md-nav__link">
+      3.3 PID Parameters Tuning
     </a>
   </li>
 
@@ -685,8 +646,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../mpc/" class="md-nav__link">
-      MPC
+    <a href="../../mpc/" class="md-nav__link">
+      4. MPC
     </a>
   </li>
 
@@ -723,7 +684,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../algorithm/" class="md-nav__link">
+    <a href="../../../algorithm/" class="md-nav__link">
       机器人算法
     </a>
   </li>
@@ -761,7 +722,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../ml/" class="md-nav__link">
+    <a href="../../../ml/" class="md-nav__link">
       机器学习概述
     </a>
   </li>
@@ -799,7 +760,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../cv/" class="md-nav__link">
+    <a href="../../../cv/" class="md-nav__link">
       机器视觉概述
     </a>
   </li>
@@ -837,7 +798,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../ros/" class="md-nav__link">
+    <a href="../../../ros/" class="md-nav__link">
       Robot Operating System (ROS)
     </a>
   </li>
@@ -874,21 +835,12 @@
           
 
 
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-8-1" type="checkbox" id="nav-8-1">
-    
-    <label class="md-nav__link" for="nav-8-1">
-      Arduino
-      <span class="md-nav__icon md-icon"></span>
-    </label>
-    <nav class="md-nav" aria-label="Arduino" data-md-level="2">
-      <label class="md-nav__title" for="nav-8-1">
-        <span class="md-nav__icon md-icon"></span>
-        Arduino
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
+  <li class="md-nav__item">
+    <a href="../../../hardware/" class="md-nav__link">
+      机器人硬件
+    </a>
+  </li>
+
         
           
           
@@ -896,90 +848,33 @@
 
 
   <li class="md-nav__item">
-    <a href="../../arduino/" class="md-nav__link">
+    <a href="../../../arduino/" class="md-nav__link">
       Arduino
     </a>
   </li>
 
         
-      </ul>
-    </nav>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-8-2" type="checkbox" id="nav-8-2">
-    
-    <label class="md-nav__link" for="nav-8-2">
-      树莓派
-      <span class="md-nav__icon md-icon"></span>
-    </label>
-    <nav class="md-nav" aria-label="树莓派" data-md-level="2">
-      <label class="md-nav__title" for="nav-8-2">
-        <span class="md-nav__icon md-icon"></span>
-        树莓派
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
           
           
           
 
 
   <li class="md-nav__item">
-    <a href="../../raspberrypi/" class="md-nav__link">
+    <a href="../../../raspberrypi/" class="md-nav__link">
       Raspberry Pi
     </a>
   </li>
 
         
-      </ul>
-    </nav>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-8-3" type="checkbox" id="nav-8-3">
-    
-    <label class="md-nav__link" for="nav-8-3">
-      Jetson
-      <span class="md-nav__icon md-icon"></span>
-    </label>
-    <nav class="md-nav" aria-label="Jetson" data-md-level="2">
-      <label class="md-nav__title" for="nav-8-3">
-        <span class="md-nav__icon md-icon"></span>
-        Jetson
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
           
           
           
 
 
   <li class="md-nav__item">
-    <a href="../../jetson/" class="md-nav__link">
+    <a href="../../../jetson/" class="md-nav__link">
       Nvidia Jetson
     </a>
-  </li>
-
-        
-      </ul>
-    </nav>
   </li>
 
         
@@ -1015,7 +910,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../self-driving/" class="md-nav__link">
+    <a href="../../../self-driving/" class="md-nav__link">
       自动驾驶技术指南
     </a>
   </li>
@@ -1048,7 +943,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../self-driving/intro/define/" class="md-nav__link">
+    <a href="../../../self-driving/intro/define/" class="md-nav__link">
       1.1 自动驾驶系统定义
     </a>
   </li>
@@ -1060,7 +955,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../self-driving/intro/category/" class="md-nav__link">
+    <a href="../../../self-driving/intro/category/" class="md-nav__link">
       1.2 自主性等级分类
     </a>
   </li>
@@ -1072,7 +967,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../self-driving/intro/history/" class="md-nav__link">
+    <a href="../../../self-driving/intro/history/" class="md-nav__link">
       1.3 历史起源：to C -> to B
     </a>
   </li>
@@ -1084,7 +979,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../self-driving/intro/future/" class="md-nav__link">
+    <a href="../../../self-driving/intro/future/" class="md-nav__link">
       1.4 发展与展望：无人化智能交通
     </a>
   </li>
@@ -1122,7 +1017,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../self-driving/system/vehicle/" class="md-nav__link">
+    <a href="../../../self-driving/system/vehicle/" class="md-nav__link">
       2.1 自动驾驶车辆
     </a>
   </li>
@@ -1134,7 +1029,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../self-driving/system/v2x/" class="md-nav__link">
+    <a href="../../../self-driving/system/v2x/" class="md-nav__link">
       2.2 智能交通
     </a>
   </li>
@@ -1146,7 +1041,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../self-driving/system/platform/" class="md-nav__link">
+    <a href="../../../self-driving/system/platform/" class="md-nav__link">
       2.3 设计与仿真平台
     </a>
   </li>
@@ -1158,7 +1053,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../self-driving/system/safety/" class="md-nav__link">
+    <a href="../../../self-driving/system/safety/" class="md-nav__link">
       2.4 系统安全保障
     </a>
   </li>
@@ -1170,7 +1065,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../self-driving/system/regulation/" class="md-nav__link">
+    <a href="../../../self-driving/system/regulation/" class="md-nav__link">
       2.5 政策与法律法规
     </a>
   </li>
@@ -1208,7 +1103,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../self-driving/hardware/hw_overview/" class="md-nav__link">
+    <a href="../../../self-driving/hardware/hw_overview/" class="md-nav__link">
       3.1 硬件总览
     </a>
   </li>
@@ -1220,7 +1115,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../self-driving/hardware/ccu/" class="md-nav__link">
+    <a href="../../../self-driving/hardware/ccu/" class="md-nav__link">
       3.2 中控单元 (AI芯片, GPGPU)
     </a>
   </li>
@@ -1232,7 +1127,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../self-driving/hardware/drive_by_wire/" class="md-nav__link">
+    <a href="../../../self-driving/hardware/drive_by_wire/" class="md-nav__link">
       3.3 Drive-by-wire
     </a>
   </li>
@@ -1244,7 +1139,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../self-driving/hardware/communication/" class="md-nav__link">
+    <a href="../../../self-driving/hardware/communication/" class="md-nav__link">
       3.4 车内总线
     </a>
   </li>
@@ -1256,7 +1151,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../self-driving/hardware/sensors/" class="md-nav__link">
+    <a href="../../../self-driving/hardware/sensors/" class="md-nav__link">
       3.5 感知传感器
     </a>
   </li>
@@ -1268,7 +1163,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../self-driving/hardware/camera/" class="md-nav__link">
+    <a href="../../../self-driving/hardware/camera/" class="md-nav__link">
       3.6 视觉传感器
     </a>
   </li>
@@ -1306,7 +1201,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../self-driving/algorithm/sw_overview/" class="md-nav__link">
+    <a href="../../../self-driving/algorithm/sw_overview/" class="md-nav__link">
       4.1 系统软件框架总览
     </a>
   </li>
@@ -1318,7 +1213,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../self-driving/algorithm/image_processing/" class="md-nav__link">
+    <a href="../../../self-driving/algorithm/image_processing/" class="md-nav__link">
       4.2 图像识别与分割
     </a>
   </li>
@@ -1330,7 +1225,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../self-driving/algorithm/laser_processing/" class="md-nav__link">
+    <a href="../../../self-driving/algorithm/laser_processing/" class="md-nav__link">
       4.3 激光点云数据处理
     </a>
   </li>
@@ -1342,7 +1237,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../self-driving/algorithm/localisation/" class="md-nav__link">
+    <a href="../../../self-driving/algorithm/localisation/" class="md-nav__link">
       4.4 地图与定位
     </a>
   </li>
@@ -1354,7 +1249,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../self-driving/algorithm/path_planning/" class="md-nav__link">
+    <a href="../../../self-driving/algorithm/path_planning/" class="md-nav__link">
       4.5 路径规划
     </a>
   </li>
@@ -1366,7 +1261,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../self-driving/algorithm/decision_making/" class="md-nav__link">
+    <a href="../../../self-driving/algorithm/decision_making/" class="md-nav__link">
       4.6 决策 (Decision Making Process)
     </a>
   </li>
@@ -1378,7 +1273,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../self-driving/algorithm/nlp/" class="md-nav__link">
+    <a href="../../../self-driving/algorithm/nlp/" class="md-nav__link">
       4.7 自然语言识别与交互
     </a>
   </li>
@@ -1416,7 +1311,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../self-driving/casestudy/uber/" class="md-nav__link">
+    <a href="../../../self-driving/casestudy/uber/" class="md-nav__link">
       5.1 Uber
     </a>
   </li>
@@ -1428,7 +1323,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../self-driving/casestudy/tesla/" class="md-nav__link">
+    <a href="../../../self-driving/casestudy/tesla/" class="md-nav__link">
       5.2 Tesla
     </a>
   </li>
@@ -1440,7 +1335,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../self-driving/casestudy/waymo/" class="md-nav__link">
+    <a href="../../../self-driving/casestudy/waymo/" class="md-nav__link">
       5.3 Waymo
     </a>
   </li>
@@ -1452,7 +1347,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../self-driving/casestudy/apollo/" class="md-nav__link">
+    <a href="../../../self-driving/casestudy/apollo/" class="md-nav__link">
       5.4 百度无人驾驶
     </a>
   </li>
@@ -1464,7 +1359,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../self-driving/casestudy/uisee/" class="md-nav__link">
+    <a href="../../../self-driving/casestudy/uisee/" class="md-nav__link">
       5.5 驭势科技
     </a>
   </li>
@@ -1476,7 +1371,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../self-driving/casestudy/tusimple/" class="md-nav__link">
+    <a href="../../../self-driving/casestudy/tusimple/" class="md-nav__link">
       5.6 图森未来
     </a>
   </li>
@@ -1519,7 +1414,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../resources/" class="md-nav__link">
+    <a href="../../../resources/" class="md-nav__link">
       机器人资源
     </a>
   </li>
@@ -1531,7 +1426,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../resources/conferences/" class="md-nav__link">
+    <a href="../../../resources/conferences/" class="md-nav__link">
       机器人会议与期刊列表
     </a>
   </li>
@@ -1543,7 +1438,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../resources/standard/" class="md-nav__link">
+    <a href="../../../resources/standard/" class="md-nav__link">
       机器人领域行业标准
     </a>
   </li>
@@ -1578,90 +1473,29 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#differential-equation" class="md-nav__link">
-    Differential Equation
+  <a href="#controllability" class="md-nav__link">
+    Controllability
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#difference-equation" class="md-nav__link">
-    Difference Equation
+  <a href="#observability" class="md-nav__link">
+    Observability
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#transfer-function" class="md-nav__link">
-    Transfer Function
+  <a href="#calculate-gain" class="md-nav__link">
+    Calculate Gain
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#state-space" class="md-nav__link">
-    State Space
-  </a>
-  
-    <nav class="md-nav" aria-label="State Space">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#matlab-code" class="md-nav__link">
-    Matlab Code
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#matlab-functions" class="md-nav__link">
-    Matlab functions
-  </a>
-  
-    <nav class="md-nav" aria-label="Matlab functions">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#transfer-function_1" class="md-nav__link">
-    Transfer Function
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#poles-and-zeros" class="md-nav__link">
-    Poles and Zeros
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#state-space_1" class="md-nav__link">
-    State Space
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#system-analysis" class="md-nav__link">
-    System Analysis
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#reference" class="md-nav__link">
-    Reference
+  <a href="#matlab-code-for-lqr" class="md-nav__link">
+    Matlab code for LQR
   </a>
   
 </li>
@@ -1679,77 +1513,63 @@
               
                 
                 
-                <h1 id="modelling">Modelling</h1>
-<p>A system can be described as one of the followings:</p>
+                <h1 id="11-state-space">1.1 State Space</h1>
+<p>State space model is in time domain and can describe both SISO and MIMO systems.</p>
+<p>Some advantages:</p>
 <ul>
-<li>Differential equation</li>
-<li>Difference Equation</li>
-<li>Transfer Function</li>
-<li>State Space</li>
+<li>Numerically simple, easy for computers.</li>
+<li>Transfer function only deals with input/output behavior, while state-space can assess internal features of the system.</li>
+<li>MIMO and system coupling</li>
 </ul>
-<h2 id="differential-equation">Differential Equation</h2>
-<p>\begin{aligned}
-\ddot{x} + \dot{x} &amp;= ax + b \\
-y &amp;= x
-\end{aligned}</p>
-<h2 id="difference-equation">Difference Equation</h2>
-<p>$$
-x_{t} = ax_{t-1} + b
-$$</p>
-<h2 id="transfer-function">Transfer Function</h2>
+<p>Controller Design:</p>
 <ul>
-<li>
-<p>Polynomial
+<li>Full-state feedback (pole placement)</li>
+<li>Observer / estimator design: estimating the system state from available measurements.</li>
+<li>Dynamic output feedback: combines these two with provable guarantees on stability and performance.</li>
+</ul>
+<p>Overall, state-space design process is more systematic than classical control design.</p>
+<h2 id="controllability">Controllability</h2>
+<h2 id="observability">Observability</h2>
+<h2 id="calculate-gain">Calculate Gain</h2>
+<p><img alt="" src="../assets/markdown-img-paste-20170412215404210.png" /></p>
+<p>For a SISO system, the transfer function can take the forms: $H(s) = [C(sI-A)^{-1}B + D]$ and $H(z) = [C(zI-A)^{-1}B + D]$.</p>
+<p>The new input can be calculated as:
 $$
-Y(s) = \frac{a_m s^m + ... + a_0}{b_n s^n + ... + b_0}
+u(t) = r(t) - KX = r(t) - \begin{pmatrix}k_1 &amp; k_2 &amp; k_3\end{pmatrix}
+\begin{pmatrix} x_1 \\ x_2 \\ x_3 \end{pmatrix}
 $$</p>
-</li>
-<li>
-<p>Poles and Zeros
+<p>This resulted in a new state equation for the closed-loop system:
 $$
-Y(s) = K \frac{(s-z_m)...(s-z_0)}{(s - p_n) ... (s-p_0)}
+\frac{dx}{dt} = [A - BK]x - Br(t)
 $$</p>
-</li>
-</ul>
-<h2 id="state-space">State Space</h2>
-<p><img alt="" src="../assets/markdown-img-paste-2017041221520164.png" /></p>
-<p>$$
-\begin{align}
-\dot{x}(t) &amp;= Ax(t) + Bu(t) \\
-y(t) &amp;= Cx(t) + Du(t)
-\end{align}
-$$</p>
-<ul>
-<li><strong>x</strong> as the state vector,</li>
-<li><strong>A</strong> as the system matrix (square, N x N for N states),</li>
-<li><strong>B</strong> as the input matrix (N rows x 1 column for a single-input, single output (SISO) system,</li>
-<li><strong>C</strong> as the output matrix (one row x N columns for a SISO system),</li>
-<li>
-<p><strong>D</strong> as the feedforward matrix (1 x 1 for a SISO system).</p>
-</li>
-<li>
-<p><strong>(*)</strong> The poles of the transfer function are the eigenvalues of the system matrix <strong>A</strong></p>
-</li>
-</ul>
-<h3 id="matlab-code">Matlab Code</h3>
-<p><code>sys = ss(a,b,c,d)</code></p>
-<p><code>sys = ss(a,b,c,d,Ts)</code></p>
-<p><code>sys_ss = ss(sys)</code></p>
-<h2 id="matlab-functions">Matlab functions</h2>
-<h3 id="transfer-function_1">Transfer Function</h3>
-<p><code>s = tf('s')</code></p>
-<p><code>feedback(G(s), H(s))</code></p>
-<p><code>G = zpk(sys)</code></p>
-<p><code>G = zpk([1],[1],[1])</code></p>
-<h3 id="poles-and-zeros">Poles and Zeros</h3>
-<p>Find poles of a SISO or MIMO system: <code>pole(sys)</code></p>
-<p><code>pzplot(sys)</code></p>
-<h3 id="state-space_1">State Space</h3>
-<h3 id="system-analysis">System Analysis</h3>
-<p><code>linearSystemAnalyzer(G,T1,T2)</code></p>
-<p><code>step(sys)</code></p>
-<h2 id="reference">Reference</h2>
-<p>[1] http://ctms.engin.umich.edu/CTMS/index.php?example=InvertedPendulum&amp;section=ControlDigital</p>
+<h2 id="matlab-code-for-lqr">Matlab code for LQR</h2>
+<pre><code class="language-matlab">A = sys_d.a;
+B = sys_d.b;
+C = sys_d.c;
+D = sys_d.d;
+Q = C'*C            % state-cost matrix
+R = 1;              % control-cost
+[K] = dlqr(A,B,Q,R) % control gain matrix
+
+Ac = [(A-B*K)];
+Bc = [B];
+Cc = [C];
+Dc = [D];
+
+states = {'x' 'x_dot' 'phi' 'phi_dot'};
+inputs = {'r'};
+outputs = {'x'; 'phi'};
+
+sys_cl = ss(Ac,Bc,Cc,Dc,Ts,'statename',states,'inputname',inputs,'outputname',outputs);
+
+t = 0:0.01:5;
+r =0.2*ones(size(t));
+[y,t,x]=lsim(sys_cl,r,t);
+[AX,H1,H2] = plotyy(t,y(:,1),t,y(:,2),'plot');
+set(get(AX(1),'Ylabel'),'String','cart position (m)')
+set(get(AX(2),'Ylabel'),'String','pendulum angle (radians)')
+title('Step Response with Digital LQR Control')
+</code></pre>
                 
               
               
@@ -1768,7 +1588,7 @@ $$</p>
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../modelling/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -1777,19 +1597,19 @@ $$</p>
                 <span class="md-footer-nav__direction">
                   上一页
                 </span>
-                Introduction to Control
+                1.1 Modelling Overview
               </div>
             </div>
           </a>
         
         
-          <a href="../state/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../../analysis/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   下一页
                 </span>
-                State Space
+                2. Analysis
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">
@@ -1816,22 +1636,22 @@ $$</p>
       
     </div>
     
-      <script src="../../assets/javascripts/vendor.6a3d08fc.min.js"></script>
-      <script src="../../assets/javascripts/bundle.71201edf.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      <script src="../../../assets/javascripts/vendor.6a3d08fc.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.71201edf.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
       
       <script>
         app = initialize({
-          base: "../..",
+          base: "../../..",
           features: ['navigation.tabs', 'navigation.instant'],
           search: Object.assign({
-            worker: "../../assets/javascripts/worker/search.4ac00218.min.js"
+            worker: "../../../assets/javascripts/worker/search.4ac00218.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>
       
         <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
       
-        <script src="../../js/mathjaxhelper.js"></script>
+        <script src="../../../mathjaxhelper.js"></script>
       
     
   </body>
