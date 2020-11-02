@@ -2,7 +2,7 @@
 site_name: RoboWiki
 site_description: RoboWiki - 机器人维基百科
 site_author: YF Robotics Laboratory
-site_url: https://yfrobotics.github.io/robowiki-cn
+site_url: https://wiki.yfworld.com
 strict: true
 
 google_analytics:
@@ -86,6 +86,12 @@ nav:
 theme:
   name: 'material'
   language: 'zh'
+  logo: "logo.png"
+  palette:
+    primary: 'white'
+    accent: 'red'
+  include_search_page: false
+  search_index_only: true
   features:
     - navigation.tabs
     - navigation.instant
@@ -95,13 +101,16 @@ site_dir: site
 
 # Extra
 extra_javascript:
-    - https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML
-    - mathjaxhelper.js
+  - mathjaxhelper.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML
 extra_css:
-    - css/extra.css
+    - extra.css
 
 # Extensions
 markdown_extensions:
+  - admonition
   - extra
   - tables
   - fenced_code
+  - pymdownx.arithmatex
