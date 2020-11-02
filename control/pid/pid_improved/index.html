@@ -9,13 +9,13 @@
         <meta name="description" content="RoboWiki - 机器人维基百科">
       
       
-        <link rel="canonical" href="https://yfrobotics.github.io/robowiki-cn/control/pid/pid_improved/">
+        <link rel="canonical" href="https://wiki.yfworld.com/control/pid/pid_improved/">
       
       
         <meta name="author" content="YF Robotics Laboratory">
       
       <link rel="shortcut icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.0">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.2">
     
     
       
@@ -23,10 +23,14 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.bc7e593a.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.19190aaf.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab28b872.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.24b84193.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#ffffff">
         
       
     
@@ -41,7 +45,7 @@
     
     
     
-      <link rel="stylesheet" href="../../../css/extra.css">
+      <link rel="stylesheet" href="../../../extra.css">
     
     
       
@@ -59,7 +63,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="white" data-md-color-accent="red">
       
   
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -81,10 +85,9 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid" aria-label="Header">
-    <a href="https://yfrobotics.github.io/robowiki-cn" title="RoboWiki" class="md-header-nav__button md-logo" aria-label="RoboWiki">
+    <a href="https://wiki.yfworld.com" title="RoboWiki" class="md-header-nav__button md-logo" aria-label="RoboWiki">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+  <img src="../../../logo.png" alt="logo">
 
     </a>
     <label class="md-header-nav__button md-icon" for="__drawer">
@@ -297,10 +300,9 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="https://yfrobotics.github.io/robowiki-cn" title="RoboWiki" class="md-nav__button md-logo" aria-label="RoboWiki">
+    <a href="https://wiki.yfworld.com" title="RoboWiki" class="md-nav__button md-logo" aria-label="RoboWiki">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+  <img src="../../../logo.png" alt="logo">
 
     </a>
     RoboWiki
@@ -674,15 +676,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#i-term-saturation" class="md-nav__link">
-    $I$ term Saturation
+  <a href="#ii-term-saturation" class="md-nav__link">
+    II term Saturation
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#d-term-filtering" class="md-nav__link">
-    $D$ term Filtering
+  <a href="#dd-term-filtering" class="md-nav__link">
+    DD term Filtering
   </a>
   
 </li>
@@ -1676,15 +1678,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#i-term-saturation" class="md-nav__link">
-    $I$ term Saturation
+  <a href="#ii-term-saturation" class="md-nav__link">
+    II term Saturation
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#d-term-filtering" class="md-nav__link">
-    $D$ term Filtering
+  <a href="#dd-term-filtering" class="md-nav__link">
+    DD term Filtering
   </a>
   
 </li>
@@ -1770,7 +1772,7 @@ it’s designed to ensure that the user enters tuning parameters with the correc
 </ol>
 <p>In this section, I will follow his advices and rewrite my version of code to illustrate the main ideas.</p>
 <h3 id="fixed-sampling-time">Fixed Sampling Time</h3>
-<p>The first thing to make sure is the controller is called at a regular time interval. We can create a periodic control task, making use of ADC sampling interrupts, or we can use OS utilities to test if the specified sampling time has elapsed. With a fixed sampling time, we do not need to calculate the math related to $dt$ every time, and we can incorporate $dt$ into coefficients $K_i$ and $K_d$:</p>
+<p>The first thing to make sure is the controller is called at a regular time interval. We can create a periodic control task, making use of ADC sampling interrupts, or we can use OS utilities to test if the specified sampling time has elapsed. With a fixed sampling time, we do not need to calculate the math related to <span><span class="MathJax_Preview">dt</span><script type="math/tex">dt</script></span> every time, and we can incorporate <span><span class="MathJax_Preview">dt</span><script type="math/tex">dt</script></span> into coefficients <span><span class="MathJax_Preview">K_i</span><script type="math/tex">K_i</script></span> and <span><span class="MathJax_Preview">K_d</span><script type="math/tex">K_d</script></span>:</p>
 <pre><code class="language-c">/* ... */
 
 void pid_init(float kp_, float ki_, float kd_, float dt){
@@ -1790,7 +1792,7 @@ void pid_controller() {
 <h3 id="derivative-kick">Derivative Kick</h3>
 <p>Since error = set-point - input, any change in the set-point would cause an instantaneous change in error, especially for derivative as this change leads to a close-to-infinity large number. When this number is fed into the PID equation, the result will lead to an undesirable spike in the output.</p>
 <p><img alt="" src="../assets/markdown-img-paste-20170412223043418.png" /></p>
-<p>As $\dot{e} = \dot{r} - \dot{y}$, we can ignore the setpoint as constant, so $\frac{de}{dt} = -\frac{dy}{dt}$. This leads to a "Derivative on Measurement" method.</p>
+<p>As <span><span class="MathJax_Preview">\dot{e} = \dot{r} - \dot{y}</span><script type="math/tex">\dot{e} = \dot{r} - \dot{y}</script></span>, we can ignore the setpoint as constant, so <span><span class="MathJax_Preview">\frac{de}{dt} = -\frac{dy}{dt}</span><script type="math/tex">\frac{de}{dt} = -\frac{dy}{dt}</script></span>. This leads to a "Derivative on Measurement" method.</p>
 <pre><code class="language-c">/* ... */
 float y_p = 0;
 
@@ -1904,16 +1906,19 @@ void pid_setdir(int d_) {
 <h2 id="other-improvements">Other Improvements</h2>
 <h3 id="input-filtering">Input Filtering</h3>
 <p>To avoid problems of high frequency measurement noise in the derivative part, a low-pass filter is added.</p>
-<p>$$U_D(s) = \frac{K T_D s}{1 + s T_D / N}(\gamma Y_{sp}(s) - Y(s))$$</p>
-<p>$\gamma$ is for set-point weighting, which can be interpreted as feedforward from the set point.</p>
+<div>
+<div class="MathJax_Preview">U_D(s) = \frac{K T_D s}{1 + s T_D / N}(\gamma Y_{sp}(s) - Y(s))</div>
+<script type="math/tex; mode=display">U_D(s) = \frac{K T_D s}{1 + s T_D / N}(\gamma Y_{sp}(s) - Y(s))</script>
+</div>
+<p><span><span class="MathJax_Preview">\gamma</span><script type="math/tex">\gamma</script></span> is for set-point weighting, which can be interpreted as feedforward from the set point.</p>
 <h3 id="timing-compensation">Timing Compensation</h3>
 <ul>
 <li>The I and D parts are dependent on the actual interval between two control actions. If the interval is inconsistent, we need to compensate them.</li>
 </ul>
 <h3 id="feedforward">Feedforward</h3>
 <h3 id="reset-tiebacks">Reset Tiebacks</h3>
-<h3 id="i-term-saturation">$I$ term Saturation</h3>
-<h3 id="d-term-filtering">$D$ term Filtering</h3>
+<h3 id="ii-term-saturation"><span><span class="MathJax_Preview">I</span><script type="math/tex">I</script></span> term Saturation</h3>
+<h3 id="dd-term-filtering"><span><span class="MathJax_Preview">D</span><script type="math/tex">D</script></span> term Filtering</h3>
 <h3 id="error-dead-zone">Error Dead-zone</h3>
 <h3 id="output-limitation">Output Limitation</h3>
 <h3 id="dead-band">Dead band</h3>
@@ -1922,7 +1927,7 @@ void pid_setdir(int d_) {
 <h2 id="event-based-pid-2">Event-based PID [2]</h2>
 <p>Event Detector (event-trigged) -&gt; PID Controller (time-trigged)</p>
 <p>Event trig condition should have small complexity to compare with time-trigged controller:</p>
-<p>$|e(t_k) - e(t_{s}) &gt; e_{lim}|$ OR $h_{act} &gt; h_{max}$</p>
+<p><span><span class="MathJax_Preview">|e(t_k) - e(t_{s}) &gt; e_{lim}|</span><script type="math/tex">|e(t_k) - e(t_{s}) > e_{lim}|</script></span> OR <span><span class="MathJax_Preview">h_{act} &gt; h_{max}</span><script type="math/tex">h_{act} > h_{max}</script></span></p>
 <p>which implies the detector operates at the nominal sampling frequency but the PID calculation only performs when an event is detected. This algorithm, however, requires more calculations due to the fact that each time the PID coefficients need to be recalculated.</p>
 <p>It is important to filter the measurement noise properly and to set the error limit sufficiently large to avoid trigging control due to noise.</p>
 <hr />
@@ -1997,8 +2002,8 @@ void pid_setdir(int d_) {
       
     </div>
     
-      <script src="../../../assets/javascripts/vendor.6a3d08fc.min.js"></script>
-      <script src="../../../assets/javascripts/bundle.71201edf.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      <script src="../../../assets/javascripts/vendor.7e0ee788.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.c1ccee15.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
       
       <script>
         app = initialize({
@@ -2010,9 +2015,11 @@ void pid_setdir(int d_) {
         })
       </script>
       
-        <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
-      
         <script src="../../../mathjaxhelper.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
       
     
   </body>
