@@ -9,7 +9,7 @@
         <meta name="description" content="RoboWiki - 机器人维基百科">
       
       
-        <link rel="canonical" href="https://wiki.yfworld.com/opensource/">
+        <link rel="canonical" href="https://wiki.yfworld.com/how-to-contribute/">
       
       
         <meta name="author" content="YF Robotics Laboratory">
@@ -19,7 +19,7 @@
     
     
       
-        <title>如何进行开源项目贡献 - RoboWiki</title>
+        <title>如何贡献这个维基？ - RoboWiki</title>
       
     
     
@@ -45,7 +45,7 @@
     
     
     
-      <link rel="stylesheet" href="../extra.css">
+      <link rel="stylesheet" href="../_static/css/extra.css">
     
     
       
@@ -87,7 +87,7 @@
   <nav class="md-header-nav md-grid" aria-label="Header">
     <a href="https://wiki.yfworld.com" title="RoboWiki" class="md-header-nav__button md-logo" aria-label="RoboWiki">
       
-  <img src="../logo.png" alt="logo">
+  <img src="../logo-site.png" alt="logo">
 
     </a>
     <label class="md-header-nav__button md-icon" for="__drawer">
@@ -101,7 +101,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              如何进行开源项目贡献
+              如何贡献这个维基？
             
           </span>
         </div>
@@ -172,19 +172,6 @@
   
     <li class="md-tabs__item">
       
-        <a href="../begin/" class="md-tabs__link">
-          如何开始
-        </a>
-      
-    </li>
-  
-
-      
-        
-  
-  
-    <li class="md-tabs__item">
-      
         <a href="../control/" class="md-tabs__link">
           控制
         </a>
@@ -200,19 +187,6 @@
       
         <a href="../algorithm/" class="md-tabs__link">
           算法
-        </a>
-      
-    </li>
-  
-
-      
-        
-  
-  
-    <li class="md-tabs__item">
-      
-        <a href="../ml/" class="md-tabs__link">
-          机器学习
         </a>
       
     </li>
@@ -250,19 +224,6 @@
   
     <li class="md-tabs__item">
       
-        <a href="../hardware/" class="md-tabs__link">
-          硬件平台
-        </a>
-      
-    </li>
-  
-
-      
-        
-  
-  
-    <li class="md-tabs__item">
-      
         <a href="../self-driving/" class="md-tabs__link">
           自动驾驶
         </a>
@@ -276,8 +237,34 @@
   
     <li class="md-tabs__item">
       
+        <a href="../hardware/" class="md-tabs__link">
+          硬件平台
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
         <a href="../resources/" class="md-tabs__link">
           资源
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../about/" class="md-tabs__link">
+          关于
         </a>
       
     </li>
@@ -302,7 +289,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="https://wiki.yfworld.com" title="RoboWiki" class="md-nav__button md-logo" aria-label="RoboWiki">
       
-  <img src="../logo.png" alt="logo">
+  <img src="../logo-site.png" alt="logo">
 
     </a>
     RoboWiki
@@ -351,8 +338,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../contribute/" class="md-nav__link">
-      如何贡献这个维基？
+    <a href="../how-to-start/" class="md-nav__link">
+      如何入门机器人？
     </a>
   </li>
 
@@ -371,22 +358,73 @@
       
     
     
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        如何贡献这个维基？
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
     <a href="./" class="md-nav__link md-nav__link--active">
-      如何进行开源项目贡献
+      如何贡献这个维基？
     </a>
     
-  </li>
-
+      
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    贡献方法
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    环境配置与运行
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    一些细节
+  </a>
+  
+    <nav class="md-nav" aria-label="一些细节">
+      <ul class="md-nav__list">
         
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../about/" class="md-nav__link">
-      关于 云飞机器人实验室
-    </a>
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    创建新条目
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    图片的保存
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -405,49 +443,11 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
     
     <label class="md-nav__link" for="nav-2">
-      如何开始
-      <span class="md-nav__icon md-icon"></span>
-    </label>
-    <nav class="md-nav" aria-label="如何开始" data-md-level="1">
-      <label class="md-nav__title" for="nav-2">
-        <span class="md-nav__icon md-icon"></span>
-        如何开始
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../begin/" class="md-nav__link">
-      如何开始
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
-    
-    <label class="md-nav__link" for="nav-3">
       控制
       <span class="md-nav__icon md-icon"></span>
     </label>
     <nav class="md-nav" aria-label="控制" data-md-level="1">
-      <label class="md-nav__title" for="nav-3">
+      <label class="md-nav__title" for="nav-2">
         <span class="md-nav__icon md-icon"></span>
         控制
       </label>
@@ -461,7 +461,7 @@
 
   <li class="md-nav__item">
     <a href="../control/" class="md-nav__link">
-      Introduction to Control
+      控制系统指南
     </a>
   </li>
 
@@ -473,14 +473,14 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-2" type="checkbox" id="nav-3-2">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-2" type="checkbox" id="nav-2-2">
     
-    <label class="md-nav__link" for="nav-3-2">
+    <label class="md-nav__link" for="nav-2-2">
       1. Modelling
       <span class="md-nav__icon md-icon"></span>
     </label>
     <nav class="md-nav" aria-label="1. Modelling" data-md-level="2">
-      <label class="md-nav__title" for="nav-3-2">
+      <label class="md-nav__title" for="nav-2-2">
         <span class="md-nav__icon md-icon"></span>
         1. Modelling
       </label>
@@ -494,7 +494,7 @@
 
   <li class="md-nav__item">
     <a href="../control/modelling/modelling/" class="md-nav__link">
-      1.1 Modelling Overview
+      Modelling Overview
     </a>
   </li>
 
@@ -506,7 +506,7 @@
 
   <li class="md-nav__item">
     <a href="../control/modelling/state_space/" class="md-nav__link">
-      1.1 State Space
+      State Space
     </a>
   </li>
 
@@ -535,14 +535,14 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-4" type="checkbox" id="nav-3-4">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-4" type="checkbox" id="nav-2-4">
     
-    <label class="md-nav__link" for="nav-3-4">
+    <label class="md-nav__link" for="nav-2-4">
       3. PID
       <span class="md-nav__icon md-icon"></span>
     </label>
     <nav class="md-nav" aria-label="3. PID" data-md-level="2">
-      <label class="md-nav__title" for="nav-3-4">
+      <label class="md-nav__title" for="nav-2-4">
         <span class="md-nav__icon md-icon"></span>
         3. PID
       </label>
@@ -556,7 +556,7 @@
 
   <li class="md-nav__item">
     <a href="../control/pid/pid/" class="md-nav__link">
-      3.1 PID Controller
+      PID Controller
     </a>
   </li>
 
@@ -568,7 +568,7 @@
 
   <li class="md-nav__item">
     <a href="../control/pid/pid_improved/" class="md-nav__link">
-      3.2 PID Improvement Techniques
+      PID Improvement Techniques
     </a>
   </li>
 
@@ -580,7 +580,7 @@
 
   <li class="md-nav__item">
     <a href="../control/pid/pid_tuning/" class="md-nav__link">
-      3.3 PID Parameters Tuning
+      PID Parameters Tuning
     </a>
   </li>
 
@@ -614,14 +614,14 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
     
-    <label class="md-nav__link" for="nav-4">
+    <label class="md-nav__link" for="nav-3">
       算法
       <span class="md-nav__icon md-icon"></span>
     </label>
     <nav class="md-nav" aria-label="算法" data-md-level="1">
-      <label class="md-nav__title" for="nav-4">
+      <label class="md-nav__title" for="nav-3">
         <span class="md-nav__icon md-icon"></span>
         算法
       </label>
@@ -652,52 +652,14 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
     
-    <label class="md-nav__link" for="nav-5">
-      机器学习
-      <span class="md-nav__icon md-icon"></span>
-    </label>
-    <nav class="md-nav" aria-label="机器学习" data-md-level="1">
-      <label class="md-nav__title" for="nav-5">
-        <span class="md-nav__icon md-icon"></span>
-        机器学习
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../ml/" class="md-nav__link">
-      机器学习概述
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
-    
-    <label class="md-nav__link" for="nav-6">
+    <label class="md-nav__link" for="nav-4">
       机器视觉
       <span class="md-nav__icon md-icon"></span>
     </label>
     <nav class="md-nav" aria-label="机器视觉" data-md-level="1">
-      <label class="md-nav__title" for="nav-6">
+      <label class="md-nav__title" for="nav-4">
         <span class="md-nav__icon md-icon"></span>
         机器视觉
       </label>
@@ -728,14 +690,14 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
     
-    <label class="md-nav__link" for="nav-7">
+    <label class="md-nav__link" for="nav-5">
       ROS
       <span class="md-nav__icon md-icon"></span>
     </label>
     <nav class="md-nav" aria-label="ROS" data-md-level="1">
-      <label class="md-nav__title" for="nav-7">
+      <label class="md-nav__title" for="nav-5">
         <span class="md-nav__icon md-icon"></span>
         ROS
       </label>
@@ -766,14 +728,518 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
     
-    <label class="md-nav__link" for="nav-8">
+    <label class="md-nav__link" for="nav-6">
+      自动驾驶
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="自动驾驶" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        <span class="md-nav__icon md-icon"></span>
+        自动驾驶
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../self-driving/" class="md-nav__link">
+      自动驾驶技术指南
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6-2" type="checkbox" id="nav-6-2">
+    
+    <label class="md-nav__link" for="nav-6-2">
+      1. 概述
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="1. 概述" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-2">
+        <span class="md-nav__icon md-icon"></span>
+        1. 概述
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../self-driving/intro/define/" class="md-nav__link">
+      自动驾驶系统定义
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../self-driving/intro/category/" class="md-nav__link">
+      自主性等级分类
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../self-driving/intro/history/" class="md-nav__link">
+      历史起源：to C -> to B
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../self-driving/intro/future/" class="md-nav__link">
+      发展与展望：无人化智能交通
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6-3" type="checkbox" id="nav-6-3">
+    
+    <label class="md-nav__link" for="nav-6-3">
+      2. 系统
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="2. 系统" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-3">
+        <span class="md-nav__icon md-icon"></span>
+        2. 系统
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../self-driving/system/vehicle/" class="md-nav__link">
+      自动驾驶车辆
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../self-driving/system/v2x/" class="md-nav__link">
+      智能交通
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../self-driving/system/platform/" class="md-nav__link">
+      设计与仿真平台
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../self-driving/system/safety/" class="md-nav__link">
+      系统安全保障
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../self-driving/system/regulation/" class="md-nav__link">
+      政策与法律法规
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6-4" type="checkbox" id="nav-6-4">
+    
+    <label class="md-nav__link" for="nav-6-4">
+      3. 硬件
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="3. 硬件" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-4">
+        <span class="md-nav__icon md-icon"></span>
+        3. 硬件
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../self-driving/hardware/hw_overview/" class="md-nav__link">
+      硬件总览
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../self-driving/hardware/ccu/" class="md-nav__link">
+      中控单元 (AI芯片, GPGPU)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../self-driving/hardware/drive_by_wire/" class="md-nav__link">
+      Drive-by-wire
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../self-driving/hardware/communication/" class="md-nav__link">
+      车内总线
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../self-driving/hardware/sensors/" class="md-nav__link">
+      感知传感器
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../self-driving/hardware/camera/" class="md-nav__link">
+      视觉传感器
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6-5" type="checkbox" id="nav-6-5">
+    
+    <label class="md-nav__link" for="nav-6-5">
+      4. 算法
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="4. 算法" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-5">
+        <span class="md-nav__icon md-icon"></span>
+        4. 算法
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../self-driving/algorithm/sw_overview/" class="md-nav__link">
+      系统软件框架总览
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../self-driving/algorithm/image_processing/" class="md-nav__link">
+      图像识别与分割
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../self-driving/algorithm/laser_processing/" class="md-nav__link">
+      激光点云数据处理
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../self-driving/algorithm/localisation/" class="md-nav__link">
+      地图与定位
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../self-driving/algorithm/path_planning/" class="md-nav__link">
+      路径规划
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../self-driving/algorithm/decision_making/" class="md-nav__link">
+      决策 (Decision Making Process)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../self-driving/algorithm/nlp/" class="md-nav__link">
+      自然语言识别与交互
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6-6" type="checkbox" id="nav-6-6">
+    
+    <label class="md-nav__link" for="nav-6-6">
+      5. 实例
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="5. 实例" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-6">
+        <span class="md-nav__icon md-icon"></span>
+        5. 实例
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../self-driving/casestudy/uber/" class="md-nav__link">
+      Uber
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../self-driving/casestudy/tesla/" class="md-nav__link">
+      Tesla
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../self-driving/casestudy/waymo/" class="md-nav__link">
+      Waymo
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../self-driving/casestudy/apollo/" class="md-nav__link">
+      百度无人驾驶
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../self-driving/casestudy/uisee/" class="md-nav__link">
+      驭势科技
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../self-driving/casestudy/tusimple/" class="md-nav__link">
+      图森未来
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
       硬件平台
       <span class="md-nav__icon md-icon"></span>
     </label>
     <nav class="md-nav" aria-label="硬件平台" data-md-level="1">
-      <label class="md-nav__title" for="nav-8">
+      <label class="md-nav__title" for="nav-7">
         <span class="md-nav__icon md-icon"></span>
         硬件平台
       </label>
@@ -787,7 +1253,7 @@
 
   <li class="md-nav__item">
     <a href="../hardware/" class="md-nav__link">
-      机器人硬件
+      机器人硬件平台
     </a>
   </li>
 
@@ -840,518 +1306,14 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
     
-    <label class="md-nav__link" for="nav-9">
-      自动驾驶
-      <span class="md-nav__icon md-icon"></span>
-    </label>
-    <nav class="md-nav" aria-label="自动驾驶" data-md-level="1">
-      <label class="md-nav__title" for="nav-9">
-        <span class="md-nav__icon md-icon"></span>
-        自动驾驶
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../self-driving/" class="md-nav__link">
-      自动驾驶技术指南
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-9-2" type="checkbox" id="nav-9-2">
-    
-    <label class="md-nav__link" for="nav-9-2">
-      1. 概述
-      <span class="md-nav__icon md-icon"></span>
-    </label>
-    <nav class="md-nav" aria-label="1. 概述" data-md-level="2">
-      <label class="md-nav__title" for="nav-9-2">
-        <span class="md-nav__icon md-icon"></span>
-        1. 概述
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../self-driving/intro/define/" class="md-nav__link">
-      1.1 自动驾驶系统定义
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../self-driving/intro/category/" class="md-nav__link">
-      1.2 自主性等级分类
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../self-driving/intro/history/" class="md-nav__link">
-      1.3 历史起源：to C -> to B
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../self-driving/intro/future/" class="md-nav__link">
-      1.4 发展与展望：无人化智能交通
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-9-3" type="checkbox" id="nav-9-3">
-    
-    <label class="md-nav__link" for="nav-9-3">
-      2. 系统
-      <span class="md-nav__icon md-icon"></span>
-    </label>
-    <nav class="md-nav" aria-label="2. 系统" data-md-level="2">
-      <label class="md-nav__title" for="nav-9-3">
-        <span class="md-nav__icon md-icon"></span>
-        2. 系统
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../self-driving/system/vehicle/" class="md-nav__link">
-      2.1 自动驾驶车辆
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../self-driving/system/v2x/" class="md-nav__link">
-      2.2 智能交通
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../self-driving/system/platform/" class="md-nav__link">
-      2.3 设计与仿真平台
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../self-driving/system/safety/" class="md-nav__link">
-      2.4 系统安全保障
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../self-driving/system/regulation/" class="md-nav__link">
-      2.5 政策与法律法规
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-9-4" type="checkbox" id="nav-9-4">
-    
-    <label class="md-nav__link" for="nav-9-4">
-      3. 硬件
-      <span class="md-nav__icon md-icon"></span>
-    </label>
-    <nav class="md-nav" aria-label="3. 硬件" data-md-level="2">
-      <label class="md-nav__title" for="nav-9-4">
-        <span class="md-nav__icon md-icon"></span>
-        3. 硬件
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../self-driving/hardware/hw_overview/" class="md-nav__link">
-      3.1 硬件总览
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../self-driving/hardware/ccu/" class="md-nav__link">
-      3.2 中控单元 (AI芯片, GPGPU)
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../self-driving/hardware/drive_by_wire/" class="md-nav__link">
-      3.3 Drive-by-wire
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../self-driving/hardware/communication/" class="md-nav__link">
-      3.4 车内总线
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../self-driving/hardware/sensors/" class="md-nav__link">
-      3.5 感知传感器
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../self-driving/hardware/camera/" class="md-nav__link">
-      3.6 视觉传感器
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-9-5" type="checkbox" id="nav-9-5">
-    
-    <label class="md-nav__link" for="nav-9-5">
-      4. 算法
-      <span class="md-nav__icon md-icon"></span>
-    </label>
-    <nav class="md-nav" aria-label="4. 算法" data-md-level="2">
-      <label class="md-nav__title" for="nav-9-5">
-        <span class="md-nav__icon md-icon"></span>
-        4. 算法
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../self-driving/algorithm/sw_overview/" class="md-nav__link">
-      4.1 系统软件框架总览
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../self-driving/algorithm/image_processing/" class="md-nav__link">
-      4.2 图像识别与分割
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../self-driving/algorithm/laser_processing/" class="md-nav__link">
-      4.3 激光点云数据处理
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../self-driving/algorithm/localisation/" class="md-nav__link">
-      4.4 地图与定位
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../self-driving/algorithm/path_planning/" class="md-nav__link">
-      4.5 路径规划
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../self-driving/algorithm/decision_making/" class="md-nav__link">
-      4.6 决策 (Decision Making Process)
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../self-driving/algorithm/nlp/" class="md-nav__link">
-      4.7 自然语言识别与交互
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-9-6" type="checkbox" id="nav-9-6">
-    
-    <label class="md-nav__link" for="nav-9-6">
-      5. 实例
-      <span class="md-nav__icon md-icon"></span>
-    </label>
-    <nav class="md-nav" aria-label="5. 实例" data-md-level="2">
-      <label class="md-nav__title" for="nav-9-6">
-        <span class="md-nav__icon md-icon"></span>
-        5. 实例
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../self-driving/casestudy/uber/" class="md-nav__link">
-      5.1 Uber
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../self-driving/casestudy/tesla/" class="md-nav__link">
-      5.2 Tesla
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../self-driving/casestudy/waymo/" class="md-nav__link">
-      5.3 Waymo
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../self-driving/casestudy/apollo/" class="md-nav__link">
-      5.4 百度无人驾驶
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../self-driving/casestudy/uisee/" class="md-nav__link">
-      5.5 驭势科技
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../self-driving/casestudy/tusimple/" class="md-nav__link">
-      5.6 图森未来
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10">
-    
-    <label class="md-nav__link" for="nav-10">
+    <label class="md-nav__link" for="nav-8">
       资源
       <span class="md-nav__icon md-icon"></span>
     </label>
     <nav class="md-nav" aria-label="资源" data-md-level="1">
-      <label class="md-nav__title" for="nav-10">
+      <label class="md-nav__title" for="nav-8">
         <span class="md-nav__icon md-icon"></span>
         资源
       </label>
@@ -1399,6 +1361,44 @@
   </li>
 
     
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
+    
+    <label class="md-nav__link" for="nav-9">
+      关于
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="关于" data-md-level="1">
+      <label class="md-nav__title" for="nav-9">
+        <span class="md-nav__icon md-icon"></span>
+        关于
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../about/" class="md-nav__link">
+      关于 云飞机器人实验室
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
   </ul>
 </nav>
                   </div>
@@ -1416,6 +1416,55 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    贡献方法
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    环境配置与运行
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    一些细节
+  </a>
+  
+    <nav class="md-nav" aria-label="一些细节">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    创建新条目
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    图片的保存
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1427,8 +1476,23 @@
               
                 
                 
-                <h1 id="_1">如何进行开源项目贡献</h1>
-<p>(待完善)</p>
+                <h1 id="_1">如何贡献这个维基？</h1>
+<h2 id="_2">贡献方法</h2>
+<p><a href="https://github.com/yfrobotics/robowiki">项目GitHub地址</a></p>
+<ul>
+<li>通过提交代码：git clone -&gt; change -&gt; push &amp; pull request</li>
+<li>通过创建issue：<a href="https://github.com/yfrobotics/robowiki/issues">Create a new issue</a></li>
+</ul>
+<h2 id="_3">环境配置与运行</h2>
+<p><code>sudo python3 -m pip install -r "requirements.txt"</code></p>
+<p><code>mkdocs --version</code></p>
+<p><code>mkdocs serve</code></p>
+<p>打开浏览器，访问：<code>localhost:8000</code></p>
+<h2 id="_4">一些细节</h2>
+<h3 id="_5">创建新条目</h3>
+<p>如果你的修改涉及新增条目，你需要同时在<code>mkdocs.yml</code>中修改导航目录。</p>
+<h3 id="_6">图片的保存</h3>
+<p>图片保存在对应子目录下的<code>assets</code>目录中，使用Github作为图床。</p>
                 
               
               
@@ -1447,7 +1511,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../contribute/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../how-to-start/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -1456,19 +1520,19 @@
                 <span class="md-footer-nav__direction">
                   上一页
                 </span>
-                如何贡献这个维基？
+                如何入门机器人？
               </div>
             </div>
           </a>
         
         
-          <a href="../about/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../control/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   下一页
                 </span>
-                关于 云飞机器人实验室
+                控制系统指南
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">
@@ -1508,7 +1572,7 @@
         })
       </script>
       
-        <script src="../mathjaxhelper.js"></script>
+        <script src="../_static/js/mathjaxhelper.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
