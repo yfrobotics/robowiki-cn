@@ -1,3 +1,3 @@
-# 3.3 PID Parameters Tuning
+# PID Parameters Tuning
 - Ziegler-Nichols Tuning
 - Reaction Curve Tuning

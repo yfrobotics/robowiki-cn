@@ -1,4 +1,4 @@
-# 3.1 PID Controller
+# PID Controller
 ## Formula
 $$ u(t) = K_p e(t) + K_i \int^t_0 e(\tau) d\tau + K_d \frac{de(t)}{dt}$$
 

@@ -46,11 +46,6 @@ RoboWiki是由[云飞机器人实验室](http://www.yfworld.com)发起的机器�
 - [automaticdai](https://github.com/automaticdai) - 戴晓天
 - [xinyu-xu-dev](https://github.com/xinyu-xu-dev) - Xinyu Xu
 
-## 赞助者名单
-
-n/a
-
-
 
 ## 版权申明
 

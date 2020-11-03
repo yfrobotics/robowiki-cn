@@ -1,4 +1,4 @@
-# 1.1 Modelling Overview
+# Modelling Overview
 
 A system can be described as one of the followings:
 

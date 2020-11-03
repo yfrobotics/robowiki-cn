@@ -34,11 +34,6 @@ RoboWiki是由[云飞机器人实验室](http://www.yfworld.com)发起的机器�
 - [xinyu-xu-dev](https://github.com/xinyu-xu-dev) - Xinyu Xu
 
 
-## 赞助者名单
-
-n/a
-
-
 ## 版权申明
 
 本项目遵循CC 4.0-BY-NC-SA（创作共用-署名-非商业性-相同方式共享）协议，详见[条款](https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.zh-Hans)。

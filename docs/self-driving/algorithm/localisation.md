@@ -1,4 +1,4 @@
-# 4.4 地图与定位
+# 地图与定位
 
 ## Map Representation
 - **metric**: The metric framework is the most common for humans and considers a two-dimensional space in which it places the objects. The objects are placed with precise coordinates. This representation is very useful, but is **sensitive to noise** and it is **difficult to calculate the distances precisely**.

@@ -1,4 +1,4 @@
-# 4.5 路径规划
+# 路径规划
 Q: 路径规划解决了什么问题？
 
 A: 上层：routing路径规划问题（同地图导航），map + location + destination；下层：motion planning在已知周围环境数据的前提下，提供机器人行动路径Trajectory + timestamp 的最优解。可转换成constrained optimization problem.

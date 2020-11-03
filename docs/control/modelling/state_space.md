@@ -1,4 +1,4 @@
-# 1.1 State Space
+# State Space
 
 
 State space model is in time domain and can describe both SISO and MIMO systems.

@@ -13,35 +13,25 @@ google_analytics:
 nav:
     - 首页: 
       - index.md
-      - contribute.md
-      - opensource.md
-      - about.md
-    - 如何开始:
-      - begin/index.md
+      - how-to-start.md
+      - how-to-contribute.md
     - 控制:
       - control/index.md
       - 1. Modelling:
         - control/modelling/modelling.md
         - control/modelling/state_space.md
-      - control/analysis.md
+      - 2. Analysis: control/analysis.md
       - 3. PID:
         - control/pid/pid.md
         - control/pid/pid_improved.md
         - control/pid/pid_tuning.md
-      - control/mpc.md
+      - 4. MPC: control/mpc.md
     - 算法:
       - algorithm/index.md
-    - 机器学习:
-      - ml/index.md
     - 机器视觉:
       - cv/index.md
     - ROS:
       - ros/index.md
-    - 硬件平台:
-      - hardware.md
-      - arduino/index.md
-      - raspberrypi/index.md
-      - jetson/index.md
     - 自动驾驶:
       - self-driving/index.md
       - '1. 概述':
@@ -77,16 +67,23 @@ nav:
         - self-driving/casestudy/apollo.md
         - self-driving/casestudy/uisee.md
         - self-driving/casestudy/tusimple.md
+    - 硬件平台:
+      - hardware.md
+      - arduino/index.md
+      - raspberrypi/index.md
+      - jetson/index.md
     - 资源:
       - resources/index.md
       - resources/conferences.md
       - resources/standard.md
+    - 关于: 
+      - about.md
 
 # Theme
 theme:
   name: 'material'
   language: 'zh'
-  logo: "logo.png"
+  logo: "logo-site.png"
   palette:
     primary: 'white'
     accent: 'red'
@@ -101,11 +98,11 @@ site_dir: site
 
 # Extra
 extra_javascript:
-  - mathjaxhelper.js
+  - _static/js/mathjaxhelper.js
   - https://polyfill.io/v3/polyfill.min.js?features=es6
   - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML
 extra_css:
-    - extra.css
+    - _static/css/extra.css
 
 # Extensions
 markdown_extensions:

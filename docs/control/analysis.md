@@ -1,10 +1,10 @@
-# 2. Analysis
-## 2.1 Frequency Domain Analysis
+# Analysis
+## Frequency Domain Analysis
 
 - Gain margin
 - Phase margin
 
-## 2.2 Time Domain Analysis
+## Time Domain Analysis
 
 - Rising Time
 - Peak Time

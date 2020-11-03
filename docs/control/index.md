@@ -1,4 +1,5 @@
-# Introduction to Control
+# 控制系统指南
+
 ![](assets/markdown-img-paste-20170412214456853.png)
 
 本页面目前只有英文版，由我(automaticdai)早期整理而成。我会逐步更换为中文资料，同时欢迎[贡献该条目](/contribute)。
