@@ -1,0 +1,2000 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="RoboWiki - 机器人维基百科">
+      
+      
+        <link rel="canonical" href="https://wiki.yfworld.com/cv/faster-rcnn/">
+      
+      
+        <meta name="author" content="YF Robotics Laboratory">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.2">
+    
+    
+      
+        <title>Faster R-CNN - RoboWiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.19190aaf.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.24b84193.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#ffffff">
+        
+      
+    
+    
+    
+      
+        
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../_static/css/extra.css">
+    
+    
+      
+        
+<script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-60989638-5","auto"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}),document.addEventListener("DOMContentSwitch",function(){ga("send","pageview",document.location.pathname)})</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="white" data-md-color-accent="red">
+      
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#faster-r-cnn" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="https://wiki.yfworld.com" title="RoboWiki" class="md-header-nav__button md-logo" aria-label="RoboWiki">
+      
+  <img src="../../logo-site.png" alt="logo">
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            RoboWiki
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Faster R-CNN
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+
+  
+
+<nav class="md-tabs md-tabs--active" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../.." class="md-tabs__link">
+          首页
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../control/" class="md-tabs__link">
+          控制
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../algorithm/" class="md-tabs__link">
+          算法
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../self-driving/" class="md-tabs__link">
+          自动驾驶
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../" class="md-tabs__link md-tabs__link--active">
+          机器视觉
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../ros/" class="md-tabs__link">
+          ROS
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../hardware/" class="md-tabs__link">
+          硬件平台
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../resources/" class="md-tabs__link">
+          资源
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../about/" class="md-tabs__link">
+          关于
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://wiki.yfworld.com" title="RoboWiki" class="md-nav__button md-logo" aria-label="RoboWiki">
+      
+  <img src="../../logo-site.png" alt="logo">
+
+    </a>
+    RoboWiki
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1">
+    
+    <label class="md-nav__link" for="nav-1">
+      首页
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="首页" data-md-level="1">
+      <label class="md-nav__title" for="nav-1">
+        <span class="md-nav__icon md-icon"></span>
+        首页
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../.." class="md-nav__link">
+      机器人维基百科 (RoboWiki)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../how-to-start/" class="md-nav__link">
+      如何入门机器人？
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../how-to-contribute/" class="md-nav__link">
+      如何贡献这个维基？
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      控制
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="控制" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon"></span>
+        控制
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../control/" class="md-nav__link">
+      控制系统指南
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-2" type="checkbox" id="nav-2-2">
+    
+    <label class="md-nav__link" for="nav-2-2">
+      1. Modelling
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="1. Modelling" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-2">
+        <span class="md-nav__icon md-icon"></span>
+        1. Modelling
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../control/modelling/modelling/" class="md-nav__link">
+      Modelling Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../control/modelling/state_space/" class="md-nav__link">
+      State Space
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../control/analysis/" class="md-nav__link">
+      2. Analysis
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-4" type="checkbox" id="nav-2-4">
+    
+    <label class="md-nav__link" for="nav-2-4">
+      3. PID
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="3. PID" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-4">
+        <span class="md-nav__icon md-icon"></span>
+        3. PID
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../control/pid/pid/" class="md-nav__link">
+      PID Controller
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../control/pid/pid_improved/" class="md-nav__link">
+      PID Improvement Techniques
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../control/pid/pid_tuning/" class="md-nav__link">
+      PID Parameters Tuning
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../control/mpc/" class="md-nav__link">
+      4. MPC
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      算法
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="算法" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon"></span>
+        算法
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../algorithm/" class="md-nav__link">
+      机器人算法
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      自动驾驶
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="自动驾驶" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon"></span>
+        自动驾驶
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../self-driving/" class="md-nav__link">
+      自动驾驶技术指南
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-2" type="checkbox" id="nav-4-2">
+    
+    <label class="md-nav__link" for="nav-4-2">
+      1. 概述
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="1. 概述" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-2">
+        <span class="md-nav__icon md-icon"></span>
+        1. 概述
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../self-driving/intro/define/" class="md-nav__link">
+      自动驾驶系统定义
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../self-driving/intro/category/" class="md-nav__link">
+      自主性等级分类
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../self-driving/intro/history/" class="md-nav__link">
+      历史起源：to C -> to B
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../self-driving/intro/future/" class="md-nav__link">
+      发展与展望：无人化智能交通
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-3" type="checkbox" id="nav-4-3">
+    
+    <label class="md-nav__link" for="nav-4-3">
+      2. 系统
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="2. 系统" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-3">
+        <span class="md-nav__icon md-icon"></span>
+        2. 系统
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../self-driving/system/vehicle/" class="md-nav__link">
+      自动驾驶车辆
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../self-driving/system/v2x/" class="md-nav__link">
+      智能交通
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../self-driving/system/platform/" class="md-nav__link">
+      设计与仿真平台
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../self-driving/system/safety/" class="md-nav__link">
+      系统安全保障
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../self-driving/system/regulation/" class="md-nav__link">
+      政策与法律法规
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-4" type="checkbox" id="nav-4-4">
+    
+    <label class="md-nav__link" for="nav-4-4">
+      3. 硬件
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="3. 硬件" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-4">
+        <span class="md-nav__icon md-icon"></span>
+        3. 硬件
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../self-driving/hardware/hw_overview/" class="md-nav__link">
+      硬件总览
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../self-driving/hardware/ccu/" class="md-nav__link">
+      中控单元 (AI芯片, GPGPU)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../self-driving/hardware/drive_by_wire/" class="md-nav__link">
+      Drive-by-wire
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../self-driving/hardware/communication/" class="md-nav__link">
+      车内总线
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../self-driving/hardware/sensors/" class="md-nav__link">
+      感知传感器
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../self-driving/hardware/camera/" class="md-nav__link">
+      视觉传感器
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-5" type="checkbox" id="nav-4-5">
+    
+    <label class="md-nav__link" for="nav-4-5">
+      4. 算法
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="4. 算法" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-5">
+        <span class="md-nav__icon md-icon"></span>
+        4. 算法
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../self-driving/algorithm/sw_overview/" class="md-nav__link">
+      系统软件框架总览
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../self-driving/algorithm/image_processing/" class="md-nav__link">
+      图像识别与分割
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../self-driving/algorithm/laser_processing/" class="md-nav__link">
+      激光点云数据处理
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../self-driving/algorithm/localisation/" class="md-nav__link">
+      地图与定位
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../self-driving/algorithm/path_planning/" class="md-nav__link">
+      路径规划
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../self-driving/algorithm/decision_making/" class="md-nav__link">
+      决策 (Decision Making Process)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../self-driving/algorithm/nlp/" class="md-nav__link">
+      自然语言识别与交互
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-6" type="checkbox" id="nav-4-6">
+    
+    <label class="md-nav__link" for="nav-4-6">
+      5. 实例
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="5. 实例" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-6">
+        <span class="md-nav__icon md-icon"></span>
+        5. 实例
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../self-driving/casestudy/uber/" class="md-nav__link">
+      Uber
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../self-driving/casestudy/tesla/" class="md-nav__link">
+      Tesla
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../self-driving/casestudy/waymo/" class="md-nav__link">
+      Waymo
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../self-driving/casestudy/apollo/" class="md-nav__link">
+      百度无人驾驶
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../self-driving/casestudy/uisee/" class="md-nav__link">
+      驭势科技
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../self-driving/casestudy/tusimple/" class="md-nav__link">
+      图森未来
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" checked>
+    
+    <label class="md-nav__link" for="nav-5">
+      机器视觉
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="机器视觉" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        <span class="md-nav__icon md-icon"></span>
+        机器视觉
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../" class="md-nav__link">
+      机器视觉概述
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Faster R-CNN
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" class="md-nav__link md-nav__link--active">
+      Faster R-CNN
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-input" class="md-nav__link">
+    1. Input
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-feature-extraction" class="md-nav__link">
+    2. Feature Extraction
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Feature Extraction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-fpn" class="md-nav__link">
+    2.1 FPN
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-region-proposal-network" class="md-nav__link">
+    3 Region Proposal Network
+  </a>
+  
+    <nav class="md-nav" aria-label="3 Region Proposal Network">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-anchors" class="md-nav__link">
+    3.1 Anchors
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-rpn" class="md-nav__link">
+    3.2 RPN
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-bounding-box-regression" class="md-nav__link">
+    3.3 Bounding Box Regression
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-training-rpn" class="md-nav__link">
+    3.4 Training RPN
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35-nms" class="md-nav__link">
+    3.5 NMS
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    4. 推荐阅读
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      ROS
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="ROS" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        <span class="md-nav__icon md-icon"></span>
+        ROS
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ros/" class="md-nav__link">
+      Robot Operating System (ROS)
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      硬件平台
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="硬件平台" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        <span class="md-nav__icon md-icon"></span>
+        硬件平台
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../hardware/" class="md-nav__link">
+      机器人硬件平台
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../arduino/" class="md-nav__link">
+      Arduino
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../raspberrypi/" class="md-nav__link">
+      Raspberry Pi
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../jetson/" class="md-nav__link">
+      Nvidia Jetson
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+    
+    <label class="md-nav__link" for="nav-8">
+      资源
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="资源" data-md-level="1">
+      <label class="md-nav__title" for="nav-8">
+        <span class="md-nav__icon md-icon"></span>
+        资源
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../resources/" class="md-nav__link">
+      机器人资源
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../resources/conferences/" class="md-nav__link">
+      机器人会议与期刊列表
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../resources/standard/" class="md-nav__link">
+      机器人领域行业标准
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
+    
+    <label class="md-nav__link" for="nav-9">
+      关于
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="关于" data-md-level="1">
+      <label class="md-nav__title" for="nav-9">
+        <span class="md-nav__icon md-icon"></span>
+        关于
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../about/" class="md-nav__link">
+      关于 云飞机器人实验室
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-input" class="md-nav__link">
+    1. Input
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-feature-extraction" class="md-nav__link">
+    2. Feature Extraction
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Feature Extraction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-fpn" class="md-nav__link">
+    2.1 FPN
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-region-proposal-network" class="md-nav__link">
+    3 Region Proposal Network
+  </a>
+  
+    <nav class="md-nav" aria-label="3 Region Proposal Network">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-anchors" class="md-nav__link">
+    3.1 Anchors
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-rpn" class="md-nav__link">
+    3.2 RPN
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-bounding-box-regression" class="md-nav__link">
+    3.3 Bounding Box Regression
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-training-rpn" class="md-nav__link">
+    3.4 Training RPN
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35-nms" class="md-nav__link">
+    3.5 NMS
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    4. 推荐阅读
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="faster-r-cnn">Faster R-CNN</h1>
+<p><img alt="" src="../assets/Faster-RCNN.jupyter_1_1.png" /></p>
+<p>Faster R-CNN将Fast R-CNN中的Selective Search换成了Region Proposal Network，这样位置网络就和分类网络结合起来，<strong>于是CNN提取的特征feature maps被两者共用</strong>，不仅极大加快了速度，还提升了精度（两者会互相促进）。</p>
+<p><img alt="" src="../assets/Faster-RCNN.jupyter_2_1.png" /></p>
+<p>Faster R-CNN的训练过程：</p>
+<ol>
+<li>提取图片features</li>
+<li>创建目标anchors</li>
+<li>RPN网络输出这些anchors的locations和objectness分数</li>
+<li>取locations和objectness分数最好的前N个anchors，又称为proposal layer</li>
+<li>将这N个anchors输入网络，取得更精确的locations得分和classification得分</li>
+<li>计算步骤3中的<code>rpn_cls_loss</code>和<code>rpn_reg_loss</code></li>
+<li>精算步骤5中的<code>roi_cls_loss</code>和<code>roi_reg_loss</code></li>
+</ol>
+<h2 id="1-input">1. Input</h2>
+<p>我们用PyTorch官方实现的Faster R-CNN网络来学习，论文中使用提取features的backbone网络是VGG，PyTorch优化使用了ResNet-50并结合了FPN，我们先看下第一层<code>transform</code>：</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># get the pretrained model from torchvision.models</span>
+<span class="c1"># Note: pretrained=True will get the pretrained weights for the model.</span>
+<span class="c1"># model.eval() to use the model for inference</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">torchvision</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">detection</span><span class="o">.</span><span class="n">fasterrcnn_resnet50_fpn</span><span class="p">(</span><span class="n">pretrained</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">model</span><span class="o">.</span><span class="n">eval</span><span class="p">()</span>
+
+<span class="nb">list</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">_modules</span><span class="o">.</span><span class="n">items</span><span class="p">())[</span><span class="mi">0</span><span class="p">]</span>
+</code></pre></div>
+<p>可以看出先对数据做了归一化<code>Normalize</code>，然后调整图片大小（等比缩放），在保证最长边不超过<code>1333</code>情况下，最短边缩放到<code>800</code>：</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">resize</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">min_size</span><span class="o">=</span><span class="mi">800</span><span class="p">,</span> <span class="n">max_size</span><span class="o">=</span><span class="mi">1333</span><span class="p">):</span>
+    <span class="n">im_shape</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span><span class="n">image</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">:])</span>
+    <span class="n">min_s</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">im_shape</span><span class="p">))</span>
+    <span class="n">max_s</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">im_shape</span><span class="p">))</span>
+    <span class="n">scale_factor</span> <span class="o">=</span> <span class="n">min_size</span> <span class="o">/</span> <span class="n">min_s</span>
+    <span class="k">if</span> <span class="n">max_s</span> <span class="o">*</span> <span class="n">scale_factor</span> <span class="o">&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="n">max_size</span><span class="p">:</span>
+        <span class="n">scale_factor</span> <span class="o">=</span> <span class="n">max_size</span> <span class="o">/</span> <span class="n">max_s</span>
+
+    <span class="k">return</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">functional</span><span class="o">.</span><span class="n">interpolate</span><span class="p">(</span>
+        <span class="n">image</span><span class="p">[</span><span class="kc">None</span><span class="p">],</span> <span class="n">scale_factor</span><span class="o">=</span><span class="n">scale_factor</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;bilinear&#39;</span><span class="p">,</span> <span class="n">recompute_scale_factor</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">align_corners</span><span class="o">=</span><span class="kc">False</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
+
+
+<span class="n">image</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">300</span><span class="p">)</span>  <span class="c1"># get some dummy image</span>
+<span class="n">resize</span><span class="p">(</span><span class="n">image</span><span class="p">)</span><span class="o">.</span><span class="n">shape</span>
+</code></pre></div>
+<p>保证输入图片最长边不超过<code>1333</code>，避免内存爆炸：</p>
+<div class="highlight"><pre><span></span><code><span class="n">image</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3000</span><span class="p">,</span> <span class="mi">1300</span><span class="p">)</span>  <span class="c1"># get some dummy image</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">resize</span><span class="p">(</span><span class="n">image</span><span class="p">)</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+
+<span class="k">del</span> <span class="n">image</span><span class="p">,</span> <span class="n">model</span>
+</code></pre></div>
+<h2 id="2-feature-extraction">2. Feature Extraction</h2>
+<p>Faster R-CNN网络主要有三个部分，如下图所示，分别为<code>feature extraction</code>、<code>region proposal</code>和<code>predication</code>：</p>
+<p><img alt="" src="../assets/Faster-RCNN.jupyter_3.png" /></p>
+<h3 id="21-fpn">2.1 FPN</h3>
+<p>注意上图论文中的<code>feature extraction</code>使用的backbone是VGG，PyTorch官方版本使用了带FPN的ResNet-50。如下图所示，ResNet-50四个阶段的features都被使用了。低层的特征语义信息比较少，但是目标位置准确；高层的特征语义信息比较丰富，但是目标位置比较粗略。将低层的特征和高层的特征融合起来，有利于网络性能。另外目标框会随着features减小而减小，这样在被缩小了32倍的最后一层features上，小目标就会变得非常小，难以被检测出来，<strong>于是融合后不同尺度的特征负责检测不同大小的物体</strong>。</p>
+<p><img alt="" src="../assets/Faster-RCNN.jupyter_4.png" /></p>
+<p>如图所示，高层的特征会被放大2倍后，加上经过1x1卷积的底层特征，下面是结合了FPN的ResNet-50的输出：</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">torchvision.models.detection.backbone_utils</span> <span class="kn">import</span> <span class="n">resnet_fpn_backbone</span>
+<span class="n">backbone</span> <span class="o">=</span> <span class="n">resnet_fpn_backbone</span><span class="p">(</span><span class="s1">&#39;resnet50&#39;</span><span class="p">,</span> <span class="n">pretrained</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">800</span><span class="p">,</span> <span class="mi">800</span><span class="p">)</span>  <span class="c1"># get some dummy image</span>
+<span class="n">output</span> <span class="o">=</span> <span class="n">backbone</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">output</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;features&#39;</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+
+<span class="k">del</span> <span class="n">x</span><span class="p">,</span> <span class="n">output</span><span class="p">,</span> <span class="n">backbone</span>
+</code></pre></div>
+<p><code>features 0/1/2/3</code>分别对应图中的<code>P2/3/4/5</code>，接下来就需要在这些features上预测原图中的物体。</p>
+<h2 id="3-region-proposal-network">3 Region Proposal Network</h2>
+<p><img alt="" src="../assets/Faster-RCNN.jupyter_5.png" /></p>
+<p>如上图所示，假设backbone的<code>stride=4</code>或者说原图Image被down sample了4倍，由于多次卷积操作，<code>feature_map</code>中一个cell的感受野要远大于左边的一个grid，甚至能达到整幅图的区域。上文中带FPN的ResNet-50提供了4种尺寸的feature maps，我们可以用这些feature maps中的cells来预测原图中的物体。</p>
+<h3 id="31-anchors">3.1 Anchors</h3>
+<p>因为物体的形状和大小各种各样，所以一个cell需要能够预测形状和大小不同的物体（物体中心靠近cell中心）。如果直接让网络学习各种不确定的目标框会很难，所以我们对这些cells预先设置了一些anchors，让cells基于这些anchors预测大小和位置的偏移量。</p>
+<p>设anchors的大小为<span><span class="MathJax_Preview">s</span><script type="math/tex">s</script></span>，宽高比为<span><span class="MathJax_Preview">r&gt;0</span><script type="math/tex">r&gt;0</script></span>，那么anchors的宽和高分别为<span><span class="MathJax_Preview">s/\sqrt{r}</span><script type="math/tex">s/\sqrt{r}</script></span>和<span><span class="MathJax_Preview">s\sqrt{r}</span><script type="math/tex">s\sqrt{r}</script></span>。如果<span><span class="MathJax_Preview">r</span><script type="math/tex">r</script></span>有3种，<span><span class="MathJax_Preview">s</span><script type="math/tex">s</script></span>有2种，那么组合起来能得到6种框：</p>
+<div class="highlight"><pre><span></span><code><span class="n">ratio</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+<span class="n">scale</span> <span class="o">=</span> <span class="p">[</span><span class="mf">16.</span><span class="p">,</span> <span class="mf">32.</span><span class="p">]</span>
+
+<span class="c1"># [width, height]</span>
+<span class="n">anchors</span> <span class="o">=</span> <span class="p">[[</span><span class="n">s</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">r</span><span class="p">),</span> <span class="n">s</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">r</span><span class="p">)]</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">scale</span>
+                                          <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">ratio</span><span class="p">]</span>
+
+<span class="n">np</span><span class="o">.</span><span class="n">around</span><span class="p">(</span><span class="n">anchors</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</code></pre></div>
+<p>假设图像大小为<span><span class="MathJax_Preview">64\times 64</span><script type="math/tex">64\times 64</script></span>，我们看下上面6种anchors画在中心的样子：</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">matplotlib.patches</span> <span class="kn">import</span> <span class="n">Rectangle</span>
+
+
+<span class="k">def</span> <span class="nf">plot_init_grid</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">w</span><span class="o">=</span><span class="mi">416</span><span class="p">,</span> <span class="n">h</span><span class="o">=</span><span class="mi">416</span><span class="p">,</span> <span class="n">grid</span><span class="o">=</span><span class="mi">13</span><span class="p">):</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">w</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">w</span><span class="o">/</span><span class="n">grid</span><span class="p">))</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">h</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">h</span><span class="o">/</span><span class="n">grid</span><span class="p">))</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">tick_top</span><span class="p">()</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="n">w</span><span class="p">])</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="n">h</span><span class="p">])</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">invert_yaxis</span><span class="p">()</span>
+
+
+<span class="k">def</span> <span class="nf">plot_anchors</span><span class="p">(</span><span class="n">cx</span><span class="p">,</span> <span class="n">cy</span><span class="p">,</span> <span class="n">anchors</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">w</span><span class="p">,</span> <span class="n">h</span> <span class="ow">in</span> <span class="n">anchors</span><span class="p">:</span>
+        <span class="n">xy</span> <span class="o">=</span> <span class="p">(</span><span class="n">cx</span><span class="o">-</span><span class="n">w</span><span class="o">/</span><span class="mf">2.</span><span class="p">,</span> <span class="n">cy</span><span class="o">-</span><span class="n">h</span><span class="o">/</span><span class="mf">2.</span><span class="p">)</span>
+        <span class="n">rect</span> <span class="o">=</span> <span class="n">Rectangle</span><span class="p">(</span><span class="n">xy</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-.&#39;</span><span class="p">,</span>
+                         <span class="n">edgecolor</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">3</span><span class="p">,))</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">add_patch</span><span class="p">(</span><span class="n">rect</span><span class="p">)</span>
+
+
+<span class="c1"># 图片尺寸</span>
+<span class="n">img_w</span> <span class="o">=</span> <span class="mi">64</span>
+<span class="n">img_h</span> <span class="o">=</span> <span class="mi">64</span>
+<span class="n">cx</span> <span class="o">=</span> <span class="n">img_w</span> <span class="o">/</span> <span class="mi">2</span>
+<span class="n">cy</span> <span class="o">=</span> <span class="n">img_h</span> <span class="o">/</span> <span class="mi">2</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span>
+<span class="n">plot_init_grid</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">img_w</span><span class="p">,</span> <span class="n">img_h</span><span class="p">,</span> <span class="n">grid</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">cx</span><span class="p">,</span> <span class="n">cy</span><span class="p">,</span> <span class="s1">&#39;.r&#39;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">24</span><span class="p">)</span>
+<span class="n">plot_anchors</span><span class="p">(</span><span class="n">cx</span><span class="p">,</span> <span class="n">cy</span><span class="p">,</span> <span class="n">anchors</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div>
+<p><img alt="" src="../assets/Faster-RCNN.jupyter_output_1.png" /></p>
+<p>我们可以脑补一下feature maps的每个cell都有预先设定的anchors，于是Region Proposal Network（RPN）就要对这些anchors进行处理。</p>
+<ul>
+<li>训练时，凡是越过图片边界（cross the boundary of the image）的anchors都被忽略</li>
+<li>测试时，越过边界的anchors被截断在边界处</li>
+</ul>
+<h3 id="32-rpn">3.2 RPN</h3>
+<p>如下图所示，假设每个cell有<span><span class="MathJax_Preview">k</span><script type="math/tex">k</script></span>个anchors，于是RPN要判断这<span><span class="MathJax_Preview">k</span><script type="math/tex">k</script></span>个anchors否为物体（分类，classification layer），还要判断准确的位置和形状（回归，regression layer），在这之前先做一次3x3卷积得到channel数为256-d的featuer maps。</p>
+<p><img alt="" src="../assets/Faster-RCNN.jupyter_6.png" /></p>
+<p>RPN网络代码如下：</p>
+<p><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">torch.nn.functional</span> <span class="k">as</span> <span class="nn">F</span>
+
+<span class="k">class</span> <span class="nc">RPNHead</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Adds a simple RPN Head with classification and regression heads</span>
+
+<span class="sd">    Arguments:</span>
+<span class="sd">        in_channels (int): number of channels of the input feature</span>
+<span class="sd">        num_anchors (int): number of anchors to be predicted</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">in_channels</span><span class="p">,</span> <span class="n">num_anchors</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">RPNHead</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">conv</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span><span class="n">in_channels</span><span class="p">,</span> <span class="n">in_channels</span><span class="p">,</span>
+                              <span class="n">kernel_size</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">stride</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cls_logits</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span><span class="n">in_channels</span><span class="p">,</span> <span class="n">num_anchors</span><span class="p">,</span> 
+                                    <span class="n">kernel_size</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">stride</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">bbox_pred</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span><span class="n">in_channels</span><span class="p">,</span> <span class="n">num_anchors</span> <span class="o">*</span> <span class="mi">4</span><span class="p">,</span> 
+                                   <span class="n">kernel_size</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">stride</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">layer</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">children</span><span class="p">():</span>
+            <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">init</span><span class="o">.</span><span class="n">normal_</span><span class="p">(</span><span class="n">layer</span><span class="o">.</span><span class="n">weight</span><span class="p">,</span> <span class="n">std</span><span class="o">=</span><span class="mf">0.01</span><span class="p">)</span>
+            <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">init</span><span class="o">.</span><span class="n">constant_</span><span class="p">(</span><span class="n">layer</span><span class="o">.</span><span class="n">bias</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+        <span class="c1"># type: (List[Tensor]) -&amp;gt; Tuple[List[Tensor], List[Tensor]]</span>
+        <span class="n">logits</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">bbox_reg</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">feature</span> <span class="ow">in</span> <span class="n">x</span><span class="p">:</span>
+            <span class="n">t</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">relu</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">conv</span><span class="p">(</span><span class="n">feature</span><span class="p">))</span>
+            <span class="n">logits</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cls_logits</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
+            <span class="n">bbox_reg</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">bbox_pred</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">logits</span><span class="p">,</span> <span class="n">bbox_reg</span>
+</code></pre></div>
+由于FPN的backbone会输出多组feature maps（分别为<code>stride=4/8/16/32</code>），所以<code>RPNHead</code>的<code>forward()</code>默认输入<code>x</code>为iteratble类型的，例如<code>[fm_1/4, fm_1/8, fm_1/16, fm_1/32]</code>。整个过程如下图所示（设<span><span class="MathJax_Preview">k=3</span><script type="math/tex">k=3</script></span>）：</p>
+<p><img alt="" src="../assets/Faster-RCNN.jupyter_7.png" /></p>
+<p>需要注意的是，这里黄色<code>scores</code>的<code>channels=3</code>，而非<span><span class="MathJax_Preview">2k=10</span><script type="math/tex">2k=10</script></span>，这是因为是判断框是否为物体的分类函数用了逻辑回归，直接输出的是logit而非概率，loss函数用了<code>binary_cross_entropy_with_logits</code>，应该是为了优化cross entropy和sigmoid的联合求导（类似softmax和corss entropy联合求导）。假设<span><span class="MathJax_Preview">w,h=32,c=10</span><script type="math/tex">w,h=32,c=10</script></span>，那么对应的代码为：</p>
+<div class="highlight"><pre><span></span><code><span class="n">x</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">)</span>
+<span class="n">scores</span><span class="p">,</span> <span class="n">coordinates</span> <span class="o">=</span> <span class="n">RPNHead</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">3</span><span class="p">)([</span><span class="n">x</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;scores:&quot;</span><span class="p">,</span> <span class="n">scores</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;coordinates:&quot;</span><span class="p">,</span> <span class="n">coordinates</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="k">del</span> <span class="n">x</span><span class="p">,</span> <span class="n">scores</span><span class="p">,</span> <span class="n">coordinates</span>
+</code></pre></div>
+<h3 id="33-bounding-box-regression">3.3 Bounding Box Regression</h3>
+<p>现在RPN预测的物体bounding box。如下图所示，<span><span class="MathJax_Preview">x_a, y_a, w_a, h_a</span><script type="math/tex">x_a, y_a, w_a, h_a</script></span>是某一个anchor，<span><span class="MathJax_Preview">x, y, w, h</span><script type="math/tex">x, y, w, h</script></span>是RPN基于这个anchor预测的bbox，<span><span class="MathJax_Preview">x^*, y^*, w^*, h^*</span><script type="math/tex">x^*, y^*, w^*, h^*</script></span>是对应目标的ground truth。</p>
+<p><img alt="" src="../assets/Faster-RCNN.jupyter_8.png" /></p>
+<p>那么将中心坐标偏移量和宽高比分别归一化后可以得到<span><span class="MathJax_Preview">t_x, t_y, t_w, t_h</span><script type="math/tex">t_x, t_y, t_w, t_h</script></span>，也就是RPN网络需要学习输出的bbox信息，而<span><span class="MathJax_Preview">t_*, t_*, t_*, t_*</span><script type="math/tex">t_*, t_*, t_*, t_*</script></span>是ground truth，两者结合可以计算出bounding box regreesion分支的loss。</p>
+<div>
+<div class="MathJax_Preview">t_{\mathrm{x}}=\left(x-x_{\mathrm{a}}\right) / w_{\mathrm{a}}, \quad t_{\mathrm{y}}=\left(y-y_{\mathrm{a}}\right) / h_{\mathrm{a}}</div>
+<script type="math/tex; mode=display">t_{\mathrm{x}}=\left(x-x_{\mathrm{a}}\right) / w_{\mathrm{a}}, \quad t_{\mathrm{y}}=\left(y-y_{\mathrm{a}}\right) / h_{\mathrm{a}}</script>
+</div>
+<div>
+<div class="MathJax_Preview">t_{\mathrm{w}}=\log \left(w / w_{\mathrm{a}}\right), \quad t_{\mathrm{h}}=\log \left(h / h_{\mathrm{a}}\right)</div>
+<script type="math/tex; mode=display">t_{\mathrm{w}}=\log \left(w / w_{\mathrm{a}}\right), \quad t_{\mathrm{h}}=\log \left(h / h_{\mathrm{a}}\right)</script>
+</div>
+<div>
+<div class="MathJax_Preview">t_{\mathrm{x}}^{\*}=\left(x^{*}-x_{\mathrm{a}}\right) / w_{\mathrm{a}}, \quad t_{\mathrm{y}}^{\*}=\left(y^{\*}-y_{\mathrm{a}}\right) / h_{\mathrm{a}}</div>
+<script type="math/tex; mode=display">t_{\mathrm{x}}^{\*}=\left(x^{*}-x_{\mathrm{a}}\right) / w_{\mathrm{a}}, \quad t_{\mathrm{y}}^{\*}=\left(y^{\*}-y_{\mathrm{a}}\right) / h_{\mathrm{a}}</script>
+</div>
+<div>
+<div class="MathJax_Preview">t_{\mathrm{w}}^{\*}=\log \left(w^{\*} / w_{\mathrm{a}}\right), \quad t_{\mathrm{h}}^{\*}=\log \left(h^{\*} / h_{\mathrm{a}}\right)</div>
+<script type="math/tex; mode=display">t_{\mathrm{w}}^{\*}=\log \left(w^{\*} / w_{\mathrm{a}}\right), \quad t_{\mathrm{h}}^{\*}=\log \left(h^{\*} / h_{\mathrm{a}}\right)</script>
+</div>
+<p>分别除以<span><span class="MathJax_Preview">w_a, h_a</span><script type="math/tex">w_a, h_a</script></span>进行归一化利于网络学习，但是为什么宽高比值都加了一个log函数呢？<strong>因为宽高比必须大于等于0，所以变成了一个带约束的优化问题，而<span><span class="MathJax_Preview">w/w_a=e^{t_w}</span><script type="math/tex">w/w_a=e^{t_w}</script></span>恒大于0，这样网络输出的<span><span class="MathJax_Preview">t_w, t_h</span><script type="math/tex">t_w, t_h</script></span>就没有限制了！！！</strong></p>
+<h3 id="34-training-rpn">3.4 Training RPN</h3>
+<p>anchors根据有无物体分为正样本和负样本：如果一个anchor和某一个gt框的IoU大于0.7就被认为是正样本，如果特殊情况下某个gt框没有任何一个anchor与之对应，就选IoU最高的那个anchor；凡是IoU小于0.3的都被认为是负样本。</p>
+<p>尽管可以所有的正负样本都可以参与训练，但是因为图片中目标个数有限，所以会导致大多数anchors都是负样本（背景）。例如<span><span class="MathJax_Preview">k=9</span><script type="math/tex">k=9</script></span>，feature maps的 <span><span class="MathJax_Preview">w=h=50</span><script type="math/tex">w=h=50</script></span>时，anchors总数为<span><span class="MathJax_Preview">9\times 50 \times50=22500</span><script type="math/tex">9\times 50 \times50=22500</script></span>个，这样正负样本很不平衡，于是作者在一张图中随机各选取128个正负样本组成256个anchors的mini batch。</p>
+<p>RPN网络的Loss函数如下，<span><span class="MathJax_Preview">N_{reg}</span><script type="math/tex">N_{reg}</script></span>只包括<span><span class="MathJax_Preview">p^*=1</span><script type="math/tex">p^*=1</script></span>的正样本：</p>
+<div>
+<div class="MathJax_Preview">L(\{p_i\},\{t_{i}\})=\frac{1}{N_{cls}} \sum_{i} L_{cls}\left(p_i, p_{i}^{\*}\right)+\lambda \frac{1}{N_{reg}} \sum_{i} p_{i}^{\*} L_{reg}\left(t_{i}, t_{i}^{\*}\right)</div>
+<script type="math/tex; mode=display">L(\{p_i\},\{t_{i}\})=\frac{1}{N_{cls}} \sum_{i} L_{cls}\left(p_i, p_{i}^{\*}\right)+\lambda \frac{1}{N_{reg}} \sum_{i} p_{i}^{\*} L_{reg}\left(t_{i}, t_{i}^{\*}\right)</script>
+</div>
+<h3 id="35-nms">3.5 NMS</h3>
+<p>因为RPN输出的目标框会有很多重叠的（如下图所示），所以我们需要使用NMS进行过滤。</p>
+<p><img alt="" src="../assets/Faster-RCNN.jupyter_output_2.png" /></p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">matplotlib.patches</span> <span class="kn">import</span> <span class="n">Rectangle</span>
+
+
+<span class="k">def</span> <span class="nf">plt_boxes</span><span class="p">(</span><span class="n">bboxes</span><span class="p">,</span> <span class="n">ax</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; matplotlib Rectangle --- (xy, w, h)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">for</span> <span class="n">box</span> <span class="ow">in</span> <span class="n">bboxes</span><span class="p">:</span>
+        <span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">y2</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">box</span>
+        <span class="n">w</span> <span class="o">=</span> <span class="n">x2</span> <span class="o">-</span> <span class="n">x1</span>
+        <span class="n">h</span> <span class="o">=</span> <span class="n">y2</span> <span class="o">-</span> <span class="n">y1</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">add_patch</span><span class="p">(</span><span class="n">Rectangle</span><span class="p">((</span><span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">),</span> <span class="n">w</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                               <span class="n">edgecolor</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">3</span><span class="p">,)))</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="nb">max</span><span class="p">(</span><span class="n">bboxes</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">])</span><span class="o">+</span><span class="mi">20</span><span class="p">])</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="nb">max</span><span class="p">(</span><span class="n">bboxes</span><span class="p">[:,</span> <span class="mi">3</span><span class="p">])</span><span class="o">+</span><span class="mi">20</span><span class="p">])</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">tick_top</span><span class="p">()</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">invert_yaxis</span><span class="p">()</span>
+
+
+<span class="c1"># [x1, y1, x2, y2, score]</span>
+<span class="n">dets</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">218</span><span class="p">,</span>  <span class="mi">322</span><span class="p">,</span> <span class="mi">385</span><span class="p">,</span>  <span class="mi">491</span><span class="p">,</span> <span class="mf">0.98</span><span class="p">],</span>
+                 <span class="p">[</span><span class="mi">247</span><span class="p">,</span>  <span class="mi">312</span><span class="p">,</span> <span class="mi">419</span><span class="p">,</span>  <span class="mi">461</span><span class="p">,</span> <span class="mf">0.83</span><span class="p">],</span>
+                 <span class="p">[</span><span class="mi">237</span><span class="p">,</span>  <span class="mi">344</span><span class="p">,</span> <span class="mi">407</span><span class="p">,</span>  <span class="mi">510</span><span class="p">,</span> <span class="mf">0.92</span><span class="p">],</span>
+                 <span class="p">[</span><span class="mi">757</span><span class="p">,</span>  <span class="mi">218</span><span class="p">,</span> <span class="mi">937</span><span class="p">,</span>  <span class="mi">394</span><span class="p">,</span> <span class="mf">0.96</span><span class="p">],</span>
+                 <span class="p">[</span><span class="mi">768</span><span class="p">,</span>  <span class="mi">198</span><span class="p">,</span> <span class="mi">962</span><span class="p">,</span>  <span class="mi">364</span><span class="p">,</span> <span class="mf">0.85</span><span class="p">],</span>
+                 <span class="p">[</span><span class="mi">740</span><span class="p">,</span>  <span class="mi">240</span><span class="p">,</span> <span class="mi">906</span><span class="p">,</span>  <span class="mi">414</span><span class="p">,</span> <span class="mf">0.83</span><span class="p">],</span>
+                 <span class="p">[</span><span class="mi">1101</span><span class="p">,</span> <span class="mi">84</span><span class="p">,</span>  <span class="mi">1302</span><span class="p">,</span> <span class="mi">303</span><span class="p">,</span> <span class="mf">0.82</span><span class="p">],</span>
+                 <span class="p">[</span><span class="mi">1110</span><span class="p">,</span> <span class="mi">67</span><span class="p">,</span>  <span class="mi">1331</span><span class="p">,</span> <span class="mi">260</span><span class="p">,</span> <span class="mf">0.97</span><span class="p">],</span>
+                 <span class="p">[</span><span class="mi">1123</span><span class="p">,</span> <span class="mi">42</span><span class="p">,</span>  <span class="mi">1362</span><span class="p">,</span> <span class="mi">220</span><span class="p">,</span> <span class="mf">0.85</span><span class="p">]])</span>
+
+<span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span>
+<span class="n">plt_boxes</span><span class="p">(</span><span class="n">dets</span><span class="p">,</span> <span class="n">ax</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div>
+<p><img alt="" src="../assets/Faster-RCNN.jupyter_output_3.png" /></p>
+<p>首先按照分类得分高低将框排序，然后遍历（已删除的不再遍历），删除和当前框<span><span class="MathJax_Preview">\text{IoU}&gt;\text{threshold}</span><script type="math/tex">\text{IoU}&gt;\text{threshold}</script></span>（论文中为0.7）的框。</p>
+<p>IoU的公式和示意图如下：</p>
+<div>
+<div class="MathJax_Preview">J(\mathcal{A}, \mathcal{B})=\frac{|\mathcal{A} \cap \mathcal{B}|}{|\mathcal{A} \cup \mathcal{B}|}</div>
+<script type="math/tex; mode=display">J(\mathcal{A}, \mathcal{B})=\frac{|\mathcal{A} \cap \mathcal{B}|}{|\mathcal{A} \cup \mathcal{B}|}</script>
+</div>
+<p><img alt="" src="../assets/Faster-RCNN.jupyter_9.png" /></p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">nms</span><span class="p">(</span><span class="n">dets</span><span class="p">,</span> <span class="n">thres</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    @dets, detecion results, shape: [batch, 5], form: [[x1, y1, x2, y2, score]]</span>
+<span class="sd">    @thres, threshold</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">x1</span> <span class="o">=</span> <span class="n">dets</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span>
+    <span class="n">y1</span> <span class="o">=</span> <span class="n">dets</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span>
+    <span class="n">x2</span> <span class="o">=</span> <span class="n">dets</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">]</span>
+    <span class="n">y2</span> <span class="o">=</span> <span class="n">dets</span><span class="p">[:,</span> <span class="mi">3</span><span class="p">]</span>
+    <span class="n">scores</span> <span class="o">=</span> <span class="n">dets</span><span class="p">[:,</span> <span class="mi">4</span><span class="p">]</span>
+    <span class="n">area</span> <span class="o">=</span> <span class="p">(</span><span class="n">x2</span> <span class="o">-</span> <span class="n">x1</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">y2</span> <span class="o">-</span> <span class="n">y1</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">order</span> <span class="o">=</span> <span class="n">scores</span><span class="o">.</span><span class="n">argsort</span><span class="p">()[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+    <span class="n">kept_idx</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">while</span> <span class="n">order</span><span class="o">.</span><span class="n">size</span> <span class="o">&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">i</span> <span class="o">=</span> <span class="n">order</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">kept_idx</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+        <span class="n">xx1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">maximum</span><span class="p">(</span><span class="n">x1</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">x1</span><span class="p">[</span><span class="n">order</span><span class="p">[</span><span class="mi">1</span><span class="p">:]])</span>
+        <span class="n">yy1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">maximum</span><span class="p">(</span><span class="n">y1</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">y1</span><span class="p">[</span><span class="n">order</span><span class="p">[</span><span class="mi">1</span><span class="p">:]])</span>
+        <span class="n">xx2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">minimum</span><span class="p">(</span><span class="n">x2</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">x2</span><span class="p">[</span><span class="n">order</span><span class="p">[</span><span class="mi">1</span><span class="p">:]])</span>
+        <span class="n">yy2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">minimum</span><span class="p">(</span><span class="n">y2</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">y2</span><span class="p">[</span><span class="n">order</span><span class="p">[</span><span class="mi">1</span><span class="p">:]])</span>
+
+        <span class="n">w</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">maximum</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">xx2</span><span class="o">-</span><span class="n">xx1</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">h</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">maximum</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">yy2</span><span class="o">-</span><span class="n">yy1</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+
+        <span class="n">inter</span> <span class="o">=</span> <span class="n">w</span> <span class="o">*</span> <span class="n">h</span>
+        <span class="n">IoU</span> <span class="o">=</span> <span class="n">inter</span> <span class="o">/</span> <span class="p">(</span><span class="n">area</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">area</span><span class="p">[</span><span class="n">order</span><span class="p">[</span><span class="mi">1</span><span class="p">:]]</span> <span class="o">-</span> <span class="n">inter</span><span class="p">)</span>
+
+        <span class="n">inds</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">IoU</span> <span class="mf">0.7</span><span class="n">的为正样本</span><span class="err">，</span> <span class="n">threshold</span>
+        <span class="n">are</span> <span class="n">chosen</span><span class="o">.</span>
+
+  <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">  img = Image.open(img_path)</span>
+<span class="sd">  transform = T.Compose([T.ToTensor()])</span>
+<span class="sd">  img = transform(img)</span>
+<span class="sd">  pred = model([img])</span>
+<span class="sd">  pred_class = [COCO_INSTANCE_CATEGORY_NAMES[i] for i in list(pred[0][&#39;labels&#39;].numpy())]</span>
+<span class="sd">  pred_boxes = [[(i[0], i[1]), (i[2], i[3])] for i in list(pred[0][&#39;boxes&#39;].detach().numpy())]</span>
+<span class="sd">  pred_score = list(pred[0][&#39;scores&#39;].detach().numpy())</span>
+<span class="sd">  pred_t = [pred_score.index(x) for x in pred_score if x&amp;gt;threshold][-1]</span>
+<span class="sd">  pred_boxes = pred_boxes[:pred_t+1]</span>
+<span class="sd">  pred_class = pred_class[:pred_t+1]</span>
+<span class="sd">  return pred_boxes, pred_class</span>
+
+
+
+<span class="sd">def object_detection_api(img_path, threshold=0.5, rect_th=3, text_size=3, text_th=3):</span>
+<span class="sd">  &quot;&quot;&quot;</span>
+  <span class="n">object_detection_api</span>
+    <span class="n">parameters</span><span class="p">:</span>
+      <span class="o">-</span> <span class="n">img_path</span> <span class="o">-</span> <span class="n">path</span> <span class="n">of</span> <span class="n">the</span> <span class="nb">input</span> <span class="n">image</span>
+      <span class="o">-</span> <span class="n">threshold</span> <span class="o">-</span> <span class="n">threshold</span> <span class="n">value</span> <span class="k">for</span> <span class="n">prediction</span> <span class="n">score</span>
+      <span class="o">-</span> <span class="n">rect_th</span> <span class="o">-</span> <span class="n">thickness</span> <span class="n">of</span> <span class="n">bounding</span> <span class="n">box</span>
+      <span class="o">-</span> <span class="n">text_size</span> <span class="o">-</span> <span class="n">size</span> <span class="n">of</span> <span class="n">the</span> <span class="k">class</span> <span class="nc">label</span> <span class="n">text</span>
+      <span class="o">-</span> <span class="n">text_th</span> <span class="o">-</span> <span class="n">thichness</span> <span class="n">of</span> <span class="n">the</span> <span class="n">text</span>
+    <span class="n">method</span><span class="p">:</span>
+      <span class="o">-</span> <span class="n">prediction</span> <span class="ow">is</span> <span class="n">obtained</span> <span class="kn">from</span> <span class="nn">get_prediction</span> <span class="n">method</span>
+      <span class="o">-</span> <span class="k">for</span> <span class="n">each</span> <span class="n">prediction</span><span class="p">,</span> <span class="n">bounding</span> <span class="n">box</span> <span class="ow">is</span> <span class="n">drawn</span> <span class="ow">and</span> <span class="n">text</span> <span class="ow">is</span> <span class="n">written</span> 
+        <span class="k">with</span> <span class="n">opencv</span>
+      <span class="o">-</span> <span class="n">the</span> <span class="n">final</span> <span class="n">image</span> <span class="ow">is</span> <span class="n">displayed</span>
+  <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">  boxes, pred_cls = get_prediction(img_path, threshold)</span>
+<span class="s2">  img = cv2.imread(img_path)</span>
+<span class="s2">  img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)</span>
+<span class="s2">  for i in range(len(boxes)):</span>
+<span class="s2">    cv2.rectangle(img, boxes[i][0], boxes[i][1],color=(0, 255, 0), thickness=rect_th)</span>
+<span class="s2">    cv2.putText(img,pred_cls[i], boxes[i][0], cv2.FONT_HERSHEY_SIMPLEX, text_size, (0,255,0),thickness=text_th)</span>
+<span class="s2">  plt.figure(figsize=(20,30))</span>
+<span class="s2">  plt.imshow(img)</span>
+<span class="s2">  plt.xticks([])</span>
+<span class="s2">  plt.yticks([])</span>
+<span class="s2">  plt.show()</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="n">object_detection_api</span><span class="p">(</span><span class="s2">&quot;../_files/people.jpg&quot;</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
+</code></pre></div>
+<p><img alt="" src="../assets/Faster-RCNN.jupyter_47_1.png" /></p>
+<div class="highlight"><pre><span></span><code><span class="n">object_detection_api</span><span class="p">(</span><span class="s1">&#39;../_files/traffic-143391_960_720.jpg&#39;</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">text_size</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></div>
+<p><img alt="" src="https://www.yfworld.com/wp-content/uploads/2020/10/Faster-RCNN.jupyter_48_0.png" /></p>
+<h2 id="4">4. 推荐阅读</h2>
+<ul>
+<li><a href="https://www.learnopencv.com/faster-r-cnn-object-detection-with-pytorch/">Faster R-CNN Object Detection with PyTorch</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/145842317">捋一捋pytorch官方FasterRCNN代码</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/31426458">一文读懂Faster RCNN</a></li>
+<li><a href="https://medium.com/@fractaldle/guide-to-build-faster-rcnn-in-pytorch-95b10c273439">Guide to build Faster RCNN in PyTorch</a></li>
+</ul>
+<hr />
+<p><strong>参考资料：</strong></p>
+<ol>
+<li>Yang Dawei, <a href="https://www.yfworld.com/?p=6049">Faster R-CNN原理与使用 (Pytorch)</a>, 云飞机器人实验室</li>
+</ol>
+<hr />
+<p><strong>本条目贡献者</strong>：</p>
+<ul>
+<li><a href="https://github.com/LinkHS">LinkHS</a></li>
+</ul>
+<hr />
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  上一页
+                </span>
+                机器视觉概述
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../../ros/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  下一页
+                </span>
+                Robot Operating System (ROS)
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/vendor.7e0ee788.min.js"></script>
+      <script src="../../assets/javascripts/bundle.c1ccee15.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../..",
+          features: ['navigation.tabs', 'navigation.instant'],
+          search: Object.assign({
+            worker: "../../assets/javascripts/worker/search.4ac00218.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+        <script src="../../_static/js/mathjaxhelper.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      
+    
+  </body>
+</html>
