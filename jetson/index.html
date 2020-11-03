@@ -1373,6 +1373,113 @@
 <li>Jetson Xaiver</li>
 <li>Jetson Xavier Nx</li>
 </ul>
+<p>Jetson各个型号的对比如下：</p>
+<table>
+<thead>
+<tr>
+<th>Hardware feature \ Jetson module</th>
+<th>Jetson Nano</th>
+<th>Jetson TX1</th>
+<th>Jetson TX2/TX2i</th>
+<th>Jetson Xavier</th>
+<th>Jetson Xavier Nx</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CPU (ARM)</td>
+<td>4-core ARM A57 @ 1.43 GHz</td>
+<td>4-core ARM Cortex A57 @ 1.73 GHz</td>
+<td>4-core ARM Cortex-A57 @ 2 GHz, 2-core Denver2 @ 2 GHz</td>
+<td>8-core ARM Carmel v.8.2 @ 2.26 GHz</td>
+<td>6-core NVIDIA Carmel ARM®v8.2 64-bit CPU</td>
+</tr>
+<tr>
+<td>GPU</td>
+<td>128-core Maxwell @ 921 MHz</td>
+<td>256-core Maxwell @ 998 MHz</td>
+<td>256-core Pascal @ 1.3 GHz</td>
+<td>512-core Volta @ 1.37 GHz</td>
+<td>384-core NVIDIA Volta™ GPU</td>
+</tr>
+<tr>
+<td>Memory</td>
+<td>4 GB LPDDR4, 25.6 GB/s</td>
+<td>4 GB LPDDR4, 25.6 GB/s</td>
+<td>8 GB 128-bit LPDDR4, 58.3 GB/s</td>
+<td>16 GB 256-bit LPDDR4, 137 GB/s</td>
+<td>8 GB 128-bit LPDDR4x @ 1600 MHz51.2GB/s</td>
+</tr>
+<tr>
+<td>Storage</td>
+<td>MicroSD</td>
+<td>16 GB eMMC 5.1</td>
+<td>32 GB eMMC 5.1</td>
+<td>32 GB eMMC 5.1</td>
+<td>16 GB eMMC 5.1</td>
+</tr>
+<tr>
+<td>Tensor cores</td>
+<td>--</td>
+<td>--</td>
+<td>--</td>
+<td>64</td>
+<td>48</td>
+</tr>
+<tr>
+<td>Video encoding</td>
+<td>(1x) 4Kp30, (2x) 1080p60, (4x) 1080p30</td>
+<td>(1x) 4Kp30, (2x) 1080p60, (4x) 1080p30</td>
+<td>(1x) 4Kp60, (3x) 4Kp30, (4x) 1080p60, (8x) 1080p30</td>
+<td>(4x) 4Kp60, (8x) 4Kp30, (32x) 1080p30</td>
+<td>2x464MP/sec (HEVC)2x 4K @ 30 (HEVC)6x 1080p @ 60 (HEVC)14x 1080p @ 30 (HEVC)</td>
+</tr>
+<tr>
+<td>Video decoding</td>
+<td>(1x) 4Kp60, (2x) 4Kp30, (4x) 1080p60, (8x) 1080p30</td>
+<td>(1x) 4Kp60, (2x) 4Kp30, (4x) 1080p60, (8x) 1080p30</td>
+<td>(2x) 4Kp60, (4x) 4Kp30, (7x) 1080p60</td>
+<td>(2x) 8Kp30, (6x) 4Kp60, (12x) 4Kp30</td>
+<td>2x690MP/sec (HEVC)2x 4K @ 60 (HEVC)4x 4K @ 30 (HEVC)12x 1080p @ 60 (HEVC)32x 1080p @ 30 (HEVC)16x 1080p @ 30 (H.264)</td>
+</tr>
+<tr>
+<td>USB</td>
+<td>(4x) USB 3.0 + Micro-USB 2.0</td>
+<td>(1x) USB 3.0 + (1x) USB 2.0</td>
+<td>(1x) USB 3.0 + (1x) USB 2.0</td>
+<td>(3x) USB 3.1 + (4x) USB 2.0</td>
+<td></td>
+</tr>
+<tr>
+<td>PCI-Express lanes</td>
+<td>4 lanes PCIe Gen 2</td>
+<td>5 lanes PCIe Gen 2</td>
+<td>5 lanes PCIe Gen 2</td>
+<td>16 lanes PCIe Gen 4</td>
+<td>1 x1 + 1x4(PCIe Gen3, Root Port &amp; Endpoint)</td>
+</tr>
+<tr>
+<td>Power</td>
+<td>5W / 10W</td>
+<td>10W</td>
+<td>7.5W / 15W</td>
+<td>10W / 15W / 30W</td>
+<td>10W / 15W</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><strong>参考资料：</strong></p>
+<ol>
+<li>Benchmark comparison for Jetson Nano, TX1, TX2 and AGX Xavier, https://www.fastcompression.com/blog/jetson-benchmark-comparison.htm</li>
+<li>Jetson Xavier NX, https://developer.nvidia.com/embedded/jetson-xavier-nx</li>
+</ol>
+<hr />
+<p><strong>本条目贡献者</strong>：</p>
+<ul>
+<li>automaticdai</li>
+</ul>
+<hr />
 <p>(本条目需要完善，<a href="/contribute/">立刻参与知识公共编辑</a>)</p>
                 
               
