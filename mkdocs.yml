@@ -28,10 +28,6 @@ nav:
       - 4. MPC: control/mpc.md
     - 算法:
       - algorithm/index.md
-    - 机器视觉:
-      - cv/index.md
-    - ROS:
-      - ros/index.md
     - 自动驾驶:
       - self-driving/index.md
       - '1. 概述':
@@ -67,6 +63,10 @@ nav:
         - self-driving/casestudy/apollo.md
         - self-driving/casestudy/uisee.md
         - self-driving/casestudy/tusimple.md
+    - 机器视觉:
+      - cv/index.md
+    - ROS:
+      - ros/index.md
     - 硬件平台:
       - hardware.md
       - arduino/index.md
