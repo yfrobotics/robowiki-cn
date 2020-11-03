@@ -6,6 +6,6 @@
 
 ** 本条目贡献者:**
 
-- automaticdai
+- [automaticdai](https://github.com/automaticdai)
 
 ---
