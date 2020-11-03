@@ -75,6 +75,7 @@ nav:
       - jetson/index.md
     - 资源:
       - resources/index.md
+      - resources/simulators.md
       - resources/conferences.md
       - resources/standard.md
     - 关于: 
