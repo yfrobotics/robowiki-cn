@@ -1,15 +1,22 @@
 window.MathJax = {
-  tex: {
-    inlineMath: [['$', '$'], ['\\(', '\\)']]
+  loader: {
+    load: ['[tex]/tagformat']
   },
-  svg: {
-    fontCache: 'global'
+  startup: {
+    pageReady: () => {
+      alert('Running MathJax');
+      return MathJax.startup.defaultPageReady();
+    }
+  },
+  tex: {
+    packages: {'[+]': ['tagformat']},
+    tagSide: 'left',
+    macros: {
+      RR: '{\\bf R}',
+      bold: ['{\\bf #1}',1]
+    },
+    tagformat: {
+       tag: (n) => '[' + n + ']'
+    }
   }
 };
-
-(function () {
-  var script = document.createElement('script');
-  script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js';
-  script.async = true;
-  document.head.appendChild(script);
-})();

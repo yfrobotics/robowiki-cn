@@ -4,11 +4,19 @@
      <lastmod>2020-11-04</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://wiki.yfworld.com/how-to-start/</loc>
+     <loc>https://wiki.yfworld.com/how-to-contribute/</loc>
      <lastmod>2020-11-04</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://wiki.yfworld.com/how-to-contribute/</loc>
+     <loc>https://wiki.yfworld.com/contributors/</loc>
+     <lastmod>2020-11-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://wiki.yfworld.com/about/</loc>
+     <lastmod>2020-11-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://wiki.yfworld.com/intro/how-to-start/</loc>
      <lastmod>2020-11-04</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
@@ -52,6 +60,10 @@
      <lastmod>2020-11-04</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
+     <loc>https://wiki.yfworld.com/self-driving/intro/main/</loc>
+     <lastmod>2020-11-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
      <loc>https://wiki.yfworld.com/self-driving/intro/define/</loc>
      <lastmod>2020-11-04</lastmod>
      <changefreq>daily</changefreq>
@@ -65,6 +77,10 @@
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://wiki.yfworld.com/self-driving/intro/future/</loc>
+     <lastmod>2020-11-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://wiki.yfworld.com/self-driving/system/main/</loc>
      <lastmod>2020-11-04</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
@@ -85,6 +101,10 @@
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://wiki.yfworld.com/self-driving/system/regulation/</loc>
+     <lastmod>2020-11-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://wiki.yfworld.com/self-driving/hardware/main/</loc>
      <lastmod>2020-11-04</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
@@ -109,6 +129,10 @@
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://wiki.yfworld.com/self-driving/hardware/camera/</loc>
+     <lastmod>2020-11-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://wiki.yfworld.com/self-driving/algorithm/main/</loc>
      <lastmod>2020-11-04</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
@@ -140,6 +164,10 @@
      <lastmod>2020-11-04</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
+     <loc>https://wiki.yfworld.com/self-driving/casestudy/main/</loc>
+     <lastmod>2020-11-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
      <loc>https://wiki.yfworld.com/self-driving/casestudy/uber/</loc>
      <lastmod>2020-11-04</lastmod>
      <changefreq>daily</changefreq>
@@ -165,10 +193,6 @@
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://wiki.yfworld.com/cv/</loc>
-     <lastmod>2020-11-04</lastmod>
-     <changefreq>daily</changefreq>
-    </url><url>
-     <loc>https://wiki.yfworld.com/cv/faster-rcnn/</loc>
      <lastmod>2020-11-04</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
@@ -208,7 +232,19 @@
      <lastmod>2020-11-04</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://wiki.yfworld.com/about/</loc>
+     <loc>https://wiki.yfworld.com/resources/competitions/</loc>
+     <lastmod>2020-11-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://wiki.yfworld.com/resources/labs/</loc>
+     <lastmod>2020-11-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://wiki.yfworld.com/resources/materials/</loc>
+     <lastmod>2020-11-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://wiki.yfworld.com/resources/tools/</loc>
      <lastmod>2020-11-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
