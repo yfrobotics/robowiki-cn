@@ -1,8 +1,8 @@
 ---
 name: 添加新内容
 about: 申请添加某个话题/页面
-title: "[New]"
-labels: Content Request / 内容请求
+title: "[New Content]"
+labels: feature
 assignees: ''
 
 ---

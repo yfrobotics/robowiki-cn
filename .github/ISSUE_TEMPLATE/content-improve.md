@@ -1,8 +1,8 @@
 ---
 name: 改善页面内容
 about: 申请改善某个页面
-title: "[Improve]"
-labels: Content Improve / 内容完善
+title: "[Improve Content]"
+labels: bug
 assignees: ''
 
 ---
@@ -13,10 +13,8 @@ assignees: ''
 - （确认过后请将选项打钩 / 填为 `[x]`）
 -->
 
-- [ ] 我正在着手修复这个问题
+有问题的页面是：
 
-## 我正在访问这个页面（最好带链接）
+该页面存在的问题是：
 
-## 我发现页面有这样的问题
-
-## 我希望做这样的改进
+我建议做出这样的改进：

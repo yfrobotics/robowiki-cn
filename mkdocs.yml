@@ -1,7 +1,7 @@
 # Basic
-site_name: RoboWiki
-site_description: RoboWiki - 机器人维基百科
-site_author: YF Robotics Laboratory
+site_name: 机器人维基百科 (RoboWiki)
+site_description: 机器人学习、编程、开发
+site_author: YunFei Robotics Laboratory
 site_url: https://wiki.yfworld.com
 strict: true
 
