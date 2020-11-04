@@ -1,8 +1,8 @@
 ---
 name: 添加新内容
-about: 申请添加某个 topic
-title: add
-labels: Content Request / 内容请求, help wanted / 需要帮助
+about: 申请添加某个话题/页面
+title: "[New]"
+labels: Content Request / 内容请求
 assignees: ''
 
 ---
@@ -13,6 +13,6 @@ assignees: ''
 - 如果涉及到添加新页面的，建议顺便注明英文名称
 -->
 
-## 我希望能添加的内容是
+## 我希望添加的内容是
 
-## 我了解到的相关参考资料有
+## 新增内容的大致介绍
