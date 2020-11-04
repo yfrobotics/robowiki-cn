@@ -4,6 +4,10 @@
 
 ![](logo.png)
 
+<a href="https://github.com/yfrobotics/robowiki">
+  <img src="github.png" alt="HTML tutorial" style="width:42px;height:42px;"> 项目GitHub地址
+</a>
+
 ## 介绍
 
 欢迎来到RoboWiki.
@@ -17,23 +21,6 @@ RoboWiki是由[云飞机器人实验室](http://www.yfworld.com)发起的机器�
 所有人都鼓励、并可以参与到编辑的过程中，并在该过程中不断改进内容的质量。
 
 机器人正在不断的进入到我们的生活里。我们相信通过我们的努力，可以做成覆盖全面的机器人知识库，为机器人开发者、研究者、爱好者提供便利。
-
-
-## 环境配置与运行
-
-`sudo python3 -m pip install -r "requirements.txt"`
-
-`mkdocs --version`
-
-`mkdocs serve`
-
-打开浏览器，访问：`localhost:8000`
-
-
-## 贡献方法
-
-- 标准Git工作流：git clone & push pull request
-- 创建一个issue，让别人来解决：create a new issue
 
 
 ## 致谢
