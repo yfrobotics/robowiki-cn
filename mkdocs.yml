@@ -1,10 +1,14 @@
-# Basic
-site_name: 机器人维基百科 (RoboWiki)
-site_description: 机器人学习、编程、开发
+# Site Configurations
+site_name: 机器人中文维基 (RoboWiki-cn)
+site_description: 机器人领域知识库
 site_author: YunFei Robotics Laboratory
 site_url: https://wiki.yfworld.com
-strict: true
+strict: false
 
+docs_dir: docs
+site_dir: site
+
+# Google Analytics
 google_analytics:
   - UA-60989638-5
   - auto
@@ -13,8 +17,11 @@ google_analytics:
 nav:
     - 首页: 
       - index.md
-      - how-to-start.md
       - how-to-contribute.md
+      - contributors.md
+      - about.md
+    - 开始:
+      - intro/how-to-start.md
     - 控制:
       - control/index.md
       - 1. Modelling:
@@ -31,17 +38,20 @@ nav:
     - 自动驾驶:
       - self-driving/index.md
       - '1. 概述':
+        - self-driving/intro/main.md
         - self-driving/intro/define.md
         - self-driving/intro/category.md
         - self-driving/intro/history.md
         - self-driving/intro/future.md
       - '2. 系统':
+        - self-driving/system/main.md
         - self-driving/system/vehicle.md
         - self-driving/system/v2x.md
         - self-driving/system/platform.md
         - self-driving/system/safety.md
         - self-driving/system/regulation.md
       - '3. 硬件':
+        - self-driving/hardware/main.md
         - self-driving/hardware/hw_overview.md
         - self-driving/hardware/ccu.md
         - self-driving/hardware/drive_by_wire.md
@@ -49,6 +59,7 @@ nav:
         - self-driving/hardware/sensors.md
         - self-driving/hardware/camera.md
       - '4. 算法':
+        - self-driving/algorithm/main.md
         - self-driving/algorithm/sw_overview.md
         - self-driving/algorithm/image_processing.md
         - self-driving/algorithm/laser_processing.md
@@ -57,6 +68,7 @@ nav:
         - self-driving/algorithm/decision_making.md
         - self-driving/algorithm/nlp.md
       - '5. 实例':
+        - self-driving/casestudy/main.md
         - self-driving/casestudy/uber.md
         - self-driving/casestudy/tesla.md
         - self-driving/casestudy/waymo.md
@@ -65,7 +77,6 @@ nav:
         - self-driving/casestudy/tusimple.md
     - 机器视觉:
       - cv/index.md
-      - cv/faster-rcnn.md
     - ROS:
       - ros/index.md
     - 硬件平台:
@@ -78,8 +89,10 @@ nav:
       - resources/simulators.md
       - resources/conferences.md
       - resources/standard.md
-    - 关于: 
-      - about.md
+      - resources/competitions.md
+      - resources/labs.md
+      - resources/materials.md
+      - resources/tools.md
 
 # Theme
 theme:
@@ -94,15 +107,15 @@ theme:
   features:
     - navigation.tabs
     - navigation.instant
-
-docs_dir: docs
-site_dir: site
+  font:
+    text: 'Fira Sans'
+    code: 'Fira Mono'
 
 # Extra
 extra_javascript:
+  - 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js'
   - _static/js/mathjaxhelper.js
-  - https://polyfill.io/v3/polyfill.min.js?features=es6
-  - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML
+
 extra_css:
     - _static/css/extra.css
 
