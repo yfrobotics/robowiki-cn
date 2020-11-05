@@ -20,9 +20,9 @@ nav:
       - how-to-contribute.md
       - contributors.md
       - about.md
-    - 开始:
-      - intro/main.md
-      - intro/how-to-start.md
+    - “如何”系列:
+      - how-to/main.md
+      - how-to/how-to-start.md
     - 控制:
       - control/index.md
       - 1. Modelling:
@@ -76,10 +76,6 @@ nav:
         - self-driving/casestudy/apollo.md
         - self-driving/casestudy/uisee.md
         - self-driving/casestudy/tusimple.md
-    - 机器视觉:
-      - cv/index.md
-    - ROS:
-      - ros/index.md
     - 硬件平台:
       - hardware.md
       - arduino/index.md
@@ -108,6 +104,7 @@ theme:
   features:
     - navigation.tabs
     - navigation.instant
+    - navigation.sections
   font:
     text: 'Fira Sans'
     code: 'Fira Mono'
