@@ -173,8 +173,8 @@
   
     <li class="md-tabs__item">
       
-        <a href="../../../intro/main/" class="md-tabs__link">
-          开始
+        <a href="../../../how-to/main/" class="md-tabs__link">
+          “如何”系列
         </a>
       
     </li>
@@ -214,32 +214,6 @@
       
         <a href="../../" class="md-tabs__link md-tabs__link--active">
           自动驾驶
-        </a>
-      
-    </li>
-  
-
-      
-        
-  
-  
-    <li class="md-tabs__item">
-      
-        <a href="../../../cv/" class="md-tabs__link">
-          机器视觉
-        </a>
-      
-    </li>
-  
-
-      
-        
-  
-  
-    <li class="md-tabs__item">
-      
-        <a href="../../../ros/" class="md-tabs__link">
-          ROS
         </a>
       
     </li>
@@ -382,13 +356,13 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
     
     <label class="md-nav__link" for="nav-2">
-      开始
+      “如何”系列
       <span class="md-nav__icon md-icon"></span>
     </label>
-    <nav class="md-nav" aria-label="开始" data-md-level="1">
+    <nav class="md-nav" aria-label="“如何”系列" data-md-level="1">
       <label class="md-nav__title" for="nav-2">
         <span class="md-nav__icon md-icon"></span>
-        开始
+        “如何”系列
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -399,8 +373,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../intro/main/" class="md-nav__link">
-      什么是机器人？
+    <a href="../../../how-to/main/" class="md-nav__link">
+      如何开始机器人设计（系列）
     </a>
   </li>
 
@@ -411,8 +385,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../intro/how-to-start/" class="md-nav__link">
-      如何入门机器人？
+    <a href="../../../how-to/how-to-start/" class="md-nav__link">
+      [#1] 如何入门机器人？
     </a>
   </li>
 
@@ -1221,87 +1195,11 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
     
     <label class="md-nav__link" for="nav-6">
-      机器视觉
-      <span class="md-nav__icon md-icon"></span>
-    </label>
-    <nav class="md-nav" aria-label="机器视觉" data-md-level="1">
-      <label class="md-nav__title" for="nav-6">
-        <span class="md-nav__icon md-icon"></span>
-        机器视觉
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../cv/" class="md-nav__link">
-      机器视觉概述
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
-    
-    <label class="md-nav__link" for="nav-7">
-      ROS
-      <span class="md-nav__icon md-icon"></span>
-    </label>
-    <nav class="md-nav" aria-label="ROS" data-md-level="1">
-      <label class="md-nav__title" for="nav-7">
-        <span class="md-nav__icon md-icon"></span>
-        ROS
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../ros/" class="md-nav__link">
-      Robot Operating System (ROS)
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
-    
-    <label class="md-nav__link" for="nav-8">
       硬件平台
       <span class="md-nav__icon md-icon"></span>
     </label>
     <nav class="md-nav" aria-label="硬件平台" data-md-level="1">
-      <label class="md-nav__title" for="nav-8">
+      <label class="md-nav__title" for="nav-6">
         <span class="md-nav__icon md-icon"></span>
         硬件平台
       </label>
@@ -1368,14 +1266,14 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
     
-    <label class="md-nav__link" for="nav-9">
+    <label class="md-nav__link" for="nav-7">
       资源
       <span class="md-nav__icon md-icon"></span>
     </label>
     <nav class="md-nav" aria-label="资源" data-md-level="1">
-      <label class="md-nav__title" for="nav-9">
+      <label class="md-nav__title" for="nav-7">
         <span class="md-nav__icon md-icon"></span>
         资源
       </label>
@@ -1589,7 +1487,7 @@
       <script>
         app = initialize({
           base: "../../..",
-          features: ['navigation.tabs', 'navigation.instant'],
+          features: ['navigation.tabs', 'navigation.instant', 'navigation.sections'],
           search: Object.assign({
             worker: "../../../assets/javascripts/worker/search.4ac00218.min.js"
           }, typeof search !== "undefined" && search)
