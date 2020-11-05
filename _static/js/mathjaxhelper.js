@@ -9,7 +9,12 @@ window.MathJax = {
     }
   },
   tex: {
-    packages: {'[+]': ['tagformat']},
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    autoload: {
+        color: [],
+        colorV2: ['color']
+    },
+    packages: {'[+]': ['enclose'], '[-]': ['autoload', 'require']},
     tagSide: 'left',
     macros: {
       RR: '{\\bf R}',
