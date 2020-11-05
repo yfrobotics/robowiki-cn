@@ -1,5 +1,5 @@
 ---
-name: 改善的内容
+name: 改善内容
 about: 改善某个话题/页面
 title: "[Improve]"
 labels: content-improve
