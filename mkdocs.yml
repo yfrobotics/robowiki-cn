@@ -21,6 +21,7 @@ nav:
       - contributors.md
       - about.md
     - 开始:
+      - intro/main.md
       - intro/how-to-start.md
     - 控制:
       - control/index.md
