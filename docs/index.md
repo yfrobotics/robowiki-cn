@@ -26,8 +26,6 @@ RoboWiki-cn是由[云飞机器人实验室](http://www.yfworld.com)发起的机�
 
 本维基在设计过程中受到了[OI-wiki](https://oi-wiki.org/)和[CTF-Wiki](https://ctf-wiki.github.io/ctf-wiki/)的设计理念启发。
 
-[”如何设计机器人”](https://wiki.yfworld.com/how-to/main/)系列受到了[WikiHow网站](https://www.wikihow.com)以及["为什么这样设计"](https://draveness.me/whys-the-design/)系列的启发。
-
 本项目基于MkDocs静态文档架构以及Materials主题。
 
 如果没有这些开放的知识和开源工具，我们无法做到现在的程度。在此一并表示感谢。

@@ -73,6 +73,8 @@ nav:
         - self-driving/casestudy/apollo.md
         - self-driving/casestudy/uisee.md
         - self-driving/casestudy/tusimple.md
+    - Linux:
+      - linux/index.md
     - 硬件平台:
       - hardware.md
       - arduino/index.md
