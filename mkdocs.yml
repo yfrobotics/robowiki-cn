@@ -20,9 +20,6 @@ nav:
       - how-to-contribute.md
       - contributors.md
       - about.md
-    - “如何”系列:
-      - how-to/main.md
-      - how-to/how-to-start.md
     - 控制:
       - control/index.md
       - 1. Modelling:
