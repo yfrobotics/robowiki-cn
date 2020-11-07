@@ -1,6 +1,6 @@
 # Site Configurations
 site_name: 机器人中文维基 (RoboWiki-cn)
-site_description: 机器人领域知识库
+site_description: 机器人领域的公共知识库
 site_author: YunFei Robotics Laboratory
 site_url: https://wiki.yfworld.com
 strict: false
@@ -16,31 +16,37 @@ google_analytics:
 # Navigation
 nav:
     - 首页: 
-      - index.md
+      - <机器人中文维基>: index.md
+      - intro.md
       - how-to-contribute.md
+      - standard.md
       - contributors.md
       - about.md
     - 控制:
-      - control/index.md
-      - 1. Modelling:
+      - <机器人控制>: control/index.md
+      - 1. 建模:
         - control/modelling/modelling.md
         - control/modelling/state_space.md
-      - 2. Analysis: control/analysis.md
-      - 3. PID:
+      - 2. 分析: control/analysis.md
+      - 3. PID控制:
         - control/pid/pid.md
         - control/pid/pid_improved.md
         - control/pid/pid_tuning.md
-      - 4. MPC: control/mpc.md
+      - 4. MPC控制: control/mpc.md
+    - 传感:
+      - <机器人传感>: sensing/index.md
+    - 规划:
+      - <机器人规划>: planning/index.md
     - 算法:
       - algorithm/index.md
+    - 视觉:
+      - cv/index.md
     - 自动驾驶:
       - self-driving/index.md
       - '1. 概述':
         - self-driving/intro/main.md
         - self-driving/intro/define.md
         - self-driving/intro/category.md
-        - self-driving/intro/history.md
-        - self-driving/intro/future.md
       - '2. 系统':
         - self-driving/system/main.md
         - self-driving/system/vehicle.md
@@ -67,28 +73,25 @@ nav:
         - self-driving/algorithm/nlp.md
       - '5. 实例':
         - self-driving/casestudy/main.md
-        - self-driving/casestudy/uber.md
-        - self-driving/casestudy/tesla.md
-        - self-driving/casestudy/waymo.md
         - self-driving/casestudy/apollo.md
-        - self-driving/casestudy/uisee.md
-        - self-driving/casestudy/tusimple.md
     - Linux:
       - linux/index.md
-    - 硬件平台:
-      - hardware.md
+    - Arduino:
       - arduino/index.md
+    - Raspberry Pi:
       - raspberrypi/index.md
+    - Jetson:
       - jetson/index.md
     - 资源:
       - resources/index.md
       - resources/simulators.md
+      - resources/hardware.md
       - resources/conferences.md
       - resources/standard.md
       - resources/competitions.md
       - resources/labs.md
       - resources/materials.md
-      - resources/tools.md
+      - resources/software.md
 
 # Theme
 theme:

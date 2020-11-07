@@ -1,4 +1,4 @@
-# 机器人中文维基 (RoboWiki-cn)
+# 机器人中文维基
 
 ![](https://img.shields.io/github/stars/yfrobotics/robowiki) ![](https://img.shields.io/github/contributors/yfrobotics/robowiki) ![](https://img.shields.io/github/issues/yfrobotics/robowiki) 
 
@@ -15,7 +15,7 @@ RoboWiki-cn是由[云飞机器人实验室](http://www.yfworld.com)发起的机�
 
 本维基旨在涵盖机器人设计、编程、视觉、算法、模型、仿真等多各个方面的内容。
 
-我们采用公共知识编辑的方式并提倡**知识自由**。
+我们采用公共知识编辑的方式并提倡 **知识自由**。
 
 所有人都鼓励、并可以参与到编辑的过程中，并在该过程中不断改进内容的质量。
 
