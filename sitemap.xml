@@ -1,243 +1,235 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url>
      <loc>https://wiki.yfworld.com/</loc>
-     <lastmod>2020-11-06</lastmod>
+     <lastmod>2020-11-07</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://wiki.yfworld.com/intro/</loc>
+     <lastmod>2020-11-07</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://wiki.yfworld.com/how-to-contribute/</loc>
-     <lastmod>2020-11-06</lastmod>
+     <lastmod>2020-11-07</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://wiki.yfworld.com/standard/</loc>
+     <lastmod>2020-11-07</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://wiki.yfworld.com/contributors/</loc>
-     <lastmod>2020-11-06</lastmod>
+     <lastmod>2020-11-07</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://wiki.yfworld.com/about/</loc>
-     <lastmod>2020-11-06</lastmod>
+     <lastmod>2020-11-07</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://wiki.yfworld.com/control/</loc>
-     <lastmod>2020-11-06</lastmod>
+     <lastmod>2020-11-07</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://wiki.yfworld.com/control/modelling/modelling/</loc>
-     <lastmod>2020-11-06</lastmod>
+     <lastmod>2020-11-07</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://wiki.yfworld.com/control/modelling/state_space/</loc>
-     <lastmod>2020-11-06</lastmod>
+     <lastmod>2020-11-07</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://wiki.yfworld.com/control/analysis/</loc>
-     <lastmod>2020-11-06</lastmod>
+     <lastmod>2020-11-07</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://wiki.yfworld.com/control/pid/pid/</loc>
-     <lastmod>2020-11-06</lastmod>
+     <lastmod>2020-11-07</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://wiki.yfworld.com/control/pid/pid_improved/</loc>
-     <lastmod>2020-11-06</lastmod>
+     <lastmod>2020-11-07</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://wiki.yfworld.com/control/pid/pid_tuning/</loc>
-     <lastmod>2020-11-06</lastmod>
+     <lastmod>2020-11-07</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://wiki.yfworld.com/control/mpc/</loc>
-     <lastmod>2020-11-06</lastmod>
+     <lastmod>2020-11-07</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://wiki.yfworld.com/sensing/</loc>
+     <lastmod>2020-11-07</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://wiki.yfworld.com/planning/</loc>
+     <lastmod>2020-11-07</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://wiki.yfworld.com/algorithm/</loc>
-     <lastmod>2020-11-06</lastmod>
+     <lastmod>2020-11-07</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://wiki.yfworld.com/cv/</loc>
+     <lastmod>2020-11-07</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://wiki.yfworld.com/self-driving/</loc>
-     <lastmod>2020-11-06</lastmod>
+     <lastmod>2020-11-07</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://wiki.yfworld.com/self-driving/intro/main/</loc>
-     <lastmod>2020-11-06</lastmod>
+     <lastmod>2020-11-07</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://wiki.yfworld.com/self-driving/intro/define/</loc>
-     <lastmod>2020-11-06</lastmod>
+     <lastmod>2020-11-07</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://wiki.yfworld.com/self-driving/intro/category/</loc>
-     <lastmod>2020-11-06</lastmod>
-     <changefreq>daily</changefreq>
-    </url><url>
-     <loc>https://wiki.yfworld.com/self-driving/intro/history/</loc>
-     <lastmod>2020-11-06</lastmod>
-     <changefreq>daily</changefreq>
-    </url><url>
-     <loc>https://wiki.yfworld.com/self-driving/intro/future/</loc>
-     <lastmod>2020-11-06</lastmod>
+     <lastmod>2020-11-07</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://wiki.yfworld.com/self-driving/system/main/</loc>
-     <lastmod>2020-11-06</lastmod>
+     <lastmod>2020-11-07</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://wiki.yfworld.com/self-driving/system/vehicle/</loc>
-     <lastmod>2020-11-06</lastmod>
+     <lastmod>2020-11-07</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://wiki.yfworld.com/self-driving/system/v2x/</loc>
-     <lastmod>2020-11-06</lastmod>
+     <lastmod>2020-11-07</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://wiki.yfworld.com/self-driving/system/platform/</loc>
-     <lastmod>2020-11-06</lastmod>
+     <lastmod>2020-11-07</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://wiki.yfworld.com/self-driving/system/safety/</loc>
-     <lastmod>2020-11-06</lastmod>
+     <lastmod>2020-11-07</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://wiki.yfworld.com/self-driving/system/regulation/</loc>
-     <lastmod>2020-11-06</lastmod>
+     <lastmod>2020-11-07</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://wiki.yfworld.com/self-driving/hardware/main/</loc>
-     <lastmod>2020-11-06</lastmod>
+     <lastmod>2020-11-07</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://wiki.yfworld.com/self-driving/hardware/hw_overview/</loc>
-     <lastmod>2020-11-06</lastmod>
+     <lastmod>2020-11-07</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://wiki.yfworld.com/self-driving/hardware/ccu/</loc>
-     <lastmod>2020-11-06</lastmod>
+     <lastmod>2020-11-07</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://wiki.yfworld.com/self-driving/hardware/drive_by_wire/</loc>
-     <lastmod>2020-11-06</lastmod>
+     <lastmod>2020-11-07</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://wiki.yfworld.com/self-driving/hardware/communication/</loc>
-     <lastmod>2020-11-06</lastmod>
+     <lastmod>2020-11-07</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://wiki.yfworld.com/self-driving/hardware/sensors/</loc>
-     <lastmod>2020-11-06</lastmod>
+     <lastmod>2020-11-07</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://wiki.yfworld.com/self-driving/hardware/camera/</loc>
-     <lastmod>2020-11-06</lastmod>
+     <lastmod>2020-11-07</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://wiki.yfworld.com/self-driving/algorithm/main/</loc>
-     <lastmod>2020-11-06</lastmod>
+     <lastmod>2020-11-07</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://wiki.yfworld.com/self-driving/algorithm/sw_overview/</loc>
-     <lastmod>2020-11-06</lastmod>
+     <lastmod>2020-11-07</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://wiki.yfworld.com/self-driving/algorithm/image_processing/</loc>
-     <lastmod>2020-11-06</lastmod>
+     <lastmod>2020-11-07</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://wiki.yfworld.com/self-driving/algorithm/laser_processing/</loc>
-     <lastmod>2020-11-06</lastmod>
+     <lastmod>2020-11-07</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://wiki.yfworld.com/self-driving/algorithm/localisation/</loc>
-     <lastmod>2020-11-06</lastmod>
+     <lastmod>2020-11-07</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://wiki.yfworld.com/self-driving/algorithm/path_planning/</loc>
-     <lastmod>2020-11-06</lastmod>
+     <lastmod>2020-11-07</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://wiki.yfworld.com/self-driving/algorithm/decision_making/</loc>
-     <lastmod>2020-11-06</lastmod>
+     <lastmod>2020-11-07</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://wiki.yfworld.com/self-driving/algorithm/nlp/</loc>
-     <lastmod>2020-11-06</lastmod>
+     <lastmod>2020-11-07</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://wiki.yfworld.com/self-driving/casestudy/main/</loc>
-     <lastmod>2020-11-06</lastmod>
-     <changefreq>daily</changefreq>
-    </url><url>
-     <loc>https://wiki.yfworld.com/self-driving/casestudy/uber/</loc>
-     <lastmod>2020-11-06</lastmod>
-     <changefreq>daily</changefreq>
-    </url><url>
-     <loc>https://wiki.yfworld.com/self-driving/casestudy/tesla/</loc>
-     <lastmod>2020-11-06</lastmod>
-     <changefreq>daily</changefreq>
-    </url><url>
-     <loc>https://wiki.yfworld.com/self-driving/casestudy/waymo/</loc>
-     <lastmod>2020-11-06</lastmod>
+     <lastmod>2020-11-07</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://wiki.yfworld.com/self-driving/casestudy/apollo/</loc>
-     <lastmod>2020-11-06</lastmod>
-     <changefreq>daily</changefreq>
-    </url><url>
-     <loc>https://wiki.yfworld.com/self-driving/casestudy/uisee/</loc>
-     <lastmod>2020-11-06</lastmod>
-     <changefreq>daily</changefreq>
-    </url><url>
-     <loc>https://wiki.yfworld.com/self-driving/casestudy/tusimple/</loc>
-     <lastmod>2020-11-06</lastmod>
+     <lastmod>2020-11-07</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://wiki.yfworld.com/linux/</loc>
-     <lastmod>2020-11-06</lastmod>
-     <changefreq>daily</changefreq>
-    </url><url>
-     <loc>https://wiki.yfworld.com/hardware/</loc>
-     <lastmod>2020-11-06</lastmod>
+     <lastmod>2020-11-07</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://wiki.yfworld.com/arduino/</loc>
-     <lastmod>2020-11-06</lastmod>
+     <lastmod>2020-11-07</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://wiki.yfworld.com/raspberrypi/</loc>
-     <lastmod>2020-11-06</lastmod>
+     <lastmod>2020-11-07</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://wiki.yfworld.com/jetson/</loc>
-     <lastmod>2020-11-06</lastmod>
+     <lastmod>2020-11-07</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://wiki.yfworld.com/resources/</loc>
-     <lastmod>2020-11-06</lastmod>
+     <lastmod>2020-11-07</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://wiki.yfworld.com/resources/simulators/</loc>
-     <lastmod>2020-11-06</lastmod>
+     <lastmod>2020-11-07</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://wiki.yfworld.com/resources/hardware/</loc>
+     <lastmod>2020-11-07</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://wiki.yfworld.com/resources/conferences/</loc>
-     <lastmod>2020-11-06</lastmod>
+     <lastmod>2020-11-07</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://wiki.yfworld.com/resources/standard/</loc>
-     <lastmod>2020-11-06</lastmod>
+     <lastmod>2020-11-07</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://wiki.yfworld.com/resources/competitions/</loc>
-     <lastmod>2020-11-06</lastmod>
+     <lastmod>2020-11-07</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://wiki.yfworld.com/resources/labs/</loc>
-     <lastmod>2020-11-06</lastmod>
+     <lastmod>2020-11-07</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://wiki.yfworld.com/resources/materials/</loc>
-     <lastmod>2020-11-06</lastmod>
+     <lastmod>2020-11-07</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://wiki.yfworld.com/resources/tools/</loc>
-     <lastmod>2020-11-06</lastmod>
+     <loc>https://wiki.yfworld.com/resources/software/</loc>
+     <lastmod>2020-11-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
 </urlset>
