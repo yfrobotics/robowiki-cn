@@ -38,11 +38,11 @@ nav:
     - 规划:
       - <机器人规划>: planning/index.md
     - 算法:
-      - algorithm/index.md
+      - <机器人算法>: algorithm/index.md
     - 视觉:
-      - cv/index.md
+      - <机器视觉>: cv/index.md
     - 自动驾驶:
-      - self-driving/index.md
+      - <自动驾驶技术指南>: self-driving/index.md
       - '1. 概述':
         - self-driving/intro/main.md
         - self-driving/intro/define.md
@@ -75,15 +75,16 @@ nav:
         - self-driving/casestudy/main.md
         - self-driving/casestudy/apollo.md
     - Linux:
-      - linux/index.md
+      - <Linux>: linux/index.md
     - Arduino:
-      - arduino/index.md
-    - Raspberry Pi:
-      - raspberrypi/index.md
+      - <Arduino>: arduino/index.md
+    - RPi:
+      - <树莓派>: raspberrypi/index.md
     - Jetson:
-      - jetson/index.md
+      - <Jetson>: jetson/index.md
+      - jetson/jetson_versions.md
     - 资源:
-      - resources/index.md
+      - <机器人资源>: resources/index.md
       - resources/simulators.md
       - resources/hardware.md
       - resources/conferences.md

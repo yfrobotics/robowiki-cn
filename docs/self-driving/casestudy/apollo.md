@@ -1,7 +1,5 @@
 # 百度无人驾驶
 
-http://apollo.auto/
-
 以下评论基于知乎用户对于Apollo 1.0的评价:
 
 定位 Localization：RTK GPS + IMU，没看到 Kalman Filter；
@@ -19,3 +17,7 @@ http://apollo.auto/
 ![1551458424484_5](assets/1551458424484_5.png)
 ![1551458424135_3](assets/1551458424135_3.png)
 ![1551458424144_4](assets/1551458424144_4.png)
+
+
+## 参考资料
+- [http://apollo.auto/](http://apollo.auto/)
