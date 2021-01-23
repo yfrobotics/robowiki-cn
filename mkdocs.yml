@@ -1,9 +1,14 @@
 # Site Configurations
-site_name: 机器人中文维基 (RoboWiki-cn)
+site_name: "机器人中文维基"
 site_description: 机器人领域的公共知识库
-site_author: YunFei Robotics Laboratory
+site_author: "YFRL"
 site_url: https://wiki.yfworld.com
 strict: false
+
+# Repository
+repo_name: 'yfrobotics/robowiki-cn'
+repo_url: 'https://github.com/yfrobotics/robowiki-cn'
+edit_uri: ''
 
 docs_dir: docs
 site_dir: site
@@ -16,33 +21,53 @@ google_analytics:
 # Navigation
 nav:
     - 首页: 
-      - <机器人中文维基>: index.md
-      - intro.md
+      - 简介: index.md
       - how-to-contribute.md
       - standard.md
       - contributors.md
-      - about.md
-    - 控制:
-      - <机器人控制>: control/index.md
-      - 1. 建模:
+    - 入门:
+      - basic/intro.md
+    - 建模:
+      - modelling/intro.md
+    - 控制: 
+      - 机器人控制: control/index.md
+      - 控制系统建模:
         - control/modelling/modelling.md
         - control/modelling/state_space.md
-      - 2. 分析: control/analysis.md
-      - 3. PID控制:
+      - PID控制:
         - control/pid/pid.md
         - control/pid/pid_improved.md
         - control/pid/pid_tuning.md
-      - 4. MPC控制: control/mpc.md
+      - MPC控制: control/mpc/mpc.md
     - 传感:
-      - <机器人传感>: sensing/index.md
+      - 机器人传感: sensing/index.md
     - 规划:
-      - <机器人规划>: planning/index.md
-    - 算法:
-      - <机器人算法>: algorithm/index.md
+      - 机器人规划: planning/index.md
     - 视觉:
-      - <机器视觉>: cv/index.md
-    - 自动驾驶:
-      - <自动驾驶技术指南>: self-driving/index.md
+      - 机器视觉: cv/index.md
+    - 仿真:
+        机器人仿真: simulation/simulators.md
+    - Linux:
+      - Linux: linux/index.md
+    - ROS:
+      - ROS: ros/index.md
+    - FreeRTOS:
+      - FreeRTOS: freertos/index.md
+    - 硬件:
+      - 机器人硬件平台: hardware/index.md
+      - arduino/index.md
+      - raspberrypi/index.md
+      - jetson/index.md
+    - 资源:
+      - 机器人资源: resources/index.md
+      - resources/conferences.md
+      - resources/standard.md
+      - resources/competitions.md
+      - resources/labs.md
+      - resources/materials.md
+      - resources/software.md
+    - <自动驾驶>:
+      - 自动驾驶技术指南: self-driving/index.md
       - '1. 概述':
         - self-driving/intro/main.md
         - self-driving/intro/define.md
@@ -74,25 +99,7 @@ nav:
       - '5. 实例':
         - self-driving/casestudy/main.md
         - self-driving/casestudy/apollo.md
-    - Linux:
-      - <Linux>: linux/index.md
-    - Arduino:
-      - <Arduino>: arduino/index.md
-    - RPi:
-      - <树莓派>: raspberrypi/index.md
-    - Jetson:
-      - <Jetson>: jetson/index.md
-      - jetson/jetson_versions.md
-    - 资源:
-      - <机器人资源>: resources/index.md
-      - resources/simulators.md
-      - resources/hardware.md
-      - resources/conferences.md
-      - resources/standard.md
-      - resources/competitions.md
-      - resources/labs.md
-      - resources/materials.md
-      - resources/software.md
+
 
 # Theme
 theme:

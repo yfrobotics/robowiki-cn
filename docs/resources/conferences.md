@@ -1,4 +1,4 @@
-# 机器人会议与期刊列表
+# 机器人国际会议与期刊列表
 ## 机器人 / 人工智能 / 机器学习（会议）
 
 | Name | Rank | Conference Full Name | h5-index |

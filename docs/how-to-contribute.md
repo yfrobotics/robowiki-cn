@@ -32,10 +32,7 @@
 - 创建新条目: 如果你的修改涉及新增条目，你需要同时在`mkdocs.yml`中修改导航目录。
 
 
-
-
 ## 推荐工具
 
-- Git版本控制: SourceTree
-- Markdown书写工具: Typora
-- 开发工具: Visual Studio Code 
+- Git版本控制: SourceTree / GitKraken
+- Markdown编辑工具: Typora / Visual Studi Code 

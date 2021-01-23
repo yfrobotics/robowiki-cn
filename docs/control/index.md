@@ -36,6 +36,18 @@ The objective of control theory is to design a controller so that the system has
     - Analysis, simulation, experimentation and iterate.
 
 
+
+# Analysis
+- Frequency Domain Analysis
+	- Gain margin
+	- Phase margin
+
+- Time Domain Analysis
+	- Rising Time
+	- Peak Time
+	- Steady-state Time
+
+
 ## Declaration
 This document includes basic descriptions and implementations of a Control System. The materials covered are: system modelling, controller design, classical control theory, modern control theory and C/Matlab/Simulink implementations.
 

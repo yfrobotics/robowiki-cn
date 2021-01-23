@@ -1,5 +1,5 @@
-# 全球机器人实验室
-- China
+# 机器人实验室与机构
+- 中国 | China
     - 哈工大机器人所
     - 沈阳自动化所
     - 北航机器人所
@@ -9,16 +9,16 @@
     - 国防科大
     - 香港科技大
     - 香港中文大
-- UK
+- 英国　| UK
     - [Bristol Robotics Laboratory](https://brl.ac.uk)
     - [Sheffield Robotics Lab](https://sheffieldrobotics.ac.uk)	
     - [Edinburgh Centre of Robotics](https://edinburgh-robotics.org)
     - [Robotics & Autonomous Systems Network](https://ukras.org)
     - [DeepMind](https://deepmind.com)
-- Europe
+- 欧洲 | Europe
     - [ETH Zurich, Institute of Robotics and Intelligent Systems](https://www.iris.ethz.ch/) 
     - [University of Zurich & ETH Zurich, Robotics and Perception Group](http://rpg.ifi.uzh.ch/)
-- US
+- 美国 | US
     - [Boston Dynamics](https://bostondynamics.com)	
     - [Harvard Self-Organizing Systems Group](https://eecs.harvard.edu/ssr)	
     - [MIT CS&AI Laboratory](https://csail.mit.edu)	
@@ -26,7 +26,7 @@
     - CMU
     - UC Berkeley
     - OpenAI
-- Japan
+- 日本 | Japan
     -  日本东京大学
-    -  早稻田
+    -  日本早稻田大学
     -  [日本机器人协会](https://www.rsj.or.jp/en/)
