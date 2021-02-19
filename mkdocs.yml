@@ -22,15 +22,15 @@ google_analytics:
 nav:
     - 首页: 
       - 简介: index.md
+      - basic/intro.md
       - how-to-contribute.md
       - standard.md
       - contributors.md
-    - 入门:
-      - basic/intro.md
     - 建模:
       - modelling/intro.md
     - 控制: 
-      - 机器人控制: control/index.md
+      - 控制系统概述: control/index.md
+      - 控制理论结构图: control/control_overview.md
       - 控制系统建模:
         - control/modelling/modelling.md
         - control/modelling/state_space.md
@@ -41,6 +41,7 @@ nav:
       - MPC控制: control/mpc/mpc.md
     - 传感:
       - 机器人传感: sensing/index.md
+      - sensing/sensors.md
     - 规划:
       - 机器人规划: planning/index.md
     - 视觉:
@@ -66,40 +67,6 @@ nav:
       - resources/labs.md
       - resources/materials.md
       - resources/software.md
-    - <自动驾驶>:
-      - 自动驾驶技术指南: self-driving/index.md
-      - '1. 概述':
-        - self-driving/intro/main.md
-        - self-driving/intro/define.md
-        - self-driving/intro/category.md
-      - '2. 系统':
-        - self-driving/system/main.md
-        - self-driving/system/vehicle.md
-        - self-driving/system/v2x.md
-        - self-driving/system/platform.md
-        - self-driving/system/safety.md
-        - self-driving/system/regulation.md
-      - '3. 硬件':
-        - self-driving/hardware/main.md
-        - self-driving/hardware/hw_overview.md
-        - self-driving/hardware/ccu.md
-        - self-driving/hardware/drive_by_wire.md
-        - self-driving/hardware/communication.md
-        - self-driving/hardware/sensors.md
-        - self-driving/hardware/camera.md
-      - '4. 算法':
-        - self-driving/algorithm/main.md
-        - self-driving/algorithm/sw_overview.md
-        - self-driving/algorithm/image_processing.md
-        - self-driving/algorithm/laser_processing.md
-        - self-driving/algorithm/localisation.md
-        - self-driving/algorithm/path_planning.md
-        - self-driving/algorithm/decision_making.md
-        - self-driving/algorithm/nlp.md
-      - '5. 实例':
-        - self-driving/casestudy/main.md
-        - self-driving/casestudy/apollo.md
-
 
 # Theme
 theme:
