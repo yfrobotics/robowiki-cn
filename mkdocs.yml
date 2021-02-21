@@ -21,16 +21,12 @@ google_analytics:
 # Navigation
 nav:
     - 首页: 
-      - 简介: index.md
-      - basic/intro.md
+      - index.md
       - how-to-contribute.md
       - standard.md
       - contributors.md
-    - 建模:
-      - modelling/intro.md
     - 控制: 
-      - 控制系统概述: control/index.md
-      - 控制理论结构图: control/control_overview.md
+      - control/index.md
       - 控制系统建模:
         - control/modelling/modelling.md
         - control/modelling/state_space.md
@@ -40,31 +36,39 @@ nav:
         - control/pid/pid_tuning.md
       - MPC控制: control/mpc/mpc.md
     - 传感:
-      - 机器人传感: sensing/index.md
+      - sensing/index.md
       - sensing/sensors.md
     - 规划:
-      - 机器人规划: planning/index.md
+      - planning/index.md
     - 视觉:
-      - 机器视觉: cv/index.md
+      - cv/index.md
     - 仿真:
-        机器人仿真: simulation/simulators.md
+      - simulation/simulators.md
+      - simulation/gazebo.md
+      - simulation/vrep.md
+      - simulation/mujoco.md
+      - simulation/pybullet.md
+      - simulation/webots.md
+      - simulation/robotics-toolbox.md
+      - simulation/stage.md
     - Linux:
-      - Linux: linux/index.md
+      - linux/index.md
     - ROS:
-      - ROS: ros/index.md
-    - FreeRTOS:
-      - FreeRTOS: freertos/index.md
+      - ros/index.md
     - 硬件:
-      - 机器人硬件平台: hardware/index.md
+      - hardware/index.md
       - arduino/index.md
       - raspberrypi/index.md
       - jetson/index.md
+    - 数据库:
+      - database/index.md
     - 资源:
-      - 机器人资源: resources/index.md
+      - resources/index.md
       - resources/conferences.md
       - resources/standard.md
       - resources/competitions.md
       - resources/labs.md
+      - resources/companies.md
       - resources/materials.md
       - resources/software.md
 
