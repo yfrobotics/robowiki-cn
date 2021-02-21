@@ -4,6 +4,13 @@
 
 本页面目前只有英文版，由我(automaticdai)早期整理而成。我会逐步更换为中文资料，同时欢迎[贡献该条目](/contribute)。
 
+## 控制理论结构图
+
+该图描述了控制理论的体系结构，由 [@系统与控制](https://www.zhihu.com/people/xiang-yi-55-49) 创作并授权使用。
+
+![](assets/control_theory_diagram_cn.png)
+
+## Introduction
 Control theory is an interdisciplinary branch of engineering and mathematics that deals with the behavior of dynamical systems with inputs, and how their behavior is modified by feedback [1].
 
 The objective of control theory is to design a controller so that the system has some desired characteristics. Typical objectives are [2]:
