@@ -13,14 +13,14 @@
         <meta name="author" content="YFRL">
       
       
-        <link rel="canonical" href="https://wiki.yfworld.com/how-to-contribute/">
+        <link rel="canonical" href="https://wiki.yfworld.com/intro/">
       
       <link rel="shortcut icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.0.4">
     
     
       
-        <title>如何贡献这个维基？ - 机器人中文维基</title>
+        <title>前言 - 机器人中文维基</title>
       
     
     
@@ -105,7 +105,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              如何贡献这个维基？
+              前言
             
           </span>
         </div>
@@ -435,18 +435,6 @@
             
   
   
-  
-    <li class="md-nav__item">
-      <a href="../intro/" class="md-nav__link">
-        前言
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
     
   
   
@@ -457,60 +445,22 @@
         
       
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          如何贡献这个维基？
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
       <a href="./" class="md-nav__link md-nav__link--active">
-        如何贡献这个维基？
+        前言
       </a>
       
-        
-<nav class="md-nav md-nav--secondary" aria-label="目录">
+    </li>
+  
+
+          
+            
   
   
-    
   
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    贡献方法
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    环境配置与运行
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    开发细节
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    推荐工具
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
+    <li class="md-nav__item">
+      <a href="../how-to-contribute/" class="md-nav__link">
+        如何贡献这个维基？
+      </a>
     </li>
   
 
@@ -1353,42 +1303,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    贡献方法
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    环境配置与运行
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    开发细节
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    推荐工具
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -1400,36 +1314,18 @@
               
                 
                 
-                <h1 id="_1">如何贡献这个维基？</h1>
-<p><a href="https://github.com/yfrobotics/robowiki">项目GitHub地址</a></p>
-<h2 id="_2">贡献方法</h2>
-<p>你可以通过以下两种方式贡献这个维基：</p>
-<ol>
-<li>通过提交代码PR：git clone -&gt; make change -&gt; push &amp; pull request</li>
-<li>通过创建issues：<a href="https://github.com/yfrobotics/robowiki/issues">Create a new issue</a></li>
-</ol>
-<h2 id="_3">环境配置与运行</h2>
-<div class="highlight"><pre><span></span><code><span class="c1"># 安装依赖</span>
-&gt; sudo python3 -m pip install -r <span class="s2">&quot;requirements.txt&quot;</span>
-
-<span class="c1"># 确认mkdocs安装成功并显示版本</span>
-&gt; mkdocs --version
-
-<span class="c1"># 运行mkdocs</span>
-&gt; mkdocs serve
-</code></pre></div>
-<p>运行成功之后，打开浏览器，访问：<code>localhost:8000</code></p>
-<h2 id="_4">开发细节</h2>
+                <h1 id="_1">前言</h1>
+<p>机器人涉及的知识甚广，包括自动控制、人工智能、运筹、调度、人机交互、通信、操作系统、电力电子、数字电路、模拟电路等多个领域。</p>
+<p>下图绘制了机器人中的一些基本概念：</p>
+<p><img alt="" src="../_assets/robot_overview.png" /></p>
+<p>如图中所示，构成一个完整的机器人系统的组成部分有：</p>
 <ul>
-<li>请首先参考<a href="https://wiki.yfworld.com/standard/">书写规范</a></li>
-<li><a href="https://squidfunk.github.io/mkdocs-material/reference/abbreviations/">Materials for Mkdocs文档</a></li>
-<li>创建新条目: 如果你的修改涉及新增条目，你需要同时在<code>mkdocs.yml</code>中修改导航目录。</li>
+<li>机械平台</li>
+<li>硬件（包括电池、传感器）</li>
+<li>操作系统（包括RTOS/Linux及中间件）</li>
+<li>软件（包括感知、决策、规划等）</li>
 </ul>
-<h2 id="_5">推荐工具</h2>
-<ul>
-<li>Git版本控制: SourceTree / GitKraken</li>
-<li>Markdown编辑工具: Typora / Visual Studi Code </li>
-</ul>
+<p>除此之外，还有机器人之外的支持系统，如中央云服务器等。</p>
                 
               
               
@@ -1447,7 +1343,7 @@
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
-        <a href="../intro/" class="md-footer__link md-footer__link--prev" rel="prev">
+        <a href=".." class="md-footer__link md-footer__link--prev" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1456,19 +1352,19 @@
               <span class="md-footer__direction">
                 上一页
               </span>
-              前言
+              介绍
             </div>
           </div>
         </a>
       
       
-        <a href="../standard/" class="md-footer__link md-footer__link--next" rel="next">
+        <a href="../how-to-contribute/" class="md-footer__link md-footer__link--next" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 下一页
               </span>
-              书写规范
+              如何贡献这个维基？
             </div>
           </div>
           <div class="md-footer__button md-icon">

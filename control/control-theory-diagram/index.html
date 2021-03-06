@@ -13,21 +13,21 @@
         <meta name="author" content="YFRL">
       
       
-        <link rel="canonical" href="https://wiki.yfworld.com/control/pid/pid_tuning/">
+        <link rel="canonical" href="https://wiki.yfworld.com/control/control-theory-diagram/">
       
-      <link rel="shortcut icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.8">
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.0.4">
     
     
       
-        <title>PID Parameters Tuning - 机器人中文维基</title>
+        <title>控制理论结构图 - 机器人中文维基</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.cb6bc1d0.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.77f3fd56.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.39b8e14a.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.7fa14f5b.min.css">
         
           
           
@@ -41,17 +41,17 @@
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Sans:300,400,400i,700%7CFira+Mono&display=fallback">
-        <style>body,input{font-family:"Fira Sans",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Fira Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+        <style>:root{--md-text-font-family:"Fira Sans";--md-code-font-family:"Fira Mono"}</style>
       
     
     
     
-      <link rel="stylesheet" href="../../../_static/css/extra.css">
+      <link rel="stylesheet" href="../../_static/css/extra.css">
     
     
       
         
-<script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-60989638-5","auto"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}),document.addEventListener("DOMContentSwitch",function(){ga("send","pageview",document.location.pathname)})</script>
+<script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-60989638-5","auto"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){var e;this.value&&(e=document.location.pathname,ga("send","pageview",e+"?q="+this.value))}),"undefined"!=typeof location$&&location$.subscribe(function(e){ga("send","pageview",e.pathname)})})</script>
 <script async src="https://www.google-analytics.com/analytics.js"></script>
       
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#pid-parameters-tuning" class="md-skip">
+        <a href="#_1" class="md-skip">
           跳转至
         </a>
       
@@ -86,34 +86,37 @@
       
 
 <header class="md-header" data-md-component="header">
-  <nav class="md-header-nav md-grid" aria-label="Header">
-    <a href="https://wiki.yfworld.com" title="机器人中文维基" class="md-header-nav__button md-logo" aria-label="机器人中文维基">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="https://wiki.yfworld.com" title="机器人中文维基" class="md-header__button md-logo" aria-label="机器人中文维基">
       
-  <img src="../../../logo-site.png" alt="logo">
+  <img src="../../logo-site.png" alt="logo">
 
     </a>
-    <label class="md-header-nav__button md-icon" for="__drawer">
+    <label class="md-header__button md-icon" for="__drawer">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
     </label>
-    <div class="md-header-nav__title" data-md-component="header-title">
-      <div class="md-header-nav__ellipsis">
-        <div class="md-header-nav__topic">
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
           <span class="md-ellipsis">
             机器人中文维基
           </span>
         </div>
-        <div class="md-header-nav__topic">
+        <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              PID Parameters Tuning
+              控制理论结构图
             
           </span>
         </div>
       </div>
     </div>
+    <div class="md-header__options">
+      
+    </div>
     
-      <label class="md-header-nav__button md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
       </label>
       
 <div class="md-search" data-md-component="search" role="dialog">
@@ -122,10 +125,10 @@
     <form class="md-search__form" name="search">
       <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
       <label class="md-search__icon md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
       </label>
-      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
       </button>
     </form>
@@ -143,12 +146,12 @@
 </div>
     
     
-      <div class="md-header-nav__source">
+      <div class="md-header__source">
         
-<a href="https://github.com/yfrobotics/robowiki-cn" title="前往 GitHub 仓库" class="md-source">
+<a href="https://github.com/yfrobotics/robowiki-cn" title="前往 GitHub 仓库" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
   </div>
   <div class="md-source__repository">
     yfrobotics/robowiki-cn
@@ -177,7 +180,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../.." class="md-tabs__link">
+      <a href="../.." class="md-tabs__link">
         首页
       </a>
     </li>
@@ -195,7 +198,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../" class="md-tabs__link md-tabs__link--active">
+      <a href="../" class="md-tabs__link md-tabs__link--active">
         控制
       </a>
     </li>
@@ -211,7 +214,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../sensing/" class="md-tabs__link">
+      <a href="../../sensing/" class="md-tabs__link">
         传感
       </a>
     </li>
@@ -227,7 +230,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../planning/" class="md-tabs__link">
+      <a href="../../planning/" class="md-tabs__link">
         规划
       </a>
     </li>
@@ -243,7 +246,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../cv/" class="md-tabs__link">
+      <a href="../../cv/" class="md-tabs__link">
         视觉
       </a>
     </li>
@@ -259,7 +262,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../simulation/simulators/" class="md-tabs__link">
+      <a href="../../simulation/" class="md-tabs__link">
         仿真
       </a>
     </li>
@@ -275,7 +278,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../linux/" class="md-tabs__link">
+      <a href="../../linux/" class="md-tabs__link">
         Linux
       </a>
     </li>
@@ -291,7 +294,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../ros/" class="md-tabs__link">
+      <a href="../../ros/" class="md-tabs__link">
         ROS
       </a>
     </li>
@@ -307,7 +310,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../hardware/" class="md-tabs__link">
+      <a href="../../hardware/" class="md-tabs__link">
         硬件
       </a>
     </li>
@@ -323,7 +326,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../database/" class="md-tabs__link">
+      <a href="../../database/" class="md-tabs__link">
         数据库
       </a>
     </li>
@@ -339,7 +342,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../resources/" class="md-tabs__link">
+      <a href="../../resources/" class="md-tabs__link">
         资源
       </a>
     </li>
@@ -356,7 +359,7 @@
           
             
               
-              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation" >
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -370,7 +373,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="https://wiki.yfworld.com" title="机器人中文维基" class="md-nav__button md-logo" aria-label="机器人中文维基">
       
-  <img src="../../../logo-site.png" alt="logo">
+  <img src="../../logo-site.png" alt="logo">
 
     </a>
     机器人中文维基
@@ -378,10 +381,10 @@
   
     <div class="md-nav__source">
       
-<a href="https://github.com/yfrobotics/robowiki-cn" title="前往 GitHub 仓库" class="md-source">
+<a href="https://github.com/yfrobotics/robowiki-cn" title="前往 GitHub 仓库" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
   </div>
   <div class="md-source__repository">
     yfrobotics/robowiki-cn
@@ -402,27 +405,26 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" >
       
-      <label class="md-nav__link" for="nav-1">
+      <label class="md-nav__link" for="__nav_1">
         首页
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="首页" data-md-level="1">
-        <label class="md-nav__title" for="nav-1">
+        <label class="md-nav__title" for="__nav_1">
           <span class="md-nav__icon md-icon"></span>
           首页
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
-          
           
             
   
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
-        机器人中文维基
+      <a href="../.." class="md-nav__link">
+        介绍
       </a>
     </li>
   
@@ -433,7 +435,19 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../how-to-contribute/" class="md-nav__link">
+      <a href="../../intro/" class="md-nav__link">
+        前言
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to-contribute/" class="md-nav__link">
         如何贡献这个维基？
       </a>
     </li>
@@ -445,7 +459,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../standard/" class="md-nav__link">
+      <a href="../../standard/" class="md-nav__link">
         书写规范
       </a>
     </li>
@@ -457,7 +471,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../contributors/" class="md-nav__link">
+      <a href="../../contributors/" class="md-nav__link">
         贡献者名单
       </a>
     </li>
@@ -483,131 +497,26 @@
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
       
-      <label class="md-nav__link" for="nav-2">
+      <label class="md-nav__link" for="__nav_2">
         控制
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="控制" data-md-level="1">
-        <label class="md-nav__title" for="nav-2">
+        <label class="md-nav__title" for="__nav_2">
           <span class="md-nav__icon md-icon"></span>
           控制
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
-          
             
   
   
   
     <li class="md-nav__item">
-      <a href="../../" class="md-nav__link">
-        控制系统指南
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    
-      
-    
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-2" type="checkbox" id="nav-2-2" >
-      
-      <label class="md-nav__link" for="nav-2-2">
-        控制系统建模
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-      <nav class="md-nav" aria-label="控制系统建模" data-md-level="2">
-        <label class="md-nav__title" for="nav-2-2">
-          <span class="md-nav__icon md-icon"></span>
-          控制系统建模
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../modelling/modelling/" class="md-nav__link">
-        Modelling Overview
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../modelling/state_space/" class="md-nav__link">
-        State Space
-      </a>
-    </li>
-  
-
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-          
-            
-  
-  
-    
-  
-  
-    
-      
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-3" type="checkbox" id="nav-2-3" checked>
-      
-      <label class="md-nav__link" for="nav-2-3">
-        PID控制
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-      <nav class="md-nav" aria-label="PID控制" data-md-level="2">
-        <label class="md-nav__title" for="nav-2-3">
-          <span class="md-nav__icon md-icon"></span>
-          PID控制
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../pid/" class="md-nav__link">
-        PID Controller
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../pid_improved/" class="md-nav__link">
-        PID Improvement Techniques
+      <a href="../" class="md-nav__link">
+        <控制系统指南>
       </a>
     </li>
   
@@ -627,9 +536,121 @@
       
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        PID Parameters Tuning
+        控制理论结构图
       </a>
       
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" >
+      
+      <label class="md-nav__link" for="__nav_2_3">
+        控制系统建模
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="控制系统建模" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          控制系统建模
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../modelling/modelling/" class="md-nav__link">
+        Modelling Overview
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../modelling/state-space.md" class="md-nav__link">
+        None
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4" type="checkbox" id="__nav_2_4" >
+      
+      <label class="md-nav__link" for="__nav_2_4">
+        PID控制
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="PID控制" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_4">
+          <span class="md-nav__icon md-icon"></span>
+          PID控制
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pid/pid/" class="md-nav__link">
+        PID Controller
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pid/pid-improved/" class="md-nav__link">
+        PID Improvement Techniques
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pid/pid-tuning/" class="md-nav__link">
+        PID Parameters Tuning
+      </a>
     </li>
   
 
@@ -645,7 +666,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../mpc/mpc/" class="md-nav__link">
+      <a href="../mpc/mpc/" class="md-nav__link">
         MPC控制
       </a>
     </li>
@@ -669,27 +690,26 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
       
-      <label class="md-nav__link" for="nav-3">
+      <label class="md-nav__link" for="__nav_3">
         传感
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="传感" data-md-level="1">
-        <label class="md-nav__title" for="nav-3">
+        <label class="md-nav__title" for="__nav_3">
           <span class="md-nav__icon md-icon"></span>
           传感
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
-          
           
             
   
   
   
     <li class="md-nav__item">
-      <a href="../../../sensing/" class="md-nav__link">
-        机器人传感技术
+      <a href="../../sensing/" class="md-nav__link">
+        <机器人传感技术>
       </a>
     </li>
   
@@ -700,7 +720,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../sensing/sensors/" class="md-nav__link">
+      <a href="../../sensing/sensors/" class="md-nav__link">
         机器人常用传感器
       </a>
     </li>
@@ -724,26 +744,25 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
       
-      <label class="md-nav__link" for="nav-4">
+      <label class="md-nav__link" for="__nav_4">
         规划
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="规划" data-md-level="1">
-        <label class="md-nav__title" for="nav-4">
+        <label class="md-nav__title" for="__nav_4">
           <span class="md-nav__icon md-icon"></span>
           规划
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
-          
           
             
   
   
   
     <li class="md-nav__item">
-      <a href="../../../planning/" class="md-nav__link">
+      <a href="../../planning/" class="md-nav__link">
         机器人规划
       </a>
     </li>
@@ -767,27 +786,26 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
       
-      <label class="md-nav__link" for="nav-5">
+      <label class="md-nav__link" for="__nav_5">
         视觉
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="视觉" data-md-level="1">
-        <label class="md-nav__title" for="nav-5">
+        <label class="md-nav__title" for="__nav_5">
           <span class="md-nav__icon md-icon"></span>
           视觉
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
-          
           
             
   
   
   
     <li class="md-nav__item">
-      <a href="../../../cv/" class="md-nav__link">
-        机器视觉
+      <a href="../../cv/" class="md-nav__link">
+        <机器视觉>
       </a>
     </li>
   
@@ -810,27 +828,26 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
       
-      <label class="md-nav__link" for="nav-6">
+      <label class="md-nav__link" for="__nav_6">
         仿真
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="仿真" data-md-level="1">
-        <label class="md-nav__title" for="nav-6">
+        <label class="md-nav__title" for="__nav_6">
           <span class="md-nav__icon md-icon"></span>
           仿真
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
-          
           
             
   
   
   
     <li class="md-nav__item">
-      <a href="../../../simulation/simulators/" class="md-nav__link">
-        机器人仿真工具
+      <a href="../../simulation/" class="md-nav__link">
+        <机器人仿真工具>
       </a>
     </li>
   
@@ -841,7 +858,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../simulation/gazebo/" class="md-nav__link">
+      <a href="../../simulation/gazebo/" class="md-nav__link">
         Gazebo
       </a>
     </li>
@@ -853,7 +870,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../simulation/vrep/" class="md-nav__link">
+      <a href="../../simulation/vrep/" class="md-nav__link">
         CoppeliaSim (V-REP)
       </a>
     </li>
@@ -865,7 +882,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../simulation/mujoco/" class="md-nav__link">
+      <a href="../../simulation/mujoco/" class="md-nav__link">
         MuJoCo
       </a>
     </li>
@@ -877,7 +894,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../simulation/pybullet/" class="md-nav__link">
+      <a href="../../simulation/pybullet/" class="md-nav__link">
         PyBullet
       </a>
     </li>
@@ -889,7 +906,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../simulation/webots/" class="md-nav__link">
+      <a href="../../simulation/webots/" class="md-nav__link">
         Webots
       </a>
     </li>
@@ -901,7 +918,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../simulation/robotics-toolbox/" class="md-nav__link">
+      <a href="../../simulation/robotics-toolbox/" class="md-nav__link">
         MATLAB Robotics Toolbox
       </a>
     </li>
@@ -913,7 +930,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../simulation/stage/" class="md-nav__link">
+      <a href="../../simulation/stage/" class="md-nav__link">
         Stage
       </a>
     </li>
@@ -937,26 +954,25 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
       
-      <label class="md-nav__link" for="nav-7">
+      <label class="md-nav__link" for="__nav_7">
         Linux
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="Linux" data-md-level="1">
-        <label class="md-nav__title" for="nav-7">
+        <label class="md-nav__title" for="__nav_7">
           <span class="md-nav__icon md-icon"></span>
           Linux
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
-          
           
             
   
   
   
     <li class="md-nav__item">
-      <a href="../../../linux/" class="md-nav__link">
+      <a href="../../linux/" class="md-nav__link">
         Linux
       </a>
     </li>
@@ -980,26 +996,25 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
       
-      <label class="md-nav__link" for="nav-8">
+      <label class="md-nav__link" for="__nav_8">
         ROS
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="ROS" data-md-level="1">
-        <label class="md-nav__title" for="nav-8">
+        <label class="md-nav__title" for="__nav_8">
           <span class="md-nav__icon md-icon"></span>
           ROS
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
-          
           
             
   
   
   
     <li class="md-nav__item">
-      <a href="../../../ros/" class="md-nav__link">
+      <a href="../../ros/" class="md-nav__link">
         ROS (机器人操作系统)
       </a>
     </li>
@@ -1023,27 +1038,26 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" >
       
-      <label class="md-nav__link" for="nav-9">
+      <label class="md-nav__link" for="__nav_9">
         硬件
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="硬件" data-md-level="1">
-        <label class="md-nav__title" for="nav-9">
+        <label class="md-nav__title" for="__nav_9">
           <span class="md-nav__icon md-icon"></span>
           硬件
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
-          
           
             
   
   
   
     <li class="md-nav__item">
-      <a href="../../../hardware/" class="md-nav__link">
-        机器人硬件平台
+      <a href="../../hardware/" class="md-nav__link">
+        <机器人硬件平台>
       </a>
     </li>
   
@@ -1054,7 +1068,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../arduino/" class="md-nav__link">
+      <a href="../../arduino/" class="md-nav__link">
         Arduino
       </a>
     </li>
@@ -1066,7 +1080,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../raspberrypi/" class="md-nav__link">
+      <a href="../../raspberrypi/" class="md-nav__link">
         Raspberry Pi
       </a>
     </li>
@@ -1078,7 +1092,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../jetson/" class="md-nav__link">
+      <a href="../../jetson/" class="md-nav__link">
         Nvidia Jetson
       </a>
     </li>
@@ -1102,27 +1116,38 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" type="checkbox" id="__nav_10" >
       
-      <label class="md-nav__link" for="nav-10">
+      <label class="md-nav__link" for="__nav_10">
         数据库
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="数据库" data-md-level="1">
-        <label class="md-nav__title" for="nav-10">
+        <label class="md-nav__title" for="__nav_10">
           <span class="md-nav__icon md-icon"></span>
           数据库
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
-          
           
             
   
   
   
     <li class="md-nav__item">
-      <a href="../../../database/" class="md-nav__link">
-        机器人数据库 (图鉴)
+      <a href="../../database/" class="md-nav__link">
+        <机器人图鉴数据库>
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/boston-dynamics/" class="md-nav__link">
+        波士顿动力公司 (Boston Dynamics)
       </a>
     </li>
   
@@ -1145,26 +1170,25 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_11" type="checkbox" id="__nav_11" >
       
-      <label class="md-nav__link" for="nav-11">
+      <label class="md-nav__link" for="__nav_11">
         资源
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="资源" data-md-level="1">
-        <label class="md-nav__title" for="nav-11">
+        <label class="md-nav__title" for="__nav_11">
           <span class="md-nav__icon md-icon"></span>
           资源
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
-          
           
             
   
   
   
     <li class="md-nav__item">
-      <a href="../../../resources/" class="md-nav__link">
+      <a href="../../resources/" class="md-nav__link">
         机器人资源
       </a>
     </li>
@@ -1176,7 +1200,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../resources/conferences/" class="md-nav__link">
+      <a href="../../resources/conferences/" class="md-nav__link">
         机器人国际会议与期刊列表
       </a>
     </li>
@@ -1188,7 +1212,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../resources/standard/" class="md-nav__link">
+      <a href="../../resources/standard/" class="md-nav__link">
         机器人领域行业标准
       </a>
     </li>
@@ -1200,7 +1224,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../resources/competitions/" class="md-nav__link">
+      <a href="../../resources/competitions/" class="md-nav__link">
         机器人竞赛
       </a>
     </li>
@@ -1212,7 +1236,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../resources/labs/" class="md-nav__link">
+      <a href="../../resources/labs/" class="md-nav__link">
         机器人实验室与机构
       </a>
     </li>
@@ -1224,7 +1248,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../resources/companies/" class="md-nav__link">
+      <a href="../../resources/companies/" class="md-nav__link">
         机器人公司企业
       </a>
     </li>
@@ -1236,7 +1260,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../resources/materials/" class="md-nav__link">
+      <a href="../../resources/materials/" class="md-nav__link">
         机器人图书
       </a>
     </li>
@@ -1248,7 +1272,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../resources/software/" class="md-nav__link">
+      <a href="../../resources/software/" class="md-nav__link">
         机器人开源工具与软件
       </a>
     </li>
@@ -1269,7 +1293,7 @@
             
             
               
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc" >
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -1285,16 +1309,14 @@
               </div>
             
           
-          <div class="md-content">
+          <div class="md-content" data-md-component="content">
             <article class="md-content__inner md-typeset">
               
                 
                 
-                <h1 id="pid-parameters-tuning">PID Parameters Tuning</h1>
-<ul>
-<li>Ziegler-Nichols Tuning</li>
-<li>Reaction Curve Tuning</li>
-</ul>
+                <h1 id="_1">控制理论结构图</h1>
+<p>该图描述了控制理论的体系结构，由 <a href="https://www.zhihu.com/people/xiang-yi-55-49">@系统与控制</a> 创作并授权使用。</p>
+<p><img alt="" src="../assets/control_theory_diagram_cn.png" /></p>
                 
               
               
@@ -1310,40 +1332,38 @@
         
 <footer class="md-footer">
   
-    <div class="md-footer-nav">
-      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
-        
-          <a href="../pid_improved/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
-            <div class="md-footer-nav__button md-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        <a href="../" class="md-footer__link md-footer__link--prev" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              <控制系统指南>
             </div>
-            <div class="md-footer-nav__title">
-              <div class="md-ellipsis">
-                <span class="md-footer-nav__direction">
-                  上一页
-                </span>
-                PID Improvement Techniques
-              </div>
+          </div>
+        </a>
+      
+      
+        <a href="../modelling/modelling/" class="md-footer__link md-footer__link--next" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              Modelling Overview
             </div>
-          </a>
-        
-        
-          <a href="../../mpc/mpc/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
-            <div class="md-footer-nav__title">
-              <div class="md-ellipsis">
-                <span class="md-footer-nav__direction">
-                  下一页
-                </span>
-                MPC控制
-              </div>
-            </div>
-            <div class="md-footer-nav__button md-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
-            </div>
-          </a>
-        
-      </nav>
-    </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -1360,23 +1380,17 @@
 </footer>
       
     </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.instant", "navigation.sections"], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../assets/javascripts/workers/search.fb4a9340.min.js", "version": null}</script>
     
-      <script src="../../../assets/javascripts/vendor.18f0862e.min.js"></script>
-      <script src="../../../assets/javascripts/bundle.994580cf.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
-      
-      <script>
-        app = initialize({
-          base: "../../..",
-          features: ['navigation.tabs', 'navigation.instant', 'navigation.sections'],
-          search: Object.assign({
-            worker: "../../../assets/javascripts/worker/search.9c0e82ba.min.js"
-          }, typeof search !== "undefined" && search)
-        })
-      </script>
+    
+      <script src="../../assets/javascripts/bundle.9b151c6a.min.js"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
-        <script src="../../../_static/js/mathjaxhelper.js"></script>
+        <script src="../../_static/js/mathjaxhelper.js"></script>
       
     
   </body>
