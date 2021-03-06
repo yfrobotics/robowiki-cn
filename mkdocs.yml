@@ -22,18 +22,20 @@ google_analytics:
 nav:
     - 首页: 
       - index.md
+      - intro.md
       - how-to-contribute.md
       - standard.md
       - contributors.md
     - 控制: 
       - control/index.md
+      - control/control-theory-diagram.md
       - 控制系统建模:
         - control/modelling/modelling.md
-        - control/modelling/state_space.md
+        - control/modelling/state-space.md
       - PID控制:
         - control/pid/pid.md
-        - control/pid/pid_improved.md
-        - control/pid/pid_tuning.md
+        - control/pid/pid-improved.md
+        - control/pid/pid-tuning.md
       - MPC控制: control/mpc/mpc.md
     - 传感:
       - sensing/index.md
@@ -43,7 +45,7 @@ nav:
     - 视觉:
       - cv/index.md
     - 仿真:
-      - simulation/simulators.md
+      - simulation/index.md
       - simulation/gazebo.md
       - simulation/vrep.md
       - simulation/mujoco.md
@@ -62,6 +64,7 @@ nav:
       - jetson/index.md
     - 数据库:
       - database/index.md
+      - database/boston-dynamics.md
     - 资源:
       - resources/index.md
       - resources/conferences.md

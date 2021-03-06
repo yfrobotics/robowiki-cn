@@ -28,6 +28,7 @@
 
 ## 开发细节
 
+- 请首先参考[书写规范](https://wiki.yfworld.com/standard/)
 - [Materials for Mkdocs文档](https://squidfunk.github.io/mkdocs-material/reference/abbreviations/)
 - 创建新条目: 如果你的修改涉及新增条目，你需要同时在`mkdocs.yml`中修改导航目录。
 
