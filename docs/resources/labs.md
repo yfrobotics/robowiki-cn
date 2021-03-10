@@ -1,24 +1,4 @@
 # 机器人实验室与机构
-- 中国 (China)
-    - 哈工大机器人所
-    - 沈阳自动化所
-    - 北航机器人所
-    - 上海交大机器人所
-    - 西安交大
-    - 南京理工
-    - 国防科大
-- 中国香港 (HK)
-    - 香港科技大
-    - 香港中文大
-- 英国 (UK)
-    - [Bristol Robotics Laboratory](https://brl.ac.uk)
-    - [Sheffield Robotics Lab](https://sheffieldrobotics.ac.uk)	
-    - [Edinburgh Centre of Robotics](https://edinburgh-robotics.org)
-    - [Robotics & Autonomous Systems Network](https://ukras.org)
-    - [DeepMind](https://deepmind.com)
-- 欧洲 (Europe)
-    - [ETH Zurich, Institute of Robotics and Intelligent Systems](https://www.iris.ethz.ch/) 
-    - [University of Zurich & ETH Zurich, Robotics and Perception Group](http://rpg.ifi.uzh.ch/)
 - 美国 (US)
     - [Boston Dynamics](https://bostondynamics.com)	
     - [Harvard Self-Organizing Systems Group](https://eecs.harvard.edu/ssr)	
@@ -27,7 +7,29 @@
     - CMU
     - UC Berkeley
     - OpenAI
+- 欧洲 (Europe)
+    - [ETH Zurich, Institute of Robotics and Intelligent Systems](https://www.iris.ethz.ch/) 
+    - [University of Zurich & ETH Zurich, Robotics and Perception Group](http://rpg.ifi.uzh.ch/)
 - 日本 (Japan)
     -  日本东京大学
     -  日本早稻田大学
     -  [日本机器人协会](https://www.rsj.or.jp/en/)
+- 英国 (UK)
+    - [Bristol Robotics Laboratory](https://brl.ac.uk)
+    - [Sheffield Robotics Lab](https://sheffieldrobotics.ac.uk)	
+    - [Edinburgh Centre of Robotics](https://edinburgh-robotics.org)
+    - [Robotics & Autonomous Systems Network](https://ukras.org)
+    - [DeepMind](https://deepmind.com)
+- 中国 (China)
+    - 清华大学自动化实验室
+    - 北京大学人工智能研究实验室
+    - 哈工大机器人所
+    - 沈阳自动化所
+    - 北航机器人所
+    - 上海交大机器人所
+    - 西安交大
+    - 南京理工
+    - 国防科大
+- 香港 (HK, China)
+    - 香港科技大
+    - 香港中文大
