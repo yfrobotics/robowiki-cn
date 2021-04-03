@@ -76,6 +76,7 @@ nav:
       - resources/software.md
 
 # Theme
+# Document: https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/
 theme:
   name: 'material'
   language: 'zh'
@@ -83,11 +84,12 @@ theme:
   palette:
     primary: 'white'
     accent: 'red'
-  include_search_page: false
+  include_search_page: true
   search_index_only: true
   features:
     - navigation.instant
     - navigation.sections
+    - navigation.top
   font:
     text: 'Fira Sans'
     code: 'Fira Mono'
