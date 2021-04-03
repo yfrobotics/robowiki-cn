@@ -86,7 +86,6 @@ theme:
   include_search_page: false
   search_index_only: true
   features:
-    - navigation.tabs
     - navigation.instant
     - navigation.sections
   font:
