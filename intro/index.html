@@ -254,9 +254,38 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          前言
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         前言
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    参考资料
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1128,6 +1157,21 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    参考资料
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1151,6 +1195,38 @@
 <li>软件（包括感知、决策、规划等）</li>
 </ul>
 <p>除此之外，还有机器人之外的支持系统，如中央云服务器等。</p>
+<p>按照大学一般的课程体系，机器人用到了以下基础知识（大一、大二）：</p>
+<ul>
+<li>数学：高等数学、线性代数、概率论与数理统计、复变函数</li>
+<li>数电、模电技术</li>
+<li>单片机原理与应用</li>
+<li>计算机原理（或微机原理）</li>
+<li>计算机体系架构</li>
+<li>操作系统</li>
+<li>C/C++语言编程（或Java语言编程）</li>
+<li>算法导论</li>
+</ul>
+<p>更专业和针对一点的课程（大三、大四及研究生阶段）：</p>
+<ul>
+<li>自动控制原理（即经典控制理论）</li>
+<li>现代控制原理（状态空间控制、模型预测控制等）</li>
+<li>智能控制（专家控制 + 模糊控制 + 鲁棒控制 + 神经网络）</li>
+<li>机械制图</li>
+<li>机械原理（齿轮、传动、有限元受力分析）</li>
+<li>MATLAB/Simulink 或 NI Labview（也叫快速控制原型设计 RCP）</li>
+<li>人工智能导论</li>
+<li>传感器与信号处理（有时还包括系统辨识）</li>
+<li>模式控制与识别</li>
+<li>运动控制系统</li>
+<li>电气控制与PLC（一些工业机器人依然是由PLC控制的）</li>
+<li>电力与电子系统（主要针对电机控制和电源系统设计）</li>
+<li>机器人导论（某些研究生专业会开设）</li>
+</ul>
+<p>当然也有很多研发中需要的知识是自动化专业没有覆盖的，比如机器视觉、SLAM、路径规划、ROS操作系统等，这些根据需要自学就好。</p>
+<h2 id="_2">参考资料</h2>
+<ul>
+<li>戴晓天，知乎，<a href="https://www.zhihu.com/question/451409605/answer/1801999987">机器人用到了哪些自动化专业知识？</a></li>
+</ul>
                 
               
               
@@ -1161,6 +1237,10 @@
             </article>
           </div>
         </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" data-md-state="hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg>
+          </a>
         
       </main>
       
@@ -1219,7 +1299,7 @@
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.sections"], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../assets/javascripts/workers/search.fe42c31b.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.sections", "navigation.top"], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../assets/javascripts/workers/search.fe42c31b.min.js", "version": null}</script>
     
     
       <script src="../assets/javascripts/bundle.d892486b.min.js"></script>
