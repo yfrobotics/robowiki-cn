@@ -1,4 +1,4 @@
-# <控制系统指南>
+# 控制系统指南
 
 ![](assets/markdown-img-paste-20170412214456853.png)
 

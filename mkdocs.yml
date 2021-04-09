@@ -22,10 +22,13 @@ google_analytics:
 nav:
     - 首页: 
       - index.md
-      - intro.md
       - how-to-contribute.md
       - standard.md
       - contributors.md
+    - 入门:
+      - basics/intro.md
+      - basics/courses.md
+      - basics/books.md
     - 控制: 
       - control/index.md
       - control/control-theory-diagram.md
@@ -42,6 +45,9 @@ nav:
       - sensing/sensors.md
     - 规划:
       - planning/index.md
+      - planning/pathplanning.md
+      - planning/motionplanning.md
+      - planning/decisionmaking.md
     - 视觉:
       - cv/index.md
     - 仿真:
@@ -57,6 +63,8 @@ nav:
       - linux/index.md
     - ROS:
       - ros/index.md
+      - ros/ros1.md
+      - ros/ros2.md
     - 硬件:
       - hardware/index.md
       - arduino/index.md
@@ -72,7 +80,6 @@ nav:
       - resources/competitions.md
       - resources/labs.md
       - resources/companies.md
-      - resources/materials.md
       - resources/software.md
 
 # Theme
