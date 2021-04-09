@@ -1,6 +1,7 @@
 # PID Controller
 ## Formula
-$$ u(t) = K_p e(t) + K_i \int^t_0 e(\tau) d\tau + K_d \frac{de(t)}{dt}$$
+
+$$ u(t) = K_p e(t) + K_i \int^t_0 e(\tau) d\tau + K_d \frac{de(t)}{dt} $$
 
 The Laplace transform is:
 $$ L(s) = U(s)/E(s) = K_p + \frac{K_i}{s} + K_d s $$
