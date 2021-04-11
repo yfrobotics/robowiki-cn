@@ -3,7 +3,7 @@
 
 ## Generals
 - MPC: regulatory controls using an explicit dynamic model of the response of process variables to changes in manipulated variables.
-- $obj = min(\sum (y - y_{trajectory})^2)$
+- \(obj = min(\sum (y - y_{trajectory})^2)\)
 - basic version uses linear model. Can also be empirical model.
 - advantages over PID:
     - long time constants, substaintial time delays, inverse response, etc;
@@ -17,7 +17,7 @@
     - can include equality and inequality constraints on controlled and manipulated variables
     - solves a nonlinear programming problem at each sampling instant
     - disturbance is estimated by comparing the actual controlled variable with the model prediction
-    - usually implements the first move out of $M$ calculated moves
+    - usually implements the first move out of \(M\) calculated moves
 
 - MPC target trajectories
 ![](assets/markdown-img-paste-20170413121028412.png)

@@ -1,8 +1,7 @@
 # Arduino
 
-Arduino是全世界使用最广泛的嵌入式计算机，被用于大量电子hacking、互动式艺术以及DIY作品中。
+Arduino是全世界使用最广泛的嵌入式计算机，被用于大量电子hacking、互动式艺术以及DIY作品中:
 
-- Arduino Due
 - Arduino Esplora
 - Arduino Lenardo
 - Arduino Mega / Mega 2560
@@ -10,6 +9,14 @@ Arduino是全世界使用最广泛的嵌入式计算机，被用于大量电子h
 - Arduino Micro
 - Arduino Nano
 - Arduino Uno
+
+With WiFi:
+
 - Arduino Yun
+- Arduino Yun Rev.2
+
+ARM 32-bit:
+
+- Arduino Due
 
 (本条目需要完善，[立刻参与知识公共编辑](/how-to-contribute/))

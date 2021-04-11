@@ -63,9 +63,6 @@ $$
 
 
 
-
-
-
 ## Matlab functions
 ### Transfer Function
 `s = tf('s')`
@@ -92,4 +89,4 @@ Find poles of a SISO or MIMO system: `pole(sys)`
 
 
 ## Reference
-[1] http://ctms.engin.umich.edu/CTMS/index.php?example=InvertedPendulum&section=ControlDigital
+1. [http://ctms.engin.umich.edu/CTMS/index.php?example=InvertedPendulum&section=ControlDigital](http://ctms.engin.umich.edu/CTMS/index.php?example=InvertedPendulum&section=ControlDigital)

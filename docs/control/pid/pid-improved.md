@@ -199,10 +199,10 @@ $\gamma$ is for set-point weighting, which can be interpreted as feedforward fro
 
 ### Reset Tiebacks
 
-### $I$ term Saturation
+### **I**-term Saturation
 
 
-### $D$ term Filtering
+### **D**-term Filtering
 
 
 ### Error Dead-zone
