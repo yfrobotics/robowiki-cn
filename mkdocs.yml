@@ -59,12 +59,12 @@ nav:
       - simulation/webots.md
       - simulation/robotics-toolbox.md
       - simulation/stage.md
-    - Linux:
-      - linux/index.md
     - ROS:
       - ros/index.md
       - ros/ros1.md
       - ros/ros2.md
+    - Linux:
+      - linux/index.md
     - 硬件:
       - hardware/index.md
       - arduino/index.md
