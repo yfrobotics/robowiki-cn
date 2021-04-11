@@ -120,10 +120,6 @@
      <lastmod>2021-04-11</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://wiki.yfworld.com/linux/</loc>
-     <lastmod>2021-04-11</lastmod>
-     <changefreq>daily</changefreq>
-    </url><url>
      <loc>https://wiki.yfworld.com/ros/</loc>
      <lastmod>2021-04-11</lastmod>
      <changefreq>daily</changefreq>
@@ -133,6 +129,10 @@
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://wiki.yfworld.com/ros/ros2/</loc>
+     <lastmod>2021-04-11</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://wiki.yfworld.com/linux/</loc>
      <lastmod>2021-04-11</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
