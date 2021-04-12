@@ -65,6 +65,8 @@ nav:
       - ros/ros2.md
     - Linux:
       - linux/index.md
+    - RTOS:
+      - rtos/index.md
     - 硬件:
       - hardware/index.md
       - arduino/index.md
