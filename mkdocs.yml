@@ -67,6 +67,10 @@ nav:
       - linux/index.md
     - RTOS:
       - rtos/index.md
+      - rtos/freertos.md
+      - rtos/ucos.md
+      - rtos/vxworks.md
+      - rtos/qnx.md
     - 硬件:
       - hardware/index.md
       - arduino/index.md
