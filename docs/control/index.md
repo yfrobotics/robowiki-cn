@@ -56,5 +56,5 @@ This wiki site is maintained by myself at an irregularly base. Contents might be
 
 
 ## Reference
-1. Control Theory - Wikipedia, [link](https://en.wikipedia.org/wiki/Control_theory)
-2. Jonathan How, and Emilio Frazzoli. 16.30 Feedback Control Systems. Fall 2010. Massachusetts Institute of Technology: MIT OpenCourseWare, https://ocw.mit.edu. License: Creative Commons BY-NC-SA.
+1. [Control Theory - Wikipedia](https://en.wikipedia.org/wiki/Control_theory)
+2. Jonathan How and Emilio Frazzoli. [16.30 Feedback Control Systems](https://ocw.mit.edu/courses/aeronautics-and-astronautics/16-30-feedback-control-systems-fall-2010/). Fall 2010.  MIT OpenCourseWare

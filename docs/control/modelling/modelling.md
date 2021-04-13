@@ -89,4 +89,4 @@ Find poles of a SISO or MIMO system: `pole(sys)`
 
 
 ## Reference
-1. [http://ctms.engin.umich.edu/CTMS/index.php?example=InvertedPendulum&section=ControlDigital](http://ctms.engin.umich.edu/CTMS/index.php?example=InvertedPendulum&section=ControlDigital)
+1. Control Tutorials, [Inverted Pendulum: Digital Controller Design](http://ctms.engin.umich.edu/CTMS/index.php?example=InvertedPendulum&section=ControlDigital), University of Michigan
