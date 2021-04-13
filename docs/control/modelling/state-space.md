@@ -1,4 +1,4 @@
-# State Space
+# 状态空间法
 
 
 State space model is in time domain and can describe both SISO and MIMO systems.
