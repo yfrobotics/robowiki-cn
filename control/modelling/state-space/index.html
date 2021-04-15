@@ -526,7 +526,7 @@
   
     <li class="md-nav__item">
       <a href="../../../basics/courses/" class="md-nav__link">
-        机器人专业课程
+        机器人知识课程组成
       </a>
     </li>
   
@@ -539,6 +539,18 @@
     <li class="md-nav__item">
       <a href="../../../basics/books/" class="md-nav__link">
         机器人图书
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../basics/videos/" class="md-nav__link">
+        机器人视频
       </a>
     </li>
   
@@ -649,28 +661,28 @@
       
         <li class="md-nav__item">
   <a href="#controllability" class="md-nav__link">
-    Controllability
+    能控性 (Controllability)
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#observability" class="md-nav__link">
-    Observability
+    能观性 (Observability)
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#calculate-gain" class="md-nav__link">
-    Calculate Gain
+  <a href="#_2" class="md-nav__link">
+    控制增益计算
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#matlab-code-for-lqr" class="md-nav__link">
-    Matlab code for LQR
+  <a href="#lqrmatlab" class="md-nav__link">
+    LQR控制器的MATLAB代码
   </a>
   
 </li>
@@ -1477,28 +1489,28 @@
       
         <li class="md-nav__item">
   <a href="#controllability" class="md-nav__link">
-    Controllability
+    能控性 (Controllability)
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#observability" class="md-nav__link">
-    Observability
+    能观性 (Observability)
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#calculate-gain" class="md-nav__link">
-    Calculate Gain
+  <a href="#_2" class="md-nav__link">
+    控制增益计算
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#matlab-code-for-lqr" class="md-nav__link">
-    Matlab code for LQR
+  <a href="#lqrmatlab" class="md-nav__link">
+    LQR控制器的MATLAB代码
   </a>
   
 </li>
@@ -1531,11 +1543,13 @@
 <li>Dynamic output feedback: combines these two with provable guarantees on stability and performance.</li>
 </ul>
 <p>Overall, state-space design process is more systematic than classical control design.</p>
-<h2 id="controllability">Controllability</h2>
-<h2 id="observability">Observability</h2>
-<h2 id="calculate-gain">Calculate Gain</h2>
+<h2 id="controllability">能控性 (Controllability)</h2>
+<p>（待补充）</p>
+<h2 id="observability">能观性 (Observability)</h2>
+<p>（待补充）</p>
+<h2 id="_2">控制增益计算</h2>
 <p><img alt="" src="../assets/markdown-img-paste-20170412215404210.png" /></p>
-<p>For a SISO system, the transfer function can take the forms: $H(s) = [C(sI-A)^{-1}B + D]$ and $H(z) = [C(zI-A)^{-1}B + D]$.</p>
+<p>For a SISO system, the transfer function can take the forms: <script type="math/tex">H(s) = [C(sI-A)^{-1}B + D]</script> and <script type="math/tex">H(z) = [C(zI-A)^{-1}B + D]</script>.</p>
 <p>The new input can be calculated as:
 <script type="math/tex; mode=display">
 u(t) = r(t) - KX = r(t) - \begin{pmatrix}k_1 & k_2 & k_3\end{pmatrix}
@@ -1547,34 +1561,34 @@ u(t) = r(t) - KX = r(t) - \begin{pmatrix}k_1 & k_2 & k_3\end{pmatrix}
 \frac{dx}{dt} = [A - BK]x - Br(t)
 </script>
 </p>
-<h2 id="matlab-code-for-lqr">Matlab code for LQR</h2>
-<pre><code class="language-matlab">A = sys_d.a;
-B = sys_d.b;
-C = sys_d.c;
-D = sys_d.d;
-Q = C'*C            % state-cost matrix
-R = 1;              % control-cost
-[K] = dlqr(A,B,Q,R) % control gain matrix
+<h2 id="lqrmatlab">LQR控制器的MATLAB代码</h2>
+<div class="highlight"><pre><span></span><code><span class="n">A</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">sys_d</span><span class="p">.</span><span class="n">a</span><span class="p">;</span><span class="w"></span>
+<span class="n">B</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">sys_d</span><span class="p">.</span><span class="n">b</span><span class="p">;</span><span class="w"></span>
+<span class="n">C</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">sys_d</span><span class="p">.</span><span class="n">c</span><span class="p">;</span><span class="w"></span>
+<span class="n">D</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">sys_d</span><span class="p">.</span><span class="n">d</span><span class="p">;</span><span class="w"></span>
+<span class="n">Q</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">C</span><span class="o">&#39;*</span><span class="n">C</span><span class="w">            </span><span class="c">% state-cost matrix</span><span class="w"></span>
+<span class="n">R</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">              </span><span class="c">% control-cost</span><span class="w"></span>
+<span class="p">[</span><span class="n">K</span><span class="p">]</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">dlqr</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">B</span><span class="p">,</span><span class="n">Q</span><span class="p">,</span><span class="n">R</span><span class="p">)</span><span class="w"> </span><span class="c">% control gain matrix</span><span class="w"></span>
 
-Ac = [(A-B*K)];
-Bc = [B];
-Cc = [C];
-Dc = [D];
+<span class="n">Ac</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[(</span><span class="n">A</span><span class="o">-</span><span class="n">B</span><span class="o">*</span><span class="n">K</span><span class="p">)];</span><span class="w"></span>
+<span class="n">Bc</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="n">B</span><span class="p">];</span><span class="w"></span>
+<span class="n">Cc</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="n">C</span><span class="p">];</span><span class="w"></span>
+<span class="n">Dc</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="n">D</span><span class="p">];</span><span class="w"></span>
 
-states = {'x' 'x_dot' 'phi' 'phi_dot'};
-inputs = {'r'};
-outputs = {'x'; 'phi'};
+<span class="n">states</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">{</span><span class="s">&#39;x&#39;</span><span class="w"> </span><span class="s">&#39;x_dot&#39;</span><span class="w"> </span><span class="s">&#39;phi&#39;</span><span class="w"> </span><span class="s">&#39;phi_dot&#39;</span><span class="p">};</span><span class="w"></span>
+<span class="n">inputs</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">{</span><span class="s">&#39;r&#39;</span><span class="p">};</span><span class="w"></span>
+<span class="n">outputs</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">{</span><span class="s">&#39;x&#39;</span><span class="p">;</span><span class="w"> </span><span class="s">&#39;phi&#39;</span><span class="p">};</span><span class="w"></span>
 
-sys_cl = ss(Ac,Bc,Cc,Dc,Ts,'statename',states,'inputname',inputs,'outputname',outputs);
+<span class="n">sys_cl</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">ss</span><span class="p">(</span><span class="n">Ac</span><span class="p">,</span><span class="n">Bc</span><span class="p">,</span><span class="n">Cc</span><span class="p">,</span><span class="n">Dc</span><span class="p">,</span><span class="n">Ts</span><span class="p">,</span><span class="s">&#39;statename&#39;</span><span class="p">,</span><span class="n">states</span><span class="p">,</span><span class="s">&#39;inputname&#39;</span><span class="p">,</span><span class="n">inputs</span><span class="p">,</span><span class="s">&#39;outputname&#39;</span><span class="p">,</span><span class="n">outputs</span><span class="p">);</span><span class="w"></span>
 
-t = 0:0.01:5;
-r =0.2*ones(size(t));
-[y,t,x]=lsim(sys_cl,r,t);
-[AX,H1,H2] = plotyy(t,y(:,1),t,y(:,2),'plot');
-set(get(AX(1),'Ylabel'),'String','cart position (m)')
-set(get(AX(2),'Ylabel'),'String','pendulum angle (radians)')
-title('Step Response with Digital LQR Control')
-</code></pre>
+<span class="n">t</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">0</span><span class="p">:</span><span class="mf">0.01</span><span class="p">:</span><span class="mi">5</span><span class="p">;</span><span class="w"></span>
+<span class="n">r</span><span class="w"> </span><span class="p">=</span><span class="mf">0.2</span><span class="o">*</span><span class="nb">ones</span><span class="p">(</span><span class="nb">size</span><span class="p">(</span><span class="n">t</span><span class="p">));</span><span class="w"></span>
+<span class="p">[</span><span class="n">y</span><span class="p">,</span><span class="n">t</span><span class="p">,</span><span class="n">x</span><span class="p">]=</span><span class="n">lsim</span><span class="p">(</span><span class="n">sys_cl</span><span class="p">,</span><span class="n">r</span><span class="p">,</span><span class="n">t</span><span class="p">);</span><span class="w"></span>
+<span class="p">[</span><span class="n">AX</span><span class="p">,</span><span class="n">H1</span><span class="p">,</span><span class="n">H2</span><span class="p">]</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">plotyy</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">y</span><span class="p">(:,</span><span class="mi">1</span><span class="p">),</span><span class="n">t</span><span class="p">,</span><span class="n">y</span><span class="p">(:,</span><span class="mi">2</span><span class="p">),</span><span class="s">&#39;plot&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="nb">set</span><span class="p">(</span><span class="nb">get</span><span class="p">(</span><span class="n">AX</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="s">&#39;Ylabel&#39;</span><span class="p">),</span><span class="s">&#39;String&#39;</span><span class="p">,</span><span class="s">&#39;cart position (m)&#39;</span><span class="p">)</span><span class="w"></span>
+<span class="nb">set</span><span class="p">(</span><span class="nb">get</span><span class="p">(</span><span class="n">AX</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span><span class="s">&#39;Ylabel&#39;</span><span class="p">),</span><span class="s">&#39;String&#39;</span><span class="p">,</span><span class="s">&#39;pendulum angle (radians)&#39;</span><span class="p">)</span><span class="w"></span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&#39;Step Response with Digital LQR Control&#39;</span><span class="p">)</span><span class="w"></span>
+</code></pre></div>
                 
               
               

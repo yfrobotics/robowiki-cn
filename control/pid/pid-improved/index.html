@@ -526,7 +526,7 @@
   
     <li class="md-nav__item">
       <a href="../../../basics/courses/" class="md-nav__link">
-        机器人专业课程
+        机器人知识课程组成
       </a>
     </li>
   
@@ -539,6 +539,18 @@
     <li class="md-nav__item">
       <a href="../../../basics/books/" class="md-nav__link">
         机器人图书
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../basics/videos/" class="md-nav__link">
+        机器人视频
       </a>
     </li>
   
@@ -1774,104 +1786,104 @@ it’s designed to ensure that the user enters tuning parameters with the correc
 <p>In this section, I will follow his advices and rewrite my version of code to illustrate the main ideas.</p>
 <h3 id="fixed-sampling-time">Fixed Sampling Time</h3>
 <p>The first thing to make sure is the controller is called at a regular time interval. We can create a periodic control task, making use of ADC sampling interrupts, or we can use OS utilities to test if the specified sampling time has elapsed. With a fixed sampling time, we do not need to calculate the math related to $dt$ every time, and we can incorporate $dt$ into coefficients $K_i$ and $K_d$:</p>
-<pre><code class="language-c">/* ... */
+<div class="highlight"><pre><span></span><code><span class="cm">/* ... */</span>
 
-void pid_init(float kp_, float ki_, float kd_, float dt){
-  k_p = kp_;
-  k_i = ki_ * dt;
-  k_d = kd_ / dt;
-  /* ... */
-}
+<span class="kt">void</span> <span class="nf">pid_init</span><span class="p">(</span><span class="kt">float</span> <span class="n">kp_</span><span class="p">,</span> <span class="kt">float</span> <span class="n">ki_</span><span class="p">,</span> <span class="kt">float</span> <span class="n">kd_</span><span class="p">,</span> <span class="kt">float</span> <span class="n">dt</span><span class="p">){</span>
+  <span class="n">k_p</span> <span class="o">=</span> <span class="n">kp_</span><span class="p">;</span>
+  <span class="n">k_i</span> <span class="o">=</span> <span class="n">ki_</span> <span class="o">*</span> <span class="n">dt</span><span class="p">;</span>
+  <span class="n">k_d</span> <span class="o">=</span> <span class="n">kd_</span> <span class="o">/</span> <span class="n">dt</span><span class="p">;</span>
+  <span class="cm">/* ... */</span>
+<span class="p">}</span>
 
-void pid_controller() {
-  /* ... */
-  e_i += e;
-  float u = k_p * e + k_i * e_i + k_d * (e - e_p);
-  /* ... */
-}
-</code></pre>
+<span class="kt">void</span> <span class="nf">pid_controller</span><span class="p">()</span> <span class="p">{</span>
+  <span class="cm">/* ... */</span>
+  <span class="n">e_i</span> <span class="o">+=</span> <span class="n">e</span><span class="p">;</span>
+  <span class="kt">float</span> <span class="n">u</span> <span class="o">=</span> <span class="n">k_p</span> <span class="o">*</span> <span class="n">e</span> <span class="o">+</span> <span class="n">k_i</span> <span class="o">*</span> <span class="n">e_i</span> <span class="o">+</span> <span class="n">k_d</span> <span class="o">*</span> <span class="p">(</span><span class="n">e</span> <span class="o">-</span> <span class="n">e_p</span><span class="p">);</span>
+  <span class="cm">/* ... */</span>
+<span class="p">}</span>
+</code></pre></div>
 <h3 id="derivative-kick">Derivative Kick</h3>
 <p>Since error = set-point - input, any change in the set-point would cause an instantaneous change in error, especially for derivative as this change leads to a close-to-infinity large number. When this number is fed into the PID equation, the result will lead to an undesirable spike in the output.</p>
 <p><img alt="" src="../assets/markdown-img-paste-20170412223043418.png" /></p>
 <p>As $\dot{e} = \dot{r} - \dot{y}$, we can ignore the setpoint as constant, so $\frac{de}{dt} = -\frac{dy}{dt}$. This leads to a "Derivative on Measurement" method.</p>
-<pre><code class="language-c">/* ... */
-float y_p = 0;
+<div class="highlight"><pre><span></span><code><span class="cm">/* ... */</span>
+<span class="kt">float</span> <span class="n">y_p</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 
-void pid_controller() {
-  /* ... */
-  e_i += e;
-  float u = k_p * e + k_i * e_i + k_d * (y - y_p);
-  /* ... */
-  y_p = y;
-}
-</code></pre>
+<span class="kt">void</span> <span class="nf">pid_controller</span><span class="p">()</span> <span class="p">{</span>
+  <span class="cm">/* ... */</span>
+  <span class="n">e_i</span> <span class="o">+=</span> <span class="n">e</span><span class="p">;</span>
+  <span class="kt">float</span> <span class="n">u</span> <span class="o">=</span> <span class="n">k_p</span> <span class="o">*</span> <span class="n">e</span> <span class="o">+</span> <span class="n">k_i</span> <span class="o">*</span> <span class="n">e_i</span> <span class="o">+</span> <span class="n">k_d</span> <span class="o">*</span> <span class="p">(</span><span class="n">y</span> <span class="o">-</span> <span class="n">y_p</span><span class="p">);</span>
+  <span class="cm">/* ... */</span>
+  <span class="n">y_p</span> <span class="o">=</span> <span class="n">y</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
 <h3 id="tuning-changes">Tuning Changes</h3>
 <p>Changing PID parameters while the system is running may cause undesirable behaviors.</p>
 <p><img alt="" src="../assets/markdown-img-paste-20170412223856166.png" /></p>
 <p>The major change comes from the "I" term. The solution is simply multiply k_i every time instead of multiply it on the overall sum. This leads to a smooth solution without additional computation.</p>
-<pre><code class="language-c">/* ... */
-float ITerm = 0;
+<div class="highlight"><pre><span></span><code><span class="cm">/* ... */</span>
+<span class="kt">float</span> <span class="n">ITerm</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 
-void pid_controller() {
-  /* ... */
-  ITerm += k_i * e;
-  float u = k_p * e + ITerm + k_d * (y - y_p);
-  /* ... */
-}
-</code></pre>
+<span class="kt">void</span> <span class="nf">pid_controller</span><span class="p">()</span> <span class="p">{</span>
+  <span class="cm">/* ... */</span>
+  <span class="n">ITerm</span> <span class="o">+=</span> <span class="n">k_i</span> <span class="o">*</span> <span class="n">e</span><span class="p">;</span>
+  <span class="kt">float</span> <span class="n">u</span> <span class="o">=</span> <span class="n">k_p</span> <span class="o">*</span> <span class="n">e</span> <span class="o">+</span> <span class="n">ITerm</span> <span class="o">+</span> <span class="n">k_d</span> <span class="o">*</span> <span class="p">(</span><span class="n">y</span> <span class="o">-</span> <span class="n">y_p</span><span class="p">);</span>
+  <span class="cm">/* ... */</span>
+<span class="p">}</span>
+</code></pre></div>
 <h3 id="reset-windup">Reset Windup</h3>
 <p>The problem of windup comes from the fact that there is limitations on the output that a PID controller can send. For example, for Arduino, the PWM output can only accept values from 0-255. If the output value reaches this range, the controller should stop increasing its output and stop accumulating integral error. If the controller is not aware its output is not the actual output, the output will saturate and will introduce lag when the setpoint drop back again.</p>
 <p><img alt="" src="../assets/markdown-img-paste-20170412224103491.png" /></p>
 <p>The C code after this step:</p>
-<pre><code class="language-c">/* ... */
-float u_limit_upp = xxx;
-float u_limit_low = xxx;
+<div class="highlight"><pre><span></span><code><span class="cm">/* ... */</span>
+<span class="kt">float</span> <span class="n">u_limit_upp</span> <span class="o">=</span> <span class="n">xxx</span><span class="p">;</span>
+<span class="kt">float</span> <span class="n">u_limit_low</span> <span class="o">=</span> <span class="n">xxx</span><span class="p">;</span>
 
-void pid_controller() {
-  /* ... */
-  if (pid_output_saturated(u)) {
-    pid_output_reset(u);
-    /* roll back the I term */
-    ITerm -= k_i * e;
-  }
-  /* ... */
-}
+<span class="kt">void</span> <span class="nf">pid_controller</span><span class="p">()</span> <span class="p">{</span>
+  <span class="cm">/* ... */</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">pid_output_saturated</span><span class="p">(</span><span class="n">u</span><span class="p">))</span> <span class="p">{</span>
+    <span class="n">pid_output_reset</span><span class="p">(</span><span class="n">u</span><span class="p">);</span>
+    <span class="cm">/* roll back the I term */</span>
+    <span class="n">ITerm</span> <span class="o">-=</span> <span class="n">k_i</span> <span class="o">*</span> <span class="n">e</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="cm">/* ... */</span>
+<span class="p">}</span>
 
-int pid_output_saturated(float u) {
-  if (u &gt; u_limit_upp || u &lt; u_limit_low) {
-    return 1;
-  }
-  else {
-    return 0;
-  }
-}
+<span class="kt">int</span> <span class="nf">pid_output_saturated</span><span class="p">(</span><span class="kt">float</span> <span class="n">u</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">u</span> <span class="o">&gt;</span> <span class="n">u_limit_upp</span> <span class="o">||</span> <span class="n">u</span> <span class="o">&lt;</span> <span class="n">u_limit_low</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">else</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 
-int pid_output_reset(float u) {
-  if (u &gt; u_limit_upp) {
-    u = u_limit_upp;
-  } else if (u &lt; u_limit_low) {
-    u = u_limit_low;
-  }
-}
-</code></pre>
+<span class="kt">int</span> <span class="nf">pid_output_reset</span><span class="p">(</span><span class="kt">float</span> <span class="n">u</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">u</span> <span class="o">&gt;</span> <span class="n">u_limit_upp</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">u</span> <span class="o">=</span> <span class="n">u_limit_upp</span><span class="p">;</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">u</span> <span class="o">&lt;</span> <span class="n">u_limit_low</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">u</span> <span class="o">=</span> <span class="n">u_limit_low</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <h3 id="switch-onoff">Switch On/off</h3>
 <p>(In very rare situations), we may want to switch on/off a PID controller and manually feed control input to the process. This action may confuse the controller as it totally lose control of the output.</p>
 <p><img alt="" src="../assets/markdown-img-paste-20170412231026842.png" /></p>
 <p>The solution is simple, adding a on/off control variable to enable/disable the controller and stop changing its internal state variables.</p>
-<pre><code class="language-c">/* ... */
-int pid_switch_on = 1;
+<div class="highlight"><pre><span></span><code><span class="cm">/* ... */</span>
+<span class="kt">int</span> <span class="n">pid_switch_on</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
 
-void pid_controller() {
-  if (pid_switch_on == 0) {
-    return;
-  }
-  /* ... */
-}
+<span class="kt">void</span> <span class="nf">pid_controller</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">pid_switch_on</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="cm">/* ... */</span>
+<span class="p">}</span>
 
-void pid_switch(int new_state) {
-  pid_switch_on = new_state;
-}
-</code></pre>
+<span class="kt">void</span> <span class="nf">pid_switch</span><span class="p">(</span><span class="kt">int</span> <span class="n">new_state</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">pid_switch_on</span> <span class="o">=</span> <span class="n">new_state</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
 <h3 id="initialization-after-switch">Initialization after Switch</h3>
 <p>A side effect of using on/off control is that when the controller switches from off to on, an undesirable bump would appear. This is illustrated in the following diagram:</p>
 <p><img alt="" src="../assets/markdown-img-paste-20170413001022770.png" /></p>
@@ -1885,24 +1897,24 @@ void pid_switch(int new_state) {
 <p><img alt="" src="../assets/markdown-img-paste-20170413021327538.png" /></p>
 <h3 id="reverse-control">Reverse Control</h3>
 <p>For some systems, the increasing in input will result decreasing in output. For example, an inceasing speed of a cooling fan will cause the temerature to go down. To handle these systems, we introduce a direction variable to address the difference between direct/reserve control. The only difference of reverse control is the sign of the PID parameters need to be negative instead of postive in the direct case.</p>
-<pre><code class="language-c">#define DIRECT_CONTROL  (0)
-#define REVERSE_CONTROL (1)
-int direction = DIRECT_CONTROL;
+<div class="highlight"><pre><span></span><code><span class="cp">#define DIRECT_CONTROL  (0)</span>
+<span class="cp">#define REVERSE_CONTROL (1)</span>
+<span class="kt">int</span> <span class="n">direction</span> <span class="o">=</span> <span class="n">DIRECT_CONTROL</span><span class="p">;</span>
 
-void pid_init() {
-  /* ... */
-  if (direction == REVERSE_CONTROL) {
-    k_p = 0 - k_p;
-    k_i = 0 - k_i;
-    k_d = 0 - k_d;
-  }
-  /* ... */
-}
+<span class="kt">void</span> <span class="nf">pid_init</span><span class="p">()</span> <span class="p">{</span>
+  <span class="cm">/* ... */</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">direction</span> <span class="o">==</span> <span class="n">REVERSE_CONTROL</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">k_p</span> <span class="o">=</span> <span class="mi">0</span> <span class="o">-</span> <span class="n">k_p</span><span class="p">;</span>
+    <span class="n">k_i</span> <span class="o">=</span> <span class="mi">0</span> <span class="o">-</span> <span class="n">k_i</span><span class="p">;</span>
+    <span class="n">k_d</span> <span class="o">=</span> <span class="mi">0</span> <span class="o">-</span> <span class="n">k_d</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="cm">/* ... */</span>
+<span class="p">}</span>
 
-void pid_setdir(int d_) {
-  direction = d_;
-}
-</code></pre>
+<span class="kt">void</span> <span class="nf">pid_setdir</span><span class="p">(</span><span class="kt">int</span> <span class="n">d_</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">direction</span> <span class="o">=</span> <span class="n">d_</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h2 id="other-improvements">Other Improvements</h2>
 <h3 id="input-filtering">Input Filtering</h3>

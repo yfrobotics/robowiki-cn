@@ -13,14 +13,14 @@
         <meta name="author" content="YFRL">
       
       
-        <link rel="canonical" href="https://wiki.yfworld.com/rtos/vxworks/">
+        <link rel="canonical" href="https://wiki.yfworld.com/basics/videos/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.1">
     
     
       
-        <title>VxWorks - 机器人中文维基</title>
+        <title>机器人视频 - 机器人中文维基</title>
       
     
     
@@ -75,7 +75,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#vxworks" class="md-skip">
+        <a href="#_1" class="md-skip">
           跳转至
         </a>
       
@@ -104,7 +104,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              VxWorks
+              机器人视频
             
           </span>
         </div>
@@ -188,13 +188,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../../basics/intro/" class="md-tabs__link">
+      <a href="../intro/" class="md-tabs__link md-tabs__link--active">
         入门
       </a>
     </li>
@@ -300,15 +302,13 @@
         
   
   
-    
-  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../" class="md-tabs__link md-tabs__link--active">
+      <a href="../../rtos/" class="md-tabs__link">
         RTOS
       </a>
     </li>
@@ -490,12 +490,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
       
       <label class="md-nav__link" for="__nav_2">
         入门
@@ -513,7 +515,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../basics/intro/" class="md-nav__link">
+      <a href="../intro/" class="md-nav__link">
         前言
       </a>
     </li>
@@ -525,7 +527,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../basics/courses/" class="md-nav__link">
+      <a href="../courses/" class="md-nav__link">
         机器人知识课程组成
       </a>
     </li>
@@ -537,7 +539,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../basics/books/" class="md-nav__link">
+      <a href="../books/" class="md-nav__link">
         机器人图书
       </a>
     </li>
@@ -547,11 +549,20 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../basics/videos/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         机器人视频
       </a>
+      
     </li>
   
 
@@ -1072,14 +1083,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" >
       
       <label class="md-nav__link" for="__nav_9">
         RTOS
@@ -1097,7 +1106,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../" class="md-nav__link">
+      <a href="../../rtos/" class="md-nav__link">
         RTOS
       </a>
     </li>
@@ -1109,7 +1118,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../freertos/" class="md-nav__link">
+      <a href="../../rtos/freertos/" class="md-nav__link">
         FreeRTOS
       </a>
     </li>
@@ -1121,7 +1130,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ucos/" class="md-nav__link">
+      <a href="../../rtos/ucos/" class="md-nav__link">
         μC/OS
       </a>
     </li>
@@ -1131,20 +1140,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../rtos/vxworks/" class="md-nav__link">
         VxWorks
       </a>
-      
     </li>
   
 
@@ -1154,7 +1154,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../qnx/" class="md-nav__link">
+      <a href="../../rtos/qnx/" class="md-nav__link">
         QNX
       </a>
     </li>
@@ -1442,9 +1442,12 @@
               
                 
                 
-                <h1 id="vxworks">VxWorks</h1>
-<p>VxWorks操作系统是美国WindRiver公司于1983年设计开发的一种嵌入式实时操作系统（RTOS），是Tornado嵌入式开发环境的关键组成部分。良好的持续发展能力、高性能的内核以及友好的用户开发环境，在嵌人式实时操作系统领域逐渐占据一席之地。</p>
-<p>VxWorks具有可裁剪微内核结构；高效的任务管理；灵活的任务间通讯；微秒级的中断处理；支持POSIX 1003．1b实时扩展标准；支持多种物理介质及标准的、完整的TCP/IP网络协议等。然而其价格昂贵。由于操作系统本身以及开发环境都是专有的，价格一般都比较高，通常需花费10万元人民币以上才能建起一个可用的开发环境，对每一个应用一般还要另外收取版税。一般不通供源代码，只提供二进制代码。由于它们都是专用操作系统，需要专门的技术人员掌握开发技术和维护，所以软件的开发和维护成本都非常高。支持的硬件数量有限。</p>
+                <h1 id="_1">机器人视频</h1>
+<p>机器人相关学习视频：</p>
+<ol>
+<li>(YouTube) <a href="https://www.youtube.com/playlist?list=PLNozK-HB4MXsVAN6cqkCAO09RChbIAk5i">CS 188 2014 Artificial Intelligence Class</a>, Pieter Abbeel</li>
+<li>(YouTube) <a href="https://www.youtube.com/playlist?list=PLTBdjV_4f-EKBCUs1HmMtsnXv4JUoFrzg">Autonomous Navigation for Flying Robots</a>, Dr. Jurgen Sturm</li>
+</ol>
                 
               
               
@@ -1463,7 +1466,7 @@
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
-        <a href="../ucos/" class="md-footer__link md-footer__link--prev" rel="prev">
+        <a href="../books/" class="md-footer__link md-footer__link--prev" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1472,19 +1475,19 @@
               <span class="md-footer__direction">
                 上一页
               </span>
-              μC/OS
+              机器人图书
             </div>
           </div>
         </a>
       
       
-        <a href="../qnx/" class="md-footer__link md-footer__link--next" rel="next">
+        <a href="../../control/" class="md-footer__link md-footer__link--next" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 下一页
               </span>
-              QNX
+              控制系统指南
             </div>
           </div>
           <div class="md-footer__button md-icon">

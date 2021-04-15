@@ -526,7 +526,7 @@
   
     <li class="md-nav__item">
       <a href="../../../basics/courses/" class="md-nav__link">
-        机器人专业课程
+        机器人知识课程组成
       </a>
     </li>
   
@@ -539,6 +539,18 @@
     <li class="md-nav__item">
       <a href="../../../basics/books/" class="md-nav__link">
         机器人图书
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../basics/videos/" class="md-nav__link">
+        机器人视频
       </a>
     </li>
   
@@ -1520,32 +1532,32 @@
 <hr />
 <h2 id="implementation">Implementation</h2>
 <p>C code:</p>
-<pre><code class="language-c">  float k_p = 0;
-  float k_i = 0;
-  float k_d = 0;
-  float e_i = 0;  /* integrated error */
-  float e_p = 0;  /* previous error */
+<div class="highlight"><pre><span></span><code>  <span class="kt">float</span> <span class="n">k_p</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="kt">float</span> <span class="n">k_i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="kt">float</span> <span class="n">k_d</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="kt">float</span> <span class="n">e_i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>  <span class="cm">/* integrated error */</span>
+  <span class="kt">float</span> <span class="n">e_p</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>  <span class="cm">/* previous error */</span>
 
-  void pid_init(float kp_, float ki_, float kd_) {
-    k_p = kp_;
-    k_i = ki_;
-    k_d = kd_;
-    e_i = 0;
-    e_p = 0;
-  }
+  <span class="kt">void</span> <span class="nf">pid_init</span><span class="p">(</span><span class="kt">float</span> <span class="n">kp_</span><span class="p">,</span> <span class="kt">float</span> <span class="n">ki_</span><span class="p">,</span> <span class="kt">float</span> <span class="n">kd_</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">k_p</span> <span class="o">=</span> <span class="n">kp_</span><span class="p">;</span>
+    <span class="n">k_i</span> <span class="o">=</span> <span class="n">ki_</span><span class="p">;</span>
+    <span class="n">k_d</span> <span class="o">=</span> <span class="n">kd_</span><span class="p">;</span>
+    <span class="n">e_i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">e_p</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="p">}</span>
 
-  void pid_controller() {
-    float y = adc_input();
-    float e = r - y;
-    e_i += e * dt;
+  <span class="kt">void</span> <span class="nf">pid_controller</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kt">float</span> <span class="n">y</span> <span class="o">=</span> <span class="n">adc_input</span><span class="p">();</span>
+    <span class="kt">float</span> <span class="n">e</span> <span class="o">=</span> <span class="n">r</span> <span class="o">-</span> <span class="n">y</span><span class="p">;</span>
+    <span class="n">e_i</span> <span class="o">+=</span> <span class="n">e</span> <span class="o">*</span> <span class="n">dt</span><span class="p">;</span>
 
-    float u = k_p * e + k_i * e_i + k_d * (e - e_p) / dt;
+    <span class="kt">float</span> <span class="n">u</span> <span class="o">=</span> <span class="n">k_p</span> <span class="o">*</span> <span class="n">e</span> <span class="o">+</span> <span class="n">k_i</span> <span class="o">*</span> <span class="n">e_i</span> <span class="o">+</span> <span class="n">k_d</span> <span class="o">*</span> <span class="p">(</span><span class="n">e</span> <span class="o">-</span> <span class="n">e_p</span><span class="p">)</span> <span class="o">/</span> <span class="n">dt</span><span class="p">;</span>
 
-    dac_output(u);
-    e_p = e;
-    sleep(dt);
-  }
-</code></pre>
+    <span class="n">dac_output</span><span class="p">(</span><span class="n">u</span><span class="p">);</span>
+    <span class="n">e_p</span> <span class="o">=</span> <span class="n">e</span><span class="p">;</span>
+    <span class="n">sleep</span><span class="p">(</span><span class="n">dt</span><span class="p">);</span>
+  <span class="p">}</span>
+</code></pre></div>
                 
               
               
