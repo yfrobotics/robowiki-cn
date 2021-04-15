@@ -18,18 +18,18 @@ Controller Design:
 Overall, state-space design process is more systematic than classical control design.
 
 
-## Controllability
+## 能控性 (Controllability)
 
+（待补充）
 
+## 能观性 (Observability)
 
-## Observability
+（待补充）
 
-
-
-## Calculate Gain
+## 控制增益计算
 ![](assets/markdown-img-paste-20170412215404210.png)
 
-For a SISO system, the transfer function can take the forms: $H(s) = [C(sI-A)^{-1}B + D]$ and $H(z) = [C(zI-A)^{-1}B + D]$.
+For a SISO system, the transfer function can take the forms: \(H(s) = [C(sI-A)^{-1}B + D]\) and \(H(z) = [C(zI-A)^{-1}B + D]\).
 
 The new input can be calculated as:
 $$
@@ -44,7 +44,7 @@ $$
 
 
 
-## Matlab code for LQR
+## LQR控制器的MATLAB代码
 
 ```matlab
 A = sys_d.a;

@@ -1,6 +1,10 @@
 # Nvidia Jetson
 
-Jetson是英伟达推出的面向嵌入式计算的硬件平台，包括：
+Jetson是英伟达推出的面向嵌入式计算的硬件平台。
+
+## 1. Jetson型号
+
+Jetson的型号包括：
 
 - Jetson Nano
 - Jetson TX1
@@ -8,7 +12,7 @@ Jetson是英伟达推出的面向嵌入式计算的硬件平台，包括：
 - Jetson Xaiver
 - Jetson Xavier Nx
 
-## Jetson型号对比
+## 2. Jetson各型号对比
 
 Jetson各个型号的对比如下：
 

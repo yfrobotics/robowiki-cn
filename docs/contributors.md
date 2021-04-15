@@ -1,11 +1,8 @@
 # 贡献者名单
 
-## 内容创作
+## 内容创作及审阅
 - [automaticdai](https://github.com/automaticdai) - 戴晓天
 - [xinyu-xu-dev](https://github.com/xinyu-xu-dev) - Xinyu Xu
-
-## 内容审阅
-- （暂无）
 
 ## 项目支持
 - （暂无）

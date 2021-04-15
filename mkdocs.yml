@@ -29,6 +29,7 @@ nav:
       - basics/intro.md
       - basics/courses.md
       - basics/books.md
+      - basics/videos.md
     - 控制: 
       - control/index.md
       - control/control-theory-diagram.md
@@ -109,6 +110,8 @@ markdown_extensions:
   - tables
   - fenced_code
   - mdx_math
+  - pymdownx.highlight
+  - pymdownx.superfences
 
 # Extra
 extra_javascript:
