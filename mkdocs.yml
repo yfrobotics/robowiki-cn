@@ -32,13 +32,13 @@ nav:
       - basics/videos.md
     - 控制: 
       - control/index.md
-      - control/control-theory-diagram.md
       - control/modelling/modelling.md
       - control/modelling/state-space.md
       - control/pid/pid.md
       - control/pid/pid-improved.md
       - control/pid/pid-tuning.md
       - control/mpc/mpc.md
+      - control/nn/nn.md
     - 感知:
       - sensing/index.md
       - sensing/sensors.md
@@ -48,6 +48,9 @@ nav:
       - planning/pathplanning.md
       - planning/motionplanning.md
       - planning/decisionmaking.md
+    - 学习:
+      - learning/ml.md
+      - learning/rl.md
     - 仿真:
       - simulation/index.md
       - simulation/gazebo.md
