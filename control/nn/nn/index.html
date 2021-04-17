@@ -13,14 +13,14 @@
         <meta name="author" content="YFRL">
       
       
-        <link rel="canonical" href="https://wiki.yfworld.com/control/modelling/state-space/">
+        <link rel="canonical" href="https://wiki.yfworld.com/control/nn/nn/">
       
       <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.1">
     
     
       
-        <title>状态空间法 - 机器人中文维基</title>
+        <title>NN神经网络控制器 - 机器人中文维基</title>
       
     
     
@@ -75,7 +75,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#nn" class="md-skip">
           跳转至
         </a>
       
@@ -104,7 +104,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              状态空间法
+              NN神经网络控制器
             
           </span>
         </div>
@@ -621,7 +621,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../modelling/" class="md-nav__link">
+      <a href="../../modelling/modelling/" class="md-nav__link">
         控制系统建模
       </a>
     </li>
@@ -631,70 +631,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          状态空间法
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../modelling/state-space/" class="md-nav__link">
         状态空间法
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#controllability" class="md-nav__link">
-    能控性 (Controllability)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#observability" class="md-nav__link">
-    能观性 (Observability)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    控制增益计算
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#lqrmatlab" class="md-nav__link">
-    LQR控制器的MATLAB代码
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -750,11 +691,20 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../nn/nn/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         NN神经网络控制器
       </a>
+      
     </li>
   
 
@@ -1551,42 +1501,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#controllability" class="md-nav__link">
-    能控性 (Controllability)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#observability" class="md-nav__link">
-    能观性 (Observability)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    控制增益计算
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#lqrmatlab" class="md-nav__link">
-    LQR控制器的MATLAB代码
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -1598,67 +1512,10 @@
               
                 
                 
-                <h1 id="_1">状态空间法</h1>
-<p>State space model is in time domain and can describe both SISO and MIMO systems.</p>
-<p>Some advantages:</p>
-<ul>
-<li>Numerically simple, easy for computers.</li>
-<li>Transfer function only deals with input/output behavior, while state-space can assess internal features of the system.</li>
-<li>MIMO and system coupling</li>
-</ul>
-<p>Controller Design:</p>
-<ul>
-<li>Full-state feedback (pole placement)</li>
-<li>Observer / estimator design: estimating the system state from available measurements.</li>
-<li>Dynamic output feedback: combines these two with provable guarantees on stability and performance.</li>
-</ul>
-<p>Overall, state-space design process is more systematic than classical control design.</p>
-<h2 id="controllability">能控性 (Controllability)</h2>
-<p>（待补充）</p>
-<h2 id="observability">能观性 (Observability)</h2>
-<p>（待补充）</p>
-<h2 id="_2">控制增益计算</h2>
-<p><img alt="" src="../assets/markdown-img-paste-20170412215404210.png" /></p>
-<p>For a SISO system, the transfer function can take the forms: <script type="math/tex">H(s) = [C(sI-A)^{-1}B + D]</script> and <script type="math/tex">H(z) = [C(zI-A)^{-1}B + D]</script>.</p>
-<p>The new input can be calculated as:
-<script type="math/tex; mode=display">
-u(t) = r(t) - KX = r(t) - \begin{pmatrix}k_1 & k_2 & k_3\end{pmatrix}
-\begin{pmatrix} x_1 \\\\ x_2 \\\\ x_3 \end{pmatrix}
-</script>
-</p>
-<p>This resulted in a new state equation for the closed-loop system:
-<script type="math/tex; mode=display">
-\frac{dx}{dt} = [A - BK]x - Br(t)
-</script>
-</p>
-<h2 id="lqrmatlab">LQR控制器的MATLAB代码</h2>
-<div class="highlight"><pre><span></span><code><span class="n">A</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">sys_d</span><span class="p">.</span><span class="n">a</span><span class="p">;</span><span class="w"></span>
-<span class="n">B</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">sys_d</span><span class="p">.</span><span class="n">b</span><span class="p">;</span><span class="w"></span>
-<span class="n">C</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">sys_d</span><span class="p">.</span><span class="n">c</span><span class="p">;</span><span class="w"></span>
-<span class="n">D</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">sys_d</span><span class="p">.</span><span class="n">d</span><span class="p">;</span><span class="w"></span>
-<span class="n">Q</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">C</span><span class="o">&#39;*</span><span class="n">C</span><span class="w">            </span><span class="c">% state-cost matrix</span><span class="w"></span>
-<span class="n">R</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">              </span><span class="c">% control-cost</span><span class="w"></span>
-<span class="p">[</span><span class="n">K</span><span class="p">]</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">dlqr</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">B</span><span class="p">,</span><span class="n">Q</span><span class="p">,</span><span class="n">R</span><span class="p">)</span><span class="w"> </span><span class="c">% control gain matrix</span><span class="w"></span>
-
-<span class="n">Ac</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[(</span><span class="n">A</span><span class="o">-</span><span class="n">B</span><span class="o">*</span><span class="n">K</span><span class="p">)];</span><span class="w"></span>
-<span class="n">Bc</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="n">B</span><span class="p">];</span><span class="w"></span>
-<span class="n">Cc</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="n">C</span><span class="p">];</span><span class="w"></span>
-<span class="n">Dc</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="n">D</span><span class="p">];</span><span class="w"></span>
-
-<span class="n">states</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">{</span><span class="s">&#39;x&#39;</span><span class="w"> </span><span class="s">&#39;x_dot&#39;</span><span class="w"> </span><span class="s">&#39;phi&#39;</span><span class="w"> </span><span class="s">&#39;phi_dot&#39;</span><span class="p">};</span><span class="w"></span>
-<span class="n">inputs</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">{</span><span class="s">&#39;r&#39;</span><span class="p">};</span><span class="w"></span>
-<span class="n">outputs</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">{</span><span class="s">&#39;x&#39;</span><span class="p">;</span><span class="w"> </span><span class="s">&#39;phi&#39;</span><span class="p">};</span><span class="w"></span>
-
-<span class="n">sys_cl</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">ss</span><span class="p">(</span><span class="n">Ac</span><span class="p">,</span><span class="n">Bc</span><span class="p">,</span><span class="n">Cc</span><span class="p">,</span><span class="n">Dc</span><span class="p">,</span><span class="n">Ts</span><span class="p">,</span><span class="s">&#39;statename&#39;</span><span class="p">,</span><span class="n">states</span><span class="p">,</span><span class="s">&#39;inputname&#39;</span><span class="p">,</span><span class="n">inputs</span><span class="p">,</span><span class="s">&#39;outputname&#39;</span><span class="p">,</span><span class="n">outputs</span><span class="p">);</span><span class="w"></span>
-
-<span class="n">t</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">0</span><span class="p">:</span><span class="mf">0.01</span><span class="p">:</span><span class="mi">5</span><span class="p">;</span><span class="w"></span>
-<span class="n">r</span><span class="w"> </span><span class="p">=</span><span class="mf">0.2</span><span class="o">*</span><span class="nb">ones</span><span class="p">(</span><span class="nb">size</span><span class="p">(</span><span class="n">t</span><span class="p">));</span><span class="w"></span>
-<span class="p">[</span><span class="n">y</span><span class="p">,</span><span class="n">t</span><span class="p">,</span><span class="n">x</span><span class="p">]=</span><span class="n">lsim</span><span class="p">(</span><span class="n">sys_cl</span><span class="p">,</span><span class="n">r</span><span class="p">,</span><span class="n">t</span><span class="p">);</span><span class="w"></span>
-<span class="p">[</span><span class="n">AX</span><span class="p">,</span><span class="n">H1</span><span class="p">,</span><span class="n">H2</span><span class="p">]</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">plotyy</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">y</span><span class="p">(:,</span><span class="mi">1</span><span class="p">),</span><span class="n">t</span><span class="p">,</span><span class="n">y</span><span class="p">(:,</span><span class="mi">2</span><span class="p">),</span><span class="s">&#39;plot&#39;</span><span class="p">);</span><span class="w"></span>
-<span class="nb">set</span><span class="p">(</span><span class="nb">get</span><span class="p">(</span><span class="n">AX</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="s">&#39;Ylabel&#39;</span><span class="p">),</span><span class="s">&#39;String&#39;</span><span class="p">,</span><span class="s">&#39;cart position (m)&#39;</span><span class="p">)</span><span class="w"></span>
-<span class="nb">set</span><span class="p">(</span><span class="nb">get</span><span class="p">(</span><span class="n">AX</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span><span class="s">&#39;Ylabel&#39;</span><span class="p">),</span><span class="s">&#39;String&#39;</span><span class="p">,</span><span class="s">&#39;pendulum angle (radians)&#39;</span><span class="p">)</span><span class="w"></span>
-<span class="nb">title</span><span class="p">(</span><span class="s">&#39;Step Response with Digital LQR Control&#39;</span><span class="p">)</span><span class="w"></span>
-</code></pre></div>
+                <h1 id="nn">NN神经网络控制器</h1>
+<p>Neural Networks（神经网络控制器）的结构如下：</p>
+<p><img alt="nn" src="../assets/nn.png" /></p>
+<p>包含输入层，隐藏层及输出层。可配合GA及RL训练、调节参数。</p>
                 
               
               
@@ -1677,7 +1534,7 @@ u(t) = r(t) - KX = r(t) - \begin{pmatrix}k_1 & k_2 & k_3\end{pmatrix}
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
-        <a href="../modelling/" class="md-footer__link md-footer__link--prev" rel="prev">
+        <a href="../../mpc/mpc/" class="md-footer__link md-footer__link--prev" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1686,19 +1543,19 @@ u(t) = r(t) - KX = r(t) - \begin{pmatrix}k_1 & k_2 & k_3\end{pmatrix}
               <span class="md-footer__direction">
                 上一页
               </span>
-              控制系统建模
+              MPC控制器
             </div>
           </div>
         </a>
       
       
-        <a href="../../pid/pid/" class="md-footer__link md-footer__link--next" rel="next">
+        <a href="../../../sensing/" class="md-footer__link md-footer__link--next" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 下一页
               </span>
-              PID控制器
+              机器人传感技术
             </div>
           </div>
           <div class="md-footer__button md-icon">
