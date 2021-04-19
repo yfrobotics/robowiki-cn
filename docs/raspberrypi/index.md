@@ -4,14 +4,14 @@
 
 ## 1. 树莓派型号
 
-树莓派有以下型号：
+树莓派有以下主要型号：
 
 - Raspberry Pi A/A+/B/B+
 - Raspberry Pi 2B
 - Raspberry Pi 3B/3A+/3B+
 - Raspberry Pi 4B 1GB/2GB/4GB/8GB
 
-小型化信号有：
+小型化型号：
 
 - Raspberry Pi Zero W/WH
 
@@ -19,7 +19,7 @@
 
 - Raspberry Pi 400
 
-模块化型号：
+模块化计算单元：
 
 - Raspberry Pi Compute Module 3 (CM3)
 - Raspberry Pi Compute Module 4 (CM4)
@@ -29,4 +29,15 @@
 - Raspberry Pi Pico: 基于RP2040 (32-bit ARM Cortex-M0+)
 
 
-(本条目需要完善，[立刻参与知识公共编辑](/how-to-contribute/))
+## 2. 芯片方案
+
+- Raspberry Pi 4 chip: [BCM2711](https://datasheets.raspberrypi.org/bcm2711/bcm2711-peripherals.pdf)
+- Raspberry Pi 3+ chip: [BCM2837B0](https://www.raspberrypi.org/documentation/hardware/raspberrypi/bcm2837b0/README.md)
+- Raspberry Pi 3 chip: [BCM2837](https://www.raspberrypi.org/documentation/hardware/raspberrypi/bcm2837/README.md)
+- Raspberry Pi 2 chip: [BCM2836](https://www.raspberrypi.org/documentation/hardware/raspberrypi/bcm2836/README.md)
+- Raspberry Pi 1 chip: [BCM2835](https://www.raspberrypi.org/documentation/hardware/raspberrypi/bcm2835/README.md)
+
+
+
+## 参考资料
+1. [raspberrypi.org - BCM2711](https://www.raspberrypi.org/documentation/hardware/raspberrypi/bcm2711/README.md)
