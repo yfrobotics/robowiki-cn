@@ -1,5 +1,5 @@
 # Site Configurations
-site_name: "机器人中文维基"
+site_name: "云飞机器人中文维基"
 site_description: 机器人领域的公共知识库
 site_author: "YFRL"
 site_url: https://wiki.yfworld.com
@@ -28,8 +28,6 @@ nav:
     - 入门:
       - basics/intro.md
       - basics/courses.md
-      - basics/books.md
-      - basics/videos.md
     - 控制: 
       - control/index.md
       - control/modelling/modelling.md
@@ -45,9 +43,9 @@ nav:
       - sensing/cv.md
     - 规划:
       - planning/index.md
+      - planning/decisionmaking.md
       - planning/pathplanning.md
       - planning/motionplanning.md
-      - planning/decisionmaking.md
     - 学习:
       - learning/ml.md
       - learning/rl.md
@@ -79,15 +77,22 @@ nav:
       - jetson/index.md
     - 数据库:
       - database/index.md
-      - database/boston-dynamics.md
+      - 机器人图鉴:
+          - database/nao.md
+      - 机器人企业:
+          - database/companies.md
+          - database/boston-dynamics.md
+      - 机器人实验室:
+          - database/labs.md
+          - database/labs-cn.md
+      - database/conferences.md
+      - database/standard.md
+      - database/competitions.md
     - 资源:
       - resources/index.md
-      - resources/conferences.md
-      - resources/standard.md
-      - resources/competitions.md
-      - resources/labs.md
-      - resources/companies.md
       - resources/software.md
+      - resources/books.md
+      - resources/videos.md
 
 # Theme
 # Document: https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/

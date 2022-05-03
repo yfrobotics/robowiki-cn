@@ -1,6 +1,6 @@
 # 如何贡献这个维基？
 
-[项目GitHub地址](https://github.com/yfrobotics/robowiki)
+[[项目GitHub地址]](https://github.com/yfrobotics/robowiki)
 
 ## 贡献方法
 
