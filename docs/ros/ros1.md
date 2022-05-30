@@ -18,4 +18,4 @@
 | [ROS Box Turtle](http://wiki.ros.org/boxturtle)              | March 2, 2010       | [![B-turtle](http://ros.org/wiki/boxturtle?action=AttachFile&do=get&target=Box_Turtle.320.png)](http://wiki.ros.org/boxturtle) | ![B-turtle](https://raw.github.com/ros/ros_tutorials/groovy-devel/turtlesim/images/box-turtle.png) | --                       |
 
 ## 参考资料
-1. ROS Wiki, ROS Distributions, http://wiki.ros.org/Distributions
+1. ROS Wiki, [ROS Distributions](http://wiki.ros.org/Distributions)

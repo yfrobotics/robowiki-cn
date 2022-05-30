@@ -22,12 +22,11 @@ google_analytics:
 nav:
     - 首页: 
       - index.md
+      - intro.md
+      - courses.md
       - how-to-contribute.md
       - standard.md
       - contributors.md
-    - 入门:
-      - basics/intro.md
-      - basics/courses.md
     - 控制: 
       - control/index.md
       - control/modelling/modelling.md
@@ -40,7 +39,10 @@ nav:
     - 感知:
       - sensing/index.md
       - sensing/sensors.md
-      - sensing/cv.md
+      - sensing/depth-camera.md
+    - 视觉:
+      - cv/index.md
+      - cv/object-detection.md
     - 规划:
       - planning/index.md
       - planning/decisionmaking.md
@@ -58,12 +60,16 @@ nav:
       - simulation/webots.md
       - simulation/robotics-toolbox.md
       - simulation/stage.md
+      - simulation/unreal.md
+      - simulation/unity.md
+      - simulation/nvidiaomniverse.md
     - ROS:
       - ros/index.md
       - ros/ros1.md
       - ros/ros2.md
     - Linux:
       - linux/index.md
+      - linux/commands.md
     - RTOS:
       - rtos/index.md
       - rtos/freertos.md

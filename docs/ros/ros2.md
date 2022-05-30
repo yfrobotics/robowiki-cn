@@ -15,4 +15,4 @@
 | [alpha1 - alpha8](https://docs.ros.org/en/ros2_documentation/foxy/Releases/Alpha-Overview.html) | August 31st, 2015    |                                                              | December 2016  |
 
 ## 参考资料
-1. Distributions, ROS 2 Documentation, https://docs.ros.org/en/ros2_documentation/foxy/Releases.html
+1. Distributions, [ROS 2 Documentation](https://docs.ros.org/en/ros2_documentation/foxy/Releases.html)
