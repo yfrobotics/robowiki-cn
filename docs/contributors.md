@@ -9,8 +9,9 @@
 ## 内容审阅
 - [automaticdai](https://github.com/automaticdai)
 
-## 支持者
-- 南京天迈科技
-- Yingyi Kuang
+## 支持者名单
+你可以通过在 [B站](https://space.bilibili.com/493264461)上充电或通过我们的 [Patreon](https://www.patreon.com/yfrl) 支持我们的工作!
 
-(你可以通过[这个页面](https://www.yfworld.com/?page_id=5795)了解如何支持我们的工作)
+- 南京天迈科技
+- Y. Kuang
+- \_OYu\_
