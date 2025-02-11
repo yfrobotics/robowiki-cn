@@ -2,7 +2,7 @@
 site_name: "云飞机器人中文维基"
 site_description: 机器人领域的公共知识库
 site_author: "YFRL"
-site_url: https://wiki.yfworld.com
+site_url: https://yfrobotics.github.io
 strict: false
 
 # Repository
