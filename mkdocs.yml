@@ -15,7 +15,7 @@ site_dir: site
 
 # Google Analytics
 google_analytics:
-  - UA-60989638-5
+  - G-PJC5MCXWKL
   - auto
 
 # Navigation
@@ -134,3 +134,4 @@ extra_javascript:
 
 extra_css:
     - _static/css/extra.css
+
