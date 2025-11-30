@@ -29,7 +29,7 @@
     
     
       
-        <title>物体识别（深度学习） - 云飞机器人中文维基</title>
+        <title>目标检测 (Object Detection) - 云飞机器人中文维基</title>
       
     
     
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#object-detection" class="md-skip">
           跳转至
         </a>
       
@@ -113,7 +113,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              物体识别（深度学习）
+              目标检测 (Object Detection)
             
           </span>
         </div>
@@ -892,62 +892,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../control/pid/pid-improved/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    PID控制器的改善
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../control/pid/pid-tuning/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    PID控制器的参数调节
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../control/mpc/mpc/" class="md-nav__link">
         
   
@@ -983,7 +927,7 @@
   <span class="md-ellipsis">
     
   
-    NN神经网络控制器
+    神经网络控制器 (Neural Network Controller)
   
 
     
@@ -1138,6 +1082,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sensing/slam/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SLAM (同时定位与建图)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1251,7 +1223,7 @@
   <span class="md-ellipsis">
     
   
-    物体识别（深度学习）
+    目标检测 (Object Detection)
   
 
     
@@ -1269,7 +1241,7 @@
   <span class="md-ellipsis">
     
   
-    物体识别（深度学习）
+    目标检测 (Object Detection)
   
 
     
@@ -1295,7 +1267,485 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        概述
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        分类体系
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="分类体系">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        按检测流程分类
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="按检测流程分类">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#two-stage-detectors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        两阶段检测器 (Two-Stage Detectors)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#one-stage-detectors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        单阶段检测器 (One-Stage Detectors)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#anchor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        按 Anchor 机制分类
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="按 Anchor 机制分类">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#anchor-based" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Anchor-based 方法
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#anchor-free" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Anchor-free 方法
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        按监督方式分类
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="按监督方式分类">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fully-supervised-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        全监督学习 (Fully Supervised Learning)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#weakly-supervised-object-detection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        弱监督学习 (Weakly Supervised Object Detection)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#few-shot-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        少样本学习 (Few-Shot Learning)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        按应用场景分类
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="按应用场景分类">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        实时检测
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        高精度检测
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3d" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3D 目标检测
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        小目标检测
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        密集场景检测
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        按网络架构分类
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="按网络架构分类">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cnn" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        基于 CNN 的方法
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transformer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        基于 Transformer 的方法
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        轻量级网络
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        特殊技术和方法
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="特殊技术和方法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        特征提取与融合
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        后处理技术
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        数据增强
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        损失函数改进
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        性能评估指标
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="性能评估指标">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        主要指标
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        数据集
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        发展趋势
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="发展趋势">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        当前热点
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        未来方向
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        算法选择指南
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="算法选择指南">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        精度优先
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        速度优先
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_26" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        平衡精度和速度
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_27" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        特殊需求
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_28" class="md-nav__link">
     <span class="md-ellipsis">
       
         参考资料
@@ -3295,7 +3745,485 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        概述
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        分类体系
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="分类体系">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        按检测流程分类
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="按检测流程分类">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#two-stage-detectors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        两阶段检测器 (Two-Stage Detectors)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#one-stage-detectors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        单阶段检测器 (One-Stage Detectors)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#anchor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        按 Anchor 机制分类
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="按 Anchor 机制分类">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#anchor-based" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Anchor-based 方法
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#anchor-free" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Anchor-free 方法
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        按监督方式分类
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="按监督方式分类">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fully-supervised-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        全监督学习 (Fully Supervised Learning)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#weakly-supervised-object-detection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        弱监督学习 (Weakly Supervised Object Detection)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#few-shot-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        少样本学习 (Few-Shot Learning)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        按应用场景分类
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="按应用场景分类">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        实时检测
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        高精度检测
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3d" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3D 目标检测
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        小目标检测
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        密集场景检测
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        按网络架构分类
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="按网络架构分类">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cnn" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        基于 CNN 的方法
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transformer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        基于 Transformer 的方法
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        轻量级网络
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        特殊技术和方法
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="特殊技术和方法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        特征提取与融合
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        后处理技术
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        数据增强
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        损失函数改进
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        性能评估指标
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="性能评估指标">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        主要指标
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        数据集
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        发展趋势
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="发展趋势">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        当前热点
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        未来方向
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        算法选择指南
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="算法选择指南">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        精度优先
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        速度优先
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_26" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        平衡精度和速度
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_27" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        特殊需求
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_28" class="md-nav__link">
     <span class="md-ellipsis">
       
         参考资料
@@ -3322,54 +4250,364 @@
 
 
 
-<h1 id="_1">物体识别（深度学习）</h1>
-<p>基于深度学习的物体识别：</p>
+<h1 id="object-detection">目标检测 (Object Detection)</h1>
+<div class="admonition note">
+<p class="admonition-title">引言</p>
+<p>目标检测是计算机视觉中的核心任务之一，旨在识别图像中物体的位置（定位）和类别（分类）。随着深度学习的发展，目标检测算法经历了从传统方法到深度学习的转变，并在精度和速度方面取得了显著提升。</p>
+</div>
+<h2 id="_1">概述</h2>
+<p>目标检测任务需要同时完成两个子任务：</p>
+<ol>
+<li><strong>定位 (Localization)</strong>：确定物体在图像中的位置（通常用边界框表示）</li>
+<li><strong>分类 (Classification)</strong>：识别物体的类别</li>
+</ol>
+<h2 id="_2">分类体系</h2>
+<h3 id="_3">按检测流程分类</h3>
+<h4 id="two-stage-detectors">两阶段检测器 (Two-Stage Detectors)</h4>
+<p>先产生候选区域（Region Proposals），再对候选区域进行分类和回归。</p>
+<p><strong>特点</strong>：</p>
 <ul>
-<li>R-CNN<ul>
-<li>Fast R-CNN</li>
+<li>精度高，但速度较慢</li>
+<li>适合对精度要求高的场景</li>
+</ul>
+<p><strong>代表算法</strong>：</p>
+<ul>
+<li><strong>R-CNN</strong> (Region-based CNN)<ul>
+<li>开创性地将 CNN 应用于目标检测</li>
+<li>使用选择性搜索生成候选区域</li>
+</ul>
+</li>
+<li><strong>Fast R-CNN</strong><ul>
+<li>引入 ROI Pooling，共享卷积特征</li>
+<li>端到端训练，速度提升</li>
+</ul>
+</li>
+<li><strong>Faster R-CNN</strong><ul>
+<li>引入 RPN (Region Proposal Network) 生成候选区域</li>
+<li>实现真正的端到端检测</li>
+</ul>
+</li>
+<li><strong>Mask R-CNN</strong><ul>
+<li>在 Faster R-CNN 基础上增加实例分割分支</li>
+<li>同时完成检测和分割任务</li>
+</ul>
+</li>
+<li><strong>Light-Head R-CNN</strong><ul>
+<li>轻量级头部设计，提升速度</li>
+</ul>
+</li>
+<li><strong>Cascade R-CNN</strong><ul>
+<li>级联检测器，逐步提高检测质量</li>
+</ul>
+</li>
+<li><strong>R-FCN</strong> (Region-based Fully Convolutional Networks)<ul>
+<li>全卷积设计，位置敏感得分图</li>
+</ul>
+</li>
+<li><strong>FPN</strong> (Feature Pyramid Network)<ul>
+<li>特征金字塔网络，多尺度特征融合</li>
+</ul>
+</li>
+</ul>
+<h4 id="one-stage-detectors">单阶段检测器 (One-Stage Detectors)</h4>
+<p>直接预测物体的类别和位置，无需候选区域生成。</p>
+<p><strong>特点</strong>：</p>
+<ul>
+<li>速度快，适合实时应用</li>
+<li>精度通常略低于两阶段方法</li>
+</ul>
+<p><strong>代表算法</strong>：</p>
+<ul>
+<li><strong>YOLO 系列</strong> (You Only Look Once)<ul>
+<li><strong>YOLOv1</strong>：首个单阶段实时检测器</li>
+<li><strong>YOLOv2 (YOLO9000)</strong>：引入 Anchor、多尺度训练</li>
+<li><strong>YOLOv3</strong>：多尺度预测、更好的小目标检测</li>
+<li><strong>YOLOv4</strong>：引入 CSP、PAN、Mosaic 数据增强</li>
+<li><strong>YOLOv5</strong>：工程化改进，易于部署</li>
+<li><strong>YOLOv6/YOLOv7/YOLOv8</strong>：持续优化版本</li>
+</ul>
+</li>
+<li><strong>SSD</strong> (Single Shot MultiBox Detector)<ul>
+<li>多尺度特征图检测</li>
+<li>平衡速度和精度</li>
+<li><strong>变体</strong>：<ul>
+<li><strong>DSSD</strong>：引入反卷积模块</li>
+<li><strong>FSSD</strong>：特征融合 SSD</li>
+<li><strong>ESSD</strong>：增强型 SSD</li>
+<li><strong>MDSSD</strong>：多方向 SSD</li>
+<li><strong>Fire SSD</strong>：轻量级设计</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>RetinaNet</strong><ul>
+<li>引入 Focal Loss 解决类别不平衡问题</li>
+<li>单阶段检测器达到两阶段精度</li>
+</ul>
+</li>
+<li><strong>CornerNet</strong><ul>
+<li>Anchor-free 方法，检测角点对</li>
+</ul>
+</li>
+<li><strong>CenterNet</strong><ul>
+<li>检测物体中心点和尺寸</li>
+</ul>
+</li>
+<li><strong>FCOS</strong> (Fully Convolutional One-Stage)<ul>
+<li>像素级预测，无需 Anchor</li>
+</ul>
+</li>
+</ul>
+<h3 id="anchor">按 Anchor 机制分类</h3>
+<h4 id="anchor-based">Anchor-based 方法</h4>
+<p>使用预定义的 Anchor 框进行检测。</p>
+<p><strong>代表算法</strong>：</p>
+<ul>
 <li>Faster R-CNN</li>
-<li>Mask R-CNN</li>
-<li>Light-Head R-CNN</li>
-<li>Cascade R-CNN</li>
-</ul>
-</li>
-<li>SPP-Net</li>
-<li>YOLO<ul>
-<li>YOLOv2</li>
-<li>YOLOv3</li>
-<li>YOLOv4</li>
-<li>YOLOv5</li>
-</ul>
-</li>
-<li>YOLT</li>
-<li>SSD<ul>
-<li>DSSD</li>
-<li>FSSD</li>
-<li>ESSD</li>
-<li>MDSSD</li>
-<li>Fire SSD</li>
-</ul>
-</li>
-<li>Pelee</li>
-<li>R-FCN</li>
-<li>FPN</li>
-<li>DSOD</li>
+<li>YOLOv2/v3</li>
+<li>SSD</li>
 <li>RetinaNet</li>
-<li>MegDet</li>
-<li>RefineNet</li>
-<li>DetNet</li>
-<li>SSOD</li>
-<li>CornerNet</li>
-<li>M2Det</li>
-<li>3D Object Detection</li>
-<li>ZSD（Zero-Shot Object Detection）</li>
-<li>OSD（One-Shot object Detection）</li>
-<li>Weakly Supervised Object Detection</li>
-<li>Softer-NMS</li>
 </ul>
-<h2 id="_2">参考资料</h2>
+<h4 id="anchor-free">Anchor-free 方法</h4>
+<p>不依赖预定义的 Anchor，直接预测关键点或中心点。</p>
+<p><strong>代表算法</strong>：</p>
+<ul>
+<li>CornerNet</li>
+<li>CenterNet</li>
+<li>FCOS</li>
+<li>DETR (Detection Transformer)</li>
+</ul>
+<h3 id="_4">按监督方式分类</h3>
+<h4 id="fully-supervised-learning">全监督学习 (Fully Supervised Learning)</h4>
+<p>使用完整的标注数据（边界框和类别）进行训练。</p>
+<p><strong>代表算法</strong>：</p>
+<ul>
+<li>大多数主流检测算法（R-CNN、YOLO、SSD 等）</li>
+</ul>
+<h4 id="weakly-supervised-object-detection">弱监督学习 (Weakly Supervised Object Detection)</h4>
+<p>仅使用图像级标签（无边界框标注）进行训练。</p>
+<p><strong>代表算法</strong>：</p>
+<ul>
+<li>WSDDN</li>
+<li>OICR</li>
+<li>PCL</li>
+<li>CASD</li>
+</ul>
+<h4 id="few-shot-learning">少样本学习 (Few-Shot Learning)</h4>
+<ul>
+<li><strong>零样本检测 (ZSD, Zero-Shot Object Detection)</strong>：检测训练时未见过的类别</li>
+<li><strong>单样本检测 (OSD, One-Shot Object Detection)</strong>：仅使用一个样本进行检测</li>
+</ul>
+<h3 id="_5">按应用场景分类</h3>
+<h4 id="_6">实时检测</h4>
+<p>注重速度和实时性，适合视频流处理。</p>
+<p><strong>代表算法</strong>：</p>
+<ul>
+<li>YOLO 系列</li>
+<li>SSD</li>
+<li>MobileNet-SSD</li>
+<li>Pelee</li>
+</ul>
+<h4 id="_7">高精度检测</h4>
+<p>注重检测精度，适合离线处理。</p>
+<p><strong>代表算法</strong>：</p>
+<ul>
+<li>Faster R-CNN</li>
+<li>Cascade R-CNN</li>
+<li>Mask R-CNN</li>
+</ul>
+<h4 id="3d">3D 目标检测</h4>
+<p>检测三维空间中的物体。</p>
+<p><strong>方法</strong>：</p>
+<ul>
+<li>基于点云的方法（PointRCNN、VoxelNet）</li>
+<li>基于多视图的方法</li>
+<li>基于 RGB-D 的方法</li>
+</ul>
+<h4 id="_8">小目标检测</h4>
+<p>专门针对小尺寸物体的检测。</p>
+<p><strong>方法</strong>：</p>
+<ul>
+<li>多尺度特征融合</li>
+<li>特征金字塔网络</li>
+<li>高分辨率特征图</li>
+</ul>
+<h4 id="_9">密集场景检测</h4>
+<p>处理物体密集、遮挡严重的场景。</p>
+<p><strong>方法</strong>：</p>
+<ul>
+<li>NMS 改进（Soft-NMS、Softer-NMS）</li>
+<li>后处理优化</li>
+</ul>
+<h3 id="_10">按网络架构分类</h3>
+<h4 id="cnn">基于 CNN 的方法</h4>
+<p>使用卷积神经网络提取特征。</p>
+<p><strong>代表算法</strong>：</p>
+<ul>
+<li>大多数传统检测算法</li>
+</ul>
+<h4 id="transformer">基于 Transformer 的方法</h4>
+<p>使用 Transformer 架构进行检测。</p>
+<p><strong>代表算法</strong>：</p>
+<ul>
+<li><strong>DETR</strong> (Detection Transformer)<ul>
+<li>端到端检测，无需 NMS</li>
+<li>使用 Transformer 编码器-解码器</li>
+</ul>
+</li>
+<li><strong>Deformable DETR</strong><ul>
+<li>可变形注意力机制</li>
+</ul>
+</li>
+<li><strong>Swin Transformer</strong><ul>
+<li>分层 Transformer 用于检测</li>
+</ul>
+</li>
+</ul>
+<h4 id="_11">轻量级网络</h4>
+<p>针对移动端和边缘设备优化。</p>
+<p><strong>代表算法</strong>：</p>
+<ul>
+<li>MobileNet-SSD</li>
+<li>Pelee</li>
+<li>YOLOv5s/v5n</li>
+<li>NanoDet</li>
+</ul>
+<h3 id="_12">特殊技术和方法</h3>
+<h4 id="_13">特征提取与融合</h4>
+<ul>
+<li><strong>SPP-Net</strong> (Spatial Pyramid Pooling)<ul>
+<li>空间金字塔池化，处理不同尺寸输入</li>
+</ul>
+</li>
+<li><strong>FPN</strong> (Feature Pyramid Network)<ul>
+<li>特征金字塔，多尺度特征融合</li>
+</ul>
+</li>
+<li><strong>PANet</strong> (Path Aggregation Network)<ul>
+<li>路径聚合网络</li>
+</ul>
+</li>
+<li><strong>BiFPN</strong> (Bidirectional Feature Pyramid Network)<ul>
+<li>双向特征金字塔</li>
+</ul>
+</li>
+</ul>
+<h4 id="_14">后处理技术</h4>
+<ul>
+<li><strong>NMS</strong> (Non-Maximum Suppression)<ul>
+<li>非极大值抑制，去除重复检测</li>
+</ul>
+</li>
+<li><strong>Soft-NMS</strong><ul>
+<li>软非极大值抑制</li>
+</ul>
+</li>
+<li><strong>Softer-NMS</strong><ul>
+<li>更柔和的 NMS</li>
+</ul>
+</li>
+<li><strong>DIoU-NMS</strong><ul>
+<li>基于距离的 NMS</li>
+</ul>
+</li>
+</ul>
+<h4 id="_15">数据增强</h4>
+<ul>
+<li>Mosaic 数据增强</li>
+<li>MixUp</li>
+<li>CutMix</li>
+<li>自动增强策略</li>
+</ul>
+<h4 id="_16">损失函数改进</h4>
+<ul>
+<li><strong>Focal Loss</strong>：解决类别不平衡</li>
+<li><strong>IoU Loss</strong>：直接优化 IoU</li>
+<li><strong>GIoU Loss</strong>：广义 IoU 损失</li>
+<li><strong>DIoU/CIoU Loss</strong>：考虑距离和形状的损失</li>
+</ul>
+<h2 id="_17">性能评估指标</h2>
+<h3 id="_18">主要指标</h3>
+<ul>
+<li><strong>mAP</strong> (mean Average Precision)：平均精度均值</li>
+<li><strong>IoU</strong> (Intersection over Union)：交并比</li>
+<li><strong>FPS</strong> (Frames Per Second)：每秒处理帧数</li>
+<li><strong>FLOPs</strong>：浮点运算次数</li>
+<li><strong>参数量</strong>：模型参数数量</li>
+</ul>
+<h3 id="_19">数据集</h3>
+<ul>
+<li><strong>COCO</strong>：Microsoft Common Objects in Context</li>
+<li><strong>PASCAL VOC</strong>：Visual Object Classes</li>
+<li><strong>ImageNet</strong>：大规模图像数据集</li>
+<li><strong>Open Images</strong>：Google 开源数据集</li>
+</ul>
+<h2 id="_20">发展趋势</h2>
+<h3 id="_21">当前热点</h3>
+<ol>
+<li><strong>Transformer 在检测中的应用</strong><ul>
+<li>DETR 及其变体</li>
+<li>Vision Transformer 用于检测</li>
+</ul>
+</li>
+<li><strong>端到端检测</strong><ul>
+<li>去除 NMS 等后处理步骤</li>
+<li>更简洁的检测流程</li>
+</ul>
+</li>
+<li><strong>实时高精度检测</strong><ul>
+<li>平衡速度和精度</li>
+<li>模型压缩与加速</li>
+</ul>
+</li>
+<li><strong>多模态检测</strong><ul>
+<li>结合 RGB、深度、点云等信息</li>
+<li>跨模态学习</li>
+</ul>
+</li>
+<li><strong>自监督/半监督学习</strong><ul>
+<li>减少标注需求</li>
+<li>利用无标注数据</li>
+</ul>
+</li>
+</ol>
+<h3 id="_22">未来方向</h3>
+<ul>
+<li>更高效的网络架构</li>
+<li>更好的小目标检测</li>
+<li>实时 3D 检测</li>
+<li>视频目标检测</li>
+<li>开放词汇检测</li>
+</ul>
+<h2 id="_23">算法选择指南</h2>
+<h3 id="_24">精度优先</h3>
+<ul>
+<li><strong>推荐</strong>：Faster R-CNN、Cascade R-CNN、Mask R-CNN</li>
+<li><strong>适用场景</strong>：离线处理、对精度要求高的应用</li>
+</ul>
+<h3 id="_25">速度优先</h3>
+<ul>
+<li><strong>推荐</strong>：YOLOv5/v8、SSD、MobileNet-SSD</li>
+<li><strong>适用场景</strong>：实时视频处理、移动端应用</li>
+</ul>
+<h3 id="_26">平衡精度和速度</h3>
+<ul>
+<li><strong>推荐</strong>：RetinaNet、YOLOv4、FCOS</li>
+<li><strong>适用场景</strong>：大多数实际应用</li>
+</ul>
+<h3 id="_27">特殊需求</h3>
+<ul>
+<li><strong>小目标检测</strong>：FPN、PANet、高分辨率输入</li>
+<li><strong>3D 检测</strong>：PointRCNN、VoxelNet</li>
+<li><strong>轻量级部署</strong>：Pelee、NanoDet、YOLOv5n</li>
+</ul>
+<h2 id="_28">参考资料</h2>
 <ol>
 <li><a href="https://github.com/amusi/awesome-object-detection">Awesome Object Detection</a>, GitHub</li>
+<li>Redmon, J., et al. (2016). You Only Look Once: Unified, Real-Time Object Detection. <em>CVPR</em>.</li>
+<li>Ren, S., et al. (2015). Faster R-CNN: Towards Real-Time Object Detection with Region Proposal Networks. <em>NIPS</em>.</li>
+<li>Lin, T. Y., et al. (2017). Focal Loss for Dense Object Detection. <em>ICCV</em>.</li>
+<li>Carion, N., et al. (2020). End-to-End Object Detection with Transformers. <em>ECCV</em>.</li>
 </ol>
 
 

@@ -18,7 +18,7 @@
         <link rel="prev" href="../../modelling/state-space/">
       
       
-        <link rel="next" href="../pid-improved/">
+        <link rel="next" href="../../mpc/mpc/">
       
       
         
@@ -932,7 +932,7 @@
   <a href="#formula" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Formula
+        公式 (Formula)
       
     </span>
   </a>
@@ -943,7 +943,7 @@
   <a href="#discretization" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Discretization
+        离散化 (Discretization)
       
     </span>
   </a>
@@ -954,7 +954,261 @@
   <a href="#implementation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Implementation
+        实现 (Implementation)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parameter-tuning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        参数调节 (Parameter Tuning)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#improvements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        改善 (Improvements)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="改善 (Improvements)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fixed-sampling-time" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        固定采样时间 (Fixed Sampling Time)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#derivative-kick" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        微分冲击 (Derivative Kick)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tuning-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        调参更改 (Tuning Changes)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reset-windup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        积分饱和 (Reset Windup)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#switch-onoff" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        开关控制 (Switch On/off)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#initialization-after-switch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        切换后的初始化 (Initialization after Switch)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reverse-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        反向控制 (Reverse Control)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#other-improvements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        其他改进 (Other Improvements)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="其他改进 (Other Improvements)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#input-filtering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        输入滤波 (Input Filtering)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#timing-compensation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        时序补偿 (Timing Compensation)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#feedforward" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        前馈 (Feedforward)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reset-tiebacks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        复位反馈 (Reset Tiebacks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#i-i-term-saturation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        I 项饱和 (I-term Saturation)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d-d-term-filtering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        D 项滤波 (D-term Filtering)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-dead-zone" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        误差死区 (Error Dead-zone)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#output-limitation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        输出限制 (Output Limitation)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dead-band" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        死区 (Dead band)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#anti-windup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        抗积分饱和 (Anti Windup)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pid-2-event-based-pid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        基于事件的 PID [2] (Event-based PID)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        参考文献 (References)
       
     </span>
   </a>
@@ -965,62 +1219,6 @@
   
 </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../pid-improved/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    PID控制器的改善
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../pid-tuning/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    PID控制器的参数调节
-  
-
-    
-  </span>
-  
-  
-
-      </a>
     </li>
   
 
@@ -1068,7 +1266,7 @@
   <span class="md-ellipsis">
     
   
-    NN神经网络控制器
+    神经网络控制器 (Neural Network Controller)
   
 
     
@@ -1223,6 +1421,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sensing/slam/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SLAM (同时定位与建图)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1322,7 +1548,7 @@
   <span class="md-ellipsis">
     
   
-    物体识别（深度学习）
+    目标检测 (Object Detection)
   
 
     
@@ -3320,7 +3546,7 @@
   <a href="#formula" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Formula
+        公式 (Formula)
       
     </span>
   </a>
@@ -3331,7 +3557,7 @@
   <a href="#discretization" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Discretization
+        离散化 (Discretization)
       
     </span>
   </a>
@@ -3342,7 +3568,261 @@
   <a href="#implementation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Implementation
+        实现 (Implementation)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parameter-tuning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        参数调节 (Parameter Tuning)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#improvements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        改善 (Improvements)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="改善 (Improvements)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fixed-sampling-time" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        固定采样时间 (Fixed Sampling Time)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#derivative-kick" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        微分冲击 (Derivative Kick)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tuning-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        调参更改 (Tuning Changes)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reset-windup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        积分饱和 (Reset Windup)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#switch-onoff" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        开关控制 (Switch On/off)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#initialization-after-switch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        切换后的初始化 (Initialization after Switch)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reverse-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        反向控制 (Reverse Control)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#other-improvements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        其他改进 (Other Improvements)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="其他改进 (Other Improvements)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#input-filtering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        输入滤波 (Input Filtering)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#timing-compensation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        时序补偿 (Timing Compensation)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#feedforward" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        前馈 (Feedforward)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reset-tiebacks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        复位反馈 (Reset Tiebacks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#i-i-term-saturation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        I 项饱和 (I-term Saturation)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d-d-term-filtering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        D 项滤波 (D-term Filtering)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-dead-zone" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        误差死区 (Error Dead-zone)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#output-limitation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        输出限制 (Output Limitation)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dead-band" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        死区 (Dead band)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#anti-windup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        抗积分饱和 (Anti Windup)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pid-2-event-based-pid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        基于事件的 PID [2] (Event-based PID)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        参考文献 (References)
       
     </span>
   </a>
@@ -3367,23 +3847,23 @@
 
 
 <h1 id="pid">PID控制器</h1>
-<h2 id="formula">Formula</h2>
+<h2 id="formula">公式 (Formula)</h2>
 <p>
 <script type="math/tex; mode=display"> u(t) = K_p e(t) + K_i \int^t_0 e(\tau) d\tau + K_d \frac{de(t)}{dt} </script>
 </p>
-<p>The Laplace transform is:
+<p>拉普拉斯变换为：
 <script type="math/tex; mode=display"> L(s) = U(s)/E(s) = K_p + \frac{K_i}{s} + K_d s </script>
 </p>
-<h2 id="discretization">Discretization</h2>
-<p>A control system is designed in continuous time, however a computer that running the control algorithm needs a digital implementation. Discretization is to convert a system from continuous to discrete time. Typical methods are:</p>
+<h2 id="discretization">离散化 (Discretization)</h2>
+<p>控制系统在连续时间域中设计，但运行控制算法的计算机需要数字实现。离散化是将系统从连续时间转换为离散时间。典型方法包括：</p>
 <ul>
-<li>Forward difference: often for integration part.</li>
-<li>Backward difference: For the derivative part, it is often choose to have a backward difference to have a stable derivative (the result discrete parameters are often position, so no ringing effect).</li>
-<li>Tustin approximation.</li>
+<li>前向差分 (Forward difference)：通常用于积分部分</li>
+<li>后向差分 (Backward difference)：对于微分部分，通常选择后向差分以获得稳定的微分（结果离散参数通常是位置，因此没有振铃效应）</li>
+<li>双线性变换 (Tustin approximation)</li>
 </ul>
 <hr />
-<h2 id="implementation">Implementation</h2>
-<p>C code:</p>
+<h2 id="implementation">实现 (Implementation)</h2>
+<p>C 代码：</p>
 <div class="highlight"><pre><span></span><code><span class="w">  </span><span class="kt">float</span><span class="w"> </span><span class="n">k_p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
 <span class="w">  </span><span class="kt">float</span><span class="w"> </span><span class="n">k_i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
 <span class="w">  </span><span class="kt">float</span><span class="w"> </span><span class="n">k_d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
@@ -3410,6 +3890,191 @@
 <span class="w">    </span><span class="n">sleep</span><span class="p">(</span><span class="n">dt</span><span class="p">);</span>
 <span class="w">  </span><span class="p">}</span>
 </code></pre></div>
+<hr />
+<h2 id="parameter-tuning">参数调节 (Parameter Tuning)</h2>
+<p>PID需要良好的控制器参数（<script type="math/tex">k_p, k_i, k_d</script>）才可以正常工作。</p>
+<p>目前PID调参的方法有：</p>
+<ul>
+<li>Ziegler-Nichols 调参法 (Ziegler-Nichols Tuning)</li>
+<li>反应曲线调参法 (Reaction Curve Tuning)</li>
+</ul>
+<hr />
+<h2 id="improvements">改善 (Improvements)</h2>
+<p>根据 [1]，可以对所谓的"初学者 PID"进行一些改进。作者 [1] 为 Arduino 编写了 PID 库。以下是他建议的改进列表：</p>
+<ol>
+<li>采样时间 (Sample Time) - 如果 PID 算法在固定间隔内评估，其功能最佳。如果算法知道这个间隔，我们也可以简化一些内部数学计算。</li>
+<li>微分冲击 (Derivative Kick) - 虽然不是最大的问题，但很容易消除，所以我们要解决它。</li>
+<li>在线调参更改 (On-The-Fly Tuning Changes) - 一个好的 PID 算法应该能够在不断开内部工作的情况下更改调参参数。</li>
+<li>积分饱和抑制 (Reset Windup Mitigation) - 我们将介绍什么是积分饱和，并实现一个具有额外好处的解决方案。</li>
+<li>开关控制 (On/Off Auto/Manual) - 在大多数应用中，有时需要关闭 PID 控制器并手动调整输出，而不受控制器干扰。</li>
+<li>初始化 (Initialization) - 当控制器首次启动时，我们希望实现"无冲击切换"。也就是说，我们不希望输出突然跳转到某个新值。</li>
+<li>控制器方向 (Controller Direction) - 最后一个改进本身不是为了鲁棒性，而是为了确保用户输入具有正确符号的调参参数。</li>
+</ol>
+<p>在本节中，我将遵循他的建议并重写我的代码版本来说明主要思想。</p>
+<h3 id="fixed-sampling-time">固定采样时间 (Fixed Sampling Time)</h3>
+<p>首先要确保的是控制器在固定的时间间隔内被调用。我们可以创建一个周期性控制任务，利用 ADC 采样中断，或者我们可以使用操作系统工具来测试指定的采样时间是否已过。使用固定采样时间，我们不需要每次都计算与 $dt$ 相关的数学，并且可以将 $dt$ 合并到系数 $K_i$ 和 $K_d$ 中：</p>
+<div class="highlight"><pre><span></span><code><span class="cm">/* ... */</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">pid_init</span><span class="p">(</span><span class="kt">float</span><span class="w"> </span><span class="n">kp_</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">ki_</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">kd_</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">dt</span><span class="p">){</span>
+<span class="w">  </span><span class="n">k_p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">kp_</span><span class="p">;</span>
+<span class="w">  </span><span class="n">k_i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ki_</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">dt</span><span class="p">;</span>
+<span class="w">  </span><span class="n">k_d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">kd_</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">dt</span><span class="p">;</span>
+<span class="w">  </span><span class="cm">/* ... */</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">pid_controller</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="cm">/* ... */</span>
+<span class="w">  </span><span class="n">e_i</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">e</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">float</span><span class="w"> </span><span class="n">u</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">k_p</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">k_i</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">e_i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">k_d</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">e</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">e_p</span><span class="p">);</span>
+<span class="w">  </span><span class="cm">/* ... */</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="derivative-kick">微分冲击 (Derivative Kick)</h3>
+<p>由于误差 = 设定值 - 输入，设定值的任何变化都会导致误差的瞬时变化，特别是对于微分项，因为这种变化会导致接近无穷大的数值。当这个数字被输入到 PID 方程中时，结果将导致输出中出现不期望的尖峰。</p>
+<p><img alt="" src="../assets/markdown-img-paste-20170412223043418.png" /></p>
+<p>由于 $\dot{e} = \dot{r} - \dot{y}$，我们可以将设定点视为常数，所以 $\frac{de}{dt} = -\frac{dy}{dt}$。这导致了"基于测量的微分"方法。</p>
+<div class="highlight"><pre><span></span><code><span class="cm">/* ... */</span>
+<span class="kt">float</span><span class="w"> </span><span class="n">y_p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">pid_controller</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="cm">/* ... */</span>
+<span class="w">  </span><span class="n">e_i</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">e</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">float</span><span class="w"> </span><span class="n">u</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">k_p</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">k_i</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">e_i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">k_d</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">y</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">y_p</span><span class="p">);</span>
+<span class="w">  </span><span class="cm">/* ... */</span>
+<span class="w">  </span><span class="n">y_p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">y</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="tuning-changes">调参更改 (Tuning Changes)</h3>
+<p>在系统运行时更改 PID 参数可能会导致不期望的行为。</p>
+<p><img alt="" src="../assets/markdown-img-paste-20170412223856166.png" /></p>
+<p>主要变化来自"I"项。解决方案是每次都乘以 k_i，而不是在整个总和上乘以它。这导致了一个平滑的解决方案，无需额外的计算。</p>
+<div class="highlight"><pre><span></span><code><span class="cm">/* ... */</span>
+<span class="kt">float</span><span class="w"> </span><span class="n">ITerm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">pid_controller</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="cm">/* ... */</span>
+<span class="w">  </span><span class="n">ITerm</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">k_i</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">e</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">float</span><span class="w"> </span><span class="n">u</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">k_p</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">ITerm</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">k_d</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">y</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">y_p</span><span class="p">);</span>
+<span class="w">  </span><span class="cm">/* ... */</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="reset-windup">积分饱和 (Reset Windup)</h3>
+<p>积分饱和问题来自于 PID 控制器可以发送的输出存在限制。例如，对于 Arduino，PWM 输出只能接受 0-255 的值。如果输出值达到此范围，控制器应停止增加其输出并停止累积积分误差。如果控制器不知道其输出不是实际输出，输出将饱和，并在设定点再次下降时引入滞后。</p>
+<p><img alt="" src="../assets/markdown-img-paste-20170412224103491.png" /></p>
+<p>此步骤后的 C 代码：</p>
+<div class="highlight"><pre><span></span><code><span class="cm">/* ... */</span>
+<span class="kt">float</span><span class="w"> </span><span class="n">u_limit_upp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">xxx</span><span class="p">;</span>
+<span class="kt">float</span><span class="w"> </span><span class="n">u_limit_low</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">xxx</span><span class="p">;</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">pid_controller</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="cm">/* ... */</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">pid_output_saturated</span><span class="p">(</span><span class="n">u</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">pid_output_reset</span><span class="p">(</span><span class="n">u</span><span class="p">);</span>
+<span class="w">    </span><span class="cm">/* roll back the I term */</span>
+<span class="w">    </span><span class="n">ITerm</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="n">k_i</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">e</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span><span class="cm">/* ... */</span>
+<span class="p">}</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">pid_output_saturated</span><span class="p">(</span><span class="kt">float</span><span class="w"> </span><span class="n">u</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">u</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">u_limit_upp</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">u</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">u_limit_low</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">pid_output_reset</span><span class="p">(</span><span class="kt">float</span><span class="w"> </span><span class="n">u</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">u</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">u_limit_upp</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">u</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">u_limit_upp</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">u</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">u_limit_low</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">u</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">u_limit_low</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="switch-onoff">开关控制 (Switch On/off)</h3>
+<p>（在非常罕见的情况下），我们可能想要打开/关闭 PID 控制器并手动向过程提供控制输入。此操作可能会使控制器混淆，因为它完全失去了对输出的控制。</p>
+<p><img alt="" src="../assets/markdown-img-paste-20170412231026842.png" /></p>
+<p>解决方案很简单，添加一个开关控制变量来启用/禁用控制器并停止更改其内部状态变量。</p>
+<div class="highlight"><pre><span></span><code><span class="cm">/* ... */</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">pid_switch_on</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">pid_controller</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">pid_switch_on</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span><span class="cm">/* ... */</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">pid_switch</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">new_state</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">pid_switch_on</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">new_state</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="initialization-after-switch">切换后的初始化 (Initialization after Switch)</h3>
+<p>使用开关控制的副作用是，当控制器从关闭切换到打开时，会出现不期望的冲击。这在以下图中说明：</p>
+<p><img alt="" src="../assets/markdown-img-paste-20170413001022770.png" /></p>
+<p>为了使控制器重新打开后输出平滑，我们可以重置控制器内部变量：</p>
+<ul>
+<li>"P"：比例项不依赖于任何过去的信息，因此不需要任何初始化，所以 P = 0。</li>
+<li>"D"：设置 last_input = previous_input，所以 D = 0。</li>
+<li>"I"：设置 ITerm = previous_output，所以 P + I + D = previous_output。</li>
+</ul>
+<p>结果控制器在重新打开控制器后具有平滑的响应：</p>
+<p><img alt="" src="../assets/markdown-img-paste-20170413021327538.png" /></p>
+<h3 id="reverse-control">反向控制 (Reverse Control)</h3>
+<p>对于某些系统，输入的增加会导致输出的减少。例如，冷却风扇速度的增加会导致温度下降。为了处理这些系统，我们引入一个方向变量来解决直接/反向控制之间的差异。反向控制的唯一区别是 PID 参数的符号需要为负，而不是直接情况下的正。</p>
+<div class="highlight"><pre><span></span><code><span class="cp">#define DIRECT_CONTROL  (0)</span>
+<span class="cp">#define REVERSE_CONTROL (1)</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">direction</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">DIRECT_CONTROL</span><span class="p">;</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">pid_init</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="cm">/* ... */</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">direction</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">REVERSE_CONTROL</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">k_p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">k_p</span><span class="p">;</span>
+<span class="w">    </span><span class="n">k_i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">k_i</span><span class="p">;</span>
+<span class="w">    </span><span class="n">k_d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">k_d</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span><span class="cm">/* ... */</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">pid_setdir</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">d_</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">direction</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">d_</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h2 id="other-improvements">其他改进 (Other Improvements)</h2>
+<h3 id="input-filtering">输入滤波 (Input Filtering)</h3>
+<p>为了避免微分部分中高频测量噪声的问题，添加了低通滤波器。</p>
+<p>
+<script type="math/tex; mode=display">U_D(s) = \frac{K T_D s}{1 + s T_D / N}(\gamma Y_{sp}(s) - Y(s))</script>
+</p>
+<p>$\gamma$ 用于设定点加权，可以解释为来自设定点的前馈。</p>
+<h3 id="timing-compensation">时序补偿 (Timing Compensation)</h3>
+<ul>
+<li>I 和 D 部分依赖于两次控制操作之间的实际间隔。如果间隔不一致，我们需要对它们进行补偿。</li>
+</ul>
+<h3 id="feedforward">前馈 (Feedforward)</h3>
+<h3 id="reset-tiebacks">复位反馈 (Reset Tiebacks)</h3>
+<h3 id="i-i-term-saturation"><strong>I</strong> 项饱和 (<strong>I</strong>-term Saturation)</h3>
+<h3 id="d-d-term-filtering"><strong>D</strong> 项滤波 (<strong>D</strong>-term Filtering)</h3>
+<h3 id="error-dead-zone">误差死区 (Error Dead-zone)</h3>
+<h3 id="output-limitation">输出限制 (Output Limitation)</h3>
+<h3 id="dead-band">死区 (Dead band)</h3>
+<h3 id="anti-windup">抗积分饱和 (Anti Windup)</h3>
+<hr />
+<h2 id="pid-2-event-based-pid">基于事件的 PID [2] (Event-based PID)</h2>
+<p>事件检测器（事件触发）-&gt; PID 控制器（时间触发）</p>
+<p>事件触发条件应该具有较小的复杂度，以便与时间触发控制器进行比较：</p>
+<p>$|e(t_k) - e(t_{s}) &gt; e_{lim}|$ 或 $h_{act} &gt; h_{max}$</p>
+<p>这意味着检测器以标称采样频率运行，但 PID 计算仅在检测到事件时执行。然而，由于每次都需要重新计算 PID 系数，该算法需要更多计算。</p>
+<p>正确过滤测量噪声并设置足够大的误差限制以避免因噪声触发控制是很重要的。</p>
+<hr />
+<h2 id="references">参考文献 (References)</h2>
+<ol>
+<li>Improving the Beginner's PID, <a href="http://brettbeauregard.com/blog/2011/04/improving-the-beginners-pid-introduction/">网页链接</a></li>
+<li>Årzén, K-E. (1999), A Simple Event-Based PID Controller, 在 14th IFAC World Congress (1999), 北京, 中国 上发表的论文。</li>
+</ol>
 
 
 

@@ -870,7 +870,7 @@
   <a href="#feedback-control-approach" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Feedback Control Approach
+        反馈控制方法 (Feedback Control Approach)
       
     </span>
   </a>
@@ -977,62 +977,6 @@
   
   
     <li class="md-nav__item">
-      <a href="pid/pid-improved/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    PID控制器的改善
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="pid/pid-tuning/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    PID控制器的参数调节
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="mpc/mpc/" class="md-nav__link">
         
   
@@ -1068,7 +1012,7 @@
   <span class="md-ellipsis">
     
   
-    NN神经网络控制器
+    神经网络控制器 (Neural Network Controller)
   
 
     
@@ -1223,6 +1167,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sensing/slam/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SLAM (同时定位与建图)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1322,7 +1294,7 @@
   <span class="md-ellipsis">
     
   
-    物体识别（深度学习）
+    目标检测 (Object Detection)
   
 
     
@@ -3342,7 +3314,7 @@
   <a href="#feedback-control-approach" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Feedback Control Approach
+        反馈控制方法 (Feedback Control Approach)
       
     </span>
   </a>
@@ -3369,74 +3341,74 @@
 <h1 id="_1">控制系统指南</h1>
 <div class="admonition note">
 <p class="admonition-title">引言</p>
-<p>本页面目前只有英文版，由我(automaticdai)早期整理而成。我会逐步翻译成中文，同时欢迎<a href="/contribute">贡献该条目</a>。</p>
+<p>本页面由我(automaticdai)早期整理而成，现已翻译成中文。欢迎<a href="/contribute">贡献该条目</a>。</p>
 </div>
 <h2 id="_2">控制理论介绍</h2>
-<p>Control theory is an interdisciplinary branch of engineering and mathematics that deals with the behavior of dynamical systems with inputs, and how their behavior is modified by feedback [1].</p>
-<p>The objective of control theory is to design a controller so that the system has some desired characteristics. Typical objectives are [2]:</p>
+<p>控制理论是工程学和数学的一个跨学科分支，研究具有输入的动态系统的行为，以及如何通过反馈来改变它们的行为 [1]。</p>
+<p>控制理论的目标是设计一个控制器，使系统具有某些期望的特性。典型的目标包括 [2]：</p>
 <ul>
-<li>Stabilization</li>
-<li>Regulation</li>
-<li>Tracking</li>
-<li>Disturbance rejection</li>
+<li>稳定化 (Stabilization)</li>
+<li>调节 (Regulation)</li>
+<li>跟踪 (Tracking)</li>
+<li>扰动抑制 (Disturbance rejection)</li>
 </ul>
 <p><img alt="" src="assets/markdown-img-paste-20170412214456853.png" /></p>
 <h2 id="_3">控制理论结构图</h2>
 <p>该图描述了控制理论的体系结构，由 <a href="https://www.zhihu.com/people/xiang-yi-55-49">@系统与控制</a> 创作并授权使用。</p>
 <p><img alt="" src="assets/control_theory_diagram_cn.png" /></p>
-<h2 id="feedback-control-approach">Feedback Control Approach</h2>
+<h2 id="feedback-control-approach">反馈控制方法 (Feedback Control Approach)</h2>
 <ol>
-<li>Establish control objectives<ul>
-<li>Qualitative</li>
-<li>Quantitative: step response time</li>
-<li>Require understanding of expected commands, disturbances and bandwitdh</li>
-<li>Require understanding of physical dynamics and appropriate control method  </li>
+<li>建立控制目标<ul>
+<li>定性目标 (Qualitative)</li>
+<li>定量目标：阶跃响应时间 (Quantitative: step response time)</li>
+<li>需要理解期望的命令、扰动和带宽</li>
+<li>需要理解物理动力学和适当的控制方法</li>
 </ul>
 </li>
-<li>Select sensors and actuators<ul>
-<li>What aspect to be sensed and controlled?</li>
-<li>Sensor noise, cost, reliability, size ...</li>
+<li>选择传感器和执行器<ul>
+<li>需要感知和控制哪些方面？</li>
+<li>传感器噪声、成本、可靠性、尺寸等</li>
 </ul>
 </li>
-<li>Obtain system model<ul>
-<li>First principle or system identification</li>
-<li>Evaluation model -&gt; reduce size and complexity</li>
-<li>Accuracy? Error model?</li>
+<li>获得系统模型<ul>
+<li>第一性原理或系统辨识</li>
+<li>评估模型 -&gt; 减小规模和复杂度</li>
+<li>精度如何？误差模型？</li>
 </ul>
 </li>
-<li>Design controller<ul>
-<li>SISO or MIMO?</li>
-<li>Classical or state-space?</li>
-<li>Choose parameters (rule-of-thumb or optimization)</li>
+<li>设计控制器<ul>
+<li>单输入单输出 (SISO) 还是多输入多输出 (MIMO)？</li>
+<li>经典控制还是状态空间？</li>
+<li>选择参数（经验法则或优化）</li>
 </ul>
 </li>
-<li>Analyze closed-loop performance<ul>
-<li>Does closed loop meet objectives?</li>
-<li>Analysis, simulation, experimentation and iterate.</li>
+<li>分析闭环性能<ul>
+<li>闭环是否满足目标？</li>
+<li>分析、仿真、实验和迭代</li>
 </ul>
 </li>
 </ol>
-<h1 id="analysis">Analysis</h1>
+<h1 id="analysis">分析 (Analysis)</h1>
 <ul>
 <li>
-<p>Frequency Domain Analysis</p>
+<p>频域分析 (Frequency Domain Analysis)</p>
 <ul>
-<li>Gain margin</li>
-<li>Phase margin</li>
+<li>增益裕度 (Gain margin)</li>
+<li>相位裕度 (Phase margin)</li>
 </ul>
 </li>
 <li>
-<p>Time Domain Analysis</p>
+<p>时域分析 (Time Domain Analysis)</p>
 <ul>
-<li>Rising Time</li>
-<li>Peak Time</li>
-<li>Steady-state Time</li>
+<li>上升时间 (Rising Time)</li>
+<li>峰值时间 (Peak Time)</li>
+<li>稳态时间 (Steady-state Time)</li>
 </ul>
 </li>
 </ul>
-<h2 id="declaration">Declaration</h2>
-<p>This document includes basic descriptions and implementations of a Control System. The materials covered are: system modelling, controller design, classical control theory, modern control theory and C/Matlab/Simulink implementations.</p>
-<p>This wiki site is maintained by myself at an irregularly base. Contents might be inconsistent when I am working on them. Please use it with caution as I assume no other user than myself would be using this website.</p>
+<h2 id="declaration">声明 (Declaration)</h2>
+<p>本文档包含控制系统的基本描述和实现。涵盖的材料包括：系统建模、控制器设计、经典控制理论、现代控制理论以及 C/Matlab/Simulink 实现。</p>
+<p>本维基站点由我本人不定期维护。在我进行编辑时，内容可能不一致。请谨慎使用，因为我假设除了我自己之外没有其他用户会使用本网站。</p>
 <h2 id="_4">参考资料</h2>
 <ol>
 <li><a href="https://en.wikipedia.org/wiki/Control_theory">Control Theory - Wikipedia</a></li>

@@ -12,31 +12,31 @@
         <meta name="author" content="YFRL">
       
       
-        <link rel="canonical" href="https://yfrobotics.github.io/control/pid/pid-improved/">
+        <link rel="canonical" href="https://yfrobotics.github.io/sensing/slam/">
       
       
-        <link rel="prev" href="../pid/">
+        <link rel="prev" href="../depth-camera/">
       
       
-        <link rel="next" href="../pid-tuning/">
+        <link rel="next" href="../../cv/">
       
       
         
       
       
-      <link rel="icon" href="../../../assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
     
     
       
-        <title>PID控制器的改善 - 云飞机器人中文维基</title>
+        <title>SLAM (同时定位与建图) - 云飞机器人中文维基</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.618322db.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.618322db.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -55,9 +55,9 @@
       
     
     
-      <link rel="stylesheet" href="../../../_static/css/extra.css">
+      <link rel="stylesheet" href="../../_static/css/extra.css">
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#pid" class="md-skip">
+        <a href="#slam" class="md-skip">
           跳转至
         </a>
       
@@ -94,9 +94,9 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href="../../.." title="云飞机器人中文维基" class="md-header__button md-logo" aria-label="云飞机器人中文维基" data-md-component="logo">
+    <a href="../.." title="云飞机器人中文维基" class="md-header__button md-logo" aria-label="云飞机器人中文维基" data-md-component="logo">
       
-  <img src="../../../logo-site.png" alt="logo">
+  <img src="../../logo-site.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -113,7 +113,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              PID控制器的改善
+              SLAM (同时定位与建图)
             
           </span>
         </div>
@@ -200,11 +200,31 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../.." class="md-tabs__link">
+        <a href="../.." class="md-tabs__link">
           
   
   
   首页
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../control/" class="md-tabs__link">
+          
+  
+  
+  控制
 
         </a>
       </li>
@@ -222,27 +242,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../" class="md-tabs__link">
-          
-  
-  
-  控制
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../sensing/" class="md-tabs__link">
+        <a href="../" class="md-tabs__link">
           
   
   
@@ -262,7 +262,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../cv/" class="md-tabs__link">
+        <a href="../../cv/" class="md-tabs__link">
           
   
   
@@ -282,7 +282,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../planning/" class="md-tabs__link">
+        <a href="../../planning/" class="md-tabs__link">
           
   
   
@@ -302,7 +302,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../learning/ml/" class="md-tabs__link">
+        <a href="../../learning/ml/" class="md-tabs__link">
           
   
   
@@ -322,7 +322,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../simulation/" class="md-tabs__link">
+        <a href="../../simulation/" class="md-tabs__link">
           
   
   
@@ -342,7 +342,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../ros/" class="md-tabs__link">
+        <a href="../../ros/" class="md-tabs__link">
           
   
   
@@ -362,7 +362,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../linux/" class="md-tabs__link">
+        <a href="../../linux/" class="md-tabs__link">
           
   
   
@@ -382,7 +382,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../rtos/" class="md-tabs__link">
+        <a href="../../rtos/" class="md-tabs__link">
           
   
   
@@ -402,7 +402,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../hardware/" class="md-tabs__link">
+        <a href="../../hardware/" class="md-tabs__link">
           
   
   
@@ -422,7 +422,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../database/" class="md-tabs__link">
+        <a href="../../database/" class="md-tabs__link">
           
   
   
@@ -442,7 +442,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../resources/" class="md-tabs__link">
+        <a href="../../resources/" class="md-tabs__link">
           
   
   
@@ -476,9 +476,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="云飞机器人中文维基" class="md-nav__button md-logo" aria-label="云飞机器人中文维基" data-md-component="logo">
+    <a href="../.." title="云飞机器人中文维基" class="md-nav__button md-logo" aria-label="云飞机器人中文维基" data-md-component="logo">
       
-  <img src="../../../logo-site.png" alt="logo">
+  <img src="../../logo-site.png" alt="logo">
 
     </a>
     云飞机器人中文维基
@@ -555,7 +555,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   
@@ -583,7 +583,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../intro/" class="md-nav__link">
+      <a href="../../intro/" class="md-nav__link">
         
   
   
@@ -611,7 +611,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../courses/" class="md-nav__link">
+      <a href="../../courses/" class="md-nav__link">
         
   
   
@@ -639,7 +639,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../how-to-contribute/" class="md-nav__link">
+      <a href="../../how-to-contribute/" class="md-nav__link">
         
   
   
@@ -667,7 +667,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../standard/" class="md-nav__link">
+      <a href="../../standard/" class="md-nav__link">
         
   
   
@@ -695,7 +695,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../contributors/" class="md-nav__link">
+      <a href="../../contributors/" class="md-nav__link">
         
   
   
@@ -703,6 +703,231 @@
     
   
     贡献者名单
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    控制
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    控制
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../control/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    控制系统指南
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../control/modelling/modelling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    控制系统建模
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../control/modelling/state-space/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    状态空间法
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../control/pid/pid/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PID控制器
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../control/mpc/mpc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MPC控制器
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../control/nn/nn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    神经网络控制器 (Neural Network Controller)
   
 
     
@@ -746,17 +971,17 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
             
   
   
   <span class="md-ellipsis">
     
   
-    控制
+    感知
   
 
     
@@ -767,12 +992,12 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_2">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
   
-    控制
+    感知
   
 
           </label>
@@ -785,14 +1010,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../" class="md-nav__link">
+      <a href="../" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    控制系统指南
+    机器人传感技术
   
 
     
@@ -813,14 +1038,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../modelling/modelling/" class="md-nav__link">
+      <a href="../sensors/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    控制系统建模
+    机器人常用传感器
   
 
     
@@ -841,42 +1066,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../modelling/state-space/" class="md-nav__link">
+      <a href="../depth-camera/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    状态空间法
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../pid/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    PID控制器
+    深度视觉相机
   
 
     
@@ -913,7 +1110,7 @@
   <span class="md-ellipsis">
     
   
-    PID控制器的改善
+    SLAM (同时定位与建图)
   
 
     
@@ -931,7 +1128,7 @@
   <span class="md-ellipsis">
     
   
-    PID控制器的改善
+    SLAM (同时定位与建图)
   
 
     
@@ -957,10 +1154,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#fixed-sampling-time" class="md-nav__link">
+  <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Fixed Sampling Time
+        概述
       
     </span>
   </a>
@@ -968,88 +1165,34 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#derivative-kick" class="md-nav__link">
+  <a href="#slam_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Derivative Kick
+        SLAM 分类
       
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#tuning-changes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Tuning Changes
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#reset-windup" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Reset Windup
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#switch-onoff" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Switch On/off
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#initialization-after-switch" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Initialization after Switch
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#reverse-control" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Reverse Control
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#other-improvements" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Other Improvements
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Other Improvements">
+    <nav class="md-nav" aria-label="SLAM 分类">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#input-filtering" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Input Filtering
+        按传感器类型分类
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="按传感器类型分类">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#slam-visual-slam-v-slam" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        视觉 SLAM (Visual SLAM, V-SLAM)
       
     </span>
   </a>
@@ -1057,10 +1200,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#timing-compensation" class="md-nav__link">
+  <a href="#slam-lidar-slam" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Timing Compensation
+        激光 SLAM (LiDAR SLAM)
       
     </span>
   </a>
@@ -1068,10 +1211,38 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#feedforward" class="md-nav__link">
+  <a href="#slam_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Feedforward
+        多传感器融合 SLAM
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        按算法框架分类
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="按算法框架分类">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        基于滤波的方法
       
     </span>
   </a>
@@ -1079,10 +1250,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#reset-tiebacks" class="md-nav__link">
+  <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Reset Tiebacks
+        基于优化的方法
       
     </span>
   </a>
@@ -1090,10 +1261,43 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#i-term-saturation" class="md-nav__link">
+  <a href="#_6" class="md-nav__link">
     <span class="md-ellipsis">
       
-        I-term Saturation
+        基于深度学习的方法
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        关键技术
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="关键技术">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#frontend" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        前端 (Frontend)
       
     </span>
   </a>
@@ -1101,10 +1305,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#d-term-filtering" class="md-nav__link">
+  <a href="#backend" class="md-nav__link">
     <span class="md-ellipsis">
       
-        D-term Filtering
+        后端 (Backend)
       
     </span>
   </a>
@@ -1112,43 +1316,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#error-dead-zone" class="md-nav__link">
+  <a href="#_8" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Error Dead-zone
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#output-limitation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Output Limitation
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#dead-band" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Dead band
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#anti-windup" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Anti Windup
+        状态估计
       
     </span>
   </a>
@@ -1161,10 +1332,82 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#event-based-pid-2" class="md-nav__link">
+  <a href="#_9" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Event-based PID [2]
+        主要算法
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="主要算法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#orb-slam" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ORB-SLAM
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lsd-slam" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LSD-SLAM
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#loam" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LOAM
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vins-mono-vins-fusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VINS-Mono / VINS-Fusion
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cartographer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cartographer
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        应用场景
       
     </span>
   </a>
@@ -1172,10 +1415,143 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#references" class="md-nav__link">
+  <a href="#_11" class="md-nav__link">
     <span class="md-ellipsis">
       
-        References
+        挑战与问题
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="挑战与问题">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        尺度问题
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        累积误差
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        动态环境
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        计算复杂度
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        鲁棒性
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        常用工具与框架
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="常用工具与框架">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ros-slam" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ROS 中的 SLAM 包
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#slam_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        开源 SLAM 库
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        评估指标
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        发展趋势
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        参考文献
       
     </span>
   </a>
@@ -1186,231 +1562,6 @@
   
 </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../pid-tuning/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    PID控制器的参数调节
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../mpc/mpc/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    MPC控制器
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../nn/nn/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    NN神经网络控制器
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    感知
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    感知
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../sensing/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    机器人传感技术
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../sensing/sensors/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    机器人常用传感器
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../sensing/depth-camera/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    深度视觉相机
-  
-
-    
-  </span>
-  
-  
-
-      </a>
     </li>
   
 
@@ -1480,7 +1631,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../cv/" class="md-nav__link">
+      <a href="../../cv/" class="md-nav__link">
         
   
   
@@ -1508,14 +1659,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../cv/object-detection/" class="md-nav__link">
+      <a href="../../cv/object-detection/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    物体识别（深度学习）
+    目标检测 (Object Detection)
   
 
     
@@ -1593,7 +1744,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../planning/" class="md-nav__link">
+      <a href="../../planning/" class="md-nav__link">
         
   
   
@@ -1621,7 +1772,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../planning/decisionmaking/" class="md-nav__link">
+      <a href="../../planning/decisionmaking/" class="md-nav__link">
         
   
   
@@ -1649,7 +1800,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../planning/pathplanning/" class="md-nav__link">
+      <a href="../../planning/pathplanning/" class="md-nav__link">
         
   
   
@@ -1677,7 +1828,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../planning/motionplanning/" class="md-nav__link">
+      <a href="../../planning/motionplanning/" class="md-nav__link">
         
   
   
@@ -1762,7 +1913,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../learning/ml/" class="md-nav__link">
+      <a href="../../learning/ml/" class="md-nav__link">
         
   
   
@@ -1790,7 +1941,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../learning/rl/" class="md-nav__link">
+      <a href="../../learning/rl/" class="md-nav__link">
         
   
   
@@ -1875,7 +2026,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../simulation/" class="md-nav__link">
+      <a href="../../simulation/" class="md-nav__link">
         
   
   
@@ -1903,7 +2054,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../simulation/gazebo/" class="md-nav__link">
+      <a href="../../simulation/gazebo/" class="md-nav__link">
         
   
   
@@ -1931,7 +2082,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../simulation/vrep/" class="md-nav__link">
+      <a href="../../simulation/vrep/" class="md-nav__link">
         
   
   
@@ -1959,7 +2110,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../simulation/mujoco/" class="md-nav__link">
+      <a href="../../simulation/mujoco/" class="md-nav__link">
         
   
   
@@ -1987,7 +2138,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../simulation/pybullet/" class="md-nav__link">
+      <a href="../../simulation/pybullet/" class="md-nav__link">
         
   
   
@@ -2015,7 +2166,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../simulation/webots/" class="md-nav__link">
+      <a href="../../simulation/webots/" class="md-nav__link">
         
   
   
@@ -2043,7 +2194,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../simulation/robotics-toolbox/" class="md-nav__link">
+      <a href="../../simulation/robotics-toolbox/" class="md-nav__link">
         
   
   
@@ -2071,7 +2222,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../simulation/stage/" class="md-nav__link">
+      <a href="../../simulation/stage/" class="md-nav__link">
         
   
   
@@ -2099,7 +2250,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../simulation/unreal/" class="md-nav__link">
+      <a href="../../simulation/unreal/" class="md-nav__link">
         
   
   
@@ -2127,7 +2278,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../simulation/unity/" class="md-nav__link">
+      <a href="../../simulation/unity/" class="md-nav__link">
         
   
   
@@ -2155,7 +2306,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../simulation/nvidiaomniverse/" class="md-nav__link">
+      <a href="../../simulation/nvidiaomniverse/" class="md-nav__link">
         
   
   
@@ -2240,7 +2391,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ros/" class="md-nav__link">
+      <a href="../../ros/" class="md-nav__link">
         
   
   
@@ -2268,7 +2419,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ros/ros1/" class="md-nav__link">
+      <a href="../../ros/ros1/" class="md-nav__link">
         
   
   
@@ -2296,7 +2447,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ros/ros2/" class="md-nav__link">
+      <a href="../../ros/ros2/" class="md-nav__link">
         
   
   
@@ -2381,7 +2532,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../linux/" class="md-nav__link">
+      <a href="../../linux/" class="md-nav__link">
         
   
   
@@ -2409,7 +2560,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../linux/commands/" class="md-nav__link">
+      <a href="../../linux/commands/" class="md-nav__link">
         
   
   
@@ -2494,7 +2645,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../rtos/" class="md-nav__link">
+      <a href="../../rtos/" class="md-nav__link">
         
   
   
@@ -2522,7 +2673,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../rtos/freertos/" class="md-nav__link">
+      <a href="../../rtos/freertos/" class="md-nav__link">
         
   
   
@@ -2550,7 +2701,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../rtos/ucos/" class="md-nav__link">
+      <a href="../../rtos/ucos/" class="md-nav__link">
         
   
   
@@ -2578,7 +2729,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../rtos/vxworks/" class="md-nav__link">
+      <a href="../../rtos/vxworks/" class="md-nav__link">
         
   
   
@@ -2606,7 +2757,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../rtos/qnx/" class="md-nav__link">
+      <a href="../../rtos/qnx/" class="md-nav__link">
         
   
   
@@ -2691,7 +2842,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../hardware/" class="md-nav__link">
+      <a href="../../hardware/" class="md-nav__link">
         
   
   
@@ -2719,7 +2870,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../arduino/" class="md-nav__link">
+      <a href="../../arduino/" class="md-nav__link">
         
   
   
@@ -2747,7 +2898,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../raspberrypi/" class="md-nav__link">
+      <a href="../../raspberrypi/" class="md-nav__link">
         
   
   
@@ -2775,7 +2926,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../jetson/" class="md-nav__link">
+      <a href="../../jetson/" class="md-nav__link">
         
   
   
@@ -2860,7 +3011,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../database/" class="md-nav__link">
+      <a href="../../database/" class="md-nav__link">
         
   
   
@@ -2888,7 +3039,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../database/dataset/" class="md-nav__link">
+      <a href="../../database/dataset/" class="md-nav__link">
         
   
   
@@ -2966,7 +3117,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../database/nao/" class="md-nav__link">
+      <a href="../../database/nao/" class="md-nav__link">
         
   
   
@@ -3052,7 +3203,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../database/companies/" class="md-nav__link">
+      <a href="../../database/companies/" class="md-nav__link">
         
   
   
@@ -3080,7 +3231,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../database/boston-dynamics/" class="md-nav__link">
+      <a href="../../database/boston-dynamics/" class="md-nav__link">
         
   
   
@@ -3166,7 +3317,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../database/labs/" class="md-nav__link">
+      <a href="../../database/labs/" class="md-nav__link">
         
   
   
@@ -3194,7 +3345,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../database/labs-cn/" class="md-nav__link">
+      <a href="../../database/labs-cn/" class="md-nav__link">
         
   
   
@@ -3230,7 +3381,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../database/conferences/" class="md-nav__link">
+      <a href="../../database/conferences/" class="md-nav__link">
         
   
   
@@ -3258,7 +3409,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../database/standard/" class="md-nav__link">
+      <a href="../../database/standard/" class="md-nav__link">
         
   
   
@@ -3286,7 +3437,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../database/competitions/" class="md-nav__link">
+      <a href="../../database/competitions/" class="md-nav__link">
         
   
   
@@ -3371,7 +3522,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../resources/" class="md-nav__link">
+      <a href="../../resources/" class="md-nav__link">
         
   
   
@@ -3399,7 +3550,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../resources/software/" class="md-nav__link">
+      <a href="../../resources/software/" class="md-nav__link">
         
   
   
@@ -3427,7 +3578,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../resources/books/" class="md-nav__link">
+      <a href="../../resources/books/" class="md-nav__link">
         
   
   
@@ -3455,7 +3606,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../resources/videos/" class="md-nav__link">
+      <a href="../../resources/videos/" class="md-nav__link">
         
   
   
@@ -3510,10 +3661,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#fixed-sampling-time" class="md-nav__link">
+  <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Fixed Sampling Time
+        概述
       
     </span>
   </a>
@@ -3521,88 +3672,34 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#derivative-kick" class="md-nav__link">
+  <a href="#slam_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Derivative Kick
+        SLAM 分类
       
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#tuning-changes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Tuning Changes
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#reset-windup" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Reset Windup
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#switch-onoff" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Switch On/off
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#initialization-after-switch" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Initialization after Switch
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#reverse-control" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Reverse Control
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#other-improvements" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Other Improvements
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Other Improvements">
+    <nav class="md-nav" aria-label="SLAM 分类">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#input-filtering" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Input Filtering
+        按传感器类型分类
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="按传感器类型分类">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#slam-visual-slam-v-slam" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        视觉 SLAM (Visual SLAM, V-SLAM)
       
     </span>
   </a>
@@ -3610,10 +3707,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#timing-compensation" class="md-nav__link">
+  <a href="#slam-lidar-slam" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Timing Compensation
+        激光 SLAM (LiDAR SLAM)
       
     </span>
   </a>
@@ -3621,10 +3718,38 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#feedforward" class="md-nav__link">
+  <a href="#slam_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Feedforward
+        多传感器融合 SLAM
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        按算法框架分类
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="按算法框架分类">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        基于滤波的方法
       
     </span>
   </a>
@@ -3632,10 +3757,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#reset-tiebacks" class="md-nav__link">
+  <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Reset Tiebacks
+        基于优化的方法
       
     </span>
   </a>
@@ -3643,10 +3768,43 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#i-term-saturation" class="md-nav__link">
+  <a href="#_6" class="md-nav__link">
     <span class="md-ellipsis">
       
-        I-term Saturation
+        基于深度学习的方法
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        关键技术
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="关键技术">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#frontend" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        前端 (Frontend)
       
     </span>
   </a>
@@ -3654,10 +3812,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#d-term-filtering" class="md-nav__link">
+  <a href="#backend" class="md-nav__link">
     <span class="md-ellipsis">
       
-        D-term Filtering
+        后端 (Backend)
       
     </span>
   </a>
@@ -3665,43 +3823,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#error-dead-zone" class="md-nav__link">
+  <a href="#_8" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Error Dead-zone
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#output-limitation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Output Limitation
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#dead-band" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Dead band
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#anti-windup" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Anti Windup
+        状态估计
       
     </span>
   </a>
@@ -3714,10 +3839,82 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#event-based-pid-2" class="md-nav__link">
+  <a href="#_9" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Event-based PID [2]
+        主要算法
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="主要算法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#orb-slam" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ORB-SLAM
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lsd-slam" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LSD-SLAM
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#loam" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LOAM
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vins-mono-vins-fusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VINS-Mono / VINS-Fusion
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cartographer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cartographer
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        应用场景
       
     </span>
   </a>
@@ -3725,10 +3922,143 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#references" class="md-nav__link">
+  <a href="#_11" class="md-nav__link">
     <span class="md-ellipsis">
       
-        References
+        挑战与问题
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="挑战与问题">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        尺度问题
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        累积误差
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        动态环境
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        计算复杂度
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        鲁棒性
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        常用工具与框架
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="常用工具与框架">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ros-slam" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ROS 中的 SLAM 包
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#slam_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        开源 SLAM 库
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        评估指标
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        发展趋势
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        参考文献
       
     </span>
   </a>
@@ -3752,189 +4082,231 @@
 
 
 
-<h1 id="pid">PID控制器的改善</h1>
-<p>According to [1], a few improvements can be made to improve the so called Beginner's PID. The author of [1] wrote the PID library for Arduino. Here is a list of his advices:</p>
+<h1 id="slam">SLAM (同时定位与建图)</h1>
+<div class="admonition note">
+<p class="admonition-title">引言</p>
+<p>SLAM (Simultaneous Localization and Mapping，同时定位与建图) 是机器人领域中的一个核心问题，指机器人在未知环境中，在定位自身位置的同时构建环境地图。</p>
+</div>
+<h2 id="_1">概述</h2>
+<p>SLAM 问题可以描述为：机器人在未知环境中移动时，需要同时完成两个任务：</p>
 <ol>
-<li>Sample Time - The PID algorithm functions best if it is evaluated at a regular
-interval. If the algorithm is aware of this interval, we can also simplify some of
-the internal math.</li>
-<li>Derivative Kick - Not the biggest deal, but easy to get rid of, so we’re going to do
-just that.</li>
-<li>On-The-Fly Tuning Changes - A good PID algorithm is one where tuning
-parameters can be changed without jolting the internal workings.</li>
-<li>Reset Windup Mitigation - We’ll go into what Reset Windup is, and implement a
-solution with side benefits</li>
-<li>On/Off (Auto/Manual) - In most applications, there is a desire to sometimes turn
-off the PID controller and adjust the output by hand, without the controller
-interfering</li>
-<li>Initialization - When the controller first turns on, we want a “bumpless transfer.” That is, we don’t want the output to suddenly jerk to some new value</li>
-<li>Controller Direction - This last one isn’t a change in the name of robustness per se.
-it’s designed to ensure that the user enters tuning parameters with the correct sign</li>
+<li><strong>定位 (Localization)</strong>：确定自身在环境中的位置和姿态</li>
+<li><strong>建图 (Mapping)</strong>：构建环境的地图表示</li>
 </ol>
-<p>In this section, I will follow his advices and rewrite my version of code to illustrate the main ideas.</p>
-<h3 id="fixed-sampling-time">Fixed Sampling Time</h3>
-<p>The first thing to make sure is the controller is called at a regular time interval. We can create a periodic control task, making use of ADC sampling interrupts, or we can use OS utilities to test if the specified sampling time has elapsed. With a fixed sampling time, we do not need to calculate the math related to $dt$ every time, and we can incorporate $dt$ into coefficients $K_i$ and $K_d$:</p>
-<div class="highlight"><pre><span></span><code><span class="cm">/* ... */</span>
-
-<span class="kt">void</span><span class="w"> </span><span class="nf">pid_init</span><span class="p">(</span><span class="kt">float</span><span class="w"> </span><span class="n">kp_</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">ki_</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">kd_</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">dt</span><span class="p">){</span>
-<span class="w">  </span><span class="n">k_p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">kp_</span><span class="p">;</span>
-<span class="w">  </span><span class="n">k_i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ki_</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">dt</span><span class="p">;</span>
-<span class="w">  </span><span class="n">k_d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">kd_</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">dt</span><span class="p">;</span>
-<span class="w">  </span><span class="cm">/* ... */</span>
-<span class="p">}</span>
-
-<span class="kt">void</span><span class="w"> </span><span class="nf">pid_controller</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="cm">/* ... */</span>
-<span class="w">  </span><span class="n">e_i</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">e</span><span class="p">;</span>
-<span class="w">  </span><span class="kt">float</span><span class="w"> </span><span class="n">u</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">k_p</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">k_i</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">e_i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">k_d</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">e</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">e_p</span><span class="p">);</span>
-<span class="w">  </span><span class="cm">/* ... */</span>
-<span class="p">}</span>
-</code></pre></div>
-<h3 id="derivative-kick">Derivative Kick</h3>
-<p>Since error = set-point - input, any change in the set-point would cause an instantaneous change in error, especially for derivative as this change leads to a close-to-infinity large number. When this number is fed into the PID equation, the result will lead to an undesirable spike in the output.</p>
-<p><img alt="" src="../assets/markdown-img-paste-20170412223043418.png" /></p>
-<p>As $\dot{e} = \dot{r} - \dot{y}$, we can ignore the setpoint as constant, so $\frac{de}{dt} = -\frac{dy}{dt}$. This leads to a "Derivative on Measurement" method.</p>
-<div class="highlight"><pre><span></span><code><span class="cm">/* ... */</span>
-<span class="kt">float</span><span class="w"> </span><span class="n">y_p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-
-<span class="kt">void</span><span class="w"> </span><span class="nf">pid_controller</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="cm">/* ... */</span>
-<span class="w">  </span><span class="n">e_i</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">e</span><span class="p">;</span>
-<span class="w">  </span><span class="kt">float</span><span class="w"> </span><span class="n">u</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">k_p</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">k_i</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">e_i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">k_d</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">y</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">y_p</span><span class="p">);</span>
-<span class="w">  </span><span class="cm">/* ... */</span>
-<span class="w">  </span><span class="n">y_p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">y</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
-<h3 id="tuning-changes">Tuning Changes</h3>
-<p>Changing PID parameters while the system is running may cause undesirable behaviors.</p>
-<p><img alt="" src="../assets/markdown-img-paste-20170412223856166.png" /></p>
-<p>The major change comes from the "I" term. The solution is simply multiply k_i every time instead of multiply it on the overall sum. This leads to a smooth solution without additional computation.</p>
-<div class="highlight"><pre><span></span><code><span class="cm">/* ... */</span>
-<span class="kt">float</span><span class="w"> </span><span class="n">ITerm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-
-<span class="kt">void</span><span class="w"> </span><span class="nf">pid_controller</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="cm">/* ... */</span>
-<span class="w">  </span><span class="n">ITerm</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">k_i</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">e</span><span class="p">;</span>
-<span class="w">  </span><span class="kt">float</span><span class="w"> </span><span class="n">u</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">k_p</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">ITerm</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">k_d</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">y</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">y_p</span><span class="p">);</span>
-<span class="w">  </span><span class="cm">/* ... */</span>
-<span class="p">}</span>
-</code></pre></div>
-<h3 id="reset-windup">Reset Windup</h3>
-<p>The problem of windup comes from the fact that there is limitations on the output that a PID controller can send. For example, for Arduino, the PWM output can only accept values from 0-255. If the output value reaches this range, the controller should stop increasing its output and stop accumulating integral error. If the controller is not aware its output is not the actual output, the output will saturate and will introduce lag when the setpoint drop back again.</p>
-<p><img alt="" src="../assets/markdown-img-paste-20170412224103491.png" /></p>
-<p>The C code after this step:</p>
-<div class="highlight"><pre><span></span><code><span class="cm">/* ... */</span>
-<span class="kt">float</span><span class="w"> </span><span class="n">u_limit_upp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">xxx</span><span class="p">;</span>
-<span class="kt">float</span><span class="w"> </span><span class="n">u_limit_low</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">xxx</span><span class="p">;</span>
-
-<span class="kt">void</span><span class="w"> </span><span class="nf">pid_controller</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="cm">/* ... */</span>
-<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">pid_output_saturated</span><span class="p">(</span><span class="n">u</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">pid_output_reset</span><span class="p">(</span><span class="n">u</span><span class="p">);</span>
-<span class="w">    </span><span class="cm">/* roll back the I term */</span>
-<span class="w">    </span><span class="n">ITerm</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="n">k_i</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">e</span><span class="p">;</span>
-<span class="w">  </span><span class="p">}</span>
-<span class="w">  </span><span class="cm">/* ... */</span>
-<span class="p">}</span>
-
-<span class="kt">int</span><span class="w"> </span><span class="nf">pid_output_saturated</span><span class="p">(</span><span class="kt">float</span><span class="w"> </span><span class="n">u</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">u</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">u_limit_upp</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">u</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">u_limit_low</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
-<span class="w">  </span><span class="p">}</span>
-<span class="w">  </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-<span class="w">  </span><span class="p">}</span>
-<span class="p">}</span>
-
-<span class="kt">int</span><span class="w"> </span><span class="nf">pid_output_reset</span><span class="p">(</span><span class="kt">float</span><span class="w"> </span><span class="n">u</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">u</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">u_limit_upp</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">u</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">u_limit_upp</span><span class="p">;</span>
-<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">u</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">u_limit_low</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">u</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">u_limit_low</span><span class="p">;</span>
-<span class="w">  </span><span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
-<h3 id="switch-onoff">Switch On/off</h3>
-<p>(In very rare situations), we may want to switch on/off a PID controller and manually feed control input to the process. This action may confuse the controller as it totally lose control of the output.</p>
-<p><img alt="" src="../assets/markdown-img-paste-20170412231026842.png" /></p>
-<p>The solution is simple, adding a on/off control variable to enable/disable the controller and stop changing its internal state variables.</p>
-<div class="highlight"><pre><span></span><code><span class="cm">/* ... */</span>
-<span class="kt">int</span><span class="w"> </span><span class="n">pid_switch_on</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
-
-<span class="kt">void</span><span class="w"> </span><span class="nf">pid_controller</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">pid_switch_on</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">return</span><span class="p">;</span>
-<span class="w">  </span><span class="p">}</span>
-<span class="w">  </span><span class="cm">/* ... */</span>
-<span class="p">}</span>
-
-<span class="kt">void</span><span class="w"> </span><span class="nf">pid_switch</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">new_state</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="n">pid_switch_on</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">new_state</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
-<h3 id="initialization-after-switch">Initialization after Switch</h3>
-<p>A side effect of using on/off control is that when the controller switches from off to on, an undesirable bump would appear. This is illustrated in the following diagram:</p>
-<p><img alt="" src="../assets/markdown-img-paste-20170413001022770.png" /></p>
-<p>To make the output smooth after switch back on the controller, we can reset the controller internal variables:</p>
+<p>这两个任务相互依赖：准确的定位需要精确的地图，而精确的地图又需要准确的定位信息。</p>
+<h2 id="slam_1">SLAM 分类</h2>
+<h3 id="_2">按传感器类型分类</h3>
+<h4 id="slam-visual-slam-v-slam">视觉 SLAM (Visual SLAM, V-SLAM)</h4>
+<p>使用摄像头作为主要传感器：</p>
 <ul>
-<li>"P": the proportional term does not rely on any past information, so it doesn't need any initilization, so P = 0.</li>
-<li>"D": set last_input = previous_input, so D = 0.</li>
-<li>"I": set ITerm = previous_output, so P + I + D = previous_output.</li>
+<li><strong>单目 SLAM (Monocular SLAM)</strong>：使用单个摄像头，成本低但需要初始化尺度</li>
+<li><strong>双目 SLAM (Stereo SLAM)</strong>：使用双目摄像头，可直接获得深度信息</li>
+<li><strong>RGB-D SLAM</strong>：使用深度相机（如 Kinect、RealSense），同时获得彩色图像和深度图</li>
 </ul>
-<p>The result controller has a smooth response after switch the controller back on:</p>
-<p><img alt="" src="../assets/markdown-img-paste-20170413021327538.png" /></p>
-<h3 id="reverse-control">Reverse Control</h3>
-<p>For some systems, the increasing in input will result decreasing in output. For example, an inceasing speed of a cooling fan will cause the temerature to go down. To handle these systems, we introduce a direction variable to address the difference between direct/reserve control. The only difference of reverse control is the sign of the PID parameters need to be negative instead of postive in the direct case.</p>
-<div class="highlight"><pre><span></span><code><span class="cp">#define DIRECT_CONTROL  (0)</span>
-<span class="cp">#define REVERSE_CONTROL (1)</span>
-<span class="kt">int</span><span class="w"> </span><span class="n">direction</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">DIRECT_CONTROL</span><span class="p">;</span>
-
-<span class="kt">void</span><span class="w"> </span><span class="nf">pid_init</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="cm">/* ... */</span>
-<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">direction</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">REVERSE_CONTROL</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">k_p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">k_p</span><span class="p">;</span>
-<span class="w">    </span><span class="n">k_i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">k_i</span><span class="p">;</span>
-<span class="w">    </span><span class="n">k_d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">k_d</span><span class="p">;</span>
-<span class="w">  </span><span class="p">}</span>
-<span class="w">  </span><span class="cm">/* ... */</span>
-<span class="p">}</span>
-
-<span class="kt">void</span><span class="w"> </span><span class="nf">pid_setdir</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">d_</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="n">direction</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">d_</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
-<hr />
-<h2 id="other-improvements">Other Improvements</h2>
-<h3 id="input-filtering">Input Filtering</h3>
-<p>To avoid problems of high frequency measurement noise in the derivative part, a low-pass filter is added.</p>
+<h4 id="slam-lidar-slam">激光 SLAM (LiDAR SLAM)</h4>
+<p>使用激光雷达作为主要传感器：</p>
+<ul>
+<li><strong>2D 激光 SLAM</strong>：使用单线激光雷达，适用于平面移动机器人</li>
+<li><strong>3D 激光 SLAM</strong>：使用多线激光雷达，适用于三维环境</li>
+</ul>
+<h4 id="slam_2">多传感器融合 SLAM</h4>
+<p>结合多种传感器：</p>
+<ul>
+<li><strong>视觉-惯性 SLAM (Visual-Inertial SLAM)</strong>：结合摄像头和 IMU</li>
+<li><strong>激光-视觉融合 SLAM</strong>：结合激光雷达和摄像头</li>
+<li><strong>GPS-视觉融合 SLAM</strong>：在室外环境中结合 GPS 和视觉信息</li>
+</ul>
+<h3 id="_3">按算法框架分类</h3>
+<h4 id="_4">基于滤波的方法</h4>
+<ul>
+<li><strong>扩展卡尔曼滤波 (EKF-SLAM)</strong></li>
+<li><strong>粒子滤波 (Particle Filter SLAM)</strong></li>
+<li><strong>信息滤波 (Information Filter SLAM)</strong></li>
+</ul>
+<h4 id="_5">基于优化的方法</h4>
+<ul>
+<li><strong>基于图优化 (Graph-based SLAM)</strong></li>
+<li><strong>基于因子图 (Factor Graph SLAM)</strong></li>
+<li><strong>基于光束法平差 (Bundle Adjustment)</strong></li>
+</ul>
+<h4 id="_6">基于深度学习的方法</h4>
+<ul>
+<li><strong>端到端 SLAM</strong></li>
+<li><strong>深度学习辅助的特征提取和匹配</strong></li>
+</ul>
+<h2 id="_7">关键技术</h2>
+<h3 id="frontend">前端 (Frontend)</h3>
+<p>负责传感器数据处理和特征提取：</p>
+<ul>
+<li>
+<p><strong>特征检测与匹配</strong></p>
+<ul>
+<li>角点检测（Harris、FAST、ORB）</li>
+<li>特征描述子（SIFT、SURF、ORB、BRIEF）</li>
+<li>特征匹配与跟踪</li>
+</ul>
+</li>
+<li>
+<p><strong>直接法 (Direct Methods)</strong></p>
+<ul>
+<li>无需特征提取，直接使用像素强度</li>
+<li>适用于纹理丰富的场景</li>
+</ul>
+</li>
+<li>
+<p><strong>光流法 (Optical Flow)</strong></p>
+<ul>
+<li>跟踪图像中的像素运动</li>
+</ul>
+</li>
+</ul>
+<h3 id="backend">后端 (Backend)</h3>
+<p>负责优化和地图构建：</p>
+<ul>
+<li><strong>位姿图优化 (Pose Graph Optimization)</strong><ul>
+<li>将 SLAM 问题转化为图优化问题</li>
+<li>节点表示位姿，边表示约束</li>
+</ul>
+</li>
+<li><strong>回环检测 (Loop Closure Detection)</strong><ul>
+<li>识别机器人是否回到之前访问过的位置</li>
+<li>方法：词袋模型 (Bag of Words)、深度学习</li>
+</ul>
+</li>
+<li><strong>地图表示</strong><ul>
+<li><strong>点云地图 (Point Cloud Map)</strong>：存储三维点云</li>
+<li><strong>栅格地图 (Grid Map)</strong>：将环境划分为网格</li>
+<li><strong>拓扑地图 (Topological Map)</strong>：表示环境的结构关系</li>
+<li><strong>语义地图 (Semantic Map)</strong>：包含语义信息的地图</li>
+</ul>
+</li>
+</ul>
+<h3 id="_8">状态估计</h3>
+<p>SLAM 的状态估计问题可以表示为：</p>
 <p>
-<script type="math/tex; mode=display">U_D(s) = \frac{K T_D s}{1 + s T_D / N}(\gamma Y_{sp}(s) - Y(s))</script>
+<script type="math/tex; mode=display">
+\mathbf{x}_t = f(\mathbf{x}_{t-1}, \mathbf{u}_t, \mathbf{w}_t)
+</script>
 </p>
-<p>$\gamma$ is for set-point weighting, which can be interpreted as feedforward from the set point.</p>
-<h3 id="timing-compensation">Timing Compensation</h3>
+<p>
+<script type="math/tex; mode=display">
+\mathbf{z}_t = h(\mathbf{x}_t, \mathbf{m}, \mathbf{v}_t)
+</script>
+</p>
+<p>其中：</p>
 <ul>
-<li>The I and D parts are dependent on the actual interval between two control actions. If the interval is inconsistent, we need to compensate them.</li>
+<li>$\mathbf{x}_t$ 是机器人在时刻 $t$ 的状态（位置和姿态）</li>
+<li>$\mathbf{u}_t$ 是控制输入</li>
+<li>$\mathbf{z}_t$ 是观测</li>
+<li>$\mathbf{m}$ 是地图</li>
+<li>$\mathbf{w}_t$ 和 $\mathbf{v}_t$ 是噪声</li>
 </ul>
-<h3 id="feedforward">Feedforward</h3>
-<h3 id="reset-tiebacks">Reset Tiebacks</h3>
-<h3 id="i-term-saturation"><strong>I</strong>-term Saturation</h3>
-<h3 id="d-term-filtering"><strong>D</strong>-term Filtering</h3>
-<h3 id="error-dead-zone">Error Dead-zone</h3>
-<h3 id="output-limitation">Output Limitation</h3>
-<h3 id="dead-band">Dead band</h3>
-<h3 id="anti-windup">Anti Windup</h3>
-<hr />
-<h2 id="event-based-pid-2">Event-based PID [2]</h2>
-<p>Event Detector (event-trigged) -&gt; PID Controller (time-trigged)</p>
-<p>Event trig condition should have small complexity to compare with time-trigged controller:</p>
-<p>$|e(t_k) - e(t_{s}) &gt; e_{lim}|$ OR $h_{act} &gt; h_{max}$</p>
-<p>which implies the detector operates at the nominal sampling frequency but the PID calculation only performs when an event is detected. This algorithm, however, requires more calculations due to the fact that each time the PID coefficients need to be recalculated.</p>
-<p>It is important to filter the measurement noise properly and to set the error limit sufficiently large to avoid trigging control due to noise.</p>
-<hr />
-<h2 id="references">References</h2>
+<h2 id="_9">主要算法</h2>
+<h3 id="orb-slam">ORB-SLAM</h3>
+<p>基于 ORB 特征的视觉 SLAM 系统：</p>
+<ul>
+<li>支持单目、双目和 RGB-D</li>
+<li>使用图优化进行后端优化</li>
+<li>包含回环检测和重定位功能</li>
+</ul>
+<h3 id="lsd-slam">LSD-SLAM</h3>
+<p>大尺度直接法单目 SLAM：</p>
+<ul>
+<li>使用直接法，无需特征提取</li>
+<li>可以构建半稠密地图</li>
+<li>适用于纹理丰富的场景</li>
+</ul>
+<h3 id="loam">LOAM</h3>
+<p>激光雷达里程计与建图：</p>
+<ul>
+<li>使用 3D 激光雷达</li>
+<li>实时构建点云地图</li>
+<li>高精度定位</li>
+</ul>
+<h3 id="vins-mono-vins-fusion">VINS-Mono / VINS-Fusion</h3>
+<p>视觉-惯性导航系统：</p>
+<ul>
+<li>结合视觉和 IMU 数据</li>
+<li>适用于无人机等平台</li>
+<li>支持单目和双目</li>
+</ul>
+<h3 id="cartographer">Cartographer</h3>
+<p>Google 开发的实时 SLAM 系统：</p>
+<ul>
+<li>支持 2D 和 3D 激光 SLAM</li>
+<li>使用子图 (Submap) 和回环检测</li>
+<li>适用于大规模环境</li>
+</ul>
+<h2 id="_10">应用场景</h2>
+<ul>
+<li><strong>移动机器人导航</strong>：室内服务机器人、仓储机器人</li>
+<li><strong>自动驾驶</strong>：车辆定位与高精地图构建</li>
+<li><strong>无人机</strong>：自主飞行与建图</li>
+<li><strong>AR/VR</strong>：虚拟物体在真实环境中的定位</li>
+<li><strong>机器人探索</strong>：未知环境探索与地图构建</li>
+</ul>
+<h2 id="_11">挑战与问题</h2>
+<h3 id="_12">尺度问题</h3>
+<ul>
+<li>单目 SLAM 无法直接获得尺度信息</li>
+<li>需要通过初始化或传感器融合解决</li>
+</ul>
+<h3 id="_13">累积误差</h3>
+<ul>
+<li>长时间运行会导致误差累积</li>
+<li>需要通过回环检测和全局优化来修正</li>
+</ul>
+<h3 id="_14">动态环境</h3>
+<ul>
+<li>环境中存在移动物体</li>
+<li>需要区分静态和动态特征</li>
+</ul>
+<h3 id="_15">计算复杂度</h3>
+<ul>
+<li>实时性要求与计算资源的平衡</li>
+<li>大规模环境下的内存和计算开销</li>
+</ul>
+<h3 id="_16">鲁棒性</h3>
+<ul>
+<li>光照变化、纹理缺失、传感器故障等</li>
+<li>需要算法具有良好的鲁棒性</li>
+</ul>
+<h2 id="_17">常用工具与框架</h2>
+<h3 id="ros-slam">ROS 中的 SLAM 包</h3>
+<ul>
+<li><strong>gmapping</strong>：基于粒子滤波的 2D 激光 SLAM</li>
+<li><strong>hector_slam</strong>：基于扫描匹配的 2D 激光 SLAM</li>
+<li><strong>cartographer_ros</strong>：Google Cartographer 的 ROS 接口</li>
+<li><strong>rtabmap_ros</strong>：基于 RTAB-Map 的视觉 SLAM</li>
+<li><strong>ORB_SLAM2</strong>：ORB-SLAM2 的 ROS 接口</li>
+</ul>
+<h3 id="slam_3">开源 SLAM 库</h3>
+<ul>
+<li><strong>OpenVINS</strong>：视觉-惯性 SLAM</li>
+<li><strong>Kimera</strong>：实时语义 SLAM</li>
+<li><strong>ElasticFusion</strong>：RGB-D SLAM</li>
+<li><strong>OKVIS</strong>：视觉-惯性 SLAM</li>
+</ul>
+<h2 id="_18">评估指标</h2>
+<ul>
+<li><strong>绝对轨迹误差 (ATE, Absolute Trajectory Error)</strong>：估计轨迹与真实轨迹的差异</li>
+<li><strong>相对位姿误差 (RPE, Relative Pose Error)</strong>：相邻位姿之间的相对误差</li>
+<li><strong>地图精度</strong>：构建地图与真实环境的匹配程度</li>
+<li><strong>计算效率</strong>：处理速度和资源消耗</li>
+</ul>
+<h2 id="_19">发展趋势</h2>
+<ul>
+<li><strong>语义 SLAM</strong>：结合语义信息，构建更智能的地图</li>
+<li><strong>深度学习 SLAM</strong>：使用深度学习进行特征提取和匹配</li>
+<li><strong>多机器人 SLAM</strong>：多个机器人协作建图</li>
+<li><strong>长期 SLAM</strong>：处理环境变化和长期运行</li>
+<li><strong>边缘计算 SLAM</strong>：在资源受限设备上运行</li>
+</ul>
+<h2 id="_20">参考文献</h2>
 <ol>
-<li>Improving the Beginner’s PID, <a href="http://brettbeauregard.com/blog/2011/04/improving-the-beginners-pid-introduction/">web page link</a></li>
-<li>Årzén, K-E. (1999), A Simple Event-Based PID Controller, Paper presented at 14th IFAC World Congress (1999), Beijing, China.</li>
+<li>Thrun, S., Burgard, W., &amp; Fox, D. (2005). <em>Probabilistic Robotics</em>. MIT Press.</li>
+<li>Cadena, C., et al. (2016). Past, Present, and Future of Simultaneous Localization and Mapping: Toward the Robust-Perception Age. <em>IEEE Transactions on Robotics</em>, 32(6), 1309-1332.</li>
+<li>Mur-Artal, R., Montiel, J. M. M., &amp; Tardos, J. D. (2015). ORB-SLAM: a Versatile and Accurate Monocular SLAM System. <em>IEEE Transactions on Robotics</em>, 31(5), 1147-1163.</li>
 </ol>
 
 
@@ -3985,10 +4357,10 @@ it’s designed to ensure that the user enters tuning parameters with the correc
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs"], "search": "../../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs"], "search": "../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      <script src="../../assets/javascripts/bundle.e71a0d61.min.js"></script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML"></script>
       

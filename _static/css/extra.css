@@ -1,0 +1,41 @@
+/* 设置正文字体大小为 16px */
+.md-typeset {
+    font-size: 16px !important;
+    line-height: 1.6 !important;
+}
+
+.md-content__inner {
+    font-size: 16px !important;
+}
+
+/* 段落 */
+.md-typeset p {
+    font-size: 16px !important;
+}
+
+/* 列表 */
+.md-typeset ul,
+.md-typeset ol {
+    font-size: 16px !important;
+}
+
+.md-typeset ul li,
+.md-typeset ol li {
+    font-size: 16px !important;
+}
+
+/* 表格 */
+.md-typeset table {
+    font-size: 16px !important;
+}
+
+.md-typeset table td,
+.md-typeset table th {
+    font-size: 16px !important;
+}
+
+/* 引用块 */
+.md-typeset blockquote {
+    font-size: 16px !important;
+}
+

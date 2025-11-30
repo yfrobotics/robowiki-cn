@@ -934,10 +934,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#lqrmatlab" class="md-nav__link">
+  <a href="#lqr-matlab" class="md-nav__link">
     <span class="md-ellipsis">
       
-        LQR控制器的MATLAB代码
+        LQR 控制器的 MATLAB 代码
       
     </span>
   </a>
@@ -968,62 +968,6 @@
     
   
     PID控制器
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../pid/pid-improved/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    PID控制器的改善
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../pid/pid-tuning/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    PID控制器的参数调节
   
 
     
@@ -1079,7 +1023,7 @@
   <span class="md-ellipsis">
     
   
-    NN神经网络控制器
+    神经网络控制器 (Neural Network Controller)
   
 
     
@@ -1234,6 +1178,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sensing/slam/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SLAM (同时定位与建图)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1333,7 +1305,7 @@
   <span class="md-ellipsis">
     
   
-    物体识别（深度学习）
+    目标检测 (Object Detection)
   
 
     
@@ -3361,10 +3333,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#lqrmatlab" class="md-nav__link">
+  <a href="#lqr-matlab" class="md-nav__link">
     <span class="md-ellipsis">
       
-        LQR控制器的MATLAB代码
+        LQR 控制器的 MATLAB 代码
       
     </span>
   </a>
@@ -3389,39 +3361,39 @@
 
 
 <h1 id="_1">状态空间法</h1>
-<p>State space model is in time domain and can describe both SISO and MIMO systems.</p>
-<p>Some advantages:</p>
+<p>状态空间模型在时域中，可以描述 SISO 和 MIMO 系统。</p>
+<p>一些优点：</p>
 <ul>
-<li>Numerically simple, easy for computers.</li>
-<li>Transfer function only deals with input/output behavior, while state-space can assess internal features of the system.</li>
-<li>MIMO and system coupling</li>
+<li>数值简单，易于计算机处理</li>
+<li>传递函数只处理输入/输出行为，而状态空间可以评估系统的内部特征</li>
+<li>MIMO 和系统耦合</li>
 </ul>
-<p>Controller Design:</p>
+<p>控制器设计：</p>
 <ul>
-<li>Full-state feedback (pole placement)</li>
-<li>Observer / estimator design: estimating the system state from available measurements.</li>
-<li>Dynamic output feedback: combines these two with provable guarantees on stability and performance.</li>
+<li>全状态反馈（极点配置）</li>
+<li>观测器/估计器设计：从可用测量值估计系统状态</li>
+<li>动态输出反馈：将这两者结合起来，对稳定性和性能提供可证明的保证</li>
 </ul>
-<p>Overall, state-space design process is more systematic than classical control design.</p>
+<p>总的来说，状态空间设计过程比经典控制设计更系统化。</p>
 <h2 id="controllability">能控性 (Controllability)</h2>
 <p>（待补充）</p>
 <h2 id="observability">能观性 (Observability)</h2>
 <p>（待补充）</p>
 <h2 id="_2">控制增益计算</h2>
 <p><img alt="" src="../assets/markdown-img-paste-20170412215404210.png" /></p>
-<p>For a SISO system, the transfer function can take the forms: <script type="math/tex">H(s) = [C(sI-A)^{-1}B + D]</script> and <script type="math/tex">H(z) = [C(zI-A)^{-1}B + D]</script>.</p>
-<p>The new input can be calculated as:
+<p>对于 SISO 系统，传递函数可以表示为：<script type="math/tex">H(s) = [C(sI-A)^{-1}B + D]</script> 和 <script type="math/tex">H(z) = [C(zI-A)^{-1}B + D]</script>。</p>
+<p>新输入可以计算为：
 <script type="math/tex; mode=display">
 u(t) = r(t) - KX = r(t) - \begin{pmatrix}k_1 & k_2 & k_3\end{pmatrix}
 \begin{pmatrix} x_1 \\\\ x_2 \\\\ x_3 \end{pmatrix}
 </script>
 </p>
-<p>This resulted in a new state equation for the closed-loop system:
+<p>这导致了闭环系统的新状态方程：
 <script type="math/tex; mode=display">
 \frac{dx}{dt} = [A - BK]x - Br(t)
 </script>
 </p>
-<h2 id="lqrmatlab">LQR控制器的MATLAB代码</h2>
+<h2 id="lqr-matlab">LQR 控制器的 MATLAB 代码</h2>
 <div class="highlight"><pre><span></span><code><span class="n">A</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">sys_d</span><span class="p">.</span><span class="n">a</span><span class="p">;</span>
 <span class="n">B</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">sys_d</span><span class="p">.</span><span class="n">b</span><span class="p">;</span>
 <span class="n">C</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">sys_d</span><span class="p">.</span><span class="n">c</span><span class="p">;</span>
