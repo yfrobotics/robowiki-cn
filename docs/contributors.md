@@ -10,8 +10,9 @@
 - [automaticdai](https://github.com/automaticdai)
 
 ## 支持者名单
-你可以通过在 [B站](https://space.bilibili.com/493264461)上充电或通过我们的 [Patreon](https://www.patreon.com/yfrl) 支持我们的工作!
-
 - 南京天迈科技
 - Y. Kuang
 - \_OYu\_
+
+!!! note "支持我们"
+    你可以通过在 [B站](https://space.bilibili.com/493264461) 上充电或通过我们的 [Patreon](https://www.patreon.com/yfrl) 支持我们的工作!

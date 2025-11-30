@@ -2,46 +2,45 @@
 
 ![](assets/markdown-img-paste-20170413120952608.png)
 
-## Generals
-- MPC: regulatory controls using an explicit dynamic model of the response of process variables to changes in manipulated variables.
+## 概述 (Generals)
+- MPC：使用过程变量对操纵变量变化的响应的显式动态模型进行调节控制。
 - \(obj = min(\sum (y - y_{trajectory})^2)\)
-- basic version uses linear model. Can also be empirical model.
-- advantages over PID:
-    - long time constants, substaintial time delays, inverse response, etc;
-    - multiple variables
-    - has constraints over process variables
+- 基本版本使用线性模型。也可以是经验模型。
+- 相对于 PID 的优点：
+    - 长时间常数、显著的时间延迟、反向响应等
+    - 多变量
+    - 对过程变量有约束
 
-- General characteristcs:
-    - targets (set points) selected by real-time optimization software based on current operating and economic conditions
-    - minimize square of deviations between predicted future outputs and specific reference trajectory to new targets
-    - handles MIMO control problems
-    - can include equality and inequality constraints on controlled and manipulated variables
-    - solves a nonlinear programming problem at each sampling instant
-    - disturbance is estimated by comparing the actual controlled variable with the model prediction
-    - usually implements the first move out of \(M\) calculated moves
+- 一般特征：
+    - 目标（设定点）由实时优化软件根据当前运行和经济条件选择
+    - 最小化预测未来输出与特定参考轨迹到新目标之间的偏差平方
+    - 处理 MIMO 控制问题
+    - 可以包括对受控变量和操纵变量的等式和不等式约束
+    - 在每个采样时刻求解非线性规划问题
+    - 通过比较实际受控变量与模型预测来估计扰动
+    - 通常实现 \(M\) 个计算移动中的第一个移动
 
-- MPC target trajectories
+- MPC 目标轨迹
 ![](assets/markdown-img-paste-20170413121028412.png)
-    - Types:
-        - Funnel Trajectory
-        - Pure dead-band
-        - Referecen Trajectory
-    - Near-term vs. long-term objectives
-    - Response Target
-    - Response Speed
+    - 类型：
+        - 漏斗轨迹 (Funnel Trajectory)
+        - 纯死区 (Pure dead-band)
+        - 参考轨迹 (Reference Trajectory)
+    - 近期与长期目标
+    - 响应目标
+    - 响应速度
 
-
-- Quadratic objective
+- 二次目标函数
   $$\sum_{i=0}^p x_i^TQx_i + \sum_{i=0}^{m-1} u_i^TRu_i$$
 
 
 ![](assets/markdown-img-paste-20170413121003374.png)
 
-## Details
-- Impulse and step response models and the prediction equation
-- Use of state estimation
-- Optimization
-- Infinite-horizon MPC and stability
-- Use of nonlinear models
+## 详细内容 (Details)
+- 脉冲和阶跃响应模型以及预测方程
+- 状态估计的使用
+- 优化
+- 无限时域 MPC 和稳定性
+- 非线性模型的使用
 
 ![](assets/markdown-img-paste-20170413124746649.png)

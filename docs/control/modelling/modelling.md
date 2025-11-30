@@ -1,39 +1,39 @@
 # 控制系统建模
 
-A system can be described as one of the followings:
+系统可以用以下方式之一来描述：
 
-- Differential equation
-- Difference Equation
-- Transfer Function
-- State Space
+- 微分方程 (Differential equation)
+- 差分方程 (Difference Equation)
+- 传递函数 (Transfer Function)
+- 状态空间 (State Space)
 
 
-## Differential Equation
+## 微分方程 (Differential Equation)
 \begin{aligned}
 \ddot{x} + \dot{x} &= ax + b \\\\
 y &= x
 \end{aligned}
 
 
-## Difference Equation
+## 差分方程 (Difference Equation)
 $$
 x_{t} = ax_{t-1} + b
 $$
 
 
-## Transfer Function
-- Polynomial
+## 传递函数 (Transfer Function)
+- 多项式形式 (Polynomial)
 $$
 Y(s) = \frac{a_m s^m + ... + a_0}{b_n s^n + ... + b_0}
 $$
 
-- Poles and Zeros
+- 零极点形式 (Poles and Zeros)
 $$
 Y(s) = K \frac{(s-z_m)...(s-z_0)}{(s - p_n) ... (s-p_0)}
 $$
 
 
-## State Space
+## 状态空间 (State Space)
 ![](assets/markdown-img-paste-2017041221520164.png)
 
 $$
@@ -44,16 +44,16 @@ y(t) &= Cx(t) + Du(t)
 $$
 
 
-- **x** as the state vector,
-- **A** as the system matrix (square, N x N for N states),
-- **B** as the input matrix (N rows x 1 column for a single-input, single output (SISO) system,
-- **C** as the output matrix (one row x N columns for a SISO system),
-- **D** as the feedforward matrix (1 x 1 for a SISO system).
+- **x** 为状态向量
+- **A** 为系统矩阵（方阵，对于 N 个状态为 N x N）
+- **B** 为输入矩阵（对于单输入单输出 (SISO) 系统为 N 行 x 1 列）
+- **C** 为输出矩阵（对于 SISO 系统为 1 行 x N 列）
+- **D** 为前馈矩阵（对于 SISO 系统为 1 x 1）
 
-- **(*)** The poles of the transfer function are the eigenvalues of the system matrix **A**
+- **(*)** 传递函数的极点就是系统矩阵 **A** 的特征值
 
 
-### Matlab Code
+### Matlab 代码
 `sys = ss(a,b,c,d)`
 
 `sys = ss(a,b,c,d,Ts)`
@@ -63,8 +63,8 @@ $$
 
 
 
-## Matlab functions
-### Transfer Function
+## Matlab 函数
+### 传递函数 (Transfer Function)
 `s = tf('s')`
 
 `feedback(G(s), H(s))`
@@ -73,20 +73,20 @@ $$
 
 `G = zpk([1],[1],[1])`
 
-### Poles and Zeros
-Find poles of a SISO or MIMO system: `pole(sys)`
+### 零极点 (Poles and Zeros)
+查找 SISO 或 MIMO 系统的极点：`pole(sys)`
 
 `pzplot(sys)`
 
-### State Space
+### 状态空间 (State Space)
 
 
-### System Analysis
+### 系统分析 (System Analysis)
 `linearSystemAnalyzer(G,T1,T2)`
 
 `step(sys)`
 
 
 
-## Reference
+## References
 1. Control Tutorials, [Inverted Pendulum: Digital Controller Design](http://ctms.engin.umich.edu/CTMS/index.php?example=InvertedPendulum&section=ControlDigital), University of Michigan
