@@ -1,29 +1,48 @@
 # 机器人实验室与研发机构 (国际)
 - 美国 (US)
-    - [Boston Dynamics](https://bostondynamics.com)	
-    - [Harvard Self-Organizing Systems Group](https://eecs.harvard.edu/ssr)	
-    - [MIT CS&AI Laboratory](https://csail.mit.edu)	
-    - [MIT Personal Robots Group](https://robotic.media.mit.edu)
-    - CMU
-    - UC Berkeley
-    - [OpenAI](https://openai.com/)
+    - [Boston Dynamics](https://bostondynamics.com) — 全球领先的动态运动机器人公司，以 Atlas 和 Spot 等产品闻名
+    - [Harvard Self-Organizing Systems Group](https://eecs.harvard.edu/ssr) — 研究受生物启发的自组织多机器人系统和集群智能
+    - [MIT CS&AI Laboratory](https://csail.mit.edu) — 麻省理工学院计算机科学与人工智能实验室，全球规模最大的大学研究实验室之一
+    - [MIT Personal Robots Group](https://robotic.media.mit.edu) — 隶属于 MIT 媒体实验室，专注于社交机器人和人机交互研究
+    - CMU — 卡内基梅隆大学机器人研究所（Robotics Institute），世界上首个专门的机器人学位授予机构，研究方向涵盖自动驾驶、操作和感知
+    - UC Berkeley — 加州大学伯克利分校，BAIR 实验室（Berkeley AI Research）在机器人学习和操作领域处于前沿
+    - [OpenAI](https://openai.com/) — 人工智能研究机构，在机器人学习和大语言模型领域有重要贡献
+    - [Stanford Robotics Lab](https://cs.stanford.edu/groups/manips/) — 斯坦福大学机器人实验室，在操作、触觉感知和人形机器人领域有深入研究
+    - [University of Michigan Robotics](https://robotics.umich.edu/) — 密歇根大学机器人系，拥有独立的机器人大楼（Ford Robotics Building），研究方向包括足式机器人和假肢
+    - [Georgia Tech IRIM](https://research.gatech.edu/robotics) — 佐治亚理工学院机器人与智能机器研究所，研究医疗机器人和人机交互
 - 欧洲 (Europe)
-    - [ETH Zurich, Institute of Robotics and Intelligent Systems](https://www.iris.ethz.ch/) 
-    - [University of Zurich & ETH Zurich, Robotics and Perception Group](http://rpg.ifi.uzh.ch/)
+    - [ETH Zurich, Institute of Robotics and Intelligent Systems](https://www.iris.ethz.ch/) — 苏黎世联邦理工学院机器人与智能系统研究所，在足式机器人（ANYmal）和微型机器人领域领先
+    - [University of Zurich & ETH Zurich, Robotics and Perception Group](http://rpg.ifi.uzh.ch/) — 专注于基于视觉的自主无人机导航、事件相机和视觉惯性里程计
+    - [TU Munich, Chair of Robotics](https://www.ce.cit.tum.de/en/ais/home/) — 慕尼黑工业大学，在机器人感知、操作和人机协作方面有重要研究
+    - [INRIA](https://www.inria.fr/en) — 法国国家信息与自动化研究所，在机器人控制和计算机视觉领域有深厚积累
+    - [Italian Institute of Technology (IIT)](https://www.iit.it/) — 意大利理工学院，iCub 人形机器人的开发者，在仿生机器人和柔性机器人领域有突出贡献
+    - [KTH Robotics](https://www.kth.se/is/rpl) — 瑞典皇家理工学院机器人、感知与学习实验室
 - 日本 (Japan)
-    - 日本东京大学
-    - 日本早稻田大学
-    - 日本东北大学
-    - [日本机器人协会](https://www.rsj.or.jp/en/)
+    - 日本东京大学 — JSK 实验室等在人形机器人和空中机器人领域有长期积累
+    - 日本早稻田大学 — 仿人机器人研究的先驱，WABOT 项目始于 1970 年代
+    - 日本东北大学 — 在灾难救援机器人和仿生机器人领域有重要研究
+    - [日本机器人协会](https://www.rsj.or.jp/en/) — 日本机器人学术界的主要组织
+    - [AIST（产业技术综合研究所）](https://www.aist.go.jp/) — 日本最大的公共研究机构之一，HRP 系列人形机器人的开发者
 - 英国 (UK)
-    - [Oxford Robotics Institute](https://ori.ox.ac.uk/)
-    - [Dyson School of Design Engineering, Imperial College London](https://www.imperial.ac.uk/design-engineering/research/robotics-and-manufacturing/robotics/)
-    - [Bristol Robotics Laboratory](https://brl.ac.uk)
-    - [Sheffield Robotics Lab](https://sheffieldrobotics.ac.uk)	
-    - [Edinburgh Centre of Robotics](https://edinburgh-robotics.org)
-    - [Robotics & Autonomous Systems Network](https://ukras.org)
-    - [DeepMind](https://deepmind.com)
-    - [Graphcore](https://www.graphcore.ai/)
+    - [Oxford Robotics Institute](https://ori.ox.ac.uk/) — 牛津大学机器人研究所，在自动驾驶和移动机器人领域有重要成果
+    - [Dyson School of Design Engineering, Imperial College London](https://www.imperial.ac.uk/design-engineering/research/robotics-and-manufacturing/robotics/) — 帝国理工学院，在手术机器人和柔性机器人领域有深入研究
+    - [Bristol Robotics Laboratory](https://brl.ac.uk) — 英国最大的多学科机器人实验室，由布里斯托大学和西英格兰大学联合运营
+    - [Sheffield Robotics Lab](https://sheffieldrobotics.ac.uk) — 谢菲尔德大学机器人实验室，在集群机器人和仿生机器人方面有特色研究
+    - [Edinburgh Centre of Robotics](https://edinburgh-robotics.org) — 爱丁堡机器人中心，由爱丁堡大学和赫瑞-瓦特大学联合设立
+    - [Robotics & Autonomous Systems Network](https://ukras.org) — 英国机器人与自主系统网络，促进英国机器人领域的学术交流
+    - [DeepMind](https://deepmind.com) — Alphabet 旗下人工智能实验室，在强化学习和机器人控制方面有重要研究
+    - [Graphcore](https://www.graphcore.ai/) — 英国 AI 芯片公司，IPU 处理器为机器学习推理提供加速支持
+- 韩国 (South Korea)
+    - [KAIST Humanoid Robot Research Center](https://robot.kaist.ac.kr/) — 韩国科学技术院人形机器人研究中心，HUBO 人形机器人曾获得 DARPA 机器人挑战赛冠军
+    - [Seoul National University, Robotics Lab](https://robotics.snu.ac.kr/) — 首尔大学机器人实验室，在机器人操作和学习领域有深入研究
+    - [Hyundai Robotics](https://www.hyundai-robotics.com/) — 现代机器人，韩国最大的工业机器人制造商
+- 新加坡 (Singapore)
+    - [NUS Control & Mechatronics Lab](https://cml.nus.edu.sg/) — 新加坡国立大学控制与机电一体化实验室
+    - [NTU Robotics Research Centre](https://www.ntu.edu.sg/research/research-hub) — 南洋理工大学机器人研究中心，在制造机器人和服务机器人领域有重要研究
+- 澳大利亚 (Australia)
+    - [Australian Centre for Robotic Vision (ACRV)](https://www.roboticvision.org/) — 澳大利亚机器人视觉研究中心，专注于赋予机器人理解视觉世界的能力
+    - [CSIRO Robotics](https://www.csiro.au/en/about/facilities-collections/robotics) — 澳大利亚联邦科学与工业研究组织机器人部门，在矿业机器人和野外机器人领域有丰富经验
+    - [Queensland University of Technology (QUT), Centre for Robotics](https://www.qut.edu.au/research/centre-for-robotics) — 昆士兰科技大学机器人中心，在农业机器人和环境监测方面有突出贡献
 - 中国 (China)
     - 清华自动化实验室
     - 北大人工智能研究实验室
