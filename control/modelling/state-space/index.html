@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
     
     
       
@@ -33,7 +33,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.618322db.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -909,6 +909,34 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="能控性 (Controllability)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#controllability-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        能控性矩阵 (Controllability Matrix)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        能控性的物理意义
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -920,10 +948,99 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="能观性 (Observability)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#observability-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        能观性矩阵 (Observability Matrix)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        能观性的物理意义
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        能控性与能观性的对偶关系
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#kalman" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kalman分解
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#state-observer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        状态观测器 (State Observer)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="状态观测器 (State Observer)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#luenberger" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Luenberger观测器
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#separation-principle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        分离原理 (Separation Principle)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       
         控制增益计算
@@ -938,6 +1055,17 @@
     <span class="md-ellipsis">
       
         LQR 控制器的 MATLAB 代码
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        参考资料
       
     </span>
   </a>
@@ -1896,7 +2024,7 @@
   <span class="md-ellipsis">
     
   
-    Unreal
+    Unreal Engine
   
 
     
@@ -1952,7 +2080,7 @@
   <span class="md-ellipsis">
     
   
-    Nvidia Omniverse
+    NVIDIA Omniverse / Isaac Sim
   
 
     
@@ -2756,6 +2884,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../database/robots/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    机器人图鉴
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../database/nao/" class="md-nav__link">
         
   
@@ -2764,6 +2920,174 @@
     
   
     NAO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../database/atlas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Atlas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../database/optimus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Optimus（擎天柱）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../database/figure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Figure 02
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../database/asimo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ASIMO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../database/digit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Digit
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../database/unitree-h1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unitree H1 / G1
   
 
     
@@ -3308,6 +3632,34 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="能控性 (Controllability)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#controllability-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        能控性矩阵 (Controllability Matrix)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        能控性的物理意义
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -3319,10 +3671,99 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="能观性 (Observability)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#observability-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        能观性矩阵 (Observability Matrix)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        能观性的物理意义
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        能控性与能观性的对偶关系
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#kalman" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kalman分解
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#state-observer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        状态观测器 (State Observer)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="状态观测器 (State Observer)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#luenberger" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Luenberger观测器
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#separation-principle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        分离原理 (Separation Principle)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       
         控制增益计算
@@ -3337,6 +3778,17 @@
     <span class="md-ellipsis">
       
         LQR 控制器的 MATLAB 代码
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        参考资料
       
     </span>
   </a>
@@ -3361,6 +3813,10 @@
 
 
 <h1 id="_1">状态空间法</h1>
+<div class="admonition note">
+<p class="admonition-title">引言</p>
+<p>状态空间法（State-Space Method）是现代控制理论的核心框架，通过引入状态变量（State Variables）来描述系统的内部行为。与传递函数方法仅关注输入输出关系不同，状态空间法能够揭示系统的全部内部特性，并自然地扩展到多输入多输出（MIMO）系统。状态空间法为控制器设计提供了系统化的工具，包括极点配置、LQR最优控制和状态观测器设计等。</p>
+</div>
 <p>状态空间模型在时域中，可以描述 SISO 和 MIMO 系统。</p>
 <p>一些优点：</p>
 <ul>
@@ -3375,11 +3831,126 @@
 <li>动态输出反馈：将这两者结合起来，对稳定性和性能提供可证明的保证</li>
 </ul>
 <p>总的来说，状态空间设计过程比经典控制设计更系统化。</p>
+<p>连续时间线性时不变（Linear Time-Invariant, LTI）系统的状态空间模型为：</p>
+<p>
+<script type="math/tex; mode=display">\dot{x}(t) = Ax(t) + Bu(t)</script>
+<script type="math/tex; mode=display">y(t) = Cx(t) + Du(t)</script>
+</p>
+<p>其中：</p>
+<ul>
+<li>
+<script type="math/tex">x(t) \in \mathbb{R}^n</script> 为状态向量（State Vector），包含描述系统当前状态所需的最少变量。</li>
+<li>
+<script type="math/tex">u(t) \in \mathbb{R}^m</script> 为输入向量（Input Vector）。</li>
+<li>
+<script type="math/tex">y(t) \in \mathbb{R}^p</script> 为输出向量（Output Vector）。</li>
+<li>
+<script type="math/tex">A \in \mathbb{R}^{n \times n}</script> 为系统矩阵（System Matrix），决定了系统的自由响应特性。</li>
+<li>
+<script type="math/tex">B \in \mathbb{R}^{n \times m}</script> 为输入矩阵（Input Matrix），描述输入对状态的影响。</li>
+<li>
+<script type="math/tex">C \in \mathbb{R}^{p \times n}</script> 为输出矩阵（Output Matrix），描述状态到输出的映射。</li>
+<li>
+<script type="math/tex">D \in \mathbb{R}^{p \times m}</script> 为直接传输矩阵（Feedthrough Matrix），在许多物理系统中为零矩阵。</li>
+</ul>
 <h2 id="controllability">能控性 (Controllability)</h2>
-<p>（待补充）</p>
+<p>能控性是状态空间理论中的基本概念。一个系统是<strong>完全能控的（Completely Controllable）</strong>，当且仅当对于任意初始状态 <script type="math/tex">x(0)</script> 和任意目标状态 <script type="math/tex">x_f</script>，都存在有限时间内的控制输入 <script type="math/tex">u(t)</script> 能够将系统从 <script type="math/tex">x(0)</script> 转移到 <script type="math/tex">x_f</script>。</p>
+<h3 id="controllability-matrix">能控性矩阵 (Controllability Matrix)</h3>
+<p>对于线性时不变系统 <script type="math/tex">\dot{x} = Ax + Bu</script>，能控性可以通过能控性矩阵（Controllability Matrix）来判定：</p>
+<p>
+<script type="math/tex; mode=display">\mathcal{C} = \begin{bmatrix} B & AB & A^2B & \cdots & A^{n-1}B \end{bmatrix}</script>
+</p>
+<p>其中 <script type="math/tex">n</script> 为系统的状态维数。</p>
+<p><strong>判定条件（秩条件）</strong>：系统完全能控的充要条件是能控性矩阵 <script type="math/tex">\mathcal{C}</script> 的秩等于 <script type="math/tex">n</script>，即：</p>
+<p>
+<script type="math/tex; mode=display">\text{rank}(\mathcal{C}) = n</script>
+</p>
+<p>如果 <script type="math/tex">\text{rank}(\mathcal{C}) < n</script>，则系统不完全能控，存在某些状态方向无法通过输入来影响。</p>
+<p>在MATLAB中可以使用以下命令检查能控性：</p>
+<div class="highlight"><pre><span></span><code><span class="n">Co</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">ctrb</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="n">B</span><span class="p">);</span><span class="w">        </span><span class="c">% 计算能控性矩阵</span>
+<span class="n">rank_Co</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">rank</span><span class="p">(</span><span class="n">Co</span><span class="p">);</span><span class="w">      </span><span class="c">% 计算秩</span>
+<span class="k">if</span><span class="w"> </span><span class="n">rank_Co</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">size</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span>
+<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="s">&#39;系统完全能控&#39;</span><span class="p">);</span>
+<span class="k">else</span>
+<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="s">&#39;系统不完全能控&#39;</span><span class="p">);</span>
+<span class="k">end</span>
+</code></pre></div>
+<h3 id="_2">能控性的物理意义</h3>
+<p>能控性回答了一个根本性的问题：通过施加适当的输入，我们能否将系统的状态驱动到任意期望位置？如果系统不完全能控，则存在某些"不可达"的状态子空间，无论施加什么样的输入都无法到达。</p>
+<p>在实际的机器人系统设计中，能控性分析用于验证：</p>
+<ul>
+<li>执行器（电机、推进器等）的配置是否足以控制系统的所有自由度。</li>
+<li>欠驱动系统（Underactuated System）中哪些状态是可控的，哪些不是。</li>
+</ul>
 <h2 id="observability">能观性 (Observability)</h2>
-<p>（待补充）</p>
-<h2 id="_2">控制增益计算</h2>
+<p>能观性描述了从系统的输出测量值中推断内部状态的能力。一个系统是<strong>完全能观的（Completely Observable）</strong>，当且仅当对于任意初始状态 <script type="math/tex">x(0)</script>，通过有限时间内的输出 <script type="math/tex">y(t)</script> 和输入 <script type="math/tex">u(t)</script> 的测量值，可以唯一确定 <script type="math/tex">x(0)</script>。</p>
+<h3 id="observability-matrix">能观性矩阵 (Observability Matrix)</h3>
+<p>对于系统 <script type="math/tex">\dot{x} = Ax + Bu</script>，<script type="math/tex">y = Cx + Du</script>，能观性矩阵为：</p>
+<p>
+<script type="math/tex; mode=display">\mathcal{O} = \begin{bmatrix} C \\\\ CA \\\\ CA^2 \\\\ \vdots \\\\ CA^{n-1} \end{bmatrix}</script>
+</p>
+<p><strong>判定条件</strong>：系统完全能观的充要条件是能观性矩阵的秩等于 <script type="math/tex">n</script>：</p>
+<p>
+<script type="math/tex; mode=display">\text{rank}(\mathcal{O}) = n</script>
+</p>
+<p>在MATLAB中：</p>
+<div class="highlight"><pre><span></span><code><span class="n">Ob</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">obsv</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="n">C</span><span class="p">);</span><span class="w">         </span><span class="c">% 计算能观性矩阵</span>
+<span class="n">rank_Ob</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">rank</span><span class="p">(</span><span class="n">Ob</span><span class="p">);</span><span class="w">       </span><span class="c">% 计算秩</span>
+<span class="k">if</span><span class="w"> </span><span class="n">rank_Ob</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">size</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span>
+<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="s">&#39;系统完全能观&#39;</span><span class="p">);</span>
+<span class="k">else</span>
+<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="s">&#39;系统不完全能观&#39;</span><span class="p">);</span>
+<span class="k">end</span>
+</code></pre></div>
+<h3 id="_3">能观性的物理意义</h3>
+<p>能观性回答了另一个根本性问题：仅通过传感器测量的输出信号，我们能否推断出系统所有内部状态的值？如果系统不完全能观，则存在某些内部状态对输出没有影响，无法通过输出测量来估计。</p>
+<p>在机器人系统中，能观性分析帮助确定：</p>
+<ul>
+<li>传感器的数量和位置是否足以重建系统的完整状态。</li>
+<li>哪些状态需要通过状态观测器来估计。</li>
+</ul>
+<h3 id="_4">能控性与能观性的对偶关系</h3>
+<p>能控性和能观性之间存在优美的对偶关系（Duality）：系统 <script type="math/tex">(A, B, C)</script> 的能控性等价于对偶系统 <script type="math/tex">(A^T, C^T, B^T)</script> 的能观性，反之亦然。这一对偶性使得能控性和能观性的分析方法和结论可以相互转换。</p>
+<h2 id="kalman">Kalman分解</h2>
+<p>如果一个系统既不是完全能控的也不是完全能观的，可以使用Kalman分解（Kalman Decomposition）将其分解为四个子空间：</p>
+<ol>
+<li><strong>能控且能观的子空间</strong>：构成系统的传递函数部分，可以完全通过输入输出来控制和观测。</li>
+<li><strong>能控但不能观的子空间</strong>：可以通过输入影响，但无法通过输出观测到。</li>
+<li><strong>不能控但能观的子空间</strong>：对输出有影响，但无法通过输入改变。</li>
+<li><strong>既不能控也不能观的子空间</strong>：对输入和输出均无影响。</li>
+</ol>
+<p>Kalman分解通过坐标变换将系统的状态空间分解为这四个正交子空间，帮助设计者理解系统的内在结构。</p>
+<h2 id="state-observer">状态观测器 (State Observer)</h2>
+<p>在实际系统中，并非所有状态变量都可以直接测量。状态观测器（State Observer）通过利用系统模型和可测输出信号来估计不可测的状态变量。</p>
+<h3 id="luenberger">Luenberger观测器</h3>
+<p>Luenberger观测器是最基本的状态观测器，其结构为：</p>
+<p>
+<script type="math/tex; mode=display">\dot{\hat{x}}(t) = A\hat{x}(t) + Bu(t) + L(y(t) - C\hat{x}(t))</script>
+</p>
+<p>其中 <script type="math/tex">\hat{x}(t)</script> 为状态估计值，<script type="math/tex">L</script> 为观测器增益矩阵。</p>
+<p>定义估计误差 <script type="math/tex">e(t) = x(t) - \hat{x}(t)</script>，则误差的动态方程为：</p>
+<p>
+<script type="math/tex; mode=display">\dot{e}(t) = (A - LC)e(t)</script>
+</p>
+<p>通过选择适当的观测器增益 <script type="math/tex">L</script>，使 <script type="math/tex">(A - LC)</script> 的所有特征值具有负实部，即可保证估计误差渐近收敛到零。观测器增益 <script type="math/tex">L</script> 的设计本质上是一个极点配置问题。</p>
+<p>观测器的收敛速度由 <script type="math/tex">(A - LC)</script> 的特征值决定。一般原则是观测器的特征值应比闭环控制器的特征值快2到10倍，以确保状态估计能够快速收敛。</p>
+<p>在MATLAB中设计Luenberger观测器：</p>
+<div class="highlight"><pre><span></span><code><span class="c">% 期望的观测器极点（比控制器极点快3-5倍）</span>
+<span class="n">observer_poles</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">12</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">14</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">16</span><span class="p">];</span>
+<span class="n">L</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">place</span><span class="p">(</span><span class="n">A</span><span class="o">&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">C</span><span class="o">&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">observer_poles</span><span class="p">)</span><span class="o">&#39;</span><span class="p">;</span><span class="w">  </span><span class="c">% 利用对偶性计算观测器增益</span>
+</code></pre></div>
+<h2 id="separation-principle">分离原理 (Separation Principle)</h2>
+<p>分离原理（Separation Principle）是状态空间控制设计中最重要的理论结果之一。它指出：</p>
+<p><strong>对于线性时不变系统，状态反馈控制器和状态观测器可以独立设计，组合后的闭环系统仍然是稳定的。</strong></p>
+<p>具体而言：</p>
+<ul>
+<li>首先，假设所有状态可测，设计状态反馈增益 <script type="math/tex">K</script>，使闭环系统 <script type="math/tex">\dot{x} = (A-BK)x</script> 具有期望的极点。</li>
+<li>然后，独立设计观测器增益 <script type="math/tex">L</script>，使观测器误差动态 <script type="math/tex">\dot{e} = (A-LC)e</script> 快速收敛。</li>
+<li>最后，将观测器估计的状态代替真实状态输入到控制器中：<script type="math/tex">u = -K\hat{x}</script>。</li>
+</ul>
+<p>组合后的闭环系统特征值恰好是 <script type="math/tex">(A-BK)</script> 的特征值和 <script type="math/tex">(A-LC)</script> 的特征值的并集。这意味着控制器设计和观测器设计不会相互影响，可以分别独立完成，大大简化了设计过程。</p>
+<p>分离原理仅对线性系统严格成立。对于非线性系统，控制器和观测器的联合设计通常需要额外的稳定性分析。</p>
+<h2 id="_5">控制增益计算</h2>
 <p><img alt="" src="../assets/markdown-img-paste-20170412215404210.png" /></p>
 <p>对于 SISO 系统，传递函数可以表示为：<script type="math/tex">H(s) = [C(sI-A)^{-1}B + D]</script> 和 <script type="math/tex">H(z) = [C(zI-A)^{-1}B + D]</script>。</p>
 <p>新输入可以计算为：
@@ -3421,6 +3992,13 @@ u(t) = r(t) - KX = r(t) - \begin{pmatrix}k_1 & k_2 & k_3\end{pmatrix}
 <span class="nb">set</span><span class="p">(</span><span class="nb">get</span><span class="p">(</span><span class="n">AX</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span><span class="s">&#39;Ylabel&#39;</span><span class="p">),</span><span class="s">&#39;String&#39;</span><span class="p">,</span><span class="s">&#39;pendulum angle (radians)&#39;</span><span class="p">)</span>
 <span class="nb">title</span><span class="p">(</span><span class="s">&#39;Step Response with Digital LQR Control&#39;</span><span class="p">)</span>
 </code></pre></div>
+<h2 id="_6">参考资料</h2>
+<ol>
+<li>K. Ogata, <em>Modern Control Engineering</em>, 5th Edition, Prentice Hall, 2010.</li>
+<li>G. F. Franklin, J. D. Powell, and A. Emami-Naeini, <em>Feedback Control of Dynamic Systems</em>, 8th Edition, Pearson, 2019.</li>
+<li>B. Friedland, <em>Control System Design: An Introduction to State-Space Methods</em>, Dover Publications, 2005.</li>
+<li>R. E. Kalman, "A New Approach to Linear Filtering and Prediction Problems," <em>Transactions of the ASME - Journal of Basic Engineering</em>, vol. 82, pp. 35-45, 1960.</li>
+</ol>
 
 
 
@@ -3470,10 +4048,10 @@ u(t) = r(t) - KX = r(t) - \begin{pmatrix}k_1 & k_2 & k_3\end{pmatrix}
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs"], "search": "../../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML"></script>
       

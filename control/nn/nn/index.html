@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
     
     
       
@@ -33,7 +33,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.618322db.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -934,6 +934,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    神经网络控制器 (Neural Network Controller)
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -950,6 +968,225 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        神经网络基础
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="神经网络基础">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#perceptron" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        感知器 (Perceptron)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#activation-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        激活函数 (Activation Functions)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#backpropagation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        反向传播 (Backpropagation)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        用于控制的网络架构
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="用于控制的网络架构">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#feedforward-neural-network" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        前馈神经网络 (Feedforward Neural Network)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recurrent-neural-network-rnn" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        循环神经网络 (Recurrent Neural Network, RNN)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        训练方法
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="训练方法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#supervised-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        监督学习 (Supervised Learning)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reinforcement-learning-rl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        强化学习 (Reinforcement Learning, RL)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        机器人应用
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        优势与局限
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="优势与局限">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        相对于传统控制器的优势
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        局限性
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        应用实例
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        参考资料
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1815,7 +2052,7 @@
   <span class="md-ellipsis">
     
   
-    Unreal
+    Unreal Engine
   
 
     
@@ -1871,7 +2108,7 @@
   <span class="md-ellipsis">
     
   
-    Nvidia Omniverse
+    NVIDIA Omniverse / Isaac Sim
   
 
     
@@ -2675,6 +2912,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../database/robots/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    机器人图鉴
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../database/nao/" class="md-nav__link">
         
   
@@ -2683,6 +2948,174 @@
     
   
     NAO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../database/atlas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Atlas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../database/optimus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Optimus（擎天柱）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../database/figure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Figure 02
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../database/asimo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ASIMO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../database/digit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Digit
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../database/unitree-h1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unitree H1 / G1
   
 
     
@@ -3212,6 +3645,214 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        神经网络基础
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="神经网络基础">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#perceptron" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        感知器 (Perceptron)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#activation-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        激活函数 (Activation Functions)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#backpropagation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        反向传播 (Backpropagation)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        用于控制的网络架构
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="用于控制的网络架构">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#feedforward-neural-network" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        前馈神经网络 (Feedforward Neural Network)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recurrent-neural-network-rnn" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        循环神经网络 (Recurrent Neural Network, RNN)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        训练方法
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="训练方法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#supervised-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        监督学习 (Supervised Learning)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reinforcement-learning-rl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        强化学习 (Reinforcement Learning, RL)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        机器人应用
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        优势与局限
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="优势与局限">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        相对于传统控制器的优势
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        局限性
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        应用实例
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        参考资料
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -3228,9 +3869,141 @@
 
 
 <h1 id="neural-network-controller">神经网络控制器 (Neural Network Controller)</h1>
+<div class="admonition note">
+<p class="admonition-title">引言</p>
+<p>神经网络控制器是一类基于人工神经网络（Artificial Neural Network, ANN）的控制方法，能够通过学习从数据中提取复杂的非线性映射关系。与传统的PID或MPC控制器不同，神经网络控制器不需要精确的系统数学模型，可以直接从输入输出数据中学习控制策略。这使得神经网络控制器特别适用于难以建立精确模型的复杂非线性系统。</p>
+</div>
 <p>神经网络（Neural Networks）控制器的结构如下：</p>
 <p><img alt="nn" src="../assets/nn.png" /></p>
 <p>包含输入层、隐藏层及输出层。可配合遗传算法 (GA) 及强化学习 (RL) 训练、调节参数。</p>
+<h2 id="_1">神经网络基础</h2>
+<h3 id="perceptron">感知器 (Perceptron)</h3>
+<p>感知器是神经网络中最基本的计算单元，也称为神经元（Neuron）。一个感知器接收多个输入信号，对每个输入乘以对应的权重（Weight），将加权和通过激活函数（Activation Function）产生输出：</p>
+<p>
+<script type="math/tex; mode=display">y = f\left(\sum_{i=1}^{n} w_i x_i + b\right)</script>
+</p>
+<p>其中 <script type="math/tex">x_i</script> 为输入，<script type="math/tex">w_i</script> 为权重，<script type="math/tex">b</script> 为偏置（Bias），<script type="math/tex">f(\cdot)</script> 为激活函数。</p>
+<h3 id="activation-functions">激活函数 (Activation Functions)</h3>
+<p>激活函数为神经网络引入非线性，使其能够近似任意复杂的函数。常用的激活函数包括：</p>
+<ul>
+<li><strong>Sigmoid</strong>：<script type="math/tex">f(x) = \frac{1}{1 + e^{-x}}</script>，输出范围(0,1)，常用于二分类输出层。</li>
+<li><strong>Tanh</strong>：<script type="math/tex">f(x) = \tanh(x)</script>，输出范围(-1,1)，在控制器输出需要正负值时较为适用。</li>
+<li><strong>ReLU</strong>（Rectified Linear Unit）：<script type="math/tex">f(x) = \max(0, x)</script>，计算简单，是深度网络中最常用的激活函数。</li>
+<li><strong>Leaky ReLU</strong>：<script type="math/tex">f(x) = \max(0.01x, x)</script>，解决了ReLU的"死神经元"问题。</li>
+</ul>
+<h3 id="backpropagation">反向传播 (Backpropagation)</h3>
+<p>反向传播算法是训练神经网络的核心方法。其基本思想是：</p>
+<ol>
+<li><strong>前向传播（Forward Pass）</strong>：将输入数据通过网络逐层计算，得到输出预测值。</li>
+<li><strong>计算损失（Loss Computation）</strong>：将预测值与目标值进行比较，计算损失函数值（如均方误差MSE）。</li>
+<li><strong>反向传播梯度（Backward Pass）</strong>：利用链式法则（Chain Rule）从输出层到输入层逐层计算损失对每个权重的梯度。</li>
+<li><strong>更新权重（Weight Update）</strong>：使用梯度下降法（Gradient Descent）或其变体（如Adam优化器）更新权重和偏置。</li>
+</ol>
+<p>
+<script type="math/tex; mode=display">w_{new} = w_{old} - \eta \frac{\partial L}{\partial w}</script>
+</p>
+<p>其中 <script type="math/tex">\eta</script> 为学习率（Learning Rate），<script type="math/tex">L</script> 为损失函数。</p>
+<h2 id="_2">用于控制的网络架构</h2>
+<h3 id="feedforward-neural-network">前馈神经网络 (Feedforward Neural Network)</h3>
+<p>前馈神经网络（也称多层感知器，Multi-Layer Perceptron, MLP）是最基本的网络结构。数据从输入层经过一个或多个隐藏层流向输出层，不存在反馈连接。在控制应用中，前馈网络常用于：</p>
+<ul>
+<li><strong>逆动力学建模</strong>：学习从期望运动到所需控制力/力矩的映射。</li>
+<li><strong>静态非线性补偿</strong>：补偿摩擦、死区等非线性特性。</li>
+<li><strong>函数逼近</strong>：作为传统控制器中非线性部分的通用逼近器。</li>
+</ul>
+<p>根据通用逼近定理（Universal Approximation Theorem），一个具有足够多隐藏神经元的单隐藏层前馈网络，可以以任意精度逼近任意连续函数。</p>
+<h3 id="recurrent-neural-network-rnn">循环神经网络 (Recurrent Neural Network, RNN)</h3>
+<p>循环神经网络具有时间反馈连接，能够处理序列数据并保持内部状态记忆。在控制应用中，RNN适用于：</p>
+<ul>
+<li><strong>动态系统辨识</strong>：学习具有时间依赖关系的系统动力学模型。</li>
+<li><strong>时间序列预测</strong>：预测系统未来状态，用于预测控制。</li>
+<li><strong>自适应控制</strong>：通过持续学习适应系统参数的变化。</li>
+</ul>
+<p>RNN的常见变体包括：</p>
+<ul>
+<li><strong>LSTM（长短期记忆网络）</strong>：通过门控机制解决长期依赖问题，适合需要长时间记忆的控制任务。</li>
+<li><strong>GRU（门控循环单元）</strong>：LSTM的简化版本，计算效率更高。</li>
+</ul>
+<h2 id="_3">训练方法</h2>
+<h3 id="supervised-learning">监督学习 (Supervised Learning)</h3>
+<p>在监督学习中，神经网络从标注的输入-输出对中学习。在控制领域，这通常意味着从已有的控制器（如专家操作数据或传统控制器的输出）中学习控制策略。</p>
+<p>应用场景：</p>
+<ul>
+<li><strong>模仿学习（Imitation Learning）</strong>：从人类示教数据中学习机器人操作技能。</li>
+<li><strong>系统辨识（System Identification）</strong>：从输入输出数据中学习系统的动态模型。</li>
+<li><strong>控制器替代（Controller Cloning）</strong>：用神经网络替代计算量大的传统控制器（如MPC），在保持近似性能的同时大幅降低在线计算量。</li>
+</ul>
+<h3 id="reinforcement-learning-rl">强化学习 (Reinforcement Learning, RL)</h3>
+<p>强化学习是训练神经网络控制器最具潜力的方法。在RL框架中，智能体（Agent）通过与环境交互，根据奖励信号学习最优控制策略，不需要预先标注的训练数据。</p>
+<p>常用的RL算法包括：</p>
+<ul>
+<li><strong>PPO（Proximal Policy Optimization）</strong>：稳定性好，广泛用于机器人运动控制。</li>
+<li><strong>SAC（Soft Actor-Critic）</strong>：基于最大熵框架，探索能力强，适合连续动作空间。</li>
+<li><strong>TD3（Twin Delayed DDPG）</strong>：改进的确定性策略梯度方法，适合机器人控制任务。</li>
+</ul>
+<p>RL训练通常在仿真环境（如MuJoCo、Isaac Gym、PyBullet）中进行，训练完成后将策略网络迁移到真实机器人上（Sim-to-Real Transfer）。</p>
+<h2 id="_4">机器人应用</h2>
+<p>神经网络控制器在机器人领域的主要应用包括：</p>
+<ul>
+<li><strong>四足/人形机器人运动控制</strong>：使用RL训练策略网络，实现在复杂地形上的稳定行走、奔跑和跳跃。</li>
+<li><strong>机械臂操控</strong>：学习抓取、放置和装配等精细操作任务。</li>
+<li><strong>自动驾驶</strong>：端到端（End-to-End）的驾驶控制，从摄像头图像直接输出方向盘角度和加速踏板。</li>
+<li><strong>无人机控制</strong>：学习高机动飞行和特技动作的控制策略。</li>
+<li><strong>柔性机器人控制</strong>：难以精确建模的柔性机构的控制。</li>
+</ul>
+<h2 id="_5">优势与局限</h2>
+<h3 id="_6">相对于传统控制器的优势</h3>
+<ul>
+<li><strong>无需精确模型</strong>：可以在模型未知或难以建立的情况下工作。</li>
+<li><strong>处理非线性</strong>：天然适合处理高度非线性的系统。</li>
+<li><strong>自适应能力</strong>：可以通过在线学习适应系统参数的变化和外部干扰。</li>
+<li><strong>处理高维输入</strong>：可以直接处理图像、点云等高维感知数据。</li>
+</ul>
+<h3 id="_7">局限性</h3>
+<ul>
+<li><strong>缺乏可解释性（Interpretability）</strong>：神经网络是"黑箱"模型，难以分析和验证其行为的安全性。</li>
+<li><strong>稳定性保证</strong>：与经典控制理论（如Lyapunov稳定性）不同，神经网络控制器通常缺乏严格的稳定性证明。</li>
+<li><strong>数据依赖</strong>：训练需要大量的数据或仿真交互，数据质量直接影响控制性能。</li>
+<li><strong>泛化能力</strong>：在训练分布之外的场景中，行为可能不可预测。</li>
+<li><strong>实时计算需求</strong>：复杂的网络结构可能无法满足高频控制的计算时间约束。</li>
+</ul>
+<h2 id="_8">应用实例</h2>
+<p>以下是一个使用PyTorch实现简单神经网络控制器的概念示例，用于倒立摆（Inverted Pendulum）的平衡控制：</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">torch</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">torch.nn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">nn</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">NNController</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;简单的前馈神经网络控制器&quot;&quot;&quot;</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">state_dim</span><span class="p">,</span> <span class="n">action_dim</span><span class="p">,</span> <span class="n">hidden_dim</span><span class="o">=</span><span class="mi">64</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">NNController</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">network</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span>
+            <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">state_dim</span><span class="p">,</span> <span class="n">hidden_dim</span><span class="p">),</span>
+            <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">(),</span>
+            <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">hidden_dim</span><span class="p">,</span> <span class="n">hidden_dim</span><span class="p">),</span>
+            <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">(),</span>
+            <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">hidden_dim</span><span class="p">,</span> <span class="n">action_dim</span><span class="p">),</span>
+            <span class="n">nn</span><span class="o">.</span><span class="n">Tanh</span><span class="p">()</span>  <span class="c1"># 输出范围 [-1, 1]</span>
+        <span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">state</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">network</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
+
+<span class="c1"># 创建控制器：4维状态输入，1维动作输出</span>
+<span class="n">controller</span> <span class="o">=</span> <span class="n">NNController</span><span class="p">(</span><span class="n">state_dim</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">action_dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># 输入状态 [位置, 速度, 角度, 角速度]</span>
+<span class="n">state</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.02</span><span class="p">])</span>
+
+<span class="c1"># 获取控制输出</span>
+<span class="n">action</span> <span class="o">=</span> <span class="n">controller</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="_9">参考资料</h2>
+<ol>
+<li>K. J. Hunt, D. Sbarbaro, R. Zbikowski, and P. J. Gawthrop, "Neural Networks for Control Systems - A Survey," <em>Automatica</em>, vol. 28, no. 6, pp. 1083-1112, 1992.</li>
+<li>S. Levine, C. Finn, T. Darrell, and P. Abbeel, "End-to-End Training of Deep Visuomotor Policies," <em>Journal of Machine Learning Research</em>, vol. 17, no. 39, pp. 1-40, 2016.</li>
+<li>T. Hwangbo et al., "Learning Agile and Dynamic Motor Skills for Legged Robots," <em>Science Robotics</em>, vol. 4, no. 26, 2019.</li>
+<li>刘金琨, 《智能控制》, 电子工业出版社.</li>
+</ol>
 
 
 
@@ -3280,10 +4053,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs"], "search": "../../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML"></script>
       

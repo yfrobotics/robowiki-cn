@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
     
     
       
@@ -33,7 +33,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.618322db.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -1385,6 +1385,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    运动规划
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -1401,6 +1419,336 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        路径与轨迹的区别
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration-space" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        构型空间 (Configuration Space)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="构型空间 (Configuration Space)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        定义
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        障碍物在构型空间中的表示
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#optimization-based-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        基于优化的方法 (Optimization-based Methods)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="基于优化的方法 (Optimization-based Methods)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#spline-curves" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        样条曲线 (Spline Curves)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bezier-curves" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        贝塞尔曲线 (Bezier Curves)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trajectory-optimization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        轨迹优化 (Trajectory Optimization)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sampling-based-motion-planning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        基于采样的运动规划 (Sampling-based Motion Planning)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="基于采样的运动规划 (Sampling-based Motion Planning)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rrt-kinodynamic-rrt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        运动学约束下的 RRT (Kinodynamic RRT)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rrt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RRT* 用于运动规划
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PRM 用于运动规划
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#potential-field-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        人工势场法 (Potential Field Methods)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dynamic-window-approach-dwa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        动态窗口法 (Dynamic Window Approach, DWA)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="动态窗口法 (Dynamic Window Approach, DWA)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        基本原理
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dynamic-window" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        动态窗口 (Dynamic Window)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        评价函数
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mpc-for-motion-planning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        模型预测控制用于运动规划 (MPC for Motion Planning)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="模型预测控制用于运动规划 (MPC for Motion Planning)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        基本公式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mpc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MPC 用于运动规划的优势
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        计算挑战
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#time-optimal-path-parameterization-topp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        时间最优路径参数化 (Time-Optimal Path Parameterization, TOPP)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="时间最优路径参数化 (Time-Optimal Path Parameterization, TOPP)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        问题公式
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        方法对比
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        参考文献
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1815,7 +2163,7 @@
   <span class="md-ellipsis">
     
   
-    Unreal
+    Unreal Engine
   
 
     
@@ -1871,7 +2219,7 @@
   <span class="md-ellipsis">
     
   
-    Nvidia Omniverse
+    NVIDIA Omniverse / Isaac Sim
   
 
     
@@ -2675,6 +3023,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../database/robots/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    机器人图鉴
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../database/nao/" class="md-nav__link">
         
   
@@ -2683,6 +3059,174 @@
     
   
     NAO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/atlas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Atlas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/optimus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Optimus（擎天柱）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/figure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Figure 02
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/asimo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ASIMO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/digit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Digit
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/unitree-h1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unitree H1 / G1
   
 
     
@@ -3212,6 +3756,325 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        路径与轨迹的区别
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration-space" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        构型空间 (Configuration Space)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="构型空间 (Configuration Space)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        定义
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        障碍物在构型空间中的表示
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#optimization-based-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        基于优化的方法 (Optimization-based Methods)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="基于优化的方法 (Optimization-based Methods)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#spline-curves" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        样条曲线 (Spline Curves)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bezier-curves" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        贝塞尔曲线 (Bezier Curves)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trajectory-optimization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        轨迹优化 (Trajectory Optimization)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sampling-based-motion-planning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        基于采样的运动规划 (Sampling-based Motion Planning)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="基于采样的运动规划 (Sampling-based Motion Planning)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rrt-kinodynamic-rrt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        运动学约束下的 RRT (Kinodynamic RRT)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rrt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RRT* 用于运动规划
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PRM 用于运动规划
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#potential-field-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        人工势场法 (Potential Field Methods)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dynamic-window-approach-dwa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        动态窗口法 (Dynamic Window Approach, DWA)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="动态窗口法 (Dynamic Window Approach, DWA)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        基本原理
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dynamic-window" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        动态窗口 (Dynamic Window)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        评价函数
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mpc-for-motion-planning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        模型预测控制用于运动规划 (MPC for Motion Planning)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="模型预测控制用于运动规划 (MPC for Motion Planning)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        基本公式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mpc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MPC 用于运动规划的优势
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        计算挑战
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#time-optimal-path-parameterization-topp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        时间最优路径参数化 (Time-Optimal Path Parameterization, TOPP)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="时间最优路径参数化 (Time-Optimal Path Parameterization, TOPP)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        问题公式
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        方法对比
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        参考文献
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -3228,17 +4091,317 @@
 
 
 <h1 id="_1">运动规划</h1>
-<p>Optimization-based:</p>
+<div class="admonition note">
+<p class="admonition-title">引言</p>
+<p>运动规划 (Motion Planning) 在路径规划的基础上，进一步考虑机器人的运动学 (Kinematics) 和动力学 (Dynamics) 约束，生成一条可实际执行的轨迹 (Trajectory)。与路径规划仅关注几何可行性不同，运动规划需要生成带有时间参数的状态序列，包括位置、速度、加速度等信息，使机器人能够平滑、安全地完成运动任务。</p>
+</div>
+<h2 id="_2">路径与轨迹的区别</h2>
+<p>在运动规划中，路径 (Path) 和轨迹 (Trajectory) 是两个不同的概念：</p>
 <ul>
-<li>Quadratic splines</li>
-<li>Cubic splines</li>
+<li><strong>路径 (Path)</strong>：构型空间中的一条几何曲线 <script type="math/tex">\tau: [0, 1] \rightarrow \mathcal{C}</script>，不包含时间信息</li>
+<li><strong>轨迹 (Trajectory)</strong>：带有时间参数的路径 <script type="math/tex">\sigma: [0, T] \rightarrow \mathcal{C}</script>，指定了机器人在每个时刻的状态</li>
 </ul>
-<p>Sampling-based:</p>
+<p>轨迹不仅描述"走哪里"，还描述"何时到达"以及"以什么速度到达"。一条可行的轨迹需要同时满足：</p>
+<p>
+<script type="math/tex; mode=display">
+\sigma(0) = q_s, \quad \sigma(T) = q_g, \quad \forall t: \sigma(t) \in \mathcal{C}_{free}
+</script>
+</p>
+<p>
+<script type="math/tex; mode=display">
+\dot{\sigma}(t) \in \mathcal{V}_{feasible}, \quad \ddot{\sigma}(t) \in \mathcal{A}_{feasible}
+</script>
+</p>
+<p>其中 <script type="math/tex">\mathcal{V}_{feasible}</script> 和 <script type="math/tex">\mathcal{A}_{feasible}</script> 分别是速度和加速度的可行集合。</p>
+<h2 id="configuration-space">构型空间 (Configuration Space)</h2>
+<p>构型空间 (Configuration Space, C-space) 是运动规划的核心概念。机器人的构型 (Configuration) 是完整描述机器人所有部件位置所需的最小参数集。</p>
+<h3 id="_3">定义</h3>
+<p>对于一个 <script type="math/tex">n</script> 自由度 (Degrees of Freedom, DOF) 的机器人，其构型空间 <script type="math/tex">\mathcal{C}</script> 是一个 <script type="math/tex">n</script> 维空间。例如：</p>
 <ul>
-<li>Rapidly-exploring Random Trees (RRTs)</li>
-<li>Probabilistic Roadmaps (PRMs)</li>
-<li>Randomized potential fields</li>
+<li><strong>平面移动机器人</strong>：<script type="math/tex">\mathcal{C} = \mathbb{R}^2</script>（位置 <script type="math/tex">x, y</script>），若考虑朝向则 <script type="math/tex">\mathcal{C} = \mathbb{R}^2 \times SO(2)</script>
+</li>
+<li><strong>六轴机械臂</strong>：<script type="math/tex">\mathcal{C} = \mathbb{T}^6</script>（六个关节角度），其中 <script type="math/tex">\mathbb{T}</script> 表示圆环（关节角度的周期性）</li>
+<li><strong>自由飞行刚体</strong>：<script type="math/tex">\mathcal{C} = \mathbb{R}^3 \times SO(3)</script>（位置和姿态），共 6 个自由度</li>
 </ul>
+<h3 id="_4">障碍物在构型空间中的表示</h3>
+<p>工作空间中的障碍物映射到构型空间中形成 C-space 障碍物 <script type="math/tex">\mathcal{C}_{obs}</script>。自由构型空间定义为：</p>
+<p>
+<script type="math/tex; mode=display">
+\mathcal{C}_{free} = \mathcal{C} \setminus \mathcal{C}_{obs}
+</script>
+</p>
+<p>计算 <script type="math/tex">\mathcal{C}_{obs}</script> 的显式表达通常非常困难，尤其在高维空间中。因此，实际中多使用碰撞检测 (Collision Detection) 来隐式判断某个构型是否在 <script type="math/tex">\mathcal{C}_{free}</script> 中。</p>
+<h2 id="optimization-based-methods">基于优化的方法 (Optimization-based Methods)</h2>
+<p>基于优化的方法将运动规划表述为一个数学优化问题，在满足约束的条件下最小化某个代价函数。</p>
+<h3 id="spline-curves">样条曲线 (Spline Curves)</h3>
+<p>样条曲线通过分段多项式拟合一条平滑轨迹，是运动规划中最常用的轨迹表示方法。</p>
+<p><strong>二次样条 (Quadratic Splines)：</strong> 使用二次多项式拼接各段轨迹，每段的形式为：</p>
+<p>
+<script type="math/tex; mode=display">
+q_i(t) = a_i t^2 + b_i t + c_i, \quad t \in [t_i, t_{i+1}]
+</script>
+</p>
+<p>二次样条保证位置和速度的连续性（<script type="math/tex">C^1</script> 连续），但加速度在节点处可能不连续。</p>
+<p><strong>三次样条 (Cubic Splines)：</strong> 使用三次多项式拼接各段，每段形式为：</p>
+<p>
+<script type="math/tex; mode=display">
+q_i(t) = a_i t^3 + b_i t^2 + c_i t + d_i, \quad t \in [t_i, t_{i+1}]
+</script>
+</p>
+<p>三次样条保证位置、速度和加速度的连续性（<script type="math/tex">C^2</script> 连续），是机械臂轨迹规划中最常用的方法。</p>
+<p><strong>连续性条件：</strong> 在节点 <script type="math/tex">t_k</script> 处需要满足：</p>
+<p>
+<script type="math/tex; mode=display">
+q_{k-1}(t_k) = q_k(t_k), \quad \dot{q}_{k-1}(t_k) = \dot{q}_k(t_k), \quad \ddot{q}_{k-1}(t_k) = \ddot{q}_k(t_k)
+</script>
+</p>
+<p><strong>五次样条 (Quintic Splines)：</strong> 当需要控制加加速度 (Jerk) 的连续性时，使用五次多项式（<script type="math/tex">C^4</script> 连续），常用于对平滑性要求极高的场景。</p>
+<h3 id="bezier-curves">贝塞尔曲线 (Bezier Curves)</h3>
+<p>
+<script type="math/tex">n</script> 阶贝塞尔曲线由 <script type="math/tex">n+1</script> 个控制点 <script type="math/tex">P_0, P_1, \ldots, P_n</script> 定义：</p>
+<p>
+<script type="math/tex; mode=display">
+B(t) = \sum_{i=0}^{n} \binom{n}{i} (1-t)^{n-i} t^i P_i, \quad t \in [0, 1]
+</script>
+</p>
+<p>贝塞尔曲线的优点是曲线始终在控制点的凸包内，且起点和终点分别在 <script type="math/tex">P_0</script> 和 <script type="math/tex">P_n</script> 上，便于控制轨迹形状。</p>
+<h3 id="trajectory-optimization">轨迹优化 (Trajectory Optimization)</h3>
+<p>轨迹优化将运动规划表述为一个约束优化问题：</p>
+<p>
+<script type="math/tex; mode=display">
+\min_{\sigma} \int_0^T L(\sigma(t), \dot{\sigma}(t), \ddot{\sigma}(t)) \, dt
+</script>
+</p>
+<p>
+<script type="math/tex; mode=display">
+\text{s.t.} \quad \sigma(0) = q_s, \quad \sigma(T) = q_g
+</script>
+</p>
+<p>
+<script type="math/tex; mode=display">
+\sigma(t) \in \mathcal{C}_{free}, \quad \dot{\sigma}(t) \in \mathcal{V}_{max}, \quad \ddot{\sigma}(t) \in \mathcal{A}_{max}
+</script>
+</p>
+<p>其中 <script type="math/tex">L</script> 是阶段代价函数。常见的代价函数包括：</p>
+<ul>
+<li><strong>最小时间</strong>：<script type="math/tex">L = 1</script>，最小化总运动时间 <script type="math/tex">T</script>
+</li>
+<li><strong>最小能量</strong>：<script type="math/tex">L = \| \ddot{\sigma}(t) \|^2</script>，最小化加速度的平方积分</li>
+<li><strong>最小加加速度</strong>：<script type="math/tex">L = \| \dddot{\sigma}(t) \|^2</script>，最小化加加速度的平方积分（更平滑）</li>
+</ul>
+<p><strong>求解方法：</strong></p>
+<ul>
+<li><strong>直接法 (Direct Methods)</strong>：将连续优化问题离散化为有限维非线性规划 (NLP) 问题，如直接配置法 (Direct Collocation)、直接打靶法 (Direct Shooting)</li>
+<li><strong>间接法 (Indirect Methods)</strong>：利用庞特里亚金最大值原理 (Pontryagin's Maximum Principle) 推导最优条件，求解两点边值问题</li>
+</ul>
+<h2 id="sampling-based-motion-planning">基于采样的运动规划 (Sampling-based Motion Planning)</h2>
+<p>基于采样的方法通过随机采样探索构型空间，适合高维空间和复杂约束的场景。</p>
+<h3 id="rrt-kinodynamic-rrt">运动学约束下的 RRT (Kinodynamic RRT)</h3>
+<p>标准 RRT 不考虑运动学/动力学约束。Kinodynamic RRT 在扩展树的过程中直接考虑系统的运动方程：</p>
+<p>
+<script type="math/tex; mode=display">
+\dot{x} = f(x, u)
+</script>
+</p>
+<p>扩展步骤中，不是简单地向采样点直线移动，而是在控制输入空间中采样一个控制 <script type="math/tex">u</script>，然后对系统进行前向仿真：</p>
+<div class="highlight"><pre><span></span><code>Kinodynamic_RRT_Extend(tree, q_rand):
+    q_near ← tree 中离 q_rand 最近的节点
+    for each 候选控制输入 u:
+        q_new ← 从 q_near 出发，施加 u，前向仿真 Δt
+        if q_new 无碰撞 且 满足状态约束:
+            选择使 q_new 最接近 q_rand 的 u
+    tree.add(q_new)
+</code></pre></div>
+<h3 id="rrt">RRT* 用于运动规划</h3>
+<p>RRT* 的渐近最优性同样适用于运动规划场景。在构型空间中，RRT* 通过重新连线操作不断优化路径，使其代价渐近收敛到最优值。</p>
+<h3 id="prm">PRM 用于运动规划</h3>
+<p>将 PRM 扩展到运动规划时，需要使用局部规划器 (Local Planner) 来连接两个构型之间的边。局部规划器需要生成满足约束的局部轨迹，而不仅是直线插值。</p>
+<h2 id="potential-field-methods">人工势场法 (Potential Field Methods)</h2>
+<p>人工势场法也可用于运动规划，生成连续的速度指令。在速度层面，机器人的速度指令由势场梯度决定：</p>
+<p>
+<script type="math/tex; mode=display">
+\dot{q} = -\nabla U(q)
+</script>
+</p>
+<p>为了处理动力学约束，可以引入阻尼项和惯性项：</p>
+<p>
+<script type="math/tex; mode=display">
+M\ddot{q} + B\dot{q} = -\nabla U(q)
+</script>
+</p>
+<p>其中 <script type="math/tex">M</script> 是惯性矩阵，<script type="math/tex">B</script> 是阻尼矩阵。这种方法也被称为阻抗控制 (Impedance Control) 框架下的运动生成。</p>
+<h2 id="dynamic-window-approach-dwa">动态窗口法 (Dynamic Window Approach, DWA)</h2>
+<p>DWA 是一种适用于差速驱动移动机器人的实时局部运动规划方法，在速度空间 (Velocity Space) 中搜索最优运动指令。</p>
+<h3 id="_5">基本原理</h3>
+<p>DWA 在每个控制周期内执行以下步骤：</p>
+<ol>
+<li><strong>确定搜索空间</strong>：根据机器人的当前速度和加速度限制，计算下一个控制周期内可达的速度范围（动态窗口）</li>
+<li><strong>采样候选速度</strong>：在动态窗口内均匀采样一组候选速度 <script type="math/tex">(v, \omega)</script>
+</li>
+<li><strong>模拟轨迹</strong>：对每个候选速度，预测未来短时间内的运动轨迹</li>
+<li><strong>评估与选择</strong>：根据评价函数选择最优速度</li>
+</ol>
+<h3 id="dynamic-window">动态窗口 (Dynamic Window)</h3>
+<p>可达速度集合由以下约束确定：</p>
+<p>
+<script type="math/tex; mode=display">
+V_s = \{(v, \omega) \mid v \in [0, v_{max}], \, |\omega| \leq \omega_{max}\}
+</script>
+</p>
+<p>
+<script type="math/tex; mode=display">
+V_d = \{(v, \omega) \mid v \in [v_c - \dot{v}_{max} \Delta t, \, v_c + \dot{v}_{max} \Delta t]\}
+</script>
+</p>
+<p>
+<script type="math/tex; mode=display">
+V_a = \{(v, \omega) \mid v \leq \sqrt{2 \cdot dist(v, \omega) \cdot \dot{v}_{max}}\}
+</script>
+</p>
+<p>其中 <script type="math/tex">V_s</script> 是速度限制，<script type="math/tex">V_d</script> 是动态窗口（由加速度限制决定），<script type="math/tex">V_a</script> 是安全速度（能在碰撞前停下）。最终的搜索空间为：</p>
+<p>
+<script type="math/tex; mode=display">
+V_{search} = V_s \cap V_d \cap V_a
+</script>
+</p>
+<h3 id="_6">评价函数</h3>
+<p>
+<script type="math/tex; mode=display">
+G(v, \omega) = \alpha \cdot heading(v, \omega) + \beta \cdot dist(v, \omega) + \gamma \cdot velocity(v, \omega)
+</script>
+</p>
+<ul>
+<li>
+<script type="math/tex">heading</script>：轨迹末端朝向与目标方向的偏差（越小越好）</li>
+<li>
+<script type="math/tex">dist</script>：轨迹上离最近障碍物的距离（越大越好）</li>
+<li>
+<script type="math/tex">velocity</script>：线速度大小（越大越快到达目标）</li>
+<li>
+<script type="math/tex">\alpha, \beta, \gamma</script>：权重系数，用于平衡各项指标</li>
+</ul>
+<h2 id="mpc-for-motion-planning">模型预测控制用于运动规划 (MPC for Motion Planning)</h2>
+<p>模型预测控制 (Model Predictive Control, MPC) 通过滚动优化 (Receding Horizon) 策略实时生成运动指令，天然地将规划与控制结合在一起。</p>
+<h3 id="_7">基本公式</h3>
+<p>在每个控制时刻，MPC 求解以下有限时域优化问题：</p>
+<p>
+<script type="math/tex; mode=display">
+\min_{u_0, \ldots, u_{N-1}} \sum_{k=0}^{N-1} \left[ (x_k - x_{ref})^T Q (x_k - x_{ref}) + u_k^T R \, u_k \right] + (x_N - x_{ref})^T Q_f (x_N - x_{ref})
+</script>
+</p>
+<p>
+<script type="math/tex; mode=display">
+\text{s.t.} \quad x_{k+1} = f(x_k, u_k)
+</script>
+</p>
+<p>
+<script type="math/tex; mode=display">
+x_k \in \mathcal{X}, \quad u_k \in \mathcal{U}, \quad x_0 = x_{current}
+</script>
+</p>
+<p>其中 <script type="math/tex">N</script> 是预测步数，<script type="math/tex">Q</script> 和 <script type="math/tex">R</script> 是状态和输入的权重矩阵，<script type="math/tex">Q_f</script> 是终端代价矩阵，<script type="math/tex">\mathcal{X}</script> 和 <script type="math/tex">\mathcal{U}</script> 是状态和输入的约束集合。</p>
+<h3 id="mpc">MPC 用于运动规划的优势</h3>
+<ul>
+<li><strong>显式处理约束</strong>：速度、加速度、避障等约束直接嵌入优化问题</li>
+<li><strong>预测能力</strong>：通过预测模型前瞻性地规划未来动作</li>
+<li><strong>反馈机制</strong>：每个控制周期根据最新状态重新规划，天然具有鲁棒性</li>
+<li><strong>规划与控制统一</strong>：无需将路径跟踪和运动规划分开处理</li>
+</ul>
+<h3 id="_8">计算挑战</h3>
+<p>MPC 的主要挑战是计算效率。在每个控制周期内需要求解一个优化问题，对于非线性系统尤其如此。常用的加速方法包括：</p>
+<ul>
+<li><strong>线性化 MPC</strong>：将非线性模型线性化，转化为二次规划 (QP) 问题</li>
+<li><strong>实时迭代 (Real-time Iteration, RTI)</strong>：在每个控制周期只执行一步优化迭代</li>
+<li><strong>GPU 加速</strong>：利用并行计算加速优化求解</li>
+</ul>
+<h2 id="time-optimal-path-parameterization-topp">时间最优路径参数化 (Time-Optimal Path Parameterization, TOPP)</h2>
+<p>TOPP 是一种将运动规划分解为两步的方法：</p>
+<ol>
+<li><strong>路径规划</strong>：首先使用任意方法（如 RRT、A*）生成一条几何路径</li>
+<li><strong>时间参数化</strong>：沿给定路径求解速度曲线，使得运动时间最短，同时满足速度、加速度和力矩约束</li>
+</ol>
+<h3 id="_9">问题公式</h3>
+<p>给定路径 <script type="math/tex">q(s)</script>，其中 <script type="math/tex">s \in [0, 1]</script> 是路径参数，定义 <script type="math/tex">\dot{s}</script> 为路径参数的时间导数。轨迹的速度和加速度可以表示为：</p>
+<p>
+<script type="math/tex; mode=display">
+\dot{q} = q'(s) \dot{s}, \quad \ddot{q} = q'(s) \ddot{s} + q''(s) \dot{s}^2
+</script>
+</p>
+<p>TOPP 问题转化为在 <script type="math/tex">(s, \dot{s})</script> 相平面上的最优控制问题，可以通过数值积分高效求解。</p>
+<h2 id="_10">方法对比</h2>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>适用场景</th>
+<th>最优性</th>
+<th>实时性</th>
+<th>约束处理</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>样条曲线</td>
+<td>已知路径点的平滑插值</td>
+<td>局部最优</td>
+<td>很高</td>
+<td>有限</td>
+</tr>
+<tr>
+<td>轨迹优化</td>
+<td>通用轨迹生成</td>
+<td>局部最优</td>
+<td>中等</td>
+<td>好</td>
+</tr>
+<tr>
+<td>Kinodynamic RRT</td>
+<td>高维复杂约束</td>
+<td>否</td>
+<td>中等</td>
+<td>好</td>
+</tr>
+<tr>
+<td>人工势场</td>
+<td>简单环境、实时避障</td>
+<td>否</td>
+<td>很高</td>
+<td>有限</td>
+</tr>
+<tr>
+<td>DWA</td>
+<td>移动机器人局部规划</td>
+<td>局部最优</td>
+<td>很高</td>
+<td>好</td>
+</tr>
+<tr>
+<td>MPC</td>
+<td>通用、需要反馈</td>
+<td>局部最优</td>
+<td>中等</td>
+<td>很好</td>
+</tr>
+<tr>
+<td>TOPP</td>
+<td>已知路径的时间优化</td>
+<td>全局最优</td>
+<td>高</td>
+<td>好</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_11">参考文献</h2>
+<ol>
+<li>LaValle, S. M. (2006). <em>Planning Algorithms</em>. Cambridge University Press. <a href="http://planning.cs.uiuc.edu/">在线版本</a></li>
+<li>Choset, H., et al. (2005). <em>Principles of Robot Motion: Theory, Algorithms, and Implementation</em>. MIT Press.</li>
+<li>Siciliano, B., et al. (2010). <em>Robotics: Modelling, Planning and Control</em>. Springer.</li>
+<li>Fox, D., Burgard, W. &amp; Thrun, S. (1997). The Dynamic Window Approach to Collision Avoidance. <em>IEEE Robotics and Automation Magazine</em>, 4(1), 23-33.</li>
+<li>Karaman, S. &amp; Frazzoli, E. (2011). Sampling-based Algorithms for Optimal Motion Planning. <em>International Journal of Robotics Research</em>, 30(7), 846-894.</li>
+<li>Betts, J. T. (1998). Survey of Numerical Methods for Trajectory Optimization. <em>Journal of Guidance, Control, and Dynamics</em>, 21(2), 193-207.</li>
+<li>Bobrow, J. E., Dubowsky, S. &amp; Gibson, J. S. (1985). Time-Optimal Control of Robotic Manipulators Along Specified Paths. <em>International Journal of Robotics Research</em>, 4(3), 3-17.</li>
+<li>Rawlings, J. B., Mayne, D. Q. &amp; Diehl, M. (2017). <em>Model Predictive Control: Theory, Computation, and Design</em> (2nd ed.). Nob Hill Publishing.</li>
+</ol>
 
 
 
@@ -3288,10 +4451,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs"], "search": "../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML"></script>
       
