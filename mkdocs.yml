@@ -84,7 +84,14 @@ nav:
       - database/index.md
       - database/dataset.md
       - 机器人图鉴:
+          - database/robots.md
           - database/nao.md
+          - database/atlas.md
+          - database/optimus.md
+          - database/figure.md
+          - database/asimo.md
+          - database/digit.md
+          - database/unitree-h1.md
       - 机器人企业:
           - database/companies.md
           - database/boston-dynamics.md
