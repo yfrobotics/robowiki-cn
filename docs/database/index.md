@@ -5,7 +5,7 @@
 
 本数据库旨在为机器人领域的研究人员、工程师和爱好者提供一站式的信息参考。栏目涵盖以下主要内容：
 
-- **机器人产品**：介绍市场上具有代表性的机器人产品及其技术特点，例如 NAO 人形机器人、Boston Dynamics 的 Spot 四足机器人等。
+- **机器人产品**：介绍市场上具有代表性的机器人产品及其技术特点，涵盖 Atlas、Optimus、Figure 02、ASIMO、Digit、Unitree H1 等人形机器人以及四足机器人、工业机械臂等多个类别。详见[机器人图鉴](robots.md)。
 - **企业与公司**：收录全球范围内从事机器人研发与制造的知名企业，涵盖工业机器人、服务机器人、自动驾驶等多个细分领域。
 - **实验室与研究机构**：汇总国内外高校及科研院所中的机器人相关实验室，便于了解前沿研究方向。
 - **竞赛与社区**：整理国际和国内主要的机器人竞赛及活动信息。
@@ -17,7 +17,7 @@
 - **工业机器人（Industrial Robots）**：主要用于制造业的焊接、装配、搬运、喷涂等任务，代表企业有 ABB、KUKA、FANUC 等。工业机器人是目前市场规模最大的机器人类别。
 - **服务机器人（Service Robots）**：面向非工业环境，用于家庭清洁、餐饮配送、导览接待等场景，例如扫地机器人、送餐机器人等。
 - **移动机器人（Mobile Robots）**：具备自主移动能力的机器人，包括自动导引车（AGV）、自主移动机器人（AMR）以及自动驾驶汽车等。
-- **人形机器人（Humanoid Robots）**：模仿人类外形和行为的机器人，如 NAO、Atlas、Pepper 等，常用于研究和人机交互领域。
+- **人形机器人（Humanoid Robots）**：模仿人类外形和行为的机器人，是当前机器人产业最受关注的方向之一。代表产品包括 Boston Dynamics 的 [Atlas](atlas.md)、Tesla 的 [Optimus](optimus.md)、Figure AI 的 [Figure 02](figure.md)、Honda 的 [ASIMO](asimo.md)、Agility Robotics 的 [Digit](digit.md)、宇树科技的 [H1/G1](unitree-h1.md) 以及 SoftBank Robotics 的 [NAO](nao.md) 等，常用于研究、物流和通用任务领域。
 - **空中机器人（Aerial Robots）**：即无人机（UAV/Drone），广泛应用于航拍、测绘、农业植保、物流配送等领域，代表企业有 DJI（大疆）等。
 - **水下机器人（Underwater Robots）**：也称为水下无人潜航器（AUV/ROV），用于海洋探测、水下检修、深海科考等任务。
 
