@@ -18,14 +18,14 @@
         <link rel="prev" href="../ml/">
       
       
-        <link rel="next" href="../../simulation/">
+        <link rel="next" href="../dl/">
       
       
         
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
     
     
       
@@ -60,6 +60,16 @@
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-PJC5MCXWKL"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-PJC5MCXWKL",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-PJC5MCXWKL",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
 
     
     
@@ -787,7 +797,7 @@
   <span class="md-ellipsis">
     
   
-    控制系统指南
+    控制系统
   
 
     
@@ -892,6 +902,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../control/lqr/lqr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    线性二次型调节器
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../control/mpc/mpc/" class="md-nav__link">
         
   
@@ -928,6 +966,34 @@
     
   
     神经网络控制器 (Neural Network Controller)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../control/adaptive/adaptive/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    自适应控制
   
 
     
@@ -1089,6 +1155,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../sensing/sensor-fusion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    传感器融合
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../sensing/slam/" class="md-nav__link">
         
   
@@ -1210,6 +1304,118 @@
     
   
     目标检测 (Object Detection)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cv/segmentation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    图像分割
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cv/tracking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    目标跟踪
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cv/pose-estimation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    位姿估计
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cv/3d-vision/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    三维视觉
   
 
     
@@ -1704,7 +1910,506 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#stable-baselines3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stable Baselines3 完整代码示例
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Stable Baselines3 完整代码示例">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        安装与训练
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sac" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        使用 SAC 训练连续控制任务
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        自定义回调函数
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#isaac-lab" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Isaac Lab 机器人训练示例
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Isaac Lab 机器人训练示例">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        环境类结构
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        观测空间设计
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        奖励函数定义
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        域随机化参数
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        训练启动与真机部署
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#imitation-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        模仿学习 (Imitation Learning)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="模仿学习 (Imitation Learning)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#behavioral-cloning-bc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        行为克隆 (Behavioral Cloning, BC)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dagger-dataset-aggregation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DAgger (Dataset Aggregation)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gail-generative-adversarial-imitation-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GAIL (Generative Adversarial Imitation Learning)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        机器人操作中的应用
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hierarchical-rl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        分层强化学习 (Hierarchical RL)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="分层强化学习 (Hierarchical RL)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#options-framework" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        选项框架 (Options Framework)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        高层策略与低层策略
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hrl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HRL 在机器人中的优势
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#offline-rl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        离线强化学习 (Offline RL)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="离线强化学习 (Offline RL)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        为什么需要离线强化学习
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#out-of-distribution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        分布外 (Out-of-Distribution) 问题
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q-conservative-q-learning-cql" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        保守 Q 学习 (Conservative Q-Learning, CQL)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q-implicit-q-learning-iql" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        隐式 Q 学习 (Implicit Q-Learning, IQL)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#td3bc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TD3+BC
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#marl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        多智能体强化学习 (MARL)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="多智能体强化学习 (MARL)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vs-cooperative-vs-competitive" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        合作 vs 竞争 (Cooperative vs Competitive)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ctde" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        集中训练分散执行 (CTDE)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maddpg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MADDPG
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        多机器人协调应用
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        奖励函数设计
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="奖励函数设计">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        稀疏奖励 vs 稠密奖励
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reward-shaping-theorem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        奖励塑形定理 (Reward Shaping Theorem)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        运动控制奖励设计
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        操作任务奖励设计
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        奖励黑客与规格博弈
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sim-to-real" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        仿真到现实迁移 (Sim-to-Real)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="仿真到现实迁移 (Sim-to-Real)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#progressive-domain-randomization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        域随机化调度 (Progressive Domain Randomization)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#system-identification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        系统辨识 (System Identification)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        特权信息与师生蒸馏
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        真机部署后的自适应
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
     <span class="md-ellipsis">
       
         强化学习在机器人中的应用
@@ -1748,11 +2453,28 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#sim-to-real" class="md-nav__link">
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Sim-to-Real 迁移
+        基准测试环境
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="基准测试环境">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mujoco" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MuJoCo 环境快速上手
       
     </span>
   </a>
@@ -1765,7 +2487,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
+  <a href="#_24" class="md-nav__link">
     <span class="md-ellipsis">
       
         常用框架与工具
@@ -1776,7 +2498,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
+  <a href="#_25" class="md-nav__link">
     <span class="md-ellipsis">
       
         参考资料
@@ -1790,6 +2512,34 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dl/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    深度学习
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -1866,7 +2616,7 @@
   <span class="md-ellipsis">
     
   
-    机器人仿真工具介绍
+    机器人仿真
   
 
     
@@ -2414,6 +3164,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/shell-scripting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shell 脚本与机器人自动化
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -2879,7 +3657,7 @@
   <span class="md-ellipsis">
     
   
-    深度学习数据集
+    机器人与视觉数据集
   
 
     
@@ -3167,6 +3945,118 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/spot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Boston Dynamics Spot
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/pepper/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SoftBank Pepper
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/apollo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Apptronik Apollo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/walker-s/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    优必选 Walker S
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -3353,7 +4243,7 @@
   <span class="md-ellipsis">
     
   
-    机器人实验室与研发机构 (国际)
+    机器人实验室与研发机构（国际）
   
 
     
@@ -3381,7 +4271,7 @@
   <span class="md-ellipsis">
     
   
-    机器人实验室与研发机构 (国内)
+    中国机器人研究机构数据库
   
 
     
@@ -3845,7 +4735,506 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#stable-baselines3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stable Baselines3 完整代码示例
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Stable Baselines3 完整代码示例">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        安装与训练
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sac" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        使用 SAC 训练连续控制任务
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        自定义回调函数
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#isaac-lab" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Isaac Lab 机器人训练示例
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Isaac Lab 机器人训练示例">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        环境类结构
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        观测空间设计
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        奖励函数定义
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        域随机化参数
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        训练启动与真机部署
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#imitation-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        模仿学习 (Imitation Learning)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="模仿学习 (Imitation Learning)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#behavioral-cloning-bc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        行为克隆 (Behavioral Cloning, BC)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dagger-dataset-aggregation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DAgger (Dataset Aggregation)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gail-generative-adversarial-imitation-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GAIL (Generative Adversarial Imitation Learning)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        机器人操作中的应用
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hierarchical-rl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        分层强化学习 (Hierarchical RL)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="分层强化学习 (Hierarchical RL)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#options-framework" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        选项框架 (Options Framework)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        高层策略与低层策略
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hrl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HRL 在机器人中的优势
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#offline-rl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        离线强化学习 (Offline RL)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="离线强化学习 (Offline RL)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        为什么需要离线强化学习
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#out-of-distribution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        分布外 (Out-of-Distribution) 问题
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q-conservative-q-learning-cql" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        保守 Q 学习 (Conservative Q-Learning, CQL)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q-implicit-q-learning-iql" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        隐式 Q 学习 (Implicit Q-Learning, IQL)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#td3bc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TD3+BC
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#marl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        多智能体强化学习 (MARL)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="多智能体强化学习 (MARL)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vs-cooperative-vs-competitive" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        合作 vs 竞争 (Cooperative vs Competitive)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ctde" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        集中训练分散执行 (CTDE)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maddpg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MADDPG
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        多机器人协调应用
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        奖励函数设计
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="奖励函数设计">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        稀疏奖励 vs 稠密奖励
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reward-shaping-theorem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        奖励塑形定理 (Reward Shaping Theorem)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        运动控制奖励设计
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        操作任务奖励设计
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        奖励黑客与规格博弈
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sim-to-real" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        仿真到现实迁移 (Sim-to-Real)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="仿真到现实迁移 (Sim-to-Real)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#progressive-domain-randomization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        域随机化调度 (Progressive Domain Randomization)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#system-identification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        系统辨识 (System Identification)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        特权信息与师生蒸馏
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        真机部署后的自适应
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
     <span class="md-ellipsis">
       
         强化学习在机器人中的应用
@@ -3889,11 +5278,28 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#sim-to-real" class="md-nav__link">
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Sim-to-Real 迁移
+        基准测试环境
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="基准测试环境">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mujoco" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MuJoCo 环境快速上手
       
     </span>
   </a>
@@ -3906,7 +5312,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
+  <a href="#_24" class="md-nav__link">
     <span class="md-ellipsis">
       
         常用框架与工具
@@ -3917,7 +5323,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
+  <a href="#_25" class="md-nav__link">
     <span class="md-ellipsis">
       
         参考资料
@@ -4175,22 +5581,555 @@ J(\pi) = \sum_{t=0}^{T} \mathbb{E}_{(s_t, a_t) \sim \rho_\pi} \left[ r(s_t, a_t)
 </script>
 </p>
 <p>其中 <script type="math/tex">\alpha</script> 是温度参数，<script type="math/tex">\mathcal{H}</script> 是熵。SAC 在连续控制任务中表现出色，训练稳定性好。</p>
-<h2 id="_5">强化学习在机器人中的应用</h2>
+<h2 id="stable-baselines3">Stable Baselines3 完整代码示例</h2>
+<p>Stable Baselines3 (SB3) 是基于 PyTorch 的高质量强化学习算法库，提供统一的接口和易于使用的训练流程。以下示例展示如何使用 PPO 训练倒立摆控制任务。</p>
+<h3 id="_5">安装与训练</h3>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">gymnasium</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">gym</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">stable_baselines3</span><span class="w"> </span><span class="kn">import</span> <span class="n">PPO</span><span class="p">,</span> <span class="n">SAC</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">stable_baselines3.common.env_util</span><span class="w"> </span><span class="kn">import</span> <span class="n">make_vec_env</span>
+
+<span class="c1"># 使用 PPO 训练倒立摆</span>
+<span class="n">env_id</span> <span class="o">=</span> <span class="s2">&quot;Pendulum-v1&quot;</span>
+<span class="n">env</span> <span class="o">=</span> <span class="n">make_vec_env</span><span class="p">(</span><span class="n">env_id</span><span class="p">,</span> <span class="n">n_envs</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>  <span class="c1"># 4个并行环境</span>
+
+<span class="n">model</span> <span class="o">=</span> <span class="n">PPO</span><span class="p">(</span>
+    <span class="n">policy</span><span class="o">=</span><span class="s2">&quot;MlpPolicy&quot;</span><span class="p">,</span>
+    <span class="n">env</span><span class="o">=</span><span class="n">env</span><span class="p">,</span>
+    <span class="n">learning_rate</span><span class="o">=</span><span class="mf">3e-4</span><span class="p">,</span>
+    <span class="n">n_steps</span><span class="o">=</span><span class="mi">2048</span><span class="p">,</span>
+    <span class="n">batch_size</span><span class="o">=</span><span class="mi">64</span><span class="p">,</span>
+    <span class="n">n_epochs</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+    <span class="n">gamma</span><span class="o">=</span><span class="mf">0.99</span><span class="p">,</span>
+    <span class="n">gae_lambda</span><span class="o">=</span><span class="mf">0.95</span><span class="p">,</span>
+    <span class="n">clip_range</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span>
+    <span class="n">verbose</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">model</span><span class="o">.</span><span class="n">learn</span><span class="p">(</span><span class="n">total_timesteps</span><span class="o">=</span><span class="mi">100_000</span><span class="p">)</span>
+<span class="n">model</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s2">&quot;ppo_pendulum&quot;</span><span class="p">)</span>
+
+<span class="c1"># 评估</span>
+<span class="n">obs</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">):</span>
+    <span class="n">action</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">obs</span><span class="p">,</span> <span class="n">deterministic</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">obs</span><span class="p">,</span> <span class="n">reward</span><span class="p">,</span> <span class="n">done</span><span class="p">,</span> <span class="n">truncated</span><span class="p">,</span> <span class="n">info</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="n">action</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="sac">使用 SAC 训练连续控制任务</h3>
+<p>对于样本效率要求更高的场景，可以使用离线策略算法 SAC。SAC 支持经验回放，每一步环境交互后都可进行多次梯度更新：</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">stable_baselines3</span><span class="w"> </span><span class="kn">import</span> <span class="n">SAC</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">stable_baselines3.common.evaluation</span><span class="w"> </span><span class="kn">import</span> <span class="n">evaluate_policy</span>
+
+<span class="c1"># SAC 适合连续动作空间，样本效率高于 PPO</span>
+<span class="n">model_sac</span> <span class="o">=</span> <span class="n">SAC</span><span class="p">(</span>
+    <span class="n">policy</span><span class="o">=</span><span class="s2">&quot;MlpPolicy&quot;</span><span class="p">,</span>
+    <span class="n">env</span><span class="o">=</span><span class="s2">&quot;HalfCheetah-v4&quot;</span><span class="p">,</span>
+    <span class="n">learning_rate</span><span class="o">=</span><span class="mf">3e-4</span><span class="p">,</span>
+    <span class="n">buffer_size</span><span class="o">=</span><span class="mi">1_000_000</span><span class="p">,</span>
+    <span class="n">learning_starts</span><span class="o">=</span><span class="mi">10_000</span><span class="p">,</span>
+    <span class="n">batch_size</span><span class="o">=</span><span class="mi">256</span><span class="p">,</span>
+    <span class="n">tau</span><span class="o">=</span><span class="mf">0.005</span><span class="p">,</span>
+    <span class="n">gamma</span><span class="o">=</span><span class="mf">0.99</span><span class="p">,</span>
+    <span class="n">train_freq</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+    <span class="n">gradient_steps</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+    <span class="n">verbose</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">model_sac</span><span class="o">.</span><span class="n">learn</span><span class="p">(</span><span class="n">total_timesteps</span><span class="o">=</span><span class="mi">500_000</span><span class="p">)</span>
+
+<span class="c1"># 定量评估：运行10个回合取平均奖励</span>
+<span class="n">mean_reward</span><span class="p">,</span> <span class="n">std_reward</span> <span class="o">=</span> <span class="n">evaluate_policy</span><span class="p">(</span><span class="n">model_sac</span><span class="p">,</span> <span class="n">model_sac</span><span class="o">.</span><span class="n">get_env</span><span class="p">(),</span> <span class="n">n_eval_episodes</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;平均奖励: </span><span class="si">{</span><span class="n">mean_reward</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> ± </span><span class="si">{</span><span class="n">std_reward</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="_6">自定义回调函数</h3>
+<p>SB3 的回调 (Callback) 机制允许在训练过程中插入自定义逻辑，例如保存最佳模型或提前停止：</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">stable_baselines3.common.callbacks</span><span class="w"> </span><span class="kn">import</span> <span class="n">EvalCallback</span><span class="p">,</span> <span class="n">StopTrainingOnRewardThreshold</span>
+
+<span class="c1"># 达到奖励阈值时停止训练</span>
+<span class="n">stop_callback</span> <span class="o">=</span> <span class="n">StopTrainingOnRewardThreshold</span><span class="p">(</span><span class="n">reward_threshold</span><span class="o">=-</span><span class="mi">200</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">eval_callback</span> <span class="o">=</span> <span class="n">EvalCallback</span><span class="p">(</span>
+    <span class="n">eval_env</span><span class="o">=</span><span class="n">make_vec_env</span><span class="p">(</span><span class="s2">&quot;Pendulum-v1&quot;</span><span class="p">,</span> <span class="n">n_envs</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span>
+    <span class="n">callback_on_new_best</span><span class="o">=</span><span class="n">stop_callback</span><span class="p">,</span>
+    <span class="n">eval_freq</span><span class="o">=</span><span class="mi">5000</span><span class="p">,</span>
+    <span class="n">best_model_save_path</span><span class="o">=</span><span class="s2">&quot;./best_model/&quot;</span><span class="p">,</span>
+    <span class="n">verbose</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">model</span><span class="o">.</span><span class="n">learn</span><span class="p">(</span><span class="n">total_timesteps</span><span class="o">=</span><span class="mi">200_000</span><span class="p">,</span> <span class="n">callback</span><span class="o">=</span><span class="n">eval_callback</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="isaac-lab">Isaac Lab 机器人训练示例</h2>
+<p>NVIDIA Isaac Lab 是专为大规模机器人强化学习设计的 GPU 加速仿真框架，支持数千个并行环境同步运行，大幅缩短训练时间。</p>
+<h3 id="_7">环境类结构</h3>
+<p>Isaac Lab 中的任务环境继承自 <code>DirectRLEnv</code> 或 <code>ManagerBasedRLEnv</code>，需要实现以下核心方法：</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">isaaclab.envs</span><span class="w"> </span><span class="kn">import</span> <span class="n">DirectRLEnv</span><span class="p">,</span> <span class="n">DirectRLEnvCfg</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">torch</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">HumanoidLocomotionEnv</span><span class="p">(</span><span class="n">DirectRLEnv</span><span class="p">):</span>
+    <span class="n">cfg</span><span class="p">:</span> <span class="n">DirectRLEnvCfg</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cfg</span><span class="p">,</span> <span class="n">render_mode</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">cfg</span><span class="p">,</span> <span class="n">render_mode</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="c1"># 初始化关节目标、奖励缓冲区等</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_joint_dof_idx</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">robot</span><span class="o">.</span><span class="n">find_joints</span><span class="p">(</span><span class="s2">&quot;.*&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">action_scale</span> <span class="o">=</span> <span class="mf">0.5</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_get_observations</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+        <span class="c1"># 收集观测：关节位置、速度、基座姿态、IMU数据</span>
+        <span class="n">obs</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">cat</span><span class="p">([</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">robot</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">joint_pos</span><span class="p">[:,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_joint_dof_idx</span><span class="p">],</span>      <span class="c1"># 关节位置</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">robot</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">joint_vel</span><span class="p">[:,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_joint_dof_idx</span><span class="p">],</span>      <span class="c1"># 关节速度</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">robot</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">root_lin_vel_b</span><span class="p">,</span>                          <span class="c1"># 基座线速度（机体系）</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">robot</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">root_ang_vel_b</span><span class="p">,</span>                          <span class="c1"># 基座角速度</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">robot</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">projected_gravity_b</span><span class="p">,</span>                     <span class="c1"># 投影重力方向</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">commands</span><span class="p">[:,</span> <span class="p">:</span><span class="mi">3</span><span class="p">],</span>                                    <span class="c1"># 速度指令</span>
+        <span class="p">],</span> <span class="n">dim</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;policy&quot;</span><span class="p">:</span> <span class="n">obs</span><span class="p">}</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_get_rewards</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">:</span>
+        <span class="c1"># 组合多项奖励</span>
+        <span class="n">alive_reward</span>    <span class="o">=</span> <span class="mf">1.0</span> <span class="o">*</span> <span class="p">(</span><span class="o">~</span><span class="bp">self</span><span class="o">.</span><span class="n">reset_terminated</span><span class="p">)</span><span class="o">.</span><span class="n">float</span><span class="p">()</span>
+        <span class="n">vel_tracking</span>    <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_reward_velocity_tracking</span><span class="p">()</span>
+        <span class="n">energy_penalty</span>  <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_penalty_energy</span><span class="p">()</span>
+        <span class="n">contact_penalty</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_penalty_contact_forces</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">alive_reward</span> <span class="o">+</span> <span class="n">vel_tracking</span> <span class="o">+</span> <span class="n">energy_penalty</span> <span class="o">+</span> <span class="n">contact_penalty</span>
+</code></pre></div>
+<h3 id="_8">观测空间设计</h3>
+<p>运动控制任务的观测通常包含以下分量：</p>
+<table>
+<thead>
+<tr>
+<th>观测分量</th>
+<th>维度</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>关节位置</td>
+<td>
+<script type="math/tex">n_{dof}</script>
+</td>
+<td>各关节当前角度（减去默认角度）</td>
+</tr>
+<tr>
+<td>关节速度</td>
+<td>
+<script type="math/tex">n_{dof}</script>
+</td>
+<td>各关节角速度</td>
+</tr>
+<tr>
+<td>基座线速度</td>
+<td>3</td>
+<td>机体坐标系下的 <script type="math/tex">v_x, v_y, v_z</script>
+</td>
+</tr>
+<tr>
+<td>基座角速度</td>
+<td>3</td>
+<td>机体坐标系下的滚转/俯仰/偏航角速度</td>
+</tr>
+<tr>
+<td>投影重力</td>
+<td>3</td>
+<td>重力向量在机体系的投影，隐式编码姿态</td>
+</tr>
+<tr>
+<td>速度指令</td>
+<td>3</td>
+<td>目标前向速度、侧向速度、偏航速率</td>
+</tr>
+<tr>
+<td>上一步动作</td>
+<td>
+<script type="math/tex">n_{dof}</script>
+</td>
+<td>提供动作历史信息，有助于平滑控制</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_9">奖励函数定义</h3>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">_reward_velocity_tracking</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">:</span>
+    <span class="c1"># 跟踪目标线速度：使用指数核函数</span>
+    <span class="n">lin_vel_error</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span>
+        <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">commands</span><span class="p">[:,</span> <span class="p">:</span><span class="mi">2</span><span class="p">]</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">robot</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">root_lin_vel_b</span><span class="p">[:,</span> <span class="p">:</span><span class="mi">2</span><span class="p">])</span> <span class="o">**</span> <span class="mi">2</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="mi">1</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="n">torch</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">lin_vel_error</span> <span class="o">/</span> <span class="mf">0.25</span><span class="p">)</span> <span class="o">*</span> <span class="mf">1.0</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_penalty_energy</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">:</span>
+    <span class="c1"># 能量惩罚：抑制关节扭矩过大</span>
+    <span class="k">return</span> <span class="o">-</span><span class="n">torch</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span>
+        <span class="n">torch</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">robot</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">applied_torque</span><span class="p">[:,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_joint_dof_idx</span><span class="p">]),</span> <span class="n">dim</span><span class="o">=</span><span class="mi">1</span>
+    <span class="p">)</span> <span class="o">*</span> <span class="mf">0.0002</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_penalty_contact_forces</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">:</span>
+    <span class="c1"># 碰撞惩罚：防止非预期肢体接触地面</span>
+    <span class="n">net_contact</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">contact_sensor</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">net_forces_w</span><span class="p">[:,</span> <span class="bp">self</span><span class="o">.</span><span class="n">undesired_contact_body_ids</span><span class="p">,</span> <span class="p">:],</span> <span class="n">dim</span><span class="o">=-</span><span class="mi">1</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="o">-</span><span class="n">torch</span><span class="o">.</span><span class="n">sum</span><span class="p">((</span><span class="n">net_contact</span> <span class="o">&gt;</span> <span class="mf">1.0</span><span class="p">)</span><span class="o">.</span><span class="n">float</span><span class="p">(),</span> <span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="mf">0.1</span>
+</code></pre></div>
+<h3 id="_10">域随机化参数</h3>
+<p>域随机化 (Domain Randomization) 是 Sim-to-Real 迁移的关键，Isaac Lab 通过配置类统一管理：</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">isaaclab.utils.noise</span><span class="w"> </span><span class="kn">import</span> <span class="n">AdditiveGaussianNoiseCfg</span><span class="p">,</span> <span class="n">UniformNoiseCfg</span>
+
+<span class="n">randomization_cfg</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+    <span class="c1"># 物理参数随机化</span>
+    <span class="n">physics_material</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span>
+        <span class="n">static_friction</span><span class="o">=</span><span class="p">(</span><span class="mf">0.6</span><span class="p">,</span> <span class="mf">1.2</span><span class="p">),</span>
+        <span class="n">dynamic_friction</span><span class="o">=</span><span class="p">(</span><span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">),</span>
+        <span class="n">restitution</span><span class="o">=</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">),</span>
+    <span class="p">),</span>
+    <span class="c1"># 关节参数随机化</span>
+    <span class="n">joint_stiffness</span><span class="o">=</span><span class="p">(</span><span class="mf">0.8</span><span class="p">,</span> <span class="mf">1.2</span><span class="p">),</span>   <span class="c1"># 相对额定值的倍率范围</span>
+    <span class="n">joint_damping</span><span class="o">=</span><span class="p">(</span><span class="mf">0.8</span><span class="p">,</span> <span class="mf">1.2</span><span class="p">),</span>
+    <span class="c1"># 观测噪声</span>
+    <span class="n">obs_noise</span><span class="o">=</span><span class="n">AdditiveGaussianNoiseCfg</span><span class="p">(</span><span class="n">mean</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">std</span><span class="o">=</span><span class="mf">0.02</span><span class="p">),</span>
+    <span class="c1"># 外力扰动</span>
+    <span class="n">push_robot</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">interval_s</span><span class="o">=</span><span class="mf">5.0</span><span class="p">,</span> <span class="n">magnitude</span><span class="o">=</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)),</span>
+<span class="p">)</span>
+</code></pre></div>
+<h3 id="_11">训练启动与真机部署</h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># 在 Isaac Lab 根目录下启动训练（4096 并行环境）</span>
+python<span class="w"> </span>scripts/reinforcement_learning/rsl_rl/train.py<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--task<span class="o">=</span>Isaac-Velocity-Rough-Anymal-C-v0<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--num_envs<span class="o">=</span><span class="m">4096</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--headless
+
+<span class="c1"># 导出策略为 ONNX 格式用于真机推理</span>
+python<span class="w"> </span>scripts/reinforcement_learning/rsl_rl/export_onnx.py<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--task<span class="o">=</span>Isaac-Velocity-Rough-Anymal-C-v0<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--checkpoint<span class="o">=</span>logs/rsl_rl/anymal_c_rough/model_5000.pt
+</code></pre></div>
+<p>训练完成后，将导出的 ONNX 模型部署到机器人的实时控制器上，通常以 400–1000 Hz 的频率运行策略推理。</p>
+<h2 id="imitation-learning">模仿学习 (Imitation Learning)</h2>
+<p>模仿学习 (Imitation Learning, IL) 让智能体通过学习专家示范来习得技能，无需手动设计奖励函数。这在机器人操作任务中尤为实用，因为奖励函数往往难以精确定义。</p>
+<h3 id="behavioral-cloning-bc">行为克隆 (Behavioral Cloning, BC)</h3>
+<p>行为克隆将模仿学习转化为监督学习问题，直接从专家数据 <script type="math/tex">\mathcal{D} = \{(s_i, a_i)\}</script> 中学习映射策略：</p>
+<p>
+<script type="math/tex; mode=display">
+\min_\theta \mathbb{E}_{(s,a) \sim \mathcal{D}} \left[ -\log \pi_\theta(a \mid s) \right]
+</script>
+</p>
+<p>BC 实现简单，但存在<strong>复合误差 (Compounding Error)</strong> 问题：训练时智能体只见到专家状态分布，测试时一旦偏离专家轨迹就会进入未见过的状态，错误不断累积。</p>
+<h3 id="dagger-dataset-aggregation">DAgger (Dataset Aggregation)</h3>
+<p>DAgger 是解决复合误差问题的交互式模仿学习算法。其核心思想是让当前策略在线执行，再由专家对访问到的状态进行标注，从而逐步扩充训练数据集覆盖的状态分布：</p>
+<p>
+<script type="math/tex; mode=display">
+\mathcal{D} \leftarrow \mathcal{D} \cup \left\{ (s, \pi^*(s)) : s \sim \rho_{\pi_i} \right\}
+</script>
+</p>
+<p>其中 <script type="math/tex">\rho_{\pi_i}</script> 是当前策略 <script type="math/tex">\pi_i</script> 诱导的状态分布，<script type="math/tex">\pi^*</script> 是专家策略。每次迭代后重新训练策略，循环执行直至收敛。</p>
+<h3 id="gail-generative-adversarial-imitation-learning">GAIL (Generative Adversarial Imitation Learning)</h3>
+<p>生成对抗模仿学习 (GAIL) 借鉴生成对抗网络 (Generative Adversarial Network, GAN) 思想，同时学习奖励函数和策略：判别器 <script type="math/tex">D_\psi</script> 区分智能体轨迹与专家轨迹，策略 <script type="math/tex">\pi_\theta</script> 则试图生成无法被判别器识别的轨迹：</p>
+<p>
+<script type="math/tex; mode=display">
+\min_\theta \max_\psi \; \mathbb{E}_{\pi_\theta}[\log D_\psi(s,a)] + \mathbb{E}_{\pi^*}[\log(1 - D_\psi(s,a))] - \lambda H(\pi_\theta)
+</script>
+</p>
+<p>GAIL 无需显式奖励函数，能从少量专家数据中学习复杂行为，但训练稳定性较差。</p>
+<h3 id="_12">机器人操作中的应用</h3>
+<p>在机器人操作任务中，模仿学习的典型流程如下：</p>
+<ol>
+<li><strong>遥操作数据采集</strong>：使用力反馈手套、VR 控制器或示教器，由操作员控制机械臂完成目标任务，记录状态-动作序列。</li>
+<li><strong>数据预处理</strong>：统一时间步长，进行动作平滑和异常帧过滤。</li>
+<li><strong>策略训练</strong>：使用 BC 快速得到初始策略，再用 DAgger 或强化学习进行微调。</li>
+<li><strong>真机验证</strong>：在真实机器人上评估成功率，采集失败案例补充到训练集中迭代改进。</li>
+</ol>
+<p>近年来，基于 Transformer 的行为克隆方法（如 ACT、Diffusion Policy）在机器人操作上取得了显著进展，能够处理多模态动作分布。</p>
+<h2 id="hierarchical-rl">分层强化学习 (Hierarchical RL)</h2>
+<p>分层强化学习 (Hierarchical Reinforcement Learning, HRL) 将复杂的长时序任务分解为多个层次，不同层次的策略负责不同时间尺度的决策。</p>
+<h3 id="options-framework">选项框架 (Options Framework)</h3>
+<p>选项 (Option) 是一种时间扩展的动作，由三元组定义：</p>
+<p>
+<script type="math/tex; mode=display">
+o = \langle \mathcal{I}, \pi_o, \beta_o \rangle
+</script>
+</p>
+<p>其中 <script type="math/tex">\mathcal{I} \subseteq \mathcal{S}</script> 是启动条件，<script type="math/tex">\pi_o</script> 是选项内部策略，<script type="math/tex">\beta_o(s)</script> 是终止条件。高层策略在选项层面进行决策，低层策略执行具体的电机控制。</p>
+<h3 id="_13">高层策略与低层策略</h3>
+<p>典型的两层 HRL 架构如下：</p>
+<ul>
+<li><strong>高层策略（任务规划器）</strong>：以较低频率运行（如每 5–10 步执行一次），输出子目标 (Sub-goal) 或技能索引，负责长时序规划。</li>
+<li><strong>低层策略（技能控制器）</strong>：以高频运行（如每步执行一次），将子目标转化为具体的关节力矩或末端执行器速度。</li>
+</ul>
+<h3 id="hrl">HRL 在机器人中的优势</h3>
+<p>HRL 特别适合以下场景：</p>
+<ul>
+<li><strong>长时序操作任务</strong>：例如"拿起杯子放到托盘上再送到桌边"，高层分解为拾取、放置、导航等子任务，低层执行各子任务的轨迹。</li>
+<li><strong>技能组合与复用</strong>：训练好的低层技能（如"抓取"、"行走"）可以被不同的高层策略复用，提高学习效率。</li>
+<li><strong>课程学习 (Curriculum Learning)</strong>：先学习子任务，再学习组合，降低整体任务难度。</li>
+</ul>
+<p>代表性工作包括 HIRO（分层强化学习中的数据高效方法）和 HAC（分层演员-评论家），它们均采用目标条件策略作为低层控制器。</p>
+<h2 id="offline-rl">离线强化学习 (Offline RL)</h2>
+<p>离线强化学习 (Offline Reinforcement Learning) 完全从静态数据集中学习策略，不与环境产生任何新的交互。这一范式对机器人领域尤为重要，因为真实机器人的数据采集代价高昂且存在安全隐患。</p>
+<h3 id="_14">为什么需要离线强化学习</h3>
+<p>在线强化学习要求大量的环境交互，对机器人而言存在以下问题：</p>
+<ul>
+<li><strong>高成本</strong>：数百万次交互意味着机器人持续运行数天甚至数周</li>
+<li><strong>安全风险</strong>：探索阶段的随机动作可能损坏机器人或周围设备</li>
+<li><strong>不可复现性</strong>：真实世界条件随时间变化，难以保证训练的一致性</li>
+</ul>
+<p>离线强化学习利用历史数据（遥操作记录、演示数据、已有策略的运行日志），在不与环境交互的情况下提取有价值的行为。</p>
+<h3 id="out-of-distribution">分布外 (Out-of-Distribution) 问题</h3>
+<p>离线强化学习的核心挑战是<strong>分布偏移 (Distribution Shift)</strong>：Q 函数在训练时只见过数据集中的状态-动作对，但贪心策略可能选择数据集中未曾出现的动作，导致 Q 值被过高估计。</p>
+<h3 id="q-conservative-q-learning-cql">保守 Q 学习 (Conservative Q-Learning, CQL)</h3>
+<p>CQL 通过在损失函数中加入正则项，压低数据集外动作的 Q 值，同时提高数据集内动作的 Q 值：</p>
+<p>
+<script type="math/tex; mode=display">
+\min_Q \alpha \left( \mathbb{E}_{s \sim \mathcal{D}, a \sim \mu(a|s)} [Q(s,a)] - \mathbb{E}_{(s,a) \sim \mathcal{D}} [Q(s,a)] \right) + \frac{1}{2} \mathbb{E}_{(s,a,s') \sim \mathcal{D}} \left[ (Q(s,a) - \hat{\mathcal{B}}^\pi Q(s,a))^2 \right]
+</script>
+</p>
+<p>其中 <script type="math/tex">\mu</script> 是用于最大化 Q 值的策略，<script type="math/tex">\hat{\mathcal{B}}^\pi</script> 是贝尔曼算子。</p>
+<h3 id="q-implicit-q-learning-iql">隐式 Q 学习 (Implicit Q-Learning, IQL)</h3>
+<p>IQL 完全避免在数据集外查询 Q 值，通过期望回归（而非最大化）来隐式提取最优策略，训练更加稳定，在 D4RL 基准上表现出色。</p>
+<h3 id="td3bc">TD3+BC</h3>
+<p>TD3+BC 是对 TD3 算法的简单修改，在策略更新目标中加入行为克隆正则项：</p>
+<p>
+<script type="math/tex; mode=display">
+\pi = \arg\max_\pi \mathbb{E}_{(s,a) \sim \mathcal{D}} \left[ \lambda Q(s, \pi(s)) - (\pi(s) - a)^2 \right]
+</script>
+</p>
+<p>其中 <script type="math/tex">\lambda</script> 平衡 Q 值最大化与对数据集动作的模仿。TD3+BC 实现极为简洁，性能却与复杂方法相当。</p>
+<h2 id="marl">多智能体强化学习 (MARL)</h2>
+<p>多智能体强化学习 (Multi-Agent Reinforcement Learning, MARL) 研究多个智能体在共享环境中的协同或竞争学习问题，在多机器人协调、无人机编队等任务中有重要应用。</p>
+<h3 id="vs-cooperative-vs-competitive">合作 vs 竞争 (Cooperative vs Competitive)</h3>
+<ul>
+<li><strong>完全合作</strong>：所有智能体共享同一奖励函数，目标是最大化团队总收益。典型场景：多机器人协作搬运、仓储调度。</li>
+<li><strong>完全竞争（零和博弈）</strong>：一方收益等于另一方损失。典型场景：机器人对抗赛。</li>
+<li><strong>混合设置</strong>：智能体之间既有合作也有竞争，如多支队伍的团队对抗。</li>
+</ul>
+<h3 id="ctde">集中训练分散执行 (CTDE)</h3>
+<p>集中训练分散执行 (Centralized Training with Decentralized Execution, CTDE) 是多智能体强化学习的主流范式：</p>
+<ul>
+<li><strong>训练阶段</strong>：使用集中式评论家，允许访问全局状态和其他智能体的观测与动作，提供更准确的价值估计。</li>
+<li><strong>执行阶段</strong>：每个智能体仅依赖自身局部观测进行决策，满足分布式部署的要求。</li>
+</ul>
+<h3 id="maddpg">MADDPG</h3>
+<p>多智能体深度确定性策略梯度算法 (Multi-Agent Deep Deterministic Policy Gradient, MADDPG) 将 CTDE 范式应用于连续动作空间：每个智能体 <script type="math/tex">i</script> 拥有独立的演员 <script type="math/tex">\mu_i</script>，但评论家 <script type="math/tex">Q_i</script> 接受所有智能体的联合观测和动作：</p>
+<p>
+<script type="math/tex; mode=display">
+\nabla_{\theta_i} J(\mu_i) = \mathbb{E}_{\mathbf{x}, a \sim \mathcal{D}} \left[ \nabla_{\theta_i} \mu_i(o_i) \cdot \nabla_{a_i} Q_i^\mu(\mathbf{x}, a_1, \ldots, a_N) \big|_{a_i = \mu_i(o_i)} \right]
+</script>
+</p>
+<p>其中 <script type="math/tex">\mathbf{x}</script> 是全局状态，<script type="math/tex">o_i</script> 是智能体 <script type="math/tex">i</script> 的局部观测。</p>
+<h3 id="_15">多机器人协调应用</h3>
+<ul>
+<li><strong>无人机编队飞行</strong>：多架无人机通过 MARL 学习保持队形、避碰和协同完成侦察任务</li>
+<li><strong>多臂协作操作</strong>：两臂机器人（双臂机器人）通过协作强化学习完成需要双手配合的组装任务</li>
+<li><strong>仓库物流调度</strong>：多 AGV（自动导引车）在同一空间内协作完成货物搬运，避免死锁</li>
+</ul>
+<h2 id="_16">奖励函数设计</h2>
+<p>奖励函数是强化学习的核心，直接决定智能体的学习目标。设计良好的奖励函数是机器人强化学习成功的关键因素之一。</p>
+<h3 id="vs">稀疏奖励 vs 稠密奖励</h3>
+<p><strong>稀疏奖励 (Sparse Reward)</strong>：仅在任务成功时给予奖励（如 +1），其他时刻奖励为零。优点是目标清晰，不引入人为偏差；缺点是在长时序任务中信号极其稀疏，智能体几乎无法从随机探索中获得正反馈。</p>
+<p><strong>稠密奖励 (Dense Reward)</strong>：在每个时间步都提供连续的奖励信号，引导智能体向目标靠近。优点是学习信号充足，收敛速度快；缺点是需要仔细设计，容易引入非预期行为。</p>
+<h3 id="reward-shaping-theorem">奖励塑形定理 (Reward Shaping Theorem)</h3>
+<p>Ng 等人证明，若塑形奖励 <script type="math/tex">F(s, a, s')</script> 满足势函数 (Potential-based) 形式：</p>
+<p>
+<script type="math/tex; mode=display">
+F(s, a, s') = \gamma \Phi(s') - \Phi(s)
+</script>
+</p>
+<p>则原 MDP 与添加塑形奖励后的 MDP 具有相同的最优策略，即势函数形式的奖励塑形不改变最优解。</p>
+<h3 id="_17">运动控制奖励设计</h3>
+<p>腿足机器人运动控制任务中，常用奖励分量如下：</p>
+<table>
+<thead>
+<tr>
+<th>奖励项</th>
+<th>公式</th>
+<th>目的</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>速度跟踪</td>
+<td>
+<script type="math/tex">\exp(-\|\mathbf{v}_{cmd} - \mathbf{v}_{base}\|^2 / \sigma)</script>
+</td>
+<td>跟踪目标速度指令</td>
+</tr>
+<tr>
+<td>倒地惩罚</td>
+<td>
+<script type="math/tex">-1 \cdot \mathbf{1}[\text{fall}]</script>
+</td>
+<td>防止机器人摔倒</td>
+</tr>
+<tr>
+<td>能量效率</td>
+<td>(-\sum</td>
+<td>\tau_i \dot{q}_i</td>
+</tr>
+<tr>
+<td>动作平滑</td>
+<td>
+<script type="math/tex">-\|\mathbf{a}_t - \mathbf{a}_{t-1}\|^2</script>
+</td>
+<td>产生平滑的关节轨迹</td>
+</tr>
+<tr>
+<td>姿态保持</td>
+<td>
+<script type="math/tex">-\|\text{roll}\|^2 - \|\text{pitch}\|^2</script>
+</td>
+<td>保持躯干直立</td>
+</tr>
+<tr>
+<td>足端碰撞</td>
+<td>
+<script type="math/tex">-\mathbf{1}[\text{knee/thigh contact}]</script>
+</td>
+<td>防止非足端接触地面</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_18">操作任务奖励设计</h3>
+<p>机械臂操作任务中，常用奖励分量包括：</p>
+<ul>
+<li><strong>距离奖励</strong>：末端执行器到目标物体的距离 <script type="math/tex">-\|p_{ee} - p_{goal}\|</script>，引导机械臂靠近目标</li>
+<li><strong>抓取成功</strong>：成功抓起物体时给予正奖励，通常配合接触力检测</li>
+<li><strong>力限制</strong>：惩罚过大的接触力，防止损坏物体或机械臂 <script type="math/tex">-\max(0, F_{contact} - F_{max})</script>
+</li>
+<li><strong>目标完成</strong>：任务成功时的稀疏正奖励，作为最终目标信号</li>
+</ul>
+<h3 id="_19">奖励黑客与规格博弈</h3>
+<p><strong>奖励黑客 (Reward Hacking)</strong>：智能体找到意料之外的方式来最大化奖励，而不是完成预期任务。例如，为了最大化速度奖励，机器人可能学会翻滚而非行走；为了最小化能量惩罚，机器人可能完全不动。</p>
+<p><strong>规格博弈 (Specification Gaming)</strong>：更广义的问题，智能体利用奖励函数定义的不完整性或漏洞来获得高奖励。防范措施包括：</p>
+<ul>
+<li>多维度奖励约束（既要完成任务，又要满足安全约束）</li>
+<li>人类反馈强化学习 (Reinforcement Learning from Human Feedback, RLHF)，用人类偏好替代手动设计的奖励</li>
+<li>逆强化学习 (Inverse Reinforcement Learning, IRL)，从专家行为中推断奖励函数</li>
+</ul>
+<h2 id="sim-to-real">仿真到现实迁移 (Sim-to-Real)</h2>
+<p>仿真到现实迁移 (Sim-to-Real Transfer) 是将仿真环境中训练的策略部署到真实机器人的过程。仿真与现实之间的差距（现实差距，Reality Gap）是 Sim-to-Real 的核心挑战。</p>
+<h3 id="progressive-domain-randomization">域随机化调度 (Progressive Domain Randomization)</h3>
+<p>渐进式域随机化策略在训练初期使用较小的随机化范围，随训练进行逐步扩大，帮助策略先学会基本任务再增强鲁棒性：</p>
+<table>
+<thead>
+<tr>
+<th>训练阶段</th>
+<th>摩擦系数范围</th>
+<th>质量范围</th>
+<th>外力扰动</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>初期（0–30%）</td>
+<td>±10%</td>
+<td>±5%</td>
+<td>关闭</td>
+</tr>
+<tr>
+<td>中期（30–70%）</td>
+<td>±30%</td>
+<td>±20%</td>
+<td>弱扰动</td>
+</tr>
+<tr>
+<td>后期（70–100%）</td>
+<td>±50%</td>
+<td>±40%</td>
+<td>强扰动</td>
+</tr>
+</tbody>
+</table>
+<h3 id="system-identification">系统辨识 (System Identification)</h3>
+<p>系统辨识 (System Identification, SysID) 通过测量真实机器人的响应数据，估计物理参数（如关节刚度、质心位置、电机延迟），从而缩小仿真与现实的差距。常用方法包括：</p>
+<ul>
+<li><strong>轨迹优化辨识</strong>：给机器人施加一组激励动作，记录关节力矩和位置，通过最小化预测误差拟合仿真参数</li>
+<li><strong>卡尔曼滤波估计</strong>：在线实时估计系统参数，适合参数随时间变化的场景</li>
+</ul>
+<h3 id="_20">特权信息与师生蒸馏</h3>
+<p>训练阶段，教师策略 (Teacher Policy) 可以访问仿真中精确的物理状态（如地形高度图、接触力、摩擦系数），这些信息在真实世界中不可测量。师生蒸馏 (Teacher-Student Distillation) 分两阶段进行：</p>
+<ol>
+<li><strong>教师训练</strong>：在仿真中，教师策略使用特权信息训练，得到高性能基准策略。</li>
+<li><strong>学生蒸馏</strong>：学生策略仅使用可观测的传感器数据（如 IMU、关节编码器），通过行为克隆模仿教师动作，同时结合强化学习进行微调。</li>
+</ol>
+<p>代表性工作包括 ETH Zurich 的 ANYmal 和 CMU 的人形机器人研究，均采用此框架实现了出色的 Sim-to-Real 迁移效果。</p>
+<h3 id="_21">真机部署后的自适应</h3>
+<p>即使经过充分的域随机化，部署到真实机器人时仍可能面临未预期的环境。常用的真机自适应方法包括：</p>
+<ul>
+<li><strong>在线系统辨识</strong>：在机器人运行过程中持续更新物理参数估计，快速适应新环境</li>
+<li><strong>元强化学习 (Meta-RL)</strong>：训练时暴露策略于多种任务变体，使策略能在少量真实数据下快速适应</li>
+<li><strong>实域微调</strong>：以仿真训练权重为初始值，在真机上进行少量在线强化学习更新</li>
+</ul>
+<h2 id="_22">强化学习在机器人中的应用</h2>
 <p>强化学习为机器人提供了从经验中学习复杂技能的能力，主要应用领域包括：</p>
 <h3 id="dexterous-manipulation">灵巧操作 (Dexterous Manipulation)</h3>
 <p>训练机械臂和灵巧手完成抓取、插入、装配等操作任务。典型工作包括 OpenAI 训练灵巧手旋转魔方。关键挑战在于高维动作空间和精确的力控制。</p>
 <h3 id="locomotion">运动控制 (Locomotion)</h3>
-<p>训练腿足机器人（如四足机器人、双足机器人）在各种地形上行走、跑步和跳跃。通过仿真到现实迁移 (Sim-to-Real Transfer)，在仿真环境中训练策略并部署到真实机器人。</p>
+<p>训练腿足机器人（如四足机器人、双足机器人）在各种地形上行走、跑步和跳跃。通过仿真到现实迁移，在仿真环境中训练策略并部署到真实机器人。</p>
 <h3 id="autonomous-navigation">自主导航 (Autonomous Navigation)</h3>
 <p>训练移动机器人在未知或动态环境中避障和寻路。强化学习可以学习端到端 (End-to-End) 的导航策略，直接从传感器输入映射到运动指令。</p>
-<h3 id="sim-to-real">Sim-to-Real 迁移</h3>
-<p>由于在真实机器人上训练成本高且存在安全风险，通常先在仿真环境中训练，再将策略迁移到真实世界。常用的技术包括：</p>
-<ul>
-<li><strong>域随机化 (Domain Randomization)</strong>：在仿真中随机化物理参数、视觉外观等，使策略对环境变化更鲁棒</li>
-<li><strong>域适应 (Domain Adaptation)</strong>：显式减小仿真与真实之间的分布差异</li>
-<li><strong>系统辨识 (System Identification)</strong>：提高仿真模型的准确度</li>
-</ul>
-<h2 id="_6">常用框架与工具</h2>
+<h2 id="_23">基准测试环境</h2>
+<p>标准化的基准环境是比较算法性能、验证新方法的重要工具。以下是机器人强化学习领域常用的基准测试环境：</p>
+<table>
+<thead>
+<tr>
+<th>环境</th>
+<th>说明</th>
+<th>适用算法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Gymnasium MuJoCo</td>
+<td>Ant、HalfCheetah、Hopper 等经典连续控制任务</td>
+<td>SAC、TD3、PPO</td>
+</tr>
+<tr>
+<td>Isaac Lab</td>
+<td>人形机器人运动、四足运动、操作等大规模 GPU 并行训练</td>
+<td>PPO</td>
+</tr>
+<tr>
+<td>dm_control</td>
+<td>DeepMind 基于 MuJoCo 的物理控制套件，任务多样</td>
+<td>SAC、DDPG</td>
+</tr>
+<tr>
+<td>robosuite</td>
+<td>机械臂操作基准，含多种抓取和组装任务</td>
+<td>BC、GAIL</td>
+</tr>
+<tr>
+<td>MetaWorld</td>
+<td>50 种操作任务，支持多任务和元学习评估</td>
+<td>SAC、多任务 RL</td>
+</tr>
+<tr>
+<td>D4RL</td>
+<td>离线强化学习标准数据集，包含运动和操作数据</td>
+<td>CQL、IQL、TD3+BC</td>
+</tr>
+<tr>
+<td>SMAC</td>
+<td>星际争霸多智能体挑战，常用于合作 MARL 评估</td>
+<td>QMIX、MAPPO</td>
+</tr>
+</tbody>
+</table>
+<h3 id="mujoco">MuJoCo 环境快速上手</h3>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">gymnasium</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">gym</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="c1"># 创建 HalfCheetah 环境</span>
+<span class="n">env</span> <span class="o">=</span> <span class="n">gym</span><span class="o">.</span><span class="n">make</span><span class="p">(</span><span class="s2">&quot;HalfCheetah-v4&quot;</span><span class="p">,</span> <span class="n">render_mode</span><span class="o">=</span><span class="s2">&quot;human&quot;</span><span class="p">)</span>
+<span class="n">obs</span><span class="p">,</span> <span class="n">info</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">reset</span><span class="p">(</span><span class="n">seed</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">):</span>
+    <span class="c1"># 随机动作（真实训练时替换为策略输出）</span>
+    <span class="n">action</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">action_space</span><span class="o">.</span><span class="n">sample</span><span class="p">()</span>
+    <span class="n">obs</span><span class="p">,</span> <span class="n">reward</span><span class="p">,</span> <span class="n">terminated</span><span class="p">,</span> <span class="n">truncated</span><span class="p">,</span> <span class="n">info</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="n">action</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">terminated</span> <span class="ow">or</span> <span class="n">truncated</span><span class="p">:</span>
+        <span class="n">obs</span><span class="p">,</span> <span class="n">info</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
+
+<span class="n">env</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</code></pre></div>
+<h2 id="_24">常用框架与工具</h2>
 <table>
 <thead>
 <tr>
@@ -4223,15 +6162,33 @@ J(\pi) = \sum_{t=0}^{T} \mathbb{E}_{(s_t, a_t) \sim \rho_\pi} \left[ r(s_t, a_t)
 <td>dm_control</td>
 <td>DeepMind 基于 MuJoCo 的控制任务套件</td>
 </tr>
+<tr>
+<td>RSL-RL</td>
+<td>ETH Zurich 专为腿足机器人设计的轻量 RL 框架，与 Isaac Lab 深度集成</td>
+</tr>
+<tr>
+<td>CleanRL</td>
+<td>单文件实现的教学级 RL 代码库，适合理解算法细节</td>
+</tr>
 </tbody>
 </table>
-<h2 id="_7">参考资料</h2>
+<h2 id="_25">参考资料</h2>
 <ol>
 <li>Reinforcement learning. Wikipedia. <a href="https://en.wikipedia.org/wiki/Reinforcement_learning">https://en.wikipedia.org/wiki/Reinforcement_learning</a></li>
 <li>Sutton, R. S. &amp; Barto, A. G. (2018). <em>Reinforcement Learning: An Introduction</em> (2nd ed.). MIT Press. <a href="http://incompleteideas.net/book/the-book-2nd.html">在线版本</a></li>
 <li>Schulman, J., et al. (2017). Proximal Policy Optimization Algorithms. <em>arXiv:1707.06347</em>.</li>
 <li>Haarnoja, T., et al. (2018). Soft Actor-Critic: Off-Policy Maximum Entropy Deep Reinforcement Learning with a Stochastic Actor. <em>ICML 2018</em>.</li>
 <li>Zhao, W., et al. (2020). Sim-to-Real Transfer in Deep Reinforcement Learning for Robotics: a Survey. <em>arXiv:2009.13303</em>.</li>
+<li>Kumar, A., et al. (2020). Conservative Q-Learning for Offline Reinforcement Learning. <em>NeurIPS 2020</em>.</li>
+<li>Kostrikov, I., et al. (2021). Offline Reinforcement Learning with Implicit Q-Learning. <em>ICLR 2022</em>.</li>
+<li>Fujimoto, S. &amp; Gu, S. S. (2021). A Minimalist Approach to Offline Reinforcement Learning. <em>NeurIPS 2021</em>. (TD3+BC)</li>
+<li>Ho, J. &amp; Ermon, S. (2016). Generative Adversarial Imitation Learning. <em>NeurIPS 2016</em>.</li>
+<li>Ross, S., et al. (2011). A Reduction of Imitation Learning and Structured Prediction to No-Regret Online Learning. <em>AISTATS 2011</em>. (DAgger)</li>
+<li>Lowe, R., et al. (2017). Multi-Agent Actor-Critic for Mixed Cooperative-Competitive Environments. <em>NeurIPS 2017</em>. (MADDPG)</li>
+<li>Kumar, V., et al. (2021). RMA: Rapid Motor Adaptation for Legged Robots. <em>RSS 2021</em>. (师生蒸馏)</li>
+<li>Ng, A. Y., et al. (1999). Policy Invariance Under Reward Transformations: Theory and Application to Reward Shaping. <em>ICML 1999</em>.</li>
+<li>Raffin, A., et al. (2021). Stable-Baselines3: Reliable Reinforcement Learning Implementations. <em>JMLR 22(268)</em>.</li>
+<li>Mittal, M., et al. (2023). Orbit: A Unified Simulation Framework for Interactive Robot Learning Environments. <em>IEEE RA-L</em>. (Isaac Lab 前身)</li>
 </ol>
 
 
@@ -4241,6 +6198,8 @@ J(\pi) = \sum_{t=0}^{T} \mathbb{E}_{(s_t, a_t) \sim \rho_\pi} \left[ r(s_t, a_t)
 
 
 
+
+  
 
 
 

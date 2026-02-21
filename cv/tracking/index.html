@@ -1,0 +1,5728 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="机器人领域的公共知识库">
+      
+      
+        <meta name="author" content="YFRL">
+      
+      
+        <link rel="canonical" href="https://yfrobotics.github.io/cv/tracking/">
+      
+      
+        <link rel="prev" href="../segmentation/">
+      
+      
+        <link rel="next" href="../pose-estimation/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+    
+    
+      
+        <title>目标跟踪 - 云飞机器人中文维基</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Sans:300,300i,400,400i,700,700i%7CFira+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Fira Sans";--md-code-font:"Fira Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../_static/css/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-PJC5MCXWKL"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-PJC5MCXWKL",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-PJC5MCXWKL",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="red">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="云飞机器人中文维基" class="md-header__button md-logo" aria-label="云飞机器人中文维基" data-md-component="logo">
+      
+  <img src="../../logo-site.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            云飞机器人中文维基
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              目标跟踪
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/yfrobotics/robowiki-cn" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    yfrobotics/robowiki-cn
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../.." class="md-tabs__link">
+          
+  
+  
+  首页
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../control/" class="md-tabs__link">
+          
+  
+  
+  控制
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../sensing/" class="md-tabs__link">
+          
+  
+  
+  感知
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+  视觉
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../planning/" class="md-tabs__link">
+          
+  
+  
+  规划
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../learning/ml/" class="md-tabs__link">
+          
+  
+  
+  学习
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../simulation/" class="md-tabs__link">
+          
+  
+  
+  仿真
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../ros/" class="md-tabs__link">
+          
+  
+  
+  ROS
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../linux/" class="md-tabs__link">
+          
+  
+  
+  Linux
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../rtos/" class="md-tabs__link">
+          
+  
+  
+  RTOS
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../hardware/" class="md-tabs__link">
+          
+  
+  
+  硬件
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../database/" class="md-tabs__link">
+          
+  
+  
+  数据库
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../resources/" class="md-tabs__link">
+          
+  
+  
+  资源
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="云飞机器人中文维基" class="md-nav__button md-logo" aria-label="云飞机器人中文维基" data-md-component="logo">
+      
+  <img src="../../logo-site.png" alt="logo">
+
+    </a>
+    云飞机器人中文维基
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/yfrobotics/robowiki-cn" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    yfrobotics/robowiki-cn
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首页
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    首页
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    介绍
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    什么是机器人？
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../courses/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    机器人知识课程组成
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to-contribute/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    如何贡献这个维基？
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../standard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    书写规范
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contributors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    贡献者名单
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    控制
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    控制
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../control/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    控制系统
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../control/modelling/modelling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    控制系统建模
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../control/modelling/state-space/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    状态空间法
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../control/pid/pid/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PID控制器
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../control/lqr/lqr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    线性二次型调节器
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../control/mpc/mpc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MPC控制器
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../control/nn/nn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    神经网络控制器 (Neural Network Controller)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../control/adaptive/adaptive/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    自适应控制
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    感知
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    感知
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sensing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    机器人传感技术
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sensing/sensors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    机器人常用传感器
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sensing/depth-camera/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    深度视觉相机
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sensing/sensor-fusion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    传感器融合
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sensing/slam/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SLAM (同时定位与建图)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    视觉
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    视觉
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    机器视觉
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../object-detection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    目标检测 (Object Detection)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../segmentation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    图像分割
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    目标跟踪
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    目标跟踪
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        跟踪任务概述
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="跟踪任务概述">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        跟踪与检测的区别
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        单目标跟踪与多目标跟踪
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        在机器人中的应用
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        单目标跟踪：相关滤波方法
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="单目标跟踪：相关滤波方法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mosse" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MOSSE
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kcf" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        KCF
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#csrt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CSRT
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        相关滤波方法对比
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        单目标跟踪：孪生网络方法
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="单目标跟踪：孪生网络方法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#siamfc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SiamFC
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#siamrpn" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SiamRPN++
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#siammask" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SiamMask
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transformer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        单目标跟踪：Transformer 方法
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="单目标跟踪：Transformer 方法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ostrack" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OSTrack
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#droptrack" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DropTrack
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transformer_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transformer 跟踪方法的优势
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SOT 方法横向对比
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        多目标跟踪：检测-关联框架
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="多目标跟踪：检测-关联框架">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sort" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SORT
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deepsort" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DeepSORT
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bytetrack" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ByteTrack
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#strongsort" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        StrongSORT
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        检测-关联方法对比
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        多目标跟踪：端到端方法
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="多目标跟踪：端到端方法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#motr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MOTR
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trackformer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TrackFormer
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        评测指标
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="评测指标">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mota" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        多目标跟踪精度（MOTA）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#motp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        多目标跟踪精准度（MOTP）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#idf1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IDF1
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hota" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HOTA
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        单目标跟踪指标
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        机器人应用场景
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="机器人应用场景">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#person-following" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        人员跟随（Person Following）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        多目标感知与社交导航
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#visual-servoing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        视觉伺服（Visual Servoing）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        常用工具与数据集
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="常用工具与数据集">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        开发工具与框架
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        单目标跟踪数据集
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        多目标跟踪数据集
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        参考资料
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pose-estimation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    位姿估计
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3d-vision/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    三维视觉
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    规划
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    规划
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../planning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    机器人规划
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../planning/decisionmaking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    决策规划
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../planning/pathplanning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    路径规划
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../planning/motionplanning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    运动规划
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    学习
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    学习
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../learning/ml/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    机器学习
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../learning/rl/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    强化学习
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../learning/dl/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    深度学习
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    仿真
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    仿真
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../simulation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    机器人仿真
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../simulation/gazebo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gazebo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../simulation/vrep/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CoppeliaSim (V-REP)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../simulation/mujoco/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MuJoCo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../simulation/pybullet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PyBullet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../simulation/webots/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Webots
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../simulation/robotics-toolbox/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MATLAB Robotics Toolbox
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../simulation/stage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Stage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../simulation/unreal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unreal Engine
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../simulation/unity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../simulation/nvidiaomniverse/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NVIDIA Omniverse / Isaac Sim
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ROS
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    ROS
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ros/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ROS (机器人操作系统)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ros/ros1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ROS 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ros/ros2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ROS 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linux
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Linux
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linux
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/commands/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linux常用命令
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/shell-scripting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shell 脚本与机器人自动化
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RTOS
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    RTOS
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rtos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RTOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rtos/freertos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FreeRTOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rtos/ucos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    μC/OS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rtos/vxworks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    VxWorks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rtos/qnx/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    QNX
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    硬件
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    硬件
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hardware/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    机器人硬件平台
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../arduino/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Arduino
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../raspberrypi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Raspberry Pi
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../jetson/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Nvidia Jetson
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    数据库
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    数据库
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    机器人数据库
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/dataset/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    机器人与视觉数据集
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_12_3" id="__nav_12_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    机器人图鉴
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_12_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    机器人图鉴
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/robots/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    机器人图鉴
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/nao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NAO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/atlas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Atlas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/optimus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Optimus（擎天柱）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/figure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Figure 02
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/asimo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ASIMO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/digit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Digit
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/unitree-h1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unitree H1 / G1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/spot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Boston Dynamics Spot
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/pepper/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SoftBank Pepper
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/apollo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Apptronik Apollo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/walker-s/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    优必选 Walker S
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_12_4" id="__nav_12_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    机器人企业
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_12_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    机器人企业
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/companies/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    机器人公司企业
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/boston-dynamics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    波士顿动力 | Boston Dynamics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_12_5" id="__nav_12_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    机器人实验室
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_12_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    机器人实验室
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/labs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    机器人实验室与研发机构（国际）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/labs-cn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    中国机器人研究机构数据库
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/conferences/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    机器人国际会议与期刊列表
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/standard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    机器人领域行业标准
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/competitions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    机器人竞赛
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    资源
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    资源
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    机器人资源
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/software/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    机器人工具与软件
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/books/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    机器人图书
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/videos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    机器人视频
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        跟踪任务概述
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="跟踪任务概述">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        跟踪与检测的区别
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        单目标跟踪与多目标跟踪
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        在机器人中的应用
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        单目标跟踪：相关滤波方法
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="单目标跟踪：相关滤波方法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mosse" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MOSSE
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kcf" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        KCF
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#csrt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CSRT
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        相关滤波方法对比
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        单目标跟踪：孪生网络方法
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="单目标跟踪：孪生网络方法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#siamfc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SiamFC
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#siamrpn" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SiamRPN++
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#siammask" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SiamMask
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transformer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        单目标跟踪：Transformer 方法
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="单目标跟踪：Transformer 方法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ostrack" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OSTrack
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#droptrack" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DropTrack
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transformer_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transformer 跟踪方法的优势
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SOT 方法横向对比
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        多目标跟踪：检测-关联框架
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="多目标跟踪：检测-关联框架">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sort" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SORT
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deepsort" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DeepSORT
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bytetrack" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ByteTrack
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#strongsort" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        StrongSORT
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        检测-关联方法对比
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        多目标跟踪：端到端方法
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="多目标跟踪：端到端方法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#motr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MOTR
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trackformer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TrackFormer
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        评测指标
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="评测指标">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mota" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        多目标跟踪精度（MOTA）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#motp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        多目标跟踪精准度（MOTP）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#idf1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IDF1
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hota" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HOTA
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        单目标跟踪指标
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        机器人应用场景
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="机器人应用场景">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#person-following" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        人员跟随（Person Following）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        多目标感知与社交导航
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#visual-servoing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        视觉伺服（Visual Servoing）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        常用工具与数据集
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="常用工具与数据集">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        开发工具与框架
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        单目标跟踪数据集
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        多目标跟踪数据集
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        参考资料
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="_1">目标跟踪</h1>
+<div class="admonition note">
+<p class="admonition-title">引言</p>
+<p>目标跟踪（Object Tracking）是计算机视觉与机器人感知的核心技术之一，旨在视频序列中持续定位特定目标的位置与状态。在机器人系统中，目标跟踪为人员跟随、抓取交互、视觉伺服等任务提供实时的空间感知能力，是连接感知与控制的重要桥梁。从工业机械臂的工件追踪到自主移动机器人的行人跟随，目标跟踪技术的鲁棒性与实时性直接决定了机器人系统的可用性与安全性。</p>
+</div>
+<h2 id="_2">跟踪任务概述</h2>
+<h3 id="_3">跟踪与检测的区别</h3>
+<p>目标检测（Object Detection）与目标跟踪虽然密切相关，但在任务定义上存在本质差异：</p>
+<ul>
+<li><strong>目标检测</strong>：对单帧图像进行处理，输出场景中所有特定类别目标的边界框（Bounding Box）与类别置信度，每帧独立运算，不维护时序信息。</li>
+<li><strong>目标跟踪</strong>：在连续视频帧中持续定位同一目标，维护目标的身份（Identity）信息，需利用时序上下文处理遮挡、快速运动、外观变化等挑战。</li>
+</ul>
+<p>跟踪器的输入通常为初始帧中目标的位置（或检测结果），输出为后续每帧中该目标的位置估计。与检测不同，跟踪器通常不需要在每帧重新识别目标类别，但需要解决目标身份的时序一致性问题。</p>
+<h3 id="_4">单目标跟踪与多目标跟踪</h3>
+<p>根据跟踪目标数量，可将跟踪任务分为两大类：</p>
+<p><strong>单目标跟踪</strong>（Single Object Tracking，SOT）：</p>
+<ul>
+<li>初始帧给定一个目标的边界框作为模板</li>
+<li>后续帧中持续定位该目标</li>
+<li>不需要类别先验，泛化能力强</li>
+<li>典型挑战：快速运动、遮挡、相似目标干扰、出视野再入场</li>
+</ul>
+<p><strong>多目标跟踪</strong>（Multi-Object Tracking，MOT）：</p>
+<ul>
+<li>同时跟踪场景中多个同类或异类目标</li>
+<li>需为每个目标分配唯一的轨迹编号（Track ID）</li>
+<li>涉及轨迹初始化、维护与终止</li>
+<li>典型挑战：目标间遮挡、身份切换（ID Switch）、新目标进入与目标消失</li>
+</ul>
+<h3 id="_5">在机器人中的应用</h3>
+<table>
+<thead>
+<tr>
+<th>应用场景</th>
+<th>跟踪类型</th>
+<th>典型算法</th>
+<th>关键需求</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>人员跟随（Person Following）</td>
+<td>SOT / MOT</td>
+<td>KCF、DeepSORT</td>
+<td>实时性、鲁棒遮挡处理</td>
+</tr>
+<tr>
+<td>目标抓取交互</td>
+<td>SOT</td>
+<td>SiamRPN++、OSTrack</td>
+<td>精确定位、6DoF估计</td>
+</tr>
+<tr>
+<td>视觉伺服（Visual Servoing）</td>
+<td>SOT</td>
+<td>CSRT、KCF</td>
+<td>低延迟、高帧率</td>
+</tr>
+<tr>
+<td>多人感知与社交导航</td>
+<td>MOT</td>
+<td>ByteTrack、StrongSORT</td>
+<td>多目标身份一致性</td>
+</tr>
+<tr>
+<td>工业质检与装配</td>
+<td>SOT / MOT</td>
+<td>SiamMask、SORT</td>
+<td>像素级精度</td>
+</tr>
+<tr>
+<td>无人机目标追踪</td>
+<td>SOT</td>
+<td>SiamFC、DropTrack</td>
+<td>视角变化鲁棒性</td>
+</tr>
+</tbody>
+</table>
+<p>在视觉伺服中，跟踪器的输出（目标位置/速度）直接作为控制律的反馈信号，因此对跟踪的实时性与稳定性要求极高。在多机器人协作场景中，多目标跟踪则用于感知同伴机器人和障碍物的动态状态。</p>
+<h2 id="_6">单目标跟踪：相关滤波方法</h2>
+<p>相关滤波（Correlation Filter）方法基于信号处理理论，通过学习一个滤波器使其与目标模板的互相关响应最大，从而在搜索区域中定位目标。其核心优势在于可借助快速傅里叶变换（Fast Fourier Transform，FFT）在频域高效计算，实现实时跟踪。</p>
+<h3 id="mosse">MOSSE</h3>
+<p><strong>MOSSE</strong>（Minimum Output Sum of Squared Error，最小输出平方误差之和）由 Bolme 等人于 2010 年提出，是相关滤波跟踪的奠基性工作。</p>
+<p><strong>核心思想</strong>：在频域学习一个滤波器 <script type="math/tex">\hat{H}</script>，使其与目标图像块 <script type="math/tex">F_i</script> 的相关响应尽量接近预期的高斯响应 <script type="math/tex">G_i</script>：</p>
+<p>
+<script type="math/tex; mode=display">
+\min_H \sum_i \left| F_i \odot H^* - G_i \right|^2
+</script>
+</p>
+<p>其中 <script type="math/tex">\odot</script> 表示逐元素相乘，<script type="math/tex">{}^*</script> 表示共轭。闭式解为：</p>
+<p>
+<script type="math/tex; mode=display">
+\hat{H}^* = \frac{\sum_i G_i \odot F_i^*}{\sum_i F_i \odot F_i^* + \varepsilon}
+</script>
+</p>
+<p><strong>在线更新</strong>：通过指数加权移动平均更新分子 <script type="math/tex">A</script> 与分母 <script type="math/tex">B</script>：</p>
+<p>
+<script type="math/tex; mode=display">
+A_t = (1 - \eta) A_{t-1} + \eta G_t \odot F_t^*, \quad B_t = (1 - \eta) B_{t-1} + \eta F_t \odot F_t^*
+</script>
+</p>
+<p>其中 <script type="math/tex">\eta</script> 为学习率。MOSSE 速度极快（可达 669 FPS），但精度有限，仅使用灰度特征。</p>
+<h3 id="kcf">KCF</h3>
+<p><strong>KCF</strong>（Kernelized Correlation Filters，核化相关滤波）由 Henriques 等人于 2015 年提出，是相关滤波方法的重要突破。</p>
+<p><strong>循环矩阵加速</strong>：KCF 的关键洞见是：对图像块进行循环移位所得到的所有样本构成一个循环矩阵（Circulant Matrix），可在频域对角化，从而将训练复杂度从 <script type="math/tex">O(n^3)</script> 降低至 <script type="math/tex">O(n \log n)</script>。</p>
+<p><strong>核技巧</strong>：将线性相关滤波推广至核空间，引入核函数 <script type="math/tex">k(\mathbf{x}, \mathbf{x}')</script>（常用高斯核或多项式核），使模型具备非线性拟合能力。在核空间中，预测响应为：</p>
+<p>
+<script type="math/tex; mode=display">
+\hat{f}(\mathbf{z}) = \mathbf{w}^T \mathbf{z} = \sum_i \alpha_i k(\mathbf{z}, \mathbf{x}_i)
+</script>
+</p>
+<p>利用循环矩阵的性质，核矩阵的对角化可在频域完成，训练与检测的计算均可通过 FFT 高效实现：</p>
+<p>
+<script type="math/tex; mode=display">
+\hat{\boldsymbol{\alpha}} = \frac{\hat{g}}{\hat{k}^{xx} + \lambda}
+</script>
+</p>
+<p>
+<script type="math/tex; mode=display">
+\hat{f}(\mathbf{z}) = \mathcal{F}^{-1}\left(\hat{k}^{xz} \odot \hat{\boldsymbol{\alpha}}\right)
+</script>
+</p>
+<p>其中 <script type="math/tex">\hat{k}^{xx}</script> 和 <script type="math/tex">\hat{k}^{xz}</script> 分别为自相关与互相关核向量的傅里叶变换，<script type="math/tex">\lambda</script> 为正则化系数。</p>
+<p>KCF 可使用 HOG（Histogram of Oriented Gradients，方向梯度直方图）特征，在保持实时性（~170 FPS）的同时大幅提升精度。</p>
+<h3 id="csrt">CSRT</h3>
+<p><strong>CSRT</strong>（Channel and Spatial Reliability Tracking，通道与空间可靠性跟踪）由 Lukezic 等人于 2017 年提出，是 OpenCV 内置的高精度相关滤波跟踪器。</p>
+<p><strong>核心改进</strong>：</p>
+<ol>
+<li>
+<p><strong>空间可靠性图（Spatial Reliability Map）</strong>：对目标区域的每个像素计算可靠性权重，突出目标前景、抑制背景干扰，使滤波器的学习更集中于目标本身。</p>
+</li>
+<li>
+<p><strong>通道可靠性（Channel Reliability）</strong>：对多通道特征（HOG + Color Names）中的每个通道赋予独立权重，自适应地选择最具判别力的特征通道。</p>
+</li>
+</ol>
+<p>优化目标变为带空间约束的相关滤波学习：</p>
+<p>
+<script type="math/tex; mode=display">
+\varepsilon(h) = \left\| \sum_c w_c \cdot (h_c * f_c) - g \right\|^2 + \lambda \sum_c \| h_c \|^2
+</script>
+</p>
+<p>其中 <script type="math/tex">w_c</script> 为通道可靠性权重，<script type="math/tex">h_c</script> 为各通道滤波器，<script type="math/tex">f_c</script> 为各通道特征图。</p>
+<p>CSRT 速度约 25 FPS，精度在相关滤波方法中居于前列，适用于对精度要求较高但允许适当延迟的机器人应用。</p>
+<h3 id="_7">相关滤波方法对比</h3>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>特征</th>
+<th>速度</th>
+<th>精度</th>
+<th>核技巧</th>
+<th>特点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MOSSE</td>
+<td>灰度</td>
+<td>~669 FPS</td>
+<td>低</td>
+<td>否</td>
+<td>速度最快，工程友好</td>
+</tr>
+<tr>
+<td>KCF</td>
+<td>HOG</td>
+<td>~170 FPS</td>
+<td>中</td>
+<td>是（高斯核）</td>
+<td>速度与精度均衡</td>
+</tr>
+<tr>
+<td>CSRT</td>
+<td>HOG + CN</td>
+<td>~25 FPS</td>
+<td>高</td>
+<td>否</td>
+<td>空间/通道可靠性加权</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_8">单目标跟踪：孪生网络方法</h2>
+<p>孪生网络（Siamese Network）方法将跟踪问题转化为相似度度量学习问题：离线训练一个深度神经网络，使其能够度量模板图像块与候选区域的相似度，在线跟踪时无需模型更新，直接前向推理即可定位目标。</p>
+<h3 id="siamfc">SiamFC</h3>
+<p><strong>SiamFC</strong>（Siamese Fully-Convolutional Network，孪生全卷积网络）由 Bertinetto 等人于 2016 年提出，开创了基于深度学习的孪生网络跟踪范式。</p>
+<p><strong>网络结构</strong>：采用权重共享的双分支卷积网络，分别提取模板图像块 <script type="math/tex">\mathbf{z}</script>（初始帧目标区域）与搜索区域 <script type="math/tex">\mathbf{x}</script>（当前帧）的深度特征，通过互相关（Cross-Correlation）操作计算相似度响应图：</p>
+<p>
+<script type="math/tex; mode=display">
+f(\mathbf{z}, \mathbf{x}) = \varphi(\mathbf{z}) \star \varphi(\mathbf{x}) + b \cdot \mathbf{1}
+</script>
+</p>
+<p>其中 <script type="math/tex">\varphi(\cdot)</script> 为共享的特征提取网络（AlexNet），<script type="math/tex">\star</script> 表示互相关，<script type="math/tex">b</script> 为偏置项，响应图的峰值位置即为目标估计位置。</p>
+<p><strong>训练策略</strong>：使用 ImageNet VID 等大规模视频数据集离线训练，正负样本对学习度量函数，无需在线更新，推理速度可达 86 FPS。</p>
+<p><strong>局限性</strong>：</p>
+<ul>
+<li>仅输出位置，不估计尺度变化（需多尺度搜索）</li>
+<li>不进行在线模型更新，长时跟踪易漂移</li>
+</ul>
+<h3 id="siamrpn">SiamRPN++</h3>
+<p><strong>SiamRPN++</strong> 由 Li 等人于 2019 年提出，将区域建议网络（Region Proposal Network，RPN）引入孪生网络框架。</p>
+<p><strong>核心改进</strong>：</p>
+<ol>
+<li>
+<p><strong>深层骨干网络</strong>：使用 ResNet-50 替代 AlexNet，通过调整步长和空洞卷积（Dilated Convolution）保持特征图分辨率，并通过随机裁剪技巧打破平移不变性限制，使深层网络可用于跟踪。</p>
+</li>
+<li>
+<p><strong>分类与回归双分支</strong>：在互相关特征图上增加 RPN 头，同时输出分类分数（目标/背景）与边界框回归偏移量 <script type="math/tex">(\Delta x, \Delta y, \Delta w, \Delta h)</script>，直接预测精确的边界框而非仅输出响应峰值。</p>
+</li>
+<li>
+<p><strong>多层特征聚合</strong>：在 ResNet 的多个阶段分别计算互相关并加权融合，提升对尺度变化的鲁棒性。</p>
+</li>
+</ol>
+<p>SiamRPN++ 在 LaSOT 和 GOT-10k 基准上取得了显著提升，成为孪生网络方法的重要基准。</p>
+<h3 id="siammask">SiamMask</h3>
+<p><strong>SiamMask</strong> 由 Wang 等人于 2019 年提出，在孪生网络框架中增加了像素级掩码（Mask）分支，实现了同时输出边界框与目标掩码的半监督视频目标分割（Video Object Segmentation，VOS）功能。</p>
+<p><strong>网络结构扩展</strong>：在 SiamRPN 框架基础上，增加第三个分支用于预测目标的二值掩码。掩码分支以互相关特征为输入，通过上采样网络恢复到原始分辨率，输出像素级分割结果。</p>
+<p><strong>应用价值</strong>：在机器人抓取与交互场景中，像素级目标轮廓比边界框提供更精确的空间信息，有助于估计目标形状、计算抓取点。</p>
+<h2 id="transformer">单目标跟踪：Transformer 方法</h2>
+<p>随着视觉 Transformer（Vision Transformer，ViT）在图像识别任务中取得突破性进展，基于 Transformer 的目标跟踪方法迅速兴起，通过自注意力（Self-Attention）机制建模目标模板与搜索区域的全局依赖关系，克服了相关滤波方法局部性强的限制和孪生网络方法特征交互不充分的问题。</p>
+<h3 id="ostrack">OSTrack</h3>
+<p><strong>OSTrack</strong>（One-Stream Tracking，单流跟踪）由 Ye 等人于 2022 年提出，采用单一 Transformer 流对模板图像块与搜索区域进行联合编码。</p>
+<p><strong>核心思想</strong>：将模板 Token 序列 <script type="math/tex">\mathbf{z}</script> 与搜索区域 Token 序列 <script type="math/tex">\mathbf{x}</script> 拼接后送入标准 ViT 编码器，通过多头自注意力（Multi-Head Self-Attention，MHSA）机制在两者之间建立全局交互：</p>
+<p>
+<script type="math/tex; mode=display">
+[\mathbf{z}', \mathbf{x}'] = \text{MHSA}\left([\mathbf{z}, \mathbf{x}]\right)
+</script>
+</p>
+<p>相比孪生网络中的互相关操作，自注意力能够在更深层次建立模板与搜索区域的双向特征交互，无需手工设计特征融合模块。</p>
+<p><strong>Early Candidate Elimination</strong>：OSTrack 引入候选消除机制，在 ViT 编码的中间层逐步过滤掉搜索区域中与模板相关性低的背景 Token，降低计算量并聚焦于目标区域。</p>
+<p><strong>性能</strong>：OSTrack-384 在 LaSOT 上 AUC 达 71.1%，在 GOT-10k 上 AO 达 73.7%，兼顾精度与速度（~58 FPS）。</p>
+<h3 id="droptrack">DropTrack</h3>
+<p><strong>DropTrack</strong> 在 OSTrack 框架基础上引入 Token Dropout 正则化策略，通过随机丢弃训练时的 Token 增强模型对遮挡和部分可见的鲁棒性。</p>
+<p><strong>核心机制</strong>：</p>
+<ul>
+<li>在训练阶段随机丢弃目标模板和搜索区域的部分 Token，迫使模型从不完整的局部信息中恢复目标位置，提升抗遮挡能力。</li>
+<li>推理阶段使用完整 Token 序列，无额外计算开销。</li>
+</ul>
+<h3 id="transformer_1">Transformer 跟踪方法的优势</h3>
+<ol>
+<li><strong>全局建模能力</strong>：自注意力机制可捕获长距离依赖，有效处理大尺度运动与目标消失再出现。</li>
+<li><strong>端到端学习</strong>：无需手工设计特征交互模块，特征提取与匹配统一优化。</li>
+<li><strong>大规模预训练迁移</strong>：可直接加载 ImageNet 预训练的 ViT 权重，充分利用大规模视觉表征。</li>
+</ol>
+<h3 id="sot">SOT 方法横向对比</h3>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>类别</th>
+<th>骨干网络</th>
+<th>LaSOT AUC</th>
+<th>GOT-10k AO</th>
+<th>速度（FPS）</th>
+<th>特点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>KCF</td>
+<td>相关滤波</td>
+<td>HOG</td>
+<td>~33%</td>
+<td>-</td>
+<td>~170</td>
+<td>轻量实时</td>
+</tr>
+<tr>
+<td>CSRT</td>
+<td>相关滤波</td>
+<td>HOG+CN</td>
+<td>~40%</td>
+<td>-</td>
+<td>~25</td>
+<td>精度较高</td>
+</tr>
+<tr>
+<td>SiamFC</td>
+<td>孪生网络</td>
+<td>AlexNet</td>
+<td>~33%</td>
+<td>~37%</td>
+<td>~86</td>
+<td>范式开创</td>
+</tr>
+<tr>
+<td>SiamRPN++</td>
+<td>孪生网络</td>
+<td>ResNet-50</td>
+<td>~49.6%</td>
+<td>~51.7%</td>
+<td>~35</td>
+<td>引入 RPN</td>
+</tr>
+<tr>
+<td>SiamMask</td>
+<td>孪生网络</td>
+<td>ResNet-50</td>
+<td>-</td>
+<td>-</td>
+<td>~55</td>
+<td>像素级掩码</td>
+</tr>
+<tr>
+<td>OSTrack-384</td>
+<td>Transformer</td>
+<td>ViT-B</td>
+<td>~71.1%</td>
+<td>~73.7%</td>
+<td>~58</td>
+<td>联合编码</td>
+</tr>
+<tr>
+<td>DropTrack</td>
+<td>Transformer</td>
+<td>ViT-B</td>
+<td>~71.8%</td>
+<td>~74.1%</td>
+<td>~57</td>
+<td>Dropout 增强</td>
+</tr>
+</tbody>
+</table>
+<h2 id="-">多目标跟踪：检测-关联框架</h2>
+<p>多目标跟踪的主流范式是<strong>检测后跟踪</strong>（Tracking-by-Detection，TbD）：先用目标检测器在每帧获得检测框，再将当前帧检测结果与历史轨迹进行关联，维护每个目标的连续轨迹。</p>
+<h3 id="sort">SORT</h3>
+<p><strong>SORT</strong>（Simple Online and Realtime Tracking）由 Bewley 等人于 2016 年提出，以简洁高效著称，是检测-关联范式的重要基准。</p>
+<p><strong>状态表示</strong>：SORT 使用卡尔曼滤波（Kalman Filter）对每条轨迹的状态进行预测与更新，状态向量定义为：</p>
+<p>
+<script type="math/tex; mode=display">
+\mathbf{x} = [u, v, s, r, \dot{u}, \dot{v}, \dot{s}]^T
+</script>
+</p>
+<p>其中 <script type="math/tex">u, v</script> 为边界框中心坐标，<script type="math/tex">s</script> 为边界框面积，<script type="math/tex">r</script> 为宽高比（认为固定不变），<script type="math/tex">\dot{u}, \dot{v}, \dot{s}</script> 为对应的速度分量。观测量为 <script type="math/tex">[u, v, s, r]^T</script>。</p>
+<p><strong>预测步骤</strong>：</p>
+<p>
+<script type="math/tex; mode=display">
+\hat{\mathbf{x}}_{t|t-1} = F \mathbf{x}_{t-1|t-1}
+</script>
+</p>
+<p>
+<script type="math/tex; mode=display">
+P_{t|t-1} = F P_{t-1|t-1} F^T + Q
+</script>
+</p>
+<p><strong>更新步骤（匹配后）</strong>：</p>
+<p>
+<script type="math/tex; mode=display">
+K_t = P_{t|t-1} H^T (H P_{t|t-1} H^T + R)^{-1}
+</script>
+</p>
+<p>
+<script type="math/tex; mode=display">
+\mathbf{x}_{t|t} = \hat{\mathbf{x}}_{t|t-1} + K_t (z_t - H \hat{\mathbf{x}}_{t|t-1})
+</script>
+</p>
+<p>其中 <script type="math/tex">F</script> 为状态转移矩阵，<script type="math/tex">H</script> 为观测矩阵，<script type="math/tex">Q</script>、<script type="math/tex">R</script> 分别为过程噪声和观测噪声协方差矩阵。</p>
+<p><strong>关联策略</strong>：使用<strong>匈牙利算法</strong>（Hungarian Algorithm）求解检测框与轨迹预测框之间的最优匹配，代价矩阵基于<strong>交并比</strong>（Intersection over Union，IoU）：</p>
+<p>
+<script type="math/tex; mode=display">
+\text{cost}_{ij} = 1 - \text{IoU}(\text{det}_i, \text{pred}_j)
+</script>
+</p>
+<p>SORT 简洁高效，速度可达 260 Hz，但纯 IoU 关联在遮挡和相似目标密集场景中身份切换率较高。</p>
+<h3 id="deepsort">DeepSORT</h3>
+<p><strong>DeepSORT</strong>（Deep SORT）由 Wojke 等人于 2017 年提出，在 SORT 基础上引入外观特征（Appearance Feature）以减少身份切换。</p>
+<p><strong>核心改进</strong>：</p>
+<ol>
+<li>
+<p><strong>外观描述子</strong>：训练一个轻量级重识别（Re-Identification，ReID）网络，对每个检测框提取 128 维外观特征向量。</p>
+</li>
+<li>
+<p><strong>级联匹配</strong>：将关联分为两阶段。首先对近期更新的轨迹进行优先匹配（按上次更新时间排序级联匹配），其次对未匹配的轨迹进行 IoU 匹配。</p>
+</li>
+<li>
+<p><strong>综合代价函数</strong>：结合马氏距离（Mahalanobis Distance）和余弦距离（Cosine Distance）：</p>
+</li>
+</ol>
+<p>
+<script type="math/tex; mode=display">
+c_{ij} = \lambda \cdot d_{\text{Mah}}(i, j) + (1 - \lambda) \cdot d_{\text{cos}}(i, j)
+</script>
+</p>
+<p>其中 <script type="math/tex">d_{\text{Mah}}</script> 利用卡尔曼滤波的不确定性估计运动一致性，<script type="math/tex">d_{\text{cos}}</script> 度量外观相似度。</p>
+<p>DeepSORT 在 MOT16 上显著降低了身份切换次数，成为此后众多改进方法的基础。</p>
+<h3 id="bytetrack">ByteTrack</h3>
+<p><strong>ByteTrack</strong> 由 Zhang 等人于 2022 年提出，核心创新在于充分利用<strong>低置信度检测框</strong>（Low-Score Detections）。</p>
+<p><strong>动机</strong>：传统方法仅使用高置信度检测框（阈值通常 <script type="math/tex">\geq 0.5</script>）进行关联，而被遮挡或模糊的目标往往产生低置信度检测，直接丢弃会导致轨迹过早终止。</p>
+<p><strong>两步关联策略</strong>：</p>
+<ol>
+<li>
+<p><strong>第一步</strong>：高置信度检测框（分数 <script type="math/tex">\geq \tau_\text{high}</script>）与所有轨迹进行关联，得到已匹配轨迹和未匹配轨迹。</p>
+</li>
+<li>
+<p><strong>第二步</strong>：低置信度检测框（分数在 <script type="math/tex">[\tau_\text{low}, \tau_\text{high})</script> 之间）与第一步未匹配的轨迹再次关联，恢复被遮挡目标的轨迹。</p>
+</li>
+</ol>
+<p>低置信度检测框不用于初始化新轨迹，仅用于维持已有轨迹，有效减少遮挡导致的轨迹中断。ByteTrack 在 DanceTrack 和 MOT17 上均取得了当时 SOTA 性能。</p>
+<h3 id="strongsort">StrongSORT</h3>
+<p><strong>StrongSORT</strong> 由 Du 等人于 2022 年提出，通过系统性整合多项改进构建了强基线：</p>
+<ol>
+<li>
+<p><strong>EMA（Exponential Moving Average）外观特征更新</strong>：对轨迹的外观特征进行指数加权更新，保持对外观变化的适应性。</p>
+</li>
+<li>
+<p><strong>NSA（Non-linear motion model with Speed-Adaptive）卡尔曼滤波</strong>：根据目标运动速度自适应调整卡尔曼滤波的过程噪声，提升快速运动估计精度。</p>
+</li>
+<li>
+<p><strong>AFLink（Appearance-Free Link）轨迹修复</strong>：对短轨迹片段（Tracklet）进行离线后处理，合并被遮挡打断的轨迹，降低碎片化（Fragmentation）。</p>
+</li>
+<li>
+<p><strong>GSI（Gaussian-smoothed Interpolation）插值</strong>：对轨迹中的空缺帧进行高斯平滑插值，生成平滑连续的轨迹。</p>
+</li>
+</ol>
+<h3 id="-_1">检测-关联方法对比</h3>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>运动模型</th>
+<th>外观特征</th>
+<th>关联算法</th>
+<th>低分检测利用</th>
+<th>特点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SORT</td>
+<td>卡尔曼滤波</td>
+<td>无</td>
+<td>匈牙利（IoU）</td>
+<td>否</td>
+<td>极简高效</td>
+</tr>
+<tr>
+<td>DeepSORT</td>
+<td>卡尔曼滤波</td>
+<td>ReID（128维）</td>
+<td>级联 + IoU</td>
+<td>否</td>
+<td>减少 ID Switch</td>
+</tr>
+<tr>
+<td>ByteTrack</td>
+<td>卡尔曼滤波</td>
+<td>无</td>
+<td>两步 IoU</td>
+<td>是</td>
+<td>遮挡处理优</td>
+</tr>
+<tr>
+<td>StrongSORT</td>
+<td>NSA卡尔曼</td>
+<td>EMA ReID</td>
+<td>综合代价</td>
+<td>否</td>
+<td>系统性综合改进</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_9">多目标跟踪：端到端方法</h2>
+<p>随着 Transformer 在目标检测（DETR）领域的成功，研究者开始探索直接用 Transformer 完成检测与跟踪的端到端联合学习，无需手工设计关联模块。</p>
+<h3 id="motr">MOTR</h3>
+<p><strong>MOTR</strong>（Multiple Object TRacking with Transformers）由 Zeng 等人于 2022 年提出，基于 Deformable DETR 框架，引入<strong>轨迹查询</strong>（Track Query）机制实现端到端多目标跟踪。</p>
+<p><strong>核心机制</strong>：</p>
+<ul>
+<li><strong>检测查询（Detection Query）</strong>：用于在当前帧检测新出现的目标，生成新轨迹。</li>
+<li><strong>轨迹查询（Track Query）</strong>：携带历史帧目标信息，跨帧传递，用于定位持续存在的目标。</li>
+</ul>
+<p>轨迹查询通过 Transformer 解码器与当前帧图像特征交互，自然地建模时序上下文，无需显式的运动预测与匹配步骤。MOTR 实现了真正意义上的端到端多目标跟踪训练与推理。</p>
+<h3 id="trackformer">TrackFormer</h3>
+<p><strong>TrackFormer</strong> 由 Meinhardt 等人于 2022 年提出，同样基于 DETR 框架，采用自回归式（Auto-regressive）跟踪设计。</p>
+<p><strong>核心思路</strong>：将上一帧的目标检测结果（以查询向量形式）作为当前帧解码器的额外输入查询，通过注意力机制在新帧中寻找对应目标，实现跨帧身份延续。新目标由标准的可学习目标查询（Object Queries）检测。</p>
+<p><strong>优势与挑战</strong>：</p>
+<ul>
+<li>检测与跟踪统一优化，无手工设计关联规则</li>
+<li>对大规模带标注跟踪数据需求更高</li>
+<li>当前在速度与精度上相比 ByteTrack 等优化方案仍有差距，但代表未来技术趋势</li>
+</ul>
+<h2 id="_10">评测指标</h2>
+<h3 id="mota">多目标跟踪精度（MOTA）</h3>
+<p><strong>MOTA</strong>（Multiple Object Tracking Accuracy，多目标跟踪精度）综合衡量漏检（False Negative，FN）、误检（False Positive，FP）和身份切换（ID Switch，IDSW）：</p>
+<p>
+<script type="math/tex; mode=display">
+\text{MOTA} = 1 - \frac{\sum_t (\text{FN}_t + \text{FP}_t + \text{IDSW}_t)}{\sum_t \text{GT}_t}
+</script>
+</p>
+<p>其中 <script type="math/tex">\text{GT}_t</script> 为第 <script type="math/tex">t</script> 帧的真实目标数量。MOTA 越高越好，最优值为 1。MOTA 对漏检和误检敏感，但不直接反映定位精度。</p>
+<h3 id="motp">多目标跟踪精准度（MOTP）</h3>
+<p><strong>MOTP</strong>（Multiple Object Tracking Precision，多目标跟踪精准度）衡量已匹配目标对之间的平均定位误差：</p>
+<p>
+<script type="math/tex; mode=display">
+\text{MOTP} = \frac{\sum_{t,i} d_{t,i}}{\sum_t c_t}
+</script>
+</p>
+<p>其中 <script type="math/tex">d_{t,i}</script> 为第 <script type="math/tex">t</script> 帧第 <script type="math/tex">i</script> 个匹配对的 IoU（或距离），<script type="math/tex">c_t</script> 为第 <script type="math/tex">t</script> 帧匹配对总数。MOTP 反映跟踪精度，与 MOTA 互补。</p>
+<h3 id="idf1">IDF1</h3>
+<p><strong>IDF1</strong> 基于身份的 F1 分数，重点评估跟踪器维护目标身份的能力：</p>
+<p>
+<script type="math/tex; mode=display">
+\text{IDF1} = \frac{2 \cdot \text{IDTP}}{2 \cdot \text{IDTP} + \text{IDFP} + \text{IDFN}}
+</script>
+</p>
+<p>其中 IDTP（Identity True Positive）为轨迹正确匹配的帧数，IDFP 和 IDFN 分别为身份误检和身份漏检。IDF1 对身份一致性更敏感，是评估长时跟踪质量的重要指标。</p>
+<h3 id="hota">HOTA</h3>
+<p><strong>HOTA</strong>（Higher Order Tracking Accuracy）由 Luiten 等人于 2021 年提出，旨在同时平衡检测精度与关联精度：</p>
+<p>
+<script type="math/tex; mode=display">
+\text{HOTA}(\alpha) = \sqrt{\text{DetA}(\alpha) \cdot \text{AssA}(\alpha)}
+</script>
+</p>
+<p>
+<script type="math/tex; mode=display">
+\text{HOTA} = \frac{1}{|\mathcal{A}|} \sum_{\alpha \in \mathcal{A}} \text{HOTA}(\alpha)
+</script>
+</p>
+<p>其中 <script type="math/tex">\alpha</script> 为 IoU 阈值（从 0.05 到 0.95 均匀采样），<script type="math/tex">\text{DetA}</script>（Detection Accuracy）衡量检测准确率，<script type="math/tex">\text{AssA}</script>（Association Accuracy）衡量关联准确率。HOTA 已成为 MOTChallenge 官方主要指标。</p>
+<h3 id="_11">单目标跟踪指标</h3>
+<table>
+<thead>
+<tr>
+<th>指标</th>
+<th>全称</th>
+<th>定义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Prec（精度）</td>
+<td>Precision</td>
+<td>预测中心点与真实中心点欧氏距离 <script type="math/tex">\leq 20</script> 像素的帧比例</td>
+</tr>
+<tr>
+<td>AUC</td>
+<td>Area Under Curve</td>
+<td>Success Plot（IoU 阈值 0~1）曲线下面积，综合衡量定位精度</td>
+</tr>
+<tr>
+<td>AO</td>
+<td>Average Overlap</td>
+<td>预测框与真实框 IoU 的平均值（GOT-10k 主要指标）</td>
+</tr>
+<tr>
+<td>SR0.5</td>
+<td>Success Rate at 0.5</td>
+<td>IoU <script type="math/tex">\geq 0.5</script> 的帧比例</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_12">机器人应用场景</h2>
+<h3 id="person-following">人员跟随（Person Following）</h3>
+<p>人员跟随是服务机器人、物流机器人和社交机器人的核心功能。典型系统架构：</p>
+<ol>
+<li><strong>检测</strong>：使用 YOLOv8 等实时检测器定位画面中所有行人。</li>
+<li><strong>跟踪</strong>：使用 DeepSORT 或 ByteTrack 维护多人轨迹，通过 ReID 特征锁定目标用户。</li>
+<li><strong>控制</strong>：将目标边界框中心与图像中心的像差转化为线速度和角速度指令，驱动机器人跟随。</li>
+</ol>
+<p><strong>挑战与对策</strong>：</p>
+<ul>
+<li><strong>目标遮挡</strong>：利用卡尔曼预测在遮挡期间维持轨迹，结合 ByteTrack 低分检测恢复策略。</li>
+<li><strong>人群密集</strong>：使用深度相机提供 3D 位置，在三维空间进行跟踪关联。</li>
+<li><strong>目标丢失</strong>：结合语义先验（如衣物颜色）和运动预测进行搜索恢复。</li>
+</ul>
+<h3 id="_13">多目标感知与社交导航</h3>
+<p>在多人环境中，机器人需实时感知所有行人的位置、速度和预测轨迹，以规划安全路径：</p>
+<ul>
+<li>使用 MOT 系统输出每个行人的轨迹历史</li>
+<li>基于恒速或社交力模型（Social Force Model）预测未来 1~3 秒的运动轨迹</li>
+<li>将预测轨迹作为动态障碍物输入局部规划器（如 DWA、TEB 算法）</li>
+</ul>
+<h3 id="visual-servoing">视觉伺服（Visual Servoing）</h3>
+<p>视觉伺服利用视觉反馈信息直接驱动机械臂或移动平台，无需精确的三维建模：</p>
+<p><strong>基于图像的视觉伺服（Image-Based Visual Servoing，IBVS）</strong>：</p>
+<p>
+<script type="math/tex; mode=display">
+\dot{\mathbf{q}} = \lambda \mathbf{J}_e^+ \mathbf{e}
+</script>
+</p>
+<p>其中 <script type="math/tex">\mathbf{e} = \mathbf{s} - \mathbf{s}^*</script> 为当前图像特征 <script type="math/tex">\mathbf{s}</script>（由跟踪器提供）与目标特征 <script type="math/tex">\mathbf{s}^*</script> 的误差，<script type="math/tex">\mathbf{J}_e^+</script> 为图像雅可比矩阵（Jacobian Matrix）的伪逆，<script type="math/tex">\lambda</script> 为控制增益，<script type="math/tex">\dot{\mathbf{q}}</script> 为关节速度指令。</p>
+<p>跟踪器为视觉伺服提供实时的目标特征（中心点、轮廓等），跟踪精度和延迟直接影响伺服控制性能。KCF 和 CSRT 因其低延迟特性常被用于对响应速度要求严苛的视觉伺服场景。</p>
+<h2 id="_14">常用工具与数据集</h2>
+<h3 id="_15">开发工具与框架</h3>
+<p><strong>OpenCV Tracking API</strong>：</p>
+<p>OpenCV 内置了多种经典跟踪器，提供统一的接口：</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">cv2</span>
+
+<span class="c1"># 创建 CSRT 跟踪器</span>
+<span class="n">tracker</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">TrackerCSRT_create</span><span class="p">()</span>
+
+<span class="c1"># 在第一帧中初始化（bbox 格式：x, y, w, h）</span>
+<span class="n">ret</span><span class="p">,</span> <span class="n">frame</span> <span class="o">=</span> <span class="n">cap</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="n">bbox</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">selectROI</span><span class="p">(</span><span class="n">frame</span><span class="p">)</span>
+<span class="n">tracker</span><span class="o">.</span><span class="n">init</span><span class="p">(</span><span class="n">frame</span><span class="p">,</span> <span class="n">bbox</span><span class="p">)</span>
+
+<span class="c1"># 后续帧更新</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">ret</span><span class="p">,</span> <span class="n">frame</span> <span class="o">=</span> <span class="n">cap</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    <span class="n">success</span><span class="p">,</span> <span class="n">bbox</span> <span class="o">=</span> <span class="n">tracker</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">frame</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">success</span><span class="p">:</span>
+        <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">h</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">bbox</span><span class="p">]</span>
+        <span class="n">cv2</span><span class="o">.</span><span class="n">rectangle</span><span class="p">(</span><span class="n">frame</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">),</span> <span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="n">w</span><span class="p">,</span> <span class="n">y</span><span class="o">+</span><span class="n">h</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span>
+</code></pre></div>
+<p>支持的跟踪器包括：<code>TrackerKCF</code>、<code>TrackerCSRT</code>、<code>TrackerMOSSE</code>、<code>TrackerGOTURN</code>、<code>TrackerMIL</code> 等。</p>
+<p><strong>其他常用框架</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>工具</th>
+<th>类型</th>
+<th>特点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>BoxMOT</td>
+<td>MOT 库</td>
+<td>集成 SORT、DeepSORT、ByteTrack、StrongSORT 等，统一接口</td>
+</tr>
+<tr>
+<td>MMTracking</td>
+<td>MOT/SOT 框架</td>
+<td>OpenMMLab 生态，支持大量算法和数据集</td>
+</tr>
+<tr>
+<td>PyTracking</td>
+<td>SOT 研究框架</td>
+<td>支持 OSTrack、DiMP 等，适合学术研究</td>
+</tr>
+<tr>
+<td>pysot</td>
+<td>SOT 框架</td>
+<td>支持 SiamRPN++、SiamMask 等孪生网络方法</td>
+</tr>
+<tr>
+<td>VisDrone SDK</td>
+<td>无人机跟踪</td>
+<td>专为无人机视角跟踪设计</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_16">单目标跟踪数据集</h3>
+<table>
+<thead>
+<tr>
+<th>数据集</th>
+<th>视频数</th>
+<th>平均帧数</th>
+<th>挑战属性</th>
+<th>主要用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OTB-100</td>
+<td>100</td>
+<td>~590</td>
+<td>遮挡、快速运动等 11 类</td>
+<td>早期标准基准</td>
+</tr>
+<tr>
+<td>GOT-10k</td>
+<td>10,000（训练）</td>
+<td>~150</td>
+<td>480 类目标，零样本泛化测试</td>
+<td>泛化性评测</td>
+</tr>
+<tr>
+<td>LaSOT</td>
+<td>1,400</td>
+<td>~2,500</td>
+<td>长时跟踪，14 类目标</td>
+<td>长时跟踪基准</td>
+</tr>
+<tr>
+<td>TrackingNet</td>
+<td>30,000+</td>
+<td>-</td>
+<td>自然视频，大规模</td>
+<td>大规模训练</td>
+</tr>
+<tr>
+<td>NFS（Need for Speed）</td>
+<td>100</td>
+<td>~3,830</td>
+<td>240 FPS 高速视频</td>
+<td>快速运动</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_17">多目标跟踪数据集</h3>
+<table>
+<thead>
+<tr>
+<th>数据集</th>
+<th>场景</th>
+<th>目标类型</th>
+<th>帧率</th>
+<th>特点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MOT16/17</td>
+<td>城市行人</td>
+<td>行人</td>
+<td>25~30 FPS</td>
+<td>MOT 基准，标注精细</td>
+</tr>
+<tr>
+<td>MOT20</td>
+<td>密集人群</td>
+<td>行人</td>
+<td>25 FPS</td>
+<td>超高密度场景</td>
+</tr>
+<tr>
+<td>DanceTrack</td>
+<td>舞蹈视频</td>
+<td>人体</td>
+<td>20 FPS</td>
+<td>外观相似、大范围运动</td>
+</tr>
+<tr>
+<td>BDD100K-MOT</td>
+<td>自动驾驶</td>
+<td>多类别</td>
+<td>5 FPS</td>
+<td>驾驶场景，8 类目标</td>
+</tr>
+<tr>
+<td>KITTI Tracking</td>
+<td>自动驾驶</td>
+<td>车辆、行人</td>
+<td>10 FPS</td>
+<td>激光雷达辅助标注</td>
+</tr>
+<tr>
+<td>VisDrone-MOT</td>
+<td>无人机视角</td>
+<td>多类别</td>
+<td>25 FPS</td>
+<td>小目标、密集场景</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_18">参考资料</h2>
+<ol>
+<li>
+<p>Bewley, A., Ge, Z., Ott, L., Ramos, F., &amp; Upcroft, B. (2016). Simple online and realtime tracking. <em>ICIP 2016</em>. https://doi.org/10.1109/ICIP.2016.7533003</p>
+</li>
+<li>
+<p>Bertinetto, L., Valmadre, J., Henriques, J. F., Vedaldi, A., &amp; Torr, P. H. S. (2016). Fully-convolutional siamese networks for object tracking. <em>ECCV 2016 Workshops</em>. https://doi.org/10.1007/978-3-319-48881-3_56</p>
+</li>
+<li>
+<p>Bolme, D. S., Beveridge, J. R., Draper, B. A., &amp; Lui, Y. M. (2010). Visual object tracking using adaptive correlation filters. <em>CVPR 2010</em>. https://doi.org/10.1109/CVPR.2010.5539960</p>
+</li>
+<li>
+<p>Du, Y., Zhao, Z., Song, Y., Zhao, Y., Su, F., Gong, T., &amp; Meng, H. (2023). StrongSORT: Make DeepSORT great again. <em>IEEE Transactions on Multimedia</em>. https://doi.org/10.1109/TMM.2023.3240881</p>
+</li>
+<li>
+<p>Henriques, J. F., Caseiro, R., Martins, P., &amp; Batista, J. (2015). High-speed tracking with kernelized correlation filters. <em>IEEE TPAMI</em>, 37(3), 583–596. https://doi.org/10.1109/TPAMI.2014.2345390</p>
+</li>
+<li>
+<p>Li, B., Wu, W., Wang, Q., Zhang, F., Xing, J., &amp; Yan, J. (2019). SiamRPN++: Evolution of Siamese visual tracking with very deep networks. <em>CVPR 2019</em>. https://doi.org/10.1109/CVPR.2019.00441</p>
+</li>
+<li>
+<p>Luiten, J., Osep, A., Dendorfer, P., Torr, P., Geiger, A., Leal-Taixé, L., &amp; Leibe, B. (2021). HOTA: A higher order metric for evaluating multi-object tracking. <em>IJCV</em>, 129, 548–578. https://doi.org/10.1007/s11263-020-01375-2</p>
+</li>
+<li>
+<p>Lukežič, A., Vojíř, T., Čehovin Zajc, L., Matas, J., &amp; Kristan, M. (2018). Discriminative correlation filter tracker with channel and spatial reliability. <em>IJCV</em>, 126(7), 671–688. https://doi.org/10.1007/s11263-017-1061-3</p>
+</li>
+<li>
+<p>Meinhardt, T., Kirillov, A., Leal-Taixe, L., &amp; Feichtenhofer, C. (2022). TrackFormer: Multi-object tracking with transformers. <em>CVPR 2022</em>. https://doi.org/10.1109/CVPR52688.2022.00864</p>
+</li>
+<li>
+<p>Wang, Q., Zhang, L., Bertinetto, L., Hu, W., &amp; Torr, P. H. S. (2019). Fast online object tracking and segmentation: A unifying approach. <em>CVPR 2019</em>. https://doi.org/10.1109/CVPR.2019.00142</p>
+</li>
+<li>
+<p>Wojke, N., Bewley, A., &amp; Paulus, D. (2017). Simple online and realtime tracking with a deep association metric. <em>ICIP 2017</em>. https://doi.org/10.1109/ICIP.2017.8296962</p>
+</li>
+<li>
+<p>Ye, B., Chang, H., Ma, B., Shan, S., &amp; Chen, X. (2022). Joint feature learning and relation modeling for tracking: A one-stream framework. <em>ECCV 2022</em>. https://doi.org/10.1007/978-3-031-20047-2_22</p>
+</li>
+<li>
+<p>Zeng, F., Dong, B., Zhang, Y., Wang, T., Zhang, X., &amp; Wei, Y. (2022). MOTR: End-to-end multiple-object tracking with transformer. <em>ECCV 2022</em>. https://doi.org/10.1007/978-3-031-19812-0_39</p>
+</li>
+<li>
+<p>Zhang, Y., Sun, P., Jiang, Y., Yu, D., Weng, F., Yuan, Z., Luo, P., Liu, W., &amp; Wang, X. (2022). ByteTrack: Multi-object tracking by associating every detection box. <em>ECCV 2022</em>. https://doi.org/10.1007/978-3-031-20047-2_1</p>
+</li>
+</ol>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML"></script>
+      
+    
+  </body>
+</html>

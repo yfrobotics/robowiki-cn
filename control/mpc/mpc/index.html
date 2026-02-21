@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://yfrobotics.github.io/control/mpc/mpc/">
       
       
-        <link rel="prev" href="../../pid/pid/">
+        <link rel="prev" href="../../lqr/lqr/">
       
       
         <link rel="next" href="../../nn/nn/">
@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
     
     
       
@@ -60,6 +60,16 @@
     <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-PJC5MCXWKL"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-PJC5MCXWKL",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-PJC5MCXWKL",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
 
     
     
@@ -792,7 +802,7 @@
   <span class="md-ellipsis">
     
   
-    控制系统指南
+    控制系统
   
 
     
@@ -877,6 +887,34 @@
     
   
     PID控制器
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lqr/lqr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    线性二次型调节器
   
 
     
@@ -1029,7 +1067,329 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#python" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Python 代码示例
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Python 代码示例">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#do-mpc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        do-mpc 倒立摆控制
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        仿真闭环运行
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mpc-nmpc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        非线性MPC (NMPC)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="非线性MPC (NMPC)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        适用场景
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nmpc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NMPC问题公式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rti" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        实时迭代 (RTI) 方案
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#casadi-ipopt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CasADi + IPOPT 非线性轨迹优化
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="CasADi + IPOPT 非线性轨迹优化">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        简单双积分器示例
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        设置初始状态与参数化
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        无人机轨迹跟踪
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="无人机轨迹跟踪">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        四旋翼动力学模型
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mpc_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        状态空间与MPC设计
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        约束处理
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        足式机器人步态规划
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="足式机器人步态规划">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        质心动力学模型
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        接触时序调度
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        摩擦锥约束
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mit-cheetah-anymal-mpc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MIT Cheetah 与 ANYmal 中的 MPC 实践
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mpc-vs-mpc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        线性 MPC vs 非线性 MPC 选择指南
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mpc_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        嵌入式 MPC 实现
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="嵌入式 MPC 实现">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        嵌入式部署的挑战
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        代码生成工具
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        不同应用层次的频率需求
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mpc_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        显式 MPC
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#osqp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        实际部署示例：OSQP 嵌入式使用
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
     <span class="md-ellipsis">
       
         在机器人中的应用
@@ -1041,7 +1401,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#_18" class="md-nav__link">
     <span class="md-ellipsis">
       
         自动驾驶
@@ -1052,7 +1412,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#_19" class="md-nav__link">
     <span class="md-ellipsis">
       
         无人机控制
@@ -1063,7 +1423,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
+  <a href="#_20" class="md-nav__link">
     <span class="md-ellipsis">
       
         足式机器人
@@ -1074,7 +1434,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
+  <a href="#_21" class="md-nav__link">
     <span class="md-ellipsis">
       
         机械臂
@@ -1090,7 +1450,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
+  <a href="#_22" class="md-nav__link">
     <span class="md-ellipsis">
       
         软件工具
@@ -1101,7 +1461,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
+  <a href="#_23" class="md-nav__link">
     <span class="md-ellipsis">
       
         参考资料
@@ -1135,6 +1495,34 @@
     
   
     神经网络控制器 (Neural Network Controller)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../adaptive/adaptive/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    自适应控制
   
 
     
@@ -1296,6 +1684,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../sensing/sensor-fusion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    传感器融合
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../sensing/slam/" class="md-nav__link">
         
   
@@ -1417,6 +1833,118 @@
     
   
     目标检测 (Object Detection)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cv/segmentation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    图像分割
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cv/tracking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    目标跟踪
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cv/pose-estimation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    位姿估计
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cv/3d-vision/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    三维视觉
   
 
     
@@ -1712,6 +2240,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learning/dl/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    深度学习
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1783,7 +2339,7 @@
   <span class="md-ellipsis">
     
   
-    机器人仿真工具介绍
+    机器人仿真
   
 
     
@@ -2331,6 +2887,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../linux/shell-scripting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shell 脚本与机器人自动化
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -2796,7 +3380,7 @@
   <span class="md-ellipsis">
     
   
-    深度学习数据集
+    机器人与视觉数据集
   
 
     
@@ -3084,6 +3668,118 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../database/spot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Boston Dynamics Spot
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../database/pepper/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SoftBank Pepper
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../database/apollo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Apptronik Apollo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../database/walker-s/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    优必选 Walker S
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -3270,7 +3966,7 @@
   <span class="md-ellipsis">
     
   
-    机器人实验室与研发机构 (国际)
+    机器人实验室与研发机构（国际）
   
 
     
@@ -3298,7 +3994,7 @@
   <span class="md-ellipsis">
     
   
-    机器人实验室与研发机构 (国内)
+    中国机器人研究机构数据库
   
 
     
@@ -3679,7 +4375,329 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#python" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Python 代码示例
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Python 代码示例">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#do-mpc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        do-mpc 倒立摆控制
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        仿真闭环运行
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mpc-nmpc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        非线性MPC (NMPC)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="非线性MPC (NMPC)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        适用场景
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nmpc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NMPC问题公式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rti" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        实时迭代 (RTI) 方案
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#casadi-ipopt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CasADi + IPOPT 非线性轨迹优化
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="CasADi + IPOPT 非线性轨迹优化">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        简单双积分器示例
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        设置初始状态与参数化
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        无人机轨迹跟踪
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="无人机轨迹跟踪">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        四旋翼动力学模型
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mpc_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        状态空间与MPC设计
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        约束处理
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        足式机器人步态规划
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="足式机器人步态规划">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        质心动力学模型
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        接触时序调度
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        摩擦锥约束
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mit-cheetah-anymal-mpc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MIT Cheetah 与 ANYmal 中的 MPC 实践
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mpc-vs-mpc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        线性 MPC vs 非线性 MPC 选择指南
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mpc_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        嵌入式 MPC 实现
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="嵌入式 MPC 实现">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        嵌入式部署的挑战
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        代码生成工具
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        不同应用层次的频率需求
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mpc_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        显式 MPC
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#osqp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        实际部署示例：OSQP 嵌入式使用
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
     <span class="md-ellipsis">
       
         在机器人中的应用
@@ -3691,7 +4709,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#_18" class="md-nav__link">
     <span class="md-ellipsis">
       
         自动驾驶
@@ -3702,7 +4720,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#_19" class="md-nav__link">
     <span class="md-ellipsis">
       
         无人机控制
@@ -3713,7 +4731,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
+  <a href="#_20" class="md-nav__link">
     <span class="md-ellipsis">
       
         足式机器人
@@ -3724,7 +4742,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
+  <a href="#_21" class="md-nav__link">
     <span class="md-ellipsis">
       
         机械臂
@@ -3740,7 +4758,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
+  <a href="#_22" class="md-nav__link">
     <span class="md-ellipsis">
       
         软件工具
@@ -3751,7 +4769,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
+  <a href="#_23" class="md-nav__link">
     <span class="md-ellipsis">
       
         参考资料
@@ -3910,17 +4928,443 @@
 <li><strong>显式MPC（Explicit MPC）</strong>：对于小规模问题，预先离线计算所有可能状态下的最优控制律，在线时仅需查表。</li>
 <li><strong>并行计算</strong>：利用GPU或FPGA加速矩阵运算和优化求解。</li>
 </ul>
-<h2 id="_3">在机器人中的应用</h2>
+<h2 id="python">Python 代码示例</h2>
+<h3 id="do-mpc">do-mpc 倒立摆控制</h3>
+<p>do-mpc 是一个基于 Python 和 CasADi 的开源 MPC 框架，适合快速原型开发和学术研究。以下示例展示了如何使用 do-mpc 控制一个倒立摆（Inverted Pendulum）系统。</p>
+<p>倒立摆系统的线性化状态方程为：</p>
+<p>
+<script type="math/tex; mode=display">\dot{x} = Ax + Bu</script>
+</p>
+<p>其中状态向量 <script type="math/tex">x = [p, \dot{p}, \theta, \dot{\theta}]^T</script> 分别表示小车位置、小车速度、摆角和摆角速度，控制输入 <script type="math/tex">u</script> 为施加在小车上的水平力。</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">do_mpc</span>
+
+<span class="c1"># 简单倒立摆 MPC 示例</span>
+<span class="n">model_type</span> <span class="o">=</span> <span class="s1">&#39;continuous&#39;</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">do_mpc</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">Model</span><span class="p">(</span><span class="n">model_type</span><span class="p">)</span>
+
+<span class="c1"># 状态变量</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">set_variable</span><span class="p">(</span><span class="n">var_type</span><span class="o">=</span><span class="s1">&#39;_x&#39;</span><span class="p">,</span> <span class="n">var_name</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+<span class="c1"># 控制变量</span>
+<span class="n">u</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">set_variable</span><span class="p">(</span><span class="n">var_type</span><span class="o">=</span><span class="s1">&#39;_u&#39;</span><span class="p">,</span> <span class="n">var_name</span><span class="o">=</span><span class="s1">&#39;u&#39;</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+
+<span class="c1"># 倒立摆系统参数</span>
+<span class="n">M</span> <span class="o">=</span> <span class="mf">0.5</span>   <span class="c1"># cart mass (kg)</span>
+<span class="n">m</span> <span class="o">=</span> <span class="mf">0.2</span>   <span class="c1"># pole mass (kg)</span>
+<span class="n">l</span> <span class="o">=</span> <span class="mf">0.3</span>   <span class="c1"># pole length (m)</span>
+<span class="n">g</span> <span class="o">=</span> <span class="mf">9.81</span>  <span class="c1"># gravity</span>
+
+<span class="c1"># 设置系统方程（线性化）</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+              <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="n">m</span><span class="o">*</span><span class="n">g</span><span class="o">/</span><span class="n">M</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+              <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+              <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="p">(</span><span class="n">M</span><span class="o">+</span><span class="n">m</span><span class="p">)</span><span class="o">*</span><span class="n">g</span><span class="o">/</span><span class="p">(</span><span class="n">M</span><span class="o">*</span><span class="n">l</span><span class="p">),</span> <span class="mi">0</span><span class="p">]])</span>
+<span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="o">/</span><span class="n">M</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">M</span><span class="o">*</span><span class="n">l</span><span class="p">)]])</span>
+
+<span class="n">model</span><span class="o">.</span><span class="n">set_rhs</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="n">A</span> <span class="o">@</span> <span class="n">x</span> <span class="o">+</span> <span class="n">B</span> <span class="o">@</span> <span class="n">u</span><span class="p">)</span>
+<span class="n">model</span><span class="o">.</span><span class="n">setup</span><span class="p">()</span>
+
+<span class="c1"># MPC 控制器</span>
+<span class="n">mpc</span> <span class="o">=</span> <span class="n">do_mpc</span><span class="o">.</span><span class="n">controller</span><span class="o">.</span><span class="n">MPC</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
+<span class="n">setup_mpc</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;n_horizon&#39;</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span> <span class="s1">&#39;t_step&#39;</span><span class="p">:</span> <span class="mf">0.05</span><span class="p">,</span>
+             <span class="s1">&#39;state_discretization&#39;</span><span class="p">:</span> <span class="s1">&#39;collocation&#39;</span><span class="p">}</span>
+<span class="n">mpc</span><span class="o">.</span><span class="n">set_param</span><span class="p">(</span><span class="o">**</span><span class="n">setup_mpc</span><span class="p">)</span>
+
+<span class="c1"># 代价函数</span>
+<span class="n">Q</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">])</span>
+<span class="n">R</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">0.01</span><span class="p">]])</span>
+<span class="n">mterm</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">Q</span> <span class="o">@</span> <span class="n">x</span>
+<span class="n">lterm</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">Q</span> <span class="o">@</span> <span class="n">x</span> <span class="o">+</span> <span class="n">u</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">R</span> <span class="o">@</span> <span class="n">u</span>
+<span class="n">mpc</span><span class="o">.</span><span class="n">set_objective</span><span class="p">(</span><span class="n">mterm</span><span class="o">=</span><span class="n">mterm</span><span class="p">,</span> <span class="n">lterm</span><span class="o">=</span><span class="n">lterm</span><span class="p">)</span>
+
+<span class="c1"># 约束</span>
+<span class="n">mpc</span><span class="o">.</span><span class="n">bounds</span><span class="p">[</span><span class="s1">&#39;lower&#39;</span><span class="p">,</span> <span class="s1">&#39;_u&#39;</span><span class="p">,</span> <span class="s1">&#39;u&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">10</span>
+<span class="n">mpc</span><span class="o">.</span><span class="n">bounds</span><span class="p">[</span><span class="s1">&#39;upper&#39;</span><span class="p">,</span> <span class="s1">&#39;_u&#39;</span><span class="p">,</span> <span class="s1">&#39;u&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">mpc</span><span class="o">.</span><span class="n">setup</span><span class="p">()</span>
+</code></pre></div>
+<p>权重矩阵 <script type="math/tex">Q</script> 中摆角项（第3个对角元素为10）的权重远大于位置项（第1个对角元素为1），这体现了控制目标的优先级：首先保证摆杆不倒，其次再调节小车位置。</p>
+<h3 id="_3">仿真闭环运行</h3>
+<p>完成控制器配置后，可以搭建仿真循环来验证控制性能：</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">do_mpc</span>
+
+<span class="c1"># 构建仿真器</span>
+<span class="n">simulator</span> <span class="o">=</span> <span class="n">do_mpc</span><span class="o">.</span><span class="n">simulator</span><span class="o">.</span><span class="n">Simulator</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
+<span class="n">simulator</span><span class="o">.</span><span class="n">set_param</span><span class="p">(</span><span class="n">t_step</span><span class="o">=</span><span class="mf">0.05</span><span class="p">)</span>
+<span class="n">simulator</span><span class="o">.</span><span class="n">setup</span><span class="p">()</span>
+
+<span class="c1"># 设置初始状态（摆杆偏离竖直方向约 5 度）</span>
+<span class="n">x0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">0.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.087</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">]])</span>
+<span class="n">mpc</span><span class="o">.</span><span class="n">x0</span> <span class="o">=</span> <span class="n">x0</span>
+<span class="n">simulator</span><span class="o">.</span><span class="n">x0</span> <span class="o">=</span> <span class="n">x0</span>
+<span class="n">mpc</span><span class="o">.</span><span class="n">set_initial_guess</span><span class="p">()</span>
+
+<span class="c1"># 闭环仿真 100 步</span>
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span>
+    <span class="n">u0</span> <span class="o">=</span> <span class="n">mpc</span><span class="o">.</span><span class="n">make_step</span><span class="p">(</span><span class="n">x0</span><span class="p">)</span>       <span class="c1"># 求解 MPC 优化问题</span>
+    <span class="n">x0</span> <span class="o">=</span> <span class="n">simulator</span><span class="o">.</span><span class="n">make_step</span><span class="p">(</span><span class="n">u0</span><span class="p">)</span> <span class="c1"># 推进系统状态</span>
+</code></pre></div>
+<p>该闭环结构清晰地反映了 MPC 的滚动时域原理：<code>make_step</code> 在每步重新求解优化问题，并只将第一个控制量作用于系统。</p>
+<h2 id="mpc-nmpc">非线性MPC (NMPC)</h2>
+<h3 id="_4">适用场景</h3>
+<p>当系统具有显著的非线性特性时，基于线性化模型的线性MPC精度会下降，甚至导致控制失败。以下情况通常需要采用非线性MPC（Nonlinear Model Predictive Control, NMPC）：</p>
+<ul>
+<li>系统工作点变化范围大，线性化误差不可忽略（如高机动飞行器、高速车辆）。</li>
+<li>系统本身具有本质非线性，无法用线性模型合理近似（如化学反应器、柔性机器人）。</li>
+<li>约束本身是非线性的（如摩擦锥约束、避障椭球约束）。</li>
+<li>需要在大范围状态空间内保证稳定性和最优性。</li>
+</ul>
+<p>相比线性MPC，NMPC在预测精度上有明显优势，但代价是计算量显著增大：每个采样周期需要求解一个非线性规划（NLP）问题。</p>
+<h3 id="nmpc">NMPC问题公式</h3>
+<p>NMPC的标准公式为：</p>
+<p>
+<script type="math/tex; mode=display">\min_{u(\cdot)} \quad V_N(x_k, u(\cdot)) = \sum_{i=0}^{N-1} l(x_{k+i|k}, u_{k+i|k}) + V_f(x_{k+N|k})</script>
+</p>
+<p>
+<script type="math/tex; mode=display">\text{s.t.} \quad x_{k+i+1|k} = f(x_{k+i|k}, u_{k+i|k}), \quad i = 0, 1, \ldots, N-1</script>
+</p>
+<p>
+<script type="math/tex; mode=display">\quad\quad\quad x_{k+i|k} \in \mathcal{X}, \quad u_{k+i|k} \in \mathcal{U}</script>
+</p>
+<p>
+<script type="math/tex; mode=display">\quad\quad\quad x_{k|k} = x_k</script>
+</p>
+<p>其中 <script type="math/tex">f(\cdot)</script> 为非线性系统方程，<script type="math/tex">l(\cdot)</script> 为阶段代价，<script type="math/tex">V_f(\cdot)</script> 为终端代价，<script type="math/tex">\mathcal{X}</script> 和 <script type="math/tex">\mathcal{U}</script> 分别为状态和控制的可行集。</p>
+<h3 id="rti">实时迭代 (RTI) 方案</h3>
+<p>实时迭代（Real-Time Iteration, RTI）是由 Diehl 等人提出的快速NMPC求解方法，其核心思想是：在每个采样周期内，不对NLP问题求解到收敛，而是只执行一次序列二次规划（Sequential Quadratic Programming, SQP）迭代，将上一时刻的解作为热启动（warm start）的初始点。</p>
+<p>RTI 的求解步骤：</p>
+<ol>
+<li><strong>准备阶段（Preparation Phase）</strong>：在等待新测量值的同时，计算当前解点处的雅可比矩阵（Jacobian）和海森矩阵（Hessian），组装QP子问题。</li>
+<li><strong>反馈阶段（Feedback Phase）</strong>：获取新的状态测量值后，更新QP的右端项并快速求解，得到控制输出。</li>
+</ol>
+<p>RTI 使得 NMPC 的计算时间接近于线性MPC，是目前工程应用中最主流的快速NMPC方案，被 ACADO Toolkit 等工具广泛采用。RTI 方案的稳定性和收敛性分析表明，当初始化充分接近最优解时，闭环系统的性能与完全求解NLP的标准NMPC接近。</p>
+<h2 id="casadi-ipopt">CasADi + IPOPT 非线性轨迹优化</h2>
+<p>CasADi 是一个强大的开源符号计算框架，支持自动微分（Automatic Differentiation），特别适合构建和求解非线性最优控制问题。IPOPT（Interior Point OPTimizer）是与 CasADi 搭配最常用的开源 NLP 求解器，基于内点法（Interior Point Method）实现。</p>
+<h3 id="_5">简单双积分器示例</h3>
+<p>以下示例使用 CasADi 的 <code>Opti</code> 接口构建一个双积分器（Double Integrator）系统的MPC问题，状态为位置和速度 <script type="math/tex">[p, v]^T</script>，控制输入为加速度 <script type="math/tex">a</script>，离散时间步长为 <script type="math/tex">\Delta t = 0.1\,\text{s}</script>：</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">casadi</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">ca</span>
+
+<span class="c1"># 使用 CasADi 构建 MPC 问题</span>
+<span class="n">opti</span> <span class="o">=</span> <span class="n">ca</span><span class="o">.</span><span class="n">Opti</span><span class="p">()</span>
+<span class="n">N</span> <span class="o">=</span> <span class="mi">20</span>  <span class="c1"># 预测步数</span>
+
+<span class="n">X</span> <span class="o">=</span> <span class="n">opti</span><span class="o">.</span><span class="n">variable</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># 状态 [pos, vel]</span>
+<span class="n">U</span> <span class="o">=</span> <span class="n">opti</span><span class="o">.</span><span class="n">variable</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>    <span class="c1"># 控制</span>
+
+<span class="c1"># 系统动力学约束</span>
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+    <span class="n">x_next</span> <span class="o">=</span> <span class="n">X</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="n">k</span><span class="p">]</span> <span class="o">+</span> <span class="mf">0.1</span><span class="o">*</span><span class="n">X</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="n">k</span><span class="p">]</span>
+    <span class="n">v_next</span> <span class="o">=</span> <span class="n">X</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="n">k</span><span class="p">]</span> <span class="o">+</span> <span class="mf">0.1</span><span class="o">*</span><span class="n">U</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="n">k</span><span class="p">]</span>
+    <span class="n">opti</span><span class="o">.</span><span class="n">subject_to</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="n">k</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="n">x_next</span><span class="p">)</span>
+    <span class="n">opti</span><span class="o">.</span><span class="n">subject_to</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="n">k</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="n">v_next</span><span class="p">)</span>
+
+<span class="c1"># 代价函数</span>
+<span class="n">cost</span> <span class="o">=</span> <span class="n">ca</span><span class="o">.</span><span class="n">sumsqr</span><span class="p">(</span><span class="n">X</span><span class="p">)</span> <span class="o">+</span> <span class="mf">0.1</span><span class="o">*</span><span class="n">ca</span><span class="o">.</span><span class="n">sumsqr</span><span class="p">(</span><span class="n">U</span><span class="p">)</span>
+<span class="n">opti</span><span class="o">.</span><span class="n">minimize</span><span class="p">(</span><span class="n">cost</span><span class="p">)</span>
+
+<span class="c1"># 约束</span>
+<span class="n">opti</span><span class="o">.</span><span class="n">subject_to</span><span class="p">(</span><span class="n">opti</span><span class="o">.</span><span class="n">bounded</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="n">U</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+
+<span class="c1"># 求解</span>
+<span class="n">opti</span><span class="o">.</span><span class="n">solver</span><span class="p">(</span><span class="s1">&#39;ipopt&#39;</span><span class="p">)</span>
+<span class="n">sol</span> <span class="o">=</span> <span class="n">opti</span><span class="o">.</span><span class="n">solve</span><span class="p">()</span>
+</code></pre></div>
+<h3 id="_6">设置初始状态与参数化</h3>
+<p>在实际滚动时域实现中，初始状态需要作为参数（parameter）传入，而非固定常数，以支持在每个采样周期更新：</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">casadi</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">ca</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="n">opti</span> <span class="o">=</span> <span class="n">ca</span><span class="o">.</span><span class="n">Opti</span><span class="p">()</span>
+<span class="n">N</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="n">dt</span> <span class="o">=</span> <span class="mf">0.1</span>
+
+<span class="n">X</span> <span class="o">=</span> <span class="n">opti</span><span class="o">.</span><span class="n">variable</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">U</span> <span class="o">=</span> <span class="n">opti</span><span class="o">.</span><span class="n">variable</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>
+<span class="n">x0_param</span> <span class="o">=</span> <span class="n">opti</span><span class="o">.</span><span class="n">parameter</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1"># 当前状态作为参数</span>
+
+<span class="c1"># 初始状态约束</span>
+<span class="n">opti</span><span class="o">.</span><span class="n">subject_to</span><span class="p">(</span><span class="n">X</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">x0_param</span><span class="p">)</span>
+
+<span class="c1"># 动力学约束</span>
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+    <span class="n">opti</span><span class="o">.</span><span class="n">subject_to</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">k</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="n">X</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">k</span><span class="p">]</span> <span class="o">+</span> <span class="n">dt</span> <span class="o">*</span> <span class="n">X</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="n">k</span><span class="p">])</span>
+    <span class="n">opti</span><span class="o">.</span><span class="n">subject_to</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="n">k</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="n">X</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="n">k</span><span class="p">]</span> <span class="o">+</span> <span class="n">dt</span> <span class="o">*</span> <span class="n">U</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">k</span><span class="p">])</span>
+
+<span class="c1"># 代价函数（跟踪目标位置 p_ref = 1.0）</span>
+<span class="n">p_ref</span> <span class="o">=</span> <span class="mf">1.0</span>
+<span class="n">cost</span> <span class="o">=</span> <span class="n">ca</span><span class="o">.</span><span class="n">sumsqr</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:]</span> <span class="o">-</span> <span class="n">p_ref</span><span class="p">)</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">*</span> <span class="n">ca</span><span class="o">.</span><span class="n">sumsqr</span><span class="p">(</span><span class="n">U</span><span class="p">)</span>
+<span class="n">opti</span><span class="o">.</span><span class="n">minimize</span><span class="p">(</span><span class="n">cost</span><span class="p">)</span>
+
+<span class="n">opti</span><span class="o">.</span><span class="n">subject_to</span><span class="p">(</span><span class="n">opti</span><span class="o">.</span><span class="n">bounded</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="n">U</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+<span class="n">opti</span><span class="o">.</span><span class="n">subject_to</span><span class="p">(</span><span class="n">opti</span><span class="o">.</span><span class="n">bounded</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="n">X</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">:],</span> <span class="mi">3</span><span class="p">))</span>  <span class="c1"># 速度约束</span>
+
+<span class="c1"># 配置求解器（关闭详细输出以提高速度）</span>
+<span class="n">opti</span><span class="o">.</span><span class="n">solver</span><span class="p">(</span><span class="s1">&#39;ipopt&#39;</span><span class="p">,</span> <span class="p">{},</span> <span class="p">{</span><span class="s1">&#39;print_level&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;max_iter&#39;</span><span class="p">:</span> <span class="mi">100</span><span class="p">})</span>
+
+<span class="c1"># 闭环仿真示例</span>
+<span class="n">x_current</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">0.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">]])</span>
+<span class="k">for</span> <span class="n">step</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">50</span><span class="p">):</span>
+    <span class="n">opti</span><span class="o">.</span><span class="n">set_value</span><span class="p">(</span><span class="n">x0_param</span><span class="p">,</span> <span class="n">x_current</span><span class="p">)</span>
+    <span class="n">sol</span> <span class="o">=</span> <span class="n">opti</span><span class="o">.</span><span class="n">solve</span><span class="p">()</span>
+    <span class="n">u_opt</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="n">U</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">])</span>    <span class="c1"># 取第一个控制量</span>
+    <span class="c1"># 推进系统（此处省略实际仿真器调用）</span>
+    <span class="n">x_current</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+=</span> <span class="n">dt</span> <span class="o">*</span> <span class="n">x_current</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">x_current</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+=</span> <span class="n">dt</span> <span class="o">*</span> <span class="n">u_opt</span>
+</code></pre></div>
+<p>CasADi 的符号微分能力使得 IPOPT 可以获得精确的梯度和海森矩阵信息，从而保证求解速度和可靠性。对于具有数百个优化变量的中等规模MPC问题，IPOPT 通常能在毫秒量级内完成求解。</p>
+<h2 id="_7">无人机轨迹跟踪</h2>
+<h3 id="_8">四旋翼动力学模型</h3>
+<p>四旋翼无人机（Quadrotor）的完整动力学模型是高度非线性的，但对于轨迹跟踪MPC设计，通常采用简化的线性化模型或分层控制结构。</p>
+<p>简化的四旋翼平移动力学（在世界坐标系下）为：</p>
+<p>
+<script type="math/tex; mode=display">\ddot{x} = \frac{T}{m} (\cos\phi \sin\theta \cos\psi + \sin\phi \sin\psi)</script>
+</p>
+<p>
+<script type="math/tex; mode=display">\ddot{y} = \frac{T}{m} (\cos\phi \sin\theta \sin\psi - \sin\phi \cos\psi)</script>
+</p>
+<p>
+<script type="math/tex; mode=display">\ddot{z} = \frac{T}{m} \cos\phi \cos\theta - g</script>
+</p>
+<p>其中 <script type="math/tex">T</script> 为总推力，<script type="math/tex">m</script> 为飞行器质量，<script type="math/tex">\phi, \theta, \psi</script> 分别为滚转角（roll）、俯仰角（pitch）和偏航角（yaw）。</p>
+<p>在小角度假设（<script type="math/tex">\phi, \theta \ll 1</script>）下，平移动力学可以线性化为：</p>
+<p>
+<script type="math/tex; mode=display">\ddot{x} \approx g\theta, \quad \ddot{y} \approx -g\phi, \quad \ddot{z} \approx \frac{T}{m} - g</script>
+</p>
+<h3 id="mpc_2">状态空间与MPC设计</h3>
+<p>四旋翼轨迹跟踪MPC通常采用以下状态向量：</p>
+<p>
+<script type="math/tex; mode=display">x = [p_x, p_y, p_z, v_x, v_y, v_z]^T</script>
+</p>
+<p>控制输入为：</p>
+<p>
+<script type="math/tex; mode=display">u = [T, \phi_{cmd}, \theta_{cmd}]^T</script>
+</p>
+<p>其中 <script type="math/tex">\phi_{cmd}, \theta_{cmd}</script> 为内环姿态控制器的参考指令，实际的电机转速由内环姿态控制器（通常运行在更高频率）跟踪执行。</p>
+<p>MPC问题的代价函数设计为：</p>
+<p>
+<script type="math/tex; mode=display">J = \sum_{k=0}^{N-1} \left[ (p_k - p_k^{ref})^T Q_p (p_k - p_k^{ref}) + (v_k - v_k^{ref})^T Q_v (v_k - v_k^{ref}) + u_k^T R u_k \right] + (p_N - p_N^{ref})^T P (p_N - p_N^{ref})</script>
+</p>
+<h3 id="_9">约束处理</h3>
+<p>无人机MPC中的典型约束包括：</p>
+<ul>
+<li><strong>推力约束</strong>：<script type="math/tex">T_{min} \leq T \leq T_{max}</script>，由电机特性决定</li>
+<li><strong>姿态角约束</strong>：<script type="math/tex">|\phi| \leq \phi_{max}</script>，<script type="math/tex">|\theta| \leq \theta_{max}</script>，保证飞行安全</li>
+<li><strong>速度约束</strong>：<script type="math/tex">\|v\| \leq v_{max}</script>，防止超速导致失控</li>
+<li><strong>位置约束</strong>：用于障碍物回避，可表示为椭球或多面体约束</li>
+</ul>
+<p>分层控制结构的优势在于：外层MPC运行在较低频率（如50-100 Hz）处理轨迹规划和约束，内层姿态控制器运行在高频率（如500-1000 Hz）确保姿态稳定性，两层解耦设计大幅降低了外层MPC的计算需求。</p>
+<h2 id="_10">足式机器人步态规划</h2>
+<h3 id="_11">质心动力学模型</h3>
+<p>足式机器人（Legged Robot）的MPC通常基于质心动力学（Centroidal Dynamics）模型，该模型将机器人简化为一个质点，通过接触力对质心施加影响。质心动量（Centroidal Momentum）的变化率由以下方程描述：</p>
+<p>
+<script type="math/tex; mode=display">\dot{h} = \sum_i (p_i - c) \times f_i + mg</script>
+</p>
+<p>其中：</p>
+<ul>
+<li>
+<script type="math/tex">h</script> 为质心角动量和线动量组成的6维向量（<script type="math/tex">h = [l^T, k^T]^T</script>，<script type="math/tex">l</script> 为线动量，<script type="math/tex">k</script> 为角动量）</li>
+<li>
+<script type="math/tex">p_i</script> 为第 <script type="math/tex">i</script> 个接触点（foot contact point）在世界坐标系中的位置</li>
+<li>
+<script type="math/tex">c</script> 为质心（Center of Mass, CoM）位置</li>
+<li>
+<script type="math/tex">f_i</script> 为第 <script type="math/tex">i</script> 个接触点的地面反力（Ground Reaction Force, GRF）</li>
+<li>
+<script type="math/tex">m</script> 为机器人总质量，<script type="math/tex">g</script> 为重力加速度向量</li>
+</ul>
+<p>质心线动量方程简化为：</p>
+<p>
+<script type="math/tex; mode=display">m\ddot{c} = \sum_i f_i + mg</script>
+</p>
+<p>这是一个与机器人构型（configuration）无关的简洁模型，非常适合在MPC框架中使用。</p>
+<h3 id="_12">接触时序调度</h3>
+<p>在步态规划中，MPC需要处理接触时序（Contact Scheduling）问题。不同的步态（gait）对应不同的接触序列：</p>
+<ul>
+<li><strong>静步态（Static Walk）</strong>：任意时刻至少三条腿着地，重心投影始终在支撑多边形内。</li>
+<li><strong>对角小跑（Trot）</strong>：两条对角腿同时着地，适合中速运动。</li>
+<li><strong>奔跑（Gallop）</strong>：存在四脚腾空阶段，适合高速运动。</li>
+</ul>
+<p>在MPC优化中，接触状态通常预先由步态调度器（Gait Scheduler）确定，然后作为已知参数传入MPC。在预测时域内，哪些腿处于支撑相（Stance Phase）、哪些腿处于摆动相（Swing Phase）是固定的，MPC只优化支撑腿的接触力。</p>
+<h3 id="_13">摩擦锥约束</h3>
+<p>接触力必须满足摩擦锥（Friction Cone）约束，以确保脚部不打滑：</p>
+<p>
+<script type="math/tex; mode=display">f_{i,z} \geq 0 \quad \text{（法向力为正）}</script>
+</p>
+<p>
+<script type="math/tex; mode=display">\sqrt{f_{i,x}^2 + f_{i,y}^2} \leq \mu f_{i,z} \quad \text{（摩擦约束）}</script>
+</p>
+<p>其中 <script type="math/tex">\mu</script> 为地面摩擦系数。为使问题保持凸性，通常将摩擦锥线性化为摩擦棱锥（Friction Pyramid）：</p>
+<p>
+<script type="math/tex; mode=display">|f_{i,x}| \leq \frac{\mu}{\sqrt{2}} f_{i,z}, \quad |f_{i,y}| \leq \frac{\mu}{\sqrt{2}} f_{i,z}</script>
+</p>
+<h3 id="mit-cheetah-anymal-mpc">MIT Cheetah 与 ANYmal 中的 MPC 实践</h3>
+<p><strong>MIT Cheetah 3 和 Mini Cheetah</strong> 使用了基于质心动力学的凸MPC控制器（Convex MPC）。该方法将状态方程在参考轨迹附近线性化，并将摩擦锥约束线性化，从而将整个优化问题转化为QP，可在约0.25毫秒内完成求解（运行在250 Hz控制频率）。优化变量为每条腿在预测时域内的接触力序列，优化完成后将当前时刻的接触力通过全身控制（Whole-Body Control, WBC）分配到各关节力矩。</p>
+<p><strong>ANYmal</strong> 系列机器人采用了类似的分层MPC-WBC架构：</p>
+<ul>
+<li><strong>运动规划层（Locomotion Planner）</strong>：MPC以约50 Hz运行，基于质心动力学模型优化接触力和质心轨迹。</li>
+<li><strong>全身控制层（Whole-Body Controller）</strong>：以约400 Hz运行，将MPC输出的质心期望力转化为关节力矩，同时满足关节限位和接触约束。</li>
+</ul>
+<p>这种分层结构是当前高性能足式机器人运动控制的主流方案，兼顾了计算效率和控制性能。</p>
+<h2 id="mpc-vs-mpc">线性 MPC vs 非线性 MPC 选择指南</h2>
+<p>在实际工程中，选择线性MPC还是NMPC需要综合考虑系统特性、计算资源和性能需求。下表从多个维度进行对比：</p>
+<table>
+<thead>
+<tr>
+<th>对比维度</th>
+<th>线性 MPC</th>
+<th>非线性 MPC (NMPC)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>系统模型</td>
+<td>线性或可线性化系统</td>
+<td>一般非线性系统</td>
+</tr>
+<tr>
+<td>优化问题类型</td>
+<td>二次规划 (QP)</td>
+<td>非线性规划 (NLP)</td>
+</tr>
+<tr>
+<td>典型求解时间</td>
+<td>微秒 ~ 毫秒</td>
+<td>毫秒 ~ 百毫秒</td>
+</tr>
+<tr>
+<td>建模精度</td>
+<td>工作点附近精度高</td>
+<td>全范围精度高</td>
+</tr>
+<tr>
+<td>实现复杂度</td>
+<td>低，工具链成熟</td>
+<td>高，需专业优化知识</td>
+</tr>
+<tr>
+<td>稳定性保证</td>
+<td>理论成熟，易于验证</td>
+<td>需额外终端约束设计</td>
+</tr>
+<tr>
+<td>嵌入式部署</td>
+<td>容易，代码生成工具多</td>
+<td>较难，资源需求大</td>
+</tr>
+<tr>
+<td>典型应用频率</td>
+<td>可达 1 kHz 以上</td>
+<td>通常 10 ~ 200 Hz</td>
+</tr>
+<tr>
+<td>代表工具</td>
+<td>OSQP, qpOASES, HPIPM</td>
+<td>ACADO, CasADi+IPOPT, FORCES Pro</td>
+</tr>
+</tbody>
+</table>
+<p><strong>选择建议</strong>：</p>
+<ul>
+<li>若系统在工作范围内基本线性，或计算资源严格受限，优先选择线性MPC。</li>
+<li>若系统非线性显著（如四旋翼大机动飞行、高速赛车），且计算平台允许（如嵌入式GPU、高性能处理器），选择NMPC。</li>
+<li>工程实践中，常用分层方案：高层采用NMPC（低频、高精度规划），低层采用线性MPC或PID（高频、快速执行）。</li>
+</ul>
+<h2 id="mpc_3">嵌入式 MPC 实现</h2>
+<h3 id="_14">嵌入式部署的挑战</h3>
+<p>将MPC部署到嵌入式控制器（Embedded Controller）面临以下主要挑战：</p>
+<ul>
+<li><strong>实时性</strong>：求解时间必须严格小于采样周期，且具有确定性上界（worst-case guarantee）。</li>
+<li><strong>内存限制</strong>：嵌入式处理器的RAM通常以KB到MB计量，无法运行通用NLP求解器。</li>
+<li><strong>浮点运算能力</strong>：低端微控制器（Microcontroller Unit, MCU）可能不具备浮点运算单元（FPU）或只支持单精度浮点。</li>
+<li><strong>无动态内存分配</strong>：嵌入式系统通常要求所有内存在编译时静态分配。</li>
+</ul>
+<h3 id="_15">代码生成工具</h3>
+<p>主流的嵌入式MPC代码生成方案：</p>
+<p><strong>ACADO Toolkit</strong> 支持从符号模型自动生成用于嵌入式部署的C代码，实现RTI方案。生成的代码不依赖任何外部库，只需一个小型线性代数库即可在MCU上运行。适合采样周期在毫秒量级的应用。</p>
+<p><strong>FORCES Pro</strong>（Embotech）是商业嵌入式优化代码生成工具，支持针对特定硬件平台（ARM Cortex-M/A, Intel x86）的高度优化代码生成。生成代码经过安全认证，可用于汽车电子等功能安全要求严格的场景。</p>
+<p><strong>qpOASES</strong> 是一个开源的活动集（Active Set）QP求解器，具有确定性迭代次数上界（对于凸QP问题），适合对实时性要求严格的嵌入式线性MPC。</p>
+<p><strong>OSQP</strong> 基于ADMM（交替方向乘子法，Alternating Direction Method of Multipliers）算法，代码小巧、可移植性强，已被广泛部署在嵌入式平台上。</p>
+<h3 id="_16">不同应用层次的频率需求</h3>
+<p>机器人系统通常采用多层次控制架构，不同层次对MPC的计算速度要求差异显著：</p>
+<table>
+<thead>
+<tr>
+<th>控制层次</th>
+<th>典型频率</th>
+<th>任务</th>
+<th>推荐方案</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>任务规划层</td>
+<td>1 ~ 10 Hz</td>
+<td>全局路径规划、目标决策</td>
+<td>Python/MATLAB + 通用求解器</td>
+</tr>
+<tr>
+<td>运动规划层</td>
+<td>10 ~ 100 Hz</td>
+<td>轨迹生成、步态规划</td>
+<td>NMPC / 凸MPC，C++ 实现</td>
+</tr>
+<tr>
+<td>运动控制层</td>
+<td>100 ~ 500 Hz</td>
+<td>质心控制、平衡控制</td>
+<td>线性MPC，QP求解器</td>
+</tr>
+<tr>
+<td>关节控制层</td>
+<td>500 Hz ~ 5 kHz</td>
+<td>关节力矩控制</td>
+<td>PID 或简单线性MPC，FPGA/DSP</td>
+</tr>
+</tbody>
+</table>
+<p>以四足机器人为例，典型配置为：质心MPC运行在250 Hz，全身控制器运行在1 kHz，底层关节电流控制器运行在5 kHz以上。</p>
+<h3 id="mpc_4">显式 MPC</h3>
+<p>显式MPC（Explicit MPC）是另一种嵌入式部署方案：离线穷举所有可能的状态区域，为每个区域预计算最优仿射控制律，在线时只需查找当前状态所属区域并计算线性函数。</p>
+<p>其优点是在线计算量极低（仅需查表和矩阵向量乘法），缺点是离线计算量和存储空间随状态维数和约束数量指数增长（维数灾难），通常只适用于状态维数不超过5~6维的小规模问题。</p>
+<h3 id="osqp">实际部署示例：OSQP 嵌入式使用</h3>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">osqp</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">scipy.sparse</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sp</span>
+
+<span class="c1"># 构建线性 MPC 的 QP 问题</span>
+<span class="c1"># 以简单一维双积分器为例，N=10 步预测</span>
+<span class="n">N</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">nx</span><span class="p">,</span> <span class="n">nu</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span>
+
+<span class="c1"># 系统矩阵</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span>
+<span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">0.005</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.1</span><span class="p">]])</span>
+
+<span class="c1"># 权重矩阵</span>
+<span class="n">Q</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">([</span><span class="mf">10.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">])</span>
+<span class="n">R</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">0.1</span><span class="p">]])</span>
+<span class="n">QN</span> <span class="o">=</span> <span class="n">Q</span>  <span class="c1"># 终端代价</span>
+
+<span class="c1"># 构建批量预测矩阵（此处简化，实际需构建稀疏结构）</span>
+<span class="c1"># 目标：最小化 sum Q*x^2 + R*u^2，受动力学和约束</span>
+<span class="n">prob</span> <span class="o">=</span> <span class="n">osqp</span><span class="o">.</span><span class="n">OSQP</span><span class="p">()</span>
+
+<span class="c1"># 实际应用中需填充稀疏矩阵 P（代价）和 A_con（约束）</span>
+<span class="c1"># prob.setup(P, q, A_con, l, u, warm_start=True, verbose=False)</span>
+<span class="c1"># res = prob.solve()</span>
+<span class="c1"># u_opt = res.x[:nu]  # 提取第一步控制量</span>
+</code></pre></div>
+<p>OSQP 支持热启动（warm start），即用上一时刻的解初始化当前时刻的求解，可将迭代次数减少50%以上，显著降低最差情况求解时间。</p>
+<h2 id="_17">在机器人中的应用</h2>
 <p>MPC在机器人领域有广泛的应用，以下是几个典型场景：</p>
-<h3 id="_4">自动驾驶</h3>
+<h3 id="_18">自动驾驶</h3>
 <p>在自动驾驶中，MPC被广泛用于横向和纵向控制。控制器根据车辆动力学模型预测未来轨迹，在满足车道边界、舒适性和安全距离等约束的条件下跟踪参考路径。非线性MPC可以在高速和紧急避障场景中提供更准确的预测。</p>
-<h3 id="_5">无人机控制</h3>
+<h3 id="_19">无人机控制</h3>
 <p>MPC适合多旋翼无人机的轨迹跟踪和避障控制。无人机的多输入多输出（MIMO）特性和飞行包络约束（如最大倾斜角、推力限制）都可以在MPC框架中自然处理。</p>
-<h3 id="_6">足式机器人</h3>
+<h3 id="_20">足式机器人</h3>
 <p>MPC被用于四足和双足机器人的步态规划和运动控制。控制器在预测时域内优化足端接触力和关节力矩，同时满足摩擦锥约束和动力学约束。</p>
-<h3 id="_7">机械臂</h3>
+<h3 id="_21">机械臂</h3>
 <p>在工业机器人和协作机器人中，MPC可以在笛卡尔空间或关节空间进行轨迹规划和跟踪，同时处理关节限位、速度限制和碰撞避免等约束。</p>
-<h2 id="_8">软件工具</h2>
+<h2 id="_22">软件工具</h2>
 <p>以下是常用的MPC开发和仿真工具：</p>
 <ul>
 <li><strong>ACADO Toolkit</strong>：开源的自动控制和动态优化工具包，支持快速生成嵌入式MPC代码。</li>
@@ -3929,14 +5373,24 @@
 <li><strong>MATLAB MPC Toolbox</strong>：MathWorks提供的商业MPC工具箱，集成了设计、仿真和代码生成功能。</li>
 <li><strong>do-mpc</strong>：基于Python和CasADi的开源MPC框架，适合快速原型开发和学术研究。</li>
 <li><strong>FORCESPRO</strong>：Embotech公司的商业嵌入式优化求解器，专为实时MPC设计。</li>
+<li><strong>qpOASES</strong>：开源活动集QP求解器，具有确定性迭代次数上界，适合安全关键应用。</li>
+<li><strong>HPIPM</strong>：高性能内点法QP求解器，专为MPC结构化问题优化，由 Frison 等人开发。</li>
 </ul>
-<h2 id="_9">参考资料</h2>
+<h2 id="_23">参考资料</h2>
 <ol>
 <li>J. M. Maciejowski, <em>Predictive Control with Constraints</em>, Prentice Hall, 2002.</li>
 <li>J. B. Rawlings, D. Q. Mayne, and M. M. Diehl, <em>Model Predictive Control: Theory, Computation, and Design</em>, 2nd Edition, Nob Hill Publishing, 2017.</li>
 <li>L. Grüne and J. Pannek, <em>Nonlinear Model Predictive Control: Theory and Algorithms</em>, 2nd Edition, Springer, 2017.</li>
-<li><a href="https://web.casadi.org/">CasADi官方文档</a></li>
-<li><a href="https://osqp.org/">OSQP求解器</a></li>
+<li>M. Diehl, H. G. Bock, and J. P. Schlöder, "A Real-Time Iteration Scheme for Nonlinear Optimization in Optimal Feedback Control," <em>SIAM Journal on Control and Optimization</em>, 43(5):1714–1736, 2005.</li>
+<li>D. Kim, J. Di Carlo, B. Katz, G. Bledt, and S. Kim, "Highly Dynamic Quadruped Locomotion via Whole-Body Impulse Control and Model Predictive Control," <em>arXiv:1909.06586</em>, 2019.</li>
+<li>R. Grandia, F. Farshidian, R. Ranftl, and M. Hutter, "Feedback MPC for Torque-Controlled Legged Robots," <em>IEEE/RSJ IROS</em>, 2019.</li>
+<li>B. Stellato, G. Banjac, P. Goulart, A. Bemporad, and S. Boyd, "OSQP: An Operator Splitting Solver for Quadratic Programs," <em>Mathematical Programming Computation</em>, 12(4):637–672, 2020.</li>
+<li>G. Frison and M. Diehl, "HPIPM: a High-Performance Quadratic Programming Framework for Model Predictive Control," <em>IFAC World Congress</em>, 2020.</li>
+<li><a href="https://web.casadi.org/">CasADi 官方文档</a></li>
+<li><a href="https://osqp.org/">OSQP 求解器</a></li>
+<li><a href="https://www.do-mpc.com/">do-mpc 官方文档</a></li>
+<li><a href="https://acado.github.io/">ACADO Toolkit</a></li>
+<li><a href="https://forces.embotech.com/">FORCESPRO 文档</a></li>
 </ol>
 
 
@@ -3946,6 +5400,8 @@
 
 
 
+
+  
 
 
 

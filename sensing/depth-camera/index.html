@@ -18,14 +18,14 @@
         <link rel="prev" href="../sensors/">
       
       
-        <link rel="next" href="../slam/">
+        <link rel="next" href="../sensor-fusion/">
       
       
         
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
     
     
       
@@ -60,6 +60,16 @@
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-PJC5MCXWKL"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-PJC5MCXWKL",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-PJC5MCXWKL",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
 
     
     
@@ -787,7 +797,7 @@
   <span class="md-ellipsis">
     
   
-    控制系统指南
+    控制系统
   
 
     
@@ -892,6 +902,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../control/lqr/lqr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    线性二次型调节器
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../control/mpc/mpc/" class="md-nav__link">
         
   
@@ -928,6 +966,34 @@
     
   
     神经网络控制器 (Neural Network Controller)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../control/adaptive/adaptive/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    自适应控制
   
 
     
@@ -1137,6 +1203,67 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        工作原理详解
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="工作原理详解">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#structured-light" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        结构光法（Structured Light）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#time-of-flighttof" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        飞行时间法（Time of Flight，ToF）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stereo-vision" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        双目立体视觉（Stereo Vision）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#laser-triangulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        激光三角测距（Laser Triangulation）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#microsoft-kinect" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1309,7 +1436,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        主流深度相机对比
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       
         型号对比
@@ -1320,7 +1458,285 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#camera-calibration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        相机标定（Camera Calibration）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="相机标定（Camera Calibration）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        针孔相机模型
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#opencv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        使用 OpenCV 进行标定
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ros-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ROS 2 深度相机集成
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ROS 2 深度相机集成">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#realsense-ros2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        realsense-ros2 驱动
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#topics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        主要话题（Topics）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rgb-d" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        同步 RGB-D 数据
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        深度图转点云
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#point-cloud-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        点云处理（Point Cloud Processing）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="点云处理（Point Cloud Processing）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#open3d" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Open3D 基础操作
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#icp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ICP 点云配准
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        平面分割与物体检测
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        深度图像处理技巧
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="深度图像处理技巧">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        深度图空洞填充
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        深度图与彩色图对齐
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        机器人抓取应用
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="机器人抓取应用">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        主要开源工具
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bin-picking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        料箱拣选（Bin Picking）工作流
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        室外使用注意事项
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="室外使用注意事项">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        结构光相机的局限
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tof" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ToF 相机的多相机干扰
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        被动双目与激光雷达的互补
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
     <span class="md-ellipsis">
       
         选型建议
@@ -1331,7 +1747,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#_18" class="md-nav__link">
     <span class="md-ellipsis">
       
         参考资料
@@ -1345,6 +1761,34 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sensor-fusion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    传感器融合
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -1478,6 +1922,118 @@
     
   
     目标检测 (Object Detection)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cv/segmentation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    图像分割
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cv/tracking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    目标跟踪
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cv/pose-estimation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    位姿估计
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cv/3d-vision/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    三维视觉
   
 
     
@@ -1773,6 +2329,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../learning/dl/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    深度学习
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1844,7 +2428,7 @@
   <span class="md-ellipsis">
     
   
-    机器人仿真工具介绍
+    机器人仿真
   
 
     
@@ -2392,6 +2976,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/shell-scripting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shell 脚本与机器人自动化
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -2857,7 +3469,7 @@
   <span class="md-ellipsis">
     
   
-    深度学习数据集
+    机器人与视觉数据集
   
 
     
@@ -3145,6 +3757,118 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/spot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Boston Dynamics Spot
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/pepper/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SoftBank Pepper
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/apollo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Apptronik Apollo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/walker-s/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    优必选 Walker S
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -3331,7 +4055,7 @@
   <span class="md-ellipsis">
     
   
-    机器人实验室与研发机构 (国际)
+    机器人实验室与研发机构（国际）
   
 
     
@@ -3359,7 +4083,7 @@
   <span class="md-ellipsis">
     
   
-    机器人实验室与研发机构 (国内)
+    中国机器人研究机构数据库
   
 
     
@@ -3679,6 +4403,67 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        工作原理详解
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="工作原理详解">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#structured-light" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        结构光法（Structured Light）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#time-of-flighttof" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        飞行时间法（Time of Flight，ToF）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stereo-vision" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        双目立体视觉（Stereo Vision）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#laser-triangulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        激光三角测距（Laser Triangulation）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#microsoft-kinect" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3851,7 +4636,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        主流深度相机对比
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       
         型号对比
@@ -3862,7 +4658,285 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#camera-calibration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        相机标定（Camera Calibration）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="相机标定（Camera Calibration）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        针孔相机模型
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#opencv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        使用 OpenCV 进行标定
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ros-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ROS 2 深度相机集成
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ROS 2 深度相机集成">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#realsense-ros2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        realsense-ros2 驱动
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#topics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        主要话题（Topics）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rgb-d" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        同步 RGB-D 数据
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        深度图转点云
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#point-cloud-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        点云处理（Point Cloud Processing）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="点云处理（Point Cloud Processing）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#open3d" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Open3D 基础操作
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#icp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ICP 点云配准
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        平面分割与物体检测
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        深度图像处理技巧
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="深度图像处理技巧">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        深度图空洞填充
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        深度图与彩色图对齐
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        机器人抓取应用
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="机器人抓取应用">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        主要开源工具
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bin-picking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        料箱拣选（Bin Picking）工作流
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        室外使用注意事项
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="室外使用注意事项">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        结构光相机的局限
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tof" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ToF 相机的多相机干扰
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        被动双目与激光雷达的互补
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
     <span class="md-ellipsis">
       
         选型建议
@@ -3873,7 +4947,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#_18" class="md-nav__link">
     <span class="md-ellipsis">
       
         参考资料
@@ -3912,6 +4986,37 @@
 <li><strong>飞行时间 (Time-of-Flight, ToF)</strong>：发射调制的红外光，通过测量光往返时间或相位差来计算距离。代表产品有 Microsoft Kinect v2。ToF 的深度精度与距离大致成正比，误差随距离增加而增大。</li>
 <li><strong>主动红外双目 (Active IR Stereo)</strong>：利用红外投射器增强纹理，通过双目立体匹配算法计算视差和深度。代表产品有 Intel RealSense D435 和 ZED 系列。这种方案在纹理丰富的场景中表现良好。</li>
 </ul>
+<h2 id="_3">工作原理详解</h2>
+<h3 id="structured-light">结构光法（Structured Light）</h3>
+<p>结构光法的工作流程如下：红外投影仪向场景投射已知的编码图案（通常为散斑或条纹阵列），图案照射到三维物体表面后发生形变，由红外图像传感器捕获变形后的图案，再通过三角几何关系解算每个像素点的深度值。</p>
+<p>散斑结构光（如初代 Kinect 和 RealSense D405）将一块随机散斑图案投射到场景中，通过模板匹配计算散斑偏移量，进而换算深度。这种方式对处理器算力要求适中，适合室内短距离（0.1 m～5 m）应用。</p>
+<p>代表产品：Intel RealSense D415、D435，Orbbec Astra 系列，Microsoft Kinect v1。</p>
+<p><strong>优势</strong>：近距离精度高，计算较简单。</p>
+<p><strong>局限</strong>：强环境光（尤其是直射阳光中的红外成分）会干扰投影图案，导致室外使用效果差；多台结构光相机同时工作时会产生相互干扰。</p>
+<h3 id="time-of-flighttof">飞行时间法（Time of Flight，ToF）</h3>
+<p>飞行时间法通过测量红外光脉冲从发射到反射回传感器的往返时间来计算距离。根据光速 <script type="math/tex">c \approx 3 \times 10^8</script> m/s，距离公式为：</p>
+<p>
+<script type="math/tex; mode=display">d = \frac{c \cdot \Delta t}{2}</script>
+</p>
+<p>其中 <script type="math/tex">\Delta t</script> 为光脉冲的往返飞行时间，除以 2 是因为光走了来回两段距离。</p>
+<p>现代 ToF 相机多采用连续调制光（CWAM-ToF），通过测量发射光与接收光之间的相位差来推算距离，而非直接测量单次脉冲时间，从而实现更高精度的连续深度图输出。</p>
+<p>代表产品：Microsoft Azure Kinect DK、Intel RealSense L515、Orbbec Femto Mega。</p>
+<p><strong>优势</strong>：帧率高（可达 60 fps），适合快速运动场景；不依赖环境纹理；相机结构紧凑。</p>
+<p><strong>局限</strong>：多径效应（Multi-path Interference）在反射强的场景（玻璃、镜面）中会引入误差；多台 ToF 相机同时工作时会发生干扰；测量范围通常受相位模糊距离限制。</p>
+<h3 id="stereo-vision">双目立体视觉（Stereo Vision）</h3>
+<p>双目立体视觉使用两个水平间隔固定距离（基线，Baseline，<script type="math/tex">B</script>）的相机，通过计算同一物体在左右图像中的像素位移（视差，Disparity，<script type="math/tex">d</script>）来恢复深度。</p>
+<p>深度与视差的关系为：</p>
+<p>
+<script type="math/tex; mode=display">Z = \frac{f \cdot B}{d}</script>
+</p>
+<p>其中 <script type="math/tex">f</script> 为相机焦距（单位：像素），<script type="math/tex">B</script> 为两相机光心之间的基线距离（单位：米），<script type="math/tex">d</script> 为左右图像中匹配点的像素差值。</p>
+<p>由公式可知，视差越大对应的深度越小（物体越近）；基线越长，相同深度处的视差越大，测量精度越高，但近距离盲区也随之增大。</p>
+<p>代表产品：Stereolabs ZED 系列（被动双目）、Intel RealSense D435（主动红外双目，投影仪增强纹理以改善低纹理场景）。</p>
+<p><strong>优势</strong>：被动双目不依赖主动光源，不受日光干扰，可室外使用；测量范围可达 20 m 以上。</p>
+<p><strong>局限</strong>：低纹理（白墙、均匀地面）场景中视差匹配失败；立体匹配算法计算量大，需要 GPU 或专用芯片加速。</p>
+<h3 id="laser-triangulation">激光三角测距（Laser Triangulation）</h3>
+<p>激光三角测距适用于近距离高精度场景（毫米至厘米级）。激光发射器发出一条激光线投射到物体表面，高分辨率相机从侧面观察激光线的位置变化，通过三角几何关系计算表面形貌。</p>
+<p>这种原理广泛应用于工业3D扫描仪（如 Sick Ranger、Keyence 系列）和机械臂末端的精密抓取传感器。测量范围通常在 10 mm 至 500 mm，精度可达 0.01 mm 量级。</p>
 <h2 id="microsoft-kinect">Microsoft Kinect</h2>
 <p>Microsoft Kinect 是深度相机的先驱产品，最初为游戏主机开发，后来被广泛应用于机器人研究。</p>
 <h3 id="kinect-v1">Kinect v1</h3>
@@ -3974,7 +5079,7 @@
 <li><strong>接口</strong>：USB 3.0</li>
 <li><strong>附加传感器</strong>：IMU、气压计、磁力计</li>
 <li><strong>ROS支持</strong>：通过 <code>zed-ros-wrapper</code> 或 <code>zed-ros2-wrapper</code> 驱动</li>
-<li><strong>特点</strong>：引入 AI 增强的深度估计，支持物体检测与骨骼追踪，IP66 防护等级。</li>
+<li><strong>特点</strong>：引入 AI 增强的深度估计，支持物体检测与骨骼追踪，IP66 防护等级。还集成了 GPS 接口，可用于室外大范围导航。</li>
 <li><strong>产品页面</strong>：<a href="https://www.stereolabs.com/zed-2/">https://www.stereolabs.com/zed-2/</a></li>
 </ul>
 <h3 id="zed-2i">ZED 2i</h3>
@@ -4030,7 +5135,80 @@
 <li><strong>ROS支持</strong>：通过 <code>realsense2_camera</code> 驱动</li>
 <li><strong>特点</strong>：更长的基线提供更精确的深度估计，适合需要较远距离深度感知的场景。</li>
 </ul>
-<h2 id="_3">型号对比</h2>
+<h2 id="_4">主流深度相机对比</h2>
+<table>
+<thead>
+<tr>
+<th>型号</th>
+<th>技术</th>
+<th>测量范围</th>
+<th>精度（典型）</th>
+<th>室外使用</th>
+<th>价格区间（参考）</th>
+<th>典型应用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Intel RealSense D435i</td>
+<td>主动红外双目 + IMU</td>
+<td>0.1 ~ 10 m</td>
+<td>±2% @ 2m</td>
+<td>受限</td>
+<td>¥1500～2500</td>
+<td>移动机器人、SLAM</td>
+</tr>
+<tr>
+<td>Microsoft Azure Kinect DK</td>
+<td>ToF + 结构光</td>
+<td>0.25 ~ 5.46 m</td>
+<td>±1.1 mm @ 1m</td>
+<td>受限</td>
+<td>¥2500～4000</td>
+<td>身体追踪、AR</td>
+</tr>
+<tr>
+<td>Orbbec Astra+</td>
+<td>结构光</td>
+<td>0.4 ~ 8 m</td>
+<td>±2 mm @ 1m</td>
+<td>受限</td>
+<td>¥800～1500</td>
+<td>低成本室内导航</td>
+</tr>
+<tr>
+<td>Stereolabs ZED 2</td>
+<td>被动双目 + AI</td>
+<td>0.2 ~ 20 m</td>
+<td>±1% @ 5m</td>
+<td>支持</td>
+<td>¥3000～5000</td>
+<td>室外机器人、无人机</td>
+</tr>
+<tr>
+<td>Orbbec Femto Mega</td>
+<td>ToF（iToF）</td>
+<td>0.25 ~ 9 m</td>
+<td>±5 mm</td>
+<td>有限</td>
+<td>¥2000～3500</td>
+<td>Azure Kinect替代</td>
+</tr>
+<tr>
+<td>Intel RealSense D405</td>
+<td>主动红外双目</td>
+<td>0.07 ~ 0.7 m</td>
+<td>&lt;1% @ 0.5m</td>
+<td>不适合</td>
+<td>¥1200～2000</td>
+<td>机械臂末端抓取</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>注：价格随市场变动，仅供参考。室外使用能力主要受太阳红外光干扰影响，被动双目相机受影响最小。</p>
+</blockquote>
+<h2 id="_5">型号对比</h2>
 <table>
 <thead>
 <tr>
@@ -4086,7 +5264,302 @@
 </tbody>
 </table>
 <p>Intel RealSense 完整型号对比：<a href="https://www.intelrealsense.com/compare-depth-cameras/">https://www.intelrealsense.com/compare-depth-cameras/</a></p>
-<h2 id="_4">选型建议</h2>
+<h2 id="camera-calibration">相机标定（Camera Calibration）</h2>
+<p>深度相机在出厂时已进行内部标定，但在高精度应用中，用户需要重新标定以获得最佳精度。相机标定的目的是确定相机的内参（焦距、主点坐标、畸变系数）和外参（旋转矩阵、平移向量）。</p>
+<h3 id="_6">针孔相机模型</h3>
+<p>标准针孔相机模型（Pinhole Camera Model）将三维空间点 <script type="math/tex">[X, Y, Z]^T</script> 投影到图像平面 <script type="math/tex">[u, v]^T</script> 的关系为：</p>
+<p>
+<script type="math/tex; mode=display">s\begin{bmatrix}u\\v\\1\end{bmatrix} = K\begin{bmatrix}R \mid t\end{bmatrix}\begin{bmatrix}X\\Y\\Z\\1\end{bmatrix}</script>
+</p>
+<p>其中 <script type="math/tex">s</script> 为尺度因子，<script type="math/tex">\begin{bmatrix}R \mid t\end{bmatrix}</script> 为 <script type="math/tex">3 \times 4</script> 外参矩阵，<script type="math/tex">K</script> 为 <script type="math/tex">3 \times 3</script> 内参矩阵（Intrinsic Matrix）：</p>
+<p>
+<script type="math/tex; mode=display">K = \begin{bmatrix}f_x & 0 & c_x \\ 0 & f_y & c_y \\ 0 & 0 & 1\end{bmatrix}</script>
+</p>
+<p>各参数含义如下：</p>
+<ul>
+<li>
+<script type="math/tex">f_x, f_y</script>：水平和垂直方向的焦距（单位：像素）</li>
+<li>
+<script type="math/tex">c_x, c_y</script>：主点坐标（光轴与图像平面的交点，单位：像素）</li>
+</ul>
+<p>实际镜头还存在畸变，常用的畸变模型包含径向畸变系数 <script type="math/tex">k_1, k_2, k_3</script> 和切向畸变系数 <script type="math/tex">p_1, p_2</script>。</p>
+<h3 id="opencv">使用 OpenCV 进行标定</h3>
+<p>最常用的标定方法是棋盘格标定法（Checkerboard Calibration）。标定流程如下：</p>
+<ol>
+<li>打印一张已知格子尺寸的棋盘格图案（例如 9×6 个内角点）。</li>
+<li>从多个角度（至少10～20张，覆盖不同位置和倾斜角）拍摄棋盘格图像。</li>
+<li>使用 OpenCV 自动检测角点并求解内参。</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">cv2</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">glob</span>
+
+<span class="c1"># 棋盘格参数：内角点数量（列数, 行数）</span>
+<span class="n">CHECKERBOARD</span> <span class="o">=</span> <span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+<span class="n">square_size</span> <span class="o">=</span> <span class="mf">0.025</span>  <span class="c1"># 每格边长，单位：米</span>
+
+<span class="n">objp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">CHECKERBOARD</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">CHECKERBOARD</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="mi">3</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+<span class="n">objp</span><span class="p">[:,</span> <span class="p">:</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mgrid</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">CHECKERBOARD</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">0</span><span class="p">:</span><span class="n">CHECKERBOARD</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">objp</span> <span class="o">*=</span> <span class="n">square_size</span>
+
+<span class="n">obj_points</span> <span class="o">=</span> <span class="p">[]</span>  <span class="c1"># 三维世界坐标</span>
+<span class="n">img_points</span> <span class="o">=</span> <span class="p">[]</span>  <span class="c1"># 二维图像坐标</span>
+
+<span class="n">images</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s1">&#39;calibration_images/*.png&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">fname</span> <span class="ow">in</span> <span class="n">images</span><span class="p">:</span>
+    <span class="n">img</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span>
+    <span class="n">gray</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">COLOR_BGR2GRAY</span><span class="p">)</span>
+    <span class="n">ret</span><span class="p">,</span> <span class="n">corners</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">findChessboardCorners</span><span class="p">(</span><span class="n">gray</span><span class="p">,</span> <span class="n">CHECKERBOARD</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">ret</span><span class="p">:</span>
+        <span class="n">obj_points</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">objp</span><span class="p">)</span>
+        <span class="n">corners_refined</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">cornerSubPix</span><span class="p">(</span>
+            <span class="n">gray</span><span class="p">,</span> <span class="n">corners</span><span class="p">,</span> <span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="mi">11</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">),</span>
+            <span class="p">(</span><span class="n">cv2</span><span class="o">.</span><span class="n">TERM_CRITERIA_EPS</span> <span class="o">+</span> <span class="n">cv2</span><span class="o">.</span><span class="n">TERM_CRITERIA_MAX_ITER</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mf">0.001</span><span class="p">)</span>
+        <span class="p">)</span>
+        <span class="n">img_points</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">corners_refined</span><span class="p">)</span>
+
+<span class="c1"># 执行标定</span>
+<span class="n">ret</span><span class="p">,</span> <span class="n">K</span><span class="p">,</span> <span class="n">dist_coeffs</span><span class="p">,</span> <span class="n">rvecs</span><span class="p">,</span> <span class="n">tvecs</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">calibrateCamera</span><span class="p">(</span>
+    <span class="n">obj_points</span><span class="p">,</span> <span class="n">img_points</span><span class="p">,</span> <span class="n">gray</span><span class="o">.</span><span class="n">shape</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span>
+<span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;内参矩阵 K:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">K</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;畸变系数:&quot;</span><span class="p">,</span> <span class="n">dist_coeffs</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;重投影误差 (RMS):&quot;</span><span class="p">,</span> <span class="n">ret</span><span class="p">)</span>
+</code></pre></div>
+<p>重投影误差（Root Mean Square Reprojection Error）小于 0.5 像素通常被认为是良好的标定结果。</p>
+<h2 id="ros-2">ROS 2 深度相机集成</h2>
+<h3 id="realsense-ros2">realsense-ros2 驱动</h3>
+<p>Intel RealSense 相机有官方的 ROS 2 驱动包 <code>realsense-ros</code>，支持 Humble、Iron 和 Jazzy 等版本。</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># 安装驱动（Ubuntu 22.04 + ROS 2 Humble）</span>
+sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>ros-humble-realsense2-camera
+
+<span class="c1"># 启动相机节点（默认启用深度图和彩色图）</span>
+ros2<span class="w"> </span>launch<span class="w"> </span>realsense2_camera<span class="w"> </span>rs_launch.py<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>enable_depth:<span class="o">=</span><span class="nb">true</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>enable_color:<span class="o">=</span><span class="nb">true</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>align_depth.enable:<span class="o">=</span><span class="nb">true</span>
+</code></pre></div>
+<h3 id="topics">主要话题（Topics）</h3>
+<p>启动后，相机节点会发布以下主要话题：</p>
+<table>
+<thead>
+<tr>
+<th>话题名称</th>
+<th>消息类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/camera/depth/image_rect_raw</code></td>
+<td><code>sensor_msgs/Image</code></td>
+<td>原始深度图（16位，单位：毫米）</td>
+</tr>
+<tr>
+<td><code>/camera/color/image_raw</code></td>
+<td><code>sensor_msgs/Image</code></td>
+<td>彩色RGB图像</td>
+</tr>
+<tr>
+<td><code>/camera/depth/camera_info</code></td>
+<td><code>sensor_msgs/CameraInfo</code></td>
+<td>相机内参</td>
+</tr>
+<tr>
+<td><code>/camera/depth/color/points</code></td>
+<td><code>sensor_msgs/PointCloud2</code></td>
+<td>已对齐的彩色点云</td>
+</tr>
+<tr>
+<td><code>/camera/imu</code></td>
+<td><code>sensor_msgs/Imu</code></td>
+<td>IMU数据（D435i/D455专有）</td>
+</tr>
+</tbody>
+</table>
+<h3 id="rgb-d">同步 RGB-D 数据</h3>
+<p>在需要同时使用彩色图和深度图时，应使用 <code>message_filters</code> 进行时间同步：</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">rclpy</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rclpy.node</span><span class="w"> </span><span class="kn">import</span> <span class="n">Node</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sensor_msgs.msg</span><span class="w"> </span><span class="kn">import</span> <span class="n">Image</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">message_filters</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">RGBDSubscriber</span><span class="p">(</span><span class="n">Node</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="s1">&#39;rgbd_subscriber&#39;</span><span class="p">)</span>
+        <span class="n">color_sub</span> <span class="o">=</span> <span class="n">message_filters</span><span class="o">.</span><span class="n">Subscriber</span><span class="p">(</span>
+            <span class="bp">self</span><span class="p">,</span> <span class="n">Image</span><span class="p">,</span> <span class="s1">&#39;/camera/color/image_raw&#39;</span>
+        <span class="p">)</span>
+        <span class="n">depth_sub</span> <span class="o">=</span> <span class="n">message_filters</span><span class="o">.</span><span class="n">Subscriber</span><span class="p">(</span>
+            <span class="bp">self</span><span class="p">,</span> <span class="n">Image</span><span class="p">,</span> <span class="s1">&#39;/camera/depth/image_rect_raw&#39;</span>
+        <span class="p">)</span>
+        <span class="c1"># 时间同步：允许最大0.1秒时间差</span>
+        <span class="n">ts</span> <span class="o">=</span> <span class="n">message_filters</span><span class="o">.</span><span class="n">ApproximateTimeSynchronizer</span><span class="p">(</span>
+            <span class="p">[</span><span class="n">color_sub</span><span class="p">,</span> <span class="n">depth_sub</span><span class="p">],</span> <span class="n">queue_size</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">slop</span><span class="o">=</span><span class="mf">0.1</span>
+        <span class="p">)</span>
+        <span class="n">ts</span><span class="o">.</span><span class="n">registerCallback</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">callback</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">callback</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">color_msg</span><span class="p">,</span> <span class="n">depth_msg</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">get_logger</span><span class="p">()</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;收到同步 RGB-D 帧&#39;</span><span class="p">)</span>
+        <span class="c1"># 在此处理彩色图和深度图</span>
+</code></pre></div>
+<h3 id="_7">深度图转点云</h3>
+<p>使用 <code>depth_image_proc</code> 功能包可以将深度图转换为点云，也可以将深度图叠加到彩色图上生成 XYZRGB 点云：</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># 安装 depth_image_proc</span>
+sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>ros-humble-depth-image-proc
+
+<span class="c1"># 通过 launch 文件启动点云转换节点</span>
+ros2<span class="w"> </span>run<span class="w"> </span>depth_image_proc<span class="w"> </span>point_cloud_xyz_node<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--ros-args<span class="w"> </span>-r<span class="w"> </span>image_rect:<span class="o">=</span>/camera/depth/image_rect_raw<span class="w"> </span><span class="se">\</span>
+<span class="w">               </span>-r<span class="w"> </span>camera_info:<span class="o">=</span>/camera/depth/camera_info
+</code></pre></div>
+<h2 id="point-cloud-processing">点云处理（Point Cloud Processing）</h2>
+<p>深度相机输出的深度图可以转换为三维点云（Point Cloud），进而进行各种三维处理任务。Open3D 是目前最流行的点云处理库之一。</p>
+<h3 id="open3d">Open3D 基础操作</h3>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">open3d</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">o3d</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="c1"># 读取点云文件</span>
+<span class="n">pcd</span> <span class="o">=</span> <span class="n">o3d</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">read_point_cloud</span><span class="p">(</span><span class="s2">&quot;cloud.pcd&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;点云包含 </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">pcd</span><span class="o">.</span><span class="n">points</span><span class="p">)</span><span class="si">}</span><span class="s2"> 个点&quot;</span><span class="p">)</span>
+
+<span class="c1"># 体素下采样：将点云稀疏化以减少计算量</span>
+<span class="n">voxel_size</span> <span class="o">=</span> <span class="mf">0.02</span>  <span class="c1"># 体素边长 2cm</span>
+<span class="n">pcd_down</span> <span class="o">=</span> <span class="n">pcd</span><span class="o">.</span><span class="n">voxel_down_sample</span><span class="p">(</span><span class="n">voxel_size</span><span class="o">=</span><span class="n">voxel_size</span><span class="p">)</span>
+
+<span class="c1"># 法向量估计：用于曲面重建和光照计算</span>
+<span class="n">pcd_down</span><span class="o">.</span><span class="n">estimate_normals</span><span class="p">(</span>
+    <span class="n">search_param</span><span class="o">=</span><span class="n">o3d</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">KDTreeSearchParamHybrid</span><span class="p">(</span>
+        <span class="n">radius</span><span class="o">=</span><span class="n">voxel_size</span> <span class="o">*</span> <span class="mi">2</span><span class="p">,</span> <span class="n">max_nn</span><span class="o">=</span><span class="mi">30</span>
+    <span class="p">)</span>
+<span class="p">)</span>
+
+<span class="c1"># 可视化</span>
+<span class="n">o3d</span><span class="o">.</span><span class="n">visualization</span><span class="o">.</span><span class="n">draw_geometries</span><span class="p">([</span><span class="n">pcd_down</span><span class="p">])</span>
+</code></pre></div>
+<h3 id="icp">ICP 点云配准</h3>
+<p>迭代最近点（Iterative Closest Point，ICP）算法用于将两帧点云对齐，常用于位姿估计和三维重建：</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># ICP 精配准</span>
+<span class="n">threshold</span> <span class="o">=</span> <span class="mf">0.02</span>  <span class="c1"># 最大对应点距离</span>
+<span class="n">reg_icp</span> <span class="o">=</span> <span class="n">o3d</span><span class="o">.</span><span class="n">pipelines</span><span class="o">.</span><span class="n">registration</span><span class="o">.</span><span class="n">registration_icp</span><span class="p">(</span>
+    <span class="n">source_pcd</span><span class="p">,</span> <span class="n">target_pcd</span><span class="p">,</span> <span class="n">threshold</span><span class="p">,</span>
+    <span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">4</span><span class="p">),</span>  <span class="c1"># 初始变换矩阵</span>
+    <span class="n">o3d</span><span class="o">.</span><span class="n">pipelines</span><span class="o">.</span><span class="n">registration</span><span class="o">.</span><span class="n">TransformationEstimationPointToPoint</span><span class="p">()</span>
+<span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ICP 变换矩阵:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">reg_icp</span><span class="o">.</span><span class="n">transformation</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;配准误差:&quot;</span><span class="p">,</span> <span class="n">reg_icp</span><span class="o">.</span><span class="n">inlier_rmse</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="_8">平面分割与物体检测</h3>
+<p>使用随机采样一致性（RANSAC）算法分割点云中的平面（如地面、桌面）：</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># RANSAC 平面分割</span>
+<span class="n">plane_model</span><span class="p">,</span> <span class="n">inliers</span> <span class="o">=</span> <span class="n">pcd_down</span><span class="o">.</span><span class="n">segment_plane</span><span class="p">(</span>
+    <span class="n">distance_threshold</span><span class="o">=</span><span class="mf">0.01</span><span class="p">,</span>  <span class="c1"># 内点距离阈值 1cm</span>
+    <span class="n">ransac_n</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+    <span class="n">num_iterations</span><span class="o">=</span><span class="mi">1000</span>
+<span class="p">)</span>
+<span class="p">[</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">]</span> <span class="o">=</span> <span class="n">plane_model</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;平面方程: </span><span class="si">{</span><span class="n">a</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">x + </span><span class="si">{</span><span class="n">b</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">y + </span><span class="si">{</span><span class="n">c</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">z + </span><span class="si">{</span><span class="n">d</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> = 0&quot;</span><span class="p">)</span>
+
+<span class="c1"># 分离平面内点和异点</span>
+<span class="n">inlier_cloud</span> <span class="o">=</span> <span class="n">pcd_down</span><span class="o">.</span><span class="n">select_by_index</span><span class="p">(</span><span class="n">inliers</span><span class="p">)</span>
+<span class="n">outlier_cloud</span> <span class="o">=</span> <span class="n">pcd_down</span><span class="o">.</span><span class="n">select_by_index</span><span class="p">(</span><span class="n">inliers</span><span class="p">,</span> <span class="n">invert</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># 对异点（非平面部分）进行聚类，检测物体</span>
+<span class="n">labels</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">outlier_cloud</span><span class="o">.</span><span class="n">cluster_dbscan</span><span class="p">(</span>
+    <span class="n">eps</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">min_points</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">print_progress</span><span class="o">=</span><span class="kc">False</span>
+<span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;检测到 </span><span class="si">{</span><span class="n">labels</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="si">}</span><span class="s2"> 个物体簇&quot;</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="_9">深度图像处理技巧</h2>
+<h3 id="_10">深度图空洞填充</h3>
+<p>原始深度图中常存在空洞（无效深度像素），原因包括：反射表面、透明物体、遮挡区域以及传感器测量盲区。常用的填充策略有：</p>
+<ul>
+<li><strong>空间滤波（Spatial Filter）</strong>：对邻域有效深度像素取加权平均填充空洞</li>
+<li><strong>时间滤波（Temporal Filter）</strong>：利用相邻帧的深度信息补全当前帧空洞</li>
+<li><strong>孔洞填充（Hole Filling）</strong>：用周围最近有效像素填充，适合小尺寸空洞</li>
+</ul>
+<p>使用 pyrealsense2 直接应用 RealSense 内置后处理滤波器：</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">pyrealsense2</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">rs</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="n">pipeline</span> <span class="o">=</span> <span class="n">rs</span><span class="o">.</span><span class="n">pipeline</span><span class="p">()</span>
+<span class="n">config</span> <span class="o">=</span> <span class="n">rs</span><span class="o">.</span><span class="n">config</span><span class="p">()</span>
+<span class="n">config</span><span class="o">.</span><span class="n">enable_stream</span><span class="p">(</span><span class="n">rs</span><span class="o">.</span><span class="n">stream</span><span class="o">.</span><span class="n">depth</span><span class="p">,</span> <span class="mi">640</span><span class="p">,</span> <span class="mi">480</span><span class="p">,</span> <span class="n">rs</span><span class="o">.</span><span class="n">format</span><span class="o">.</span><span class="n">z16</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
+<span class="n">config</span><span class="o">.</span><span class="n">enable_stream</span><span class="p">(</span><span class="n">rs</span><span class="o">.</span><span class="n">stream</span><span class="o">.</span><span class="n">color</span><span class="p">,</span> <span class="mi">640</span><span class="p">,</span> <span class="mi">480</span><span class="p">,</span> <span class="n">rs</span><span class="o">.</span><span class="n">format</span><span class="o">.</span><span class="n">bgr8</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
+
+<span class="n">pipeline</span><span class="o">.</span><span class="n">start</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>
+
+<span class="c1"># 创建后处理滤波器</span>
+<span class="n">spatial_filter</span> <span class="o">=</span> <span class="n">rs</span><span class="o">.</span><span class="n">spatial_filter</span><span class="p">()</span>      <span class="c1"># 空间平滑</span>
+<span class="n">temporal_filter</span> <span class="o">=</span> <span class="n">rs</span><span class="o">.</span><span class="n">temporal_filter</span><span class="p">()</span>    <span class="c1"># 时间平滑</span>
+<span class="n">hole_filling</span> <span class="o">=</span> <span class="n">rs</span><span class="o">.</span><span class="n">hole_filling_filter</span><span class="p">()</span>   <span class="c1"># 孔洞填充</span>
+<span class="n">align</span> <span class="o">=</span> <span class="n">rs</span><span class="o">.</span><span class="n">align</span><span class="p">(</span><span class="n">rs</span><span class="o">.</span><span class="n">stream</span><span class="o">.</span><span class="n">color</span><span class="p">)</span>         <span class="c1"># 深度对齐到彩色</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="n">frames</span> <span class="o">=</span> <span class="n">pipeline</span><span class="o">.</span><span class="n">wait_for_frames</span><span class="p">()</span>
+        <span class="n">aligned_frames</span> <span class="o">=</span> <span class="n">align</span><span class="o">.</span><span class="n">process</span><span class="p">(</span><span class="n">frames</span><span class="p">)</span>   <span class="c1"># 深度图对齐到彩色图坐标系</span>
+
+        <span class="n">depth_frame</span> <span class="o">=</span> <span class="n">aligned_frames</span><span class="o">.</span><span class="n">get_depth_frame</span><span class="p">()</span>
+        <span class="n">color_frame</span> <span class="o">=</span> <span class="n">aligned_frames</span><span class="o">.</span><span class="n">get_color_frame</span><span class="p">()</span>
+
+        <span class="c1"># 应用后处理滤波</span>
+        <span class="n">depth_frame</span> <span class="o">=</span> <span class="n">spatial_filter</span><span class="o">.</span><span class="n">process</span><span class="p">(</span><span class="n">depth_frame</span><span class="p">)</span>
+        <span class="n">depth_frame</span> <span class="o">=</span> <span class="n">temporal_filter</span><span class="o">.</span><span class="n">process</span><span class="p">(</span><span class="n">depth_frame</span><span class="p">)</span>
+        <span class="n">depth_frame</span> <span class="o">=</span> <span class="n">hole_filling</span><span class="o">.</span><span class="n">process</span><span class="p">(</span><span class="n">depth_frame</span><span class="p">)</span>
+
+        <span class="n">depth_image</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asanyarray</span><span class="p">(</span><span class="n">depth_frame</span><span class="o">.</span><span class="n">get_data</span><span class="p">())</span>
+        <span class="n">color_image</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asanyarray</span><span class="p">(</span><span class="n">color_frame</span><span class="o">.</span><span class="n">get_data</span><span class="p">())</span>
+        <span class="c1"># depth_image 单位为毫米，dtype 为 uint16</span>
+<span class="k">finally</span><span class="p">:</span>
+    <span class="n">pipeline</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+</code></pre></div>
+<h3 id="_11">深度图与彩色图对齐</h3>
+<p>由于深度传感器和彩色相机的光轴不同，需要将深度图变换到彩色相机坐标系（或反之）才能进行像素级的 RGB-D 对应。上方代码中的 <code>rs.align(rs.stream.color)</code> 即完成此操作，将每个深度像素重新投影到彩色相机坐标系中。</p>
+<h2 id="_12">机器人抓取应用</h2>
+<p>深度相机与点云处理结合，是机器人抓取（Grasping）应用的核心技术栈。典型的物体抓取流水线如下：</p>
+<ol>
+<li><strong>深度图采集</strong>：深度相机获取工作台的 RGB-D 图像</li>
+<li><strong>点云生成与预处理</strong>：深度图转点云，去除地面点，聚类得到目标物体点云</li>
+<li><strong>物体位姿估计</strong>：通过模板匹配或深度学习方法估计物体的6自由度位姿（3D位置 + 旋转）</li>
+<li><strong>抓取点规划</strong>：根据物体形状和位姿规划夹爪的抓取位置和姿态</li>
+<li><strong>运动规划与执行</strong>：将抓取位姿转换为机械臂关节轨迹并执行</li>
+</ol>
+<h3 id="_13">主要开源工具</h3>
+<ul>
+<li><strong>AnyGrasp</strong>：基于深度学习的通用6自由度抓取检测网络，输入点云输出抓取候选集，鲁棒性强，适合无序堆叠（Bin Picking）场景</li>
+<li><strong>GraspNet-1Billion</strong>：大规模抓取数据集及配套基准测试，提供多种抓取检测方法的参考实现</li>
+<li><strong>GPD（Grasp Pose Detection）</strong>：经典的抓取位姿检测方法，基于点云局部特征评分</li>
+</ul>
+<h3 id="bin-picking">料箱拣选（Bin Picking）工作流</h3>
+<p>料箱拣选指从无序堆放的零件堆中识别并抓取单个零件，是工业机器人的常见应用场景：</p>
+<ol>
+<li>俯视深度相机获取料箱点云</li>
+<li>点云分割识别单个零件</li>
+<li>抓取检测网络输出抓取位姿</li>
+<li>碰撞检查过滤不可行抓取</li>
+<li>机械臂执行最优抓取</li>
+</ol>
+<h2 id="_14">室外使用注意事项</h2>
+<p>在室外或强光环境下使用深度相机时，需要注意以下问题：</p>
+<h3 id="_15">结构光相机的局限</h3>
+<p>结构光相机（如 RealSense D435、Orbbec Astra）的工作原理依赖于投射红外图案。在室外强烈日光下，太阳辐射中的红外成分会淹没投影图案，导致深度测量完全失效或噪声极大。因此，<strong>结构光相机通常不适合在室外或强烈阳光直射环境中使用</strong>。</p>
+<h3 id="tof">ToF 相机的多相机干扰</h3>
+<p>多台 ToF 相机在同一场景中工作时，会发生相互干扰：一台相机发出的调制光被另一台的传感器接收，产生幻影深度值。解决方法包括：</p>
+<ul>
+<li>错开不同相机的调制频率（若硬件支持）</li>
+<li>在时间上交替触发各相机（Time Multiplexing）</li>
+<li>物理遮挡隔离各相机的视野</li>
+</ul>
+<h3 id="_16">被动双目与激光雷达的互补</h3>
+<p>对于室外远距离感知任务，推荐使用被动双目相机（如 ZED 2）或与激光雷达（LiDAR）结合：</p>
+<ul>
+<li>被动双目不依赖主动光源，不受日光干扰，测量范围可达 20 m</li>
+<li>激光雷达（如 Velodyne、Livox）可在任何光照条件下工作，且测量范围更远（100 m 以上），但水平分辨率较低，无法提供稠密深度图</li>
+<li>RGB-D + LiDAR 融合可同时获得稠密彩色点云和远距离精确测距</li>
+</ul>
+<h2 id="_17">选型建议</h2>
 <p>在为机器人选择深度相机时，可参考以下原则：</p>
 <ul>
 <li><strong>室内近距离操作（抓取、装配）</strong>：选择最小工作距离小、精度高的型号，如 RealSense D405</li>
@@ -4094,13 +5567,18 @@
 <li><strong>室外远距离感知</strong>：选择深度范围远的型号，如 ZED 2 或 ZED 2i</li>
 <li><strong>人体追踪与交互</strong>：选择骨骼追踪功能完善的型号，如 Azure Kinect DK</li>
 <li><strong>与 ROS 集成</strong>：优先选择 ROS 驱动成熟、社区支持良好的产品</li>
+<li><strong>强化学习与仿真</strong>：优先考虑有 Python SDK 且驱动稳定的型号，便于在 Gym 环境中集成</li>
 </ul>
-<h2 id="_5">参考资料</h2>
+<h2 id="_18">参考资料</h2>
 <ol>
 <li>Intel RealSense 官方文档：<a href="https://dev.intelrealsense.com/docs">https://dev.intelrealsense.com/docs</a></li>
 <li>Stereolabs ZED 文档：<a href="https://www.stereolabs.com/docs">https://www.stereolabs.com/docs</a></li>
 <li>Microsoft Azure Kinect 文档：<a href="https://learn.microsoft.com/en-us/azure/kinect-dk/">https://learn.microsoft.com/en-us/azure/kinect-dk/</a></li>
 <li>Khoshelham, K. &amp; Elberink, S. O. (2012). Accuracy and resolution of Kinect depth data for indoor mapping applications. <em>Sensors</em>, 12(2), 1437-1454.</li>
+<li>Open3D 官方文档：<a href="http://www.open3d.org/docs/release/">http://www.open3d.org/docs/release/</a></li>
+<li>GraspNet-1Billion：<a href="https://graspnet.net/">https://graspnet.net/</a></li>
+<li>OpenCV 相机标定教程：<a href="https://docs.opencv.org/4.x/dc/dbb/tutorial_py_calibration.html">https://docs.opencv.org/4.x/dc/dbb/tutorial_py_calibration.html</a></li>
+<li>Fischler, M. A. &amp; Bolles, R. C. (1981). Random sample consensus: a paradigm for model fitting with applications to image analysis and automated cartography. <em>Communications of the ACM</em>, 24(6), 381-395.</li>
 </ol>
 
 
@@ -4110,6 +5588,8 @@
 
 
 
+
+  
 
 
 

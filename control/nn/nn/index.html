@@ -18,14 +18,14 @@
         <link rel="prev" href="../../mpc/mpc/">
       
       
-        <link rel="next" href="../../../sensing/">
+        <link rel="next" href="../../adaptive/adaptive/">
       
       
         
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
     
     
       
@@ -60,6 +60,16 @@
     <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-PJC5MCXWKL"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-PJC5MCXWKL",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-PJC5MCXWKL",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
 
     
     
@@ -792,7 +802,7 @@
   <span class="md-ellipsis">
     
   
-    控制系统指南
+    控制系统
   
 
     
@@ -877,6 +887,34 @@
     
   
     PID控制器
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lqr/lqr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    线性二次型调节器
   
 
     
@@ -1113,33 +1151,100 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#pinn" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        物理信息神经网络（PINN）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="物理信息神经网络（PINN）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       
-        机器人应用
+        损失函数设计
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#pytorch" class="md-nav__link">
     <span class="md-ellipsis">
       
-        优势与局限
+        PyTorch实现示例
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="优势与局限">
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#neural-ode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        神经微分方程（Neural ODE）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="神经微分方程（Neural ODE）">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        基本原理
+      
+    </span>
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#_6" class="md-nav__link">
     <span class="md-ellipsis">
       
-        相对于传统控制器的优势
+        轨迹预测应用
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#koopman" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Koopman算子与线性化
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Koopman算子与线性化">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        基本思想
       
     </span>
   </a>
@@ -1147,7 +1252,196 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
+  <a href="#koopman_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        深度Koopman网络
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lqr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        与LQR结合
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#imitation-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        模仿学习控制（Imitation Learning）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="模仿学习控制（Imitation Learning）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#behavioral-cloning-bc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        行为克隆（Behavioral Cloning, BC）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dagger" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DAgger算法
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pytorch_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PyTorch行为克隆训练示例
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#diffusion-policy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        扩散策略（Diffusion Policy）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="扩散策略（Diffusion Policy）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        核心思想
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        相对于BC的优势
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#safe-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        安全学习控制（Safe Learning）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="安全学习控制（Safe Learning）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cbf" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        控制障碍函数（CBF）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clf-cbf" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CLF-CBF 二次规划
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        端到端学习控制
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="端到端学习控制">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#visuomotor-policy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        视觉运动策略（Visuomotor Policy）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sim-to-real-transfer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        仿真到真实迁移（Sim-to-Real Transfer）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
     <span class="md-ellipsis">
       
         局限性
@@ -1163,7 +1457,107 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        机器人应用
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        优势与局限
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="优势与局限">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        相对于传统控制器的优势
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        局限性
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        训练实践
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="训练实践">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        数据收集与课程学习
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mlp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        完整MLP策略训练流程
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        仿真到真实迁移技术汇总
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
     <span class="md-ellipsis">
       
         应用实例
@@ -1174,7 +1568,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
+  <a href="#_19" class="md-nav__link">
     <span class="md-ellipsis">
       
         参考资料
@@ -1188,6 +1582,34 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../adaptive/adaptive/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    自适应控制
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -1341,6 +1763,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../sensing/sensor-fusion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    传感器融合
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../sensing/slam/" class="md-nav__link">
         
   
@@ -1462,6 +1912,118 @@
     
   
     目标检测 (Object Detection)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cv/segmentation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    图像分割
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cv/tracking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    目标跟踪
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cv/pose-estimation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    位姿估计
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cv/3d-vision/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    三维视觉
   
 
     
@@ -1757,6 +2319,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learning/dl/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    深度学习
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1828,7 +2418,7 @@
   <span class="md-ellipsis">
     
   
-    机器人仿真工具介绍
+    机器人仿真
   
 
     
@@ -2376,6 +2966,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../linux/shell-scripting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shell 脚本与机器人自动化
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -2841,7 +3459,7 @@
   <span class="md-ellipsis">
     
   
-    深度学习数据集
+    机器人与视觉数据集
   
 
     
@@ -3129,6 +3747,118 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../database/spot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Boston Dynamics Spot
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../database/pepper/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SoftBank Pepper
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../database/apollo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Apptronik Apollo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../database/walker-s/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    优必选 Walker S
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -3315,7 +4045,7 @@
   <span class="md-ellipsis">
     
   
-    机器人实验室与研发机构 (国际)
+    机器人实验室与研发机构（国际）
   
 
     
@@ -3343,7 +4073,7 @@
   <span class="md-ellipsis">
     
   
-    机器人实验室与研发机构 (国内)
+    中国机器人研究机构数据库
   
 
     
@@ -3780,33 +4510,100 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#pinn" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        物理信息神经网络（PINN）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="物理信息神经网络（PINN）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       
-        机器人应用
+        损失函数设计
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#pytorch" class="md-nav__link">
     <span class="md-ellipsis">
       
-        优势与局限
+        PyTorch实现示例
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="优势与局限">
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#neural-ode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        神经微分方程（Neural ODE）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="神经微分方程（Neural ODE）">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        基本原理
+      
+    </span>
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#_6" class="md-nav__link">
     <span class="md-ellipsis">
       
-        相对于传统控制器的优势
+        轨迹预测应用
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#koopman" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Koopman算子与线性化
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Koopman算子与线性化">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        基本思想
       
     </span>
   </a>
@@ -3814,7 +4611,196 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
+  <a href="#koopman_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        深度Koopman网络
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lqr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        与LQR结合
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#imitation-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        模仿学习控制（Imitation Learning）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="模仿学习控制（Imitation Learning）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#behavioral-cloning-bc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        行为克隆（Behavioral Cloning, BC）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dagger" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DAgger算法
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pytorch_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PyTorch行为克隆训练示例
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#diffusion-policy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        扩散策略（Diffusion Policy）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="扩散策略（Diffusion Policy）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        核心思想
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        相对于BC的优势
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#safe-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        安全学习控制（Safe Learning）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="安全学习控制（Safe Learning）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cbf" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        控制障碍函数（CBF）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clf-cbf" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CLF-CBF 二次规划
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        端到端学习控制
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="端到端学习控制">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#visuomotor-policy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        视觉运动策略（Visuomotor Policy）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sim-to-real-transfer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        仿真到真实迁移（Sim-to-Real Transfer）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
     <span class="md-ellipsis">
       
         局限性
@@ -3830,7 +4816,107 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        机器人应用
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        优势与局限
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="优势与局限">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        相对于传统控制器的优势
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        局限性
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        训练实践
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="训练实践">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        数据收集与课程学习
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mlp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        完整MLP策略训练流程
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        仿真到真实迁移技术汇总
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
     <span class="md-ellipsis">
       
         应用实例
@@ -3841,7 +4927,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
+  <a href="#_19" class="md-nav__link">
     <span class="md-ellipsis">
       
         参考资料
@@ -3942,7 +5028,415 @@
 <li><strong>TD3（Twin Delayed DDPG）</strong>：改进的确定性策略梯度方法，适合机器人控制任务。</li>
 </ul>
 <p>RL训练通常在仿真环境（如MuJoCo、Isaac Gym、PyBullet）中进行，训练完成后将策略网络迁移到真实机器人上（Sim-to-Real Transfer）。</p>
-<h2 id="_4">机器人应用</h2>
+<h2 id="pinn">物理信息神经网络（PINN）</h2>
+<p>物理信息神经网络（Physics-Informed Neural Networks, PINN）由Raissi等人于2019年提出，其核心思想是在神经网络的损失函数中嵌入物理方程约束，使网络的预测结果自动满足已知的物理定律。</p>
+<h3 id="_4">损失函数设计</h3>
+<p>PINN的总损失函数由数据拟合损失和物理残差损失两部分组成：</p>
+<p>
+<script type="math/tex; mode=display">L = L_{\text{data}} + \lambda L_{\text{physics}}</script>
+</p>
+<p>其中 <script type="math/tex">\lambda</script> 为权衡系数，控制物理约束的强度。对于机器人动力学学习任务：</p>
+<ul>
+<li><strong>数据损失</strong> <script type="math/tex">L_{\text{data}}</script>：使网络输出与测量数据吻合。</li>
+<li><strong>物理损失</strong> <script type="math/tex">L_{\text{physics}}</script>：惩罚网络预测违反牛顿第二定律 <script type="math/tex">F = ma</script> 的程度。</li>
+</ul>
+<p>
+<script type="math/tex; mode=display">L_{\text{physics}} = \left\| m\ddot{q} - \tau + G(q) + C(q,\dot{q})\dot{q} \right\|^2</script>
+</p>
+<p>其中 <script type="math/tex">q</script> 为关节角度，<script type="math/tex">\tau</script> 为关节力矩，<script type="math/tex">G(q)</script> 为重力项，<script type="math/tex">C(q,\dot{q})</script> 为科里奥利矩阵。</p>
+<h3 id="pytorch">PyTorch实现示例</h3>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">torch</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">torch.nn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">nn</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">PINN</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;物理信息神经网络：学习机器人关节动力学&quot;&quot;&quot;</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">state_dim</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">hidden</span><span class="o">=</span><span class="mi">128</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">net</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span>
+            <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">state_dim</span><span class="p">,</span> <span class="n">hidden</span><span class="p">),</span> <span class="n">nn</span><span class="o">.</span><span class="n">Tanh</span><span class="p">(),</span>
+            <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">hidden</span><span class="p">,</span> <span class="n">hidden</span><span class="p">),</span>   <span class="n">nn</span><span class="o">.</span><span class="n">Tanh</span><span class="p">(),</span>
+            <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">hidden</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>         <span class="c1"># 输出：预测加速度</span>
+        <span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">net</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">physics_residual</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">q</span><span class="p">,</span> <span class="n">dq</span><span class="p">,</span> <span class="n">tau</span><span class="p">,</span> <span class="n">mass</span><span class="o">=</span><span class="mf">1.0</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    计算物理残差：F = ma  =&gt;  tau = m * ddq</span>
+<span class="sd">    使用 torch.autograd.grad 计算输出对输入的梯度</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">q</span>   <span class="o">=</span> <span class="n">q</span><span class="o">.</span><span class="n">requires_grad_</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">dq</span>  <span class="o">=</span> <span class="n">dq</span><span class="o">.</span><span class="n">requires_grad_</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="c1"># 网络预测加速度</span>
+    <span class="n">state</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">cat</span><span class="p">([</span><span class="n">q</span><span class="p">,</span> <span class="n">dq</span><span class="p">],</span> <span class="n">dim</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">ddq_pred</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
+
+    <span class="c1"># 物理约束残差：tau - m*ddq = 0</span>
+    <span class="n">residual</span> <span class="o">=</span> <span class="n">tau</span> <span class="o">-</span> <span class="n">mass</span> <span class="o">*</span> <span class="n">ddq_pred</span>
+    <span class="k">return</span> <span class="n">residual</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">pinn_loss</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">q</span><span class="p">,</span> <span class="n">dq</span><span class="p">,</span> <span class="n">tau</span><span class="p">,</span> <span class="n">ddq_measured</span><span class="p">,</span> <span class="n">lam</span><span class="o">=</span><span class="mf">1.0</span><span class="p">):</span>
+    <span class="n">state</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">cat</span><span class="p">([</span><span class="n">q</span><span class="p">,</span> <span class="n">dq</span><span class="p">],</span> <span class="n">dim</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">ddq_pred</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
+
+    <span class="c1"># 数据损失：与测量加速度比较</span>
+    <span class="n">loss_data</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">functional</span><span class="o">.</span><span class="n">mse_loss</span><span class="p">(</span><span class="n">ddq_pred</span><span class="p">,</span> <span class="n">ddq_measured</span><span class="p">)</span>
+
+    <span class="c1"># 物理损失：动力学方程残差</span>
+    <span class="n">residual</span> <span class="o">=</span> <span class="n">physics_residual</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">q</span><span class="p">,</span> <span class="n">dq</span><span class="p">,</span> <span class="n">tau</span><span class="p">)</span>
+    <span class="n">loss_phys</span> <span class="o">=</span> <span class="p">(</span><span class="n">residual</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+
+    <span class="k">return</span> <span class="n">loss_data</span> <span class="o">+</span> <span class="n">lam</span> <span class="o">*</span> <span class="n">loss_phys</span>
+</code></pre></div>
+<p>与纯数据驱动方法相比，PINN在训练数据稀少时仍能保持良好的外推性能，因为物理约束限制了网络的假设空间，防止过拟合。</p>
+<h2 id="neural-ode">神经微分方程（Neural ODE）</h2>
+<p>神经微分方程（Neural Ordinary Differential Equation, Neural ODE）由Chen等人于2018年提出，将神经网络与常微分方程求解器（ODE Solver）结合，形成连续深度模型。</p>
+<h3 id="_5">基本原理</h3>
+<p>传统残差网络（ResNet）的前向传播可以写成：</p>
+<p>
+<script type="math/tex; mode=display">\mathbf{h}_{t+1} = \mathbf{h}_t + f_\theta(\mathbf{h}_t, t)</script>
+</p>
+<p>Neural ODE将离散的层堆叠推广为连续的微分方程：</p>
+<p>
+<script type="math/tex; mode=display">\dot{x} = f_\theta(x, t), \quad x(t_0) = x_0</script>
+</p>
+<p>网络输出通过ODE求解器（如Runge-Kutta方法）在时间上积分得到：</p>
+<p>
+<script type="math/tex; mode=display">x(t_1) = x(t_0) + \int_{t_0}^{t_1} f_\theta(x(t), t)\, dt</script>
+</p>
+<h3 id="_6">轨迹预测应用</h3>
+<p>Neural ODE天然适合建模机器人轨迹（位置随时间的连续演化）。以下使用 <code>torchdiffeq</code> 库实现潜在ODE（Latent ODE）进行轨迹预测：</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">torch</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">torch.nn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">nn</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">torchdiffeq</span><span class="w"> </span><span class="kn">import</span> <span class="n">odeint</span>  <span class="c1"># pip install torchdiffeq</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">ODEFunc</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;定义潜在空间中的动力学 dx/dt = f(x, t)&quot;&quot;&quot;</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">latent_dim</span><span class="o">=</span><span class="mi">16</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">net</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span>
+            <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">latent_dim</span><span class="p">,</span> <span class="mi">64</span><span class="p">),</span> <span class="n">nn</span><span class="o">.</span><span class="n">Tanh</span><span class="p">(),</span>
+            <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="mi">64</span><span class="p">),</span>         <span class="n">nn</span><span class="o">.</span><span class="n">Tanh</span><span class="p">(),</span>
+            <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="n">latent_dim</span><span class="p">)</span>
+        <span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+        <span class="c1"># t 是标量时间，x 是 [batch, latent_dim]</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">net</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">LatentODE</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;潜在ODE：编码器将轨迹压缩到潜在空间，ODE在其中演化&quot;&quot;&quot;</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obs_dim</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">latent_dim</span><span class="o">=</span><span class="mi">16</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">encoder</span>  <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">obs_dim</span><span class="p">,</span> <span class="n">latent_dim</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ode_func</span> <span class="o">=</span> <span class="n">ODEFunc</span><span class="p">(</span><span class="n">latent_dim</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">decoder</span>  <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">latent_dim</span><span class="p">,</span> <span class="n">obs_dim</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">t_span</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        x0:     初始观测值 [batch, obs_dim]</span>
+<span class="sd">        t_span: 时间点序列 [T]</span>
+<span class="sd">        返回:   预测轨迹   [T, batch, obs_dim]</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">z0</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">encoder</span><span class="p">(</span><span class="n">x0</span><span class="p">)</span>                    <span class="c1"># 编码到潜在空间</span>
+        <span class="n">zt</span> <span class="o">=</span> <span class="n">odeint</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ode_func</span><span class="p">,</span> <span class="n">z0</span><span class="p">,</span> <span class="n">t_span</span><span class="p">)</span>   <span class="c1"># ODE积分</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">decoder</span><span class="p">(</span><span class="n">zt</span><span class="p">)</span>                   <span class="c1"># 解码回观测空间</span>
+
+
+<span class="c1"># 使用示例：预测机器人末端执行器的2D轨迹</span>
+<span class="n">model</span>  <span class="o">=</span> <span class="n">LatentODE</span><span class="p">(</span><span class="n">obs_dim</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">latent_dim</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+<span class="n">t_span</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>     <span class="c1"># 预测2秒，共50个时间点</span>
+<span class="n">x0</span>     <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([[</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">]])</span>     <span class="c1"># 初始位置</span>
+<span class="n">traj</span>   <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">t_span</span><span class="p">)</span>             <span class="c1"># 预测轨迹 [50, 1, 2]</span>
+</code></pre></div>
+<p>Neural ODE的主要优势在于：参数数量与积分步数无关（深度自适应），且天然支持不规则采样时间序列。</p>
+<h2 id="koopman">Koopman算子与线性化</h2>
+<p>Koopman算子理论（Koopman Operator Theory）提供了将非线性系统转化为等价线性系统的数学框架，为将深度学习与经典线性控制理论（如LQR）结合提供了途径。</p>
+<h3 id="_7">基本思想</h3>
+<p>对于非线性离散动力系统 <script type="math/tex">x_{k+1} = f(x_k)</script>，Koopman算子 <script type="math/tex">\mathcal{K}</script> 作用于可观测函数（Observable Function）<script type="math/tex">\phi(x)</script> 上：</p>
+<p>
+<script type="math/tex; mode=display">\mathcal{K}\phi(x) = \phi(f(x))</script>
+</p>
+<p>选取合适的可观测函数集 <script type="math/tex">\{\phi_1, \phi_2, \ldots, \phi_N\}</script>，可以将非线性系统在<strong>提升空间</strong>（Lifted Space）中表示为线性系统：</p>
+<p>
+<script type="math/tex; mode=display">z_{k+1} = K z_k, \quad z_k = \phi(x_k)</script>
+</p>
+<p>其中 <script type="math/tex">K</script> 是有限维的线性矩阵，可通过最小二乘拟合。</p>
+<h3 id="koopman_1">深度Koopman网络</h3>
+<p>深度Koopman（Deep Koopman）使用神经网络学习非线性编码器 <script type="math/tex">\phi_\theta</script>，将状态提升到更易于线性化的高维特征空间：</p>
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">DeepKoopman</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    深度Koopman网络</span>
+<span class="sd">    encoder: 非线性提升 x -&gt; z（升维）</span>
+<span class="sd">    K:       线性动力学矩阵（可训练）</span>
+<span class="sd">    decoder: 投影回原始状态空间 z -&gt; x</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">state_dim</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">lift_dim</span><span class="o">=</span><span class="mi">32</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">encoder</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span>
+            <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">state_dim</span><span class="p">,</span> <span class="mi">64</span><span class="p">),</span> <span class="n">nn</span><span class="o">.</span><span class="n">ELU</span><span class="p">(),</span>
+            <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="n">lift_dim</span><span class="p">)</span>
+        <span class="p">)</span>
+        <span class="c1"># 线性Koopman矩阵 K（核心线性假设）</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">K</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">lift_dim</span><span class="p">,</span> <span class="n">lift_dim</span><span class="p">,</span> <span class="n">bias</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">decoder</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span>
+            <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">lift_dim</span><span class="p">,</span> <span class="mi">64</span><span class="p">),</span> <span class="n">nn</span><span class="o">.</span><span class="n">ELU</span><span class="p">(),</span>
+            <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="n">state_dim</span><span class="p">)</span>
+        <span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+        <span class="n">z</span>      <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">encoder</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>       <span class="c1"># 提升</span>
+        <span class="n">z_next</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">K</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>             <span class="c1"># 线性演化</span>
+        <span class="n">x_next</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">decoder</span><span class="p">(</span><span class="n">z_next</span><span class="p">)</span>  <span class="c1"># 投影回原空间</span>
+        <span class="k">return</span> <span class="n">x_next</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">z_next</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">koopman_loss</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">x_next</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Koopman损失 = 预测损失 + 线性一致性损失&quot;&quot;&quot;</span>
+    <span class="n">x_pred</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">z_next</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">_</span><span class="p">,</span> <span class="n">z_true</span><span class="p">,</span> <span class="n">_</span>      <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">x_next</span><span class="p">)</span>
+
+    <span class="n">loss_pred</span>  <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">functional</span><span class="o">.</span><span class="n">mse_loss</span><span class="p">(</span><span class="n">x_pred</span><span class="p">,</span> <span class="n">x_next</span><span class="p">)</span>  <span class="c1"># 一步预测</span>
+    <span class="n">loss_linear</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">functional</span><span class="o">.</span><span class="n">mse_loss</span><span class="p">(</span><span class="n">z_next</span><span class="p">,</span> <span class="n">z_true</span><span class="p">)</span>  <span class="c1"># 线性性约束</span>
+    <span class="k">return</span> <span class="n">loss_pred</span> <span class="o">+</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">loss_linear</span>
+</code></pre></div>
+<h3 id="lqr">与LQR结合</h3>
+<p>Koopman线性化后，可以在提升空间中直接应用线性二次型调节器（Linear Quadratic Regulator, LQR）。LQR在提升空间 <script type="math/tex">z</script> 中设计最优线性反馈增益 <script type="math/tex">K_{LQR}</script>，再将控制律映射回原始状态空间，从而实现对非线性系统的近最优控制。</p>
+<h2 id="imitation-learning">模仿学习控制（Imitation Learning）</h2>
+<p>模仿学习（Imitation Learning）从专家演示数据中学习控制策略，无需手动设计奖励函数。</p>
+<h3 id="behavioral-cloning-bc">行为克隆（Behavioral Cloning, BC）</h3>
+<p>行为克隆（Behavioral Cloning, BC）将模仿学习转化为监督学习问题：直接将专家的（状态，动作）对作为训练数据，训练策略网络 <script type="math/tex">\pi_\theta(a|s)</script>。</p>
+<p>
+<script type="math/tex; mode=display">L_{BC} = \mathbb{E}_{(s,a) \sim \mathcal{D}_{expert}}\left[\|\pi_\theta(s) - a\|^2\right]</script>
+</p>
+<p>BC的主要缺陷是<strong>协变量偏移（Covariate Shift）</strong>：训练数据与测试时智能体实际访问的状态分布不同——智能体在部署时遇到的轻微偏差会被策略放大，最终导致越来越大的错误积累。</p>
+<h3 id="dagger">DAgger算法</h3>
+<p>数据集聚合（Dataset Aggregation, DAgger）算法（Ross et al., 2011）是BC的改进版，通过迭代地让策略与专家交互来解决协变量偏移问题：</p>
+<div class="highlight"><pre><span></span><code>DAgger 算法:
+1. 用专家数据训练初始策略 π_1（等同于BC）
+2. 对于每次迭代 i = 1, 2, ..., N:
+   a. 用当前策略 π_i 在环境中运行，收集访问的状态 s_1, s_2, ...
+   b. 请专家对这些状态标注最优动作: a* = π_expert(s)
+   c. 将新的 (s, a*) 对加入数据集: D = D ∪ {(s, a*)}
+   d. 在聚合数据集 D 上重新训练策略 π_{i+1}
+</code></pre></div>
+<p>DAgger的收敛性有理论保证：模型误差不随时间累积。主要局限是需要专家在线参与（或交互式仿真器），在真实机器人演示中成本较高。</p>
+<h3 id="pytorch_1">PyTorch行为克隆训练示例</h3>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">torch</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">torch.nn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">nn</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">torch.utils.data</span><span class="w"> </span><span class="kn">import</span> <span class="n">TensorDataset</span><span class="p">,</span> <span class="n">DataLoader</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">BCPolicy</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;行为克隆策略网络（MLP）&quot;&quot;&quot;</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obs_dim</span><span class="p">,</span> <span class="n">act_dim</span><span class="p">,</span> <span class="n">hidden</span><span class="o">=</span><span class="mi">256</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">net</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span>
+            <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">obs_dim</span><span class="p">,</span> <span class="n">hidden</span><span class="p">),</span> <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">(),</span>
+            <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">hidden</span><span class="p">,</span> <span class="n">hidden</span><span class="p">),</span>  <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">(),</span>
+            <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">hidden</span><span class="p">,</span> <span class="n">act_dim</span><span class="p">)</span>
+        <span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obs</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">net</span><span class="p">(</span><span class="n">obs</span><span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">train_bc</span><span class="p">(</span><span class="n">obs_data</span><span class="p">,</span> <span class="n">act_data</span><span class="p">,</span> <span class="n">obs_dim</span><span class="p">,</span> <span class="n">act_dim</span><span class="p">,</span>
+             <span class="n">epochs</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">256</span><span class="p">,</span> <span class="n">lr</span><span class="o">=</span><span class="mf">3e-4</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    obs_data: [N, obs_dim] 专家观测</span>
+<span class="sd">    act_data: [N, act_dim] 专家动作</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">dataset</span>    <span class="o">=</span> <span class="n">TensorDataset</span><span class="p">(</span><span class="n">obs_data</span><span class="p">,</span> <span class="n">act_data</span><span class="p">)</span>
+    <span class="n">loader</span>     <span class="o">=</span> <span class="n">DataLoader</span><span class="p">(</span><span class="n">dataset</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">policy</span>     <span class="o">=</span> <span class="n">BCPolicy</span><span class="p">(</span><span class="n">obs_dim</span><span class="p">,</span> <span class="n">act_dim</span><span class="p">)</span>
+    <span class="n">optimizer</span>  <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">AdamW</span><span class="p">(</span><span class="n">policy</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="n">lr</span><span class="p">,</span>
+                                   <span class="n">weight_decay</span><span class="o">=</span><span class="mf">1e-4</span><span class="p">)</span>
+    <span class="n">scheduler</span>  <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">lr_scheduler</span><span class="o">.</span><span class="n">CosineAnnealingLR</span><span class="p">(</span>
+                     <span class="n">optimizer</span><span class="p">,</span> <span class="n">T_max</span><span class="o">=</span><span class="n">epochs</span><span class="p">)</span>
+    <span class="n">loss_fn</span>    <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">MSELoss</span><span class="p">()</span>
+
+    <span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">epochs</span><span class="p">):</span>
+        <span class="n">total_loss</span> <span class="o">=</span> <span class="mf">0.0</span>
+        <span class="k">for</span> <span class="n">obs_batch</span><span class="p">,</span> <span class="n">act_batch</span> <span class="ow">in</span> <span class="n">loader</span><span class="p">:</span>
+            <span class="n">pred</span> <span class="o">=</span> <span class="n">policy</span><span class="p">(</span><span class="n">obs_batch</span><span class="p">)</span>
+            <span class="n">loss</span> <span class="o">=</span> <span class="n">loss_fn</span><span class="p">(</span><span class="n">pred</span><span class="p">,</span> <span class="n">act_batch</span><span class="p">)</span>
+
+            <span class="n">optimizer</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">()</span>
+            <span class="n">loss</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
+            <span class="c1"># 梯度裁剪：防止梯度爆炸</span>
+            <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">clip_grad_norm_</span><span class="p">(</span><span class="n">policy</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="mf">1.0</span><span class="p">)</span>
+            <span class="n">optimizer</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
+            <span class="n">total_loss</span> <span class="o">+=</span> <span class="n">loss</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
+
+        <span class="n">scheduler</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">epoch</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="mi">10</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">avg</span> <span class="o">=</span> <span class="n">total_loss</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">loader</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Epoch </span><span class="si">{</span><span class="n">epoch</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">epochs</span><span class="si">}</span><span class="s2">  Loss: </span><span class="si">{</span><span class="n">avg</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">  &quot;</span>
+                  <span class="sa">f</span><span class="s2">&quot;LR: </span><span class="si">{</span><span class="n">scheduler</span><span class="o">.</span><span class="n">get_last_lr</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span><span class="si">:</span><span class="s2">.2e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">policy</span>
+</code></pre></div>
+<h2 id="diffusion-policy">扩散策略（Diffusion Policy）</h2>
+<p>扩散策略（Diffusion Policy）由Chi等人于2023年提出，将去噪扩散概率模型（Denoising Diffusion Probabilistic Model, DDPM）用于机器人操控策略学习，在处理多模态动作分布方面展现出超越传统行为克隆的显著优势。</p>
+<h3 id="_8">核心思想</h3>
+<p>传统行为克隆（BC）使用均方误差损失，本质上拟合动作的条件均值，当专家示例存在多种等价解法（多模态）时，均值会落在不可行区域（平均多个模态）。</p>
+<p>扩散策略将策略学习建模为<strong>去噪过程</strong>：</p>
+<ol>
+<li><strong>前向过程（加噪）</strong>：对真实专家动作 <script type="math/tex">a_0</script> 逐步加高斯噪声，得到纯噪声 <script type="math/tex">a_T</script>。</li>
+<li><strong>反向过程（去噪）</strong>：训练网络 <script type="math/tex">\epsilon_\theta(a_t, t, o)</script> 预测每一步的噪声，以观测 <script type="math/tex">o</script> 为条件，从纯噪声迭代恢复出动作 <script type="math/tex">a_0</script>。</li>
+</ol>
+<p>策略在推理时从高斯噪声出发，经过 <script type="math/tex">K</script> 步去噪生成动作序列。由于每次采样路径不同，可以自然表达多模态分布（每种抓取姿态对应一个模态）。</p>
+<h3 id="bc">相对于BC的优势</h3>
+<table>
+<thead>
+<tr>
+<th>特性</th>
+<th>行为克隆 (BC)</th>
+<th>扩散策略</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>多模态动作分布</td>
+<td>无法表达（均值塌缩）</td>
+<td>天然支持</td>
+</tr>
+<tr>
+<td>动作精度</td>
+<td>中等</td>
+<td>高（迭代精化）</td>
+</tr>
+<tr>
+<td>推理速度</td>
+<td>极快（单次前向）</td>
+<td>较慢（多步去噪）</td>
+</tr>
+<tr>
+<td>训练复杂度</td>
+<td>简单（MSE损失）</td>
+<td>中等（DDPM损失）</td>
+</tr>
+<tr>
+<td>对超参数敏感性</td>
+<td>中等</td>
+<td>较低</td>
+</tr>
+</tbody>
+</table>
+<p>扩散策略在Columbia的机器人操控实验中，相比BC和LSTM-GMM（高斯混合模型）将任务成功率提升了显著幅度，尤其在需要精确把握物体或处理多解情况时优势明显。</p>
+<h2 id="safe-learning">安全学习控制（Safe Learning）</h2>
+<p>在实际机器人部署中，确保学习控制器满足安全约束（如避免碰撞、关节限位）至关重要。控制障碍函数（Control Barrier Function, CBF）提供了一种严格的安全保证框架，可与神经网络控制器结合使用。</p>
+<h3 id="cbf">控制障碍函数（CBF）</h3>
+<p>给定安全集合 <script type="math/tex">\mathcal{C} = \{x : h(x) \geq 0\}</script>，CBF <script type="math/tex">h(x)</script> 要求系统轨迹在 <script type="math/tex">\mathcal{C}</script> 内保持<strong>前向不变性（Forward Invariance）</strong>：</p>
+<p>
+<script type="math/tex; mode=display">\dot{h}(x, u) = \frac{\partial h}{\partial x} f(x, u) \geq -\alpha(h(x))</script>
+</p>
+<p>其中 <script type="math/tex">\alpha(\cdot)</script> 是一个K类函数（class-K function，严格递增且 <script type="math/tex">\alpha(0)=0</script>），常取 <script type="math/tex">\alpha(h) = \gamma h</script>（线性）。</p>
+<p><strong>直觉理解</strong>：当系统接近安全边界（<script type="math/tex">h(x) \to 0</script>）时，约束要求 <script type="math/tex">\dot{h}</script> 越来越小（允许趋向边界的速率递减），从而阻止系统穿越边界。</p>
+<h3 id="clf-cbf">CLF-CBF 二次规划</h3>
+<p>将控制李雅普诺夫函数（Control Lyapunov Function, CLF）用于稳定性、CBF用于安全性，两者通过<strong>二次规划（Quadratic Program, QP）</strong>统一求解：</p>
+<p>
+<script type="math/tex; mode=display">u^* = \arg\min_{u} \|u - u_{ref}\|^2</script>
+</p>
+<p>
+<script type="math/tex; mode=display">\text{s.t.} \quad \dot{V}(x, u) \leq -\lambda V(x) \quad \text{（CLF稳定性约束）}</script>
+</p>
+<p>
+<script type="math/tex; mode=display">\qquad\quad \dot{h}(x, u) \geq -\gamma h(x) \quad \text{（CBF安全约束）}</script>
+</p>
+<p>
+<script type="math/tex; mode=display">\qquad\quad u_{min} \leq u \leq u_{max} \quad \text{（输入约束）}</script>
+</p>
+<p>其中 <script type="math/tex">u_{ref}</script> 是神经网络策略的输出，QP在满足安全约束的前提下对其进行最小修正。</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">torch</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">cvxpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">cp</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">cbf_qp_filter</span><span class="p">(</span><span class="n">u_ref</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">h_func</span><span class="p">,</span> <span class="n">dh_dx</span><span class="p">,</span> <span class="n">f_func</span><span class="p">,</span> <span class="n">gamma</span><span class="o">=</span><span class="mf">1.0</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    CBF安全过滤器：对神经网络控制输出 u_ref 进行安全修正</span>
+<span class="sd">    h_func:  CBF函数 h(x)，安全集合 h(x) &gt;= 0</span>
+<span class="sd">    dh_dx:   h 对 x 的梯度（行向量）</span>
+<span class="sd">    f_func:  系统动力学 f(x, u)，需满足 dh/dt &gt;= -gamma*h</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">u_dim</span>   <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">u_ref</span><span class="p">)</span>
+    <span class="n">u</span>       <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">Variable</span><span class="p">(</span><span class="n">u_dim</span><span class="p">)</span>
+
+    <span class="c1"># CBF约束：Lf_h + Lg_h * u &gt;= -gamma * h(x)</span>
+    <span class="n">h_val</span>   <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">h_func</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+    <span class="n">Lf_h</span>    <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">dh_dx</span> <span class="o">@</span> <span class="n">f_func</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">u_dim</span><span class="p">)))</span>
+    <span class="n">Lg_h</span>    <span class="o">=</span> <span class="n">dh_dx</span> <span class="o">@</span> <span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="n">u_dim</span><span class="p">)</span>  <span class="c1"># 简化：直接输入影响</span>
+
+    <span class="n">constraints</span> <span class="o">=</span> <span class="p">[</span><span class="n">Lg_h</span> <span class="o">@</span> <span class="n">u</span> <span class="o">&gt;=</span> <span class="o">-</span><span class="n">gamma</span> <span class="o">*</span> <span class="n">h_val</span> <span class="o">-</span> <span class="n">Lf_h</span><span class="p">]</span>
+
+    <span class="c1"># 目标：最小化对参考控制的修正</span>
+    <span class="n">objective</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">Minimize</span><span class="p">(</span><span class="n">cp</span><span class="o">.</span><span class="n">sum_squares</span><span class="p">(</span><span class="n">u</span> <span class="o">-</span> <span class="n">u_ref</span><span class="p">))</span>
+    <span class="n">prob</span>      <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">Problem</span><span class="p">(</span><span class="n">objective</span><span class="p">,</span> <span class="n">constraints</span><span class="p">)</span>
+    <span class="n">prob</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">solver</span><span class="o">=</span><span class="n">cp</span><span class="o">.</span><span class="n">OSQP</span><span class="p">,</span> <span class="n">warm_start</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">prob</span><span class="o">.</span><span class="n">status</span> <span class="o">==</span> <span class="n">cp</span><span class="o">.</span><span class="n">OPTIMAL</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">u</span><span class="o">.</span><span class="n">value</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">u_ref</span>  <span class="c1"># 求解失败时回退到原始控制</span>
+</code></pre></div>
+<h2 id="_9">端到端学习控制</h2>
+<p>端到端（End-to-End）学习控制指直接从原始感知输入（如摄像头图像、雷达点云）输出控制命令，中间不依赖手工设计的感知、规划等模块。</p>
+<h3 id="visuomotor-policy">视觉运动策略（Visuomotor Policy）</h3>
+<p>Levine等人2016年提出的端到端视觉运动策略（Visuomotor Policy）将卷积神经网络（CNN）与运动规划网络连接，直接从RGB图像预测机器人关节力矩：</p>
+<p>
+<script type="math/tex; mode=display">u = \pi_\theta(\text{image}, \text{robot\_state})</script>
+</p>
+<p>现代端到端控制通常采用以下架构：</p>
+<ol>
+<li><strong>视觉编码器</strong>：预训练的视觉Transformer（ViT）或ResNet提取图像特征。</li>
+<li><strong>状态融合</strong>：将图像特征与机器人本体状态（关节角度、速度）拼接。</li>
+<li><strong>策略头</strong>：MLP或Transformer输出动作序列。</li>
+</ol>
+<h3 id="sim-to-real-transfer">仿真到真实迁移（Sim-to-Real Transfer）</h3>
+<p>由于在真实机器人上收集大规模训练数据成本极高，端到端控制器通常在仿真中训练，然后迁移到真实机器人。</p>
+<p><strong>域随机化（Domain Randomization）</strong> 是最常用的仿真到真实迁移技术：在训练时随机扰动仿真参数（物体颜色、纹理、光照、摩擦系数、传感器噪声等），迫使策略网络学习对这些变化鲁棒的特征：</p>
+<table>
+<thead>
+<tr>
+<th>随机化类别</th>
+<th>随机化参数示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>视觉外观</td>
+<td>纹理、颜色、光照方向、相机位置噪声</td>
+</tr>
+<tr>
+<td>物理参数</td>
+<td>质量、摩擦系数、关节阻尼、弹性系数</td>
+</tr>
+<tr>
+<td>传感器噪声</td>
+<td>图像噪声、关节编码器噪声、延迟</td>
+</tr>
+<tr>
+<td>任务参数</td>
+<td>物体初始位置、目标位置的随机扰动</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_10">局限性</h3>
+<p>端到端学习控制目前的主要挑战：</p>
+<ul>
+<li><strong>可解释性差</strong>：网络内部决策过程不透明，难以诊断故障原因。</li>
+<li><strong>分布外泛化（Out-of-Distribution Generalization）</strong>：对训练分布外的场景（新纹理、新光照）可能完全失败。</li>
+<li><strong>数据效率</strong>：收敛通常需要数百万次仿真交互，样本效率远低于基于模型的方法。</li>
+<li><strong>安全性保证缺失</strong>：端到端网络很难提供碰撞避免等硬约束的形式化保证。</li>
+</ul>
+<h2 id="_11">机器人应用</h2>
 <p>神经网络控制器在机器人领域的主要应用包括：</p>
 <ul>
 <li><strong>四足/人形机器人运动控制</strong>：使用RL训练策略网络，实现在复杂地形上的稳定行走、奔跑和跳跃。</li>
@@ -3951,15 +5445,15 @@
 <li><strong>无人机控制</strong>：学习高机动飞行和特技动作的控制策略。</li>
 <li><strong>柔性机器人控制</strong>：难以精确建模的柔性机构的控制。</li>
 </ul>
-<h2 id="_5">优势与局限</h2>
-<h3 id="_6">相对于传统控制器的优势</h3>
+<h2 id="_12">优势与局限</h2>
+<h3 id="_13">相对于传统控制器的优势</h3>
 <ul>
 <li><strong>无需精确模型</strong>：可以在模型未知或难以建立的情况下工作。</li>
 <li><strong>处理非线性</strong>：天然适合处理高度非线性的系统。</li>
 <li><strong>自适应能力</strong>：可以通过在线学习适应系统参数的变化和外部干扰。</li>
 <li><strong>处理高维输入</strong>：可以直接处理图像、点云等高维感知数据。</li>
 </ul>
-<h3 id="_7">局限性</h3>
+<h3 id="_14">局限性</h3>
 <ul>
 <li><strong>缺乏可解释性（Interpretability）</strong>：神经网络是"黑箱"模型，难以分析和验证其行为的安全性。</li>
 <li><strong>稳定性保证</strong>：与经典控制理论（如Lyapunov稳定性）不同，神经网络控制器通常缺乏严格的稳定性证明。</li>
@@ -3967,7 +5461,158 @@
 <li><strong>泛化能力</strong>：在训练分布之外的场景中，行为可能不可预测。</li>
 <li><strong>实时计算需求</strong>：复杂的网络结构可能无法满足高频控制的计算时间约束。</li>
 </ul>
-<h2 id="_8">应用实例</h2>
+<h2 id="_15">训练实践</h2>
+<h3 id="_16">数据收集与课程学习</h3>
+<p>高质量的训练数据是神经网络控制器性能的基础。数据收集策略：</p>
+<ul>
+<li><strong>课程学习（Curriculum Learning）</strong>：从简单任务开始训练，逐步增加难度。例如，先训练机器人在平地行走，再引入斜坡、台阶等障碍。</li>
+<li><strong>多样化场景覆盖</strong>：收集覆盖尽可能多的状态空间的数据，避免策略在边界状态上失效。</li>
+<li><strong>数据增强</strong>：对观测数据进行随机裁剪、颜色抖动、噪声添加等增强，提升泛化能力。</li>
+</ul>
+<h3 id="mlp">完整MLP策略训练流程</h3>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">torch</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">torch.nn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">nn</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">torch.utils.data</span><span class="w"> </span><span class="kn">import</span> <span class="n">DataLoader</span><span class="p">,</span> <span class="n">TensorDataset</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">MLPPolicy</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;带LayerNorm的MLP策略网络，适合机器人控制任务&quot;&quot;&quot;</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obs_dim</span><span class="p">,</span> <span class="n">act_dim</span><span class="p">,</span> <span class="n">hidden_dim</span><span class="o">=</span><span class="mi">256</span><span class="p">,</span> <span class="n">n_layers</span><span class="o">=</span><span class="mi">3</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        <span class="n">layers</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">in_dim</span> <span class="o">=</span> <span class="n">obs_dim</span>
+        <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_layers</span><span class="p">):</span>
+            <span class="n">layers</span> <span class="o">+=</span> <span class="p">[</span>
+                <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">in_dim</span><span class="p">,</span> <span class="n">hidden_dim</span><span class="p">),</span>
+                <span class="n">nn</span><span class="o">.</span><span class="n">LayerNorm</span><span class="p">(</span><span class="n">hidden_dim</span><span class="p">),</span>
+                <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">()</span>
+            <span class="p">]</span>
+            <span class="n">in_dim</span> <span class="o">=</span> <span class="n">hidden_dim</span>
+        <span class="n">layers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">hidden_dim</span><span class="p">,</span> <span class="n">act_dim</span><span class="p">))</span>
+        <span class="n">layers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Tanh</span><span class="p">())</span>  <span class="c1"># 动作归一化到 [-1, 1]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">net</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span><span class="o">*</span><span class="n">layers</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obs</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">net</span><span class="p">(</span><span class="n">obs</span><span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">train_policy</span><span class="p">(</span><span class="n">obs_data</span><span class="p">,</span> <span class="n">act_data</span><span class="p">,</span> <span class="n">obs_dim</span><span class="p">,</span> <span class="n">act_dim</span><span class="p">,</span>
+                 <span class="n">epochs</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">512</span><span class="p">,</span>
+                 <span class="n">lr</span><span class="o">=</span><span class="mf">3e-4</span><span class="p">,</span> <span class="n">weight_decay</span><span class="o">=</span><span class="mf">1e-4</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    完整训练流程：AdamW优化器 + 余弦退火学习率 + 梯度裁剪</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">device</span>  <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="s2">&quot;cuda&quot;</span> <span class="k">if</span> <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">is_available</span><span class="p">()</span> <span class="k">else</span> <span class="s2">&quot;cpu&quot;</span><span class="p">)</span>
+    <span class="n">policy</span>  <span class="o">=</span> <span class="n">MLPPolicy</span><span class="p">(</span><span class="n">obs_dim</span><span class="p">,</span> <span class="n">act_dim</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+
+    <span class="n">dataset</span> <span class="o">=</span> <span class="n">TensorDataset</span><span class="p">(</span><span class="n">obs_data</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">),</span> <span class="n">act_data</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">))</span>
+    <span class="n">loader</span>  <span class="o">=</span> <span class="n">DataLoader</span><span class="p">(</span><span class="n">dataset</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="n">batch_size</span><span class="p">,</span>
+                         <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">pin_memory</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+    <span class="c1"># AdamW：带权重衰减的Adam，比L2正则化更稳定</span>
+    <span class="n">optimizer</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">AdamW</span><span class="p">(</span><span class="n">policy</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span>
+                                  <span class="n">lr</span><span class="o">=</span><span class="n">lr</span><span class="p">,</span> <span class="n">weight_decay</span><span class="o">=</span><span class="n">weight_decay</span><span class="p">)</span>
+
+    <span class="c1"># 余弦退火：学习率从 lr 平滑衰减到 0，避免震荡</span>
+    <span class="n">scheduler</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">lr_scheduler</span><span class="o">.</span><span class="n">CosineAnnealingLR</span><span class="p">(</span>
+                    <span class="n">optimizer</span><span class="p">,</span> <span class="n">T_max</span><span class="o">=</span><span class="n">epochs</span><span class="p">,</span> <span class="n">eta_min</span><span class="o">=</span><span class="mf">1e-6</span><span class="p">)</span>
+
+    <span class="n">loss_fn</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">MSELoss</span><span class="p">()</span>
+    <span class="n">best_loss</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="s1">&#39;inf&#39;</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">epochs</span><span class="p">):</span>
+        <span class="n">policy</span><span class="o">.</span><span class="n">train</span><span class="p">()</span>
+        <span class="n">epoch_loss</span> <span class="o">=</span> <span class="mf">0.0</span>
+
+        <span class="k">for</span> <span class="n">obs_batch</span><span class="p">,</span> <span class="n">act_batch</span> <span class="ow">in</span> <span class="n">loader</span><span class="p">:</span>
+            <span class="n">pred</span> <span class="o">=</span> <span class="n">policy</span><span class="p">(</span><span class="n">obs_batch</span><span class="p">)</span>
+            <span class="n">loss</span> <span class="o">=</span> <span class="n">loss_fn</span><span class="p">(</span><span class="n">pred</span><span class="p">,</span> <span class="n">act_batch</span><span class="p">)</span>
+
+            <span class="n">optimizer</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">()</span>
+            <span class="n">loss</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
+
+            <span class="c1"># 梯度裁剪：防止梯度爆炸，max_norm=1.0 是常用设置</span>
+            <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">clip_grad_norm_</span><span class="p">(</span><span class="n">policy</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span>
+                                           <span class="n">max_norm</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
+            <span class="n">optimizer</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
+            <span class="n">epoch_loss</span> <span class="o">+=</span> <span class="n">loss</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
+
+        <span class="n">scheduler</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
+        <span class="n">avg_loss</span> <span class="o">=</span> <span class="n">epoch_loss</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">loader</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">avg_loss</span> <span class="o">&lt;</span> <span class="n">best_loss</span><span class="p">:</span>
+            <span class="n">best_loss</span> <span class="o">=</span> <span class="n">avg_loss</span>
+            <span class="n">torch</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">policy</span><span class="o">.</span><span class="n">state_dict</span><span class="p">(),</span> <span class="s2">&quot;best_policy.pt&quot;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">epoch</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="mi">20</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Epoch </span><span class="si">{</span><span class="n">epoch</span><span class="o">+</span><span class="mi">1</span><span class="si">:</span><span class="s2">3d</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">epochs</span><span class="si">}</span><span class="s2">  &quot;</span>
+                  <span class="sa">f</span><span class="s2">&quot;Loss: </span><span class="si">{</span><span class="n">avg_loss</span><span class="si">:</span><span class="s2">.5f</span><span class="si">}</span><span class="s2">  &quot;</span>
+                  <span class="sa">f</span><span class="s2">&quot;LR: </span><span class="si">{</span><span class="n">scheduler</span><span class="o">.</span><span class="n">get_last_lr</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span><span class="si">:</span><span class="s2">.2e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;训练完成，最优损失: </span><span class="si">{</span><span class="n">best_loss</span><span class="si">:</span><span class="s2">.5f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">policy</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">evaluate_policy</span><span class="p">(</span><span class="n">policy</span><span class="p">,</span> <span class="n">env</span><span class="p">,</span> <span class="n">n_episodes</span><span class="o">=</span><span class="mi">20</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;在仿真环境中评估策略，返回平均回报&quot;&quot;&quot;</span>
+    <span class="n">policy</span><span class="o">.</span><span class="n">eval</span><span class="p">()</span>
+    <span class="n">total_reward</span> <span class="o">=</span> <span class="mf">0.0</span>
+
+    <span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">():</span>
+        <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_episodes</span><span class="p">):</span>
+            <span class="n">obs</span><span class="p">,</span> <span class="n">done</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">reset</span><span class="p">(),</span> <span class="kc">False</span>
+            <span class="n">ep_reward</span> <span class="o">=</span> <span class="mf">0.0</span>
+            <span class="k">while</span> <span class="ow">not</span> <span class="n">done</span><span class="p">:</span>
+                <span class="n">obs_t</span>  <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">FloatTensor</span><span class="p">(</span><span class="n">obs</span><span class="p">)</span><span class="o">.</span><span class="n">unsqueeze</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+                <span class="n">action</span> <span class="o">=</span> <span class="n">policy</span><span class="p">(</span><span class="n">obs_t</span><span class="p">)</span><span class="o">.</span><span class="n">squeeze</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span>
+                <span class="n">obs</span><span class="p">,</span> <span class="n">reward</span><span class="p">,</span> <span class="n">done</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="n">action</span><span class="p">)</span>
+                <span class="n">ep_reward</span> <span class="o">+=</span> <span class="n">reward</span>
+            <span class="n">total_reward</span> <span class="o">+=</span> <span class="n">ep_reward</span>
+
+    <span class="k">return</span> <span class="n">total_reward</span> <span class="o">/</span> <span class="n">n_episodes</span>
+</code></pre></div>
+<h3 id="_17">仿真到真实迁移技术汇总</h3>
+<table>
+<thead>
+<tr>
+<th>技术</th>
+<th>描述</th>
+<th>适用场景</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>域随机化</strong></td>
+<td>随机化仿真中的物理和视觉参数</td>
+<td>视觉策略、操控任务</td>
+</tr>
+<tr>
+<td><strong>系统辨识</strong></td>
+<td>精确测量并匹配真实系统参数</td>
+<td>精密控制任务</td>
+</tr>
+<tr>
+<td><strong>适应层</strong></td>
+<td>部署时用少量真实数据微调网络末层</td>
+<td>快速适应新环境</td>
+</tr>
+<tr>
+<td><strong>域自适应</strong></td>
+<td>对齐仿真和真实数据的特征分布</td>
+<td>视觉传感器差异</td>
+</tr>
+<tr>
+<td><strong>课程学习</strong></td>
+<td>渐进增加仿真难度</td>
+<td>复杂运动技能</td>
+</tr>
+<tr>
+<td><strong>残差学习</strong></td>
+<td>在传统控制器上叠加神经网络残差</td>
+<td>有先验模型的系统</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_18">应用实例</h2>
 <p>以下是一个使用PyTorch实现简单神经网络控制器的概念示例，用于倒立摆（Inverted Pendulum）的平衡控制：</p>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">torch</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">torch.nn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">nn</span>
@@ -3997,12 +5642,18 @@
 <span class="c1"># 获取控制输出</span>
 <span class="n">action</span> <span class="o">=</span> <span class="n">controller</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
 </code></pre></div>
-<h2 id="_9">参考资料</h2>
+<h2 id="_19">参考资料</h2>
 <ol>
 <li>K. J. Hunt, D. Sbarbaro, R. Zbikowski, and P. J. Gawthrop, "Neural Networks for Control Systems - A Survey," <em>Automatica</em>, vol. 28, no. 6, pp. 1083-1112, 1992.</li>
 <li>S. Levine, C. Finn, T. Darrell, and P. Abbeel, "End-to-End Training of Deep Visuomotor Policies," <em>Journal of Machine Learning Research</em>, vol. 17, no. 39, pp. 1-40, 2016.</li>
 <li>T. Hwangbo et al., "Learning Agile and Dynamic Motor Skills for Legged Robots," <em>Science Robotics</em>, vol. 4, no. 26, 2019.</li>
 <li>刘金琨, 《智能控制》, 电子工业出版社.</li>
+<li>M. Raissi, P. Perdikaris, and G. E. Karniadakis, "Physics-Informed Neural Networks: A Deep Learning Framework for Solving Forward and Inverse Problems Involving Nonlinear Partial Differential Equations," <em>Journal of Computational Physics</em>, vol. 378, pp. 686-707, 2019.</li>
+<li>R. T. Q. Chen, Y. Rubanova, J. Bettencourt, and D. Duvenaud, "Neural Ordinary Differential Equations," <em>NeurIPS</em>, 2018.</li>
+<li>C. Chi, S. Feng, Y. Du, et al., "Diffusion Policy: Visuomotor Policy Learning via Action Diffusion," <em>RSS</em>, 2023.</li>
+<li>S. Ross, G. Gordon, and D. Bagnell, "A Reduction of Imitation Learning and Structured Prediction to No-Regret Online Learning," <em>AISTATS</em>, 2011.</li>
+<li>A. D. Ames, X. Xu, J. W. Grizzle, and P. Tabuada, "Control Barrier Function Based Quadratic Programs for Safety Critical Systems," <em>IEEE Transactions on Automatic Control</em>, vol. 62, no. 8, pp. 3861-3876, 2017.</li>
+<li>M. Brunton and J. N. Kutz, "Data-Driven Science and Engineering: Machine Learning, Dynamical Systems, and Control," Cambridge University Press, 2019.</li>
 </ol>
 
 
@@ -4012,6 +5663,8 @@
 
 
 
+
+  
 
 
 

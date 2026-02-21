@@ -25,11 +25,11 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
     
     
       
-        <title>控制系统指南 - 云飞机器人中文维基</title>
+        <title>控制系统 - 云飞机器人中文维基</title>
       
     
     
@@ -60,6 +60,16 @@
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-PJC5MCXWKL"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-PJC5MCXWKL",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-PJC5MCXWKL",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
 
     
     
@@ -113,7 +123,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              控制系统指南
+              控制系统
             
           </span>
         </div>
@@ -801,7 +811,7 @@
   <span class="md-ellipsis">
     
   
-    控制系统指南
+    控制系统
   
 
     
@@ -819,7 +829,7 @@
   <span class="md-ellipsis">
     
   
-    控制系统指南
+    控制系统
   
 
     
@@ -848,18 +858,390 @@
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        控制理论介绍
+        控制理论概述
       
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav" aria-label="控制理论概述">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        控制理论结构图
+        基本反馈回路
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        反馈的价值
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        控制系统分类
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="控制系统分类">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        开环与闭环
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        单输入单输出与多输入多输出
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        连续时间与离散时间
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        线性与非线性
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        时不变与时变
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        控制性能指标
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="控制性能指标">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        时域性能指标
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        频域性能指标
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        经典控制方法
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="经典控制方法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PID 控制
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        根轨迹法
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        频率响应方法
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        现代控制方法
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="现代控制方法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        状态空间表示
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        极点配置
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lqr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        线性二次型调节器（LQR）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        卡尔曼滤波器
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mpc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        模型预测控制（MPC）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        智能控制方法
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="智能控制方法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        神经网络控制
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        自适应控制
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        强化学习控制
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        模糊控制
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_26" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        机器人控制的特殊挑战
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="机器人控制的特殊挑战">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_27" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        非线性动力学
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#whole-body-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        全身控制（Whole Body Control）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_28" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        阻抗控制与力控制
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_29" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        本章内容导览
       
     </span>
   </a>
@@ -867,10 +1249,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#feedback-control-approach" class="md-nav__link">
+  <a href="#_30" class="md-nav__link">
     <span class="md-ellipsis">
       
-        反馈控制方法 (Feedback Control Approach)
+        参考资料
       
     </span>
   </a>
@@ -977,6 +1359,34 @@
   
   
     <li class="md-nav__item">
+      <a href="lqr/lqr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    线性二次型调节器
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="mpc/mpc/" class="md-nav__link">
         
   
@@ -1013,6 +1423,34 @@
     
   
     神经网络控制器 (Neural Network Controller)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="adaptive/adaptive/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    自适应控制
   
 
     
@@ -1174,6 +1612,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../sensing/sensor-fusion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    传感器融合
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../sensing/slam/" class="md-nav__link">
         
   
@@ -1295,6 +1761,118 @@
     
   
     目标检测 (Object Detection)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cv/segmentation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    图像分割
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cv/tracking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    目标跟踪
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cv/pose-estimation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    位姿估计
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cv/3d-vision/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    三维视觉
   
 
     
@@ -1590,6 +2168,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../learning/dl/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    深度学习
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1661,7 +2267,7 @@
   <span class="md-ellipsis">
     
   
-    机器人仿真工具介绍
+    机器人仿真
   
 
     
@@ -2209,6 +2815,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linux/shell-scripting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shell 脚本与机器人自动化
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -2674,7 +3308,7 @@
   <span class="md-ellipsis">
     
   
-    深度学习数据集
+    机器人与视觉数据集
   
 
     
@@ -2962,6 +3596,118 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../database/spot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Boston Dynamics Spot
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../database/pepper/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SoftBank Pepper
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../database/apollo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Apptronik Apollo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../database/walker-s/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    优必选 Walker S
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -3148,7 +3894,7 @@
   <span class="md-ellipsis">
     
   
-    机器人实验室与研发机构 (国际)
+    机器人实验室与研发机构（国际）
   
 
     
@@ -3176,7 +3922,7 @@
   <span class="md-ellipsis">
     
   
-    机器人实验室与研发机构 (国内)
+    中国机器人研究机构数据库
   
 
     
@@ -3488,18 +4234,390 @@
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        控制理论介绍
+        控制理论概述
       
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav" aria-label="控制理论概述">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        控制理论结构图
+        基本反馈回路
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        反馈的价值
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        控制系统分类
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="控制系统分类">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        开环与闭环
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        单输入单输出与多输入多输出
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        连续时间与离散时间
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        线性与非线性
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        时不变与时变
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        控制性能指标
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="控制性能指标">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        时域性能指标
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        频域性能指标
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        经典控制方法
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="经典控制方法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PID 控制
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        根轨迹法
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        频率响应方法
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        现代控制方法
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="现代控制方法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        状态空间表示
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        极点配置
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lqr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        线性二次型调节器（LQR）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        卡尔曼滤波器
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mpc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        模型预测控制（MPC）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        智能控制方法
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="智能控制方法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        神经网络控制
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        自适应控制
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        强化学习控制
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        模糊控制
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_26" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        机器人控制的特殊挑战
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="机器人控制的特殊挑战">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_27" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        非线性动力学
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#whole-body-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        全身控制（Whole Body Control）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_28" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        阻抗控制与力控制
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_29" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        本章内容导览
       
     </span>
   </a>
@@ -3507,10 +4625,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#feedback-control-approach" class="md-nav__link">
+  <a href="#_30" class="md-nav__link">
     <span class="md-ellipsis">
       
-        反馈控制方法 (Feedback Control Approach)
+        参考资料
       
     </span>
   </a>
@@ -3534,81 +4652,329 @@
 
 
 
-<h1 id="_1">控制系统指南</h1>
+<h1 id="_1">控制系统</h1>
 <div class="admonition note">
 <p class="admonition-title">引言</p>
-<p>本页面由我(automaticdai)早期整理而成，现已翻译成中文。欢迎<a href="/contribute">贡献该条目</a>。</p>
+<p>控制理论（Control Theory）是使机器人按照期望方式运动和行为的数学基础。无论是工业机械臂的精准定位、四旋翼无人机的姿态稳定，还是双足机器人的行走平衡，其核心都依赖控制理论。控制系统负责将传感器测量值与期望目标进行比较，并计算出驱动执行器的指令，从而不断修正系统行为。正是这一"感知—决策—执行"的闭环结构，赋予了机器人应对外部扰动和模型误差的能力。</p>
 </div>
-<h2 id="_2">控制理论介绍</h2>
-<p>控制理论是工程学和数学的一个跨学科分支，研究具有输入的动态系统的行为，以及如何通过反馈来改变它们的行为 [1]。</p>
-<p>控制理论的目标是设计一个控制器，使系统具有某些期望的特性。典型的目标包括 [2]：</p>
+<h2 id="_2">控制理论概述</h2>
+<p>控制理论（Control Theory）是工程学与数学的交叉学科，研究动态系统（Dynamical System）的行为，以及如何利用反馈（Feedback）来改变和塑造这些行为。其核心目标是设计控制器（Controller），使被控对象（Plant）满足以下典型需求：</p>
 <ul>
-<li>稳定化 (Stabilization)</li>
-<li>调节 (Regulation)</li>
-<li>跟踪 (Tracking)</li>
-<li>扰动抑制 (Disturbance rejection)</li>
+<li><strong>稳定化（Stabilization）</strong>：使系统从任意初始状态收敛到平衡点。</li>
+<li><strong>调节（Regulation）</strong>：在外部扰动下，将输出维持在期望值附近。</li>
+<li><strong>跟踪（Tracking）</strong>：使输出准确跟随随时间变化的参考信号。</li>
+<li><strong>扰动抑制（Disturbance Rejection）</strong>：削弱外部干扰对输出的影响。</li>
 </ul>
-<p><img alt="" src="assets/markdown-img-paste-20170412214456853.png" /></p>
-<h2 id="_3">控制理论结构图</h2>
-<p>该图描述了控制理论的体系结构，由 <a href="https://www.zhihu.com/people/xiang-yi-55-49">@系统与控制</a> 创作并授权使用。</p>
-<p><img alt="" src="assets/control_theory_diagram_cn.png" /></p>
-<h2 id="feedback-control-approach">反馈控制方法 (Feedback Control Approach)</h2>
+<h3 id="_3">基本反馈回路</h3>
+<p>控制系统最核心的结构是<strong>负反馈回路（Negative Feedback Loop）</strong>，其信号流向如下：</p>
+<p>
+<script type="math/tex; mode=display">
+\text{参考值} \rightarrow \bigoplus \rightarrow \text{控制器} \rightarrow \text{执行器} \rightarrow \text{被控对象} \rightarrow \text{输出}
+</script>
+</p>
+<p>
+<script type="math/tex; mode=display">
+\text{传感器} \leftarrow \text{输出}
+</script>
+</p>
+<p>具体流程为：</p>
 <ol>
-<li>建立控制目标<ul>
-<li>定性目标 (Qualitative)</li>
-<li>定量目标：阶跃响应时间 (Quantitative: step response time)</li>
-<li>需要理解期望的命令、扰动和带宽</li>
-<li>需要理解物理动力学和适当的控制方法</li>
-</ul>
-</li>
-<li>选择传感器和执行器<ul>
-<li>需要感知和控制哪些方面？</li>
-<li>传感器噪声、成本、可靠性、尺寸等</li>
-</ul>
-</li>
-<li>获得系统模型<ul>
-<li>第一性原理或系统辨识</li>
-<li>评估模型 -&gt; 减小规模和复杂度</li>
-<li>精度如何？误差模型？</li>
-</ul>
-</li>
-<li>设计控制器<ul>
-<li>单输入单输出 (SISO) 还是多输入多输出 (MIMO)？</li>
-<li>经典控制还是状态空间？</li>
-<li>选择参数（经验法则或优化）</li>
-</ul>
-</li>
-<li>分析闭环性能<ul>
-<li>闭环是否满足目标？</li>
-<li>分析、仿真、实验和迭代</li>
-</ul>
-</li>
+<li><strong>传感器（Sensor）</strong> 测量系统的实际输出（位置、速度、力等）。</li>
+<li>将测量值与<strong>参考信号（Reference Signal）</strong> 相减，得到<strong>误差（Error）</strong> <script type="math/tex">e = r - y</script>。</li>
+<li><strong>控制器（Controller）</strong> 依据误差计算控制量 <script type="math/tex">u</script>。</li>
+<li><strong>执行器（Actuator）</strong> 根据控制量对被控对象施加作用（力、力矩、电压等）。</li>
+<li>被控对象的<strong>输出（Output）</strong> <script type="math/tex">y</script> 再次被传感器测量，形成闭合回路。</li>
 </ol>
-<h1 id="analysis">分析 (Analysis)</h1>
+<h3 id="_4">反馈的价值</h3>
+<p>开环控制（Open-loop Control）仅依赖预先建立的模型，不使用任何测量反馈。这种方式实现简单，但对模型误差和外部扰动极为敏感。反馈的引入带来了三大核心优势：</p>
+<ol>
+<li><strong>鲁棒性（Robustness）</strong>：即使模型存在误差，反馈也能通过持续修正使系统趋近期望状态。</li>
+<li><strong>抗扰动能力</strong>：外部扰动（如摩擦、风力）引起的偏差可被实时检测并补偿。</li>
+<li><strong>性能提升</strong>：合理设计的反馈控制器可以显著加快系统响应速度、减小稳态误差。</li>
+</ol>
+<p>然而，反馈也引入了<strong>稳定性（Stability）</strong> 问题：若控制器设计不当，闭环系统可能出现振荡甚至发散。因此，稳定性分析是控制理论的核心议题之一。</p>
+<h2 id="_5">控制系统分类</h2>
+<h3 id="_6">开环与闭环</h3>
+<p><strong>开环系统（Open-loop System）</strong> 不使用输出反馈，控制量完全由参考输入决定。优点是结构简单、无稳定性风险；缺点是对模型误差和扰动无纠正能力，精度依赖模型准确性。例如，微波炉定时加热即为典型的开环控制。</p>
+<p><strong>闭环系统（Closed-loop System）</strong> 利用输出反馈持续修正控制量。优点是对扰动和参数变化具有鲁棒性；缺点是需要传感器、增加了系统复杂度，且存在稳定性设计难题。机器人控制绝大多数属于闭环系统。</p>
+<h3 id="_7">单输入单输出与多输入多输出</h3>
+<p><strong>SISO（Single Input Single Output，单输入单输出）</strong> 系统只有一个控制输入和一个被控输出，分析工具成熟（传递函数、Bode 图等），适用于独立关节控制等简单场景。</p>
+<p><strong>MIMO（Multiple Input Multiple Output，多输入多输出）</strong> 系统具有多个输入和输出，各通道之间存在耦合（Coupling）。机器人动力学通常是高度耦合的 MIMO 系统，需要采用状态空间方法或解耦控制策略。</p>
+<h3 id="_8">连续时间与离散时间</h3>
+<p><strong>连续时间系统（Continuous-time System）</strong> 以微分方程描述，信号在时间上连续变化。经典控制理论（传递函数、根轨迹）主要针对连续时间系统。</p>
+<p><strong>离散时间系统（Discrete-time System）</strong> 以差分方程描述，信号仅在采样时刻取值，适用于数字计算机实现的控制器。采样频率（Sampling Frequency）的选择需满足奈奎斯特定理（Nyquist Theorem），通常要求高于被控带宽的 5～10 倍。</p>
+<h3 id="_9">线性与非线性</h3>
+<p><strong>线性系统（Linear System）</strong> 满足叠加原理（Superposition Principle），可用传递函数或线性状态方程描述，分析工具丰富。</p>
+<p><strong>非线性系统（Nonlinear System）</strong> 不满足叠加原理，典型非线性效应包括摩擦（Friction）、死区（Dead Zone）、饱和（Saturation）及机器人关节的重力/科氏力项。非线性控制设计通常需要反步法（Backstepping）、滑模控制（Sliding Mode Control）等专门方法。</p>
+<h3 id="_10">时不变与时变</h3>
+<p><strong>线性时不变系统（LTI, Linear Time-Invariant System）</strong> 的参数不随时间变化，是经典控制理论的主要研究对象。</p>
+<p><strong>线性时变系统（LTV, Linear Time-Varying System）</strong> 的参数随时间变化，例如消耗燃料后质量减小的火箭，或随关节角度变化的机器人惯性矩阵线性化模型。</p>
+<h2 id="_11">控制性能指标</h2>
+<p>评价控制系统优劣需要量化的性能指标，分为时域指标和频域指标两大类。</p>
+<h3 id="_12">时域性能指标</h3>
+<p>以阶跃响应（Step Response）为基准，常用时域指标如下：</p>
+<ul>
+<li><strong>上升时间（Rise Time）<script type="math/tex">t_r</script></strong>：输出从稳态值的 10% 上升到 90% 所需的时间，反映系统响应速度。</li>
+<li><strong>峰值时间（Peak Time）<script type="math/tex">t_p</script></strong>：输出达到第一个峰值的时刻。</li>
+<li><strong>超调量（Overshoot）<script type="math/tex">M_p</script></strong>：输出超过稳态值的最大百分比：</li>
+</ul>
+<p>
+<script type="math/tex; mode=display">
+M_p = \frac{y_{\max} - y_{\infty}}{y_{\infty}} \times 100\%
+</script>
+</p>
+<ul>
+<li><strong>调节时间（Settling Time）<script type="math/tex">t_s</script></strong>：输出进入并保持在稳态值 <script type="math/tex">\pm 2\%</script>（或 <script type="math/tex">\pm 5\%</script>）误差带内所需的时间。</li>
+<li><strong>稳态误差（Steady-state Error）<script type="math/tex">e_{ss}</script></strong>：系统达到稳态后参考值与输出的残余偏差。</li>
+</ul>
+<p>对于标准二阶系统（Second-order System），其传递函数为：</p>
+<p>
+<script type="math/tex; mode=display">
+G(s) = \frac{\omega_n^2}{s^2 + 2\zeta\omega_n s + \omega_n^2}
+</script>
+</p>
+<p>其中自然频率（Natural Frequency）和阻尼比（Damping Ratio）分别为：</p>
+<p>
+<script type="math/tex; mode=display">
+\omega_n = \sqrt{\frac{k}{m}}, \quad \zeta = \frac{c}{2\sqrt{km}}
+</script>
+</p>
+<p>
+<script type="math/tex">m</script> 为质量，<script type="math/tex">k</script> 为刚度，<script type="math/tex">c</script> 为阻尼系数。超调量与阻尼比的关系为：</p>
+<p>
+<script type="math/tex; mode=display">
+M_p = e^{-\pi\zeta / \sqrt{1 - \zeta^2}} \times 100\%, \quad 0 < \zeta < 1
+</script>
+</p>
+<h3 id="_13">频域性能指标</h3>
+<p>频域指标通过 Bode 图（Bode Plot）或 Nyquist 图分析系统的稳定裕度：</p>
+<ul>
+<li><strong>增益裕度（Gain Margin）<script type="math/tex">G_m</script></strong>：在相位交叉频率（Phase Crossover Frequency）处，系统开环增益距离 0 dB 的余量。增益裕度越大，系统对增益扰动的容忍度越高，一般要求 <script type="math/tex">G_m > 6 \text{ dB}</script>。</li>
+<li><strong>相位裕度（Phase Margin）<script type="math/tex">\phi_m</script></strong>：在增益交叉频率（Gain Crossover Frequency）处，系统开环相位距离 <script type="math/tex">-180°</script> 的余量，反映系统对相位滞后的容忍能力，一般要求 <script type="math/tex">\phi_m > 30°</script>，推荐 <script type="math/tex">45°\sim 60°</script>。</li>
+<li><strong>带宽（Bandwidth）<script type="math/tex">\omega_{BW}</script></strong>：闭环幅频响应从低频值下降 3 dB 所对应的频率，表征系统能跟踪信号的最高频率上限。</li>
+</ul>
+<h2 id="_14">经典控制方法</h2>
+<h3 id="pid">PID 控制</h3>
+<p>PID 控制器（Proportional-Integral-Derivative Controller）是工业界最广泛使用的控制方法。其控制律为：</p>
+<p>
+<script type="math/tex; mode=display">
+u(t) = K_P e(t) + K_I \int_0^t e(\tau)\, d\tau + K_D \dot{e}(t)
+</script>
+</p>
+<p>三项各有其作用：</p>
+<ul>
+<li><strong>比例项（Proportional）</strong> <script type="math/tex">K_P e</script>：与当前误差成正比，提供即时纠正力，增大 <script type="math/tex">K_P</script> 可加快响应但可能引发超调和振荡。</li>
+<li><strong>积分项（Integral）</strong> <script type="math/tex">K_I \int e\, dt</script>：累积历史误差，消除稳态误差，但积分过强会导致积分饱和（Integral Windup）和响应迟缓。</li>
+<li><strong>微分项（Derivative）</strong> <script type="math/tex">K_D \dot{e}</script>：预测误差变化趋势，提供超前阻尼，抑制超调，但对噪声敏感。</li>
+</ul>
+<p>在离散域，PID 的数字实现形式为：</p>
+<p>
+<script type="math/tex; mode=display">
+u[k] = K_P e[k] + K_I T_s \sum_{i=0}^{k} e[i] + K_D \frac{e[k] - e[k-1]}{T_s}
+</script>
+</p>
+<p>其中 <script type="math/tex">T_s</script> 为采样周期。</p>
+<p>PID 参数整定（Tuning）方法包括：Ziegler-Nichols 法、Cohen-Coon 法、自动整定（Auto-tuning）以及基于模型的优化方法。</p>
+<h3 id="_15">根轨迹法</h3>
+<p>根轨迹法（Root Locus Method）由 Walter Evans 于 1948 年提出，通过绘制开环增益从 0 变化到无穷大时闭环极点（Closed-loop Poles）的轨迹，直观判断系统稳定性和动态特性的变化。设计者可以通过选择合适的增益或加入超前/滞后补偿器（Lead/Lag Compensator）将闭环极点移动到期望位置。</p>
+<h3 id="_16">频率响应方法</h3>
+<p><strong>Bode 图分析</strong>：将开环传递函数的幅频和相频特性分别绘制为频率的函数，直观展示增益裕度和相位裕度，便于串联补偿器的设计。</p>
+<p><strong>Nyquist 判据（Nyquist Criterion）</strong>：通过绘制开环传递函数在频域的 Nyquist 曲线，利用幅角原理判断闭环系统稳定性，特别适用于含纯时延（Pure Time Delay）的系统。</p>
+<h2 id="_17">现代控制方法</h2>
+<h3 id="_18">状态空间表示</h3>
+<p>现代控制理论（Modern Control Theory）以状态空间（State Space）为框架描述系统。一般线性时不变系统的状态方程为：</p>
+<p>
+<script type="math/tex; mode=display">
+\dot{x}(t) = Ax(t) + Bu(t)
+</script>
+</p>
+<p>
+<script type="math/tex; mode=display">
+y(t) = Cx(t) + Du(t)
+</script>
+</p>
+<p>其中：</p>
 <ul>
 <li>
-<p>频域分析 (Frequency Domain Analysis)</p>
-<ul>
-<li>增益裕度 (Gain margin)</li>
-<li>相位裕度 (Phase margin)</li>
-</ul>
-</li>
+<script type="math/tex">x \in \mathbb{R}^n</script> 为状态向量（State Vector），描述系统的内部状态（如位置、速度）；</li>
 <li>
-<p>时域分析 (Time Domain Analysis)</p>
+<script type="math/tex">u \in \mathbb{R}^m</script> 为输入向量（控制量）；</li>
+<li>
+<script type="math/tex">y \in \mathbb{R}^p</script> 为输出向量（可测量量）；</li>
+<li>
+<script type="math/tex">A</script>（系统矩阵）、<script type="math/tex">B</script>（输入矩阵）、<script type="math/tex">C</script>（输出矩阵）、<script type="math/tex">D</script>（直馈矩阵）为常数矩阵。</li>
+</ul>
+<p>状态空间框架自然处理 MIMO 系统，并为极点配置、最优控制等方法提供统一基础。</p>
+<h3 id="_19">极点配置</h3>
+<p>极点配置（Pole Placement）通过设计状态反馈增益矩阵 <script type="math/tex">K</script>，使闭环系统矩阵 <script type="math/tex">A - BK</script> 的特征值（即闭环极点）恰好位于复平面上的期望位置，从而实现对瞬态响应的直接设计。</p>
+<p>前提条件：系统必须是<strong>完全可控的（Completely Controllable）</strong>，即可控性矩阵（Controllability Matrix）满秩：</p>
+<p>
+<script type="math/tex; mode=display">
+\mathcal{C} = \begin{bmatrix} B & AB & A^2B & \cdots & A^{n-1}B \end{bmatrix}, \quad \text{rank}(\mathcal{C}) = n
+</script>
+</p>
+<h3 id="lqr">线性二次型调节器（LQR）</h3>
+<p>线性二次型调节器（LQR, Linear Quadratic Regulator）是最优控制（Optimal Control）的经典方法。其目标是寻找最优反馈增益 <script type="math/tex">K^*</script>，使以下二次型性能指标最小：</p>
+<p>
+<script type="math/tex; mode=display">
+J = \int_0^\infty \left( x^T Q x + u^T R u \right) dt
+</script>
+</p>
+<p>其中 <script type="math/tex">Q \geq 0</script> 为状态权重矩阵，<script type="math/tex">R > 0</script> 为控制权重矩阵。设计者通过调整 <script type="math/tex">Q</script> 和 <script type="math/tex">R</script> 的比例，在状态偏差（跟踪精度）与控制代价（能量消耗）之间折中。</p>
+<p>最优增益通过求解<strong>代数黎卡提方程（Algebraic Riccati Equation, ARE）</strong> 得到：</p>
+<p>
+<script type="math/tex; mode=display">
+A^T P + PA - PBR^{-1}B^T P + Q = 0
+</script>
+</p>
+<p>最优控制律为 <script type="math/tex">u^* = -K^* x = -R^{-1}B^T P x</script>。LQR 保证闭环系统具有至少 60° 相位裕度和无穷大增益裕度，鲁棒性优良。</p>
+<h3 id="_20">卡尔曼滤波器</h3>
+<p>在实际系统中，状态 <script type="math/tex">x</script> 往往不能被直接测量，需要通过带噪声的输出 <script type="math/tex">y</script> 进行估计。<strong>卡尔曼滤波器（Kalman Filter, KF）</strong> 是针对线性高斯系统的最优状态估计器，其预测-更新两步迭代为：</p>
+<p><strong>预测步（Prediction）</strong>：</p>
+<p>
+<script type="math/tex; mode=display">
+\hat{x}_{k|k-1} = A\hat{x}_{k-1|k-1} + Bu_{k-1}
+</script>
+</p>
+<p>
+<script type="math/tex; mode=display">
+P_{k|k-1} = AP_{k-1|k-1}A^T + Q_w
+</script>
+</p>
+<p><strong>更新步（Update）</strong>：</p>
+<p>
+<script type="math/tex; mode=display">
+K_k = P_{k|k-1}C^T\left(CP_{k|k-1}C^T + R_v\right)^{-1}
+</script>
+</p>
+<p>
+<script type="math/tex; mode=display">
+\hat{x}_{k|k} = \hat{x}_{k|k-1} + K_k\left(y_k - C\hat{x}_{k|k-1}\right)
+</script>
+</p>
+<p>其中 <script type="math/tex">Q_w</script> 为过程噪声协方差，<script type="math/tex">R_v</script> 为测量噪声协方差，<script type="math/tex">K_k</script> 为卡尔曼增益（Kalman Gain）。</p>
+<p>将 LQR 与卡尔曼滤波器结合，即构成<strong>线性二次高斯控制（LQG, Linear Quadratic Gaussian Control）</strong>，是现代控制中全状态最优输出反馈的标准框架。</p>
+<p>对于非线性系统，常用<strong>扩展卡尔曼滤波器（EKF, Extended Kalman Filter）</strong> 或<strong>无迹卡尔曼滤波器（UKF, Unscented Kalman Filter）</strong> 进行状态估计。</p>
+<h3 id="mpc">模型预测控制（MPC）</h3>
+<p>模型预测控制（MPC, Model Predictive Control）也称为滚动时域控制（Receding Horizon Control），其核心思想是：在每个采样时刻，利用当前状态和系统模型，在有限预测时域 <script type="math/tex">N</script> 步内在线求解一个带约束的优化问题：</p>
+<p>
+<script type="math/tex; mode=display">
+\min_{u_0, \ldots, u_{N-1}} \sum_{k=0}^{N-1} \left( x_k^T Q x_k + u_k^T R u_k \right) + x_N^T P_f x_N
+</script>
+</p>
+<p>
+<script type="math/tex; mode=display">
+\text{subject to:} \quad x_{k+1} = Ax_k + Bu_k, \quad x_k \in \mathcal{X}, \quad u_k \in \mathcal{U}
+</script>
+</p>
+<p>只将优化序列的第一个控制量施加到系统，然后在下一时刻重新求解（滚动策略）。</p>
+<p>MPC 的主要优势：</p>
 <ul>
-<li>上升时间 (Rising Time)</li>
-<li>峰值时间 (Peak Time)</li>
-<li>稳态时间 (Steady-state Time)</li>
+<li><strong>显式处理约束（Constraint Handling）</strong>：可直接将输入饱和、状态边界等物理约束纳入优化问题。</li>
+<li><strong>多步预测</strong>：利用未来参考轨迹的先验信息，改善跟踪性能。</li>
+<li><strong>统一框架</strong>：通过调整代价函数，可实现调节、跟踪、经济优化等不同控制目标。</li>
 </ul>
-</li>
+<p>MPC 的主要挑战是在线计算负担较重，对实时性要求高的系统（如高频机器人控制）需要高效的数值优化求解器（如 OSQP、qpOASES 等）。</p>
+<h2 id="_21">智能控制方法</h2>
+<h3 id="_22">神经网络控制</h3>
+<p>神经网络控制（Neural Network Control）利用深度神经网络（Deep Neural Network）的强大函数逼近能力，学习复杂非线性系统的动力学或直接学习从传感器到控制量的映射（端到端控制）。主要应用方式包括：</p>
+<ul>
+<li><strong>神经网络逆模型（Inverse Model）</strong>：学习系统的逆动力学，用于前馈补偿。</li>
+<li><strong>端到端学习（End-to-End Learning）</strong>：直接从原始感知输入（如图像）学习控制策略。</li>
+<li><strong>神经网络辅助 MPC</strong>：用神经网络拟合复杂非线性动力学模型，加速 MPC 在线求解。</li>
 </ul>
-<h2 id="declaration">声明 (Declaration)</h2>
-<p>本文档包含控制系统的基本描述和实现。涵盖的材料包括：系统建模、控制器设计、经典控制理论、现代控制理论以及 C/Matlab/Simulink 实现。</p>
-<p>本维基站点由我本人不定期维护。在我进行编辑时，内容可能不一致。请谨慎使用，因为我假设除了我自己之外没有其他用户会使用本网站。</p>
-<h2 id="_4">参考资料</h2>
+<h3 id="_23">自适应控制</h3>
+<p>自适应控制（Adaptive Control）的目标是处理系统参数未知或随时间变化的情况，其核心是在线调整控制器参数以适应变化的被控对象。典型方法包括：</p>
+<ul>
+<li><strong>模型参考自适应控制（MRAC, Model Reference Adaptive Control）</strong>：使实际系统的响应跟踪参考模型的响应，自适应律保证跟踪误差收敛。</li>
+<li><strong>自校正调节器（Self-tuning Regulator, STR）</strong>：在线辨识系统参数，并实时更新控制器。</li>
+<li><strong>鲁棒自适应控制（Robust Adaptive Control）</strong>：在自适应律中引入鲁棒修正项，防止参数漂移。</li>
+</ul>
+<p>自适应控制在机器人领域的典型应用包括：负载变化时的关节力矩补偿、接触环境刚度未知时的阻抗调节等。</p>
+<h3 id="_24">强化学习控制</h3>
+<p>强化学习控制（Reinforcement Learning-based Control）通过让智能体（Agent）与环境交互并接收奖励信号（Reward Signal），自主学习控制策略，无需精确的系统模型。</p>
+<p>常用算法包括：</p>
+<ul>
+<li><strong>策略梯度方法（Policy Gradient）</strong>：如 PPO（Proximal Policy Optimization）、SAC（Soft Actor-Critic），适用于连续动作空间。</li>
+<li><strong>基于模型的强化学习（Model-based RL）</strong>：学习环境模型以提高采样效率，如 Dyna、MBPO。</li>
+<li><strong>模仿学习（Imitation Learning）</strong>：从专家示范中学习策略，如行为克隆（Behavior Cloning）和逆强化学习（Inverse Reinforcement Learning）。</li>
+</ul>
+<p>强化学习在复杂机器人任务（如灵巧手操作、双足行走）上取得了突破性进展，但其训练样本效率低、真实环境部署的安全性仍是主要挑战。</p>
+<h3 id="_25">模糊控制</h3>
+<p>模糊控制（Fuzzy Control）基于模糊逻辑（Fuzzy Logic），将人类专家的定性知识编码为"IF-THEN"规则，适用于难以建立精确数学模型的非线性系统。模糊控制的优点是设计直观、对参数变化不敏感；缺点是规则库的设计依赖经验，且理论分析较困难。</p>
+<h2 id="_26">机器人控制的特殊挑战</h2>
+<h3 id="_27">非线性动力学</h3>
+<p>机器人（特别是多关节机械臂和腿式机器人）的动力学是高度非线性且耦合的。以 <script type="math/tex">n</script> 自由度机械臂为例，其运动方程（Newton-Euler 或 Lagrange 方程）为：</p>
+<p>
+<script type="math/tex; mode=display">
+M(q)\ddot{q} + C(q, \dot{q})\dot{q} + G(q) = \tau
+</script>
+</p>
+<p>其中 <script type="math/tex">M(q)</script> 为惯性矩阵（Inertia Matrix），<script type="math/tex">C(q, \dot{q})\dot{q}</script> 为科氏力和离心力项（Coriolis and Centrifugal Terms），<script type="math/tex">G(q)</script> 为重力项（Gravity Term），<script type="math/tex">\tau</script> 为关节力矩（Joint Torque）。</p>
+<p>由于 <script type="math/tex">M(q)</script>、<script type="math/tex">C(q,\dot{q})</script>、<script type="math/tex">G(q)</script> 均随关节角 <script type="math/tex">q</script> 变化，将 PID 等线性控制器直接应用于全工作空间时效果往往有限。<strong>计算力矩法（Computed Torque Control）</strong> 通过显式补偿这些非线性项，将系统线性化为双积分器形式，再施加线性控制器。</p>
+<h3 id="whole-body-control">全身控制（Whole Body Control）</h3>
+<p>全身控制（WBC, Whole Body Control）是腿式机器人（Legged Robot）运动控制的核心框架。腿式机器人面临如下挑战：</p>
+<ul>
+<li><strong>欠驱动（Underactuation）</strong>：躯干不受直接驱动，需通过腿部接触力间接控制。</li>
+<li><strong>接触约束（Contact Constraints）</strong>：支撑腿的接触力必须满足摩擦锥（Friction Cone）约束。</li>
+<li><strong>多任务优先级（Task Hierarchy）</strong>：同时满足平衡、运动、末端执行器目标等多个任务，并按优先级处理冲突。</li>
+</ul>
+<p>WBC 通常将上述需求建模为带约束的层次化二次规划（Hierarchical QP）问题，在满足接触约束的前提下优化各级任务目标。</p>
+<h3 id="_28">阻抗控制与力控制</h3>
+<p>在机器人与环境发生接触（如装配、抛光、外科手术）时，纯位置控制会因刚性碰撞而损坏工件或机器人。<strong>阻抗控制（Impedance Control）</strong> 将机器人末端执行器与环境的交互建模为弹簧-质量-阻尼系统，通过调整虚拟刚度、阻尼和惯性，在位置控制与力控制之间实现灵活过渡：</p>
+<p>
+<script type="math/tex; mode=display">
+M_d \ddot{e} + B_d \dot{e} + K_d e = F_{\text{ext}}
+</script>
+</p>
+<p>其中 <script type="math/tex">e = x - x_d</script> 为位置误差，<script type="math/tex">F_{\text{ext}}</script> 为外部接触力，<script type="math/tex">M_d</script>、<script type="math/tex">B_d</script>、<script type="math/tex">K_d</script> 分别为期望的虚拟惯量、阻尼和刚度。</p>
+<p><strong>导纳控制（Admittance Control）</strong> 是阻抗控制的对偶形式：测量接触力，将其转化为位置修正量，适用于位置控制内环的机器人平台。</p>
+<p><strong>力/力矩控制（Force/Torque Control）</strong> 则直接以接触力为控制目标，需要力/力矩传感器（F/T Sensor）的闭环反馈，常用于精密装配和柔顺操作任务。</p>
+<h2 id="_29">本章内容导览</h2>
+<p>本章涵盖机器人控制理论的核心方法，各子页面的主要内容如下：</p>
+<table>
+<thead>
+<tr>
+<th>页面</th>
+<th>主要内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>建模（Modelling）</strong></td>
+<td>如何建立机器人的数学模型：拉普拉斯变换、传递函数、状态空间建模、系统辨识方法</td>
+</tr>
+<tr>
+<td><strong>PID 控制</strong></td>
+<td>比例-积分-微分控制器的原理、参数整定方法（Ziegler-Nichols、自动整定）、抗积分饱和及实现技巧</td>
+</tr>
+<tr>
+<td><strong>LQR</strong></td>
+<td>线性二次型最优控制的推导、黎卡提方程求解、与极点配置的对比、在机械臂和倒立摆上的应用</td>
+</tr>
+<tr>
+<td><strong>MPC</strong></td>
+<td>滚动时域优化框架、约束处理、线性/非线性 MPC、实时求解器选型及在移动机器人路径跟踪中的应用</td>
+</tr>
+<tr>
+<td><strong>神经网络控制</strong></td>
+<td>神经网络逼近理论、端到端学习、神经网络与传统控制器的结合（学习残差动力学等）</td>
+</tr>
+<tr>
+<td><strong>自适应控制</strong></td>
+<td>MRAC 设计、Lyapunov 稳定性证明、参数投影、在负载变化机械臂上的应用</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_30">参考资料</h2>
 <ol>
-<li><a href="https://en.wikipedia.org/wiki/Control_theory">Control Theory - Wikipedia</a></li>
-<li>Jonathan How and Emilio Frazzoli. <a href="https://ocw.mit.edu/courses/aeronautics-and-astronautics/16-30-feedback-control-systems-fall-2010/">16.30 Feedback Control Systems</a>. Fall 2010.  MIT OpenCourseWare</li>
+<li>Ogata, K. (2010). <em>Modern Control Engineering</em> (5th ed.). Prentice Hall. — 经典控制与现代控制理论教材。</li>
+<li>Slotine, J.-J. E., &amp; Li, W. (1991). <em>Applied Nonlinear Control</em>. Prentice Hall. — 非线性控制经典著作。</li>
+<li>Åström, K. J., &amp; Wittenmark, B. (2008). <em>Adaptive Control</em> (2nd ed.). Dover Publications. — 自适应控制权威教材。</li>
+<li>Rawlings, J. B., Mayne, D. Q., &amp; Diehl, M. (2017). <em>Model Predictive Control: Theory, Computation, and Design</em>. Nob Hill Publishing. — MPC 系统性参考书。</li>
+<li>Siciliano, B., Sciavicco, L., Villani, L., &amp; Oriolo, G. (2009). <em>Robotics: Modelling, Planning and Control</em>. Springer. — 机器人建模与控制综合教材。</li>
+<li>How, J., &amp; Frazzoli, E. (2010). <a href="https://ocw.mit.edu/courses/aeronautics-and-astronautics/16-30-feedback-control-systems-fall-2010/">16.30 Feedback Control Systems</a>. MIT OpenCourseWare.</li>
+<li>Wikipedia. <a href="https://en.wikipedia.org/wiki/Control_theory">Control Theory</a>.</li>
 </ol>
 
 
@@ -3618,6 +4984,8 @@
 
 
 
+
+  
 
 
 
