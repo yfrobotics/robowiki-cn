@@ -12,13 +12,13 @@
         <meta name="author" content="YFRL">
       
       
-        <link rel="canonical" href="https://yfrobotics.github.io/simulation/webots/">
+        <link rel="canonical" href="https://yfrobotics.github.io/cv/object-detection-practical/">
       
       
-        <link rel="prev" href="../pybullet/">
+        <link rel="prev" href="../object-detection/">
       
       
-        <link rel="next" href="../robotics-toolbox/">
+        <link rel="next" href="../object-detection-3d-advanced/">
       
       
         
@@ -29,7 +29,7 @@
     
     
       
-        <title>Webots - 云飞机器人中文维基</title>
+        <title>目标检测：实战代码与工程部署 - 云飞机器人中文维基</title>
       
     
     
@@ -90,7 +90,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#webots" class="md-skip">
+        <a href="#_1" class="md-skip">
           跳转至
         </a>
       
@@ -123,7 +123,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Webots
+              目标检测：实战代码与工程部署
             
           </span>
         </div>
@@ -266,11 +266,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../cv/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
           
   
   
@@ -326,13 +328,11 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../simulation/" class="md-tabs__link">
           
   
   
@@ -1613,24 +1613,29 @@
       
   
   
+    
   
   
+  
     
     
     
     
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
             
   
   
@@ -1648,7 +1653,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1666,7 +1671,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cv/" class="md-nav__link">
+      <a href="../" class="md-nav__link">
         
   
   
@@ -1691,6 +1696,8 @@
                 
   
   
+    
+  
   
   
     
@@ -1701,11 +1708,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" checked>
         
           
           <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
@@ -1726,7 +1733,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1744,7 +1751,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cv/object-detection/" class="md-nav__link">
+      <a href="../object-detection/" class="md-nav__link">
         
   
   
@@ -1769,10 +1776,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../cv/object-detection-practical/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    目标检测：实战代码与工程部署
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1788,6 +1822,248 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ultralytics-yolov8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ultralytics YOLOv8 实战代码
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ultralytics YOLOv8 实战代码">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        安装
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        单张图像与视频推理
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        自定义数据集训练
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        其他任务支持
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#detr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DETR 端到端检测
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="DETR 端到端检测">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        核心思想
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#detr_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DETR 的后继者
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        在机器人上的部署
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="在机器人上的部署">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nvidia-jetson-tensorrt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NVIDIA Jetson 上的 TensorRT 优化
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ros-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        与 ROS 2 集成
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        典型机器人部署工作流
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        标注工具与数据集准备
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="标注工具与数据集准备">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        标注工具
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        数据集格式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        数据增强策略
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        数据集管理平台
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        参考资料
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1800,7 +2076,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cv/object-detection-3d-advanced/" class="md-nav__link">
+      <a href="../object-detection-3d-advanced/" class="md-nav__link">
         
   
   
@@ -1836,7 +2112,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cv/segmentation/" class="md-nav__link">
+      <a href="../segmentation/" class="md-nav__link">
         
   
   
@@ -1864,7 +2140,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cv/tracking/" class="md-nav__link">
+      <a href="../tracking/" class="md-nav__link">
         
   
   
@@ -1892,7 +2168,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cv/pose-estimation/" class="md-nav__link">
+      <a href="../pose-estimation/" class="md-nav__link">
         
   
   
@@ -1970,7 +2246,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cv/3d-vision/" class="md-nav__link">
+      <a href="../3d-vision/" class="md-nav__link">
         
   
   
@@ -1998,7 +2274,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cv/3d-vision-stereo-depth.md" class="md-nav__link">
+      <a href="../3d-vision-stereo-depth.md" class="md-nav__link">
         
   
   
@@ -2026,7 +2302,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cv/3d-vision-pointcloud-registration.md" class="md-nav__link">
+      <a href="../3d-vision-pointcloud-registration.md" class="md-nav__link">
         
   
   
@@ -2054,7 +2330,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cv/3d-vision-reconstruction-radiance.md" class="md-nav__link">
+      <a href="../3d-vision-reconstruction-radiance.md" class="md-nav__link">
         
   
   
@@ -2082,7 +2358,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cv/3d-vision-full-reference.md" class="md-nav__link">
+      <a href="../3d-vision-full-reference.md" class="md-nav__link">
         
   
   
@@ -2856,29 +3132,24 @@
       
   
   
-    
   
   
-  
     
     
     
     
       
-        
-        
-      
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
         
           
-          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
             
   
   
@@ -2896,7 +3167,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
             
@@ -2914,7 +3185,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../" class="md-nav__link">
+      <a href="../../simulation/" class="md-nav__link">
         
   
   
@@ -2942,7 +3213,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../gazebo/" class="md-nav__link">
+      <a href="../../simulation/gazebo/" class="md-nav__link">
         
   
   
@@ -3020,7 +3291,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../vrep/" class="md-nav__link">
+      <a href="../../simulation/vrep/" class="md-nav__link">
         
   
   
@@ -3048,7 +3319,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../vrep-remote-api-ros2.md" class="md-nav__link">
+      <a href="../../simulation/vrep-remote-api-ros2.md" class="md-nav__link">
         
   
   
@@ -3076,7 +3347,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../vrep-robotics-workflows.md" class="md-nav__link">
+      <a href="../../simulation/vrep-robotics-workflows.md" class="md-nav__link">
         
   
   
@@ -3104,7 +3375,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../vrep-performance-debugging.md" class="md-nav__link">
+      <a href="../../simulation/vrep-performance-debugging.md" class="md-nav__link">
         
   
   
@@ -3132,7 +3403,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../vrep-full-reference.md" class="md-nav__link">
+      <a href="../../simulation/vrep-full-reference.md" class="md-nav__link">
         
   
   
@@ -3168,7 +3439,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../mujoco/" class="md-nav__link">
+      <a href="../../simulation/mujoco/" class="md-nav__link">
         
   
   
@@ -3246,7 +3517,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pybullet/" class="md-nav__link">
+      <a href="../../simulation/pybullet/" class="md-nav__link">
         
   
   
@@ -3274,7 +3545,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pybullet-control-dynamics.md" class="md-nav__link">
+      <a href="../../simulation/pybullet-control-dynamics.md" class="md-nav__link">
         
   
   
@@ -3302,7 +3573,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pybullet-rl-workflows.md" class="md-nav__link">
+      <a href="../../simulation/pybullet-rl-workflows.md" class="md-nav__link">
         
   
   
@@ -3330,7 +3601,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pybullet-vision-multirobot.md" class="md-nav__link">
+      <a href="../../simulation/pybullet-vision-multirobot.md" class="md-nav__link">
         
   
   
@@ -3358,7 +3629,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pybullet-full-reference.md" class="md-nav__link">
+      <a href="../../simulation/pybullet-full-reference.md" class="md-nav__link">
         
   
   
@@ -3391,37 +3662,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Webots
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../simulation/webots/" class="md-nav__link">
         
   
   
@@ -3437,258 +3681,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        发展历程
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        核心特性
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        内置机器人模型
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        编程语言支持
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#controller-programming" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        控制器编程 (Controller Programming)
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ros-2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        与ROS 2的集成
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        教育与竞赛应用
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        优势与局限
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#world-editor" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        世界编辑器（World Editor）
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#python" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Python 控制器编写
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Python 控制器编写">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        基础控制器结构
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#api" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        常用传感器 API
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        机器人运动学控制（机械臂示例）
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ros-2-webots_ros2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        与 ROS 2 集成（webots_ros2）
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="与 ROS 2 集成（webots_ros2）">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        安装
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        启动配置
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_11" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        话题映射示例
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_12" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        多机器人场景
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_13" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        与教育和竞赛的结合
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_14" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        参考资料
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -3701,7 +3693,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../robotics-toolbox/" class="md-nav__link">
+      <a href="../../simulation/robotics-toolbox/" class="md-nav__link">
         
   
   
@@ -3729,7 +3721,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../stage/" class="md-nav__link">
+      <a href="../../simulation/stage/" class="md-nav__link">
         
   
   
@@ -3757,7 +3749,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../unreal/" class="md-nav__link">
+      <a href="../../simulation/unreal/" class="md-nav__link">
         
   
   
@@ -3785,7 +3777,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../unity/" class="md-nav__link">
+      <a href="../../simulation/unity/" class="md-nav__link">
         
   
   
@@ -3813,7 +3805,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../nvidiaomniverse/" class="md-nav__link">
+      <a href="../../simulation/nvidiaomniverse/" class="md-nav__link">
         
   
   
@@ -6296,168 +6288,19 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#ultralytics-yolov8" class="md-nav__link">
     <span class="md-ellipsis">
       
-        发展历程
+        Ultralytics YOLOv8 实战代码
       
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav" aria-label="Ultralytics YOLOv8 实战代码">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        核心特性
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        内置机器人模型
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        编程语言支持
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#controller-programming" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        控制器编程 (Controller Programming)
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ros-2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        与ROS 2的集成
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        教育与竞赛应用
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        优势与局限
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#world-editor" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        世界编辑器（World Editor）
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#python" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Python 控制器编写
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Python 控制器编写">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        基础控制器结构
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#api" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        常用传感器 API
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        机器人运动学控制（机械臂示例）
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ros-2-webots_ros2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        与 ROS 2 集成（webots_ros2）
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="与 ROS 2 集成（webots_ros2）">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
     <span class="md-ellipsis">
       
         安装
@@ -6468,10 +6311,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        启动配置
+        单张图像与视频推理
       
     </span>
   </a>
@@ -6479,10 +6322,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_11" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       
-        话题映射示例
+        自定义数据集训练
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        其他任务支持
       
     </span>
   </a>
@@ -6495,24 +6349,152 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_12" class="md-nav__link">
+  <a href="#detr" class="md-nav__link">
     <span class="md-ellipsis">
       
-        多机器人场景
+        DETR 端到端检测
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="DETR 端到端检测">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        核心思想
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#_13" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#detr_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        与教育和竞赛的结合
+        DETR 的后继者
       
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        在机器人上的部署
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="在机器人上的部署">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nvidia-jetson-tensorrt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NVIDIA Jetson 上的 TensorRT 优化
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ros-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        与 ROS 2 集成
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        典型机器人部署工作流
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        标注工具与数据集准备
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="标注工具与数据集准备">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        标注工具
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        数据集格式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        数据增强策略
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        数据集管理平台
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -6544,320 +6526,355 @@
 
 
 
-<h1 id="webots">Webots</h1>
-<p><img alt="5e430036ce538f09f700003a" src="../assets/300c0e2b9bed4adc8d0b1fa6c047766c.png" /></p>
-<ul>
-<li>官方网站：https://cyberbotics.com/</li>
-<li>GitHub：https://github.com/cyberbotics/webots</li>
-<li>物理引擎：基于ODE改进</li>
-<li>许可：Apache 2.0 开源</li>
-</ul>
+<h1 id="_1">目标检测：实战代码与工程部署</h1>
 <div class="admonition note">
 <p class="admonition-title">引言</p>
-<p>Webots是一款功能完善的开源机器人仿真平台，最初由瑞士洛桑联邦理工学院 (EPFL, Ecole Polytechnique Federale de Lausanne) 开发，后由Cyberbotics公司进行商业化运营。2018年，Webots从商业许可转换为Apache 2.0开源模式，此后在机器人教育和研究领域获得了越来越广泛的关注。</p>
+<p>本页面是<a href="../object-detection/">目标检测</a>专题的工程实践部分，涵盖 Ultralytics YOLOv8 完整使用流程、DETR 系列端到端检测器的核心原理与代码、目标检测模型在机器人平台（NVIDIA Jetson / ROS 2）上的部署方法，以及数据标注与数据集管理工具的选型指南。</p>
 </div>
-<h2 id="_1">发展历程</h2>
-<ul>
-<li><strong>1996年</strong>：Webots由EPFL的Olivier Michel在其博士研究期间首次开发，最初用于进化机器人学 (Evolutionary Robotics) 的研究</li>
-<li><strong>1998年</strong>：Cyberbotics公司成立，开始Webots的商业化运营</li>
-<li><strong>2018年12月</strong>：Webots R2019a版本正式以Apache 2.0许可证开源，所有功能免费提供</li>
-<li><strong>后续发展</strong>：开源后社区贡献活跃，持续增加新的机器人模型和功能</li>
-</ul>
-<h2 id="_2">核心特性</h2>
-<p>Webots提供了一个完整的机器人开发环境，核心特性包括：</p>
-<ul>
-<li><strong>集成开发环境 (IDE)</strong>：内置代码编辑器、场景树 (Scene Tree) 编辑器和三维视图</li>
-<li><strong>物理仿真</strong>：基于ODE (Open Dynamics Engine) 的改进版物理引擎，支持刚体动力学、碰撞检测和摩擦模型</li>
-<li><strong>高质量渲染</strong>：使用WREN渲染引擎，支持阴影 (Shadow)、反射 (Reflection) 和纹理映射 (Texture Mapping)</li>
-<li><strong>流体力学</strong>：支持水中机器人的浮力 (Buoyancy) 和阻力 (Drag) 仿真</li>
-<li><strong>天气效果</strong>：可以模拟雾、雨等天气条件对传感器的影响</li>
-</ul>
-<h2 id="_3">内置机器人模型</h2>
-<p>Webots提供了大量预置的机器人模型，涵盖多个领域：</p>
-<ul>
-<li><strong>移动机器人</strong>：e-puck、Pioneer 3-DX、TIAGo、Thymio II</li>
-<li><strong>工业机械臂</strong>：Universal Robots (UR3/UR5/UR10)、KUKA youBot、ABB IRB系列</li>
-<li><strong>人形机器人</strong>：NAO、Darwin-OP、Robotis OP2</li>
-<li><strong>无人机</strong>：Mavic 2 Pro、Crazyflie</li>
-<li><strong>自动驾驶车辆</strong>：Tesla Model 3、BMW X5、Lincoln MKZ等车辆模型</li>
-<li><strong>其他</strong>：Boston Dynamics Spot、Softbank Pepper</li>
-</ul>
-<h2 id="_4">编程语言支持</h2>
-<p>Webots的控制器 (Controller) 程序支持多种编程语言：</p>
-<ul>
-<li><strong>C/C++</strong>：提供原生API，性能最优</li>
-<li><strong>Python</strong>：使用广泛，适合快速原型开发</li>
-<li><strong>Java</strong>：面向对象的API设计</li>
-<li><strong>MATLAB</strong>：适合控制算法的研究和验证</li>
-<li><strong>ROS/ROS 2</strong>：通过 <code>webots_ros2</code> 包实现与ROS 2的深度集成</li>
-</ul>
-<h2 id="controller-programming">控制器编程 (Controller Programming)</h2>
-<p>Webots中每个机器人运行独立的控制器进程。控制器程序通过Webots API与仿真环境交互，读取传感器数据、发送执行器指令。以Python控制器为例：</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">controller</span><span class="w"> </span><span class="kn">import</span> <span class="n">Robot</span>
-
-<span class="n">robot</span> <span class="o">=</span> <span class="n">Robot</span><span class="p">()</span>
-<span class="n">timestep</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">robot</span><span class="o">.</span><span class="n">getBasicTimeStep</span><span class="p">())</span>
-
-<span class="c1"># 获取传感器和电机</span>
-<span class="n">ds_left</span> <span class="o">=</span> <span class="n">robot</span><span class="o">.</span><span class="n">getDevice</span><span class="p">(</span><span class="s1">&#39;ds_left&#39;</span><span class="p">)</span>
-<span class="n">ds_left</span><span class="o">.</span><span class="n">enable</span><span class="p">(</span><span class="n">timestep</span><span class="p">)</span>
-<span class="n">motor_left</span> <span class="o">=</span> <span class="n">robot</span><span class="o">.</span><span class="n">getDevice</span><span class="p">(</span><span class="s1">&#39;motor_left&#39;</span><span class="p">)</span>
-
-<span class="k">while</span> <span class="n">robot</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="n">timestep</span><span class="p">)</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
-    <span class="n">distance</span> <span class="o">=</span> <span class="n">ds_left</span><span class="o">.</span><span class="n">getValue</span><span class="p">()</span>
-    <span class="k">if</span> <span class="n">distance</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="p">:</span>
-        <span class="n">motor_left</span><span class="o">.</span><span class="n">setVelocity</span><span class="p">(</span><span class="mf">0.0</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">motor_left</span><span class="o">.</span><span class="n">setVelocity</span><span class="p">(</span><span class="mf">5.0</span><span class="p">)</span>
+<h2 id="ultralytics-yolov8">Ultralytics YOLOv8 实战代码</h2>
+<p>Ultralytics 提供了统一的 Python 接口，极大降低了 YOLOv8 的使用门槛。以下代码覆盖从推理到训练的完整流程。</p>
+<h3 id="_2">安装</h3>
+<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>ultralytics
 </code></pre></div>
-<p>这种架构使得控制器代码与仿真引擎解耦 (Decoupled)，便于将仿真中验证的算法迁移到真实硬件上。</p>
-<h2 id="ros-2">与ROS 2的集成</h2>
-<p>Webots通过 <code>webots_ros2</code> 功能包提供了与ROS 2的原生集成，支持：</p>
-<ul>
-<li>将Webots传感器数据发布为ROS 2话题 (Topic)</li>
-<li>通过ROS 2服务 (Service) 控制仿真的运行状态</li>
-<li>使用标准ROS 2工具 (如RViz2、Nav2) 与Webots仿真环境交互</li>
-<li>支持自定义ROS 2插件扩展接口功能</li>
-</ul>
-<h2 id="_5">教育与竞赛应用</h2>
-<p>Webots在机器人教育领域具有显著优势：</p>
-<ul>
-<li>内置丰富的教程 (Tutorial) 和示例项目</li>
-<li>界面友好，学习曲线平缓，适合初学者入门</li>
-<li>支持RoboCup仿真赛事，多次作为官方仿真平台</li>
-<li>跨平台支持 (Windows、Linux、macOS)，便于教学部署</li>
-<li>提供在线仿真版本 (Webots Cloud)，无需本地安装即可运行</li>
-</ul>
-<h2 id="_6">优势与局限</h2>
-<p><strong>优势：</strong></p>
-<ul>
-<li>完全开源免费，社区活跃</li>
-<li>自带大量机器人模型和传感器，开箱即用</li>
-<li>集成开发环境易用性强</li>
-<li>与ROS 2集成良好</li>
-</ul>
-<p><strong>局限：</strong></p>
-<ul>
-<li>物理引擎精度在某些极端场景下不如MuJoCo</li>
-<li>渲染质量与游戏引擎相比仍有差距</li>
-<li>社区规模和生态资源不及Gazebo</li>
-</ul>
-<h2 id="world-editor">世界编辑器（World Editor）</h2>
-<p>Webots 的图形界面提供了直观的场景树编辑器（Scene Tree Editor），可以拖放方式构建仿真场景：</p>
-<ul>
-<li><strong>WorldInfo 节点</strong>：设置物理参数（重力、时间步长）、坐标系和随机种子</li>
-<li><strong>Viewpoint 节点</strong>：配置初始摄像机视角</li>
-<li><strong>Light 节点</strong>：添加方向光（DirectionalLight）、点光源（PointLight）、聚光灯（SpotLight）</li>
-<li><strong>DEF/USE 机制</strong>：定义可复用的节点，减少场景文件冗余</li>
-<li><strong>Proto 机制</strong>：将复杂场景节点封装为参数化原型，类似统一机器人描述格式（URDF, Unified Robot Description Format）的 xacro</li>
-</ul>
-<p>场景文件以 <code>.wbt</code> 格式保存，本质上是一种基于节点树的文本格式，可以手动编辑。原型文件以 <code>.proto</code> 格式保存，允许用户定义带参数的可复用组件。例如，一个自定义轮式机器人 Proto 可以暴露轮距、轮径等参数，方便在不同场景中复用。</p>
-<h2 id="python">Python 控制器编写</h2>
-<p>Webots 支持 Python、C、C++、Java、ROS、MATLAB 等多种控制器语言。以下是 Python 控制器示例：</p>
-<h3 id="_7">基础控制器结构</h3>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">controller</span><span class="w"> </span><span class="kn">import</span> <span class="n">Robot</span><span class="p">,</span> <span class="n">Motor</span><span class="p">,</span> <span class="n">DistanceSensor</span>
+<h3 id="_3">单张图像与视频推理</h3>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">ultralytics</span><span class="w"> </span><span class="kn">import</span> <span class="n">YOLO</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">cv2</span>
 
-<span class="c1"># 获取机器人实例</span>
-<span class="n">robot</span> <span class="o">=</span> <span class="n">Robot</span><span class="p">()</span>
-<span class="n">timestep</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">robot</span><span class="o">.</span><span class="n">getBasicTimeStep</span><span class="p">())</span>  <span class="c1"># 通常 32ms 或 64ms</span>
+<span class="c1"># 1. 加载预训练模型</span>
+<span class="c1"># n=nano, s=small, m=medium, l=large, x=xlarge</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">YOLO</span><span class="p">(</span><span class="s1">&#39;yolov8n.pt&#39;</span><span class="p">)</span>
 
-<span class="c1"># 获取电机设备</span>
-<span class="n">left_motor</span> <span class="o">=</span> <span class="n">robot</span><span class="o">.</span><span class="n">getDevice</span><span class="p">(</span><span class="s1">&#39;left wheel motor&#39;</span><span class="p">)</span>
-<span class="n">right_motor</span> <span class="o">=</span> <span class="n">robot</span><span class="o">.</span><span class="n">getDevice</span><span class="p">(</span><span class="s1">&#39;right wheel motor&#39;</span><span class="p">)</span>
-<span class="n">left_motor</span><span class="o">.</span><span class="n">setPosition</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="s1">&#39;inf&#39;</span><span class="p">))</span>   <span class="c1"># 速度模式（无限位置）</span>
-<span class="n">right_motor</span><span class="o">.</span><span class="n">setPosition</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="s1">&#39;inf&#39;</span><span class="p">))</span>
-<span class="n">left_motor</span><span class="o">.</span><span class="n">setVelocity</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-<span class="n">right_motor</span><span class="o">.</span><span class="n">setVelocity</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="c1"># 2. 单张图像推理</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="s1">&#39;path/to/image.jpg&#39;</span><span class="p">)</span>
 
-<span class="c1"># 获取距离传感器</span>
-<span class="n">ds_left</span> <span class="o">=</span> <span class="n">robot</span><span class="o">.</span><span class="n">getDevice</span><span class="p">(</span><span class="s1">&#39;ds_left&#39;</span><span class="p">)</span>
-<span class="n">ds_right</span> <span class="o">=</span> <span class="n">robot</span><span class="o">.</span><span class="n">getDevice</span><span class="p">(</span><span class="s1">&#39;ds_right&#39;</span><span class="p">)</span>
-<span class="n">ds_left</span><span class="o">.</span><span class="n">enable</span><span class="p">(</span><span class="n">timestep</span><span class="p">)</span>
-<span class="n">ds_right</span><span class="o">.</span><span class="n">enable</span><span class="p">(</span><span class="n">timestep</span><span class="p">)</span>
+<span class="c1"># 3. 解析并可视化结果</span>
+<span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">results</span><span class="p">:</span>
+    <span class="n">boxes</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">boxes</span><span class="o">.</span><span class="n">xyxy</span>   <span class="c1"># 边界框坐标 [x1, y1, x2, y2]</span>
+    <span class="n">scores</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">boxes</span><span class="o">.</span><span class="n">conf</span>  <span class="c1"># 置信度分数</span>
+    <span class="n">classes</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">boxes</span><span class="o">.</span><span class="n">cls</span>  <span class="c1"># 类别索引</span>
 
-<span class="n">MAX_SPEED</span> <span class="o">=</span> <span class="mf">6.28</span>  <span class="c1"># 弧度/秒</span>
+    <span class="c1"># 读取原始图像用于绘制</span>
+    <span class="n">frame</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;path/to/image.jpg&#39;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">box</span><span class="p">,</span> <span class="n">score</span><span class="p">,</span> <span class="bp">cls</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">boxes</span><span class="p">,</span> <span class="n">scores</span><span class="p">,</span> <span class="n">classes</span><span class="p">):</span>
+        <span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">y2</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="n">box</span><span class="p">)</span>
+        <span class="n">label</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">model</span><span class="o">.</span><span class="n">names</span><span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="bp">cls</span><span class="p">)]</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">score</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="n">cv2</span><span class="o">.</span><span class="n">rectangle</span><span class="p">(</span><span class="n">frame</span><span class="p">,</span> <span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">),</span> <span class="p">(</span><span class="n">x2</span><span class="p">,</span> <span class="n">y2</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="n">cv2</span><span class="o">.</span><span class="n">putText</span><span class="p">(</span><span class="n">frame</span><span class="p">,</span> <span class="n">label</span><span class="p">,</span> <span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">y1</span> <span class="o">-</span> <span class="mi">10</span><span class="p">),</span>
+                    <span class="n">cv2</span><span class="o">.</span><span class="n">FONT_HERSHEY_SIMPLEX</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span>
 
-<span class="c1"># 主控制循环</span>
-<span class="k">while</span> <span class="n">robot</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="n">timestep</span><span class="p">)</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
-    <span class="c1"># 读取传感器</span>
-    <span class="n">left_dist</span> <span class="o">=</span> <span class="n">ds_left</span><span class="o">.</span><span class="n">getValue</span><span class="p">()</span>
-    <span class="n">right_dist</span> <span class="o">=</span> <span class="n">ds_right</span><span class="o">.</span><span class="n">getValue</span><span class="p">()</span>
+    <span class="n">cv2</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="s1">&#39;Result&#39;</span><span class="p">,</span> <span class="n">frame</span><span class="p">)</span>
+    <span class="n">cv2</span><span class="o">.</span><span class="n">waitKey</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 
-    <span class="c1"># 简单避障控制</span>
-    <span class="n">left_speed</span> <span class="o">=</span> <span class="n">MAX_SPEED</span>
-    <span class="n">right_speed</span> <span class="o">=</span> <span class="n">MAX_SPEED</span>
-
-    <span class="k">if</span> <span class="n">left_dist</span> <span class="o">&lt;</span> <span class="mi">1000</span><span class="p">:</span>   <span class="c1"># 左侧有障碍</span>
-        <span class="n">left_speed</span> <span class="o">=</span> <span class="o">-</span><span class="n">MAX_SPEED</span>
-    <span class="k">if</span> <span class="n">right_dist</span> <span class="o">&lt;</span> <span class="mi">1000</span><span class="p">:</span>  <span class="c1"># 右侧有障碍</span>
-        <span class="n">right_speed</span> <span class="o">=</span> <span class="o">-</span><span class="n">MAX_SPEED</span>
-
-    <span class="n">left_motor</span><span class="o">.</span><span class="n">setVelocity</span><span class="p">(</span><span class="n">left_speed</span><span class="p">)</span>
-    <span class="n">right_motor</span><span class="o">.</span><span class="n">setVelocity</span><span class="p">(</span><span class="n">right_speed</span><span class="p">)</span>
-</code></pre></div>
-<h3 id="api">常用传感器 API</h3>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">controller</span><span class="w"> </span><span class="kn">import</span> <span class="n">Camera</span><span class="p">,</span> <span class="n">Lidar</span><span class="p">,</span> <span class="n">InertialUnit</span><span class="p">,</span> <span class="n">GPS</span>
-
-<span class="c1"># 相机</span>
-<span class="n">camera</span> <span class="o">=</span> <span class="n">robot</span><span class="o">.</span><span class="n">getDevice</span><span class="p">(</span><span class="s1">&#39;camera&#39;</span><span class="p">)</span>
-<span class="n">camera</span><span class="o">.</span><span class="n">enable</span><span class="p">(</span><span class="n">timestep</span><span class="p">)</span>
-<span class="n">image</span> <span class="o">=</span> <span class="n">camera</span><span class="o">.</span><span class="n">getImage</span><span class="p">()</span>  <span class="c1"># 返回 BGRA 字节串</span>
-<span class="n">width</span><span class="p">,</span> <span class="n">height</span> <span class="o">=</span> <span class="n">camera</span><span class="o">.</span><span class="n">getWidth</span><span class="p">(),</span> <span class="n">camera</span><span class="o">.</span><span class="n">getHeight</span><span class="p">()</span>
-
-<span class="c1"># 激光雷达</span>
-<span class="n">lidar</span> <span class="o">=</span> <span class="n">robot</span><span class="o">.</span><span class="n">getDevice</span><span class="p">(</span><span class="s1">&#39;lidar&#39;</span><span class="p">)</span>
-<span class="n">lidar</span><span class="o">.</span><span class="n">enable</span><span class="p">(</span><span class="n">timestep</span><span class="p">)</span>
-<span class="n">lidar</span><span class="o">.</span><span class="n">enablePointCloud</span><span class="p">()</span>
-<span class="n">ranges</span> <span class="o">=</span> <span class="n">lidar</span><span class="o">.</span><span class="n">getRangeImage</span><span class="p">()</span>     <span class="c1"># 距离数组</span>
-<span class="n">point_cloud</span> <span class="o">=</span> <span class="n">lidar</span><span class="o">.</span><span class="n">getPointCloud</span><span class="p">()</span>  <span class="c1"># 三维点云</span>
-
-<span class="c1"># 惯性测量单元（IMU, Inertial Measurement Unit）</span>
-<span class="n">imu</span> <span class="o">=</span> <span class="n">robot</span><span class="o">.</span><span class="n">getDevice</span><span class="p">(</span><span class="s1">&#39;inertial unit&#39;</span><span class="p">)</span>
-<span class="n">imu</span><span class="o">.</span><span class="n">enable</span><span class="p">(</span><span class="n">timestep</span><span class="p">)</span>
-<span class="n">roll</span><span class="p">,</span> <span class="n">pitch</span><span class="p">,</span> <span class="n">yaw</span> <span class="o">=</span> <span class="n">imu</span><span class="o">.</span><span class="n">getRollPitchYaw</span><span class="p">()</span>
-
-<span class="c1"># 全球定位系统（GPS, Global Positioning System）</span>
-<span class="n">gps</span> <span class="o">=</span> <span class="n">robot</span><span class="o">.</span><span class="n">getDevice</span><span class="p">(</span><span class="s1">&#39;gps&#39;</span><span class="p">)</span>
-<span class="n">gps</span><span class="o">.</span><span class="n">enable</span><span class="p">(</span><span class="n">timestep</span><span class="p">)</span>
-<span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="n">gps</span><span class="o">.</span><span class="n">getValues</span><span class="p">()</span>
-
-<span class="c1"># 编码器（位置传感器）</span>
-<span class="n">encoder</span> <span class="o">=</span> <span class="n">robot</span><span class="o">.</span><span class="n">getDevice</span><span class="p">(</span><span class="s1">&#39;left wheel sensor&#39;</span><span class="p">)</span>
-<span class="n">encoder</span><span class="o">.</span><span class="n">enable</span><span class="p">(</span><span class="n">timestep</span><span class="p">)</span>
-<span class="n">position</span> <span class="o">=</span> <span class="n">encoder</span><span class="o">.</span><span class="n">getValue</span><span class="p">()</span>  <span class="c1"># 弧度</span>
-</code></pre></div>
-<h3 id="_8">机器人运动学控制（机械臂示例）</h3>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">controller</span><span class="w"> </span><span class="kn">import</span> <span class="n">Robot</span><span class="p">,</span> <span class="n">Motor</span><span class="p">,</span> <span class="n">PositionSensor</span>
-
-<span class="n">robot</span> <span class="o">=</span> <span class="n">Robot</span><span class="p">()</span>
-<span class="n">timestep</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">robot</span><span class="o">.</span><span class="n">getBasicTimeStep</span><span class="p">())</span>
-
-<span class="c1"># 获取 UR5e 的 6 个关节</span>
-<span class="n">joint_names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;shoulder_pan&#39;</span><span class="p">,</span> <span class="s1">&#39;shoulder_lift&#39;</span><span class="p">,</span> <span class="s1">&#39;elbow&#39;</span><span class="p">,</span>
-               <span class="s1">&#39;wrist_1&#39;</span><span class="p">,</span> <span class="s1">&#39;wrist_2&#39;</span><span class="p">,</span> <span class="s1">&#39;wrist_3&#39;</span><span class="p">]</span>
-<span class="n">motors</span> <span class="o">=</span> <span class="p">[</span><span class="n">robot</span><span class="o">.</span><span class="n">getDevice</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1">_joint&#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">joint_names</span><span class="p">]</span>
-<span class="n">sensors</span> <span class="o">=</span> <span class="p">[</span><span class="n">robot</span><span class="o">.</span><span class="n">getDevice</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1">_joint_sensor&#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">joint_names</span><span class="p">]</span>
-
-<span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">sensors</span><span class="p">:</span>
-    <span class="n">s</span><span class="o">.</span><span class="n">enable</span><span class="p">(</span><span class="n">timestep</span><span class="p">)</span>
-
-<span class="c1"># 设置目标关节角度（弧度）</span>
-<span class="n">target_angles</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.57</span><span class="p">,</span> <span class="mf">1.57</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.57</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.57</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">]</span>
-<span class="k">for</span> <span class="n">motor</span><span class="p">,</span> <span class="n">angle</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">motors</span><span class="p">,</span> <span class="n">target_angles</span><span class="p">):</span>
-    <span class="n">motor</span><span class="o">.</span><span class="n">setPosition</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span>
-
-<span class="k">while</span> <span class="n">robot</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="n">timestep</span><span class="p">)</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
-    <span class="n">current</span> <span class="o">=</span> <span class="p">[</span><span class="n">s</span><span class="o">.</span><span class="n">getValue</span><span class="p">()</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">sensors</span><span class="p">]</span>
-    <span class="c1"># 检查是否到达目标</span>
-    <span class="n">error</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">c</span> <span class="o">-</span> <span class="n">t</span><span class="p">)</span> <span class="k">for</span> <span class="n">c</span><span class="p">,</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">current</span><span class="p">,</span> <span class="n">target_angles</span><span class="p">))</span>
-    <span class="k">if</span> <span class="n">error</span> <span class="o">&lt;</span> <span class="mf">0.01</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;已到达目标位置&quot;</span><span class="p">)</span>
+<span class="c1"># 4. 视频实时检测（摄像头）</span>
+<span class="n">cap</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">VideoCapture</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">ret</span><span class="p">,</span> <span class="n">frame</span> <span class="o">=</span> <span class="n">cap</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">ret</span><span class="p">:</span>
         <span class="k">break</span>
+    <span class="c1"># stream=True 启用流式生成器，降低内存占用</span>
+    <span class="n">results</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">frame</span><span class="p">,</span> <span class="n">stream</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">conf</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">results</span><span class="p">:</span>
+        <span class="n">annotated</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>  <span class="c1"># 自动绘制边界框与标签</span>
+    <span class="n">cv2</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="s1">&#39;YOLOv8 Detection&#39;</span><span class="p">,</span> <span class="n">annotated</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">cv2</span><span class="o">.</span><span class="n">waitKey</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">&amp;</span> <span class="mh">0xFF</span> <span class="o">==</span> <span class="nb">ord</span><span class="p">(</span><span class="s1">&#39;q&#39;</span><span class="p">):</span>
+        <span class="k">break</span>
+
+<span class="n">cap</span><span class="o">.</span><span class="n">release</span><span class="p">()</span>
+<span class="n">cv2</span><span class="o">.</span><span class="n">destroyAllWindows</span><span class="p">()</span>
 </code></pre></div>
-<h2 id="ros-2-webots_ros2">与 ROS 2 集成（webots_ros2）</h2>
-<p><code>webots_ros2</code> 是 Webots 官方提供的 ROS 2 集成包，将 Webots 设备自动映射为 ROS 2 话题和服务。</p>
-<h3 id="_9">安装</h3>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>ros-humble-webots-ros2
+<h3 id="_4">自定义数据集训练</h3>
+<p>训练前需准备 YAML 格式的数据集配置文件 <code>custom_dataset.yaml</code>，内容示例如下：</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># custom_dataset.yaml</span>
+<span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/data/robot_parts</span><span class="w">   </span><span class="c1"># 数据集根目录</span>
+<span class="nt">train</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">images/train</span><span class="w">       </span><span class="c1"># 训练集图像路径（相对于 path）</span>
+<span class="nt">val</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">images/val</span><span class="w">           </span><span class="c1"># 验证集图像路径</span>
+
+<span class="nt">nc</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3</span><span class="w">                     </span><span class="c1"># 类别数量</span>
+<span class="nt">names</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&#39;bolt&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;nut&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;washer&#39;</span><span class="p p-Indicator">]</span><span class="w">  </span><span class="c1"># 类别名称列表</span>
 </code></pre></div>
-<h3 id="_10">启动配置</h3>
-<div class="highlight"><pre><span></span><code><span class="c1"># launch/robot.launch.py</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">launch</span><span class="w"> </span><span class="kn">import</span> <span class="n">LaunchDescription</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">launch.actions</span><span class="w"> </span><span class="kn">import</span> <span class="n">DeclareLaunchArgument</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">launch_ros.actions</span><span class="w"> </span><span class="kn">import</span> <span class="n">Node</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">webots_ros2_driver.webots_launcher</span><span class="w"> </span><span class="kn">import</span> <span class="n">WebotsLauncher</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">ament_index_python.packages</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_package_share_directory</span>
+<p>然后启动训练：</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">ultralytics</span><span class="w"> </span><span class="kn">import</span> <span class="n">YOLO</span>
 
-<span class="k">def</span><span class="w"> </span><span class="nf">generate_launch_description</span><span class="p">():</span>
-    <span class="n">pkg_dir</span> <span class="o">=</span> <span class="n">get_package_share_directory</span><span class="p">(</span><span class="s1">&#39;my_robot_pkg&#39;</span><span class="p">)</span>
+<span class="c1"># 5. 自定义数据集训练</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">YOLO</span><span class="p">(</span><span class="s1">&#39;yolov8n.pt&#39;</span><span class="p">)</span>  <span class="c1"># 从预训练权重微调</span>
+<span class="n">model</span><span class="o">.</span><span class="n">train</span><span class="p">(</span>
+    <span class="n">data</span><span class="o">=</span><span class="s1">&#39;custom_dataset.yaml&#39;</span><span class="p">,</span>  <span class="c1"># 数据集配置文件</span>
+    <span class="n">epochs</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>
+    <span class="n">imgsz</span><span class="o">=</span><span class="mi">640</span><span class="p">,</span>
+    <span class="n">batch</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span>
+    <span class="n">device</span><span class="o">=</span><span class="s1">&#39;cuda&#39;</span><span class="p">,</span>          <span class="c1"># 或 &#39;cpu&#39;</span>
+    <span class="n">project</span><span class="o">=</span><span class="s1">&#39;robot_detection&#39;</span><span class="p">,</span>
+    <span class="n">name</span><span class="o">=</span><span class="s1">&#39;exp1&#39;</span>
+<span class="p">)</span>
 
-    <span class="n">webots</span> <span class="o">=</span> <span class="n">WebotsLauncher</span><span class="p">(</span>
-        <span class="n">world</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">pkg_dir</span><span class="p">,</span> <span class="s1">&#39;worlds&#39;</span><span class="p">,</span> <span class="s1">&#39;my_world.wbt&#39;</span><span class="p">)</span>
-    <span class="p">)</span>
-
-    <span class="n">robot_driver</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span>
-        <span class="n">package</span><span class="o">=</span><span class="s1">&#39;webots_ros2_driver&#39;</span><span class="p">,</span>
-        <span class="n">executable</span><span class="o">=</span><span class="s1">&#39;driver&#39;</span><span class="p">,</span>
-        <span class="n">output</span><span class="o">=</span><span class="s1">&#39;screen&#39;</span><span class="p">,</span>
-        <span class="n">parameters</span><span class="o">=</span><span class="p">[{</span>
-            <span class="s1">&#39;robot_description&#39;</span><span class="p">:</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">pkg_dir</span><span class="p">,</span> <span class="s1">&#39;resource&#39;</span><span class="p">,</span> <span class="s1">&#39;robot.urdf&#39;</span><span class="p">))</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-        <span class="p">}],</span>
-    <span class="p">)</span>
-
-    <span class="k">return</span> <span class="n">LaunchDescription</span><span class="p">([</span><span class="n">webots</span><span class="p">,</span> <span class="n">robot_driver</span><span class="p">])</span>
+<span class="c1"># 训练完成后评估</span>
+<span class="n">metrics</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">val</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;mAP50: </span><span class="si">{</span><span class="n">metrics</span><span class="o">.</span><span class="n">box</span><span class="o">.</span><span class="n">map50</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;mAP50-95: </span><span class="si">{</span><span class="n">metrics</span><span class="o">.</span><span class="n">box</span><span class="o">.</span><span class="n">map</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </code></pre></div>
-<h3 id="_11">话题映射示例</h3>
+<h3 id="_5">其他任务支持</h3>
+<p>YOLOv8 通过统一接口支持多种任务，只需切换模型文件后缀：</p>
 <table>
 <thead>
 <tr>
-<th>Webots 设备</th>
-<th>ROS 2 话题</th>
-<th>消息类型</th>
+<th>任务</th>
+<th>模型后缀</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Camera</td>
-<td><code>/camera/image_color</code></td>
-<td><code>sensor_msgs/Image</code></td>
+<td>目标检测</td>
+<td><code>yolov8n.pt</code></td>
+<td>输出边界框</td>
 </tr>
 <tr>
-<td>Lidar</td>
-<td><code>/scan</code></td>
-<td><code>sensor_msgs/LaserScan</code></td>
+<td>实例分割</td>
+<td><code>yolov8n-seg.pt</code></td>
+<td>输出掩码</td>
 </tr>
 <tr>
-<td>InertialUnit</td>
-<td><code>/imu</code></td>
-<td><code>sensor_msgs/Imu</code></td>
+<td>姿态估计</td>
+<td><code>yolov8n-pose.pt</code></td>
+<td>输出关键点</td>
 </tr>
 <tr>
-<td>GPS</td>
-<td><code>/gps</code></td>
-<td><code>sensor_msgs/NavSatFix</code></td>
-</tr>
-<tr>
-<td>DifferentialWheels</td>
-<td><code>/cmd_vel</code> 订阅</td>
-<td><code>geometry_msgs/Twist</code></td>
+<td>图像分类</td>
+<td><code>yolov8n-cls.pt</code></td>
+<td>输出类别概率</td>
 </tr>
 </tbody>
 </table>
-<h2 id="_12">多机器人场景</h2>
-<p>Webots 原生支持在同一场景中运行多个机器人，每个机器人有独立的控制器进程：</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># 多机器人场景：通过机器人名称区分</span>
-<span class="n">robot</span> <span class="o">=</span> <span class="n">Robot</span><span class="p">()</span>
-<span class="n">robot_name</span> <span class="o">=</span> <span class="n">robot</span><span class="o">.</span><span class="n">getName</span><span class="p">()</span>  <span class="c1"># 例如 &quot;robot_1&quot;, &quot;robot_2&quot;</span>
+<h2 id="detr">DETR 端到端检测</h2>
+<h3 id="_6">核心思想</h3>
+<p><strong>DETR</strong> (Detection Transformer，端到端目标检测 Transformer) 由 Facebook Research 于 2020 年提出，是首个完全去除 NMS 和手工设计 Anchor 的检测框架。其核心设计包括：</p>
+<ol>
+<li><strong>二分图匹配损失 (Bipartite Matching Loss)</strong>：训练时通过匈牙利算法（Hungarian Algorithm）在预测框集合与真实框集合之间寻找最优一对一匹配，从根本上消除了重复预测问题，因此推理时不需要 NMS；</li>
+<li><strong>Transformer 编码器-解码器架构</strong>：编码器处理 CNN 提取的图像特征序列，解码器以一组可学习的目标查询（Object Queries）为输入，通过交叉注意力与图像特征交互，直接输出固定数量的预测结果；</li>
+<li><strong>并行预测</strong>：所有预测同时生成，而非逐步迭代，符合集合预测的思想。</li>
+</ol>
+<p><strong>DETR 的局限性</strong>：收敛速度慢（需要训练 500 epoch 才能与 Faster R-CNN 媲美），对小目标检测效果较差。</p>
+<h3 id="detr_1">DETR 的后继者</h3>
+<p><strong>Deformable DETR</strong>（2021）引入可变形注意力机制（Deformable Attention），每个查询只关注参考点周围少量采样点，将训练 epoch 从 500 降至 50，并改善了小目标性能。</p>
+<p><strong>DINO</strong>（2022，ICLR 2023 最佳论文候选）在 Deformable DETR 基础上引入对比去噪训练（Contrastive DeNoising Training）和混合查询选择（Mixed Query Selection），在 COCO 上达到 63.3 mAP，大幅超越同期单阶段检测器。</p>
+<p><strong>RT-DETR</strong>（Real-Time DETR，2023）由百度提出，针对实时性优化：</p>
+<ul>
+<li>使用高效混合编码器（Efficient Hybrid Encoder），将 Transformer 编码器与 CNN 解耦，显著降低计算量；</li>
+<li>支持灵活调整解码器查询数量，在速度与精度之间灵活权衡；</li>
+<li>在 T4 GPU 上以 114 FPS 达到 54.8 mAP，首次实现 YOLO 级速度与 DETR 级精度的统一。</li>
+</ul>
+<h2 id="_7">在机器人上的部署</h2>
+<h3 id="nvidia-jetson-tensorrt">NVIDIA Jetson 上的 TensorRT 优化</h3>
+<p>NVIDIA Jetson 系列（Orin、Xavier、Nano）是机器人常用的边缘计算平台。TensorRT（张量运行时）通过层融合、精度校准等技术大幅提升推理速度。Ultralytics 原生支持导出 TensorRT 引擎：</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">ultralytics</span><span class="w"> </span><span class="kn">import</span> <span class="n">YOLO</span>
 
-<span class="c1"># 根据名称设置不同初始位置或策略</span>
-<span class="k">if</span> <span class="n">robot_name</span> <span class="o">==</span> <span class="s2">&quot;robot_1&quot;</span><span class="p">:</span>
-    <span class="n">target</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">]</span>
-<span class="k">elif</span> <span class="n">robot_name</span> <span class="o">==</span> <span class="s2">&quot;robot_2&quot;</span><span class="p">:</span>
-    <span class="n">target</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">]</span>
+<span class="c1"># 导出为 TensorRT 格式（需在目标 Jetson 设备上执行）</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">YOLO</span><span class="p">(</span><span class="s1">&#39;yolov8n.pt&#39;</span><span class="p">)</span>
+<span class="n">model</span><span class="o">.</span><span class="n">export</span><span class="p">(</span>
+    <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;engine&#39;</span><span class="p">,</span>
+    <span class="n">device</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>       <span class="c1"># GPU 设备编号</span>
+    <span class="n">half</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>      <span class="c1"># 启用 FP16 半精度优化</span>
+    <span class="n">imgsz</span><span class="o">=</span><span class="mi">640</span><span class="p">,</span>
+    <span class="n">workspace</span><span class="o">=</span><span class="mi">4</span>     <span class="c1"># TensorRT 构建时最大工作空间（GiB）</span>
+<span class="p">)</span>
+
+<span class="c1"># 加载并使用 TensorRT 引擎推理</span>
+<span class="n">trt_model</span> <span class="o">=</span> <span class="n">YOLO</span><span class="p">(</span><span class="s1">&#39;yolov8n.engine&#39;</span><span class="p">)</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">trt_model</span><span class="p">(</span><span class="s1">&#39;image.jpg&#39;</span><span class="p">)</span>
 </code></pre></div>
-<p>在 ROS 2 场景下，多机器人通过命名空间（Namespace）区分话题：</p>
+<p>在 Jetson Orin NX 上，YOLOv8n 经 FP16 优化后推理速度可从原始 PyTorch 的约 30 FPS 提升至 100 FPS 以上。</p>
+<p><strong>典型 Jetson 平台推理性能参考（YOLOv8n，640×640 输入）：</strong></p>
+<table>
+<thead>
+<tr>
+<th>平台</th>
+<th>功耗</th>
+<th>FP32 FPS</th>
+<th>FP16 FPS</th>
+<th>INT8 FPS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Jetson Nano</td>
+<td>10W</td>
+<td>~8</td>
+<td>~15</td>
+<td>~25</td>
+</tr>
+<tr>
+<td>Jetson Xavier NX</td>
+<td>15W</td>
+<td>~45</td>
+<td>~90</td>
+<td>~130</td>
+</tr>
+<tr>
+<td>Jetson Orin NX 8G</td>
+<td>15W</td>
+<td>~30</td>
+<td>~100</td>
+<td>~160</td>
+</tr>
+<tr>
+<td>Jetson AGX Orin</td>
+<td>40W</td>
+<td>~80</td>
+<td>~200</td>
+<td>~350</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ros-2">与 ROS 2 集成</h3>
+<p>在机器人系统中，目标检测结果通常需要通过 ROS 2（机器人操作系统 2）发布给其他节点（如路径规划、机械臂控制）。标准消息类型为 <code>vision_msgs/Detection2DArray</code>。以下是一个简化的 ROS 2 检测节点示例：</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">rclpy</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rclpy.node</span><span class="w"> </span><span class="kn">import</span> <span class="n">Node</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sensor_msgs.msg</span><span class="w"> </span><span class="kn">import</span> <span class="n">Image</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">vision_msgs.msg</span><span class="w"> </span><span class="kn">import</span> <span class="n">Detection2DArray</span><span class="p">,</span> <span class="n">Detection2D</span><span class="p">,</span> <span class="n">BoundingBox2D</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">cv_bridge</span><span class="w"> </span><span class="kn">import</span> <span class="n">CvBridge</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">ultralytics</span><span class="w"> </span><span class="kn">import</span> <span class="n">YOLO</span>
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">YoloDetectorNode</span><span class="p">(</span><span class="n">Node</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="s1">&#39;yolo_detector&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="n">YOLO</span><span class="p">(</span><span class="s1">&#39;yolov8n.engine&#39;</span><span class="p">)</span>  <span class="c1"># 使用 TensorRT 引擎</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">bridge</span> <span class="o">=</span> <span class="n">CvBridge</span><span class="p">()</span>
+
+        <span class="c1"># 订阅相机图像话题</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sub</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">create_subscription</span><span class="p">(</span>
+            <span class="n">Image</span><span class="p">,</span> <span class="s1">&#39;/camera/image_raw&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">image_callback</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+
+        <span class="c1"># 发布检测结果话题</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pub</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">create_publisher</span><span class="p">(</span>
+            <span class="n">Detection2DArray</span><span class="p">,</span> <span class="s1">&#39;/detections&#39;</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">image_callback</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">msg</span><span class="p">):</span>
+        <span class="n">frame</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">bridge</span><span class="o">.</span><span class="n">imgmsg_to_cv2</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="s1">&#39;bgr8&#39;</span><span class="p">)</span>
+        <span class="n">results</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="p">(</span><span class="n">frame</span><span class="p">,</span> <span class="n">conf</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+
+        <span class="n">det_array</span> <span class="o">=</span> <span class="n">Detection2DArray</span><span class="p">()</span>
+        <span class="n">det_array</span><span class="o">.</span><span class="n">header</span> <span class="o">=</span> <span class="n">msg</span><span class="o">.</span><span class="n">header</span>
+
+        <span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">results</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">box</span><span class="p">,</span> <span class="n">score</span><span class="p">,</span> <span class="bp">cls</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span>
+                    <span class="n">result</span><span class="o">.</span><span class="n">boxes</span><span class="o">.</span><span class="n">xyxy</span><span class="p">,</span>
+                    <span class="n">result</span><span class="o">.</span><span class="n">boxes</span><span class="o">.</span><span class="n">conf</span><span class="p">,</span>
+                    <span class="n">result</span><span class="o">.</span><span class="n">boxes</span><span class="o">.</span><span class="n">cls</span><span class="p">):</span>
+                <span class="n">det</span> <span class="o">=</span> <span class="n">Detection2D</span><span class="p">()</span>
+                <span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">y2</span> <span class="o">=</span> <span class="n">box</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+                <span class="n">det</span><span class="o">.</span><span class="n">bbox</span><span class="o">.</span><span class="n">center</span><span class="o">.</span><span class="n">position</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="n">x1</span> <span class="o">+</span> <span class="n">x2</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
+                <span class="n">det</span><span class="o">.</span><span class="n">bbox</span><span class="o">.</span><span class="n">center</span><span class="o">.</span><span class="n">position</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="p">(</span><span class="n">y1</span> <span class="o">+</span> <span class="n">y2</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
+                <span class="n">det</span><span class="o">.</span><span class="n">bbox</span><span class="o">.</span><span class="n">size_x</span> <span class="o">=</span> <span class="n">x2</span> <span class="o">-</span> <span class="n">x1</span>
+                <span class="n">det</span><span class="o">.</span><span class="n">bbox</span><span class="o">.</span><span class="n">size_y</span> <span class="o">=</span> <span class="n">y2</span> <span class="o">-</span> <span class="n">y1</span>
+                <span class="n">det_array</span><span class="o">.</span><span class="n">detections</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">det</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">pub</span><span class="o">.</span><span class="n">publish</span><span class="p">(</span><span class="n">det_array</span><span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
+    <span class="n">rclpy</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+    <span class="n">node</span> <span class="o">=</span> <span class="n">YoloDetectorNode</span><span class="p">()</span>
+    <span class="n">rclpy</span><span class="o">.</span><span class="n">spin</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+    <span class="n">rclpy</span><span class="o">.</span><span class="n">shutdown</span><span class="p">()</span>
+</code></pre></div>
+<p>启动节点：</p>
+<div class="highlight"><pre><span></span><code>ros2<span class="w"> </span>run<span class="w"> </span>your_package<span class="w"> </span>yolo_detector
+</code></pre></div>
+<h3 id="_8">典型机器人部署工作流</h3>
+<div class="highlight"><pre><span></span><code>相机 → ROS 2 话题 (/camera/image_raw)
+  ↓
+YoloDetectorNode (GPU 推理)
+  ↓
+/detections 话题 (Detection2DArray)
+  ↓
+┌─────────────────┬──────────────────┐
+│  路径规划节点    │   机械臂控制节点  │
+│ (动态障碍物感知) │  (目标定位抓取)   │
+└─────────────────┴──────────────────┘
+</code></pre></div>
+<h2 id="_9">标注工具与数据集准备</h2>
+<h3 id="_10">标注工具</h3>
+<p>高质量标注数据是检测模型性能的基础。常用开源/商业标注工具：</p>
 <ul>
-<li><code>/robot_1/scan</code>、<code>/robot_1/cmd_vel</code></li>
-<li><code>/robot_2/scan</code>、<code>/robot_2/cmd_vel</code></li>
+<li><strong>LabelImg</strong>：轻量级开源工具，支持 PASCAL VOC（XML）和 YOLO（TXT）格式，适合小团队快速标注；</li>
+<li><strong>CVAT</strong>（Computer Vision Annotation Tool）：Intel 开源的 Web 端标注平台，支持图像、视频、3D 点云标注，支持团队协作和半自动标注；</li>
+<li><strong>Roboflow</strong>：云端数据集管理和标注平台，支持数据版本管理、增强预览和一键导出多种格式，对小型项目免费；</li>
+<li><strong>Label Studio</strong>：开源的通用标注工具，支持图像、音频、文本等多模态数据。</li>
 </ul>
-<h2 id="_13">与教育和竞赛的结合</h2>
-<p>Webots 在机器人竞赛和教育领域有广泛应用：</p>
+<h3 id="_11">数据集格式</h3>
+<p>不同框架使用不同的标注格式，迁移时注意转换：</p>
+<p><strong>COCO 格式（JSON）</strong>：所有标注存储在单个 JSON 文件中，包含 <code>images</code>、<code>annotations</code>、<code>categories</code> 三个列表。适合 Detectron2、MMDetection 等框架。</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;images&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;file_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;img001.jpg&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;width&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">640</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;height&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">480</span><span class="p">}],</span>
+<span class="w">  </span><span class="nt">&quot;annotations&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;image_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;category_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">     </span><span class="nt">&quot;bbox&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="mi">150</span><span class="p">,</span><span class="w"> </span><span class="mi">80</span><span class="p">,</span><span class="w"> </span><span class="mi">60</span><span class="p">],</span><span class="w"> </span><span class="nt">&quot;area&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4800</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;iscrowd&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">}</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;categories&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;bolt&quot;</span><span class="p">}]</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>YOLO 格式（TXT）</strong>：每张图像对应一个同名 <code>.txt</code> 文件，每行代表一个目标，格式为 <code>class_id cx cy w h</code>，坐标均归一化到 0-1。</p>
+<div class="highlight"><pre><span></span><code># img001.txt
+0 0.328125 0.395833 0.125000 0.125000
+1 0.671875 0.604167 0.093750 0.083333
+</code></pre></div>
+<h3 id="_12">数据增强策略</h3>
+<p>合理的数据增强可显著提升模型泛化能力，尤其对小数据集效果明显：</p>
 <ul>
-<li><strong>RoboCup</strong>：官方提供基于 Webots 的标准平台组（Standard Platform League）仿真环境</li>
-<li><strong>世界机器人奥林匹克（WRO, World Robot Olympiad）</strong>：部分赛项使用 Webots 仿真预赛</li>
-<li><strong>Cyberbotics 官方教程</strong>：提供从入门到高级的系统教程，涵盖感知、运动规划和强化学习</li>
-<li><strong>用于教学的预置环境</strong>：内置 e-puck 教学机器人和标准任务（迷宫探索、避障、线跟踪）</li>
+<li><strong>几何变换</strong>：随机水平/垂直翻转、随机旋转（±15°）、随机裁剪与缩放；</li>
+<li><strong>颜色变换</strong>：亮度、对比度、饱和度、色调随机抖动（Color Jitter），随机灰度化；</li>
+<li><strong>混合增强</strong>：<ul>
+<li><strong>Mosaic</strong>（YOLOv4 提出）：将 4 张图像拼接为一张，丰富背景多样性，增强小目标检测；</li>
+<li><strong>MixUp</strong>：两张图像以随机权重线性插值，标签也按比例混合；</li>
+<li><strong>CutMix</strong>：将一张图像的随机矩形区域替换为另一张图像的对应区域；</li>
 </ul>
+</li>
+<li><strong>针对工业检测的增强</strong>：随机添加高斯噪声（模拟相机噪声）、随机运动模糊（模拟传送带运动）、随机透视变换（模拟相机角度偏差）。</li>
+</ul>
+<h3 id="_13">数据集管理平台</h3>
+<table>
+<thead>
+<tr>
+<th>工具</th>
+<th>主要功能</th>
+<th>特点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Roboflow</td>
+<td>版本控制、格式转换、在线标注、数据增强</td>
+<td>一站式数据管道，对小项目免费</td>
+</tr>
+<tr>
+<td>FiftyOne</td>
+<td>数据集可视化、质量分析、标注错误排查</td>
+<td>嵌入空间可视化，与 HuggingFace 集成</td>
+</tr>
+<tr>
+<td>Hugging Face Datasets</td>
+<td>机器人与视觉数据集托管</td>
+<td>LeRobot Dataset 标准格式，支持流式加载</td>
+</tr>
+<tr>
+<td>DVC</td>
+<td>大文件数据集版本管理</td>
+<td>与 Git 协同工作</td>
+</tr>
+</tbody>
+</table>
 <h2 id="_14">参考资料</h2>
-<ul>
-<li><a href="https://cyberbotics.com/doc/guide/index">Webots官方文档</a></li>
-<li><a href="https://github.com/cyberbotics/webots">Webots GitHub仓库</a></li>
-<li><a href="https://github.com/cyberbotics/webots_ros2">webots_ros2文档</a></li>
-<li>Michel, O. (2004). Webots: Professional mobile robot simulation. <em>International Journal of Advanced Robotic Systems</em>, 1(1), 39-42.</li>
-<li><a href="https://cyberbotics.com/doc/guide/index">Webots 官方文档</a></li>
-<li><a href="https://github.com/cyberbotics/webots_ros2">webots_ros2 GitHub</a></li>
-<li>Michel, O. (2004). WebotsTM: Professional Mobile Robot Simulation. <em>Journal of Advanced Robotics Systems</em>.</li>
-</ul>
+<ol>
+<li>Jocher, G., et al. (2023). Ultralytics YOLOv8. <a href="https://github.com/ultralytics/ultralytics">https://github.com/ultralytics/ultralytics</a></li>
+<li>Carion, N., et al. (2020). End-to-End Object Detection with Transformers. <em>ECCV</em>.</li>
+<li>Zhu, X., et al. (2020). Deformable DETR: Deformable Transformers for End-to-End Object Detection. <em>ICLR 2021</em>.</li>
+<li>Zhang, H., et al. (2022). DINO: DETR with Improved DeNoising Anchor Boxes for End-to-End Object Detection. <em>ICLR 2023</em>.</li>
+<li>Zhao, Y., et al. (2023). DETRs Beat YOLOs on Real-time Object Detection. <em>CVPR 2024</em>.</li>
+<li><a href="https://docs.nvidia.com/deeplearning/tensorrt/">NVIDIA TensorRT 文档</a></li>
+<li><a href="https://github.com/cvat-ai/cvat">CVAT 项目主页</a></li>
+<li><a href="https://roboflow.com/">Roboflow 平台</a></li>
+</ol>
 
 
 
