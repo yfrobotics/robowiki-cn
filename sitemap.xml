@@ -2,354 +2,558 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://yfrobotics.github.io/</loc>
-         <lastmod>2026-02-21</lastmod>
+         <lastmod>2026-03-22</lastmod>
     </url>
     <url>
          <loc>https://yfrobotics.github.io/contributors/</loc>
-         <lastmod>2026-02-21</lastmod>
+         <lastmod>2026-03-22</lastmod>
     </url>
     <url>
          <loc>https://yfrobotics.github.io/courses/</loc>
-         <lastmod>2026-02-21</lastmod>
+         <lastmod>2026-03-22</lastmod>
     </url>
     <url>
          <loc>https://yfrobotics.github.io/how-to-contribute/</loc>
-         <lastmod>2026-02-21</lastmod>
+         <lastmod>2026-03-22</lastmod>
     </url>
     <url>
          <loc>https://yfrobotics.github.io/intro/</loc>
-         <lastmod>2026-02-21</lastmod>
+         <lastmod>2026-03-22</lastmod>
     </url>
     <url>
          <loc>https://yfrobotics.github.io/standard/</loc>
-         <lastmod>2026-02-21</lastmod>
+         <lastmod>2026-03-22</lastmod>
     </url>
     <url>
          <loc>https://yfrobotics.github.io/arduino/</loc>
-         <lastmod>2026-02-21</lastmod>
+         <lastmod>2026-03-22</lastmod>
     </url>
     <url>
          <loc>https://yfrobotics.github.io/control/</loc>
-         <lastmod>2026-02-21</lastmod>
+         <lastmod>2026-03-22</lastmod>
     </url>
     <url>
          <loc>https://yfrobotics.github.io/control/adaptive/adaptive/</loc>
-         <lastmod>2026-02-21</lastmod>
+         <lastmod>2026-03-22</lastmod>
     </url>
     <url>
          <loc>https://yfrobotics.github.io/control/lqr/lqr/</loc>
-         <lastmod>2026-02-21</lastmod>
+         <lastmod>2026-03-22</lastmod>
+    </url>
+    <url>
+         <loc>https://yfrobotics.github.io/control/modelling/modelling-discrete-identification/</loc>
+         <lastmod>2026-03-22</lastmod>
+    </url>
+    <url>
+         <loc>https://yfrobotics.github.io/control/modelling/modelling-foundations/</loc>
+         <lastmod>2026-03-22</lastmod>
+    </url>
+    <url>
+         <loc>https://yfrobotics.github.io/control/modelling/modelling-full-reference/</loc>
+         <lastmod>2026-03-22</lastmod>
     </url>
     <url>
          <loc>https://yfrobotics.github.io/control/modelling/modelling/</loc>
-         <lastmod>2026-02-21</lastmod>
+         <lastmod>2026-03-22</lastmod>
     </url>
     <url>
          <loc>https://yfrobotics.github.io/control/modelling/state-space/</loc>
-         <lastmod>2026-02-21</lastmod>
+         <lastmod>2026-03-22</lastmod>
     </url>
     <url>
          <loc>https://yfrobotics.github.io/control/mpc/mpc/</loc>
-         <lastmod>2026-02-21</lastmod>
+         <lastmod>2026-03-22</lastmod>
     </url>
     <url>
          <loc>https://yfrobotics.github.io/control/nn/nn/</loc>
-         <lastmod>2026-02-21</lastmod>
+         <lastmod>2026-03-22</lastmod>
     </url>
     <url>
          <loc>https://yfrobotics.github.io/control/pid/pid/</loc>
-         <lastmod>2026-02-21</lastmod>
+         <lastmod>2026-03-22</lastmod>
     </url>
     <url>
          <loc>https://yfrobotics.github.io/cv/</loc>
-         <lastmod>2026-02-21</lastmod>
+         <lastmod>2026-03-22</lastmod>
+    </url>
+    <url>
+         <loc>https://yfrobotics.github.io/cv/3d-vision-full-reference/</loc>
+         <lastmod>2026-03-22</lastmod>
+    </url>
+    <url>
+         <loc>https://yfrobotics.github.io/cv/3d-vision-pointcloud-registration/</loc>
+         <lastmod>2026-03-22</lastmod>
+    </url>
+    <url>
+         <loc>https://yfrobotics.github.io/cv/3d-vision-reconstruction-radiance/</loc>
+         <lastmod>2026-03-22</lastmod>
+    </url>
+    <url>
+         <loc>https://yfrobotics.github.io/cv/3d-vision-stereo-depth/</loc>
+         <lastmod>2026-03-22</lastmod>
     </url>
     <url>
          <loc>https://yfrobotics.github.io/cv/3d-vision/</loc>
-         <lastmod>2026-02-21</lastmod>
+         <lastmod>2026-03-22</lastmod>
     </url>
     <url>
          <loc>https://yfrobotics.github.io/cv/object-detection-3d-advanced/</loc>
-         <lastmod>2026-02-21</lastmod>
+         <lastmod>2026-03-22</lastmod>
     </url>
     <url>
          <loc>https://yfrobotics.github.io/cv/object-detection-practical/</loc>
-         <lastmod>2026-02-21</lastmod>
+         <lastmod>2026-03-22</lastmod>
     </url>
     <url>
          <loc>https://yfrobotics.github.io/cv/object-detection/</loc>
-         <lastmod>2026-02-21</lastmod>
+         <lastmod>2026-03-22</lastmod>
     </url>
     <url>
          <loc>https://yfrobotics.github.io/cv/pose-estimation/</loc>
-         <lastmod>2026-02-21</lastmod>
+         <lastmod>2026-03-22</lastmod>
     </url>
     <url>
          <loc>https://yfrobotics.github.io/cv/segmentation/</loc>
-         <lastmod>2026-02-21</lastmod>
+         <lastmod>2026-03-22</lastmod>
     </url>
     <url>
          <loc>https://yfrobotics.github.io/cv/tracking/</loc>
-         <lastmod>2026-02-21</lastmod>
+         <lastmod>2026-03-22</lastmod>
     </url>
     <url>
          <loc>https://yfrobotics.github.io/database/</loc>
-         <lastmod>2026-02-21</lastmod>
+         <lastmod>2026-03-22</lastmod>
     </url>
     <url>
          <loc>https://yfrobotics.github.io/database/apollo/</loc>
-         <lastmod>2026-02-21</lastmod>
+         <lastmod>2026-03-22</lastmod>
     </url>
     <url>
          <loc>https://yfrobotics.github.io/database/asimo/</loc>
-         <lastmod>2026-02-21</lastmod>
+         <lastmod>2026-03-22</lastmod>
     </url>
     <url>
          <loc>https://yfrobotics.github.io/database/atlas/</loc>
-         <lastmod>2026-02-21</lastmod>
+         <lastmod>2026-03-22</lastmod>
     </url>
     <url>
          <loc>https://yfrobotics.github.io/database/boston-dynamics/</loc>
-         <lastmod>2026-02-21</lastmod>
+         <lastmod>2026-03-22</lastmod>
     </url>
     <url>
          <loc>https://yfrobotics.github.io/database/companies/</loc>
-         <lastmod>2026-02-21</lastmod>
+         <lastmod>2026-03-22</lastmod>
     </url>
     <url>
          <loc>https://yfrobotics.github.io/database/competitions/</loc>
-         <lastmod>2026-02-21</lastmod>
+         <lastmod>2026-03-22</lastmod>
     </url>
     <url>
          <loc>https://yfrobotics.github.io/database/conferences/</loc>
-         <lastmod>2026-02-21</lastmod>
+         <lastmod>2026-03-22</lastmod>
     </url>
     <url>
          <loc>https://yfrobotics.github.io/database/dataset/</loc>
-         <lastmod>2026-02-21</lastmod>
+         <lastmod>2026-03-22</lastmod>
     </url>
     <url>
          <loc>https://yfrobotics.github.io/database/digit/</loc>
-         <lastmod>2026-02-21</lastmod>
+         <lastmod>2026-03-22</lastmod>
     </url>
     <url>
          <loc>https://yfrobotics.github.io/database/figure/</loc>
-         <lastmod>2026-02-21</lastmod>
+         <lastmod>2026-03-22</lastmod>
+    </url>
+    <url>
+         <loc>https://yfrobotics.github.io/database/labs-cn-cas-enterprise/</loc>
+         <lastmod>2026-03-22</lastmod>
+    </url>
+    <url>
+         <loc>https://yfrobotics.github.io/database/labs-cn-full-reference/</loc>
+         <lastmod>2026-03-22</lastmod>
+    </url>
+    <url>
+         <loc>https://yfrobotics.github.io/database/labs-cn-universities/</loc>
+         <lastmod>2026-03-22</lastmod>
     </url>
     <url>
          <loc>https://yfrobotics.github.io/database/labs-cn/</loc>
-         <lastmod>2026-02-21</lastmod>
+         <lastmod>2026-03-22</lastmod>
+    </url>
+    <url>
+         <loc>https://yfrobotics.github.io/database/labs-evaluation-collaboration/</loc>
+         <lastmod>2026-03-22</lastmod>
+    </url>
+    <url>
+         <loc>https://yfrobotics.github.io/database/labs-full-reference/</loc>
+         <lastmod>2026-03-22</lastmod>
+    </url>
+    <url>
+         <loc>https://yfrobotics.github.io/database/labs-global-map/</loc>
+         <lastmod>2026-03-22</lastmod>
     </url>
     <url>
          <loc>https://yfrobotics.github.io/database/labs/</loc>
-         <lastmod>2026-02-21</lastmod>
+         <lastmod>2026-03-22</lastmod>
     </url>
     <url>
          <loc>https://yfrobotics.github.io/database/nao/</loc>
-         <lastmod>2026-02-21</lastmod>
+         <lastmod>2026-03-22</lastmod>
     </url>
     <url>
          <loc>https://yfrobotics.github.io/database/optimus/</loc>
-         <lastmod>2026-02-21</lastmod>
+         <lastmod>2026-03-22</lastmod>
     </url>
     <url>
          <loc>https://yfrobotics.github.io/database/pepper/</loc>
-         <lastmod>2026-02-21</lastmod>
+         <lastmod>2026-03-22</lastmod>
     </url>
     <url>
          <loc>https://yfrobotics.github.io/database/robots/</loc>
-         <lastmod>2026-02-21</lastmod>
+         <lastmod>2026-03-22</lastmod>
     </url>
     <url>
          <loc>https://yfrobotics.github.io/database/spot/</loc>
-         <lastmod>2026-02-21</lastmod>
+         <lastmod>2026-03-22</lastmod>
     </url>
     <url>
          <loc>https://yfrobotics.github.io/database/standard/</loc>
-         <lastmod>2026-02-21</lastmod>
+         <lastmod>2026-03-22</lastmod>
     </url>
     <url>
          <loc>https://yfrobotics.github.io/database/unitree-h1/</loc>
-         <lastmod>2026-02-21</lastmod>
+         <lastmod>2026-03-22</lastmod>
     </url>
     <url>
          <loc>https://yfrobotics.github.io/database/walker-s/</loc>
-         <lastmod>2026-02-21</lastmod>
+         <lastmod>2026-03-22</lastmod>
     </url>
     <url>
          <loc>https://yfrobotics.github.io/hardware/</loc>
-         <lastmod>2026-02-21</lastmod>
+         <lastmod>2026-03-22</lastmod>
+    </url>
+    <url>
+         <loc>https://yfrobotics.github.io/hardware/communication-buses/</loc>
+         <lastmod>2026-03-22</lastmod>
+    </url>
+    <url>
+         <loc>https://yfrobotics.github.io/hardware/power-thermal/</loc>
+         <lastmod>2026-03-22</lastmod>
+    </url>
+    <url>
+         <loc>https://yfrobotics.github.io/hardware/system-architecture/</loc>
+         <lastmod>2026-03-22</lastmod>
     </url>
     <url>
          <loc>https://yfrobotics.github.io/jetson/</loc>
-         <lastmod>2026-02-21</lastmod>
+         <lastmod>2026-03-22</lastmod>
+    </url>
+    <url>
+         <loc>https://yfrobotics.github.io/learning/dl-foundation-models/</loc>
+         <lastmod>2026-03-22</lastmod>
+    </url>
+    <url>
+         <loc>https://yfrobotics.github.io/learning/dl-full-reference/</loc>
+         <lastmod>2026-03-22</lastmod>
+    </url>
+    <url>
+         <loc>https://yfrobotics.github.io/learning/dl-robotics-pipelines/</loc>
+         <lastmod>2026-03-22</lastmod>
+    </url>
+    <url>
+         <loc>https://yfrobotics.github.io/learning/dl-training-deployment/</loc>
+         <lastmod>2026-03-22</lastmod>
     </url>
     <url>
          <loc>https://yfrobotics.github.io/learning/dl/</loc>
-         <lastmod>2026-02-21</lastmod>
+         <lastmod>2026-03-22</lastmod>
     </url>
     <url>
          <loc>https://yfrobotics.github.io/learning/ml/</loc>
-         <lastmod>2026-02-21</lastmod>
+         <lastmod>2026-03-22</lastmod>
+    </url>
+    <url>
+         <loc>https://yfrobotics.github.io/learning/rl-advanced-paradigms/</loc>
+         <lastmod>2026-03-22</lastmod>
+    </url>
+    <url>
+         <loc>https://yfrobotics.github.io/learning/rl-algorithms-practice/</loc>
+         <lastmod>2026-03-22</lastmod>
+    </url>
+    <url>
+         <loc>https://yfrobotics.github.io/learning/rl-full-reference/</loc>
+         <lastmod>2026-03-22</lastmod>
+    </url>
+    <url>
+         <loc>https://yfrobotics.github.io/learning/rl-robotics-deployment/</loc>
+         <lastmod>2026-03-22</lastmod>
     </url>
     <url>
          <loc>https://yfrobotics.github.io/learning/rl/</loc>
-         <lastmod>2026-02-21</lastmod>
+         <lastmod>2026-03-22</lastmod>
     </url>
     <url>
          <loc>https://yfrobotics.github.io/linux/</loc>
-         <lastmod>2026-02-21</lastmod>
+         <lastmod>2026-03-22</lastmod>
     </url>
     <url>
          <loc>https://yfrobotics.github.io/linux/commands/</loc>
-         <lastmod>2026-02-21</lastmod>
+         <lastmod>2026-03-22</lastmod>
+    </url>
+    <url>
+         <loc>https://yfrobotics.github.io/linux/shell-scripting-automation-patterns/</loc>
+         <lastmod>2026-03-22</lastmod>
+    </url>
+    <url>
+         <loc>https://yfrobotics.github.io/linux/shell-scripting-full-reference/</loc>
+         <lastmod>2026-03-22</lastmod>
+    </url>
+    <url>
+         <loc>https://yfrobotics.github.io/linux/shell-scripting-ops-toolkit/</loc>
+         <lastmod>2026-03-22</lastmod>
     </url>
     <url>
          <loc>https://yfrobotics.github.io/linux/shell-scripting/</loc>
-         <lastmod>2026-02-21</lastmod>
+         <lastmod>2026-03-22</lastmod>
     </url>
     <url>
          <loc>https://yfrobotics.github.io/planning/</loc>
-         <lastmod>2026-02-21</lastmod>
+         <lastmod>2026-03-22</lastmod>
+    </url>
+    <url>
+         <loc>https://yfrobotics.github.io/planning/behavior-trees/</loc>
+         <lastmod>2026-03-22</lastmod>
     </url>
     <url>
          <loc>https://yfrobotics.github.io/planning/decisionmaking/</loc>
-         <lastmod>2026-02-21</lastmod>
+         <lastmod>2026-03-22</lastmod>
     </url>
     <url>
          <loc>https://yfrobotics.github.io/planning/motionplanning/</loc>
-         <lastmod>2026-02-21</lastmod>
+         <lastmod>2026-03-22</lastmod>
+    </url>
+    <url>
+         <loc>https://yfrobotics.github.io/planning/multi-robot-task-allocation/</loc>
+         <lastmod>2026-03-22</lastmod>
     </url>
     <url>
          <loc>https://yfrobotics.github.io/planning/pathplanning/</loc>
-         <lastmod>2026-02-21</lastmod>
+         <lastmod>2026-03-22</lastmod>
+    </url>
+    <url>
+         <loc>https://yfrobotics.github.io/planning/replanning-safety/</loc>
+         <lastmod>2026-03-22</lastmod>
     </url>
     <url>
          <loc>https://yfrobotics.github.io/plans/2026-02-20-content-addition-design/</loc>
-         <lastmod>2026-02-21</lastmod>
+         <lastmod>2026-03-22</lastmod>
     </url>
     <url>
          <loc>https://yfrobotics.github.io/plans/2026-02-20-content-addition/</loc>
-         <lastmod>2026-02-21</lastmod>
+         <lastmod>2026-03-22</lastmod>
     </url>
     <url>
          <loc>https://yfrobotics.github.io/plans/2026-02-21-content-round2/</loc>
-         <lastmod>2026-02-21</lastmod>
+         <lastmod>2026-03-22</lastmod>
     </url>
     <url>
          <loc>https://yfrobotics.github.io/raspberrypi/</loc>
-         <lastmod>2026-02-21</lastmod>
+         <lastmod>2026-03-22</lastmod>
     </url>
     <url>
          <loc>https://yfrobotics.github.io/resources/</loc>
-         <lastmod>2026-02-21</lastmod>
+         <lastmod>2026-03-22</lastmod>
     </url>
     <url>
          <loc>https://yfrobotics.github.io/resources/books/</loc>
-         <lastmod>2026-02-21</lastmod>
+         <lastmod>2026-03-22</lastmod>
     </url>
     <url>
          <loc>https://yfrobotics.github.io/resources/software/</loc>
-         <lastmod>2026-02-21</lastmod>
+         <lastmod>2026-03-22</lastmod>
     </url>
     <url>
          <loc>https://yfrobotics.github.io/resources/videos/</loc>
-         <lastmod>2026-02-21</lastmod>
+         <lastmod>2026-03-22</lastmod>
     </url>
     <url>
          <loc>https://yfrobotics.github.io/ros/</loc>
-         <lastmod>2026-02-21</lastmod>
+         <lastmod>2026-03-22</lastmod>
+    </url>
+    <url>
+         <loc>https://yfrobotics.github.io/ros/ros1-communication/</loc>
+         <lastmod>2026-03-22</lastmod>
+    </url>
+    <url>
+         <loc>https://yfrobotics.github.io/ros/ros1-full-reference/</loc>
+         <lastmod>2026-03-22</lastmod>
+    </url>
+    <url>
+         <loc>https://yfrobotics.github.io/ros/ros1-workspace/</loc>
+         <lastmod>2026-03-22</lastmod>
     </url>
     <url>
          <loc>https://yfrobotics.github.io/ros/ros1/</loc>
-         <lastmod>2026-02-21</lastmod>
+         <lastmod>2026-03-22</lastmod>
+    </url>
+    <url>
+         <loc>https://yfrobotics.github.io/ros/ros2-full-reference/</loc>
+         <lastmod>2026-03-22</lastmod>
+    </url>
+    <url>
+         <loc>https://yfrobotics.github.io/ros/ros2-migration-playbook/</loc>
+         <lastmod>2026-03-22</lastmod>
+    </url>
+    <url>
+         <loc>https://yfrobotics.github.io/ros/ros2-qos-dds/</loc>
+         <lastmod>2026-03-22</lastmod>
     </url>
     <url>
          <loc>https://yfrobotics.github.io/ros/ros2/</loc>
-         <lastmod>2026-02-21</lastmod>
+         <lastmod>2026-03-22</lastmod>
     </url>
     <url>
          <loc>https://yfrobotics.github.io/rtos/</loc>
-         <lastmod>2026-02-21</lastmod>
+         <lastmod>2026-03-22</lastmod>
     </url>
     <url>
          <loc>https://yfrobotics.github.io/rtos/freertos/</loc>
-         <lastmod>2026-02-21</lastmod>
+         <lastmod>2026-03-22</lastmod>
+    </url>
+    <url>
+         <loc>https://yfrobotics.github.io/rtos/latency-debugging/</loc>
+         <lastmod>2026-03-22</lastmod>
     </url>
     <url>
          <loc>https://yfrobotics.github.io/rtos/qnx/</loc>
-         <lastmod>2026-02-21</lastmod>
+         <lastmod>2026-03-22</lastmod>
+    </url>
+    <url>
+         <loc>https://yfrobotics.github.io/rtos/scheduling-analysis/</loc>
+         <lastmod>2026-03-22</lastmod>
     </url>
     <url>
          <loc>https://yfrobotics.github.io/rtos/ucos/</loc>
-         <lastmod>2026-02-21</lastmod>
+         <lastmod>2026-03-22</lastmod>
     </url>
     <url>
          <loc>https://yfrobotics.github.io/rtos/vxworks/</loc>
-         <lastmod>2026-02-21</lastmod>
+         <lastmod>2026-03-22</lastmod>
     </url>
     <url>
          <loc>https://yfrobotics.github.io/sensing/</loc>
-         <lastmod>2026-02-21</lastmod>
+         <lastmod>2026-03-22</lastmod>
     </url>
     <url>
          <loc>https://yfrobotics.github.io/sensing/depth-camera/</loc>
-         <lastmod>2026-02-21</lastmod>
+         <lastmod>2026-03-22</lastmod>
+    </url>
+    <url>
+         <loc>https://yfrobotics.github.io/sensing/sensor-fusion-architecture/</loc>
+         <lastmod>2026-03-22</lastmod>
+    </url>
+    <url>
+         <loc>https://yfrobotics.github.io/sensing/sensor-fusion-engineering/</loc>
+         <lastmod>2026-03-22</lastmod>
+    </url>
+    <url>
+         <loc>https://yfrobotics.github.io/sensing/sensor-fusion-full-reference/</loc>
+         <lastmod>2026-03-22</lastmod>
     </url>
     <url>
          <loc>https://yfrobotics.github.io/sensing/sensor-fusion/</loc>
-         <lastmod>2026-02-21</lastmod>
+         <lastmod>2026-03-22</lastmod>
     </url>
     <url>
          <loc>https://yfrobotics.github.io/sensing/sensors/</loc>
-         <lastmod>2026-02-21</lastmod>
+         <lastmod>2026-03-22</lastmod>
+    </url>
+    <url>
+         <loc>https://yfrobotics.github.io/sensing/slam-engineering-playbook/</loc>
+         <lastmod>2026-03-22</lastmod>
+    </url>
+    <url>
+         <loc>https://yfrobotics.github.io/sensing/slam-systems-comparison/</loc>
+         <lastmod>2026-03-22</lastmod>
     </url>
     <url>
          <loc>https://yfrobotics.github.io/sensing/slam/</loc>
-         <lastmod>2026-02-21</lastmod>
+         <lastmod>2026-03-22</lastmod>
     </url>
     <url>
          <loc>https://yfrobotics.github.io/simulation/</loc>
-         <lastmod>2026-02-21</lastmod>
+         <lastmod>2026-03-22</lastmod>
     </url>
     <url>
          <loc>https://yfrobotics.github.io/simulation/gazebo/</loc>
-         <lastmod>2026-02-21</lastmod>
+         <lastmod>2026-03-22</lastmod>
     </url>
     <url>
          <loc>https://yfrobotics.github.io/simulation/mujoco/</loc>
-         <lastmod>2026-02-21</lastmod>
+         <lastmod>2026-03-22</lastmod>
     </url>
     <url>
          <loc>https://yfrobotics.github.io/simulation/nvidiaomniverse/</loc>
-         <lastmod>2026-02-21</lastmod>
+         <lastmod>2026-03-22</lastmod>
+    </url>
+    <url>
+         <loc>https://yfrobotics.github.io/simulation/pybullet-control-dynamics/</loc>
+         <lastmod>2026-03-22</lastmod>
+    </url>
+    <url>
+         <loc>https://yfrobotics.github.io/simulation/pybullet-full-reference/</loc>
+         <lastmod>2026-03-22</lastmod>
+    </url>
+    <url>
+         <loc>https://yfrobotics.github.io/simulation/pybullet-rl-workflows/</loc>
+         <lastmod>2026-03-22</lastmod>
+    </url>
+    <url>
+         <loc>https://yfrobotics.github.io/simulation/pybullet-vision-multirobot/</loc>
+         <lastmod>2026-03-22</lastmod>
     </url>
     <url>
          <loc>https://yfrobotics.github.io/simulation/pybullet/</loc>
-         <lastmod>2026-02-21</lastmod>
+         <lastmod>2026-03-22</lastmod>
     </url>
     <url>
          <loc>https://yfrobotics.github.io/simulation/robotics-toolbox/</loc>
-         <lastmod>2026-02-21</lastmod>
+         <lastmod>2026-03-22</lastmod>
     </url>
     <url>
          <loc>https://yfrobotics.github.io/simulation/stage/</loc>
-         <lastmod>2026-02-21</lastmod>
+         <lastmod>2026-03-22</lastmod>
     </url>
     <url>
          <loc>https://yfrobotics.github.io/simulation/unity/</loc>
-         <lastmod>2026-02-21</lastmod>
+         <lastmod>2026-03-22</lastmod>
     </url>
     <url>
          <loc>https://yfrobotics.github.io/simulation/unreal/</loc>
-         <lastmod>2026-02-21</lastmod>
+         <lastmod>2026-03-22</lastmod>
+    </url>
+    <url>
+         <loc>https://yfrobotics.github.io/simulation/vrep-full-reference/</loc>
+         <lastmod>2026-03-22</lastmod>
+    </url>
+    <url>
+         <loc>https://yfrobotics.github.io/simulation/vrep-performance-debugging/</loc>
+         <lastmod>2026-03-22</lastmod>
+    </url>
+    <url>
+         <loc>https://yfrobotics.github.io/simulation/vrep-remote-api-ros2/</loc>
+         <lastmod>2026-03-22</lastmod>
+    </url>
+    <url>
+         <loc>https://yfrobotics.github.io/simulation/vrep-robotics-workflows/</loc>
+         <lastmod>2026-03-22</lastmod>
     </url>
     <url>
          <loc>https://yfrobotics.github.io/simulation/vrep/</loc>
-         <lastmod>2026-02-21</lastmod>
+         <lastmod>2026-03-22</lastmod>
     </url>
     <url>
          <loc>https://yfrobotics.github.io/simulation/webots/</loc>
-         <lastmod>2026-02-21</lastmod>
+         <lastmod>2026-03-22</lastmod>
     </url>
 </urlset>
