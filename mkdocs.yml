@@ -12,6 +12,8 @@ edit_uri: ''
 
 docs_dir: docs
 site_dir: site
+exclude_docs: |
+  plans/
 
 # Google Analytics
 extra:
