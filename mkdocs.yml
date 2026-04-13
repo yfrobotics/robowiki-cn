@@ -47,6 +47,7 @@ nav:
       - sensing/index.md
       - sensing/sensors.md
       - sensing/depth-camera.md
+      - sensing/imu-calibration.md
       - 传感器融合:
         - sensing/sensor-fusion.md
         - sensing/sensor-fusion-architecture.md
