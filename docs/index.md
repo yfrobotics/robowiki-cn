@@ -2,7 +2,7 @@
 
 ![](logo.png)
 
-云飞机器人中文维基 (RoboWiki-cn) 是由 [云飞机器人实验室](https://space.bilibili.com/493264461) 发起的机器人公共领域知识编辑项目。目前该项目在 [GitHub](https://github.com/yfrobotics/robowiki) 管理和维护。
+云飞机器人中文维基 (RoboWiki-cn) 是由 云飞机器人实验室 ( [知乎](https://www.zhihu.com/column/yfworld) | [B站](https://space.bilibili.com/493264461) | [博客](https://yfrobotics.github.io/) | [YouTube](https://www.youtube.com/@yfrobotics) | [Ins](https://www.instagram.com/yfrobotics/) ) 发起的机器人公共领域知识编辑项目。目前该项目在 [GitHub](https://github.com/yfrobotics/robowiki) 管理和维护。
 
 本维基旨在涵盖机器人设计、建模、仿真、编程、视觉、算法、行业应用等各个方面的内容，为机器人爱好者、开发者、从业者、研究者服务。
 
