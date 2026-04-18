@@ -12,9 +12,13 @@
         <meta name="author" content="YFRL">
       
       
-        <link rel="canonical" href="https://yfrobotics.github.io/plans/2026-02-20-content-addition-design/">
+        <link rel="canonical" href="https://yfrobotics.github.io/sensing/imu-calibration/">
       
       
+        <link rel="prev" href="../depth-camera/">
+      
+      
+        <link rel="next" href="../sensor-fusion/">
       
       
         
@@ -25,7 +29,7 @@
     
     
       
-        <title>云飞机器人中文维基 — 内容扩充设计文档 - 云飞机器人中文维基</title>
+        <title>IMU 标定与噪声建模 - 云飞机器人中文维基</title>
       
     
     
@@ -86,7 +90,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#imu" class="md-skip">
           跳转至
         </a>
       
@@ -119,7 +123,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              云飞机器人中文维基 — 内容扩充设计文档
+              IMU 标定与噪声建模
             
           </span>
         </div>
@@ -242,11 +246,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../sensing/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
           
   
   
@@ -1154,24 +1160,29 @@
       
   
   
+    
   
   
+  
     
     
     
     
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
             
   
   
@@ -1189,7 +1200,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1207,7 +1218,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../sensing/" class="md-nav__link">
+      <a href="../" class="md-nav__link">
         
   
   
@@ -1235,7 +1246,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../sensing/sensors/" class="md-nav__link">
+      <a href="../sensors/" class="md-nav__link">
         
   
   
@@ -1263,7 +1274,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../sensing/depth-camera/" class="md-nav__link">
+      <a href="../depth-camera/" class="md-nav__link">
         
   
   
@@ -1288,6 +1299,264 @@
                 
   
   
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IMU 标定与噪声建模
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IMU 标定与噪声建模
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-imu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. IMU 误差来源
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. IMU 误差来源">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-deterministic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 确定性误差（Deterministic）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-stochastic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 随机误差（Stochastic）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 六面静态标定（确定性误差）
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-allan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Allan 方差分析（随机误差）
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 典型工具链
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. 典型工具链">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-imu_utilsros-1-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 imu_utils（ROS 1 / 2）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-kalibrimu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 Kalibr（IMU–相机联合标定）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 其他常用工具
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. 与姿态估计的衔接
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. 与姿态估计的衔接">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-madgwick" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 互补滤波与 Madgwick
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-ekf" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 扩展卡尔曼滤波（EKF）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-slamvins-mono-orb-slam3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3 视觉惯性 SLAM（VINS-Mono / ORB-SLAM3）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. 常见陷阱
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        参考资料
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
   
   
     
@@ -1302,10 +1571,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
         
           
-          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
             
   
   
@@ -1323,8 +1592,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_4">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1341,7 +1610,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../sensing/sensor-fusion/" class="md-nav__link">
+      <a href="../sensor-fusion/" class="md-nav__link">
         
   
   
@@ -1369,7 +1638,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../sensing/sensor-fusion-architecture/" class="md-nav__link">
+      <a href="../sensor-fusion-architecture/" class="md-nav__link">
         
   
   
@@ -1397,7 +1666,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../sensing/sensor-fusion-engineering/" class="md-nav__link">
+      <a href="../sensor-fusion-engineering/" class="md-nav__link">
         
   
   
@@ -1425,7 +1694,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../sensing/sensor-fusion-full-reference/" class="md-nav__link">
+      <a href="../sensor-fusion-full-reference/" class="md-nav__link">
         
   
   
@@ -1472,10 +1741,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6" >
         
           
-          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="0">
             
   
   
@@ -1493,8 +1762,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_5">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_6">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1511,7 +1780,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../sensing/slam/" class="md-nav__link">
+      <a href="../slam/" class="md-nav__link">
         
   
   
@@ -1539,7 +1808,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../sensing/slam-systems-comparison/" class="md-nav__link">
+      <a href="../slam-systems-comparison/" class="md-nav__link">
         
   
   
@@ -1567,7 +1836,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../sensing/slam-engineering-playbook/" class="md-nav__link">
+      <a href="../slam-engineering-playbook/" class="md-nav__link">
         
   
   
@@ -6006,44 +6275,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#1-imu" class="md-nav__link">
     <span class="md-ellipsis">
       
-        背景
+        1. IMU 误差来源
       
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        目标
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        新增文章清单
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="新增文章清单">
+    <nav class="md-nav" aria-label="1. IMU 误差来源">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-cvsegmentationmd" class="md-nav__link">
+  <a href="#11-deterministic" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. cv/segmentation.md — 图像分割
+        1.1 确定性误差（Deterministic）
       
     </span>
   </a>
@@ -6051,87 +6298,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-cvtrackingmd" class="md-nav__link">
+  <a href="#12-stochastic" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. cv/tracking.md — 目标跟踪
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-cvpose-estimationmd" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3. cv/pose-estimation.md — 位姿估计
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-cv3d-visionmd" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4. cv/3d-vision.md — 三维视觉
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#5-sensingsensor-fusionmd" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        5. sensing/sensor-fusion.md — 传感器融合
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#6-learningdlmd" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        6. learning/dl.md — 深度学习在机器人中的应用
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#7-databasedatasetmd-cv" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        7. database/dataset.md — 机器人与CV数据集大全（大幅扩充）
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#8-databasespotmd-boston-dynamics-spot" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        8. database/spot.md — Boston Dynamics Spot 档案
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#9-linuxshell-scriptingmd-shell" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        9. linux/shell-scripting.md — Shell 脚本与机器人自动化
+        1.2 随机误差（Stochastic）
       
     </span>
   </a>
@@ -6144,10 +6314,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#mkdocsyml" class="md-nav__link">
+  <a href="#2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        mkdocs.yml 导航更新
+        2. 六面静态标定（确定性误差）
       
     </span>
   </a>
@@ -6155,10 +6325,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#3-allan" class="md-nav__link">
     <span class="md-ellipsis">
       
-        写作规范
+        3. Allan 方差分析（随机误差）
       
     </span>
   </a>
@@ -6166,10 +6336,121 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
+  <a href="#4" class="md-nav__link">
     <span class="md-ellipsis">
       
-        实施方式
+        4. 典型工具链
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. 典型工具链">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-imu_utilsros-1-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 imu_utils（ROS 1 / 2）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-kalibrimu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 Kalibr（IMU–相机联合标定）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 其他常用工具
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. 与姿态估计的衔接
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. 与姿态估计的衔接">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-madgwick" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 互补滤波与 Madgwick
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-ekf" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 扩展卡尔曼滤波（EKF）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-slamvins-mono-orb-slam3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3 视觉惯性 SLAM（VINS-Mono / ORB-SLAM3）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. 常见陷阱
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        参考资料
       
     </span>
   </a>
@@ -6193,235 +6474,226 @@
 
 
 
-<h1 id="_1">云飞机器人中文维基 — 内容扩充设计文档</h1>
-<p><strong>日期</strong>：2026-02-20
-<strong>作者</strong>：Claude Code（AI 辅助）
-<strong>状态</strong>：待确认</p>
-<hr />
-<h2 id="_2">背景</h2>
-<p>当前 wiki 在以下方向存在明显内容缺口：</p>
-<ol>
-<li><strong>cv/</strong>：<code>index.md</code> 引用了图像分割、目标跟踪、位姿估计、三维视觉，但对应页面不存在</li>
-<li><strong>sensing/</strong>：缺少传感器融合（Sensor Fusion）专项页面</li>
-<li><strong>learning/</strong>：缺少深度学习在机器人中的应用专项页面</li>
-<li><strong>database/dataset.md</strong>：仅 14 行，内容极度单薄</li>
-<li><strong>database/</strong>：仅有 H1 等少数人形机器人详细档案，缺少四足机器人（Spot）</li>
-<li><strong>linux/</strong>：缺少 Shell 脚本/机器人自动化等实用内容</li>
-</ol>
-<hr />
-<h2 id="_3">目标</h2>
-<p>新增 <strong>8 篇文章</strong>，大幅扩充 <strong>1 篇</strong>，同步更新 <code>mkdocs.yml</code> 导航。</p>
-<hr />
-<h2 id="_4">新增文章清单</h2>
-<h3 id="1-cvsegmentationmd">1. <code>cv/segmentation.md</code> — 图像分割</h3>
-<p><strong>主题</strong>：语义分割、实例分割、全景分割在机器人视觉中的应用</p>
-<p><strong>章节结构</strong>：
-- 引言（为什么机器人需要图像分割）
-- 分割任务类型（语义 / 实例 / 全景）
-- 经典算法（FCN、U-Net、DeepLab v3+）
-- 实例分割（Mask R-CNN、SOLOv2）
-- 全景分割（Panoptic-DeepLab）
-- 轻量级实时分割（BiSeNet、PP-LiteSeg）
-- 与 ROS 集成（<code>image_segmentation</code> 话题）
-- 评测指标（mIoU、Dice、Boundary F1）
-- 数据集（Cityscapes、ADE20K、COCO Panoptic）
-- 参考资料</p>
-<p><strong>规模</strong>：~300 行 Markdown（含公式、代码块、表格）</p>
-<hr />
-<h3 id="2-cvtrackingmd">2. <code>cv/tracking.md</code> — 目标跟踪</h3>
-<p><strong>主题</strong>：视频序列中单目标与多目标的持续定位</p>
-<p><strong>章节结构</strong>：
-- 引言（跟踪在机器人中的作用）
-- 单目标跟踪（SOT）
-  - 相关滤波（MOSSE、KCF、CSRT）
-  - 孪生网络（SiamFC、SiamRPN、SiamMask）
-  - Transformer 跟踪器（OSTrack、DropTrack）
-- 多目标跟踪（MOT）
-  - 检测-关联框架（SORT、DeepSORT、ByteTrack）
-  - 端到端 MOT（MOTR、TrackFormer）
-- 评测指标（MOTA、MOTP、IDF1、HOTA）
-- 机器人应用（人员跟随、目标交互）
-- 参考资料</p>
-<p><strong>规模</strong>：~280 行</p>
-<hr />
-<h3 id="3-cvpose-estimationmd">3. <code>cv/pose-estimation.md</code> — 位姿估计</h3>
-<p><strong>主题</strong>：物体 6DoF 位姿估计 + 人体姿态估计</p>
-<p><strong>章节结构</strong>：
-- 引言
-- 物体 6DoF 位姿估计
-  - 问题定义（旋转 SO(3) + 平移 R³）
-  - 基于 RGB 的方法（PoseCNN、DPOD、FoundPose）
-  - 基于 RGB-D 的方法（DenseFusion、FFB6D）
-  - 无 CAD 模型的方法（FoundPose、Gen6D）
-  - 机器人抓取应用
-- 人体姿态估计
-  - 2D 姿态估计（HRNet、ViTPose）
-  - 3D 姿态估计（VideoPose3D）
-  - 机器人协作与人机交互应用
-- 评测指标（ADD、ADD-S、PCK、MPJPE）
-- 常用数据集（YCB-Video、LineMOD、COCO Keypoints）
-- 参考资料</p>
-<p><strong>规模</strong>：~320 行</p>
-<hr />
-<h3 id="4-cv3d-visionmd">4. <code>cv/3d-vision.md</code> — 三维视觉</h3>
-<p><strong>主题</strong>：从 2D 恢复三维结构，点云处理</p>
-<p><strong>章节结构</strong>：
-- 引言
-- 双目立体视觉（Stereo Vision）
-  - 立体标定与校正
-  - 立体匹配（BM、SGM、RAFT-Stereo）
-  - 视差图转深度图
-- 结构光与 ToF
-- 运动恢复结构（Structure from Motion, SfM）
-  - 特征匹配 → 相机位姿估计 → 稀疏重建
-  - 软件工具（COLMAP、OpenMVG）
-- 点云处理
-  - 坐标系与格式（PCD、PLY、LAS）
-  - 处理算法（滤波、下采样、法线估计、配准 ICP）
-  - 深度学习（PointNet、PointNet++、VoxelNet）
-- 神经辐射场（NeRF）与 3D 高斯泼溅
-- 常用工具（Open3D、PCL、CloudCompare）
-- 参考资料</p>
-<p><strong>规模</strong>：~340 行</p>
-<hr />
-<h3 id="5-sensingsensor-fusionmd">5. <code>sensing/sensor-fusion.md</code> — 传感器融合</h3>
-<p><strong>主题</strong>：多传感器数据融合理论与实践</p>
-<p><strong>章节结构</strong>：
-- 引言（为什么需要传感器融合）
-- 融合架构（低层 / 特征层 / 决策层）
-- 概率框架
-  - 贝叶斯估计
-  - 卡尔曼滤波（KF）
-  - 扩展卡尔曼滤波（EKF）
-  - 无迹卡尔曼滤波（UKF）
-  - 粒子滤波（PF）
-- 典型融合场景
-  - IMU + GPS（惯性导航）
-  - LiDAR + 相机（3D 目标检测）
-  - 视觉 + IMU（Visual-Inertial Odometry, VIO）
-- 时间同步与空间标定
-- ROS 中的传感器融合工具（<code>robot_localization</code>、<code>kalibr</code>）
-- 参考资料</p>
-<p><strong>规模</strong>：~300 行（含公式推导）</p>
-<hr />
-<h3 id="6-learningdlmd">6. <code>learning/dl.md</code> — 深度学习在机器人中的应用</h3>
-<p><strong>主题</strong>：神经网络基础 + 机器人专属深度学习方法</p>
-<p><strong>章节结构</strong>：
-- 引言
-- 神经网络基础回顾（MLP、CNN、RNN/LSTM、Transformer）
-- 机器人中的核心应用
-  - 端到端学习（End-to-End Learning）
-  - 模仿学习（Imitation Learning / Behavioral Cloning）
-  - 基础模型在机器人中的应用（RT-2、OpenVLA）
-- 深度学习与经典控制的融合
-- 部署优化（量化、剪枝、TensorRT、ONNX）
-- 常用框架与工具（PyTorch、JAX、LeRobot）
-- 参考资料</p>
-<p><strong>规模</strong>：~280 行</p>
-<hr />
-<h3 id="7-databasedatasetmd-cv">7. <code>database/dataset.md</code> — 机器人与CV数据集大全（大幅扩充）</h3>
-<p><strong>现状</strong>：14 行，几乎为空
-<strong>目标</strong>：~300 行，系统整理各类数据集</p>
-<p><strong>章节结构</strong>：
-- 引言
-- 计算机视觉数据集
-  - 目标检测（ImageNet、COCO、Pascal VOC、Objects365）
-  - 语义分割（Cityscapes、ADE20K、KITTI Semantic）
-  - 人体姿态（COCO Keypoints、MPII、Human3.6M）
-- 自动驾驶数据集
-  - KITTI、nuScenes、Waymo Open Dataset、Argoverse
-- 机器人操作数据集
-  - YCB-Video、OCID、Open X-Embodiment、RH20T
-- 导航与 SLAM 数据集
-  - TUM RGB-D、EuRoC MAV、NCLT
-- 强化学习与仿真数据集
-  - D4RL、ManiSkill
-- 数据集搜索与管理工具
-- 参考资料</p>
-<hr />
-<h3 id="8-databasespotmd-boston-dynamics-spot">8. <code>database/spot.md</code> — Boston Dynamics Spot 档案</h3>
-<p><strong>主题</strong>：Spot 四足机器人详细档案</p>
-<p><strong>章节结构</strong>：
-- 发展历程
-- 技术规格（尺寸/重量/运动能力/传感器/电池）
-- 软件平台（Spot SDK、Spot Core）
-- 行业应用（工业巡检、建筑测量、危险环境）
-- 与 ROS 集成
-- 参考资料</p>
-<p><strong>规模</strong>：~130 行</p>
-<hr />
-<h3 id="9-linuxshell-scriptingmd-shell">9. <code>linux/shell-scripting.md</code> — Shell 脚本与机器人自动化</h3>
-<p><strong>主题</strong>：机器人开发中常用的 Shell 脚本技术</p>
-<p><strong>章节结构</strong>：
-- 引言（机器人启动自动化的意义）
-- Bash 基础语法（变量、条件、循环、函数）
-- 机器人常用脚本模式
-  - 自动启动 ROS 节点
-  - 环境检测与依赖校验
-  - 日志轮转与数据备份
-- systemd 服务化机器人程序
-- 串口/网络设备自动配置（udev 规则）
-- 实用脚本示例（开机自启、定时任务、进程守护）
-- 参考资料</p>
-<p><strong>规模</strong>：~200 行</p>
-<hr />
-<h2 id="mkdocsyml">mkdocs.yml 导航更新</h2>
-<div class="highlight"><pre><span></span><code><span class="c1"># 视觉部分新增</span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">视觉</span><span class="p">:</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cv/index.md</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cv/object-detection.md</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cv/segmentation.md</span><span class="w">      </span><span class="c1"># 新增</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cv/tracking.md</span><span class="w">          </span><span class="c1"># 新增</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cv/pose-estimation.md</span><span class="w">   </span><span class="c1"># 新增</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cv/3d-vision.md</span><span class="w">         </span><span class="c1"># 新增</span>
-
-<span class="c1"># 感知部分新增</span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">感知</span><span class="p">:</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sensing/index.md</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sensing/sensors.md</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sensing/depth-camera.md</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sensing/slam.md</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sensing/sensor-fusion.md</span><span class="w">  </span><span class="c1"># 新增</span>
-
-<span class="c1"># 学习部分新增</span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">学习</span><span class="p">:</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">learning/ml.md</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">learning/rl.md</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">learning/dl.md</span><span class="w">            </span><span class="c1"># 新增</span>
-
-<span class="c1"># Linux部分新增</span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Linux</span><span class="p">:</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">linux/index.md</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">linux/commands.md</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">linux/shell-scripting.md</span><span class="w">  </span><span class="c1"># 新增</span>
-
-<span class="c1"># 数据库机器人图鉴新增</span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">机器人图鉴</span><span class="p">:</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">database/robots.md</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">database/nao.md</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">database/atlas.md</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">database/optimus.md</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">database/figure.md</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">database/asimo.md</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">database/digit.md</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">database/unitree-h1.md</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">database/spot.md</span><span class="w">          </span><span class="c1"># 新增</span>
-</code></pre></div>
-<hr />
-<h2 id="_5">写作规范</h2>
-<p>所有新文章遵循现有 wiki 规范：</p>
+<h1 id="imu">IMU 标定与噪声建模</h1>
+<div class="admonition note">
+<p class="admonition-title">引言</p>
+<p>惯性测量单元（Inertial Measurement Unit, IMU）是移动机器人和无人系统中最重要的自体感知传感器之一。由于 IMU 的输出存在偏置（Bias）、尺度因子误差（Scale Factor）、轴间非正交（Misalignment）以及随机游走（Random Walk）等多种误差，直接使用原始数据进行积分会在短时间内产生显著漂移。因此，在将 IMU 接入 SLAM、视觉惯性里程计（Visual-Inertial Odometry, VIO）或姿态估计算法前，必须完成标定并建立可信的噪声模型。本文梳理 IMU 的误差来源、标定流程、噪声建模方法以及常用工具链。</p>
+</div>
+<h2 id="1-imu">1. IMU 误差来源</h2>
+<p>一个 MEMS IMU 的角速度 / 加速度原始输出可以表示为：</p>
+<p>
+<script type="math/tex; mode=display">
+\tilde{\omega} = (I + S_g)\,R_g\,\omega + b_g(t) + n_g
+</script>
+</p>
+<p>
+<script type="math/tex; mode=display">
+\tilde{a} = (I + S_a)\,R_a\,a + b_a(t) + n_a
+</script>
+</p>
+<p>其中：</p>
 <ul>
-<li>文件名：英文小写连字符</li>
-<li>首节：<code>!!! note "引言"</code> admonition</li>
-<li>数学公式：行内 <code>\(...\)</code>，行间 <code>$$ ... $$</code></li>
-<li>标题：最多 4 级</li>
-<li>末节：<code>## 参考资料</code>，尾有空行</li>
-<li>语言：中文正式用语，首次出现缩写须标注英文全称</li>
+<li>
+<script type="math/tex">\omega, a</script>：真实角速度 / 比力</li>
+<li>
+<script type="math/tex">S_g, S_a</script>：尺度因子误差（对角矩阵）</li>
+<li>
+<script type="math/tex">R_g, R_a</script>：轴间非正交与安装误差旋转</li>
+<li>
+<script type="math/tex">b_g(t), b_a(t)</script>：随时间变化的偏置</li>
+<li>
+<script type="math/tex">n_g, n_a</script>：白噪声</li>
 </ul>
-<hr />
-<h2 id="_6">实施方式</h2>
-<p><strong>并行多智能体</strong>：同时启动 9 个子 agent，各自独立写作一篇文章，最后统一更新 <code>mkdocs.yml</code>。</p>
-<p>预计完成后新增约 <strong>2400 行</strong>高质量内容。</p>
+<p>按照误差的时变特性，IMU 误差可分为两大类：</p>
+<h3 id="11-deterministic">1.1 确定性误差（Deterministic）</h3>
+<ul>
+<li><strong>静态偏置（Bias）</strong>：上电时存在的固定偏差，主要来自器件结构与温度。</li>
+<li><strong>尺度因子误差</strong>：输出与输入之间的比例失真。</li>
+<li><strong>非正交误差</strong>：三个敏感轴理论上应相互垂直，但制造误差导致实际存在角度偏差。</li>
+<li><strong>安装误差</strong>：IMU 的机体坐标系与机器人本体坐标系之间的旋转不一致。</li>
+<li><strong>温度漂移</strong>：偏置和尺度因子随温度变化而变化。</li>
+</ul>
+<h3 id="12-stochastic">1.2 随机误差（Stochastic）</h3>
+<ul>
+<li><strong>角速度 / 加速度白噪声（White Noise）</strong>：对应功率谱密度（PSD）为常数的高斯噪声。</li>
+<li><strong>偏置随机游走（Bias Random Walk）</strong>：偏置自身按布朗运动方式缓慢漂移。</li>
+<li><strong>量化噪声</strong>：ADC 采样引入的离散化误差，在高端 IMU 中影响较小。</li>
+</ul>
+<h2 id="2">2. 六面静态标定（确定性误差）</h2>
+<p>六面法是入门级 IMU 标定的经典手段，可以同时标定加速度计的偏置、尺度因子和非正交。将 IMU 依次静置于六个正交面（+X/−X/+Y/−Y/+Z/−Z 对准重力方向），每个姿态采集数分钟数据取均值，得到 6 组测量值：</p>
+<p>
+<script type="math/tex; mode=display">
+\tilde{a}_i = T_a\,a_i + b_a, \quad i = 1,\dots,6
+</script>
+</p>
+<p>其中 <script type="math/tex">T_a</script> 是包含尺度与非正交的 3×3 矩阵。通过最小二乘求解：</p>
+<p>
+<script type="math/tex; mode=display">
+\min_{T_a, b_a} \sum_i \big\| \tilde{a}_i - (T_a\,a_i + b_a) \big\|^2
+</script>
+</p>
+<p>陀螺仪的偏置可在 IMU 完全静止时（姿态任意）通过长时间平均获得：</p>
+<p>
+<script type="math/tex; mode=display">
+b_g \approx \frac{1}{N}\sum_{k=1}^{N} \tilde{\omega}_k
+</script>
+</p>
+<p>实际操作中应注意：</p>
+<ul>
+<li>采样时间建议不少于 30 秒 / 面，以压低白噪声的平均值</li>
+<li>静置平面必须水平（用水平仪校准），否则 <script type="math/tex">a_i</script> 并非纯重力</li>
+<li>对温度敏感的 IMU 应在恒温环境中标定，或建立温度 – 偏置查找表</li>
+</ul>
+<h2 id="3-allan">3. Allan 方差分析（随机误差）</h2>
+<p>Allan 方差（Allan Variance, AVAR）是评估 IMU 长时间噪声特性的标准方法。它将连续测量序列划分为长度为 <script type="math/tex">\tau</script> 的相邻段，计算相邻段均值差的方差：</p>
+<p>
+<script type="math/tex; mode=display">
+\sigma^2_A(\tau) = \frac{1}{2(M-1)} \sum_{k=1}^{M-1} (\bar{\Omega}_{k+1} - \bar{\Omega}_k)^2
+</script>
+</p>
+<p>在 Allan 双对数曲线（<script type="math/tex">\log\tau</script> 对 <script type="math/tex">\log\sigma_A</script>）上，不同斜率对应不同噪声源：</p>
+<table>
+<thead>
+<tr>
+<th>斜率</th>
+<th>噪声类型</th>
+<th>对应参数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>−1/2</td>
+<td>角度随机游走（ARW）/ 速度随机游走（VRW）</td>
+<td>白噪声 PSD</td>
+</tr>
+<tr>
+<td>0</td>
+<td>偏置不稳定性（Bias Instability）</td>
+<td>最小值对应 <script type="math/tex">\sigma_{BI}</script>
+</td>
+</tr>
+<tr>
+<td>+1/2</td>
+<td>速率随机游走（RRW）</td>
+<td>偏置随机游走 PSD</td>
+</tr>
+</tbody>
+</table>
+<p>典型 MEMS IMU 的 ARW 在 0.1–0.5 °/√h，工业级光纤陀螺可低至 0.001 °/√h。采集数据建议：</p>
+<ul>
+<li>静置时长：≥ 3 小时（更长时间能更准确提取 RRW）</li>
+<li>采样频率：保留原始频率（通常 100–1000 Hz），不做下采样</li>
+</ul>
+<h2 id="4">4. 典型工具链</h2>
+<h3 id="41-imu_utilsros-1-2">4.1 imu_utils（ROS 1 / 2）</h3>
+<p>开源工具 <a href="https://github.com/gaowenliang/imu_utils">imu_utils</a> 可以读取 ROS bag 中的 IMU 话题，自动计算 Allan 方差并输出白噪声与随机游走参数。</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># 1. 录制静置 3 小时以上的 IMU 数据</span>
+ros2<span class="w"> </span>bag<span class="w"> </span>record<span class="w"> </span>/imu/data<span class="w"> </span>-o<span class="w"> </span>imu_static
+
+<span class="c1"># 2. 运行 imu_utils</span>
+roslaunch<span class="w"> </span>imu_utils<span class="w"> </span>my_imu.launch
+<span class="c1"># 输出：YAML 文件，包含 accelerometer_noise_density,</span>
+<span class="c1">#       accelerometer_random_walk, gyroscope_noise_density,</span>
+<span class="c1">#       gyroscope_random_walk 等字段</span>
+</code></pre></div>
+<h3 id="42-kalibrimu">4.2 Kalibr（IMU–相机联合标定）</h3>
+<p><a href="https://github.com/ethz-asl/kalibr">Kalibr</a> 是视觉惯性系统中最流行的联合标定工具，能够同时求解：</p>
+<ul>
+<li>相机内参与畸变</li>
+<li>相机间外参（立体相机）</li>
+<li>IMU–相机外参 <script type="math/tex">T_{ic}</script>
+</li>
+<li>IMU–相机时间偏移 <script type="math/tex">t_d</script>
+</li>
+</ul>
+<p>标定流程要点：</p>
+<ul>
+<li>先用 imu_utils 获得 IMU 噪声参数，作为 Kalibr 的输入 <code>imu.yaml</code></li>
+<li>使用 Aprilgrid 标定板，在保证棋盘始终在画面内的前提下做足够激烈的六自由度运动</li>
+<li>录制长度建议 2–5 分钟，运动覆盖三轴平动与三轴转动</li>
+</ul>
+<div class="highlight"><pre><span></span><code>kalibr_calibrate_imu_camera<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--bag<span class="w"> </span>imu_cam.bag<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--cam<span class="w"> </span>camchain.yaml<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--imu<span class="w"> </span>imu.yaml<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--target<span class="w"> </span>aprilgrid.yaml<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--time-calibration
+</code></pre></div>
+<h3 id="43">4.3 其他常用工具</h3>
+<table>
+<thead>
+<tr>
+<th>工具</th>
+<th>用途</th>
+<th>适用场景</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>allan_variance_ros</code></td>
+<td>Allan 方差可视化</td>
+<td>快速评估 IMU 质量</td>
+</tr>
+<tr>
+<td><code>imu_tools</code>（ROS 2）</td>
+<td>复合滤波器（Madgwick / Mahony）</td>
+<td>低算力姿态解算</td>
+</tr>
+<tr>
+<td><code>mscnav</code></td>
+<td>车载组合导航</td>
+<td>GNSS/INS 紧耦合仿真</td>
+</tr>
+<tr>
+<td>MATLAB <code>imuSensor</code></td>
+<td>仿真 IMU 噪声注入</td>
+<td>算法调试</td>
+</tr>
+</tbody>
+</table>
+<h2 id="5">5. 与姿态估计的衔接</h2>
+<p>完成标定后，需要将噪声参数写入上层估计器。以下是常见算法对噪声输入的约定：</p>
+<h3 id="51-madgwick">5.1 互补滤波与 Madgwick</h3>
+<p>仅使用白噪声强度，不显式建模偏置随机游走。</p>
+<ul>
+<li>加速度计权重 <script type="math/tex">\beta \propto 1/\sigma_a</script>
+</li>
+<li>陀螺仪积分作为主要姿态来源</li>
+</ul>
+<h3 id="52-ekf">5.2 扩展卡尔曼滤波（EKF）</h3>
+<p>过程噪声 <script type="math/tex">Q</script> 矩阵的对角元素通常由：</p>
+<p>
+<script type="math/tex; mode=display">
+Q_{gg} = \sigma^2_{g,\text{white}}\,\Delta t, \quad
+Q_{bg} = \sigma^2_{g,\text{rw}}\,\Delta t
+</script>
+</p>
+<p>直接从 imu_utils 输出填入。注意：imu_utils 输出的是连续时间 PSD，需要乘以 <script type="math/tex">\Delta t</script> 后再平方取方差。</p>
+<h3 id="53-slamvins-mono-orb-slam3">5.3 视觉惯性 SLAM（VINS-Mono / ORB-SLAM3）</h3>
+<p>这些系统的配置文件包含如下四个关键量：</p>
+<div class="highlight"><pre><span></span><code><span class="nt">acc_n</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.08</span><span class="w">      </span><span class="c1"># 加速度计白噪声 (m/s^2/√Hz)</span>
+<span class="nt">gyr_n</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.004</span><span class="w">     </span><span class="c1"># 陀螺仪白噪声 (rad/s/√Hz)</span>
+<span class="nt">acc_w</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.00004</span><span class="w">   </span><span class="c1"># 加速度计随机游走 (m/s^3/√Hz)</span>
+<span class="nt">gyr_w</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.000002</span><span class="w">  </span><span class="c1"># 陀螺仪随机游走 (rad/s^2/√Hz)</span>
+</code></pre></div>
+<p>对大多数 MEMS IMU，应将标定值乘以 3–10 倍后再填入——真实硬件中存在温度、振动等未建模噪声，低估噪声会导致后端优化过度信任 IMU，出现姿态跳变。</p>
+<h2 id="6">6. 常见陷阱</h2>
+<ul>
+<li><strong>没有对齐时间戳</strong>：IMU 与相机 / 激光雷达的硬件触发或软件时间戳偏差超过 1 ms 会严重影响 VIO，使用 Kalibr 的 <code>--time-calibration</code> 选项估计 <script type="math/tex">t_d</script>。</li>
+<li><strong>在运动中标定</strong>：六面法与 Allan 方差都要求严格静止，运动中的数据会被误认为偏置或随机游走。</li>
+<li><strong>忽视温度</strong>：上电 1–5 分钟内 IMU 温度漂移最剧烈，应先预热再开始标定或记录。</li>
+<li><strong>直接使用厂商规格</strong>：厂商数据手册给出的噪声值通常是典型值，单颗器件差异可达 2–3 倍，建议个体标定。</li>
+<li><strong>将输出直接积分</strong>：对未经偏置补偿的陀螺仪积分姿态，短短 10 秒内就会偏差数度。</li>
+</ul>
+<h2 id="_1">参考资料</h2>
+<ol>
+<li>IEEE Std 952-1997, <em>IEEE Standard Specification Format Guide and Test Procedure for Single-Axis Interferometric Fiber Optic Gyros</em></li>
+<li>Tedaldi D, Pretto A, Menegatti E. "A robust and easy to implement method for IMU calibration without external equipments". ICRA 2014.</li>
+<li>Furgale P, Rehder J, Siegwart R. "Unified temporal and spatial calibration for multi-sensor systems". IROS 2013.</li>
+<li><a href="https://github.com/gaowenliang/imu_utils">imu_utils GitHub 仓库</a></li>
+<li><a href="https://github.com/ethz-asl/kalibr">Kalibr GitHub 仓库</a></li>
+<li><a href="https://github.com/HKUST-Aerial-Robotics/VINS-Mono">VINS-Mono 论文与代码</a></li>
+</ol>
 
 
 
