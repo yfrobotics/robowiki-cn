@@ -194,6 +194,7 @@ nav:
 # Document: https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/
 theme:
   name: 'material'
+  custom_dir: overrides
   language: 'zh'
   logo: "logo-site.png"
   palette:
