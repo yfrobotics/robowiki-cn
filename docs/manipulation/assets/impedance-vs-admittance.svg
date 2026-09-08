@@ -22,7 +22,7 @@
 
   <!-- 阻抗控制 -->
   <text class="hd" x="24" y="34" fill="#2b6cb0">阻抗控制 Impedance Control</text>
-  <text class="tl" x="24" y="54">位置偏差为因，力为果 —— 需要机器人支持力矩控制接口</text>
+  <text class="tl" x="24" y="54">位置偏差为因，力为果 ，， 需要机器人支持力矩控制接口</text>
 
   <rect class="rb" x="24"  y="72" width="104" height="52"/>
   <text class="t"  x="76"  y="96">期望轨迹</text>
@@ -54,7 +54,7 @@
 
   <!-- 导纳控制 -->
   <text class="hd" x="24" y="234" fill="#2f855a">导纳控制 Admittance Control</text>
-  <text class="tl" x="24" y="254">力为因，位置为果 —— 只需位置接口，但必须有力传感器</text>
+  <text class="tl" x="24" y="254">力为因，位置为果 ，， 只需位置接口，但必须有力传感器</text>
 
   <rect class="rb" x="24"  y="272" width="104" height="52"/>
   <text class="t"  x="76"  y="296">力传感器</text>

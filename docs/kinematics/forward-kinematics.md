@@ -36,6 +36,8 @@ Denavit-Hartenberg（DH）参数法由 Denavit 和 Hartenberg 于 1955 年提出
 
 其中 \(a\) 与 \(\alpha\) 由连杆的几何形状决定（固定值），\(d\) 与 \(\theta\) 中有一个是关节变量：转动关节的变量是 \(\theta_i\)，移动关节的变量是 \(d_i\)。
 
+![改进 DH 约定的四个参数](assets/dh-parameters.svg)
+
 之所以只需 4 个参数，是因为坐标系放置规则强制要求 \(\hat{x}_i\) 与 \(\hat{z}_{i-1}\) 垂直且相交，这两个约束消去了 6 个自由度中的 2 个。
 
 ### 标准 DH 与改进 DH

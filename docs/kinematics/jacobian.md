@@ -103,6 +103,10 @@ $$w(\mathbf{q}) = \sqrt{\det\left(J(\mathbf{q}) J(\mathbf{q})^T\right)} = \sigma
 
 其中 \(\sigma_i\) 是 \(J\) 的奇异值。\(w = 0\) 即处于奇异位形。几何上 \(w\) 正比于**可操作度椭球**（Manipulability Ellipsoid）的体积——该椭球是单位关节速度球 \(\|\dot{\mathbf{q}}\| \le 1\) 在任务空间的像，其半轴长度为 \(\sigma_i\)、方向为对应的左奇异向量。椭球在某个方向被压扁，就表示该方向的运动能力弱。
 
+下图以平面两连杆机械臂为例，给出三种位形下的可操作度椭球。手臂从弯曲到伸直的过程中，椭球逐渐被压扁，在完全伸展时退化为一条线段——此时末端沿手臂方向完全失去运动能力：
+
+![平面两连杆机械臂在三种位形下的可操作度椭圆](assets/manipulability-ellipse.svg)
+
 可操作度的缺点是量纲不一致（混合了长度与角度）且对整体尺度敏感，通常只用于同一机器人不同位形之间的比较。
 
 **条件数**（Condition Number）\(\kappa = \sigma_{\max} / \sigma_{\min}\) 衡量各方向能力的均匀程度，\(\kappa = 1\) 称为各向同性位形（Isotropic Configuration），是精度最优的位形。\(\kappa \to \infty\) 即奇异。
