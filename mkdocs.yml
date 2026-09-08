@@ -167,6 +167,8 @@ nav:
       - hardware/system-architecture.md
       - hardware/power-thermal.md
       - hardware/communication-buses.md
+      - hardware/actuators.md
+      - hardware/motor-control.md
       - arduino/index.md
       - raspberrypi/index.md
       - jetson/index.md

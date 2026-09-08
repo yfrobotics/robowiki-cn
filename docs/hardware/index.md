@@ -92,6 +92,8 @@
 | [系统架构](system-architecture.md) | 机器人计算架构分层、异构计算与实时性划分 |
 | [电源与散热](power-thermal.md) | 电池选型、电源分配、功耗预算与散热设计 |
 | [通信总线](communication-buses.md) | UART/SPI/I2C/CAN/EtherCAT 的原理、选型与调试 |
+| [执行器与传动](actuators.md) | 电机类型对比、四类减速器与背驱性、串联弹性与准直驱、选型计算 |
+| [电机驱动与控制](motor-control.md) | 功率级与电流采样、六步换相与 FOC、三环整定、换相对齐与保护 |
 | [Arduino](../arduino/index.md) | 开发板选型、编程模型与传感器接口 |
 | [树莓派](../raspberrypi/index.md) | 系统配置、GPIO 编程与机器人应用 |
 | [Jetson](../jetson/index.md) | 型号对比、JetPack 环境、TensorRT 推理与功耗管理 |
