@@ -146,6 +146,8 @@ with torch.no_grad():
 
 ## 视觉-语言-动作模型
 
+本节给出概览。动作表示的取舍、推理频率约束、在自有机器人上的微调流程等工程细节，见 [VLA 模型](embodied-ai-vla.md)；数据采集与模仿学习方法见 [模仿学习与数据采集](embodied-ai-data.md)。
+
 ### RT-2
 
 RT-2（Robotics Transformer 2，Google DeepMind, 2023）将视觉-语言模型（VLM）微调为可以直接输出机器人动作的模型。其关键创新是将机器人动作离散化为 Token，使得 VLM 可以在统一的 Token 空间中同时处理视觉、语言和动作。

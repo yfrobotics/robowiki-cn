@@ -112,6 +112,10 @@ nav:
         - learning/dl-training-deployment.md
         - learning/dl-robotics-pipelines.md
         - learning/dl-full-reference.md
+      - 具身智能:
+        - learning/embodied-ai.md
+        - learning/embodied-ai-vla.md
+        - learning/embodied-ai-data.md
     - 仿真:
       - simulation/index.md
       - simulation/gazebo.md
