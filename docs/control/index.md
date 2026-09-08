@@ -355,7 +355,7 @@ $$
 
 建模章节还包含 [建模基础](modelling/modelling-foundations.md)、[离散化与系统辨识](modelling/modelling-discrete-identification.md)、[状态空间方法](modelling/state-space.md) 与 [建模参考资料](modelling/modelling-full-reference.md) 四个专题页面。
 
-机器人本体的几何与力学模型（正逆运动学、雅可比、动力学方程）不在本章，而在 [机构与运动学](../kinematics/index.md) 章节中讨论。计算力矩控制、阻抗控制等需要动力学模型的方法请同时参阅 [机器人动力学](../kinematics/dynamics.md)。
+机器人本体的几何与力学模型（正逆运动学、雅可比、动力学方程）不在本章，而在 [机构与运动学](../kinematics/index.md) 章节中讨论。计算力矩控制、阻抗控制等需要动力学模型的方法请同时参阅 [机器人动力学](../kinematics/dynamics.md)。阻抗控制、导纳控制与混合力位控制在接触任务中的具体应用，详见 [力控与柔顺控制](../manipulation/force-control.md)。
 
 
 ## 参考资料

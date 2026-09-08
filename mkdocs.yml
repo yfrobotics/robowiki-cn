@@ -88,6 +88,11 @@ nav:
       - planning/behavior-trees.md
       - planning/multi-robot-task-allocation.md
       - planning/replanning-safety.md
+    - 操作:
+      - manipulation/index.md
+      - manipulation/grasping.md
+      - manipulation/force-control.md
+      - manipulation/moveit.md
     - 学习:
       - learning/index.md
       - learning/ml.md

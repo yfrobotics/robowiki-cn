@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 424" role="img" aria-label="阻抗控制与导纳控制的因果方向对比">
+  <style>
+    .bg{fill:#ffffff}
+    .b1{fill:#eef4fb;stroke:#2b6cb0;stroke-width:1.6;rx:6}
+    .b2{fill:#eefaf3;stroke:#2f855a;stroke-width:1.6;rx:6}
+    .rb{fill:#f5f7fa;stroke:#52606d;stroke-width:1.6;rx:6}
+    .en{fill:#eef1f4;stroke:#7b8794;stroke-width:1.6;rx:6}
+    .ar{fill:none;stroke:#52606d;stroke-width:1.8;marker-end:url(#m)}
+    .fb{fill:none;stroke:#9aa5b1;stroke-width:1.4;stroke-dasharray:5 4;marker-end:url(#mg)}
+    .t {font-family:'Fira Sans','Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;font-size:13px;fill:#1f2933;text-anchor:middle}
+    .hd{font-family:'Fira Sans','Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;font-size:15px;fill:#1f2933;text-anchor:start}
+    .ts{font-family:'Fira Sans','Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;font-size:11.5px;fill:#52606d;text-anchor:middle}
+    .tl{font-family:'Fira Sans','Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;font-size:11.5px;fill:#7b8794;text-anchor:start}
+  </style>
+  <defs>
+    <marker id="m" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#52606d"/></marker>
+    <marker id="mg" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#9aa5b1"/></marker>
+  </defs>
+  <rect class="bg" x="0" y="0" width="860" height="424"/>
+
+  <!-- 阻抗控制 -->
+  <text class="hd" x="24" y="34" fill="#2b6cb0">阻抗控制 Impedance Control</text>
+  <text class="tl" x="24" y="54">位置偏差为因，力为果 —— 需要机器人支持力矩控制接口</text>
+
+  <rect class="rb" x="24"  y="72" width="104" height="52"/>
+  <text class="t"  x="76"  y="96">期望轨迹</text>
+  <text class="ts" x="76"  y="114">位置指令</text>
+
+  <rect class="b1" x="188" y="72" width="128" height="52"/>
+  <text class="t"  x="252" y="96">目标阻抗</text>
+  <text class="ts" x="252" y="114">刚度 / 阻尼 / 惯量</text>
+
+  <rect class="rb" x="376" y="72" width="112" height="52"/>
+  <text class="t"  x="432" y="96">力矩指令</text>
+  <text class="ts" x="432" y="114">经雅可比转置映射</text>
+
+  <rect class="rb" x="548" y="72" width="104" height="52"/>
+  <text class="t"  x="600" y="103">机器人</text>
+
+  <rect class="en" x="712" y="72" width="124" height="52"/>
+  <text class="t"  x="774" y="96">环境</text>
+  <text class="ts" x="774" y="114">刚性环境下稳定</text>
+
+  <path class="ar" d="M128,98 L184,98"/>
+  <text class="ts" x="156" y="88">位置偏差</text>
+  <path class="ar" d="M316,98 L372,98"/>
+  <path class="ar" d="M488,98 L544,98"/>
+  <path class="ar" d="M652,98 L708,98"/>
+  <text class="ts" x="680" y="88">接触</text>
+  <path class="fb" d="M774,124 L774,158 L252,158 L252,128"/>
+  <text class="ts" x="512" y="174">实际位置反馈</text>
+
+  <!-- 导纳控制 -->
+  <text class="hd" x="24" y="234" fill="#2f855a">导纳控制 Admittance Control</text>
+  <text class="tl" x="24" y="254">力为因，位置为果 —— 只需位置接口，但必须有力传感器</text>
+
+  <rect class="rb" x="24"  y="272" width="104" height="52"/>
+  <text class="t"  x="76"  y="296">力传感器</text>
+  <text class="ts" x="76"  y="314">测得外力</text>
+
+  <rect class="b2" x="188" y="272" width="128" height="52"/>
+  <text class="t"  x="252" y="296">目标导纳</text>
+  <text class="ts" x="252" y="314">积分得位置修正</text>
+
+  <rect class="rb" x="376" y="272" width="112" height="52"/>
+  <text class="t"  x="432" y="296">位置指令</text>
+  <text class="ts" x="432" y="314">标称轨迹 + 修正</text>
+
+  <rect class="rb" x="548" y="272" width="104" height="52"/>
+  <text class="t"  x="600" y="296">位置控制器</text>
+  <text class="ts" x="600" y="314">机器人内部环</text>
+
+  <rect class="en" x="712" y="272" width="124" height="52"/>
+  <text class="t"  x="774" y="296">环境</text>
+  <text class="ts" x="774" y="314">柔性环境下稳定</text>
+
+  <path class="ar" d="M128,298 L184,298"/>
+  <text class="ts" x="156" y="288">外力</text>
+  <path class="ar" d="M316,298 L372,298"/>
+  <path class="ar" d="M488,298 L544,298"/>
+  <path class="ar" d="M652,298 L708,298"/>
+  <path class="fb" d="M774,324 L774,356 L76,356 L76,328"/>
+  <text class="ts" x="424" y="372">接触力反馈</text>
+
+  <text class="ts" x="430" y="404">两者因果方向相反：阻抗由位置偏差算力，导纳由力算位置。环境越刚硬越应选阻抗，越柔软越应选导纳</text>
+</svg>
