@@ -1,0 +1,7882 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="机器人领域的公共知识库">
+      
+      
+        <meta name="author" content="YFRL">
+      
+      
+        <link rel="canonical" href="https://yfrobotics.github.io/kinematics/trajectory-generation/">
+      
+      
+        <link rel="prev" href="../dynamics/">
+      
+      
+        <link rel="next" href="../../control/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>轨迹生成 - 云飞机器人中文维基</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Sans:300,300i,400,400i,700,700i%7CFira+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Fira Sans";--md-code-font:"Fira Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../_static/css/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-PJC5MCXWKL"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-PJC5MCXWKL",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-PJC5MCXWKL",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+  
+  <meta name="google-adsense-account" content="ca-pub-8821428748194648">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8821428748194648"
+     crossorigin="anonymous"></script>
+
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="red">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="云飞机器人中文维基" class="md-header__button md-logo" aria-label="云飞机器人中文维基" data-md-component="logo">
+      
+  <img src="../../logo-site.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            云飞机器人中文维基
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              轨迹生成
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/yfrobotics/robowiki-cn" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    yfrobotics/robowiki-cn
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../.." class="md-tabs__link">
+          
+  
+  
+  首页
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+  机构与运动学
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../control/" class="md-tabs__link">
+          
+  
+  
+  控制
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../sensing/" class="md-tabs__link">
+          
+  
+  
+  感知
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../cv/" class="md-tabs__link">
+          
+  
+  
+  视觉
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../planning/" class="md-tabs__link">
+          
+  
+  
+  规划
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../manipulation/" class="md-tabs__link">
+          
+  
+  
+  操作
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../learning/" class="md-tabs__link">
+          
+  
+  
+  学习
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../simulation/" class="md-tabs__link">
+          
+  
+  
+  仿真
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../ros/" class="md-tabs__link">
+          
+  
+  
+  ROS
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../linux/" class="md-tabs__link">
+          
+  
+  
+  Linux
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../rtos/" class="md-tabs__link">
+          
+  
+  
+  RTOS
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../hardware/" class="md-tabs__link">
+          
+  
+  
+  硬件
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../database/" class="md-tabs__link">
+          
+  
+  
+  数据库
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../resources/" class="md-tabs__link">
+          
+  
+  
+  资源
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="云飞机器人中文维基" class="md-nav__button md-logo" aria-label="云飞机器人中文维基" data-md-component="logo">
+      
+  <img src="../../logo-site.png" alt="logo">
+
+    </a>
+    云飞机器人中文维基
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/yfrobotics/robowiki-cn" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    yfrobotics/robowiki-cn
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首页
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    首页
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    介绍
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    什么是机器人？
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../courses/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    机器人知识课程组成
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to-contribute/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    如何贡献这个维基？
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../standard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    书写规范
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contributors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    贡献者名单
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    机构与运动学
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    机构与运动学
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    机构与运动学
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../spatial-transformation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    空间描述与变换
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../forward-kinematics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    正运动学
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../inverse-kinematics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    逆运动学
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jacobian/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    雅可比矩阵与奇异性
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dynamics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    机器人动力学
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    轨迹生成
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    轨迹生成
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        路径与轨迹
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        关节空间与笛卡尔空间
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        多项式插值
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="多项式插值">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        三次多项式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        五次多项式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        多段轨迹与样条
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        梯形速度规划
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="梯形速度规划">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        基本形式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        多关节同步
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#s" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S 曲线速度规划
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        沿给定路径的时间最优参数化
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        代码实现
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="代码实现">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#s_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        梯形与 S 曲线规划
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ruckig-s" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        用 Ruckig 做在线 S 曲线规划
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moveit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MoveIt 中的时间参数化
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        选型建议
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        常见问题
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        参考资料
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    控制
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    控制
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../control/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    控制系统
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    建模
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    建模
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../control/modelling/modelling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    控制系统建模
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../control/modelling/modelling-foundations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    建模基础
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../control/modelling/modelling-discrete-identification/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    离散系统与系统辨识
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../control/modelling/state-space/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    状态空间法
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../control/modelling/modelling-full-reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    建模参考资料
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../control/pid/pid/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PID控制器
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../control/lqr/lqr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    线性二次型调节器
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../control/mpc/mpc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MPC控制器
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../control/nn/nn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    神经网络控制器 (Neural Network Controller)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../control/adaptive/adaptive/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    自适应控制
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    感知
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    感知
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sensing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    机器人传感技术
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sensing/sensors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    机器人常用传感器
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sensing/depth-camera/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    深度视觉相机
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sensing/imu-calibration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IMU 标定与噪声建模
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    传感器融合
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    传感器融合
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sensing/sensor-fusion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    传感器融合
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sensing/sensor-fusion-architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    传感器融合架构
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sensing/sensor-fusion-engineering/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    传感器融合工程实践
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sensing/sensor-fusion-full-reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    传感器融合参考资料
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SLAM
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    SLAM
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sensing/slam/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SLAM (同时定位与建图)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sensing/slam-systems-comparison/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SLAM 系统对比
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sensing/slam-engineering-playbook/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SLAM 工程实践手册
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    视觉
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    视觉
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cv/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    机器视觉
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    目标检测
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    目标检测
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cv/object-detection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    目标检测 (Object Detection)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cv/object-detection-practical/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    目标检测：实战代码与工程部署
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cv/object-detection-3d-advanced/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    目标检测：三维检测与高级应用
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cv/segmentation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    图像分割
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cv/tracking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    目标跟踪
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cv/pose-estimation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    位姿估计
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_6" id="__nav_5_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    三维视觉
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    三维视觉
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cv/3d-vision/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    三维视觉
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cv/3d-vision-stereo-depth/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    立体视觉与深度估计
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cv/3d-vision-pointcloud-registration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    点云配准
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cv/3d-vision-reconstruction-radiance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    三维重建与辐射场
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cv/3d-vision-full-reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    三维视觉参考资料
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    规划
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    规划
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../planning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    机器人规划
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../planning/decisionmaking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    决策规划
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../planning/pathplanning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    路径规划
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../planning/motionplanning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    运动规划
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../planning/behavior-trees/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    行为树
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../planning/multi-robot-task-allocation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    多机器人任务分配
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../planning/replanning-safety/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    重规划与安全性
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_8" id="__nav_6_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    导航
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    导航
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../planning/navigation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    移动机器人导航栈
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../planning/navigation-costmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    代价地图
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../planning/navigation-local-planners/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    局部规划器
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    操作
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    操作
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../manipulation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    机器人操作
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../manipulation/grasping/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    抓取
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../manipulation/force-control/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    力控与柔顺控制
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../manipulation/moveit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MoveIt 实践
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    学习
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    学习
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../learning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    机器人学习
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../learning/ml/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    机器学习
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_3" id="__nav_8_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    强化学习
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    强化学习
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../learning/rl/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    强化学习
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../learning/rl-algorithms-practice/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    强化学习算法与实践
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../learning/rl-robotics-deployment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    强化学习机器人部署
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../learning/rl-advanced-paradigms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    强化学习进阶范式
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../learning/rl-full-reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    强化学习参考资料
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_4" id="__nav_8_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    深度学习
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    深度学习
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../learning/dl/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    深度学习
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../learning/dl-foundation-models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    基础模型
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../learning/dl-training-deployment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    深度学习训练与部署
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../learning/dl-robotics-pipelines/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    深度学习机器人流水线
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../learning/dl-full-reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    深度学习参考资料
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_5" id="__nav_8_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    具身智能
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    具身智能
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../learning/embodied-ai/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    具身智能
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../learning/embodied-ai-vla/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    VLA 模型
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../learning/embodied-ai-data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    模仿学习与数据采集
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    仿真
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    仿真
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../simulation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    机器人仿真
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../simulation/gazebo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gazebo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_9_3" id="__nav_9_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CoppeliaSim
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    CoppeliaSim
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../simulation/vrep/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CoppeliaSim (V-REP)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../simulation/vrep-remote-api-ros2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CoppeliaSim 远程 API 与 ROS 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../simulation/vrep-robotics-workflows/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CoppeliaSim 机器人工作流
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../simulation/vrep-performance-debugging/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CoppeliaSim 性能与调试
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../simulation/vrep-full-reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CoppeliaSim 参考资料
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../simulation/mujoco/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MuJoCo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_9_5" id="__nav_9_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PyBullet
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    PyBullet
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../simulation/pybullet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PyBullet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../simulation/pybullet-control-dynamics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PyBullet 控制与动力学
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../simulation/pybullet-rl-workflows/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PyBullet 强化学习工作流
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../simulation/pybullet-vision-multirobot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PyBullet 视觉与多机器人
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../simulation/pybullet-full-reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PyBullet 参考资料
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../simulation/webots/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Webots
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../simulation/robotics-toolbox/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MATLAB Robotics Toolbox
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../simulation/stage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Stage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../simulation/unreal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unreal Engine
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../simulation/unity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../simulation/nvidiaomniverse/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NVIDIA Omniverse / Isaac Sim
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ROS
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    ROS
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ros/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ROS (机器人操作系统)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_10_2" id="__nav_10_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ROS 1
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    ROS 1
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ros/ros1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ROS 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ros/ros1-workspace/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ROS 1 工作空间
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ros/ros1-communication/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ROS 1 通信机制
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ros/ros1-full-reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ROS 1 参考资料
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_10_3" id="__nav_10_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ROS 2
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    ROS 2
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ros/ros2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ROS 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ros/ros2-qos-dds/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ROS 2 QoS 与 DDS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ros/ros2-migration-playbook/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ROS 2 迁移手册
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ros/ros2-full-reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ROS 2 参考资料
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linux
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Linux
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linux
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/commands/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linux常用命令
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_11_3" id="__nav_11_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shell 脚本
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_11_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Shell 脚本
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/shell-scripting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shell 脚本与机器人自动化
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/shell-scripting-automation-patterns/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shell 脚本自动化模式
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/shell-scripting-ops-toolkit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shell 脚本运维工具箱
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/shell-scripting-full-reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shell 脚本参考资料
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RTOS
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    RTOS
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rtos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RTOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rtos/freertos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FreeRTOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rtos/ucos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    μC/OS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rtos/vxworks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    VxWorks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rtos/qnx/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    QNX
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rtos/scheduling-analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    调度分析
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rtos/latency-debugging/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    延迟调试
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    硬件
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    硬件
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hardware/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    机器人硬件平台
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hardware/system-architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    系统架构
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hardware/power-thermal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    电源与散热
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hardware/communication-buses/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    通信总线
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hardware/actuators/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    执行器与传动
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hardware/motor-control/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    电机驱动与控制
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_13_7" id="__nav_13_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    安全
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_13_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    安全
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hardware/functional-safety/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    功能安全
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hardware/safety-collaborative-robot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    协作机器人安全
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../arduino/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Arduino
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../raspberrypi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Raspberry Pi
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../jetson/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Nvidia Jetson
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14" >
+        
+          
+          <label class="md-nav__link" for="__nav_14" id="__nav_14_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    数据库
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    数据库
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    机器人数据库
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/dataset/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    机器人与视觉数据集
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_14_3" id="__nav_14_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    机器人图鉴
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_14_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    机器人图鉴
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/robots/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    机器人图鉴
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/nao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NAO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/atlas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Atlas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/optimus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Optimus（擎天柱）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/figure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Figure 02
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/asimo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ASIMO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/digit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Digit
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/unitree-h1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unitree H1 / G1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/spot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Boston Dynamics Spot
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/pepper/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SoftBank Pepper
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/apollo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Apptronik Apollo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/walker-s/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    优必选 Walker S
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_14_4" id="__nav_14_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    机器人企业
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_14_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    机器人企业
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/companies/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    机器人公司企业
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/boston-dynamics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    波士顿动力 | Boston Dynamics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_14_5" id="__nav_14_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    机器人实验室
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_14_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    机器人实验室
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/labs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    机器人实验室与研发机构（国际）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/labs-global-map/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    全球实验室地图
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/labs-evaluation-collaboration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    实验室评估与合作
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/labs-full-reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    机器人实验室参考资料
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14_5_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_14_5_5" id="__nav_14_5_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    中国实验室专题
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_14_5_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14_5_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    中国实验室专题
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/labs-cn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    中国机器人研究机构数据库
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/labs-cn-universities/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    中国高校机器人实验室
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/labs-cn-cas-enterprise/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    中国科研院所与企业实验室
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/labs-cn-full-reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    中国实验室参考资料
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/conferences/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    机器人国际会议与期刊列表
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/standard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    机器人领域行业标准
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/competitions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    机器人竞赛
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15" >
+        
+          
+          <label class="md-nav__link" for="__nav_15" id="__nav_15_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    资源
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_15_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_15">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    资源
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    机器人资源
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/software/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    机器人工具与软件
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/books/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    机器人图书
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/videos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    机器人视频
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        路径与轨迹
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        关节空间与笛卡尔空间
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        多项式插值
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="多项式插值">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        三次多项式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        五次多项式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        多段轨迹与样条
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        梯形速度规划
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="梯形速度规划">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        基本形式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        多关节同步
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#s" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S 曲线速度规划
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        沿给定路径的时间最优参数化
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        代码实现
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="代码实现">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#s_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        梯形与 S 曲线规划
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ruckig-s" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        用 Ruckig 做在线 S 曲线规划
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moveit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MoveIt 中的时间参数化
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        选型建议
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        常见问题
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        参考资料
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="_1">轨迹生成</h1>
+<div class="admonition note">
+<p class="admonition-title">引言</p>
+<p>轨迹生成（Trajectory Generation）负责把规划器输出的稀疏路径点变成一条随时间连续、满足速度与加速度限制、且平滑到执行器能够跟踪的时间函数。它处于运动规划与伺服控制之间：规划器回答"走哪条路"，轨迹生成回答"何时走到哪里、以多快的速度"。轨迹的光滑程度直接决定了机械冲击、跟踪误差与末端振动的大小。</p>
+</div>
+<h2 id="_2">路径与轨迹</h2>
+<p><strong>路径</strong>（Path）是构型空间中的几何曲线，只有形状没有时间；<strong>轨迹</strong>（Trajectory）是带时间参数的路径，指定了每一时刻的位置、速度与加速度。把路径转化为轨迹的过程称为<strong>时间参数化</strong>（Time Parameterization）。</p>
+<p>轨迹必须满足的条件依次是：</p>
+<ol>
+<li><strong>边界条件</strong>：起点与终点的位置、速度（有时还包括加速度）匹配</li>
+<li><strong>运动学限制</strong>：<script type="math/tex">|\dot{q}| \le \dot{q}_{max}</script>，<script type="math/tex">|\ddot{q}| \le \ddot{q}_{max}</script>，有时还有 <script type="math/tex">|\dddot{q}| \le \dddot{q}_{max}</script>
+</li>
+<li><strong>光滑性</strong>：至少 <script type="math/tex">C^1</script> 连续（速度连续），高性能场景要求 <script type="math/tex">C^2</script>（加速度连续）</li>
+<li><strong>动力学可行</strong>：所需力矩不超过电机能力，见 <a href="../dynamics/">机器人动力学</a></li>
+</ol>
+<p><strong>连续性阶数的意义</strong>：位置不连续意味着瞬间跳变（物理上不可能）；速度不连续意味着无穷大加速度；加速度不连续意味着无穷大加加速度（Jerk），会激发机械结构的高频振动模态、加速减速器磨损，并在末端产生残余抖动。这是 S 曲线与高阶多项式存在的根本理由。</p>
+<h2 id="_3">关节空间与笛卡尔空间</h2>
+<table>
+<thead>
+<tr>
+<th>方面</th>
+<th>关节空间轨迹</th>
+<th>笛卡尔空间轨迹</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>插值对象</td>
+<td>关节角 <script type="math/tex">\mathbf{q}(t)</script>
+</td>
+<td>末端位姿 <script type="math/tex">T(t)</script>
+</td>
+</tr>
+<tr>
+<td>末端路径</td>
+<td>不可预测的曲线</td>
+<td>可精确指定（直线、圆弧）</td>
+</tr>
+<tr>
+<td>计算量</td>
+<td>小，直接下发</td>
+<td>每周期需求解<a href="../inverse-kinematics/">逆运动学</a></td>
+</tr>
+<tr>
+<td>关节限位</td>
+<td>天然满足</td>
+<td>需要检查，可能中途超限</td>
+</tr>
+<tr>
+<td>奇异位形</td>
+<td>无影响</td>
+<td>通过奇异时关节速度爆炸</td>
+</tr>
+<tr>
+<td>典型用途</td>
+<td>点到点快速移动（PTP）</td>
+<td>焊接、涂胶、装配、直线趋近（LIN/CIRC）</td>
+</tr>
+</tbody>
+</table>
+<p>工程上的常见组合是：<strong>大范围快速移动用关节空间，接触作业段用笛卡尔空间</strong>。工业机器人指令中的 <code>MOVJ</code> 与 <code>MOVL</code> 正对应这两类。</p>
+<p>笛卡尔轨迹的姿态部分需要单独处理：位置可以线性插值，姿态必须用四元数 SLERP（见 <a href="../spatial-transformation/">空间描述与变换</a>），且位置与姿态应使用同一个归一化时间参数 <script type="math/tex">s(t) \in [0,1]</script>，以保证两者同步到达。</p>
+<h2 id="_4">多项式插值</h2>
+<h3 id="_5">三次多项式</h3>
+<p>给定起点 <script type="math/tex">(q_0, \dot{q}_0)</script> 与终点 <script type="math/tex">(q_f, \dot{q}_f)</script>，四个边界条件确定唯一的三次多项式：</p>
+<p>
+<script type="math/tex; mode=display">q(t) = a_0 + a_1 t + a_2 t^2 + a_3 t^3</script>
+</p>
+<p>系数为（取 <script type="math/tex">t \in [0, T]</script>）：</p>
+<p>
+<script type="math/tex; mode=display">a_0 = q_0, \quad a_1 = \dot{q}_0</script>
+</p>
+<p>
+<script type="math/tex; mode=display">a_2 = \frac{3(q_f - q_0)}{T^2} - \frac{2\dot{q}_0 + \dot{q}_f}{T}, \quad a_3 = \frac{-2(q_f - q_0)}{T^3} + \frac{\dot{q}_0 + \dot{q}_f}{T^2}</script>
+</p>
+<p>对静止到静止的运动（<script type="math/tex">\dot{q}_0 = \dot{q}_f = 0</script>），峰值速度与加速度为：</p>
+<p>
+<script type="math/tex; mode=display">\dot{q}_{max} = \frac{3(q_f - q_0)}{2T}, \qquad \ddot{q}_{max} = \frac{6|q_f - q_0|}{T^2}</script>
+</p>
+<p>由此可反解满足限制的最短时间：<script type="math/tex">T = \max\left(\frac{3\Delta q}{2\dot{q}_{max}}, \sqrt{\frac{6\Delta q}{\ddot{q}_{max}}}\right)</script>。</p>
+<p>三次多项式的缺点是加速度在起止时刻不为零且不连续（加加速度为无穷大），会产生启停冲击。</p>
+<h3 id="_6">五次多项式</h3>
+<p>增加加速度边界条件（通常取 0），得到五次多项式：</p>
+<p>
+<script type="math/tex; mode=display">q(t) = a_0 + a_1 t + a_2 t^2 + a_3 t^3 + a_4 t^4 + a_5 t^5</script>
+</p>
+<p>对静止到静止的运动，用归一化时间 <script type="math/tex">\sigma = t/T</script> 可写成简洁形式：</p>
+<p>
+<script type="math/tex; mode=display">q(t) = q_0 + (q_f - q_0)\left(10\sigma^3 - 15\sigma^4 + 6\sigma^5\right)</script>
+</p>
+<p>其中 <script type="math/tex">10\sigma^3 - 15\sigma^4 + 6\sigma^5</script> 是常用的<strong>平滑步进函数</strong>（Smoothstep），在两端一阶与二阶导数均为零。峰值速度为 <script type="math/tex">1.875\Delta q/T</script>，峰值加速度为 <script type="math/tex">5.774\Delta q/T^2</script>。</p>
+<p>五次多项式保证 <script type="math/tex">C^2</script> 连续，是点到点运动的常用选择。代价是同样时间下峰值速度比三次多项式高约 25%，即执行器能力利用率较低。</p>
+<h3 id="_7">多段轨迹与样条</h3>
+<p>通过多个中间点时，逐段独立插值会在衔接处产生速度不连续。解决方案有两类：</p>
+<p><strong>指定中间点速度</strong>：由启发式规则确定，如取前后段平均斜率（若斜率符号相反则取零，以避免过冲）：</p>
+<p>
+<script type="math/tex; mode=display">\dot{q}_k = \begin{cases} 0 & \operatorname{sgn}(v_{k-1}) \ne \operatorname{sgn}(v_k) \\ \frac{1}{2}(v_{k-1} + v_k) & \text{其他} \end{cases}, \quad v_k = \frac{q_{k+1}-q_k}{t_{k+1}-t_k}</script>
+</p>
+<p><strong>三次样条</strong>（Cubic Spline）：不预设中间点速度，而是要求所有内部节点二阶导数连续，解一个三对角线性方程组得到全局 <script type="math/tex">C^2</script> 光滑的轨迹。计算量略大但结果最平滑，是路径点较多时的标准做法。</p>
+<p>样条的一个已知缺点是<strong>不保形</strong>：曲线可能在中间点附近超出数据的取值范围（过冲）。若必须严格避免超出，可使用 PCHIP 等保形插值方法，代价是只有 <script type="math/tex">C^1</script> 连续。</p>
+<h2 id="_8">梯形速度规划</h2>
+<h3 id="_9">基本形式</h3>
+<p>梯形速度规划（Linear Segment with Parabolic Blend，LSPB）由匀加速、匀速、匀减速三段构成，速度曲线呈梯形。它在给定速度与加速度限制下<strong>时间最优</strong>，因此是工业机器人最常用的方案。</p>
+<p>设位移 <script type="math/tex">\Delta q = |q_f - q_0|</script>，限制为 <script type="math/tex">v_{max}, a_{max}</script>：</p>
+<p>加速段时间与位移：</p>
+<p>
+<script type="math/tex; mode=display">t_a = \frac{v_{max}}{a_{max}}, \qquad \Delta q_a = \frac{v_{max}^2}{2a_{max}}</script>
+</p>
+<p><strong>判别条件</strong>：若 <script type="math/tex">\Delta q \ge 2\Delta q_a</script>，能达到最大速度，为完整梯形，总时间：</p>
+<p>
+<script type="math/tex; mode=display">T = \frac{\Delta q}{v_{max}} + \frac{v_{max}}{a_{max}}</script>
+</p>
+<p>若 <script type="math/tex">\Delta q < 2\Delta q_a</script>，行程太短无法加速到 <script type="math/tex">v_{max}</script>，退化为<strong>三角形</strong>速度曲线：</p>
+<p>
+<script type="math/tex; mode=display">v_{peak} = \sqrt{a_{max}\Delta q}, \qquad T = 2\sqrt{\frac{\Delta q}{a_{max}}}</script>
+</p>
+<p>短距离运动退化为三角形是实现中最容易遗漏的分支，会导致小位移指令的时间计算错误。</p>
+<h3 id="_10">多关节同步</h3>
+<p>多个关节同时运动时，各关节按自身限制算出的时间不同。为使它们同时到达（避免末端路径畸变），需要<strong>时间同步</strong>：取各关节所需时间的最大值 <script type="math/tex">T^* = \max_i T_i</script>，然后按 <script type="math/tex">T^*</script> 重新规划所有关节的轨迹（降低其余关节的速度与加速度）。</p>
+<p>其中运动时间最长的关节称为<strong>主导关节</strong>（Leading Axis），它是唯一一个跑在能力极限上的关节。</p>
+<h2 id="s">S 曲线速度规划</h2>
+<p>梯形规划的加速度在段间切换时跳变，加加速度为无穷大。S 曲线（S-Curve，也称双 S 速度曲线）对加加速度加以限制，把加速段本身也做成梯形，得到七段式速度曲线：</p>
+<div class="highlight"><pre><span></span><code>加加速 → 匀加速 → 减加速 → 匀速 → 加减速 → 匀减速 → 减减速
+</code></pre></div>
+<p>在限制 <script type="math/tex">v_{max}, a_{max}, j_{max}</script> 下，各段时间为：</p>
+<p>
+<script type="math/tex; mode=display">t_j = \frac{a_{max}}{j_{max}}, \qquad t_a = \frac{v_{max}}{a_{max}} + t_j</script>
+</p>
+<p>同样存在多个退化分支：加速度达不到 <script type="math/tex">a_{max}</script>（无匀加速段）、速度达不到 <script type="math/tex">v_{max}</script>（无匀速段）、或两者都达不到。完整实现需处理全部情形，这也是 S 曲线代码远比梯形复杂的原因。</p>
+<p>下图对比两种方案在同一段位移上的四阶曲线。梯形规划的加速度在段间跳变，加加速度为无穷大；S 曲线则把加速度本身也做成梯形，代价是总时间略长：</p>
+<p><img alt="梯形与 S 曲线速度规划的四阶对比" src="../assets/motion-profiles.svg" /></p>
+<p><strong>代价与收益</strong>：S 曲线的总时间比梯形长约 <script type="math/tex">t_j</script>（通常为几十毫秒），换来的是消除启停冲击。对于柔性关节机器人（谐波减速器）、高速取放（SCARA/Delta）以及末端携带液体或易碎物品的场景，这个代价非常值得——冲击激发的残余振动往往需要更长时间才能衰减，实际的"到位稳定时间"反而更短。</p>
+<p>推荐的开源实现是 <a href="https://ruckig.com/">Ruckig</a>，它支持在线（每控制周期）重新规划、任意初始状态、以及加加速度限制下的时间最优解，已被 MoveIt 2 采用为默认的时间参数化插件。</p>
+<h2 id="_11">沿给定路径的时间最优参数化</h2>
+<p>当路径由规划器给定且不能改变形状时（如焊缝轨迹），问题变为：找到时间参数化 <script type="math/tex">s(t)</script>，在满足关节速度、加速度与力矩限制的前提下最小化总时间。这就是 TOPP（Time-Optimal Path Parameterization）问题。</p>
+<p>关键洞察是：沿固定路径 <script type="math/tex">\mathbf{q}(s)</script> 运动时，关节速度与加速度可以写成路径参数导数的函数：</p>
+<p>
+<script type="math/tex; mode=display">\dot{\mathbf{q}} = \mathbf{q}'(s)\dot{s}, \qquad \ddot{\mathbf{q}} = \mathbf{q}'(s)\ddot{s} + \mathbf{q}''(s)\dot{s}^2</script>
+</p>
+<p>因此原本 <script type="math/tex">n</script> 维的问题降为<strong>关于 <script type="math/tex">\dot{s}</script> 与 <script type="math/tex">\ddot{s}</script> 的二维问题</strong>，可以在 <script type="math/tex">(s, \dot{s}^2)</script> 相平面上求解。经典方法是数值积分法（沿最大加速度与最大减速度曲线正反向积分，寻找切换点），现代方法 TOPP-RA 用可达集分析（Reachability Analysis）求解，鲁棒性与速度都更好。</p>
+<p>TOPP 的价值在于它能利用<strong>完整的动力学约束</strong>（力矩限制而非简单的关节速度限制），在需要压榨节拍时间的产线上可以比保守的梯形规划快 20%–40%。相关的轨迹优化方法详见 <a href="../../planning/motionplanning/">运动规划</a>。</p>
+<h2 id="_12">代码实现</h2>
+<h3 id="s_1">梯形与 S 曲线规划</h3>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">trapezoidal</span><span class="p">(</span><span class="n">q0</span><span class="p">,</span> <span class="n">qf</span><span class="p">,</span> <span class="n">v_max</span><span class="p">,</span> <span class="n">a_max</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="mf">0.001</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""梯形速度规划，返回 (t, q, dq, ddq)"""</span>
+    <span class="n">dq_total</span> <span class="o">=</span> <span class="n">qf</span> <span class="o">-</span> <span class="n">q0</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">dq_total</span><span class="p">)</span>
+    <span class="n">sign</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sign</span><span class="p">(</span><span class="n">dq_total</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">d</span> <span class="o">&lt;</span> <span class="mf">1e-12</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.0</span><span class="p">]),</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">q0</span><span class="p">]),</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.0</span><span class="p">]),</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.0</span><span class="p">])</span>
+
+    <span class="n">d_acc</span> <span class="o">=</span> <span class="n">v_max</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">a_max</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">d</span> <span class="o">&gt;=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">d_acc</span><span class="p">:</span>                      <span class="c1"># 完整梯形</span>
+        <span class="n">t_a</span> <span class="o">=</span> <span class="n">v_max</span> <span class="o">/</span> <span class="n">a_max</span>
+        <span class="n">t_c</span> <span class="o">=</span> <span class="p">(</span><span class="n">d</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">d_acc</span><span class="p">)</span> <span class="o">/</span> <span class="n">v_max</span>       <span class="c1"># 匀速段时长</span>
+        <span class="n">v_peak</span> <span class="o">=</span> <span class="n">v_max</span>
+    <span class="k">else</span><span class="p">:</span>                                   <span class="c1"># 退化为三角形</span>
+        <span class="n">v_peak</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">a_max</span> <span class="o">*</span> <span class="n">d</span><span class="p">)</span>
+        <span class="n">t_a</span> <span class="o">=</span> <span class="n">v_peak</span> <span class="o">/</span> <span class="n">a_max</span>
+        <span class="n">t_c</span> <span class="o">=</span> <span class="mf">0.0</span>
+
+    <span class="n">T</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">t_a</span> <span class="o">+</span> <span class="n">t_c</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">T</span> <span class="o">+</span> <span class="n">dt</span><span class="p">,</span> <span class="n">dt</span><span class="p">)</span>
+    <span class="n">q</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty_like</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+    <span class="n">dq</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty_like</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+    <span class="n">ddq</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty_like</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">ti</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">ti</span> <span class="o">&lt;</span> <span class="n">t_a</span><span class="p">:</span>                        <span class="c1"># 加速段</span>
+            <span class="n">a</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">s</span> <span class="o">=</span> <span class="n">a_max</span><span class="p">,</span> <span class="n">a_max</span> <span class="o">*</span> <span class="n">ti</span><span class="p">,</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">a_max</span> <span class="o">*</span> <span class="n">ti</span> <span class="o">**</span> <span class="mi">2</span>
+        <span class="k">elif</span> <span class="n">ti</span> <span class="o">&lt;</span> <span class="n">t_a</span> <span class="o">+</span> <span class="n">t_c</span><span class="p">:</span>                <span class="c1"># 匀速段</span>
+            <span class="n">tau</span> <span class="o">=</span> <span class="n">ti</span> <span class="o">-</span> <span class="n">t_a</span>
+            <span class="n">a</span><span class="p">,</span> <span class="n">v</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">v_peak</span>
+            <span class="n">s</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">v_peak</span> <span class="o">*</span> <span class="n">t_a</span> <span class="o">+</span> <span class="n">v_peak</span> <span class="o">*</span> <span class="n">tau</span>
+        <span class="k">else</span><span class="p">:</span>                               <span class="c1"># 减速段</span>
+            <span class="n">tau</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">ti</span> <span class="o">-</span> <span class="n">t_a</span> <span class="o">-</span> <span class="n">t_c</span><span class="p">,</span> <span class="n">t_a</span><span class="p">)</span>
+            <span class="n">a</span><span class="p">,</span> <span class="n">v</span> <span class="o">=</span> <span class="o">-</span><span class="n">a_max</span><span class="p">,</span> <span class="n">v_peak</span> <span class="o">-</span> <span class="n">a_max</span> <span class="o">*</span> <span class="n">tau</span>
+            <span class="n">s</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.5</span> <span class="o">*</span> <span class="n">v_peak</span> <span class="o">*</span> <span class="n">t_a</span> <span class="o">+</span> <span class="n">v_peak</span> <span class="o">*</span> <span class="n">t_c</span>
+                 <span class="o">+</span> <span class="n">v_peak</span> <span class="o">*</span> <span class="n">tau</span> <span class="o">-</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">a_max</span> <span class="o">*</span> <span class="n">tau</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="n">ddq</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">dq</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">q</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">sign</span> <span class="o">*</span> <span class="n">a</span><span class="p">,</span> <span class="n">sign</span> <span class="o">*</span> <span class="n">v</span><span class="p">,</span> <span class="n">q0</span> <span class="o">+</span> <span class="n">sign</span> <span class="o">*</span> <span class="n">s</span>
+
+    <span class="k">return</span> <span class="n">t</span><span class="p">,</span> <span class="n">q</span><span class="p">,</span> <span class="n">dq</span><span class="p">,</span> <span class="n">ddq</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">quintic</span><span class="p">(</span><span class="n">q0</span><span class="p">,</span> <span class="n">qf</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="mf">0.001</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""五次多项式（静止到静止），C2 连续"""</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">T</span> <span class="o">+</span> <span class="n">dt</span><span class="p">,</span> <span class="n">dt</span><span class="p">)</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="n">t</span> <span class="o">/</span> <span class="n">T</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="n">qf</span> <span class="o">-</span> <span class="n">q0</span>
+    <span class="n">q</span> <span class="o">=</span> <span class="n">q0</span> <span class="o">+</span> <span class="n">d</span> <span class="o">*</span> <span class="p">(</span><span class="mi">10</span> <span class="o">*</span> <span class="n">s</span> <span class="o">**</span> <span class="mi">3</span> <span class="o">-</span> <span class="mi">15</span> <span class="o">*</span> <span class="n">s</span> <span class="o">**</span> <span class="mi">4</span> <span class="o">+</span> <span class="mi">6</span> <span class="o">*</span> <span class="n">s</span> <span class="o">**</span> <span class="mi">5</span><span class="p">)</span>
+    <span class="n">dq</span> <span class="o">=</span> <span class="n">d</span> <span class="o">/</span> <span class="n">T</span> <span class="o">*</span> <span class="p">(</span><span class="mi">30</span> <span class="o">*</span> <span class="n">s</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">-</span> <span class="mi">60</span> <span class="o">*</span> <span class="n">s</span> <span class="o">**</span> <span class="mi">3</span> <span class="o">+</span> <span class="mi">30</span> <span class="o">*</span> <span class="n">s</span> <span class="o">**</span> <span class="mi">4</span><span class="p">)</span>
+    <span class="n">ddq</span> <span class="o">=</span> <span class="n">d</span> <span class="o">/</span> <span class="n">T</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="mi">60</span> <span class="o">*</span> <span class="n">s</span> <span class="o">-</span> <span class="mi">180</span> <span class="o">*</span> <span class="n">s</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">120</span> <span class="o">*</span> <span class="n">s</span> <span class="o">**</span> <span class="mi">3</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">t</span><span class="p">,</span> <span class="n">q</span><span class="p">,</span> <span class="n">dq</span><span class="p">,</span> <span class="n">ddq</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">synchronize</span><span class="p">(</span><span class="n">q0_vec</span><span class="p">,</span> <span class="n">qf_vec</span><span class="p">,</span> <span class="n">v_max_vec</span><span class="p">,</span> <span class="n">a_max_vec</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""多关节时间同步：返回同步时间与主导关节索引"""</span>
+    <span class="n">times</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">q0</span><span class="p">,</span> <span class="n">qf</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">a</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">q0_vec</span><span class="p">,</span> <span class="n">qf_vec</span><span class="p">,</span> <span class="n">v_max_vec</span><span class="p">,</span> <span class="n">a_max_vec</span><span class="p">):</span>
+        <span class="n">d</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">qf</span> <span class="o">-</span> <span class="n">q0</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">d</span> <span class="o">&lt;</span> <span class="mf">1e-12</span><span class="p">:</span>
+            <span class="n">times</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mf">0.0</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">d</span> <span class="o">&gt;=</span> <span class="n">v</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">/</span> <span class="n">a</span><span class="p">:</span>
+            <span class="n">times</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">d</span> <span class="o">/</span> <span class="n">v</span> <span class="o">+</span> <span class="n">v</span> <span class="o">/</span> <span class="n">a</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">times</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">d</span> <span class="o">/</span> <span class="n">a</span><span class="p">))</span>
+    <span class="n">times</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">times</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">times</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span> <span class="nb">int</span><span class="p">(</span><span class="n">times</span><span class="o">.</span><span class="n">argmax</span><span class="p">())</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">'__main__'</span><span class="p">:</span>
+    <span class="n">t</span><span class="p">,</span> <span class="n">q</span><span class="p">,</span> <span class="n">dq</span><span class="p">,</span> <span class="n">ddq</span> <span class="o">=</span> <span class="n">trapezoidal</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="n">v_max</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">a_max</span><span class="o">=</span><span class="mf">2.0</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'梯形规划: T=</span><span class="si">{</span><span class="n">t</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1">s, 峰值速度=</span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">dq</span><span class="p">)</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
+
+    <span class="n">t2</span><span class="p">,</span> <span class="n">q2</span><span class="p">,</span> <span class="n">dq2</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">trapezoidal</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="n">v_max</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">a_max</span><span class="o">=</span><span class="mf">2.0</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'短距离(三角形): T=</span><span class="si">{</span><span class="n">t2</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1">s, 峰值速度=</span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">dq2</span><span class="p">)</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
+
+    <span class="n">T_sync</span><span class="p">,</span> <span class="n">lead</span> <span class="o">=</span> <span class="n">synchronize</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mf">1.5</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">],</span>
+                               <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">])</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'同步时间=</span><span class="si">{</span><span class="n">T_sync</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1">s, 主导关节=J</span><span class="si">{</span><span class="n">lead</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="ruckig-s">用 Ruckig 做在线 S 曲线规划</h3>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">ruckig</span><span class="w"> </span><span class="kn">import</span> <span class="n">Ruckig</span><span class="p">,</span> <span class="n">InputParameter</span><span class="p">,</span> <span class="n">OutputParameter</span><span class="p">,</span> <span class="n">Result</span>
+
+<span class="n">DOF</span> <span class="o">=</span> <span class="mi">6</span>
+<span class="n">otg</span> <span class="o">=</span> <span class="n">Ruckig</span><span class="p">(</span><span class="n">DOF</span><span class="p">,</span> <span class="mf">0.001</span><span class="p">)</span>                    <span class="c1"># 1 kHz 控制周期</span>
+<span class="n">inp</span> <span class="o">=</span> <span class="n">InputParameter</span><span class="p">(</span><span class="n">DOF</span><span class="p">)</span>
+<span class="n">out</span> <span class="o">=</span> <span class="n">OutputParameter</span><span class="p">(</span><span class="n">DOF</span><span class="p">)</span>
+
+<span class="n">inp</span><span class="o">.</span><span class="n">current_position</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">]</span> <span class="o">*</span> <span class="n">DOF</span>
+<span class="n">inp</span><span class="o">.</span><span class="n">current_velocity</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">]</span> <span class="o">*</span> <span class="n">DOF</span>
+<span class="n">inp</span><span class="o">.</span><span class="n">current_acceleration</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">]</span> <span class="o">*</span> <span class="n">DOF</span>
+
+<span class="n">inp</span><span class="o">.</span><span class="n">target_position</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.2</span><span class="p">]</span>
+<span class="n">inp</span><span class="o">.</span><span class="n">target_velocity</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">]</span> <span class="o">*</span> <span class="n">DOF</span>
+
+<span class="n">inp</span><span class="o">.</span><span class="n">max_velocity</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.5</span><span class="p">]</span> <span class="o">*</span> <span class="n">DOF</span>
+<span class="n">inp</span><span class="o">.</span><span class="n">max_acceleration</span> <span class="o">=</span> <span class="p">[</span><span class="mf">3.0</span><span class="p">]</span> <span class="o">*</span> <span class="n">DOF</span>
+<span class="n">inp</span><span class="o">.</span><span class="n">max_jerk</span> <span class="o">=</span> <span class="p">[</span><span class="mf">20.0</span><span class="p">]</span> <span class="o">*</span> <span class="n">DOF</span>                 <span class="c1"># 加加速度限制，S 曲线的核心</span>
+
+<span class="n">res</span> <span class="o">=</span> <span class="n">Result</span><span class="o">.</span><span class="n">Working</span>
+<span class="n">steps</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">res</span> <span class="o">==</span> <span class="n">Result</span><span class="o">.</span><span class="n">Working</span><span class="p">:</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">otg</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">inp</span><span class="p">,</span> <span class="n">out</span><span class="p">)</span>
+    <span class="c1"># out.new_position / new_velocity / new_acceleration 下发给伺服</span>
+    <span class="n">out</span><span class="o">.</span><span class="n">pass_to_input</span><span class="p">(</span><span class="n">inp</span><span class="p">)</span>
+    <span class="n">steps</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'轨迹时长: </span><span class="si">{</span><span class="n">out</span><span class="o">.</span><span class="n">trajectory</span><span class="o">.</span><span class="n">duration</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1">s, 控制周期数: </span><span class="si">{</span><span class="n">steps</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
+</code></pre></div>
+<p>Ruckig 的优势在于<strong>每个控制周期都可以给出新的目标</strong>而无需等待当前轨迹结束，从任意的当前位置、速度、加速度状态出发都能生成可行轨迹。这使它适合遥操作、视觉伺服等目标持续变化的场景，而传统的离线规划在这类场景下会产生不连续。</p>
+<h3 id="moveit">MoveIt 中的时间参数化</h3>
+<p>MoveIt 的规划器（OMPL 等）输出的是没有时间信息的路径，需要单独做时间参数化：</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># moveit_config 中配置时间参数化算法</span>
+<span class="nt">request_adapters</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">&gt;-</span>
+<span class="w">    </span><span class="no">default_planner_request_adapters/AddTimeOptimalParameterization</span>
+<span class="w">    </span><span class="no">default_planner_request_adapters/ResolveConstraintFrames</span>
+<span class="w">    </span><span class="no">default_planner_request_adapters/FixWorkspaceBounds</span>
+
+<span class="c1"># 可选值:</span>
+<span class="c1">#   AddTimeOptimalParameterization  — TOPP，考虑速度与加速度限制</span>
+<span class="c1">#   AddRuckigTrajectorySmoothing    — S 曲线平滑，额外限制加加速度</span>
+</code></pre></div>
+<p>实践中推荐两者串联：先用 TOPP 得到时间最优参数化，再用 Ruckig 做加加速度平滑。</p>
+<h2 id="_13">选型建议</h2>
+<table>
+<thead>
+<tr>
+<th>场景</th>
+<th>推荐方案</th>
+<th>理由</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>点到点快速移动</td>
+<td>梯形 / S 曲线（关节空间）</td>
+<td>时间最优，实现简单</td>
+</tr>
+<tr>
+<td>高速取放（SCARA/Delta）</td>
+<td>S 曲线</td>
+<td>抑制残余振动，缩短稳定时间</td>
+</tr>
+<tr>
+<td>焊接、涂胶等连续作业</td>
+<td>笛卡尔直线/圆弧 + TOPP</td>
+<td>路径精度优先</td>
+</tr>
+<tr>
+<td>多路径点的平滑通过</td>
+<td>三次样条 + TOPP-RA</td>
+<td>全局 <script type="math/tex">C^2</script> 且时间最优</td>
+</tr>
+<tr>
+<td>视觉伺服、遥操作</td>
+<td>Ruckig 在线规划</td>
+<td>目标持续变化，需要随时重规划</td>
+</tr>
+<tr>
+<td>力控装配</td>
+<td>阻抗控制 + 低速轨迹</td>
+<td>轨迹只提供参考，实际由力控修正</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_14">常见问题</h2>
+<ul>
+<li><strong>忽略三角形退化分支</strong>：短位移时按完整梯形公式计算会得到错误的时间与速度。</li>
+<li><strong>多关节未同步</strong>：各关节独立规划导致末端路径畸变，在笛卡尔精度要求高的场合会造成明显的路径偏差。</li>
+<li><strong>控制周期与轨迹采样不一致</strong>：轨迹按 1 ms 生成但控制器以 4 ms 运行，会造成跟踪滞后与抖动，二者必须匹配或做正确的插值。</li>
+<li><strong>路径点过密</strong>：从规划器直接得到的密集路径点会使时间参数化结果出现速度剧烈波动，应先做路径简化或平滑。</li>
+<li><strong>只限制速度加速度而忽略力矩</strong>：高负载或高速时可能规划出电机无法执行的轨迹，需要用 <a href="../dynamics/">动力学</a> 校验力矩可行性。</li>
+<li><strong>通过奇异位形的笛卡尔轨迹</strong>：末端匀速时关节速度会爆炸，应在此段切换到关节空间插值，见 <a href="../jacobian/">雅可比矩阵与奇异性</a>。</li>
+</ul>
+<h2 id="_15">参考资料</h2>
+<ol>
+<li>Biagiotti, L. &amp; Melchiorri, C. (2008). <em>Trajectory Planning for Automatic Machines and Robots</em>. Springer. — 轨迹生成最全面的专著，涵盖多项式、样条、S 曲线的完整推导。</li>
+<li>Craig, J. J. (2005). <em>Introduction to Robotics: Mechanics and Control</em> (3rd ed.). Pearson Prentice Hall. — 第 7 章讲解轨迹生成基础。</li>
+<li>Bobrow, J. E., Dubowsky, S. &amp; Gibson, J. S. (1985). Time-Optimal Control of Robotic Manipulators Along Specified Paths. <em>International Journal of Robotics Research</em>, 4(3), 3-17. — TOPP 问题的开创性工作。</li>
+<li>Pham, H. &amp; Pham, Q.-C. (2018). A New Approach to Time-Optimal Path Parameterization Based on Reachability Analysis. <em>IEEE Transactions on Robotics</em>, 34(3), 645-659. — TOPP-RA 算法。</li>
+<li>Berscheid, L. &amp; Kröger, T. (2021). Jerk-Limited Real-Time Trajectory Generation with Arbitrary Target States. <em>Robotics: Science and Systems (RSS)</em>. — Ruckig 算法。</li>
+<li>Kunz, T. &amp; Stilman, M. (2012). Time-Optimal Trajectory Generation for Path Following with Bounded Acceleration and Velocity. <em>Robotics: Science and Systems (RSS)</em>.</li>
+<li><a href="https://ruckig.com/">Ruckig — Online Trajectory Generation</a></li>
+</ol>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML"></script>
+      
+    
+  </body>
+</html>

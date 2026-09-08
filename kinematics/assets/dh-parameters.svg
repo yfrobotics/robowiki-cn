@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 470" role="img" aria-label="改进 DH 约定的四个参数与连杆坐标系放置">
+  <style>
+    .bg{fill:#ffffff}
+    .ax{stroke:#2b6cb0;stroke-width:2.4;fill:none;marker-end:url(#az)}
+    .xa{stroke:#c0392b;stroke-width:2.4;fill:none;marker-end:url(#ax)}
+    .lk{stroke:#52606d;stroke-width:9;stroke-linecap:round;fill:none;opacity:.22}
+    .cn{stroke:#b7791f;stroke-width:2.2;fill:none}
+    .dm{stroke:#2f855a;stroke-width:2.2;fill:none}
+    .gd{stroke:#cbd2d9;stroke-width:1;stroke-dasharray:4 3}
+    .t {font-family:'Fira Sans','Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;font-size:13.5px;fill:#1f2933;text-anchor:middle}
+    .ts{font-family:'Fira Sans','Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;font-size:11px;fill:#7b8794;text-anchor:middle}
+    .lb{font-family:'Fira Sans','Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;font-size:12.5px;text-anchor:middle}
+    .lg{font-family:'Fira Sans','Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;font-size:11.5px;fill:#1f2933;text-anchor:start}
+    .tl{font-family:'Fira Sans','Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;font-size:11px;fill:#7b8794;text-anchor:start}
+  </style>
+  <defs>
+    <marker id="az" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#2b6cb0"/></marker>
+    <marker id="ax" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#c0392b"/></marker>
+  </defs>
+  <rect class="bg" x="0" y="0" width="800" height="470"/>
+  <text class="t" x="400" y="30">改进 DH 约定：相邻两个关节轴之间只需四个参数</text>
+
+  <path class="lk" d="M180,250 L520,250 L548,176"/>
+
+  <line class="gd" x1="180" y1="330" x2="180" y2="112"/>
+  <path class="ax" d="M180,300 L180,124"/>
+  <text class="lb" x="180" y="108" fill="#2b6cb0">z i-1</text>
+  <text class="ts" x="180" y="92">关节 i-1 的轴</text>
+
+  <line class="gd" x1="520" y1="330" x2="596" y2="98"/>
+  <path class="ax" d="M520,300 L578,146"/>
+  <text class="lb" x="604" y="140" fill="#2b6cb0">z i</text>
+  <text class="ts" x="612" y="124">关节 i 的轴</text>
+
+  <path class="xa" d="M180,250 L510,250"/>
+  <text class="lb" x="330" y="240" fill="#c0392b">x i-1（公垂线方向）</text>
+
+  <path class="cn" d="M180,300 L520,300"/>
+  <path class="cn" d="M180,294 L180,306 M520,294 L520,306"/>
+  <text class="lb" x="350" y="322" fill="#b7791f">a i-1</text>
+
+  <path class="cn" d="M520.0,194.0 A56,56 0 0 1 539.7,197.6"/>
+  <text class="lb" x="474" y="190" fill="#b7791f">alpha i-1</text>
+
+  <path class="dm" d="M520,250 L548,176"/>
+  <path class="dm" d="M513,247 L527,253 M541,173 L555,179"/>
+  <text class="lb" x="494" y="216" fill="#2f855a">d i</text>
+
+  <line class="gd" x1="548" y1="176" x2="658" y2="176"/>
+  <path class="xa" d="M548,176 L668,206"/>
+  <text class="lb" x="688" y="216" fill="#c0392b">x i</text>
+  <path class="dm" d="M596.0,176.0 A48,48 0 0 1 594.6,187.6"/>
+  <text class="lb" x="614" y="166" fill="#2f855a">theta i</text>
+
+  <circle cx="180" cy="250" r="5" fill="#1f2933"/>
+  <text class="ts" x="152" y="270">O i-1</text>
+  <circle cx="548" cy="176" r="5" fill="#1f2933"/>
+  <text class="ts" x="524" y="182">O i</text>
+
+  <line x1="40" y1="352" x2="760" y2="352" stroke="#e4e7eb" stroke-width="1"/>
+  <text class="lg" x="40" y="376" fill="#b7791f">a i-1</text>
+  <text class="lg" x="128" y="376">沿 x i-1 由 z i-1 量到 z i 的距离（连杆长度，由几何固定）</text>
+  <text class="lg" x="40" y="398" fill="#b7791f">alpha i-1</text>
+  <text class="lg" x="128" y="398">绕 x i-1 由 z i-1 转到 z i 的角度（连杆扭角，由几何固定）</text>
+  <text class="lg" x="40" y="420" fill="#2f855a">d i</text>
+  <text class="lg" x="128" y="420">沿 z i 由 x i-1 量到 x i 的距离（连杆偏距，移动关节的变量）</text>
+  <text class="lg" x="40" y="442" fill="#2f855a">theta i</text>
+  <text class="lg" x="128" y="442">绕 z i 由 x i-1 转到 x i 的角度（关节角，转动关节的变量）</text>
+  <text class="tl" x="40" y="464">只需四个参数是因为放置规则强制 x i-1 与 z i-1 垂直且相交，从六个自由度中消去了两个</text>
+</svg>

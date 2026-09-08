@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 528" role="img" aria-label="ISO 13849-1 风险图">
+  <style>
+    .bg{fill:#ffffff}
+    .ln{stroke:#7b8794;stroke-width:1.6;fill:none}
+    .nd{fill:#ffffff;stroke:#52606d;stroke-width:1.6}
+    .t {font-family:'Fira Sans','Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;font-size:12px;fill:#1f2933;text-anchor:middle}
+    .hh{font-family:'Fira Sans','Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;font-size:13.5px;fill:#1f2933;text-anchor:middle}
+    .ts{font-family:'Fira Sans','Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;font-size:10.5px;fill:#52606d;text-anchor:middle}
+    .lb{font-family:'Fira Mono',monospace;font-size:11px;fill:#2f855a;text-anchor:middle}
+    .pl{font-family:'Fira Sans',sans-serif;font-size:15px;fill:#ffffff;text-anchor:middle;font-weight:600}
+    .tl{font-family:'Fira Sans','Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;font-size:11px;fill:#52606d;text-anchor:start}
+  </style>
+  <rect class="bg" x="0" y="0" width="880" height="528"/>
+  <text class="hh" x="440" y="30">ISO 13849-1 风险图：由伤害严重度 S、暴露频率 F、避免可能性 P 确定所需性能等级 PLr</text>
+  <text class="ts" x="120" y="58">起点</text>
+  <text class="ts" x="300" y="58">S 严重度</text>
+  <text class="ts" x="470" y="58">F 暴露频率</text>
+  <text class="ts" x="650" y="58">P 避免可能性</text>
+  <text class="ts" x="800" y="58">所需 PLr</text>
+  <circle class="nd" cx="120" cy="253.0" r="9"/>
+  <path class="ln" d="M129,253.0 C210.0,253.0 210.0,161.0 290,161.0"/>
+  <text class="lb" x="210.0" y="201.0">S1</text>
+  <circle class="nd" cx="300" cy="161.0" r="9"/>
+  <path class="ln" d="M129,253.0 C210.0,253.0 210.0,345.0 290,345.0"/>
+  <text class="lb" x="210.0" y="293.0">S2</text>
+  <circle class="nd" cx="300" cy="345.0" r="9"/>
+  <path class="ln" d="M309,161.0 C385.0,161.0 385.0,115.0 460,115.0"/>
+  <text class="lb" x="385.0" y="132.0">F1</text>
+  <circle class="nd" cx="470" cy="115.0" r="9"/>
+  <path class="ln" d="M309,161.0 C385.0,161.0 385.0,207.0 460,207.0"/>
+  <text class="lb" x="385.0" y="178.0">F2</text>
+  <circle class="nd" cx="470" cy="207.0" r="9"/>
+  <path class="ln" d="M309,345.0 C385.0,345.0 385.0,299.0 460,299.0"/>
+  <text class="lb" x="385.0" y="316.0">F1</text>
+  <circle class="nd" cx="470" cy="299.0" r="9"/>
+  <path class="ln" d="M309,345.0 C385.0,345.0 385.0,391.0 460,391.0"/>
+  <text class="lb" x="385.0" y="362.0">F2</text>
+  <circle class="nd" cx="470" cy="391.0" r="9"/>
+  <path class="ln" d="M479,115.0 C560.0,115.0 560.0,92 650,92"/>
+  <text class="lb" x="560.0" y="98.5">P1</text>
+  <rect x="710" y="76" width="42" height="32" rx="5" fill="#9aa5b1"/>
+  <text class="pl" x="731" y="98">a</text>
+  <path class="ln" d="M650,92 L708,92"/>
+  <text class="ts" x="830" y="96" text-anchor="start">S1 + F1 + P1</text>
+  <path class="ln" d="M479,115.0 C560.0,115.0 560.0,138 650,138"/>
+  <text class="lb" x="560.0" y="121.5">P2</text>
+  <rect x="710" y="122" width="42" height="32" rx="5" fill="#7bb0a0"/>
+  <text class="pl" x="731" y="144">b</text>
+  <path class="ln" d="M650,138 L708,138"/>
+  <text class="ts" x="830" y="142" text-anchor="start">S1 + F1 + P2</text>
+  <path class="ln" d="M479,207.0 C560.0,207.0 560.0,184 650,184"/>
+  <text class="lb" x="560.0" y="190.5">P1</text>
+  <rect x="710" y="168" width="42" height="32" rx="5" fill="#7bb0a0"/>
+  <text class="pl" x="731" y="190">b</text>
+  <path class="ln" d="M650,184 L708,184"/>
+  <text class="ts" x="830" y="188" text-anchor="start">S1 + F2 + P1</text>
+  <path class="ln" d="M479,207.0 C560.0,207.0 560.0,230 650,230"/>
+  <text class="lb" x="560.0" y="213.5">P2</text>
+  <rect x="710" y="214" width="42" height="32" rx="5" fill="#b7791f"/>
+  <text class="pl" x="731" y="236">c</text>
+  <path class="ln" d="M650,230 L708,230"/>
+  <text class="ts" x="830" y="234" text-anchor="start">S1 + F2 + P2</text>
+  <path class="ln" d="M479,299.0 C560.0,299.0 560.0,276 650,276"/>
+  <text class="lb" x="560.0" y="282.5">P1</text>
+  <rect x="710" y="260" width="42" height="32" rx="5" fill="#b7791f"/>
+  <text class="pl" x="731" y="282">c</text>
+  <path class="ln" d="M650,276 L708,276"/>
+  <text class="ts" x="830" y="280" text-anchor="start">S2 + F1 + P1</text>
+  <path class="ln" d="M479,299.0 C560.0,299.0 560.0,322 650,322"/>
+  <text class="lb" x="560.0" y="305.5">P2</text>
+  <rect x="710" y="306" width="42" height="32" rx="5" fill="#d9744a"/>
+  <text class="pl" x="731" y="328">d</text>
+  <path class="ln" d="M650,322 L708,322"/>
+  <text class="ts" x="830" y="326" text-anchor="start">S2 + F1 + P2</text>
+  <path class="ln" d="M479,391.0 C560.0,391.0 560.0,368 650,368"/>
+  <text class="lb" x="560.0" y="374.5">P1</text>
+  <rect x="710" y="352" width="42" height="32" rx="5" fill="#d9744a"/>
+  <text class="pl" x="731" y="374">d</text>
+  <path class="ln" d="M650,368 L708,368"/>
+  <text class="ts" x="830" y="372" text-anchor="start">S2 + F2 + P1</text>
+  <path class="ln" d="M479,391.0 C560.0,391.0 560.0,414 650,414"/>
+  <text class="lb" x="560.0" y="397.5">P2</text>
+  <rect x="710" y="398" width="42" height="32" rx="5" fill="#c0392b"/>
+  <text class="pl" x="731" y="420">e</text>
+  <path class="ln" d="M650,414 L708,414"/>
+  <text class="ts" x="830" y="418" text-anchor="start">S2 + F2 + P2</text>
+  <text class="tl" x="40" y="470">S1 轻伤（可恢复）  S2 重伤或死亡（不可恢复）</text>
+  <text class="tl" x="40" y="490">F1 暴露少见或短暂  F2 暴露频繁或持续</text>
+  <text class="tl" x="40" y="510">P1 在特定条件下有可能避免伤害  P2 几乎不可能避免</text>
+  <text class="ts" x="630" y="490">降低任一参数即可降低 PLr：把速度降下来使人能够躲避</text>
+  <text class="ts" x="630" y="510">（P2 变 P1），要求就从 PLe 降到 PLd，常比堆冗余硬件更经济</text>
+</svg>

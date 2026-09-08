@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 440" role="img" aria-label="磁场定向控制的完整信号流">
+  <style>
+    .bg{fill:#ffffff}
+    .b {fill:#eef4fb;stroke:#2b6cb0;stroke-width:1.6;rx:5}
+    .pi{fill:#eefaf3;stroke:#2f855a;stroke-width:1.8;rx:5}
+    .pw{fill:#fdf0ee;stroke:#c0392b;stroke-width:1.7;rx:5}
+    .sn{fill:#fdf6e7;stroke:#b7791f;stroke-width:1.6;rx:5}
+    .mt{fill:#f5f7fa;stroke:#52606d;stroke-width:1.8;rx:5}
+    .ar{fill:none;stroke:#52606d;stroke-width:1.7;marker-end:url(#f)}
+    .fb{fill:none;stroke:#b7791f;stroke-width:1.5;marker-end:url(#fb)}
+    .t {font-family:'Fira Sans','Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;font-size:12px;fill:#1f2933;text-anchor:middle}
+    .ts{font-family:'Fira Sans','Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;font-size:10.5px;fill:#52606d;text-anchor:middle}
+    .mo{font-family:'Fira Mono',monospace;font-size:10.5px;fill:#52606d;text-anchor:middle}
+    .hh{font-family:'Fira Sans','Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;font-size:13.5px;fill:#1f2933;text-anchor:middle}
+  </style>
+  <defs>
+    <marker id="f" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#52606d"/></marker>
+    <marker id="fb" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#b7791f"/></marker>
+  </defs>
+  <rect class="bg" x="0" y="0" width="880" height="440"/>
+  <text class="hh" x="440" y="28">磁场定向控制的信号流：正向为控制，反向为反馈，两次坐标变换互为逆</text>
+
+  <!-- 正向通路 -->
+  <rect class="b"  x="24"  y="70" width="92" height="52"/>
+  <text class="t"  x="70"  y="92">力矩指令</text>
+  <text class="mo" x="70"  y="110">i_q*</text>
+
+  <circle cx="152" cy="96" r="14" fill="#ffffff" stroke="#2f855a" stroke-width="1.6"/>
+  <text class="t" x="152" y="101" fill="#2f855a">-</text>
+
+  <rect class="pi" x="192" y="70" width="104" height="52"/>
+  <text class="t"  x="244" y="92">PI 电流环</text>
+  <text class="ts" x="244" y="110">d 轴与 q 轴各一路</text>
+
+  <rect class="b"  x="336" y="70" width="104" height="52"/>
+  <text class="t"  x="388" y="92">逆 Park 变换</text>
+  <text class="mo" x="388" y="110">u_d,u_q -&gt; u_a,u_b</text>
+
+  <rect class="pw" x="480" y="70" width="104" height="52"/>
+  <text class="t"  x="532" y="92">SVPWM</text>
+  <text class="ts" x="532" y="110">合成电压矢量</text>
+
+  <rect class="pw" x="624" y="70" width="104" height="52"/>
+  <text class="t"  x="676" y="92">三相逆变桥</text>
+  <text class="ts" x="676" y="110">六个开关管</text>
+
+  <rect class="mt" x="768" y="70" width="88" height="52"/>
+  <text class="t"  x="812" y="101">电机</text>
+
+  <path class="ar" d="M116,96 L136,96"/>
+  <path class="ar" d="M166,96 L188,96"/>
+  <path class="ar" d="M296,96 L332,96"/>
+  <path class="ar" d="M440,96 L476,96"/>
+  <path class="ar" d="M584,96 L620,96"/>
+  <path class="ar" d="M728,96 L764,96"/>
+
+  <!-- 反馈通路 -->
+  <rect class="sn" x="624" y="196" width="104" height="52"/>
+  <text class="t"  x="676" y="218">电流采样</text>
+  <text class="mo" x="676" y="236">i_a, i_b, i_c</text>
+
+  <rect class="b"  x="480" y="196" width="104" height="52"/>
+  <text class="t"  x="532" y="218">Clarke 变换</text>
+  <text class="mo" x="532" y="236">-&gt; i_alpha, i_beta</text>
+
+  <rect class="b"  x="336" y="196" width="104" height="52"/>
+  <text class="t"  x="388" y="218">Park 变换</text>
+  <text class="mo" x="388" y="236">-&gt; i_d, i_q</text>
+
+  <path class="fb" d="M700,122 L700,192"/>
+  <path class="fb" d="M620,222 L588,222"/>
+  <path class="fb" d="M476,222 L444,222"/>
+  <path class="fb" d="M336,222 L152,222 L152,110"/>
+  <text class="ts" x="244" y="238" fill="#b7791f">实测电流反馈到 PI 输入端做差</text>
+
+  <!-- 编码器与电角度 -->
+  <rect class="sn" x="768" y="196" width="88" height="52"/>
+  <text class="t"  x="812" y="218">编码器</text>
+  <text class="ts" x="812" y="236">转子位置</text>
+
+  <rect class="sn" x="768" y="288" width="88" height="46"/>
+  <text class="t"  x="812" y="306">电角度</text>
+  <text class="mo" x="812" y="325">theta_e</text>
+
+  <path class="fb" d="M812,122 L812,192"/>
+  <path class="fb" d="M812,248 L812,284"/>
+  <path class="fb" d="M768,311 L388,311 L388,252"/>
+  <path class="fb" d="M460,311 L460,140 L392,140 L392,126"/>
+  <text class="ts" x="470" y="330" fill="#b7791f">同一个电角度（= 机械角 x 极对数）同时供 Park 与逆 Park 使用</text>
+
+  <text class="ts" x="440" y="372">i_d 参考值恒为 0（表贴式永磁电机），全部电流用于产生转矩；需要高转速时才给 i_d 负值做弱磁</text>
+  <text class="ts" x="440" y="392">电流采样必须与 PWM 中心对齐，，只有下桥臂导通时电流才流经采样电阻，时序错了读到的值毫无意义</text>
+  <text class="ts" x="440" y="412">电角度偏差 delta 会使有效转矩降为原来的 cos(delta)：偏 30 度损失 13%，偏 90 度电机只发热不转动</text>
+</svg>

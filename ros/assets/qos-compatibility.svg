@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 392" role="img" aria-label="ROS 2 QoS 兼容性矩阵">
+  <style>
+    .bg{fill:#ffffff}
+    .hd{fill:#f5f7fa;stroke:#cbd2d9;stroke-width:1}
+    .ok{fill:#e6f4ec;stroke:#2f855a;stroke-width:1.4}
+    .no{fill:#fbeae7;stroke:#c0392b;stroke-width:1.4}
+    .t {font-family:'Fira Sans','Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;font-size:12.5px;fill:#1f2933;text-anchor:middle}
+    .th{font-family:'Fira Mono',monospace;font-size:10.5px;fill:#1f2933;text-anchor:middle}
+    .hh{font-family:'Fira Sans','Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;font-size:14.5px;fill:#1f2933;text-anchor:middle}
+    .ts{font-family:'Fira Sans','Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;font-size:11.5px;fill:#52606d;text-anchor:middle}
+    .ax{font-family:'Fira Sans','Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;font-size:11.5px;fill:#7b8794;text-anchor:middle}
+  </style>
+  <rect class="bg" x="0" y="0" width="860" height="392"/>
+  <text class="hh" x="430" y="28">ROS 2 QoS 兼容性：订阅者的要求不能高于发布者的承诺</text>
+  <text class="hh" x="278" y="70">可靠性 Reliability</text>
+  <text class="ax" x="278" y="92">订阅者 Subscriber</text>
+  <rect class="hd" x="160" y="108" width="118" height="38"/>
+  <text class="th" x="219.0" y="132">RELIABLE</text>
+  <rect class="hd" x="278" y="108" width="118" height="38"/>
+  <text class="th" x="337.0" y="132">BEST_EFFORT</text>
+  <rect class="hd" x="42" y="146" width="118" height="52"/>
+  <text class="th" x="101.0" y="176.0">RELIABLE</text>
+  <rect class="ok" x="160" y="146" width="118" height="52"/>
+  <text class="t" x="219.0" y="177.0" fill="#2f855a">兼容</text>
+  <rect class="ok" x="278" y="146" width="118" height="52"/>
+  <text class="t" x="337.0" y="177.0" fill="#2f855a">兼容</text>
+  <rect class="hd" x="42" y="198" width="118" height="52"/>
+  <text class="th" x="101.0" y="228.0">BEST_EFFORT</text>
+  <rect class="no" x="160" y="198" width="118" height="52"/>
+  <text class="t" x="219.0" y="229.0" fill="#c0392b">不兼容</text>
+  <rect class="ok" x="278" y="198" width="118" height="52"/>
+  <text class="t" x="337.0" y="229.0" fill="#2f855a">兼容</text>
+  <text class="ax" x="26" y="198" transform="rotate(-90 26,198)">发布者 Publisher</text>
+  <text class="ts" x="278" y="276">发布者承诺的可靠性不得低于订阅者的要求</text>
+  <text class="hh" x="666" y="70">持久性 Durability</text>
+  <text class="ax" x="666" y="92">订阅者 Subscriber</text>
+  <rect class="hd" x="548" y="108" width="118" height="38"/>
+  <text class="th" x="607.0" y="132">TRANSIENT_LOCAL</text>
+  <rect class="hd" x="666" y="108" width="118" height="38"/>
+  <text class="th" x="725.0" y="132">VOLATILE</text>
+  <rect class="hd" x="430" y="146" width="118" height="52"/>
+  <text class="th" x="489.0" y="176.0">TRANSIENT_LOCAL</text>
+  <rect class="ok" x="548" y="146" width="118" height="52"/>
+  <text class="t" x="607.0" y="177.0" fill="#2f855a">兼容</text>
+  <rect class="ok" x="666" y="146" width="118" height="52"/>
+  <text class="t" x="725.0" y="177.0" fill="#2f855a">兼容</text>
+  <rect class="hd" x="430" y="198" width="118" height="52"/>
+  <text class="th" x="489.0" y="228.0">VOLATILE</text>
+  <rect class="no" x="548" y="198" width="118" height="52"/>
+  <text class="t" x="607.0" y="229.0" fill="#c0392b">不兼容</text>
+  <rect class="ok" x="666" y="198" width="118" height="52"/>
+  <text class="t" x="725.0" y="229.0" fill="#2f855a">兼容</text>
+  <text class="ax" x="414" y="198" transform="rotate(-90 414,198)">发布者 Publisher</text>
+  <text class="ts" x="666" y="276">TRANSIENT_LOCAL 为迟到的订阅者保留历史消息</text>
+  <text class="ts" x="430" y="310">不兼容时不会报错，只是话题「连不上」：ros2 topic echo 无输出，而 ros2 topic list 一切正常</text>
+  <text class="ts" x="430" y="334">排查命令：ros2 topic info /topic_name --verbose，可同时列出两端实际生效的 QoS</text>
+  <text class="ts" x="430" y="358">传感器数据惯用 BEST_EFFORT + VOLATILE；参数、地图、TF 静态变换惯用 RELIABLE + TRANSIENT_LOCAL</text>
+</svg>

@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 520" role="img" aria-label="UART、I2C、SPI、CAN 四种总线的拓扑结构对比">
+  <style>
+    .bg{fill:#ffffff}
+    .fr{fill:none;stroke:#e4e7eb;stroke-width:1.2}
+    .m {fill:#eef4fb;stroke:#2b6cb0;stroke-width:1.6;rx:5}
+    .s {fill:#f5f7fa;stroke:#52606d;stroke-width:1.4;rx:5}
+    .w {stroke:#52606d;stroke-width:1.8;fill:none}
+    .w2{stroke:#b7791f;stroke-width:1.8;fill:none}
+    .wc{stroke:#2f855a;stroke-width:1.8;fill:none}
+    .r {fill:none;stroke:#c0392b;stroke-width:2}
+    .t {font-family:'Fira Sans','Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;font-size:12px;fill:#1f2933;text-anchor:middle}
+    .hh{font-family:'Fira Sans','Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;font-size:14px;fill:#1f2933;text-anchor:start}
+    .ts{font-family:'Fira Sans','Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;font-size:10.5px;fill:#52606d;text-anchor:middle}
+    .tl{font-family:'Fira Sans','Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;font-size:10.5px;fill:#7b8794;text-anchor:start}
+  </style>
+  <rect class="bg" x="0" y="0" width="860" height="520"/>
+
+  <!-- ===== UART ===== -->
+  <rect class="fr" x="20" y="44" width="396" height="188" rx="8"/>
+  <text class="hh" x="34" y="36">UART：点对点，两根信号线</text>
+  <rect class="m" x="60"  y="96" width="104" height="46"/><text class="t" x="112" y="124">设备 A</text>
+  <rect class="m" x="272" y="96" width="104" height="46"/><text class="t" x="324" y="124">设备 B</text>
+  <path class="w"  d="M164,110 L272,110"/>
+  <path class="w2" d="M164,130 L272,130"/>
+  <text class="ts" x="218" y="104">TX 到 RX</text>
+  <text class="ts" x="218" y="146">RX 自 TX</text>
+  <text class="tl" x="40" y="180">只能一对一；双方须约定相同波特率，无共享时钟</text>
+  <text class="tl" x="40" y="200">要接多个设备需靠 RS-485 差分多点或多路复用</text>
+  <text class="tl" x="40" y="220">典型：GPS 模块、蓝牙模块、舵机总线、调试串口</text>
+
+  <!-- ===== I2C ===== -->
+  <rect class="fr" x="444" y="44" width="396" height="188" rx="8"/>
+  <text class="hh" x="458" y="36">I2C：两线共享总线，靠地址寻址</text>
+  <rect class="m" x="466" y="88" width="88" height="42"/><text class="t" x="510" y="114">主机</text>
+  <rect class="s" x="596" y="160" width="68" height="38"/><text class="t" x="630" y="184">从机 0x68</text>
+  <rect class="s" x="676" y="160" width="68" height="38"/><text class="t" x="710" y="184">从机 0x76</text>
+  <rect class="s" x="756" y="160" width="68" height="38"/><text class="t" x="790" y="184">从机 0x3C</text>
+  <path class="w"  d="M554,102 L836,102"/>
+  <path class="w2" d="M554,120 L836,120"/>
+  <text class="ts" x="700" y="96">SCL</text>
+  <text class="ts" x="700" y="136">SDA</text>
+  <path class="w"  d="M630,160 L630,102"/>
+  <path class="w"  d="M710,160 L710,102"/>
+  <path class="w"  d="M790,160 L790,102"/>
+  <path class="w2" d="M646,160 L646,120"/>
+  <path class="w2" d="M726,160 L726,120"/>
+  <path class="w2" d="M806,160 L806,120"/>
+  <path class="r" d="M566,102 L566,72 M584,120 L584,72 M560,72 L590,72"/>
+  <text class="ts" x="576" y="64" fill="#c0392b">上拉电阻</text>
+  <text class="tl" x="458" y="220">开漏输出，必须外接上拉；地址冲突是最常见的故障</text>
+
+  <!-- ===== SPI ===== -->
+  <rect class="fr" x="20" y="288" width="396" height="188" rx="8"/>
+  <text class="hh" x="34" y="280">SPI：三线共享 + 每设备独立片选</text>
+  <rect class="m" x="42" y="332" width="88" height="42"/><text class="t" x="86" y="358">主机</text>
+  <rect class="s" x="176" y="404" width="68" height="38"/><text class="t" x="210" y="428">从机 1</text>
+  <rect class="s" x="256" y="404" width="68" height="38"/><text class="t" x="290" y="428">从机 2</text>
+  <rect class="s" x="336" y="404" width="68" height="38"/><text class="t" x="370" y="428">从机 3</text>
+  <path class="w" d="M130,346 L404,346"/>
+  <text class="ts" x="280" y="340">SCLK / MOSI / MISO（三线共享）</text>
+  <path class="w" d="M210,404 L210,346"/>
+  <path class="w" d="M290,404 L290,346"/>
+  <path class="w" d="M370,404 L370,346"/>
+  <path class="wc" d="M130,362 L156,362 L156,388 L226,388 L226,404"/>
+  <path class="wc" d="M130,368 L162,368 L162,394 L306,394 L306,404"/>
+  <path class="wc" d="M130,374 L168,374 L168,400 L386,400 L386,404"/>
+  <text class="ts" x="118" y="392" fill="#2f855a">CS1..3</text>
+  <text class="tl" x="34" y="462">速度可达数十 MHz，但每增加一个从机就多占一个片选引脚</text>
+
+  <!-- ===== CAN ===== -->
+  <rect class="fr" x="444" y="288" width="396" height="188" rx="8"/>
+  <text class="hh" x="458" y="280">CAN：差分双绞线，两端各一个终端电阻</text>
+  <rect class="s" x="520" y="308" width="76" height="38"/><text class="t" x="558" y="332">节点 1</text>
+  <rect class="s" x="620" y="308" width="76" height="38"/><text class="t" x="658" y="332">节点 2</text>
+  <rect class="s" x="720" y="308" width="76" height="38"/><text class="t" x="758" y="332">节点 3</text>
+  <path class="w"  d="M486,374 L812,374"/>
+  <path class="w2" d="M486,402 L812,402"/>
+  <text class="ts" x="520" y="366">CAN_H</text>
+  <text class="ts" x="520" y="420">CAN_L</text>
+  <path class="w"  d="M552,346 L552,374"/>
+  <path class="w2" d="M566,346 L566,402"/>
+  <path class="w"  d="M652,346 L652,374"/>
+  <path class="w2" d="M666,346 L666,402"/>
+  <path class="w"  d="M752,346 L752,374"/>
+  <path class="w2" d="M766,346 L766,402"/>
+  <path class="r" d="M486,374 L474,374 L474,402 L486,402"/>
+  <path class="r" d="M812,374 L824,374 L824,402 L812,402"/>
+  <text class="ts" x="474" y="358" fill="#c0392b">120 Ω</text>
+  <text class="ts" x="824" y="358" fill="#c0392b">120 Ω</text>
+  <text class="tl" x="458" y="450">差分传输抗干扰强，仲裁机制保证高优先级报文优先发送</text>
+  <text class="tl" x="458" y="468">漏装或多装终端电阻是现场最常见的 CAN 故障原因</text>
+
+  <text class="ts" x="430" y="502">同色实线为同一根信号线；红色元件为必须外加的无源器件，缺失时总线无法正常工作</text>
+</svg>
