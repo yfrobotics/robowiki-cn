@@ -122,6 +122,23 @@ $$
 - **GPU 加速**：CUDA、TensorRT、OpenCL 等并行计算技术
 
 
+## 本章内容导览
+
+| 页面 | 主要内容 |
+|------|---------|
+| [目标检测](object-detection.md) | 检测任务分类、YOLO 系列演进、评测指标与选型指南 |
+| [目标检测实践](object-detection-practical.md) | YOLOv8 代码、DETR、Jetson 与 ROS 2 部署、标注工具 |
+| [三维与开放词汇检测](object-detection-3d-advanced.md) | 三维目标检测、开放词汇检测、工业缺陷与异常检测 |
+| [图像分割](segmentation.md) | 语义/实例/全景分割、SAM、评测指标与 ROS 集成 |
+| [目标跟踪](tracking.md) | 单目标与多目标跟踪、SORT/ByteTrack、重识别与轨迹管理 |
+| [位姿估计](pose-estimation.md) | 人体位姿、物体 6D 位姿、PnP 与标定 |
+| [三维视觉](3d-vision.md) | 相机模型、多视图几何、点云处理的总览 |
+| [立体视觉与深度](3d-vision-stereo-depth.md) | 双目匹配、结构光、ToF 与深度估计网络 |
+| [点云配准](3d-vision-pointcloud-registration.md) | ICP 及其变种、特征匹配、全局配准 |
+| [三维重建与辐射场](3d-vision-reconstruction-radiance.md) | SfM、MVS、NeRF 与 3D Gaussian Splatting |
+| [三维视觉参考资料](3d-vision-full-reference.md) | 教材、论文、数据集与工具索引 |
+
+
 ## 参考资料
 
 1. Zhang, Z. (2000). A flexible new technique for camera calibration. *IEEE Transactions on Pattern Analysis and Machine Intelligence*, 22(11), 1330-1334.

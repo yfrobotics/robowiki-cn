@@ -140,6 +140,18 @@ $$
 | 多机器人系统 (Multi-robot) | 任务分配与协调 | 无冲突路径 | 编队控制 |
 
 
+## 本章内容导览
+
+| 页面 | 主要内容 |
+|------|---------|
+| [决策规划](decisionmaking.md) | 有限状态机、决策树、MDP/POMDP 与效用决策 |
+| [路径规划](pathplanning.md) | Dijkstra、A*、D* Lite、RRT 与 PRM 等搜索与采样方法 |
+| [运动规划](motionplanning.md) | 构型空间、轨迹优化、Kinodynamic 规划与时间参数化 |
+| [行为树](behavior-trees.md) | 节点类型、与状态机的对比、BehaviorTree.CPP 与 Nav2 实践 |
+| [多机器人任务分配](multi-robot-task-allocation.md) | 集中式与分布式分配、市场机制、拍卖算法 |
+| [重规划与安全](replanning-safety.md) | 动态环境下的重规划触发、安全走廊与故障恢复 |
+
+
 ## 参考文献
 
 1. LaValle, S. M. (2006). *Planning Algorithms*. Cambridge University Press. [在线版本](http://planning.cs.uiuc.edu/)

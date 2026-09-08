@@ -95,6 +95,22 @@ $$
 - [同时定位和建图 (SLAM)](slam.md)
 
 
+## 本章内容导览
+
+| 页面 | 主要内容 |
+|------|---------|
+| [机器人常用传感器](sensors.md) | 编码器、IMU、激光雷达、力传感器等的原理与选型 |
+| [深度相机](depth-camera.md) | 结构光、双目、ToF 三类原理对比、主流产品与标定 |
+| [IMU 标定](imu-calibration.md) | 零偏与尺度标定、Allan 方差分析、温度补偿 |
+| [传感器融合](sensor-fusion.md) | 卡尔曼滤波族、因子图优化、多传感器时空对齐 |
+| [融合架构](sensor-fusion-architecture.md) | 松耦合与紧耦合、集中式与分布式融合结构 |
+| [融合工程实践](sensor-fusion-engineering.md) | 时间同步、外参标定、异常检测与故障处理 |
+| [融合参考资料](sensor-fusion-full-reference.md) | 教材、论文、开源库与数据集索引 |
+| [SLAM](slam.md) | 前端与后端、回环检测、建图与定位的基本框架 |
+| [SLAM 系统对比](slam-systems-comparison.md) | 主流激光与视觉 SLAM 方案的特性与适用场景 |
+| [SLAM 工程手册](slam-engineering-playbook.md) | 参数调优、退化场景处理、精度评估与部署经验 |
+
+
 ## 参考资料
 
 1. Siciliano, B., et al. (2010). *Robotics: Modelling, Planning and Control*. Springer.

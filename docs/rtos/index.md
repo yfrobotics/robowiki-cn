@@ -161,6 +161,18 @@ RMS是一种静态优先级分配策略，任务的优先级与其周期成反�
 其中除了FreeRTOS, RTEMS和RTLinux是免费的之外，其余RTOS都是需要商业授权的。uCos II和FreeRTOS是平时接触比较多的RTOS，相关资料比较多。而VxWorks是安全性公认最佳的，用于航空航天、轨道交通和卫星的应用。如果系统中需要使用复杂的文件、数据库、网络等功能，那么以Linux为基础的RTLinux是比较好的选择；但是如果系统对实时性和确定性的要求非常高，那么可以使用较为简单的RTOS（如 uCosII），再根据需要开发通信协议或者软件包。总体上来说，操作系统的复杂性是与应用软件的复杂性一致的。同时，功能上更复杂的RTOS对硬件系统资源的需求也会更高。
 
 
+## 本章内容导览
+
+| 页面 | 主要内容 |
+|------|---------|
+| [FreeRTOS](freertos.md) | 任务管理、队列与信号量、内存模型、移植与调试 |
+| [uC/OS](ucos.md) | 内核结构、任务调度、事件管理与在教学中的应用 |
+| [VxWorks](vxworks.md) | 实时内核、WindRiver 工具链、在航空航天领域的应用 |
+| [QNX](qnx.md) | 微内核架构、Neutrino 实时特性、在汽车领域的应用 |
+| [可调度性分析](scheduling-analysis.md) | RM/EDF 调度、响应时间分析、优先级反转与资源共享协议 |
+| [延迟调试](latency-debugging.md) | 中断与调度延迟测量、抖动分析、实时性问题定位方法 |
+
+
 ## 参考资料
 1. 戴晓天, [RTOS操作系统杂谈](https://www.yfworld.com/?p=2911)，云飞机器人实验室
 2. C. L. Liu and J. W. Layland, "Scheduling Algorithms for Multiprogramming in a Hard-Real-Time Environment," *Journal of the ACM*, vol. 20, no. 1, pp. 46-61, 1973.

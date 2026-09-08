@@ -30,6 +30,14 @@ nav:
       - how-to-contribute.md
       - standard.md
       - contributors.md
+    - 机构与运动学:
+      - kinematics/index.md
+      - kinematics/spatial-transformation.md
+      - kinematics/forward-kinematics.md
+      - kinematics/inverse-kinematics.md
+      - kinematics/jacobian.md
+      - kinematics/dynamics.md
+      - kinematics/trajectory-generation.md
     - 控制: 
       - control/index.md
       - 建模:
@@ -81,6 +89,7 @@ nav:
       - planning/multi-robot-task-allocation.md
       - planning/replanning-safety.md
     - 学习:
+      - learning/index.md
       - learning/ml.md
       - 强化学习:
         - learning/rl.md
