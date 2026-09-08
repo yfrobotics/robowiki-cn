@@ -88,6 +88,10 @@ nav:
       - planning/behavior-trees.md
       - planning/multi-robot-task-allocation.md
       - planning/replanning-safety.md
+      - 导航:
+        - planning/navigation.md
+        - planning/navigation-costmap.md
+        - planning/navigation-local-planners.md
     - 操作:
       - manipulation/index.md
       - manipulation/grasping.md

@@ -136,6 +136,9 @@ $$
 | [行为树](behavior-trees.md) | 节点类型、与状态机的对比、BehaviorTree.CPP 与 Nav2 实践 |
 | [多机器人任务分配](multi-robot-task-allocation.md) | 集中式与分布式分配、市场机制、拍卖算法 |
 | [重规划与安全](replanning-safety.md) | 动态环境下的重规划触发、安全走廊与故障恢复 |
+| [移动机器人导航栈](navigation.md) | 导航栈组成与数据流、AMCL 定位、全局规划选型、恢复行为、系统性排障 |
+| [代价地图](navigation-costmap.md) | 代价值语义、分层结构、膨胀模型、足迹配置与参数整定 |
+| [局部规划器](navigation-local-planners.md) | DWB/TEB/MPPI/RPP 对比、代价函数权重整定、常见故障 |
 
 
 ## 参考文献
