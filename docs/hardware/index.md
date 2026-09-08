@@ -94,6 +94,8 @@
 | [通信总线](communication-buses.md) | UART/SPI/I2C/CAN/EtherCAT 的原理、选型与调试 |
 | [执行器与传动](actuators.md) | 电机类型对比、四类减速器与背驱性、串联弹性与准直驱、选型计算 |
 | [电机驱动与控制](motor-control.md) | 功率级与电流采样、六步换相与 FOC、三环整定、换相对齐与保护 |
+| [功能安全](functional-safety.md) | 风险评估与 PLr 确定、安全回路结构类别、PL 计算、STO/SS1/SLS 等安全功能 |
+| [协作机器人安全](safety-collaborative-robot.md) | 四种协作模式、人体力与压强限值、实测验证、速度与间距计算 |
 | [Arduino](../arduino/index.md) | 开发板选型、编程模型与传感器接口 |
 | [树莓派](../raspberrypi/index.md) | 系统配置、GPIO 编程与机器人应用 |
 | [Jetson](../jetson/index.md) | 型号对比、JetPack 环境、TensorRT 推理与功耗管理 |

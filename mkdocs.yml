@@ -173,6 +173,9 @@ nav:
       - hardware/communication-buses.md
       - hardware/actuators.md
       - hardware/motor-control.md
+      - 安全:
+        - hardware/functional-safety.md
+        - hardware/safety-collaborative-robot.md
       - arduino/index.md
       - raspberrypi/index.md
       - jetson/index.md
