@@ -86,6 +86,17 @@ Linux通过包管理器安装、更新和管理软件。在机器人开发中常
 - **CAN总线**：Linux通过SocketCAN支持CAN (Controller Area Network) 总线通信，这是工业机器人和自动驾驶中常用的通信协议
 - **EtherCAT**：通过IgH EtherCAT Master等开源实现，Linux支持EtherCAT工业以太网协议，广泛用于高性能运动控制
 
+## 本章内容导览
+
+| 页面 | 主要内容 |
+|------|---------|
+| [常用命令](commands.md) | 文件、进程、网络、权限等日常运维命令速查 |
+| [Shell 脚本](shell-scripting.md) | 语法基础、变量与流程控制、函数与调试技巧 |
+| [自动化模式](shell-scripting-automation-patterns.md) | 机器人系统的启动、部署、日志与数据采集脚本模式 |
+| [运维工具箱](shell-scripting-ops-toolkit.md) | 监控、备份、远程管理等实用脚本集合 |
+| [Shell 参考资料](shell-scripting-full-reference.md) | 语法速查、常用工具与最佳实践索引 |
+
+
 ## 参考资料
 
 1. [Xenomai](https://en.wikipedia.org/wiki/Xenomai), Wikipedia

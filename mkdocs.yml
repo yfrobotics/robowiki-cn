@@ -30,6 +30,14 @@ nav:
       - how-to-contribute.md
       - standard.md
       - contributors.md
+    - 机构与运动学:
+      - kinematics/index.md
+      - kinematics/spatial-transformation.md
+      - kinematics/forward-kinematics.md
+      - kinematics/inverse-kinematics.md
+      - kinematics/jacobian.md
+      - kinematics/dynamics.md
+      - kinematics/trajectory-generation.md
     - 控制: 
       - control/index.md
       - 建模:
@@ -80,7 +88,17 @@ nav:
       - planning/behavior-trees.md
       - planning/multi-robot-task-allocation.md
       - planning/replanning-safety.md
+      - 导航:
+        - planning/navigation.md
+        - planning/navigation-costmap.md
+        - planning/navigation-local-planners.md
+    - 操作:
+      - manipulation/index.md
+      - manipulation/grasping.md
+      - manipulation/force-control.md
+      - manipulation/moveit.md
     - 学习:
+      - learning/index.md
       - learning/ml.md
       - 强化学习:
         - learning/rl.md
@@ -94,6 +112,10 @@ nav:
         - learning/dl-training-deployment.md
         - learning/dl-robotics-pipelines.md
         - learning/dl-full-reference.md
+      - 具身智能:
+        - learning/embodied-ai.md
+        - learning/embodied-ai-vla.md
+        - learning/embodied-ai-data.md
     - 仿真:
       - simulation/index.md
       - simulation/gazebo.md
@@ -149,6 +171,11 @@ nav:
       - hardware/system-architecture.md
       - hardware/power-thermal.md
       - hardware/communication-buses.md
+      - hardware/actuators.md
+      - hardware/motor-control.md
+      - 安全:
+        - hardware/functional-safety.md
+        - hardware/safety-collaborative-robot.md
       - arduino/index.md
       - raspberrypi/index.md
       - jetson/index.md
@@ -194,6 +221,7 @@ nav:
 # Document: https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/
 theme:
   name: 'material'
+  custom_dir: overrides
   language: 'zh'
   logo: "logo-site.png"
   palette:

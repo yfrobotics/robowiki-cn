@@ -1,0 +1,166 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 584 516" role="img" aria-label="A* 在栅格地图上的搜索过程">
+  <style>
+    .bg{fill:#ffffff}
+    .g {fill:#ffffff;stroke:#dbe1e8;stroke-width:1}
+    .ob{fill:#52606d;stroke:#3e4c59;stroke-width:1}
+    .cl{fill:#dbe7f5;stroke:#b9cde6;stroke-width:1}
+    .op{fill:#fbeecd;stroke:#e5cf9a;stroke-width:1}
+    .st{fill:#2f855a;stroke:#276749;stroke-width:1.5}
+    .gl{fill:#c0392b;stroke:#96281b;stroke-width:1.5}
+    .pa{fill:none;stroke:#c0392b;stroke-width:3;stroke-linejoin:round;stroke-linecap:round}
+    .t {font-family:'Fira Sans','Noto Sans SC','PingFang SC',sans-serif;font-size:14px;fill:#1f2933;text-anchor:middle}
+    .ts{font-family:'Fira Sans','Noto Sans SC','PingFang SC',sans-serif;font-size:11.5px;fill:#52606d;text-anchor:middle}
+    .lg{font-family:'Fira Sans','Noto Sans SC','PingFang SC',sans-serif;font-size:12px;fill:#1f2933;text-anchor:start}
+    .cw{font-family:'Fira Mono',monospace;font-size:10px;fill:#3e4c59;text-anchor:middle}
+    .cb{font-family:'Fira Sans','Noto Sans SC',sans-serif;font-size:13px;fill:#ffffff;text-anchor:middle}
+  </style>
+  <rect class="bg" x="0" y="0" width="584" height="516"/>
+  <text class="t" x="292" y="34">A* 搜索：f(n) = g(n) + h(n)</text>
+  <text class="ts" x="292" y="54">g 为起点到 n 的实际代价，h 为 n 到终点的启发估计（此处用曼哈顿距离）</text>
+  <rect class="g" x="40" y="74" width="42" height="42"/>
+  <rect class="g" x="82" y="74" width="42" height="42"/>
+  <rect class="g" x="124" y="74" width="42" height="42"/>
+  <rect class="op" x="166" y="74" width="42" height="42"/>
+  <text class="cw" x="187" y="94">6+11</text>
+  <text class="cw" x="187" y="107">=17</text>
+  <rect class="op" x="208" y="74" width="42" height="42"/>
+  <text class="cw" x="229" y="94">7+10</text>
+  <text class="cw" x="229" y="107">=17</text>
+  <rect class="g" x="250" y="74" width="42" height="42"/>
+  <rect class="g" x="292" y="74" width="42" height="42"/>
+  <rect class="g" x="334" y="74" width="42" height="42"/>
+  <rect class="g" x="376" y="74" width="42" height="42"/>
+  <rect class="g" x="418" y="74" width="42" height="42"/>
+  <rect class="g" x="460" y="74" width="42" height="42"/>
+  <rect class="g" x="502" y="74" width="42" height="42"/>
+  <rect class="g" x="40" y="116" width="42" height="42"/>
+  <rect class="g" x="82" y="116" width="42" height="42"/>
+  <rect class="op" x="124" y="116" width="42" height="42"/>
+  <text class="cw" x="145" y="136">4+11</text>
+  <text class="cw" x="145" y="149">=15</text>
+  <rect class="cl" x="166" y="116" width="42" height="42"/>
+  <text class="cw" x="187" y="136">5+10</text>
+  <text class="cw" x="187" y="149">=15</text>
+  <rect class="ob" x="208" y="116" width="42" height="42"/>
+  <rect class="g" x="250" y="116" width="42" height="42"/>
+  <rect class="g" x="292" y="116" width="42" height="42"/>
+  <rect class="g" x="334" y="116" width="42" height="42"/>
+  <rect class="g" x="376" y="116" width="42" height="42"/>
+  <rect class="g" x="418" y="116" width="42" height="42"/>
+  <rect class="g" x="460" y="116" width="42" height="42"/>
+  <rect class="g" x="502" y="116" width="42" height="42"/>
+  <rect class="g" x="40" y="158" width="42" height="42"/>
+  <rect class="g" x="82" y="158" width="42" height="42"/>
+  <rect class="cl" x="124" y="158" width="42" height="42"/>
+  <text class="cw" x="145" y="178">3+10</text>
+  <text class="cw" x="145" y="191">=13</text>
+  <rect class="cl" x="166" y="158" width="42" height="42"/>
+  <text class="cw" x="187" y="178">4+9</text>
+  <text class="cw" x="187" y="191">=13</text>
+  <rect class="ob" x="208" y="158" width="42" height="42"/>
+  <rect class="g" x="250" y="158" width="42" height="42"/>
+  <rect class="g" x="292" y="158" width="42" height="42"/>
+  <rect class="g" x="334" y="158" width="42" height="42"/>
+  <rect class="g" x="376" y="158" width="42" height="42"/>
+  <rect class="g" x="418" y="158" width="42" height="42"/>
+  <rect class="g" x="460" y="158" width="42" height="42"/>
+  <rect class="g" x="502" y="158" width="42" height="42"/>
+  <rect class="g" x="40" y="200" width="42" height="42"/>
+  <rect class="cl" x="82" y="200" width="42" height="42"/>
+  <text class="cw" x="103" y="220">1+10</text>
+  <text class="cw" x="103" y="233">=11</text>
+  <rect class="cl" x="124" y="200" width="42" height="42"/>
+  <text class="cw" x="145" y="220">2+9</text>
+  <text class="cw" x="145" y="233">=11</text>
+  <rect class="cl" x="166" y="200" width="42" height="42"/>
+  <text class="cw" x="187" y="220">3+8</text>
+  <text class="cw" x="187" y="233">=11</text>
+  <rect class="ob" x="208" y="200" width="42" height="42"/>
+  <rect class="g" x="250" y="200" width="42" height="42"/>
+  <rect class="g" x="292" y="200" width="42" height="42"/>
+  <rect class="g" x="334" y="200" width="42" height="42"/>
+  <rect class="ob" x="376" y="200" width="42" height="42"/>
+  <rect class="g" x="418" y="200" width="42" height="42"/>
+  <rect class="g" x="460" y="200" width="42" height="42"/>
+  <rect class="g" x="502" y="200" width="42" height="42"/>
+  <rect class="g" x="40" y="242" width="42" height="42"/>
+  <rect class="st" x="82" y="242" width="42" height="42"/>
+  <text class="cb" x="103" y="268">起</text>
+  <rect class="cl" x="124" y="242" width="42" height="42"/>
+  <text class="cw" x="145" y="262">1+8</text>
+  <text class="cw" x="145" y="275">=9</text>
+  <rect class="cl" x="166" y="242" width="42" height="42"/>
+  <text class="cw" x="187" y="262">2+7</text>
+  <text class="cw" x="187" y="275">=9</text>
+  <rect class="ob" x="208" y="242" width="42" height="42"/>
+  <rect class="g" x="250" y="242" width="42" height="42"/>
+  <rect class="g" x="292" y="242" width="42" height="42"/>
+  <rect class="g" x="334" y="242" width="42" height="42"/>
+  <rect class="ob" x="376" y="242" width="42" height="42"/>
+  <rect class="g" x="418" y="242" width="42" height="42"/>
+  <rect class="gl" x="460" y="242" width="42" height="42"/>
+  <text class="cb" x="481" y="268">终</text>
+  <rect class="g" x="502" y="242" width="42" height="42"/>
+  <rect class="g" x="40" y="284" width="42" height="42"/>
+  <rect class="cl" x="82" y="284" width="42" height="42"/>
+  <text class="cw" x="103" y="304">1+10</text>
+  <text class="cw" x="103" y="317">=11</text>
+  <rect class="cl" x="124" y="284" width="42" height="42"/>
+  <text class="cw" x="145" y="304">2+9</text>
+  <text class="cw" x="145" y="317">=11</text>
+  <rect class="cl" x="166" y="284" width="42" height="42"/>
+  <text class="cw" x="187" y="304">3+8</text>
+  <text class="cw" x="187" y="317">=11</text>
+  <rect class="ob" x="208" y="284" width="42" height="42"/>
+  <rect class="g" x="250" y="284" width="42" height="42"/>
+  <rect class="g" x="292" y="284" width="42" height="42"/>
+  <rect class="g" x="334" y="284" width="42" height="42"/>
+  <rect class="ob" x="376" y="284" width="42" height="42"/>
+  <rect class="g" x="418" y="284" width="42" height="42"/>
+  <rect class="g" x="460" y="284" width="42" height="42"/>
+  <rect class="g" x="502" y="284" width="42" height="42"/>
+  <rect class="g" x="40" y="326" width="42" height="42"/>
+  <rect class="g" x="82" y="326" width="42" height="42"/>
+  <rect class="cl" x="124" y="326" width="42" height="42"/>
+  <text class="cw" x="145" y="346">3+10</text>
+  <text class="cw" x="145" y="359">=13</text>
+  <rect class="cl" x="166" y="326" width="42" height="42"/>
+  <text class="cw" x="187" y="346">4+9</text>
+  <text class="cw" x="187" y="359">=13</text>
+  <rect class="op" x="208" y="326" width="42" height="42"/>
+  <text class="cw" x="229" y="346">5+8</text>
+  <text class="cw" x="229" y="359">=13</text>
+  <rect class="g" x="250" y="326" width="42" height="42"/>
+  <rect class="g" x="292" y="326" width="42" height="42"/>
+  <rect class="g" x="334" y="326" width="42" height="42"/>
+  <rect class="ob" x="376" y="326" width="42" height="42"/>
+  <rect class="g" x="418" y="326" width="42" height="42"/>
+  <rect class="g" x="460" y="326" width="42" height="42"/>
+  <rect class="g" x="502" y="326" width="42" height="42"/>
+  <rect class="g" x="40" y="368" width="42" height="42"/>
+  <rect class="g" x="82" y="368" width="42" height="42"/>
+  <rect class="op" x="124" y="368" width="42" height="42"/>
+  <text class="cw" x="145" y="388">4+11</text>
+  <text class="cw" x="145" y="401">=15</text>
+  <rect class="cl" x="166" y="368" width="42" height="42"/>
+  <text class="cw" x="187" y="388">5+10</text>
+  <text class="cw" x="187" y="401">=15</text>
+  <rect class="op" x="208" y="368" width="42" height="42"/>
+  <text class="cw" x="229" y="388">6+9</text>
+  <text class="cw" x="229" y="401">=15</text>
+  <rect class="g" x="250" y="368" width="42" height="42"/>
+  <rect class="g" x="292" y="368" width="42" height="42"/>
+  <rect class="g" x="334" y="368" width="42" height="42"/>
+  <rect class="ob" x="376" y="368" width="42" height="42"/>
+  <rect class="g" x="418" y="368" width="42" height="42"/>
+  <rect class="g" x="460" y="368" width="42" height="42"/>
+  <rect class="g" x="502" y="368" width="42" height="42"/>
+  <rect class="cl" x="40" y="427" width="18" height="18"/>
+  <text class="lg" x="66" y="441">已扩展 Closed</text>
+  <rect class="op" x="204" y="427" width="18" height="18"/>
+  <text class="lg" x="230" y="441">待扩展 Open（按 f 排序）</text>
+  <rect class="ob" x="446" y="427" width="18" height="18"/>
+  <text class="lg" x="472" y="441">障碍栅格</text>
+  <text class="ts" x="292" y="478">每次从 Open 集中取出 f 最小的节点扩展</text>
+  <text class="ts" x="292" y="496">h 越接近真实代价，扩展的节点越少；h 恒为 0 时 A* 退化为 Dijkstra</text>
+</svg>

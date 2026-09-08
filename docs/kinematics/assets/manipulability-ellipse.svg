@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 410" role="img" aria-label="平面两连杆机械臂在三种位形下的可操作度椭圆">
+  <style>
+    .bg{fill:#ffffff}
+    .fr{fill:none;stroke:#e4e7eb;stroke-width:1.2}
+    .lk{stroke:#52606d;stroke-width:5;stroke-linecap:round;fill:none}
+    .jt{fill:#ffffff;stroke:#52606d;stroke-width:2}
+    .el{fill:#2b6cb0;fill-opacity:.16;stroke:#2b6cb0;stroke-width:1.8}
+    .elw{fill:#c0392b;fill-opacity:.18;stroke:#c0392b;stroke-width:2.2}
+    .t {font-family:'Fira Sans','Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;font-size:14px;fill:#1f2933;text-anchor:middle}
+    .ts{font-family:'Fira Sans','Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;font-size:11.5px;fill:#52606d;text-anchor:middle}
+  </style>
+  <rect class="bg" x="0" y="0" width="880" height="410"/>
+  <rect class="fr" x="16" y="58" width="278" height="264" rx="8"/>
+  <text class="t" x="155.0" y="44">良好位形</text>
+  <path class="lk" d="M62.0,250.0 L109.9,217.3 L86.4,177.2"/>
+  <circle cx="62.0" cy="250.0" r="6" fill="#52606d"/>
+  <circle class="jt" cx="109.9" cy="217.3" r="5"/>
+  <ellipse class="el" cx="86.4" cy="177.2" rx="33.5" ry="12.8" transform="rotate(-171.9 86.4 177.2)"/>
+  <circle cx="86.4" cy="177.2" r="4" fill="#1f2933"/>
+  <text class="ts" x="155.0" y="294">可操作度 w = 0.7980</text>
+  <text class="ts" x="155.0" y="312">条件数 = 2.6</text>
+  <rect class="fr" x="302" y="58" width="278" height="264" rx="8"/>
+  <text class="t" x="441.0" y="44">接近奇异</text>
+  <path class="lk" d="M348.0,250.0 L402.5,230.1 L438.0,200.2"/>
+  <circle cx="348.0" cy="250.0" r="6" fill="#52606d"/>
+  <circle class="jt" cx="402.5" cy="230.1" r="5"/>
+  <ellipse class="el" cx="438.0" cy="200.2" rx="45.0" ry="3.3" transform="rotate(-120.8 438.0 200.2)"/>
+  <circle cx="438.0" cy="200.2" r="4" fill="#1f2933"/>
+  <text class="ts" x="441.0" y="294">可操作度 w = 0.2743</text>
+  <text class="ts" x="441.0" y="312">条件数 = 13.7</text>
+  <rect class="fr" x="588" y="58" width="278" height="264" rx="8"/>
+  <text class="t" x="727.0" y="44">奇异位形（完全伸展）</text>
+  <path class="lk" d="M634.0,250.0 L690.2,235.7 L735.2,224.2"/>
+  <circle cx="634.0" cy="250.0" r="6" fill="#52606d"/>
+  <circle class="jt" cx="690.2" cy="235.7" r="5"/>
+  <ellipse class="elw" cx="735.2" cy="224.2" rx="45.7" ry="1.4" transform="rotate(-104.3 735.2 224.2)"/>
+  <circle cx="735.2" cy="224.2" r="4" fill="#1f2933"/>
+  <text class="ts" x="727.0" y="294">可操作度 w = 0.0000</text>
+  <text class="ts" x="727.0" y="312">条件数 = 无穷大</text>
+  <text class="ts" x="440" y="352">椭圆是单位关节速度球在任务空间中的像：半轴长为雅可比的奇异值，方向为对应的左奇异向量</text>
+  <text class="ts" x="440" y="372">手臂完全伸展时椭圆退化为线段，末端沿手臂方向完全失去运动能力，此时 w = 0、条件数发散</text>
+  <text class="ts" x="440" y="392">连杆长度 l1 = 1.0，l2 = 0.8；图中数值由雅可比的奇异值分解直接计算</text>
+</svg>

@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 340" role="img" aria-label="位姿图与因子图结构示意">
+  <style>
+    .bg  { fill:#ffffff; }
+    .pose{ fill:#eef4fb; stroke:#2b6cb0; stroke-width:1.8; }
+    .lm  { fill:#fdf6e7; stroke:#b7791f; stroke-width:1.8; }
+    .odo { stroke:#52606d; stroke-width:2; fill:none; }
+    .obs { stroke:#b7791f; stroke-width:1.4; fill:none; stroke-dasharray:4 3; }
+    .lc  { stroke:#c0392b; stroke-width:2.2; fill:none; }
+    .t   { font-family:'Fira Sans','Noto Sans SC','PingFang SC',sans-serif; font-size:13px; fill:#1f2933; text-anchor:middle; }
+    .ts  { font-family:'Fira Sans','Noto Sans SC','PingFang SC',sans-serif; font-size:11.5px; fill:#52606d; text-anchor:middle; }
+    .lg  { font-family:'Fira Sans','Noto Sans SC','PingFang SC',sans-serif; font-size:12.5px; fill:#1f2933; text-anchor:start; }
+  </style>
+  <rect class="bg" x="0" y="0" width="820" height="340"/>
+
+  <!-- 观测边（先画，位于节点下层） -->
+  <path class="obs" d="M120,150 L230,72"/>
+  <path class="obs" d="M255,120 L245,80"/>
+  <path class="obs" d="M255,120 L470,74"/>
+  <path class="obs" d="M400,140 L480,80"/>
+  <path class="obs" d="M545,120 L500,84"/>
+  <path class="obs" d="M120,150 L175,235"/>
+  <path class="obs" d="M400,140 L360,232"/>
+  <path class="obs" d="M545,120 L600,228"/>
+  <path class="obs" d="M660,168 L615,232"/>
+
+  <!-- 里程计边 -->
+  <path class="odo" d="M120,150 L255,120"/>
+  <path class="odo" d="M255,120 L400,140"/>
+  <path class="odo" d="M400,140 L545,120"/>
+  <path class="odo" d="M545,120 L660,168"/>
+  <path class="odo" d="M660,168 L640,262"/>
+
+  <!-- 回环边 -->
+  <path class="lc" d="M640,262 C440,320 220,300 120,150"/>
+  <text class="ts" x="380" y="318" fill="#c0392b">回环边：约束首尾位姿，消除累积漂移</text>
+
+  <!-- 位姿节点 -->
+  <circle class="pose" cx="120" cy="150" r="19"/><text class="t" x="120" y="155">x<tspan font-size="9.5" dy="3">1</tspan></text>
+  <circle class="pose" cx="255" cy="120" r="19"/><text class="t" x="255" y="125">x<tspan font-size="9.5" dy="3">2</tspan></text>
+  <circle class="pose" cx="400" cy="140" r="19"/><text class="t" x="400" y="145">x<tspan font-size="9.5" dy="3">3</tspan></text>
+  <circle class="pose" cx="545" cy="120" r="19"/><text class="t" x="545" y="125">x<tspan font-size="9.5" dy="3">4</tspan></text>
+  <circle class="pose" cx="660" cy="168" r="19"/><text class="t" x="660" y="173">x<tspan font-size="9.5" dy="3">5</tspan></text>
+  <circle class="pose" cx="640" cy="262" r="19"/><text class="t" x="640" y="267">x<tspan font-size="9.5" dy="3">6</tspan></text>
+
+  <!-- 路标节点 -->
+  <rect class="lm" x="224" y="52" width="32" height="32" rx="4"/><text class="t" x="240" y="73">m<tspan font-size="9.5" dy="3">1</tspan></text>
+  <rect class="lm" x="472" y="52" width="32" height="32" rx="4"/><text class="t" x="488" y="73">m<tspan font-size="9.5" dy="3">2</tspan></text>
+  <rect class="lm" x="160" y="232" width="32" height="32" rx="4"/><text class="t" x="176" y="253">m<tspan font-size="9.5" dy="3">3</tspan></text>
+  <rect class="lm" x="344" y="230" width="32" height="32" rx="4"/><text class="t" x="360" y="251">m<tspan font-size="9.5" dy="3">4</tspan></text>
+  <rect class="lm" x="592" y="226" width="32" height="32" rx="4"/><text class="t" x="608" y="247">m<tspan font-size="9.5" dy="3">5</tspan></text>
+
+  <!-- 图例 -->
+  <circle class="pose" cx="700" cy="34" r="9"/>
+  <text class="lg" x="716" y="38">位姿节点</text>
+  <rect class="lm" x="692" y="56" width="16" height="16" rx="3"/>
+  <text class="lg" x="716" y="69">路标节点</text>
+  <line class="odo" x1="690" y1="92" x2="712" y2="92"/>
+  <text class="lg" x="718" y="96">里程计边</text>
+  <line class="obs" x1="690" y1="112" x2="712" y2="112"/>
+  <text class="lg" x="718" y="116">观测边</text>
+  <line class="lc" x1="690" y1="132" x2="712" y2="132"/>
+  <text class="lg" x="718" y="136">回环边</text>
+</svg>

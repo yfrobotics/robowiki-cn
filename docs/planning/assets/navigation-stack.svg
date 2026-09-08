@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 500" role="img" aria-label="移动机器人导航栈的模块与数据流">
+  <style>
+    .bg{fill:#ffffff}
+    .sen{fill:#f5f7fa;stroke:#7b8794;stroke-width:1.5;rx:6}
+    .loc{fill:#fdf6e7;stroke:#b7791f;stroke-width:1.6;rx:6}
+    .map{fill:#eef4fb;stroke:#2b6cb0;stroke-width:1.6;rx:6}
+    .pln{fill:#eefaf3;stroke:#2f855a;stroke-width:1.6;rx:6}
+    .bt {fill:#fdf0ee;stroke:#c0392b;stroke-width:1.8;rx:6}
+    .ar {fill:none;stroke:#52606d;stroke-width:1.7;marker-end:url(#n)}
+    .ar2{fill:none;stroke:#c0392b;stroke-width:1.5;stroke-dasharray:5 3;marker-end:url(#nr)}
+    .grp{fill:none;stroke:#cbd2d9;stroke-width:1.1;stroke-dasharray:5 4;rx:8}
+    .t {font-family:'Fira Sans','Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;font-size:12.5px;fill:#1f2933;text-anchor:middle}
+    .ts{font-family:'Fira Sans','Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;font-size:10.5px;fill:#52606d;text-anchor:middle}
+    .fr{font-family:'Fira Mono',monospace;font-size:10.5px;fill:#b7791f;text-anchor:middle}
+    .gl{font-family:'Fira Sans','Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;font-size:11.5px;fill:#7b8794;text-anchor:start}
+  </style>
+  <defs>
+    <marker id="n" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#52606d"/></marker>
+    <marker id="nr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#c0392b"/></marker>
+  </defs>
+  <rect class="bg" x="0" y="0" width="880" height="500"/>
+
+  <!-- 传感器 -->
+  <rect class="grp" x="16" y="60" width="150" height="256"/>
+  <text class="gl" x="26" y="52">传感器</text>
+  <rect class="sen" x="34" y="80"  width="114" height="40"/><text class="t" x="91" y="105">激光雷达</text>
+  <rect class="sen" x="34" y="132" width="114" height="40"/><text class="t" x="91" y="157">深度相机</text>
+  <rect class="sen" x="34" y="184" width="114" height="40"/><text class="t" x="91" y="209">轮式里程计</text>
+  <rect class="sen" x="34" y="236" width="114" height="40"/><text class="t" x="91" y="261">IMU</text>
+
+  <!-- 定位 -->
+  <rect class="grp" x="192" y="60" width="164" height="256"/>
+  <text class="gl" x="202" y="52">定位</text>
+  <rect class="loc" x="208" y="88" width="132" height="52"/>
+  <text class="t"  x="274" y="110">AMCL</text>
+  <text class="ts" x="274" y="128">粒子滤波定位</text>
+  <text class="fr" x="274" y="156">发布 map -> odom</text>
+
+  <rect class="loc" x="208" y="196" width="132" height="52"/>
+  <text class="t"  x="274" y="218">里程计融合</text>
+  <text class="ts" x="274" y="236">EKF / UKF</text>
+  <text class="fr" x="274" y="264">发布 odom -> base_link</text>
+  <text class="ts" x="274" y="290">连续平滑但会漂移</text>
+
+  <!-- 代价地图：静态地图在上，作为全局代价地图的输入，避免连线穿越其他框 -->
+  <rect class="grp" x="382" y="60" width="172" height="256"/>
+  <text class="gl" x="392" y="52">世界模型</text>
+
+  <rect class="map" x="398" y="76" width="140" height="44"/>
+  <text class="t"  x="468" y="96">静态地图</text>
+  <text class="ts" x="468" y="112">由 SLAM 预先建立</text>
+
+  <rect class="map" x="398" y="150" width="140" height="60"/>
+  <text class="t"  x="468" y="172">全局代价地图</text>
+  <text class="ts" x="468" y="190">静态层 + 障碍层</text>
+  <text class="fr" x="468" y="206">map 系</text>
+
+  <rect class="map" x="398" y="240" width="140" height="60"/>
+  <text class="t"  x="468" y="262">局部代价地图</text>
+  <text class="ts" x="468" y="280">滚动窗口，高频更新</text>
+  <text class="fr" x="468" y="296">odom 系</text>
+
+  <!-- 规划与控制 -->
+  <rect class="grp" x="580" y="60" width="176" height="256"/>
+  <text class="gl" x="590" y="52">规划与控制</text>
+  <rect class="pln" x="596" y="80" width="144" height="56"/>
+  <text class="t"  x="668" y="102">全局规划器</text>
+  <text class="ts" x="668" y="120">NavFn / Smac</text>
+  <text class="ts" x="668" y="132">1 Hz</text>
+
+  <rect class="pln" x="596" y="168" width="144" height="56"/>
+  <text class="t"  x="668" y="190">局部规划器</text>
+  <text class="ts" x="668" y="208">DWB / TEB / MPPI</text>
+  <text class="ts" x="668" y="220">10 - 20 Hz</text>
+
+  <rect class="pln" x="596" y="252" width="144" height="46"/>
+  <text class="t"  x="668" y="272">底盘驱动</text>
+  <text class="fr" x="668" y="290">/cmd_vel</text>
+
+  <!-- 行为协调 -->
+  <rect class="bt" x="792" y="132" width="72" height="112"/>
+  <text class="t" x="828" y="168" transform="rotate(-90 828,168)">行为树协调</text>
+  <text class="ts" x="828" y="260">恢复行为</text>
+  <text class="ts" x="828" y="276">清图/旋转/后退</text>
+
+  <!-- 连线 -->
+  <path class="ar" d="M148,100 L204,110"/>
+  <path class="ar" d="M148,204 L204,212"/>
+  <path class="ar" d="M148,256 L204,226"/>
+
+  <path class="ar" d="M148,120 L370,120 L370,178 L394,178" stroke-dasharray="3 3"/>
+  <path class="ar" d="M148,152 L364,152 L364,266 L394,266" stroke-dasharray="3 3"/>
+
+  <path class="ar" d="M468,120 L468,146"/>
+  <path class="ar" d="M340,114 L360,114 L360,168 L394,168"/>
+  <path class="ar" d="M340,222 L360,222 L360,256 L394,256"/>
+
+  <path class="ar" d="M538,178 L566,178 L566,108 L592,108"/>
+  <path class="ar" d="M538,266 L566,266 L566,196 L592,196"/>
+  <path class="ar" d="M668,136 L668,164"/>
+  <text class="ts" x="702" y="154">全局路径</text>
+  <path class="ar" d="M668,224 L668,248"/>
+
+  <path class="ar2" d="M792,188 L744,196"/>
+  <path class="ar2" d="M792,160 L744,108"/>
+  <path class="ar2" d="M800,244 L580,344 L468,344 L468,304"/>
+  <text class="ts" x="612" y="360" fill="#c0392b">恢复行为可清空代价地图</text>
+
+  <text class="ts" x="440" y="404">实线为主数据流，虚线为传感器观测直接注入代价地图的通路</text>
+  <text class="ts" x="440" y="426">局部代价地图与局部规划器工作在 odom 系以保证连续性；全局侧工作在 map 系以保证绝对正确</text>
+  <text class="ts" x="440" y="448">这一分工由 REP 105 规定：map -> odom 不漂移但会跳变，odom -> base_link 连续但会漂移</text>
+  <text class="ts" x="440" y="470">任何一个模块失效，整个导航都会表现为「机器人不动」或「撞上东西」，排障需沿数据流逐级确认</text>
+</svg>

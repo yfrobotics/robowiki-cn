@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 430" role="img" aria-label="针孔相机模型与内参矩阵">
+  <style>
+    .bg{fill:#ffffff}
+    .fr{fill:none;stroke:#e4e7eb;stroke-width:1.2}
+    .plane{fill:#eef4fb;stroke:#2b6cb0;stroke-width:1.8}
+    .ray{stroke:#c0392b;stroke-width:1.8;fill:none}
+    .aux{stroke:#7b8794;stroke-width:1.2;stroke-dasharray:4 3;fill:none}
+    .axz{stroke:#2f855a;stroke-width:2;fill:none;marker-end:url(#g)}
+    .fm{stroke:#b7791f;stroke-width:2;fill:none}
+    .t {font-family:'Fira Sans','Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;font-size:13px;fill:#1f2933;text-anchor:middle}
+    .ts{font-family:'Fira Sans','Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;font-size:11px;fill:#52606d;text-anchor:middle}
+    .hh{font-family:'Fira Sans','Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;font-size:13.5px;fill:#1f2933;text-anchor:middle}
+    .lg{font-family:'Fira Sans','Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;font-size:11.5px;fill:#1f2933;text-anchor:start}
+    .mo{font-family:'Fira Mono',monospace;font-size:12px;fill:#1f2933;text-anchor:middle}
+    .mn{font-family:'Fira Mono',monospace;font-size:11px;fill:#1f2933;text-anchor:start}
+  </style>
+  <defs><marker id="g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <path d="M0,0 L10,5 L0,10 z" fill="#2f855a"/></marker></defs>
+  <rect class="bg" x="0" y="0" width="880" height="430"/>
+  <text class="hh" x="440" y="30">针孔相机模型：三维点经中心投影落到像平面，内参矩阵完成到像素的换算</text>
+  <rect class="fr" x="24" y="56" width="520" height="286" rx="8"/>
+  <path class="plane" d="M280,110 L280,302"/>
+  <text class="ts" x="280" y="100">像平面</text>
+  <path class="axz" d="M120,206 L500,206"/>
+  <text class="ts" x="510" y="210">Z</text>
+  <text class="ts" x="118" y="226">光心 O</text>
+  <circle cx="120" cy="206" r="5" fill="#1f2933"/>
+  <circle cx="280" cy="206" r="4" fill="#2b6cb0"/>
+  <text class="ts" x="318" y="222">主点 (cx, cy)</text>
+  <path class="fm" d="M120,322 L280,322"/>
+  <path class="fm" d="M120,316 L120,328 M280,316 L280,328"/>
+  <text class="ts" x="200.0" y="338" fill="#b7791f">焦距 f</text>
+  <path class="ray" d="M470,120 L120,206"/>
+  <circle cx="470" cy="120" r="6" fill="#1f2933"/>
+  <text class="ts" x="454" y="108">P = (X, Y, Z)</text>
+  <circle cx="280" cy="166.7" r="4.5" fill="#c0392b"/>
+  <text class="ts" x="236" y="170.7">p = (u, v)</text>
+  <path class="aux" d="M470,120 L470,206"/>
+  <path class="aux" d="M280,166.7 L280,206"/>
+  <text class="ts" x="486" y="163.0">X</text>
+  <text class="ts" x="266" y="186.3">x</text>
+  <text class="ts" x="295.0" y="198">Z</text>
+  <text class="ts" x="284" y="368">相似三角形给出 x / f = X / Z，即 x = f · X / Z（图中像平面画在光心前方，故成像不倒置）</text>
+  <rect class="fr" x="568" y="56" width="288" height="286" rx="8"/>
+  <text class="t" x="712" y="82">内参矩阵 K</text>
+  <text class="mo" x="712" y="112">[ fx   0   cx ]</text>
+  <text class="mo" x="712" y="132">[  0  fy   cy ]</text>
+  <text class="mo" x="712" y="152">[  0   0    1 ]</text>
+  <text class="ts" x="712" y="176">fx、fy 为以像素为单位的焦距</text>
+  <text class="ts" x="712" y="194">(cx, cy) 为光轴与像平面的交点</text>
+  <text class="t" x="712" y="228">投影计算示例</text>
+  <text class="mn" x="592" y="252">fx = fy = 640 px</text>
+  <text class="mn" x="592" y="270">cx = 320,  cy = 240</text>
+  <text class="mn" x="592" y="288">P = (0.32, -0.18, 1.60) m</text>
+  <text class="mn" x="592" y="308">u = fx · X/Z + cx = 448.0</text>
+  <text class="mn" x="592" y="326">v = fy · Y/Z + cy = 168.0</text>
+  <text class="ts" x="440" y="392">fx 与 fy 不等说明像素非正方形；主点通常接近但不等于图像中心，需由标定确定</text>
+  <text class="ts" x="440" y="412">该模型不含镜头畸变，实际使用前须先用畸变系数 (k1, k2, k3, p1, p2) 对图像做去畸变</text>
+</svg>

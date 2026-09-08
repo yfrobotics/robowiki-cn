@@ -96,6 +96,10 @@ Dijkstra(start, goal):
 
 A\* 算法是路径规划中最广泛使用的算法。它在 Dijkstra 的基础上引入启发式函数 (Heuristic Function) 来引导搜索方向，大幅提高搜索效率。
 
+![A* 在栅格地图上的搜索过程](assets/astar-search.svg)
+
+上图展示了搜索进行中的一个快照：已扩展节点（Closed）朝目标方向延伸，遇到障碍后待扩展节点（Open）集中在墙体两端的缺口处——启发函数把搜索"拉"向目标，这正是 A\* 比 Dijkstra 少扩展节点的原因。
+
 **核心思想：** 对每个节点 \(n\)，A\* 维护一个评估函数：
 
 $$
@@ -219,6 +223,8 @@ PRM_Learn(N, k):
 ### 快速探索随机树 (Rapidly-exploring Random Tree, RRT)
 
 RRT 是一种单查询 (Single-query) 方法，从起点开始增量式地构建一棵随机树来探索空间。
+
+![RRT 单步扩展过程与树的生长](assets/rrt-expansion.svg)
 
 **伪代码：**
 

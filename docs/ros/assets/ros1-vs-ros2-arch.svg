@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 440" role="img" aria-label="ROS 1 中心化 Master 架构与 ROS 2 去中心化 DDS 架构对比">
+  <style>
+    .bg{fill:#ffffff}
+    .fr{fill:none;stroke:#e4e7eb;stroke-width:1.2}
+    .nd{fill:#eef4fb;stroke:#2b6cb0;stroke-width:1.6;rx:6}
+    .ms{fill:#fdf0ee;stroke:#c0392b;stroke-width:2;rx:6}
+    .dds{fill:#eefaf3;stroke:#2f855a;stroke-width:1.6;rx:6}
+    .reg{stroke:#c0392b;stroke-width:1.4;stroke-dasharray:5 3;fill:none}
+    .dat{stroke:#52606d;stroke-width:2;fill:none}
+    .dsc{stroke:#2f855a;stroke-width:1.4;stroke-dasharray:5 3;fill:none}
+    .t {font-family:'Fira Sans','Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;font-size:12.5px;fill:#1f2933;text-anchor:middle}
+    .hh{font-family:'Fira Sans','Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;font-size:14.5px;fill:#1f2933;text-anchor:middle}
+    .ts{font-family:'Fira Sans','Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;font-size:11px;fill:#52606d;text-anchor:middle}
+    .no{font-family:'Fira Sans','Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;font-size:11px;fill:#52606d;text-anchor:start}
+  </style>
+  <rect class="bg" x="0" y="0" width="880" height="440"/>
+
+  <!-- ===== ROS 1 ===== -->
+  <rect class="fr" x="24" y="54" width="396" height="286" rx="8"/>
+  <text class="hh" x="222" y="40">ROS 1：中心化，依赖 Master</text>
+
+  <rect class="ms" x="158" y="82" width="128" height="46"/>
+  <text class="t"  x="222" y="102">roscore</text>
+  <text class="ts" x="222" y="119">Master + 参数服务器</text>
+
+  <rect class="nd" x="46"  y="204" width="92" height="42"/><text class="t" x="92"  y="230">节点 A</text>
+  <rect class="nd" x="176" y="204" width="92" height="42"/><text class="t" x="222" y="230">节点 B</text>
+  <rect class="nd" x="306" y="204" width="92" height="42"/><text class="t" x="352" y="230">节点 C</text>
+
+  <path class="reg" d="M92,204 L158,128"/>
+  <path class="reg" d="M222,204 L222,128"/>
+  <path class="reg" d="M352,204 L286,128"/>
+  <text class="ts" x="106" y="168" fill="#c0392b">注册</text>
+  <text class="ts" x="338" y="168" fill="#c0392b">查询</text>
+
+  <path class="dat" d="M138,268 L306,268"/>
+  <path class="dat" d="M92,246 L92,268 M352,246 L352,268 M222,246 L222,268"/>
+  <text class="ts" x="222" y="286">建立连接后，数据以 TCPROS 点对点直连传输</text>
+
+  <text class="no" x="40" y="312">Master 是单点故障：一旦退出，新节点无法发现彼此</text>
+  <text class="no" x="40" y="330">已建立的连接可继续工作，但拓扑无法再变化</text>
+
+  <!-- ===== ROS 2 ===== -->
+  <rect class="fr" x="460" y="54" width="396" height="286" rx="8"/>
+  <text class="hh" x="658" y="40">ROS 2：去中心化，基于 DDS</text>
+
+  <rect class="dds" x="484" y="150" width="348" height="52"/>
+  <text class="t"  x="658" y="170">DDS 全局数据空间</text>
+  <text class="ts" x="658" y="189">Fast DDS / Cyclone DDS / Connext</text>
+
+  <rect class="nd" x="484" y="82" width="100" height="42"/><text class="t" x="534" y="108">节点 A</text>
+  <rect class="nd" x="608" y="82" width="100" height="42"/><text class="t" x="658" y="108">节点 B</text>
+  <rect class="nd" x="732" y="82" width="100" height="42"/><text class="t" x="782" y="108">节点 C</text>
+
+  <rect class="nd" x="546" y="230" width="100" height="42"/><text class="t" x="596" y="256">节点 D</text>
+  <rect class="nd" x="670" y="230" width="100" height="42"/><text class="t" x="720" y="256">节点 E</text>
+
+  <path class="dat" d="M534,124 L534,150"/>
+  <path class="dat" d="M658,124 L658,150"/>
+  <path class="dat" d="M782,124 L782,150"/>
+  <path class="dat" d="M596,230 L596,202"/>
+  <path class="dat" d="M720,230 L720,202"/>
+
+  <path class="dsc" d="M484,214 L484,224 L836,224 L836,214"/>
+  <text class="ts" x="660" y="216" fill="#2f855a">多播自动发现，无需中心节点</text>
+
+  <text class="no" x="476" y="312">无单点故障；任意节点可随时加入或退出</text>
+  <text class="no" x="476" y="330">代价是发现流量随节点数增长，大规模系统需调优 DDS 配置</text>
+
+  <text class="ts" x="440" y="368">ROS 1 的 Master 只负责撮合，数据本身仍是点对点；ROS 2 把发现与传输都交给 DDS</text>
+  <text class="ts" x="440" y="388">这一改变同时带来了 QoS 策略、生命周期节点、DDS-Security 等 ROS 1 无法提供的能力</text>
+  <text class="ts" x="440" y="408">多机场景下 ROS 2 默认按 ROS_DOMAIN_ID 隔离，同一局域网内不同 ID 的系统互不可见</text>
+  <text class="ts" x="440" y="428">调试提示：节点互相看不见时，先查 ROS_DOMAIN_ID 与 RMW 实现是否一致</text>
+</svg>

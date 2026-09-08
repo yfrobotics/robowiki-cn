@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 400" role="img" aria-label="VLA 三种动作表示方式的对比">
+  <style>
+    .bg{fill:#ffffff}
+    .fr{fill:none;stroke:#e4e7eb;stroke-width:1.2}
+    .vlm{fill:#eef4fb;stroke:#2b6cb0;stroke-width:1.6;rx:5}
+    .head{fill:#eefaf3;stroke:#2f855a;stroke-width:1.6;rx:5}
+    .tok{fill:#fdf6e7;stroke:#b7791f;stroke-width:1.3;rx:3}
+    .ar{fill:none;stroke:#52606d;stroke-width:1.6;marker-end:url(#v)}
+    .dist{fill:none;stroke:#c0392b;stroke-width:2}
+    .good{fill:#2f855a}
+    .bad{fill:#c0392b}
+    .t {font-family:'Fira Sans','Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;font-size:12.5px;fill:#1f2933;text-anchor:middle}
+    .hh{font-family:'Fira Sans','Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;font-size:13.5px;fill:#1f2933;text-anchor:middle}
+    .ts{font-family:'Fira Sans','Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;font-size:10.5px;fill:#52606d;text-anchor:middle}
+    .tl{font-family:'Fira Sans','Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;font-size:10.5px;fill:#52606d;text-anchor:start}
+  </style>
+  <defs><marker id="v" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <path d="M0,0 L10,5 L0,10 z" fill="#52606d"/></marker></defs>
+  <rect class="bg" x="0" y="0" width="880" height="400"/>
+  <text class="hh" x="440" y="28">同一个多模态动作分布，三种表示方式给出的结果截然不同</text>
+  <text class="ts" x="440" y="50">场景：绕过障碍物，从左绕与从右绕都是演示中出现过的合理做法</text>
+
+  <!-- 离散 token -->
+  <rect class="fr" x="24" y="70" width="264" height="222" rx="8"/>
+  <text class="t" x="156" y="94">离散 token</text>
+  <rect class="vlm" x="52" y="108" width="208" height="34"/>
+  <text class="ts" x="156" y="130">复用 VLM 词表，自回归解码</text>
+  <g>
+    <rect class="tok" x="60"  y="160" width="34" height="26"/><text class="ts" x="77"  y="178">17</text>
+    <rect class="tok" x="102" y="160" width="34" height="26"/><text class="ts" x="119" y="178">203</text>
+    <rect class="tok" x="144" y="160" width="34" height="26"/><text class="ts" x="161" y="178">88</text>
+    <rect class="tok" x="186" y="160" width="34" height="26"/><text class="ts" x="203" y="178">41</text>
+    <rect class="tok" x="228" y="160" width="34" height="26"/><text class="ts" x="245" y="178">7</text>
+  </g>
+  <text class="ts" x="156" y="204">每维量化为 256 档</text>
+  <text class="tl" x="44" y="230" fill="#2f855a">+ 与预训练 VLM 完全兼容</text>
+  <text class="tl" x="44" y="250" fill="#c0392b">- 量化误差限制精度上限</text>
+  <text class="tl" x="44" y="270" fill="#c0392b">- 自回归逐 token 生成，推理慢</text>
+
+  <!-- 连续回归 -->
+  <rect class="fr" x="308" y="70" width="264" height="222" rx="8"/>
+  <text class="t" x="440" y="94">连续回归</text>
+  <rect class="head" x="336" y="108" width="208" height="34"/>
+  <text class="ts" x="440" y="130">MLP 直接回归动作值</text>
+  <path class="dist" d="M348,196 C378,150 398,150 424,196"/>
+  <path class="dist" d="M456,196 C482,150 502,150 532,196"/>
+  <line x1="348" y1="196" x2="532" y2="196" stroke="#9aa5b1" stroke-width="1.2"/>
+  <circle cx="440" cy="196" r="5" fill="#c0392b"/>
+  <text class="ts" x="440" y="216" fill="#c0392b">输出落在两峰中间</text>
+  <text class="tl" x="328" y="240" fill="#2f855a">+ 推理最快</text>
+  <text class="tl" x="328" y="260" fill="#c0392b">- 均方误差把多模态平均掉</text>
+  <text class="tl" x="328" y="280" fill="#c0392b">- 本例中直接撞上障碍物</text>
+
+  <!-- 扩散 / 流匹配 -->
+  <rect class="fr" x="592" y="70" width="264" height="222" rx="8"/>
+  <text class="t" x="724" y="94">扩散 / 流匹配</text>
+  <rect class="head" x="620" y="108" width="208" height="34"/>
+  <text class="ts" x="724" y="130">从分布中采样而非取平均</text>
+  <path class="dist" d="M632,196 C662,150 682,150 708,196"/>
+  <path class="dist" d="M740,196 C766,150 786,150 816,196"/>
+  <line x1="632" y1="196" x2="816" y2="196" stroke="#9aa5b1" stroke-width="1.2"/>
+  <circle cx="670" cy="163" r="5" fill="#2f855a"/>
+  <text class="ts" x="724" y="216" fill="#2f855a">一致地采样到某一侧</text>
+  <text class="tl" x="612" y="240" fill="#2f855a">+ 天然表示多模态分布</text>
+  <text class="tl" x="612" y="260" fill="#2f855a">+ 接触丰富任务上表现最好</text>
+  <text class="tl" x="612" y="280" fill="#c0392b">- 多步去噪，推理较慢</text>
+
+  <text class="ts" x="440" y="326">红色曲线为「从左绕」与「从右绕」两个动作模态；回归模型取平均得到的是两者之间的动作</text>
+  <text class="ts" x="440" y="348">而这个平均动作恰恰是最差的选择，，它正对着障碍物。这是回归类策略在机器人任务上的典型失效</text>
+  <text class="ts" x="440" y="370">动作块（Action Chunking）与上述三者正交：任一表示都可一次输出未来 H 步，用以减少复合误差</text>
+</svg>

@@ -24,6 +24,8 @@ ROS 2的开发始于2015年，由Open Source Robotics Foundation (OSRF) 主导�
 
 ROS 2最根本的架构变化是采用DDS (Data Distribution Service) 作为底层通信中间件。DDS是一种由OMG (Object Management Group) 制定的工业标准通信协议，广泛应用于航空航天、国防和金融领域。
 
+![ROS 1 中心化 Master 架构与 ROS 2 去中心化 DDS 架构对比](assets/ros1-vs-ros2-arch.svg)
+
 DDS的核心优势包括：
 
 - **去中心化架构**：节点之间通过分布式发现协议自动互联，无需像ROS 1那样依赖中央Master节点

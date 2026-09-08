@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 364" role="img" aria-label="语义分割、实例分割与全景分割的区别">
+  <style>
+    .bg{fill:#ffffff}
+    .fr{fill:none;stroke:#52606d;stroke-width:1.4}
+    .t {font-family:'Fira Sans','Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;font-size:13px;fill:#1f2933;text-anchor:middle}
+    .ts{font-family:'Fira Sans','Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;font-size:11px;fill:#52606d;text-anchor:middle}
+    .lg{font-family:'Fira Sans','Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;font-size:11px;fill:#1f2933;text-anchor:start}
+    .hh{font-family:'Fira Sans','Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;font-size:13.5px;fill:#1f2933;text-anchor:middle}
+  </style>
+  <rect class="bg" x="0" y="0" width="880" height="364"/>
+  <text class="hh" x="440" y="32">同一场景（3 个行人 + 1 辆车 + 天空与路面）在三种分割任务下的标注差异</text>
+  <text class="t" x="122.0" y="64">输入图像</text>
+  <rect x="24" y="76" width="196" height="93" fill="#e6ecf2"/>
+  <rect x="24" y="169" width="196" height="57" fill="#d3d9df"/>
+  <rect x="51.4" y="127.0" width="25.5" height="78.0" rx="4" fill="#8a94a0"/>
+  <rect x="84.8" y="121.0" width="27.4" height="84.0" rx="4" fill="#8a94a0"/>
+  <rect x="125.9" y="130.0" width="23.5" height="72.0" rx="4" fill="#8a94a0"/>
+  <rect x="157.3" y="145.0" width="54.9" height="51.0" rx="4" fill="#6b7683"/>
+  <rect class="fr" x="24" y="76" width="196" height="150"/>
+  <text class="ts" x="122.0" y="246">未标注</text>
+  <text class="t" x="334.0" y="64">语义分割</text>
+  <rect x="236" y="76" width="196" height="93" fill="#bcd2e8"/>
+  <rect x="236" y="169" width="196" height="57" fill="#9aa5b1"/>
+  <rect x="263.4" y="127.0" width="25.5" height="78.0" rx="4" fill="#c0392b"/>
+  <rect x="296.8" y="121.0" width="27.4" height="84.0" rx="4" fill="#c0392b"/>
+  <rect x="337.9" y="130.0" width="23.5" height="72.0" rx="4" fill="#c0392b"/>
+  <rect x="369.3" y="145.0" width="54.9" height="51.0" rx="4" fill="#2b6cb0"/>
+  <rect class="fr" x="236" y="76" width="196" height="150"/>
+  <text class="ts" x="334.0" y="246">同类像素同色，不区分个体</text>
+  <text class="t" x="546.0" y="64">实例分割</text>
+  <rect x="448" y="76" width="196" height="150" fill="#cfd6dd"/>
+  <rect x="475.4" y="127.0" width="25.5" height="78.0" rx="4" fill="#c0392b"/>
+  <rect x="508.8" y="121.0" width="27.4" height="84.0" rx="4" fill="#e8804f"/>
+  <rect x="549.9" y="130.0" width="23.5" height="72.0" rx="4" fill="#b7791f"/>
+  <rect x="581.3" y="145.0" width="54.9" height="51.0" rx="4" fill="#2b6cb0"/>
+  <rect class="fr" x="448" y="76" width="196" height="150"/>
+  <text class="ts" x="546.0" y="246">区分个体，但不标注天空与路面</text>
+  <text class="t" x="758.0" y="64">全景分割</text>
+  <rect x="660" y="76" width="196" height="93" fill="#bcd2e8"/>
+  <rect x="660" y="169" width="196" height="57" fill="#9aa5b1"/>
+  <rect x="687.4" y="127.0" width="25.5" height="78.0" rx="4" fill="#c0392b"/>
+  <rect x="720.8" y="121.0" width="27.4" height="84.0" rx="4" fill="#e8804f"/>
+  <rect x="761.9" y="130.0" width="23.5" height="72.0" rx="4" fill="#b7791f"/>
+  <rect x="793.3" y="145.0" width="54.9" height="51.0" rx="4" fill="#2b6cb0"/>
+  <rect class="fr" x="660" y="76" width="196" height="150"/>
+  <text class="ts" x="758.0" y="246">个体与背景同时标注，每像素唯一</text>
+  <rect x="28" y="279" width="14" height="12" rx="2" fill="#bcd2e8" stroke="#7b8794" stroke-width="0.8"/>
+  <text class="lg" x="48" y="288">天空 stuff</text>
+  <rect x="156" y="279" width="14" height="12" rx="2" fill="#9aa5b1" stroke="#7b8794" stroke-width="0.8"/>
+  <text class="lg" x="176" y="288">路面 stuff</text>
+  <rect x="284" y="279" width="14" height="12" rx="2" fill="#c0392b" stroke="#7b8794" stroke-width="0.8"/>
+  <text class="lg" x="304" y="288">行人 thing</text>
+  <rect x="412" y="279" width="14" height="12" rx="2" fill="#2b6cb0" stroke="#7b8794" stroke-width="0.8"/>
+  <text class="lg" x="432" y="288">车辆 thing</text>
+  <rect x="540" y="279" width="14" height="12" rx="2" fill="#cfd6dd" stroke="#7b8794" stroke-width="0.8"/>
+  <text class="lg" x="560" y="288">未标注区域</text>
+  <text class="ts" x="440" y="326">thing 指可数的前景个体，stuff 指不可数的背景区域；实例分割只处理 thing，语义分割不区分个体</text>
+  <text class="ts" x="440" y="346">全景分割要求每个像素恰好有一个标签，因此实例之间不允许重叠，这是它与实例分割最本质的差别</text>
+</svg>

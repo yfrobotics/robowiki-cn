@@ -1,0 +1,156 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 530" role="img" aria-label="RM 与 EDF 调度时序对比">
+  <style>
+    .bg{fill:#ffffff}
+    .lane{fill:#fafbfc;stroke:#e4e7eb;stroke-width:1}
+    .gd{stroke:#eceff2;stroke-width:1}
+    .rel{stroke:#2f855a;stroke-width:1.6;marker-end:url(#up)}
+    .dl{stroke:#7b8794;stroke-width:1.4;marker-end:url(#dn)}
+    .missb{fill:#c0392b;fill-opacity:.16;stroke:#c0392b;stroke-width:2}
+    .t {font-family:'Fira Sans','Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;font-size:13px;fill:#1f2933;text-anchor:middle}
+    .hh{font-family:'Fira Sans','Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;font-size:14px;fill:#1f2933;text-anchor:start}
+    .ts{font-family:'Fira Sans','Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;font-size:11px;fill:#52606d;text-anchor:middle}
+    .tl{font-family:'Fira Sans','Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;font-size:11.5px;fill:#1f2933;text-anchor:end}
+    .no{font-family:'Fira Sans','Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;font-size:11px;fill:#52606d;text-anchor:start}
+  </style>
+  <defs>
+    <marker id="up" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#2f855a"/></marker>
+    <marker id="dn" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#7b8794"/></marker>
+  </defs>
+  <rect class="bg" x="0" y="0" width="880" height="530"/>
+  <text class="t" x="440" y="26">同一任务集：T1 = (C = 2, T = 5)，T2 = (C = 4, T = 7)，总利用率 U = 0.971</text>
+  <text class="hh" x="28" y="58">RM（速率单调，静态优先级）</text>
+  <rect class="lane" x="64" y="94" width="772" height="34"/>
+  <text class="tl" x="54" y="115.0">T1</text>
+  <rect x="64.0" y="97" width="73.5" height="28" fill="#2b6cb0" fill-opacity="0.75"/>
+  <rect x="247.8" y="97" width="73.5" height="28" fill="#2b6cb0" fill-opacity="0.75"/>
+  <rect x="431.6" y="97" width="73.5" height="28" fill="#2b6cb0" fill-opacity="0.75"/>
+  <rect x="615.4" y="97" width="73.5" height="28" fill="#2b6cb0" fill-opacity="0.75"/>
+  <rect x="799.2" y="97" width="36.8" height="28" fill="#2b6cb0" fill-opacity="0.75"/>
+  <path class="rel" d="M64.0,141 L64.0,130"/>
+  <path class="dl" d="M247.8,81 L247.8,92"/>
+  <path class="rel" d="M247.8,141 L247.8,130"/>
+  <path class="dl" d="M431.6,81 L431.6,92"/>
+  <path class="rel" d="M431.6,141 L431.6,130"/>
+  <path class="dl" d="M615.4,81 L615.4,92"/>
+  <path class="rel" d="M615.4,141 L615.4,130"/>
+  <path class="dl" d="M799.2,81 L799.2,92"/>
+  <path class="rel" d="M799.2,141 L799.2,130"/>
+  <rect class="lane" x="64" y="138" width="772" height="34"/>
+  <text class="tl" x="54" y="159.0">T2</text>
+  <rect x="137.5" y="141" width="110.3" height="28" fill="#b7791f" fill-opacity="0.75"/>
+  <rect x="321.3" y="141" width="110.3" height="28" fill="#b7791f" fill-opacity="0.75"/>
+  <rect x="505.1" y="141" width="110.3" height="28" fill="#b7791f" fill-opacity="0.75"/>
+  <rect x="689.0" y="141" width="110.3" height="28" fill="#b7791f" fill-opacity="0.75"/>
+  <path class="rel" d="M64.0,185 L64.0,174"/>
+  <path class="dl" d="M321.3,125 L321.3,136"/>
+  <path class="rel" d="M321.3,185 L321.3,174"/>
+  <path class="dl" d="M578.7,125 L578.7,136"/>
+  <path class="rel" d="M578.7,185 L578.7,174"/>
+  <path class="dl" d="M836.0,125 L836.0,136"/>
+  <path class="rel" d="M836.0,185 L836.0,174"/>
+  <rect class="missb" x="306.3" y="134" width="30" height="42"/>
+  <line class="gd" x1="64.0" y1="84" x2="64.0" y2="178"/>
+  <text class="ts" x="64.0" y="198">0</text>
+  <line class="gd" x1="100.8" y1="84" x2="100.8" y2="178"/>
+  <line class="gd" x1="137.5" y1="84" x2="137.5" y2="178"/>
+  <text class="ts" x="137.5" y="198">2</text>
+  <line class="gd" x1="174.3" y1="84" x2="174.3" y2="178"/>
+  <line class="gd" x1="211.0" y1="84" x2="211.0" y2="178"/>
+  <text class="ts" x="211.0" y="198">4</text>
+  <line class="gd" x1="247.8" y1="84" x2="247.8" y2="178"/>
+  <line class="gd" x1="284.6" y1="84" x2="284.6" y2="178"/>
+  <text class="ts" x="284.6" y="198">6</text>
+  <line class="gd" x1="321.3" y1="84" x2="321.3" y2="178"/>
+  <line class="gd" x1="358.1" y1="84" x2="358.1" y2="178"/>
+  <text class="ts" x="358.1" y="198">8</text>
+  <line class="gd" x1="394.9" y1="84" x2="394.9" y2="178"/>
+  <line class="gd" x1="431.6" y1="84" x2="431.6" y2="178"/>
+  <text class="ts" x="431.6" y="198">10</text>
+  <line class="gd" x1="468.4" y1="84" x2="468.4" y2="178"/>
+  <line class="gd" x1="505.1" y1="84" x2="505.1" y2="178"/>
+  <text class="ts" x="505.1" y="198">12</text>
+  <line class="gd" x1="541.9" y1="84" x2="541.9" y2="178"/>
+  <line class="gd" x1="578.7" y1="84" x2="578.7" y2="178"/>
+  <text class="ts" x="578.7" y="198">14</text>
+  <line class="gd" x1="615.4" y1="84" x2="615.4" y2="178"/>
+  <line class="gd" x1="652.2" y1="84" x2="652.2" y2="178"/>
+  <text class="ts" x="652.2" y="198">16</text>
+  <line class="gd" x1="689.0" y1="84" x2="689.0" y2="178"/>
+  <line class="gd" x1="725.7" y1="84" x2="725.7" y2="178"/>
+  <text class="ts" x="725.7" y="198">18</text>
+  <line class="gd" x1="762.5" y1="84" x2="762.5" y2="178"/>
+  <line class="gd" x1="799.2" y1="84" x2="799.2" y2="178"/>
+  <text class="ts" x="799.2" y="198">20</text>
+  <line class="gd" x1="836.0" y1="84" x2="836.0" y2="178"/>
+  <text class="ts" x="860" y="198">t (ms)</text>
+  <text class="no" x="28" y="222">U = 0.971 大于 RM 充分条件上界 n(2^(1/n)-1) = 0.828；仿真结果显示 T2 在 t = 7 错过截止时限（图中红框）</text>
+  <text class="hh" x="28" y="286">EDF（最早截止时限优先，动态优先级）</text>
+  <rect class="lane" x="64" y="322" width="772" height="34"/>
+  <text class="tl" x="54" y="343.0">T1</text>
+  <rect x="64.0" y="325" width="73.5" height="28" fill="#2b6cb0" fill-opacity="0.75"/>
+  <rect x="284.6" y="325" width="73.5" height="28" fill="#2b6cb0" fill-opacity="0.75"/>
+  <rect x="505.1" y="325" width="73.5" height="28" fill="#2b6cb0" fill-opacity="0.75"/>
+  <rect x="615.4" y="325" width="73.5" height="28" fill="#2b6cb0" fill-opacity="0.75"/>
+  <rect x="799.2" y="325" width="36.8" height="28" fill="#2b6cb0" fill-opacity="0.75"/>
+  <path class="rel" d="M64.0,369 L64.0,358"/>
+  <path class="dl" d="M247.8,309 L247.8,320"/>
+  <path class="rel" d="M247.8,369 L247.8,358"/>
+  <path class="dl" d="M431.6,309 L431.6,320"/>
+  <path class="rel" d="M431.6,369 L431.6,358"/>
+  <path class="dl" d="M615.4,309 L615.4,320"/>
+  <path class="rel" d="M615.4,369 L615.4,358"/>
+  <path class="dl" d="M799.2,309 L799.2,320"/>
+  <path class="rel" d="M799.2,369 L799.2,358"/>
+  <rect class="lane" x="64" y="366" width="772" height="34"/>
+  <text class="tl" x="54" y="387.0">T2</text>
+  <rect x="137.5" y="369" width="147.0" height="28" fill="#b7791f" fill-opacity="0.75"/>
+  <rect x="358.1" y="369" width="147.0" height="28" fill="#b7791f" fill-opacity="0.75"/>
+  <rect x="578.7" y="369" width="36.8" height="28" fill="#b7791f" fill-opacity="0.75"/>
+  <rect x="689.0" y="369" width="110.3" height="28" fill="#b7791f" fill-opacity="0.75"/>
+  <path class="rel" d="M64.0,413 L64.0,402"/>
+  <path class="dl" d="M321.3,353 L321.3,364"/>
+  <path class="rel" d="M321.3,413 L321.3,402"/>
+  <path class="dl" d="M578.7,353 L578.7,364"/>
+  <path class="rel" d="M578.7,413 L578.7,402"/>
+  <path class="dl" d="M836.0,353 L836.0,364"/>
+  <path class="rel" d="M836.0,413 L836.0,402"/>
+  <line class="gd" x1="64.0" y1="312" x2="64.0" y2="406"/>
+  <text class="ts" x="64.0" y="426">0</text>
+  <line class="gd" x1="100.8" y1="312" x2="100.8" y2="406"/>
+  <line class="gd" x1="137.5" y1="312" x2="137.5" y2="406"/>
+  <text class="ts" x="137.5" y="426">2</text>
+  <line class="gd" x1="174.3" y1="312" x2="174.3" y2="406"/>
+  <line class="gd" x1="211.0" y1="312" x2="211.0" y2="406"/>
+  <text class="ts" x="211.0" y="426">4</text>
+  <line class="gd" x1="247.8" y1="312" x2="247.8" y2="406"/>
+  <line class="gd" x1="284.6" y1="312" x2="284.6" y2="406"/>
+  <text class="ts" x="284.6" y="426">6</text>
+  <line class="gd" x1="321.3" y1="312" x2="321.3" y2="406"/>
+  <line class="gd" x1="358.1" y1="312" x2="358.1" y2="406"/>
+  <text class="ts" x="358.1" y="426">8</text>
+  <line class="gd" x1="394.9" y1="312" x2="394.9" y2="406"/>
+  <line class="gd" x1="431.6" y1="312" x2="431.6" y2="406"/>
+  <text class="ts" x="431.6" y="426">10</text>
+  <line class="gd" x1="468.4" y1="312" x2="468.4" y2="406"/>
+  <line class="gd" x1="505.1" y1="312" x2="505.1" y2="406"/>
+  <text class="ts" x="505.1" y="426">12</text>
+  <line class="gd" x1="541.9" y1="312" x2="541.9" y2="406"/>
+  <line class="gd" x1="578.7" y1="312" x2="578.7" y2="406"/>
+  <text class="ts" x="578.7" y="426">14</text>
+  <line class="gd" x1="615.4" y1="312" x2="615.4" y2="406"/>
+  <line class="gd" x1="652.2" y1="312" x2="652.2" y2="406"/>
+  <text class="ts" x="652.2" y="426">16</text>
+  <line class="gd" x1="689.0" y1="312" x2="689.0" y2="406"/>
+  <line class="gd" x1="725.7" y1="312" x2="725.7" y2="406"/>
+  <text class="ts" x="725.7" y="426">18</text>
+  <line class="gd" x1="762.5" y1="312" x2="762.5" y2="406"/>
+  <line class="gd" x1="799.2" y1="312" x2="799.2" y2="406"/>
+  <text class="ts" x="799.2" y="426">20</text>
+  <line class="gd" x1="836.0" y1="312" x2="836.0" y2="406"/>
+  <text class="ts" x="860" y="426">t (ms)</text>
+  <text class="no" x="28" y="450">U = 0.971 不超过 EDF 充要条件上界 1.0，必定可调度</text>
+  <text class="ts" x="440" y="506">绿色上箭头为任务释放，灰色下箭头为截止时限，色块为实际占用 CPU 的时间</text>
+  <text class="ts" x="440" y="522">时序由离散事件仿真生成（步长 0.05 ms），取超周期 lcm(5, 7) = 35 的前 21 ms</text>
+</svg>

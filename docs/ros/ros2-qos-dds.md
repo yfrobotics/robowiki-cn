@@ -122,6 +122,8 @@ qos = QoSProfile(
 | `VOLATILE` | `VOLATILE` | 兼容 |
 | `VOLATILE` | `TRANSIENT_LOCAL` | **不兼容** |
 
+![ROS 2 QoS 兼容性矩阵](assets/qos-compatibility.svg)
+
 核心原则：**订阅者的要求不能高于发布者的承诺**。例如，订阅者要求 `RELIABLE`，但发布者只提供 `BEST_EFFORT`，则无法通信。
 
 诊断不兼容问题：

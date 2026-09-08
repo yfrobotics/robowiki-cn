@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 420" role="img" aria-label="数据级、特征级、决策级三种融合架构对比">
+  <style>
+    .bg  { fill:#ffffff; }
+    .col { fill:none; stroke:#cbd2d9; stroke-width:1.2; rx:8; }
+    .s   { fill:#f5f7fa; stroke:#7b8794; stroke-width:1.4; rx:5; }
+    .f   { fill:#eef4fb; stroke:#2b6cb0; stroke-width:1.4; rx:5; }
+    .fu  { fill:#fdf0ee; stroke:#c0392b; stroke-width:1.6; rx:5; }
+    .o   { fill:#eefaf3; stroke:#2f855a; stroke-width:1.4; rx:5; }
+    .ar  { fill:none; stroke:#52606d; stroke-width:1.5; marker-end:url(#f);}
+    .t   { font-family:'Fira Sans','Noto Sans SC','PingFang SC',sans-serif; font-size:12.5px; fill:#1f2933; text-anchor:middle; }
+    .hd  { font-family:'Fira Sans','Noto Sans SC','PingFang SC',sans-serif; font-size:14.5px; fill:#1f2933; text-anchor:middle; }
+    .ts  { font-family:'Fira Sans','Noto Sans SC','PingFang SC',sans-serif; font-size:11px; fill:#52606d; text-anchor:middle; }
+  </style>
+  <defs>
+    <marker id="f" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#52606d"/>
+    </marker>
+  </defs>
+  <rect class="bg" x="0" y="0" width="880" height="420"/>
+
+  <!-- ============ 数据级 ============ -->
+  <rect class="col" x="16" y="40" width="268" height="330"/>
+  <text class="hd" x="150" y="30">数据级融合</text>
+  <text class="ts" x="150" y="62">在原始观测层面直接合并</text>
+
+  <rect class="s" x="44" y="80" width="84" height="34"/><text class="t" x="86" y="102">传感器 A</text>
+  <rect class="s" x="172" y="80" width="84" height="34"/><text class="t" x="214" y="102">传感器 B</text>
+  <path class="ar" d="M86,114 L120,150"/>
+  <path class="ar" d="M214,114 L180,150"/>
+  <rect class="fu" x="86" y="152" width="128" height="38"/><text class="t" x="150" y="176">原始数据融合</text>
+  <path class="ar" d="M150,190 L150,222"/>
+  <rect class="f" x="86" y="224" width="128" height="34"/><text class="t" x="150" y="246">特征提取</text>
+  <path class="ar" d="M150,258 L150,290"/>
+  <rect class="o" x="86" y="292" width="128" height="34"/><text class="t" x="150" y="314">判决输出</text>
+  <text class="ts" x="150" y="346">信息损失最小</text>
+  <text class="ts" x="150" y="362">要求严格时空对齐、带宽高</text>
+
+  <!-- ============ 特征级 ============ -->
+  <rect class="col" x="306" y="40" width="268" height="330"/>
+  <text class="hd" x="440" y="30">特征级融合</text>
+  <text class="ts" x="440" y="62">各自提特征后拼接</text>
+
+  <rect class="s" x="334" y="80" width="84" height="34"/><text class="t" x="376" y="102">传感器 A</text>
+  <rect class="s" x="462" y="80" width="84" height="34"/><text class="t" x="504" y="102">传感器 B</text>
+  <path class="ar" d="M376,114 L376,150"/>
+  <path class="ar" d="M504,114 L504,150"/>
+  <rect class="f" x="334" y="152" width="84" height="34"/><text class="t" x="376" y="174">特征提取</text>
+  <rect class="f" x="462" y="152" width="84" height="34"/><text class="t" x="504" y="174">特征提取</text>
+  <path class="ar" d="M376,186 L410,222"/>
+  <path class="ar" d="M504,186 L470,222"/>
+  <rect class="fu" x="376" y="224" width="128" height="34"/><text class="t" x="440" y="246">特征融合</text>
+  <path class="ar" d="M440,258 L440,290"/>
+  <rect class="o" x="376" y="292" width="128" height="34"/><text class="t" x="440" y="314">判决输出</text>
+  <text class="ts" x="440" y="346">带宽与信息量的折中</text>
+  <text class="ts" x="440" y="362">多数视觉-激光融合方案的选择</text>
+
+  <!-- ============ 决策级 ============ -->
+  <rect class="col" x="596" y="40" width="268" height="330"/>
+  <text class="hd" x="730" y="30">决策级融合</text>
+  <text class="ts" x="730" y="62">各自出结论后投票表决</text>
+
+  <rect class="s" x="624" y="80" width="84" height="34"/><text class="t" x="666" y="102">传感器 A</text>
+  <rect class="s" x="752" y="80" width="84" height="34"/><text class="t" x="794" y="102">传感器 B</text>
+  <path class="ar" d="M666,114 L666,150"/>
+  <path class="ar" d="M794,114 L794,150"/>
+  <rect class="f" x="624" y="152" width="84" height="34"/><text class="t" x="666" y="174">独立处理</text>
+  <rect class="f" x="752" y="152" width="84" height="34"/><text class="t" x="794" y="174">独立处理</text>
+  <path class="ar" d="M666,186 L666,222"/>
+  <path class="ar" d="M794,186 L794,222"/>
+  <rect class="o" x="624" y="224" width="84" height="34"/><text class="t" x="666" y="246">局部判决</text>
+  <rect class="o" x="752" y="224" width="84" height="34"/><text class="t" x="794" y="246">局部判决</text>
+  <path class="ar" d="M666,258 L700,290"/>
+  <path class="ar" d="M794,258 L760,290"/>
+  <rect class="fu" x="666" y="292" width="128" height="34"/><text class="t" x="730" y="314">判决融合</text>
+  <text class="ts" x="730" y="346">带宽最省、易于容错降级</text>
+  <text class="ts" x="730" y="362">信息损失最大</text>
+
+  <text class="ts" x="440" y="398">从左到右：融合位置越靠后，通信开销越小，但可利用的互补信息也越少</text>
+</svg>

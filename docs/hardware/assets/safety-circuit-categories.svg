@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 430" role="img" aria-label="安全回路的三种典型结构与故障响应">
+  <style>
+    .bg{fill:#ffffff}
+    .fr{fill:none;stroke:#e4e7eb;stroke-width:1.2}
+    .blk{fill:#f5f7fa;stroke:#52606d;stroke-width:1.5;rx:5}
+    .lo{fill:#eef4fb;stroke:#2b6cb0;stroke-width:1.6;rx:5}
+    .w{stroke:#52606d;stroke-width:1.8;fill:none}
+    .x{stroke:#c0392b;stroke-width:2.2;fill:none}
+    .mon{stroke:#2f855a;stroke-width:1.5;fill:none;stroke-dasharray:5 3}
+    .t {font-family:'Fira Sans','Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;font-size:11.5px;fill:#1f2933;text-anchor:middle}
+    .hh{font-family:'Fira Sans','Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;font-size:13px;fill:#1f2933;text-anchor:middle}
+    .ts{font-family:'Fira Sans','Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;font-size:10.5px;fill:#52606d;text-anchor:middle}
+    .tl{font-family:'Fira Sans','Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;font-size:10.5px;text-anchor:start}
+  </style>
+  <rect class="bg" x="0" y="0" width="880" height="430"/>
+  <text class="hh" x="440" y="28">同一个安全功能的三种结构：单点故障后会发生什么</text>
+
+  <!-- 类别 1 -->
+  <rect class="fr" x="20" y="52" width="270" height="230" rx="8"/>
+  <text class="hh" x="155" y="76">类别 1：单通道</text>
+  <text class="ts" x="155" y="94">用经充分验证的元件提高可靠性</text>
+  <rect class="blk" x="44" y="126" width="66" height="34"/><text class="t" x="77" y="147">传感器</text>
+  <rect class="blk" x="122" y="126" width="66" height="34"/><text class="t" x="155" y="147">逻辑</text>
+  <rect class="blk" x="200" y="126" width="66" height="34"/><text class="t" x="233" y="147">执行器</text>
+  <path class="w" d="M110,143 L120,143"/><path class="w" d="M188,143 L198,143"/>
+  <path class="x" d="M146,120 L164,166 M164,120 L146,166"/>
+  <text class="ts" x="155" y="192" fill="#c0392b">任一元件失效即丧失安全功能</text>
+  <text class="tl" x="36" y="218" fill="#c0392b">- 单点故障直接导致危险</text>
+  <text class="tl" x="36" y="238" fill="#52606d">- 无诊断，故障不可知</text>
+  <text class="tl" x="36" y="258" fill="#52606d">PL 上限：c</text>
+
+  <!-- 类别 3 -->
+  <rect class="fr" x="306" y="52" width="270" height="230" rx="8"/>
+  <text class="hh" x="441" y="76">类别 3：双通道</text>
+  <text class="ts" x="441" y="94">单点故障不丧失功能，但可能累积</text>
+  <rect class="blk" x="330" y="114" width="60" height="28"/><text class="t" x="360" y="132">传感 A</text>
+  <rect class="blk" x="402" y="114" width="60" height="28"/><text class="t" x="432" y="132">逻辑 A</text>
+  <rect class="blk" x="474" y="114" width="60" height="28"/><text class="t" x="504" y="132">执行 A</text>
+  <rect class="blk" x="330" y="164" width="60" height="28"/><text class="t" x="360" y="182">传感 B</text>
+  <rect class="blk" x="402" y="164" width="60" height="28"/><text class="t" x="432" y="182">逻辑 B</text>
+  <rect class="blk" x="474" y="164" width="60" height="28"/><text class="t" x="504" y="182">执行 B</text>
+  <path class="w" d="M390,128 L400,128"/><path class="w" d="M462,128 L472,128"/>
+  <path class="w" d="M390,178 L400,178"/><path class="w" d="M462,178 L472,178"/>
+  <path class="mon" d="M432,142 L432,164"/>
+  <path class="x" d="M423,110 L441,146 M441,110 L423,146"/>
+  <text class="ts" x="441" y="212" fill="#b7791f">A 通道失效，B 仍能停机，但故障未必被发现</text>
+  <text class="tl" x="322" y="238" fill="#2f855a">+ 单点故障不丧失安全功能</text>
+  <text class="tl" x="322" y="258" fill="#c0392b">- 故障可能累积到第二通道</text>
+  <text class="tl" x="322" y="278" fill="#52606d">PL 上限：e（需 DC 与 MTTFd 配合）</text>
+
+  <!-- 类别 4 -->
+  <rect class="fr" x="592" y="52" width="270" height="230" rx="8"/>
+  <text class="hh" x="727" y="76">类别 4：双通道 + 高诊断</text>
+  <text class="ts" x="727" y="94">交叉监控使故障在下次动作前被发现</text>
+  <rect class="blk" x="616" y="114" width="60" height="28"/><text class="t" x="646" y="132">传感 A</text>
+  <rect class="lo"  x="688" y="114" width="60" height="28"/><text class="t" x="718" y="132">逻辑 A</text>
+  <rect class="blk" x="760" y="114" width="60" height="28"/><text class="t" x="790" y="132">执行 A</text>
+  <rect class="blk" x="616" y="164" width="60" height="28"/><text class="t" x="646" y="182">传感 B</text>
+  <rect class="lo"  x="688" y="164" width="60" height="28"/><text class="t" x="718" y="182">逻辑 B</text>
+  <rect class="blk" x="760" y="164" width="60" height="28"/><text class="t" x="790" y="182">执行 B</text>
+  <path class="w" d="M676,128 L686,128"/><path class="w" d="M748,128 L758,128"/>
+  <path class="w" d="M676,178 L686,178"/><path class="w" d="M748,178 L758,178"/>
+  <path class="mon" d="M706,142 L706,164"/>
+  <path class="mon" d="M730,164 L730,142"/>
+  <path class="mon" d="M646,150 L646,158 L790,158 L790,150"/>
+  <text class="ts" x="727" y="212" fill="#2f855a">两通道互相检查，不一致立即报故障</text>
+  <text class="tl" x="608" y="238" fill="#2f855a">+ 单点故障不丧失功能</text>
+  <text class="tl" x="608" y="258" fill="#2f855a">+ 故障被及时检出，不会累积</text>
+  <text class="tl" x="608" y="278" fill="#52606d">PL 上限：e，要求 DC 高（>= 99%）</text>
+
+  <text class="ts" x="440" y="322">红叉表示元件失效；绿色虚线为通道间的交叉监控通路</text>
+  <text class="ts" x="440" y="344">类别 3 与 4 的结构相同，差别全在诊断：类别 3 不保证发现第一个故障，类别 4 必须发现</text>
+  <text class="ts" x="440" y="366">这也是为什么安全继电器要求两路输入信号在规定的时间窗内同时变化，，不同时即判为故障</text>
+  <text class="ts" x="440" y="388">双通道若共用电源或线缆，共因失效会使其退化为单通道的实际效果，须做 CCF 打分校核</text>
+  <text class="ts" x="440" y="410">注意：此处的「类别」是 ISO 13849 的结构类别，与 IEC 60204-1 的「停止类别 0/1/2」不是一回事</text>
+</svg>

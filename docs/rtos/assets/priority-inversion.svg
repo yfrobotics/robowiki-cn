@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 505" role="img" aria-label="优先级反转与优先级继承的时序对比">
+  <style>
+    .bg{fill:#ffffff}
+    .lane{fill:#fafbfc;stroke:#e4e7eb;stroke-width:1}
+    .gd{stroke:#eceff2;stroke-width:1}
+    .blk{fill:url(#hat);stroke:#c0392b;stroke-width:1.2;stroke-dasharray:3 2}
+    .cs{fill:none;stroke:#2f855a;stroke-width:2;stroke-dasharray:5 3}
+    .t {font-family:'Fira Sans','Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;font-size:13px;fill:#1f2933;text-anchor:middle}
+    .hh{font-family:'Fira Sans','Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;font-size:14px;fill:#1f2933;text-anchor:start}
+    .ts{font-family:'Fira Sans','Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;font-size:11px;fill:#52606d;text-anchor:middle}
+    .tl{font-family:'Fira Sans','Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;font-size:11.5px;fill:#1f2933;text-anchor:end}
+    .no{font-family:'Fira Sans','Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;font-size:11px;fill:#52606d;text-anchor:start}
+  </style>
+  <defs>
+    <pattern id="hat" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <rect width="7" height="7" fill="#fbeae7"/><line x1="0" y1="0" x2="0" y2="7" stroke="#c0392b" stroke-width="1.4"/>
+    </pattern>
+  </defs>
+  <rect class="bg" x="0" y="0" width="880" height="505"/>
+  <text class="t" x="440" y="24">优先级 H &gt; M &gt; L；H 与 L 竞争同一把互斥锁，M 不使用该锁</text>
+  <text class="hh" x="28" y="54">未使用优先级继承</text>
+  <rect class="lane" x="76" y="70" width="768" height="30"/>
+  <text class="tl" x="66" y="89.0">H</text>
+  <rect class="blk" x="253.2" y="73" width="472.6" height="24"/>
+  <rect x="194.2" y="73" width="59.1" height="24" fill="#c0392b" fill-opacity="0.78"/>
+  <rect x="725.8" y="73" width="118.2" height="24" fill="#c0392b" fill-opacity="0.78"/>
+  <rect class="lane" x="76" y="108" width="768" height="30"/>
+  <text class="tl" x="66" y="127.0">M</text>
+  <rect x="312.3" y="111" width="295.4" height="24" fill="#b7791f" fill-opacity="0.78"/>
+  <rect class="lane" x="76" y="146" width="768" height="30"/>
+  <text class="tl" x="66" y="165.0">L</text>
+  <rect x="76.0" y="149" width="118.2" height="24" fill="#2b6cb0" fill-opacity="0.78"/>
+  <rect x="253.2" y="149" width="59.1" height="24" fill="#2b6cb0" fill-opacity="0.78"/>
+  <rect x="607.7" y="149" width="118.2" height="24" fill="#2b6cb0" fill-opacity="0.78"/>
+  <path class="cs" d="M135.1,185 L725.8,185"/>
+  <path class="cs" d="M135.1,180 L135.1,190 M725.8,180 L725.8,190"/>
+  <text class="ts" x="430.5" y="204" fill="#2f855a">L 持有互斥锁</text>
+  <line class="gd" x1="76.0" y1="68" x2="76.0" y2="178"/>
+  <text class="ts" x="76.0" y="220">0</text>
+  <line class="gd" x1="135.1" y1="68" x2="135.1" y2="178"/>
+  <text class="ts" x="135.1" y="220">1</text>
+  <line class="gd" x1="194.2" y1="68" x2="194.2" y2="178"/>
+  <text class="ts" x="194.2" y="220">2</text>
+  <line class="gd" x1="253.2" y1="68" x2="253.2" y2="178"/>
+  <text class="ts" x="253.2" y="220">3</text>
+  <line class="gd" x1="312.3" y1="68" x2="312.3" y2="178"/>
+  <text class="ts" x="312.3" y="220">4</text>
+  <line class="gd" x1="371.4" y1="68" x2="371.4" y2="178"/>
+  <text class="ts" x="371.4" y="220">5</text>
+  <line class="gd" x1="430.5" y1="68" x2="430.5" y2="178"/>
+  <text class="ts" x="430.5" y="220">6</text>
+  <line class="gd" x1="489.5" y1="68" x2="489.5" y2="178"/>
+  <text class="ts" x="489.5" y="220">7</text>
+  <line class="gd" x1="548.6" y1="68" x2="548.6" y2="178"/>
+  <text class="ts" x="548.6" y="220">8</text>
+  <line class="gd" x1="607.7" y1="68" x2="607.7" y2="178"/>
+  <text class="ts" x="607.7" y="220">9</text>
+  <line class="gd" x1="666.8" y1="68" x2="666.8" y2="178"/>
+  <text class="ts" x="666.8" y="220">10</text>
+  <line class="gd" x1="725.8" y1="68" x2="725.8" y2="178"/>
+  <text class="ts" x="725.8" y="220">11</text>
+  <line class="gd" x1="784.9" y1="68" x2="784.9" y2="178"/>
+  <text class="ts" x="784.9" y="220">12</text>
+  <line class="gd" x1="844.0" y1="68" x2="844.0" y2="178"/>
+  <text class="ts" x="844.0" y="220">13</text>
+  <text class="no" x="28" y="242">H 被阻塞 8 个单位，其中 5 个单位在运行优先级更低的 M ，， 阻塞时间由 M 决定，无上界</text>
+  <text class="hh" x="28" y="286.0">使用优先级继承（PIP）</text>
+  <rect class="lane" x="76" y="302.0" width="768" height="30"/>
+  <text class="tl" x="66" y="321.0">H</text>
+  <rect class="blk" x="253.2" y="305.0" width="177.2" height="24"/>
+  <rect x="194.2" y="305.0" width="59.1" height="24" fill="#c0392b" fill-opacity="0.78"/>
+  <rect x="430.5" y="305.0" width="118.2" height="24" fill="#c0392b" fill-opacity="0.78"/>
+  <rect class="lane" x="76" y="340.0" width="768" height="30"/>
+  <text class="tl" x="66" y="359.0">M</text>
+  <rect x="548.6" y="343.0" width="295.4" height="24" fill="#b7791f" fill-opacity="0.78"/>
+  <rect class="lane" x="76" y="378.0" width="768" height="30"/>
+  <text class="tl" x="66" y="397.0">L</text>
+  <rect x="76.0" y="381.0" width="118.2" height="24" fill="#2b6cb0" fill-opacity="0.78"/>
+  <rect x="253.2" y="381.0" width="177.2" height="24" fill="#2b6cb0" fill-opacity="0.78"/>
+  <path class="cs" d="M135.1,417.0 L430.5,417.0"/>
+  <path class="cs" d="M135.1,412.0 L135.1,422.0 M430.5,386 L430.5,422.0"/>
+  <text class="ts" x="282.8" y="436.0" fill="#2f855a">L 持有互斥锁</text>
+  <line class="gd" x1="76.0" y1="300.0" x2="76.0" y2="410.0"/>
+  <text class="ts" x="76.0" y="452.0">0</text>
+  <line class="gd" x1="135.1" y1="300.0" x2="135.1" y2="410.0"/>
+  <text class="ts" x="135.1" y="452.0">1</text>
+  <line class="gd" x1="194.2" y1="300.0" x2="194.2" y2="410.0"/>
+  <text class="ts" x="194.2" y="452.0">2</text>
+  <line class="gd" x1="253.2" y1="300.0" x2="253.2" y2="410.0"/>
+  <text class="ts" x="253.2" y="452.0">3</text>
+  <line class="gd" x1="312.3" y1="300.0" x2="312.3" y2="410.0"/>
+  <text class="ts" x="312.3" y="452.0">4</text>
+  <line class="gd" x1="371.4" y1="300.0" x2="371.4" y2="410.0"/>
+  <text class="ts" x="371.4" y="452.0">5</text>
+  <line class="gd" x1="430.5" y1="300.0" x2="430.5" y2="410.0"/>
+  <text class="ts" x="430.5" y="452.0">6</text>
+  <line class="gd" x1="489.5" y1="300.0" x2="489.5" y2="410.0"/>
+  <text class="ts" x="489.5" y="452.0">7</text>
+  <line class="gd" x1="548.6" y1="300.0" x2="548.6" y2="410.0"/>
+  <text class="ts" x="548.6" y="452.0">8</text>
+  <line class="gd" x1="607.7" y1="300.0" x2="607.7" y2="410.0"/>
+  <text class="ts" x="607.7" y="452.0">9</text>
+  <line class="gd" x1="666.8" y1="300.0" x2="666.8" y2="410.0"/>
+  <text class="ts" x="666.8" y="452.0">10</text>
+  <line class="gd" x1="725.8" y1="300.0" x2="725.8" y2="410.0"/>
+  <text class="ts" x="725.8" y="452.0">11</text>
+  <line class="gd" x1="784.9" y1="300.0" x2="784.9" y2="410.0"/>
+  <text class="ts" x="784.9" y="452.0">12</text>
+  <line class="gd" x1="844.0" y1="300.0" x2="844.0" y2="410.0"/>
+  <text class="ts" x="844.0" y="452.0">13</text>
+  <text class="no" x="28" y="474.0">L 在被阻塞期间继承 H 的优先级，M 无法抢占；H 的阻塞时间收敛为临界区剩余长度 3 个单位</text>
+  <text class="ts" x="440" y="492">红色斜纹为 H 被阻塞的时间；1997 年火星探路者号的反复重启正是这一现象所致</text>
+</svg>
