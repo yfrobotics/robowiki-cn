@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 400" role="img" aria-label="RRT 单步扩展过程与树的生长">
+  <style>
+    .bg  { fill:#ffffff; }
+    .fr  { fill:#fbfcfd; stroke:#cbd2d9; stroke-width:1.4; }
+    .obs { fill:#b1bcc7; stroke:#52606d; stroke-width:1.2; }
+    .br  { stroke:#7b8794; stroke-width:1.4; fill:none; }
+    .nw  { stroke:#c0392b; stroke-width:2.4; fill:none; }
+    .dl  { stroke:#b7791f; stroke-width:1.4; fill:none; stroke-dasharray:5 3; }
+    .nd  { fill:#ffffff; stroke:#7b8794; stroke-width:1.4; }
+    .root{ fill:#2f855a; stroke:#2f855a; }
+    .hot { fill:#c0392b; stroke:#c0392b; }
+    .rnd { fill:#fdf6e7; stroke:#b7791f; stroke-width:1.6; }
+    .t   { font-family:'Fira Sans','Noto Sans SC','PingFang SC',sans-serif; font-size:14px; fill:#1f2933; text-anchor:middle; }
+    .ts  { font-family:'Fira Sans','Noto Sans SC','PingFang SC',sans-serif; font-size:11.5px; fill:#52606d; text-anchor:middle; }
+    .mo  { font-family:'Fira Mono',monospace; font-size:12px; fill:#1f2933; text-anchor:middle; }
+  </style>
+  <rect class="bg" x="0" y="0" width="820" height="400"/>
+
+  <!-- 左：单步扩展 -->
+  <text class="t" x="200" y="32">单步扩展 Extend</text>
+  <rect class="fr" x="40" y="48" width="320" height="290"/>
+
+  <!-- 已有的树 -->
+  <path class="br" d="M100,300 L150,250 M150,250 L120,196 M150,250 L214,232 M214,232 L246,186 M120,196 L96,150"/>
+  <circle class="nd" cx="150" cy="250" r="5"/>
+  <circle class="nd" cx="120" cy="196" r="5"/>
+  <circle class="nd" cx="214" cy="232" r="5"/>
+  <circle class="nd" cx="96"  cy="150" r="5"/>
+  <circle class="root" cx="100" cy="300" r="6"/>
+  <text class="ts" x="100" y="322">q_init</text>
+
+  <!-- 采样点 -->
+  <circle class="rnd" cx="300" cy="110" r="7"/>
+  <text class="mo" x="316" y="98">q_rand</text>
+
+  <!-- 最近节点 -> 采样点 的方向 -->
+  <path class="dl" d="M246,186 L300,110"/>
+  <circle class="hot" cx="246" cy="186" r="6"/>
+  <text class="mo" x="222" y="200">q_near</text>
+
+  <!-- 新节点：沿方向前进步长 ε -->
+  <path class="nw" d="M246,186 L275,145"/>
+  <circle class="hot" cx="275" cy="145" r="6"/>
+  <text class="mo" x="300" y="146">q_new</text>
+  <text class="ts" x="248" y="152" fill="#c0392b">ε</text>
+
+  <text class="ts" x="200" y="360">1)  均匀采样 q_rand  2)  找树中最近节点 q_near</text>
+  <text class="ts" x="200" y="378">3)  沿方向前进步长 ε 得 q_new  4)  无碰撞则加入树</text>
+
+  <!-- 右：生长后的树 -->
+  <text class="t" x="600" y="32">若干次迭代后的树</text>
+  <rect class="fr" x="440" y="48" width="340" height="290"/>
+  <rect class="obs" x="540" y="120" width="76" height="96" rx="4"/>
+  <rect class="obs" x="650" y="230" width="70" height="70" rx="4"/>
+
+  <path class="br" d="M480,300 L520,262 L500,214 L512,168 L486,124 M520,262 L568,250 M568,250 L620,258 M620,258 L648,214 M648,214 L700,196 M700,196 L716,148 M512,168 L524,96 M524,96 L612,92 M612,92 L664,110 M664,110 L700,150 M568,250 L590,300 M590,300 L636,318 M700,196 L742,224"/>
+  <g fill="#ffffff" stroke="#7b8794" stroke-width="1.2">
+    <circle cx="520" cy="262" r="4"/><circle cx="500" cy="214" r="4"/><circle cx="512" cy="168" r="4"/>
+    <circle cx="486" cy="124" r="4"/><circle cx="568" cy="250" r="4"/><circle cx="620" cy="258" r="4"/>
+    <circle cx="648" cy="214" r="4"/><circle cx="700" cy="196" r="4"/><circle cx="716" cy="148" r="4"/>
+    <circle cx="524" cy="96" r="4"/><circle cx="612" cy="92" r="4"/><circle cx="664" cy="110" r="4"/>
+    <circle cx="700" cy="150" r="4"/><circle cx="590" cy="300" r="4"/><circle cx="636" cy="318" r="4"/>
+    <circle cx="742" cy="224" r="4"/>
+  </g>
+  <circle class="root" cx="480" cy="300" r="6"/>
+  <text class="ts" x="480" y="322">q_init</text>
+  <circle class="rnd" cx="742" cy="224" r="7"/>
+  <text class="ts" x="742" y="246">q_goal</text>
+
+  <text class="ts" x="610" y="360">采样偏向未探索区域，树呈现向空旷处快速扩张的特性</text>
+  <text class="ts" x="610" y="378">概率完备但非最优，RRT* 通过重连（Rewire）逼近最优解</text>
+</svg>

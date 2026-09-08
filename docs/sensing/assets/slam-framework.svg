@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 380" role="img" aria-label="SLAM 系统框架图">
+  <style>
+    .bg   { fill:#ffffff; }
+    .box  { fill:#f5f7fa; stroke:#52606d; stroke-width:1.5; rx:6; }
+    .box2 { fill:#eef4fb; stroke:#2b6cb0; stroke-width:1.5; rx:6; }
+    .box3 { fill:#fdf0ee; stroke:#c0392b; stroke-width:1.5; rx:6; }
+    .grp  { fill:none; stroke:#9aa5b1; stroke-width:1.2; stroke-dasharray:5 4; rx:8; }
+    .t    { font-family:'Fira Sans','Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;
+            font-size:14px; fill:#1f2933; text-anchor:middle; }
+    .ts   { font-family:'Fira Sans','Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;
+            font-size:11.5px; fill:#52606d; text-anchor:middle; }
+    .tl   { font-family:'Fira Sans','Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;
+            font-size:12.5px; fill:#7b8794; text-anchor:start; letter-spacing:.5px; }
+    .ar   { fill:none; stroke:#52606d; stroke-width:1.6; marker-end:url(#a); }
+    .ar2  { fill:none; stroke:#c0392b; stroke-width:1.6; marker-end:url(#ar); stroke-dasharray:6 4; }
+  </style>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#52606d"/>
+    </marker>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#c0392b"/>
+    </marker>
+  </defs>
+  <rect class="bg" x="0" y="0" width="880" height="380"/>
+
+  <!-- 传感器输入 -->
+  <rect class="box" x="20" y="120" width="120" height="86"/>
+  <text class="t"  x="80" y="150">传感器数据</text>
+  <text class="ts" x="80" y="172">相机 / 激光雷达</text>
+  <text class="ts" x="80" y="190">IMU / 轮式里程计</text>
+
+  <!-- 前端分组 -->
+  <rect class="grp" x="176" y="66" width="228" height="196"/>
+  <text class="tl" x="186" y="86">前端 Frontend</text>
+  <rect class="box2" x="196" y="98" width="188" height="44"/>
+  <text class="t"  x="290" y="126">特征提取与匹配</text>
+  <rect class="box2" x="196" y="152" width="188" height="44"/>
+  <text class="t"  x="290" y="180">数据关联</text>
+  <rect class="box2" x="196" y="206" width="188" height="44"/>
+  <text class="t"  x="290" y="234">帧间位姿估计</text>
+
+  <!-- 后端分组 -->
+  <rect class="grp" x="440" y="66" width="228" height="196"/>
+  <text class="tl" x="450" y="86">后端 Backend</text>
+  <rect class="box" x="460" y="98" width="188" height="44"/>
+  <text class="t"  x="554" y="126">位姿图 / 因子图</text>
+  <rect class="box" x="460" y="152" width="188" height="44"/>
+  <text class="t"  x="554" y="180">非线性最小二乘优化</text>
+  <rect class="box" x="460" y="206" width="188" height="44"/>
+  <text class="t"  x="554" y="234">边缘化与滑动窗口</text>
+
+  <!-- 地图 -->
+  <rect class="box" x="712" y="120" width="146" height="86"/>
+  <text class="t"  x="785" y="150">地图输出</text>
+  <text class="ts" x="785" y="172">点云 / 栅格</text>
+  <text class="ts" x="785" y="190">拓扑 / 语义</text>
+
+  <!-- 回环检测 -->
+  <rect class="box3" x="450" y="300" width="228" height="52"/>
+  <text class="t"  x="564" y="322">回环检测 Loop Closure</text>
+  <text class="ts" x="564" y="341">词袋模型 / 场景描述子</text>
+
+  <!-- 主链路箭头 -->
+  <path class="ar" d="M140,163 L192,163"/>
+  <path class="ar" d="M404,163 L456,163"/>
+  <path class="ar" d="M668,163 L708,163"/>
+
+  <!-- 回环：前端 -> 回环检测 -> 后端 -->
+  <path class="ar2" d="M290,262 L290,326 L446,326"/>
+  <path class="ar2" d="M564,300 L564,266"/>
+  <text class="ts" x="352" y="318" fill="#c0392b">候选关键帧</text>
+  <text class="ts" x="612" y="286" fill="#c0392b">回环约束</text>
+
+  <!-- 后端 -> 前端 反馈 -->
+  <path class="ar" d="M554,98 L554,52 L290,52 L290,94" stroke-dasharray="4 3"/>
+  <text class="ts" x="422" y="44" fill="#7b8794">优化后位姿反馈</text>
+</svg>

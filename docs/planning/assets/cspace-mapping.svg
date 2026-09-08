@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 380" role="img" aria-label="工作空间障碍物到构型空间障碍物的映射">
+  <style>
+    .bg  { fill:#ffffff; }
+    .fr  { fill:#fbfcfd; stroke:#cbd2d9; stroke-width:1.4; }
+    .obs { fill:#52606d; stroke:#3e4c59; stroke-width:1.2; }
+    .cob { fill:#b1bcc7; stroke:#52606d; stroke-width:1.2; stroke-dasharray:5 3; }
+    .rob { fill:#fdf0ee; stroke:#c0392b; stroke-width:1.8; }
+    .pt  { fill:#c0392b; }
+    .ar  { fill:none; stroke:#52606d; stroke-width:2; marker-end:url(#c); }
+    .t   { font-family:'Fira Sans','Noto Sans SC','PingFang SC',sans-serif; font-size:14px; fill:#1f2933; text-anchor:middle; }
+    .ts  { font-family:'Fira Sans','Noto Sans SC','PingFang SC',sans-serif; font-size:11.5px; fill:#52606d; text-anchor:middle; }
+    .lb  { font-family:'Fira Sans','Noto Sans SC','PingFang SC',sans-serif; font-size:12px; fill:#ffffff; text-anchor:middle; }
+  </style>
+  <defs>
+    <marker id="c" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#52606d"/>
+    </marker>
+  </defs>
+  <rect class="bg" x="0" y="0" width="820" height="380"/>
+
+  <!-- 左：工作空间 -->
+  <text class="t" x="180" y="34">工作空间 Workspace</text>
+  <text class="ts" x="180" y="54">机器人是半径 r 的圆盘</text>
+  <rect class="fr" x="40" y="70" width="280" height="240"/>
+  <rect class="obs" x="110" y="120" width="80" height="70"/>
+  <text class="lb" x="150" y="160">障碍物</text>
+  <rect class="obs" x="220" y="220" width="60" height="60"/>
+  <circle class="rob" cx="80" cy="272" r="24"/>
+  <circle class="pt" cx="80" cy="272" r="3.5"/>
+  <text class="ts" x="80" y="252">r</text>
+  <line x1="80" y1="272" x2="104" y2="272" stroke="#c0392b" stroke-width="1.2"/>
+
+  <!-- 箭头 -->
+  <path class="ar" d="M336,190 L464,190"/>
+  <text class="ts" x="400" y="176">障碍物膨胀 r</text>
+  <text class="ts" x="400" y="212">机器人退化为一个点</text>
+
+  <!-- 右：构型空间 -->
+  <text class="t" x="640" y="34">构型空间 C-space</text>
+  <text class="ts" x="640" y="54">机器人退化为质点，障碍物膨胀</text>
+  <rect class="fr" x="500" y="70" width="280" height="240"/>
+  <rect class="cob" x="546" y="96" width="128" height="118" rx="24"/>
+  <rect class="obs" x="570" y="120" width="80" height="70"/>
+  <rect class="cob" x="656" y="196" width="108" height="108" rx="24"/>
+  <rect class="obs" x="680" y="220" width="60" height="60"/>
+  <circle class="pt" cx="540" cy="272" r="4.5"/>
+  <text class="ts" x="540" y="294">q</text>
+
+  <!-- 边界膨胀说明 -->
+  <line x1="546" y1="96" x2="570" y2="120" stroke="#c0392b" stroke-width="1.4"/>
+  <text class="ts" x="530" y="90" fill="#c0392b">r</text>
+
+  <text class="ts" x="410" y="344">规划在 C-space 中进行：碰撞检测退化为「点是否落在 C_obs 内」，与机器人形状无关</text>
+  <text class="ts" x="410" y="364">显式计算 C_obs 在高维时极其困难，实际中用碰撞检测隐式判断</text>
+</svg>

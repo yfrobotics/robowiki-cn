@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 400" role="img" aria-label="机器人规划层次结构">
+  <style>
+    .bg { fill:#ffffff; }
+    .l1 { fill:#fdf0ee; stroke:#c0392b; stroke-width:1.6; rx:7; }
+    .l2 { fill:#fdf6e7; stroke:#b7791f; stroke-width:1.6; rx:7; }
+    .l3 { fill:#eef4fb; stroke:#2b6cb0; stroke-width:1.6; rx:7; }
+    .l4 { fill:#eefaf3; stroke:#2f855a; stroke-width:1.6; rx:7; }
+    .ar { fill:none; stroke:#52606d; stroke-width:1.8; marker-end:url(#p); }
+    .up { fill:none; stroke:#9aa5b1; stroke-width:1.4; stroke-dasharray:5 4; marker-end:url(#pg); }
+    .t  { font-family:'Fira Sans','Noto Sans SC','PingFang SC',sans-serif; font-size:15px; fill:#1f2933; text-anchor:middle; }
+    .ts { font-family:'Fira Sans','Noto Sans SC','PingFang SC',sans-serif; font-size:11.5px; fill:#52606d; text-anchor:middle; }
+    .tr { font-family:'Fira Sans','Noto Sans SC','PingFang SC',sans-serif; font-size:11.5px; fill:#7b8794; text-anchor:end; }
+    .tl { font-family:'Fira Sans','Noto Sans SC','PingFang SC',sans-serif; font-size:11.5px; fill:#7b8794; text-anchor:start; }
+    .hd { font-family:'Fira Sans','Noto Sans SC','PingFang SC',sans-serif; font-size:12px; fill:#7b8794; text-anchor:middle; letter-spacing:1px; }
+  </style>
+  <defs>
+    <marker id="p" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#52606d"/>
+    </marker>
+    <marker id="pg" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#9aa5b1"/>
+    </marker>
+  </defs>
+  <rect class="bg" x="0" y="0" width="860" height="400"/>
+
+  <text class="hd" x="184" y="30">抽象层次</text>
+  <text class="hd" x="640" y="30">时间尺度 / 更新频率</text>
+
+  <rect class="l1" x="60" y="46" width="250" height="58"/>
+  <text class="t"  x="185" y="70">决策规划 Decision Making</text>
+  <text class="ts" x="185" y="90">"做什么" - 任务级目标选择与分解</text>
+  <text class="tl" x="560" y="70">秒 ~ 分钟</text>
+  <text class="tl" x="560" y="88">0.1 - 1 Hz，可离线</text>
+
+  <rect class="l2" x="60" y="132" width="250" height="58"/>
+  <text class="t"  x="185" y="156">路径规划 Path Planning</text>
+  <text class="ts" x="185" y="176">"走哪里" - 搜索几何上无碰撞的路径</text>
+  <text class="tl" x="560" y="156">百毫秒 ~ 秒</text>
+  <text class="tl" x="560" y="174">1 - 10 Hz，全局重规划</text>
+
+  <rect class="l3" x="60" y="218" width="250" height="58"/>
+  <text class="t"  x="185" y="242">运动规划 Motion Planning</text>
+  <text class="ts" x="185" y="262">"怎么走" - 满足动力学约束的轨迹</text>
+  <text class="tl" x="560" y="242">十毫秒 ~ 百毫秒</text>
+  <text class="tl" x="560" y="260">10 - 100 Hz，局部规划</text>
+
+  <rect class="l4" x="60" y="304" width="250" height="58"/>
+  <text class="t"  x="185" y="328">轨迹跟踪控制 Control</text>
+  <text class="ts" x="185" y="348">闭环跟踪参考轨迹，抑制扰动</text>
+  <text class="tl" x="560" y="328">毫秒</text>
+  <text class="tl" x="560" y="346">100 Hz - 1 kHz，硬实时</text>
+
+  <!-- 下行箭头 -->
+  <path class="ar" d="M185,104 L185,128"/>
+  <path class="ar" d="M185,190 L185,214"/>
+  <path class="ar" d="M185,276 L185,300"/>
+
+  <!-- 标注下行的数据形态 -->
+  <text class="tr" x="410" y="122">目标位姿 / 子目标</text>
+  <text class="tr" x="410" y="208">路径点序列 (无时间)</text>
+  <text class="tr" x="410" y="294">时间参数化轨迹 q(t)</text>
+
+  <!-- 上行反馈 -->
+  <path class="up" d="M40,332 L20,332 L20,75 L56,75"/>
+  <text class="ts" x="30" y="200" transform="rotate(-90 30,200)" fill="#7b8794">失败或不可行时触发上层重规划</text>
+
+  <!-- 分隔虚线 -->
+  <line x1="440" y1="46" x2="440" y2="362" stroke="#e4e7eb" stroke-width="1.2" stroke-dasharray="4 4"/>
+  <line x1="530" y1="46" x2="530" y2="362" stroke="#e4e7eb" stroke-width="1.2" stroke-dasharray="4 4"/>
+
+  <text class="ts" x="430" y="386">越往下：状态空间维度越低、实时性要求越高、规划视野越短</text>
+</svg>
