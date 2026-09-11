@@ -45,6 +45,10 @@
          <lastmod>2026-09-11</lastmod>
     </url>
     <url>
+         <loc>https://yfrobotics.github.io/control/modelling/modelling-examples/</loc>
+         <lastmod>2026-09-11</lastmod>
+    </url>
+    <url>
          <loc>https://yfrobotics.github.io/control/modelling/modelling-foundations/</loc>
          <lastmod>2026-09-11</lastmod>
     </url>
@@ -62,6 +66,14 @@
     </url>
     <url>
          <loc>https://yfrobotics.github.io/control/mpc/mpc/</loc>
+         <lastmod>2026-09-11</lastmod>
+    </url>
+    <url>
+         <loc>https://yfrobotics.github.io/control/nn/nn-physics-informed/</loc>
+         <lastmod>2026-09-11</lastmod>
+    </url>
+    <url>
+         <loc>https://yfrobotics.github.io/control/nn/nn-policy-learning/</loc>
          <lastmod>2026-09-11</lastmod>
     </url>
     <url>
@@ -133,7 +145,23 @@
          <lastmod>2026-09-11</lastmod>
     </url>
     <url>
+         <loc>https://yfrobotics.github.io/database/atlas-control-architecture/</loc>
+         <lastmod>2026-09-11</lastmod>
+    </url>
+    <url>
+         <loc>https://yfrobotics.github.io/database/atlas-electric-applications/</loc>
+         <lastmod>2026-09-11</lastmod>
+    </url>
+    <url>
          <loc>https://yfrobotics.github.io/database/atlas/</loc>
+         <lastmod>2026-09-11</lastmod>
+    </url>
+    <url>
+         <loc>https://yfrobotics.github.io/database/boston-dynamics-platforms/</loc>
+         <lastmod>2026-09-11</lastmod>
+    </url>
+    <url>
+         <loc>https://yfrobotics.github.io/database/boston-dynamics-spot-applications/</loc>
          <lastmod>2026-09-11</lastmod>
     </url>
     <url>
@@ -142,6 +170,18 @@
     </url>
     <url>
          <loc>https://yfrobotics.github.io/database/companies/</loc>
+         <lastmod>2026-09-11</lastmod>
+    </url>
+    <url>
+         <loc>https://yfrobotics.github.io/database/competitions-china/</loc>
+         <lastmod>2026-09-11</lastmod>
+    </url>
+    <url>
+         <loc>https://yfrobotics.github.io/database/competitions-international/</loc>
+         <lastmod>2026-09-11</lastmod>
+    </url>
+    <url>
+         <loc>https://yfrobotics.github.io/database/competitions-robocup-darpa/</loc>
          <lastmod>2026-09-11</lastmod>
     </url>
     <url>
@@ -161,7 +201,19 @@
          <lastmod>2026-09-11</lastmod>
     </url>
     <url>
+         <loc>https://yfrobotics.github.io/database/figure-hardware-bmw/</loc>
+         <lastmod>2026-09-11</lastmod>
+    </url>
+    <url>
+         <loc>https://yfrobotics.github.io/database/figure-helix-ai/</loc>
+         <lastmod>2026-09-11</lastmod>
+    </url>
+    <url>
          <loc>https://yfrobotics.github.io/database/figure/</loc>
+         <lastmod>2026-09-11</lastmod>
+    </url>
+    <url>
+         <loc>https://yfrobotics.github.io/database/labs-asia/</loc>
          <lastmod>2026-09-11</lastmod>
     </url>
     <url>
@@ -181,6 +233,10 @@
          <lastmod>2026-09-11</lastmod>
     </url>
     <url>
+         <loc>https://yfrobotics.github.io/database/labs-europe/</loc>
+         <lastmod>2026-09-11</lastmod>
+    </url>
+    <url>
          <loc>https://yfrobotics.github.io/database/labs-evaluation-collaboration/</loc>
          <lastmod>2026-09-11</lastmod>
     </url>
@@ -190,6 +246,10 @@
     </url>
     <url>
          <loc>https://yfrobotics.github.io/database/labs-global-map/</loc>
+         <lastmod>2026-09-11</lastmod>
+    </url>
+    <url>
+         <loc>https://yfrobotics.github.io/database/labs-north-america/</loc>
          <lastmod>2026-09-11</lastmod>
     </url>
     <url>
@@ -209,11 +269,35 @@
          <lastmod>2026-09-11</lastmod>
     </url>
     <url>
+         <loc>https://yfrobotics.github.io/database/robots-humanoid-legged/</loc>
+         <lastmod>2026-09-11</lastmod>
+    </url>
+    <url>
+         <loc>https://yfrobotics.github.io/database/robots-mobile-industrial/</loc>
+         <lastmod>2026-09-11</lastmod>
+    </url>
+    <url>
+         <loc>https://yfrobotics.github.io/database/robots-special-domains/</loc>
+         <lastmod>2026-09-11</lastmod>
+    </url>
+    <url>
          <loc>https://yfrobotics.github.io/database/robots/</loc>
          <lastmod>2026-09-11</lastmod>
     </url>
     <url>
          <loc>https://yfrobotics.github.io/database/spot/</loc>
+         <lastmod>2026-09-11</lastmod>
+    </url>
+    <url>
+         <loc>https://yfrobotics.github.io/database/standard-interface-humanoid/</loc>
+         <lastmod>2026-09-11</lastmod>
+    </url>
+    <url>
+         <loc>https://yfrobotics.github.io/database/standard-safety/</loc>
+         <lastmod>2026-09-11</lastmod>
+    </url>
+    <url>
+         <loc>https://yfrobotics.github.io/database/standard-terminology-performance/</loc>
          <lastmod>2026-09-11</lastmod>
     </url>
     <url>
@@ -373,6 +457,10 @@
          <lastmod>2026-09-11</lastmod>
     </url>
     <url>
+         <loc>https://yfrobotics.github.io/linux/shell-scripting-robot-startup/</loc>
+         <lastmod>2026-09-11</lastmod>
+    </url>
+    <url>
          <loc>https://yfrobotics.github.io/linux/shell-scripting/</loc>
          <lastmod>2026-09-11</lastmod>
     </url>
@@ -465,6 +553,22 @@
          <lastmod>2026-09-11</lastmod>
     </url>
     <url>
+         <loc>https://yfrobotics.github.io/ros/ros1-navigation/</loc>
+         <lastmod>2026-09-11</lastmod>
+    </url>
+    <url>
+         <loc>https://yfrobotics.github.io/ros/ros1-node-programming/</loc>
+         <lastmod>2026-09-11</lastmod>
+    </url>
+    <url>
+         <loc>https://yfrobotics.github.io/ros/ros1-tf-launch-bag/</loc>
+         <lastmod>2026-09-11</lastmod>
+    </url>
+    <url>
+         <loc>https://yfrobotics.github.io/ros/ros1-urdf/</loc>
+         <lastmod>2026-09-11</lastmod>
+    </url>
+    <url>
          <loc>https://yfrobotics.github.io/ros/ros1-workspace/</loc>
          <lastmod>2026-09-11</lastmod>
     </url>
@@ -473,11 +577,23 @@
          <lastmod>2026-09-11</lastmod>
     </url>
     <url>
+         <loc>https://yfrobotics.github.io/ros/ros2-actions-components/</loc>
+         <lastmod>2026-09-11</lastmod>
+    </url>
+    <url>
          <loc>https://yfrobotics.github.io/ros/ros2-full-reference/</loc>
          <lastmod>2026-09-11</lastmod>
     </url>
     <url>
          <loc>https://yfrobotics.github.io/ros/ros2-migration-playbook/</loc>
+         <lastmod>2026-09-11</lastmod>
+    </url>
+    <url>
+         <loc>https://yfrobotics.github.io/ros/ros2-nav2-microros/</loc>
+         <lastmod>2026-09-11</lastmod>
+    </url>
+    <url>
+         <loc>https://yfrobotics.github.io/ros/ros2-node-programming/</loc>
          <lastmod>2026-09-11</lastmod>
     </url>
     <url>
@@ -534,6 +650,10 @@
     </url>
     <url>
          <loc>https://yfrobotics.github.io/sensing/sensor-fusion-engineering/</loc>
+         <lastmod>2026-09-11</lastmod>
+    </url>
+    <url>
+         <loc>https://yfrobotics.github.io/sensing/sensor-fusion-filters/</loc>
          <lastmod>2026-09-11</lastmod>
     </url>
     <url>
@@ -626,6 +746,10 @@
     </url>
     <url>
          <loc>https://yfrobotics.github.io/simulation/vrep-robotics-workflows/</loc>
+         <lastmod>2026-09-11</lastmod>
+    </url>
+    <url>
+         <loc>https://yfrobotics.github.io/simulation/vrep-scripting-rl/</loc>
          <lastmod>2026-09-11</lastmod>
     </url>
     <url>
