@@ -1,6 +1,11 @@
-# 介绍
+---
+title: 机器人入门与开发知识库
+description: 云飞机器人中文维基为机器人爱好者、开发者和研究者提供中文学习资料，涵盖运动学、控制、感知、机器视觉、路径规划、ROS、仿真、具身智能及硬件开发。
+---
 
-![](logo.png)
+# 云飞机器人中文维基：机器人入门与开发知识库
+
+![云飞机器人中文维基标志](logo.png)
 
 云飞机器人中文维基 (RoboWiki-cn) 是由 云飞机器人实验室 ( [知乎](https://www.zhihu.com/column/yfworld) | [B站](https://space.bilibili.com/493264461) | [博客](https://yfrobotics.github.io/) | [YouTube](https://www.youtube.com/@yfrobotics) | [Ins](https://www.instagram.com/yfrobotics/) ) 发起的机器人公共领域知识编辑项目。目前该项目在 [GitHub](https://github.com/yfrobotics/robowiki) 管理和维护。
 
@@ -9,6 +14,15 @@
 我们采用公共知识编辑的方式并提倡**知识自由** --- 所有人都被鼓励、并可以亲自参与到编辑的过程中，并在该过程中不断改进内容的质量。
 
 机器人正在不断的进入到我们的生活里。我们相信通过整个社区的努力，可以最终做成覆盖全面的机器人知识库，为机器人开发者、研究者和爱好者提供便利。
+
+
+## 按主题学习机器人
+
+- **基础与控制**：[机器人简介](intro.md)、[运动学与动力学](kinematics/index.md)、[控制系统](control/index.md)。
+- **感知与决策**：[机器人感知](sensing/index.md)、[机器视觉](cv/index.md)、[规划与导航](planning/index.md)、[机器人操作](manipulation/index.md)。
+- **学习与仿真**：[机器学习](learning/index.md)、[具身智能](learning/embodied-ai.md)、[机器人仿真工具](simulation/index.md)。
+- **开发与硬件**：[ROS](ros/index.md)、[Linux](linux/index.md)、[实时操作系统](rtos/index.md)、[机器人硬件](hardware/index.md)。
+- **行业与资源**：[机器人数据库](database/index.md)、[学习资源](resources/index.md)、[机器人课程](courses.md)。
 
 
 ## 写在前面

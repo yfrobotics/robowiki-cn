@@ -1,8 +1,8 @@
 # Site Configurations
 site_name: "云飞机器人中文维基"
-site_description: 机器人领域的公共知识库
+site_description: 云飞机器人中文维基提供机器人入门与开发学习资料，涵盖运动学、控制、感知、机器视觉、规划、ROS、仿真、具身智能及硬件实践。
 site_author: "YFRL"
-site_url: https://yfrobotics.github.io
+site_url: https://yfrobotics.github.io/robowiki-cn/
 strict: false
 
 # Repository
@@ -14,6 +14,8 @@ docs_dir: docs
 site_dir: site
 exclude_docs: |
   plans/
+hooks:
+  - scripts/seo.py
 
 # Google Analytics
 extra:
@@ -289,4 +291,3 @@ extra_javascript:
 
 extra_css:
     - _static/css/extra.css
-

@@ -1,7 +1,59 @@
 {% extends "base.html" %}
 
+{# Material emits descriptions without escaping; prose can contain quotes. #}
+{% block site_meta %}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="{{ (page.meta.get('description', config.site_description) if page else config.site_description) | e }}">
+  <meta name="author" content="{{ (page.meta.get('author', config.site_author) if page else config.site_author) | e }}">
+  {% if page and page.canonical_url %}
+    <link rel="canonical" href="{{ page.canonical_url | e }}">
+  {% endif %}
+  {% if page and page.previous_page %}
+    <link rel="prev" href="{{ page.previous_page.url | url | e }}">
+  {% endif %}
+  {% if page and page.next_page %}
+    <link rel="next" href="{{ page.next_page.url | url | e }}">
+  {% endif %}
+  <link rel="icon" href="{{ config.theme.favicon | url | e }}">
+  <meta name="generator" content="mkdocs-{{ mkdocs_version | e }}">
+{% endblock %}
+
 {% block extrahead %}
   {{ super() }}
+  {% if page and page.canonical_url %}
+    {% set seo_title = page.meta.get('title', page.title) ~ ' - ' ~ config.site_name %}
+    {% set seo_description = page.meta.get('description', config.site_description) %}
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="zh_CN">
+    <meta property="og:site_name" content="{{ config.site_name | e }}">
+    <meta property="og:title" content="{{ seo_title | e }}">
+    <meta property="og:description" content="{{ seo_description | e }}">
+    <meta property="og:url" content="{{ page.canonical_url | e }}">
+    <meta property="og:image" content="{{ (config.site_url ~ 'logo.png') | e }}">
+    <meta property="og:image:alt" content="云飞机器人中文维基标志">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="{{ seo_title | e }}">
+    <meta name="twitter:description" content="{{ seo_description | e }}">
+    <meta name="twitter:image" content="{{ (config.site_url ~ 'logo.png') | e }}">
+    <script type="application/ld+json">
+      {{ {
+        '@context': 'https://schema.org',
+        '@type': 'WebPage',
+        'name': page.meta.get('title', page.title),
+        'description': seo_description,
+        'url': page.canonical_url,
+        'inLanguage': 'zh-CN',
+        'isPartOf': {
+          '@type': 'WebSite',
+          'name': config.site_name,
+          'url': config.site_url
+        }
+      } | tojson }}
+    </script>
+  {% else %}
+    <meta name="robots" content="noindex">
+  {% endif %}
   <meta name="google-adsense-account" content="ca-pub-8821428748194648">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8821428748194648"
      crossorigin="anonymous"></script>
