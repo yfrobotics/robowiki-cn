@@ -56,7 +56,7 @@
 
 ## 与其他章节的关系
 
-- [运动学与动力学](../kinematics/index.md)：[逆运动学](../kinematics/inverse-kinematics.md) 决定抓取位姿是否可达，[雅可比矩阵](../kinematics/jacobian.md) 的静力学对偶 \(\boldsymbol{\tau} = J^T\mathcal{F}\) 是力控的基础，[动力学](../kinematics/dynamics.md) 支撑阻抗控制的实现
+- [建模](../kinematics/index.md)：[逆运动学](../kinematics/inverse-kinematics.md) 决定抓取位姿是否可达，[雅可比矩阵](../kinematics/jacobian.md) 的静力学对偶 \(\boldsymbol{\tau} = J^T\mathcal{F}\) 是力控的基础，[动力学](../kinematics/dynamics.md) 支撑阻抗控制的实现
 - [视觉](../cv/index.md)：[位姿估计](../cv/pose-estimation.md) 提供物体的 6D 位姿，[分割](../cv/segmentation.md) 在杂乱场景中分离物体，[三维视觉](../cv/3d-vision.md) 提供点云输入
 - [规划](../planning/index.md)：[运动规划](../planning/motionplanning.md) 生成趋近与撤离轨迹，需要在含物体的规划场景中做碰撞检测
 - [控制](../control/index.md)：力控是控制方法在接触任务中的具体应用

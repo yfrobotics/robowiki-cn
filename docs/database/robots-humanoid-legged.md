@@ -72,4 +72,4 @@
 1. [IEEE Spectrum: Robot Database](https://robots.ieee.org/)，IEEE
 2. [机器人图鉴总览](robots.md)
 3. [Atlas](atlas.md)、[Optimus](optimus.md)、[Figure](figure.md)、[Digit](digit.md)、[Unitree H1](unitree-h1.md)、[Spot](spot.md)
-4. [运动学与动力学](../kinematics/index.md)
+4. [建模](../kinematics/index.md)

@@ -32,7 +32,7 @@ nav:
       - how-to-contribute.md
       - standard.md
       - contributors.md
-    - 运动学与动力学:
+    - 建模:
       - kinematics/index.md
       - kinematics/spatial-transformation.md
       - kinematics/forward-kinematics.md

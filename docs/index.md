@@ -18,7 +18,7 @@ description: 云飞机器人中文维基为机器人爱好者、开发者和研�
 
 ## 按主题学习机器人
 
-- **基础与控制**：[机器人简介](intro.md)、[运动学与动力学](kinematics/index.md)、[控制系统](control/index.md)。
+- **基础与控制**：[机器人简介](intro.md)、[建模](kinematics/index.md)、[控制系统](control/index.md)。
 - **感知与决策**：[机器人感知](sensing/index.md)、[机器视觉](cv/index.md)、[规划与导航](planning/index.md)、[机器人操作](manipulation/index.md)。
 - **学习与仿真**：[机器学习](learning/index.md)、[具身智能](learning/embodied-ai.md)、[机器人仿真工具](simulation/index.md)。
 - **开发与硬件**：[ROS](ros/index.md)、[Linux](linux/index.md)、[实时操作系统](rtos/index.md)、[机器人硬件](hardware/index.md)。
