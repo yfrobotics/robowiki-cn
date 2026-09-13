@@ -3,30 +3,22 @@
 <html lang="zh" class="no-js">
   <head>
     
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width,initial-scale=1">
-      
-        <meta name="description" content="机器人领域的公共知识库">
-      
-      
-        <meta name="author" content="YFRL">
-      
-      
-        <link rel="canonical" href="https://yfrobotics.github.io/learning/dl-training-deployment/">
-      
-      
-        <link rel="prev" href="../dl-foundation-models/">
-      
-      
-        <link rel="next" href="../dl-robotics-pipelines/">
-      
-      
-        
-      
-      
-      <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
-    
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="将深度学习模型从研究原型转化为机器人上可靠运行的推理引擎，需要掌握分布式训练、混合精度训练、模型压缩和边缘部署等工程技术。本文介绍从训练到部署的完整流水线，重点关注机器人系统常用的 NVIDIA Jetson 等边缘计算平台。">
+  <meta name="author" content="YFRL">
+  
+    <link rel="canonical" href="https://yfrobotics.github.io/robowiki-cn/learning/dl-training-deployment/">
+  
+  
+    <link rel="prev" href="../dl-foundation-models/">
+  
+  
+    <link rel="next" href="../dl-robotics-pipelines/">
+  
+  <link rel="icon" href="../../assets/images/favicon.png">
+  <meta name="generator" content="mkdocs-1.6.1">
+
     
       
         <title>深度学习训练与部署 - 云飞机器人中文维基</title>
@@ -73,6 +65,25 @@
 
     
     
+  
+  
+    
+    
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="zh_CN">
+    <meta property="og:site_name" content="云飞机器人中文维基">
+    <meta property="og:title" content="深度学习训练与部署 - 云飞机器人中文维基">
+    <meta property="og:description" content="将深度学习模型从研究原型转化为机器人上可靠运行的推理引擎，需要掌握分布式训练、混合精度训练、模型压缩和边缘部署等工程技术。本文介绍从训练到部署的完整流水线，重点关注机器人系统常用的 NVIDIA Jetson 等边缘计算平台。">
+    <meta property="og:url" content="https://yfrobotics.github.io/robowiki-cn/learning/dl-training-deployment/">
+    <meta property="og:image" content="https://yfrobotics.github.io/robowiki-cn/logo.png">
+    <meta property="og:image:alt" content="云飞机器人中文维基标志">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="深度学习训练与部署 - 云飞机器人中文维基">
+    <meta name="twitter:description" content="将深度学习模型从研究原型转化为机器人上可靠运行的推理引擎，需要掌握分布式训练、混合精度训练、模型压缩和边缘部署等工程技术。本文介绍从训练到部署的完整流水线，重点关注机器人系统常用的 NVIDIA Jetson 等边缘计算平台。">
+    <meta name="twitter:image" content="https://yfrobotics.github.io/robowiki-cn/logo.png">
+    <script type="application/ld+json">
+      {"@context": "https://schema.org", "@type": "WebPage", "description": "\u5c06\u6df1\u5ea6\u5b66\u4e60\u6a21\u578b\u4ece\u7814\u7a76\u539f\u578b\u8f6c\u5316\u4e3a\u673a\u5668\u4eba\u4e0a\u53ef\u9760\u8fd0\u884c\u7684\u63a8\u7406\u5f15\u64ce\uff0c\u9700\u8981\u638c\u63e1\u5206\u5e03\u5f0f\u8bad\u7ec3\u3001\u6df7\u5408\u7cbe\u5ea6\u8bad\u7ec3\u3001\u6a21\u578b\u538b\u7f29\u548c\u8fb9\u7f18\u90e8\u7f72\u7b49\u5de5\u7a0b\u6280\u672f\u3002\u672c\u6587\u4ecb\u7ecd\u4ece\u8bad\u7ec3\u5230\u90e8\u7f72\u7684\u5b8c\u6574\u6d41\u6c34\u7ebf\uff0c\u91cd\u70b9\u5173\u6ce8\u673a\u5668\u4eba\u7cfb\u7edf\u5e38\u7528\u7684 NVIDIA Jetson \u7b49\u8fb9\u7f18\u8ba1\u7b97\u5e73\u53f0\u3002", "inLanguage": "zh-CN", "isPartOf": {"@type": "WebSite", "name": "\u4e91\u98de\u673a\u5668\u4eba\u4e2d\u6587\u7ef4\u57fa", "url": "https://yfrobotics.github.io/robowiki-cn/"}, "name": "\u6df1\u5ea6\u5b66\u4e60\u8bad\u7ec3\u4e0e\u90e8\u7f72", "url": "https://yfrobotics.github.io/robowiki-cn/learning/dl-training-deployment/"}
+    </script>
   
   <meta name="google-adsense-account" content="ca-pub-8821428748194648">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8821428748194648"
@@ -617,7 +628,7 @@
   <span class="md-ellipsis">
     
   
-    介绍
+    机器人入门与开发知识库
   
 
     
@@ -9131,6 +9142,9 @@
 
 
 
+
+  
+  
 
 
 

@@ -3,30 +3,22 @@
 <html lang="zh" class="no-js">
   <head>
     
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width,initial-scale=1">
-      
-        <meta name="description" content="机器人领域的公共知识库">
-      
-      
-        <meta name="author" content="YFRL">
-      
-      
-        <link rel="canonical" href="https://yfrobotics.github.io/control/nn/nn-policy-learning/">
-      
-      
-        <link rel="prev" href="../nn-physics-informed/">
-      
-      
-        <link rel="next" href="../../adaptive/adaptive/">
-      
-      
-        
-      
-      
-      <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
-    
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="当控制目标难以写成解析的代价函数，却容易由人类或既有控制器示范时，策略学习（Policy Learning）提供了一条直接从示范数据中获得控制器的路径。本页覆盖从行为克隆（Behavioral Cloning）到扩散策略（Diffusion Policy）的模仿学习方法、以控制障碍函数（Control Barrier…">
+  <meta name="author" content="YFRL">
+  
+    <link rel="canonical" href="https://yfrobotics.github.io/robowiki-cn/control/nn/nn-policy-learning/">
+  
+  
+    <link rel="prev" href="../nn-physics-informed/">
+  
+  
+    <link rel="next" href="../../adaptive/adaptive/">
+  
+  <link rel="icon" href="../../../assets/images/favicon.png">
+  <meta name="generator" content="mkdocs-1.6.1">
+
     
       
         <title>策略学习与安全控制 - 云飞机器人中文维基</title>
@@ -73,6 +65,25 @@
 
     
     
+  
+  
+    
+    
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="zh_CN">
+    <meta property="og:site_name" content="云飞机器人中文维基">
+    <meta property="og:title" content="策略学习与安全控制 - 云飞机器人中文维基">
+    <meta property="og:description" content="当控制目标难以写成解析的代价函数，却容易由人类或既有控制器示范时，策略学习（Policy Learning）提供了一条直接从示范数据中获得控制器的路径。本页覆盖从行为克隆（Behavioral Cloning）到扩散策略（Diffusion Policy）的模仿学习方法、以控制障碍函数（Control Barrier…">
+    <meta property="og:url" content="https://yfrobotics.github.io/robowiki-cn/control/nn/nn-policy-learning/">
+    <meta property="og:image" content="https://yfrobotics.github.io/robowiki-cn/logo.png">
+    <meta property="og:image:alt" content="云飞机器人中文维基标志">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="策略学习与安全控制 - 云飞机器人中文维基">
+    <meta name="twitter:description" content="当控制目标难以写成解析的代价函数，却容易由人类或既有控制器示范时，策略学习（Policy Learning）提供了一条直接从示范数据中获得控制器的路径。本页覆盖从行为克隆（Behavioral Cloning）到扩散策略（Diffusion Policy）的模仿学习方法、以控制障碍函数（Control Barrier…">
+    <meta name="twitter:image" content="https://yfrobotics.github.io/robowiki-cn/logo.png">
+    <script type="application/ld+json">
+      {"@context": "https://schema.org", "@type": "WebPage", "description": "\u5f53\u63a7\u5236\u76ee\u6807\u96be\u4ee5\u5199\u6210\u89e3\u6790\u7684\u4ee3\u4ef7\u51fd\u6570\uff0c\u5374\u5bb9\u6613\u7531\u4eba\u7c7b\u6216\u65e2\u6709\u63a7\u5236\u5668\u793a\u8303\u65f6\uff0c\u7b56\u7565\u5b66\u4e60\uff08Policy Learning\uff09\u63d0\u4f9b\u4e86\u4e00\u6761\u76f4\u63a5\u4ece\u793a\u8303\u6570\u636e\u4e2d\u83b7\u5f97\u63a7\u5236\u5668\u7684\u8def\u5f84\u3002\u672c\u9875\u8986\u76d6\u4ece\u884c\u4e3a\u514b\u9686\uff08Behavioral Cloning\uff09\u5230\u6269\u6563\u7b56\u7565\uff08Diffusion Policy\uff09\u7684\u6a21\u4eff\u5b66\u4e60\u65b9\u6cd5\u3001\u4ee5\u63a7\u5236\u969c\u788d\u51fd\u6570\uff08Control Barrier\u2026", "inLanguage": "zh-CN", "isPartOf": {"@type": "WebSite", "name": "\u4e91\u98de\u673a\u5668\u4eba\u4e2d\u6587\u7ef4\u57fa", "url": "https://yfrobotics.github.io/robowiki-cn/"}, "name": "\u7b56\u7565\u5b66\u4e60\u4e0e\u5b89\u5168\u63a7\u5236", "url": "https://yfrobotics.github.io/robowiki-cn/control/nn/nn-policy-learning/"}
+    </script>
   
   <meta name="google-adsense-account" content="ca-pub-8821428748194648">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8821428748194648"
@@ -617,7 +628,7 @@
   <span class="md-ellipsis">
     
   
-    介绍
+    机器人入门与开发知识库
   
 
     
@@ -9210,6 +9221,9 @@
 
 
 
+
+  
+  
 
 
 

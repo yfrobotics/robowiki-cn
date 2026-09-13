@@ -3,30 +3,22 @@
 <html lang="zh" class="no-js">
   <head>
     
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width,initial-scale=1">
-      
-        <meta name="description" content="机器人领域的公共知识库">
-      
-      
-        <meta name="author" content="YFRL">
-      
-      
-        <link rel="canonical" href="https://yfrobotics.github.io/linux/shell-scripting-full-reference/">
-      
-      
-        <link rel="prev" href="../shell-scripting-ops-toolkit/">
-      
-      
-        <link rel="next" href="../../rtos/">
-      
-      
-        
-      
-      
-      <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
-    
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="本文是 Bash Shell 脚本的综合参考手册，涵盖变量与数组、条件判断、循环、函数、字符串操作、文件测试、正则表达式等核心语法，并收录常用单行命令、推荐工具和编码风格指南。无论是编写简单的自动化脚本还是复杂的机器人部署工具，都可以在此快速查阅所需语法。">
+  <meta name="author" content="YFRL">
+  
+    <link rel="canonical" href="https://yfrobotics.github.io/robowiki-cn/linux/shell-scripting-full-reference/">
+  
+  
+    <link rel="prev" href="../shell-scripting-ops-toolkit/">
+  
+  
+    <link rel="next" href="../../rtos/">
+  
+  <link rel="icon" href="../../assets/images/favicon.png">
+  <meta name="generator" content="mkdocs-1.6.1">
+
     
       
         <title>Shell 脚本参考资料 - 云飞机器人中文维基</title>
@@ -73,6 +65,25 @@
 
     
     
+  
+  
+    
+    
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="zh_CN">
+    <meta property="og:site_name" content="云飞机器人中文维基">
+    <meta property="og:title" content="Shell 脚本参考资料 - 云飞机器人中文维基">
+    <meta property="og:description" content="本文是 Bash Shell 脚本的综合参考手册，涵盖变量与数组、条件判断、循环、函数、字符串操作、文件测试、正则表达式等核心语法，并收录常用单行命令、推荐工具和编码风格指南。无论是编写简单的自动化脚本还是复杂的机器人部署工具，都可以在此快速查阅所需语法。">
+    <meta property="og:url" content="https://yfrobotics.github.io/robowiki-cn/linux/shell-scripting-full-reference/">
+    <meta property="og:image" content="https://yfrobotics.github.io/robowiki-cn/logo.png">
+    <meta property="og:image:alt" content="云飞机器人中文维基标志">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Shell 脚本参考资料 - 云飞机器人中文维基">
+    <meta name="twitter:description" content="本文是 Bash Shell 脚本的综合参考手册，涵盖变量与数组、条件判断、循环、函数、字符串操作、文件测试、正则表达式等核心语法，并收录常用单行命令、推荐工具和编码风格指南。无论是编写简单的自动化脚本还是复杂的机器人部署工具，都可以在此快速查阅所需语法。">
+    <meta name="twitter:image" content="https://yfrobotics.github.io/robowiki-cn/logo.png">
+    <script type="application/ld+json">
+      {"@context": "https://schema.org", "@type": "WebPage", "description": "\u672c\u6587\u662f Bash Shell \u811a\u672c\u7684\u7efc\u5408\u53c2\u8003\u624b\u518c\uff0c\u6db5\u76d6\u53d8\u91cf\u4e0e\u6570\u7ec4\u3001\u6761\u4ef6\u5224\u65ad\u3001\u5faa\u73af\u3001\u51fd\u6570\u3001\u5b57\u7b26\u4e32\u64cd\u4f5c\u3001\u6587\u4ef6\u6d4b\u8bd5\u3001\u6b63\u5219\u8868\u8fbe\u5f0f\u7b49\u6838\u5fc3\u8bed\u6cd5\uff0c\u5e76\u6536\u5f55\u5e38\u7528\u5355\u884c\u547d\u4ee4\u3001\u63a8\u8350\u5de5\u5177\u548c\u7f16\u7801\u98ce\u683c\u6307\u5357\u3002\u65e0\u8bba\u662f\u7f16\u5199\u7b80\u5355\u7684\u81ea\u52a8\u5316\u811a\u672c\u8fd8\u662f\u590d\u6742\u7684\u673a\u5668\u4eba\u90e8\u7f72\u5de5\u5177\uff0c\u90fd\u53ef\u4ee5\u5728\u6b64\u5feb\u901f\u67e5\u9605\u6240\u9700\u8bed\u6cd5\u3002", "inLanguage": "zh-CN", "isPartOf": {"@type": "WebSite", "name": "\u4e91\u98de\u673a\u5668\u4eba\u4e2d\u6587\u7ef4\u57fa", "url": "https://yfrobotics.github.io/robowiki-cn/"}, "name": "Shell \u811a\u672c\u53c2\u8003\u8d44\u6599", "url": "https://yfrobotics.github.io/robowiki-cn/linux/shell-scripting-full-reference/"}
+    </script>
   
   <meta name="google-adsense-account" content="ca-pub-8821428748194648">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8821428748194648"
@@ -617,7 +628,7 @@
   <span class="md-ellipsis">
     
   
-    介绍
+    机器人入门与开发知识库
   
 
     
@@ -9768,6 +9779,9 @@ bash<span class="w"> </span>-x<span class="w"> </span>./my_script.sh
 
 
 
+
+  
+  
 
 
 

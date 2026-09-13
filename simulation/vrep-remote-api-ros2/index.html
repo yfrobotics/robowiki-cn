@@ -3,30 +3,22 @@
 <html lang="zh" class="no-js">
   <head>
     
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width,initial-scale=1">
-      
-        <meta name="description" content="机器人领域的公共知识库">
-      
-      
-        <meta name="author" content="YFRL">
-      
-      
-        <link rel="canonical" href="https://yfrobotics.github.io/simulation/vrep-remote-api-ros2/">
-      
-      
-        <link rel="prev" href="../vrep/">
-      
-      
-        <link rel="next" href="../vrep-robotics-workflows/">
-      
-      
-        
-      
-      
-      <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
-    
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="CoppeliaSim（原名 V-REP）提供了多种远程控制接口，使外部程序能够与仿真环境交互。自 V4.3 版本起，基于 ZeroMQ 的远程 API 取代了旧版 API，成为推荐的通信方式。同时，CoppeliaSim 提供了 ROS 2 插件，支持通过标准 ROS 2 话题和服务与仿真进行双向通信。">
+  <meta name="author" content="YFRL">
+  
+    <link rel="canonical" href="https://yfrobotics.github.io/robowiki-cn/simulation/vrep-remote-api-ros2/">
+  
+  
+    <link rel="prev" href="../vrep/">
+  
+  
+    <link rel="next" href="../vrep-robotics-workflows/">
+  
+  <link rel="icon" href="../../assets/images/favicon.png">
+  <meta name="generator" content="mkdocs-1.6.1">
+
     
       
         <title>CoppeliaSim 远程 API 与 ROS 2 - 云飞机器人中文维基</title>
@@ -73,6 +65,25 @@
 
     
     
+  
+  
+    
+    
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="zh_CN">
+    <meta property="og:site_name" content="云飞机器人中文维基">
+    <meta property="og:title" content="CoppeliaSim 远程 API 与 ROS 2 - 云飞机器人中文维基">
+    <meta property="og:description" content="CoppeliaSim（原名 V-REP）提供了多种远程控制接口，使外部程序能够与仿真环境交互。自 V4.3 版本起，基于 ZeroMQ 的远程 API 取代了旧版 API，成为推荐的通信方式。同时，CoppeliaSim 提供了 ROS 2 插件，支持通过标准 ROS 2 话题和服务与仿真进行双向通信。">
+    <meta property="og:url" content="https://yfrobotics.github.io/robowiki-cn/simulation/vrep-remote-api-ros2/">
+    <meta property="og:image" content="https://yfrobotics.github.io/robowiki-cn/logo.png">
+    <meta property="og:image:alt" content="云飞机器人中文维基标志">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="CoppeliaSim 远程 API 与 ROS 2 - 云飞机器人中文维基">
+    <meta name="twitter:description" content="CoppeliaSim（原名 V-REP）提供了多种远程控制接口，使外部程序能够与仿真环境交互。自 V4.3 版本起，基于 ZeroMQ 的远程 API 取代了旧版 API，成为推荐的通信方式。同时，CoppeliaSim 提供了 ROS 2 插件，支持通过标准 ROS 2 话题和服务与仿真进行双向通信。">
+    <meta name="twitter:image" content="https://yfrobotics.github.io/robowiki-cn/logo.png">
+    <script type="application/ld+json">
+      {"@context": "https://schema.org", "@type": "WebPage", "description": "CoppeliaSim\uff08\u539f\u540d V-REP\uff09\u63d0\u4f9b\u4e86\u591a\u79cd\u8fdc\u7a0b\u63a7\u5236\u63a5\u53e3\uff0c\u4f7f\u5916\u90e8\u7a0b\u5e8f\u80fd\u591f\u4e0e\u4eff\u771f\u73af\u5883\u4ea4\u4e92\u3002\u81ea V4.3 \u7248\u672c\u8d77\uff0c\u57fa\u4e8e ZeroMQ \u7684\u8fdc\u7a0b API \u53d6\u4ee3\u4e86\u65e7\u7248 API\uff0c\u6210\u4e3a\u63a8\u8350\u7684\u901a\u4fe1\u65b9\u5f0f\u3002\u540c\u65f6\uff0cCoppeliaSim \u63d0\u4f9b\u4e86 ROS 2 \u63d2\u4ef6\uff0c\u652f\u6301\u901a\u8fc7\u6807\u51c6 ROS 2 \u8bdd\u9898\u548c\u670d\u52a1\u4e0e\u4eff\u771f\u8fdb\u884c\u53cc\u5411\u901a\u4fe1\u3002", "inLanguage": "zh-CN", "isPartOf": {"@type": "WebSite", "name": "\u4e91\u98de\u673a\u5668\u4eba\u4e2d\u6587\u7ef4\u57fa", "url": "https://yfrobotics.github.io/robowiki-cn/"}, "name": "CoppeliaSim \u8fdc\u7a0b API \u4e0e ROS 2", "url": "https://yfrobotics.github.io/robowiki-cn/simulation/vrep-remote-api-ros2/"}
+    </script>
   
   <meta name="google-adsense-account" content="ca-pub-8821428748194648">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8821428748194648"
@@ -617,7 +628,7 @@
   <span class="md-ellipsis">
     
   
-    介绍
+    机器人入门与开发知识库
   
 
     
@@ -9004,6 +9015,9 @@ Python 脚本（强化学习/数据收集）
 
 
 
+
+  
+  
 
 
 

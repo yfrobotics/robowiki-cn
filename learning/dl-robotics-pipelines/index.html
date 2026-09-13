@@ -3,30 +3,22 @@
 <html lang="zh" class="no-js">
   <head>
     
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width,initial-scale=1">
-      
-        <meta name="description" content="机器人领域的公共知识库">
-      
-      
-        <meta name="author" content="YFRL">
-      
-      
-        <link rel="canonical" href="https://yfrobotics.github.io/learning/dl-robotics-pipelines/">
-      
-      
-        <link rel="prev" href="../dl-training-deployment/">
-      
-      
-        <link rel="next" href="../dl-full-reference/">
-      
-      
-        
-      
-      
-      <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
-    
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="现代机器人系统中，深度学习被广泛应用于从感知到决策的完整流水线。本文介绍机器人领域中典型的深度学习流水线架构，包括感知流水线（检测→跟踪→预测）、模仿学习、端到端自动驾驶、操作（Manipulation）流水线、数据采集策略以及持续学习机制。">
+  <meta name="author" content="YFRL">
+  
+    <link rel="canonical" href="https://yfrobotics.github.io/robowiki-cn/learning/dl-robotics-pipelines/">
+  
+  
+    <link rel="prev" href="../dl-training-deployment/">
+  
+  
+    <link rel="next" href="../dl-full-reference/">
+  
+  <link rel="icon" href="../../assets/images/favicon.png">
+  <meta name="generator" content="mkdocs-1.6.1">
+
     
       
         <title>深度学习机器人流水线 - 云飞机器人中文维基</title>
@@ -73,6 +65,25 @@
 
     
     
+  
+  
+    
+    
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="zh_CN">
+    <meta property="og:site_name" content="云飞机器人中文维基">
+    <meta property="og:title" content="深度学习机器人流水线 - 云飞机器人中文维基">
+    <meta property="og:description" content="现代机器人系统中，深度学习被广泛应用于从感知到决策的完整流水线。本文介绍机器人领域中典型的深度学习流水线架构，包括感知流水线（检测→跟踪→预测）、模仿学习、端到端自动驾驶、操作（Manipulation）流水线、数据采集策略以及持续学习机制。">
+    <meta property="og:url" content="https://yfrobotics.github.io/robowiki-cn/learning/dl-robotics-pipelines/">
+    <meta property="og:image" content="https://yfrobotics.github.io/robowiki-cn/logo.png">
+    <meta property="og:image:alt" content="云飞机器人中文维基标志">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="深度学习机器人流水线 - 云飞机器人中文维基">
+    <meta name="twitter:description" content="现代机器人系统中，深度学习被广泛应用于从感知到决策的完整流水线。本文介绍机器人领域中典型的深度学习流水线架构，包括感知流水线（检测→跟踪→预测）、模仿学习、端到端自动驾驶、操作（Manipulation）流水线、数据采集策略以及持续学习机制。">
+    <meta name="twitter:image" content="https://yfrobotics.github.io/robowiki-cn/logo.png">
+    <script type="application/ld+json">
+      {"@context": "https://schema.org", "@type": "WebPage", "description": "\u73b0\u4ee3\u673a\u5668\u4eba\u7cfb\u7edf\u4e2d\uff0c\u6df1\u5ea6\u5b66\u4e60\u88ab\u5e7f\u6cdb\u5e94\u7528\u4e8e\u4ece\u611f\u77e5\u5230\u51b3\u7b56\u7684\u5b8c\u6574\u6d41\u6c34\u7ebf\u3002\u672c\u6587\u4ecb\u7ecd\u673a\u5668\u4eba\u9886\u57df\u4e2d\u5178\u578b\u7684\u6df1\u5ea6\u5b66\u4e60\u6d41\u6c34\u7ebf\u67b6\u6784\uff0c\u5305\u62ec\u611f\u77e5\u6d41\u6c34\u7ebf\uff08\u68c0\u6d4b\u2192\u8ddf\u8e2a\u2192\u9884\u6d4b\uff09\u3001\u6a21\u4eff\u5b66\u4e60\u3001\u7aef\u5230\u7aef\u81ea\u52a8\u9a7e\u9a76\u3001\u64cd\u4f5c\uff08Manipulation\uff09\u6d41\u6c34\u7ebf\u3001\u6570\u636e\u91c7\u96c6\u7b56\u7565\u4ee5\u53ca\u6301\u7eed\u5b66\u4e60\u673a\u5236\u3002", "inLanguage": "zh-CN", "isPartOf": {"@type": "WebSite", "name": "\u4e91\u98de\u673a\u5668\u4eba\u4e2d\u6587\u7ef4\u57fa", "url": "https://yfrobotics.github.io/robowiki-cn/"}, "name": "\u6df1\u5ea6\u5b66\u4e60\u673a\u5668\u4eba\u6d41\u6c34\u7ebf", "url": "https://yfrobotics.github.io/robowiki-cn/learning/dl-robotics-pipelines/"}
+    </script>
   
   <meta name="google-adsense-account" content="ca-pub-8821428748194648">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8821428748194648"
@@ -617,7 +628,7 @@
   <span class="md-ellipsis">
     
   
-    介绍
+    机器人入门与开发知识库
   
 
     
@@ -9146,6 +9157,9 @@
 
 
 
+
+  
+  
 
 
 

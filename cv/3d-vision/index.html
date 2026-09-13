@@ -3,30 +3,22 @@
 <html lang="zh" class="no-js">
   <head>
     
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width,initial-scale=1">
-      
-        <meta name="description" content="机器人领域的公共知识库">
-      
-      
-        <meta name="author" content="YFRL">
-      
-      
-        <link rel="canonical" href="https://yfrobotics.github.io/cv/3d-vision/">
-      
-      
-        <link rel="prev" href="../pose-estimation/">
-      
-      
-        <link rel="next" href="../3d-vision-stereo-depth/">
-      
-      
-        
-      
-      
-      <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
-    
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="三维视觉（3D Vision）是计算机视觉的重要分支，研究如何从二维图像或传感器数据中恢复三维结构与空间信息。与传统二维视觉不同，三维视觉能够感知物体的深度、形状与空间位置，是机器人抓取、自主导航、场景重建和增强现实等应用的核心技术基础。随着深度传感器普及和神经网络方法的快速发展，三维视觉正经历从经典几何方法向深度学…">
+  <meta name="author" content="YFRL">
+  
+    <link rel="canonical" href="https://yfrobotics.github.io/robowiki-cn/cv/3d-vision/">
+  
+  
+    <link rel="prev" href="../pose-estimation/">
+  
+  
+    <link rel="next" href="../3d-vision-stereo-depth/">
+  
+  <link rel="icon" href="../../assets/images/favicon.png">
+  <meta name="generator" content="mkdocs-1.6.1">
+
     
       
         <title>三维视觉 - 云飞机器人中文维基</title>
@@ -73,6 +65,25 @@
 
     
     
+  
+  
+    
+    
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="zh_CN">
+    <meta property="og:site_name" content="云飞机器人中文维基">
+    <meta property="og:title" content="三维视觉 - 云飞机器人中文维基">
+    <meta property="og:description" content="三维视觉（3D Vision）是计算机视觉的重要分支，研究如何从二维图像或传感器数据中恢复三维结构与空间信息。与传统二维视觉不同，三维视觉能够感知物体的深度、形状与空间位置，是机器人抓取、自主导航、场景重建和增强现实等应用的核心技术基础。随着深度传感器普及和神经网络方法的快速发展，三维视觉正经历从经典几何方法向深度学…">
+    <meta property="og:url" content="https://yfrobotics.github.io/robowiki-cn/cv/3d-vision/">
+    <meta property="og:image" content="https://yfrobotics.github.io/robowiki-cn/logo.png">
+    <meta property="og:image:alt" content="云飞机器人中文维基标志">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="三维视觉 - 云飞机器人中文维基">
+    <meta name="twitter:description" content="三维视觉（3D Vision）是计算机视觉的重要分支，研究如何从二维图像或传感器数据中恢复三维结构与空间信息。与传统二维视觉不同，三维视觉能够感知物体的深度、形状与空间位置，是机器人抓取、自主导航、场景重建和增强现实等应用的核心技术基础。随着深度传感器普及和神经网络方法的快速发展，三维视觉正经历从经典几何方法向深度学…">
+    <meta name="twitter:image" content="https://yfrobotics.github.io/robowiki-cn/logo.png">
+    <script type="application/ld+json">
+      {"@context": "https://schema.org", "@type": "WebPage", "description": "\u4e09\u7ef4\u89c6\u89c9\uff083D Vision\uff09\u662f\u8ba1\u7b97\u673a\u89c6\u89c9\u7684\u91cd\u8981\u5206\u652f\uff0c\u7814\u7a76\u5982\u4f55\u4ece\u4e8c\u7ef4\u56fe\u50cf\u6216\u4f20\u611f\u5668\u6570\u636e\u4e2d\u6062\u590d\u4e09\u7ef4\u7ed3\u6784\u4e0e\u7a7a\u95f4\u4fe1\u606f\u3002\u4e0e\u4f20\u7edf\u4e8c\u7ef4\u89c6\u89c9\u4e0d\u540c\uff0c\u4e09\u7ef4\u89c6\u89c9\u80fd\u591f\u611f\u77e5\u7269\u4f53\u7684\u6df1\u5ea6\u3001\u5f62\u72b6\u4e0e\u7a7a\u95f4\u4f4d\u7f6e\uff0c\u662f\u673a\u5668\u4eba\u6293\u53d6\u3001\u81ea\u4e3b\u5bfc\u822a\u3001\u573a\u666f\u91cd\u5efa\u548c\u589e\u5f3a\u73b0\u5b9e\u7b49\u5e94\u7528\u7684\u6838\u5fc3\u6280\u672f\u57fa\u7840\u3002\u968f\u7740\u6df1\u5ea6\u4f20\u611f\u5668\u666e\u53ca\u548c\u795e\u7ecf\u7f51\u7edc\u65b9\u6cd5\u7684\u5feb\u901f\u53d1\u5c55\uff0c\u4e09\u7ef4\u89c6\u89c9\u6b63\u7ecf\u5386\u4ece\u7ecf\u5178\u51e0\u4f55\u65b9\u6cd5\u5411\u6df1\u5ea6\u5b66\u2026", "inLanguage": "zh-CN", "isPartOf": {"@type": "WebSite", "name": "\u4e91\u98de\u673a\u5668\u4eba\u4e2d\u6587\u7ef4\u57fa", "url": "https://yfrobotics.github.io/robowiki-cn/"}, "name": "\u4e09\u7ef4\u89c6\u89c9", "url": "https://yfrobotics.github.io/robowiki-cn/cv/3d-vision/"}
+    </script>
   
   <meta name="google-adsense-account" content="ca-pub-8821428748194648">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8821428748194648"
@@ -617,7 +628,7 @@
   <span class="md-ellipsis">
     
   
-    介绍
+    机器人入门与开发知识库
   
 
     
@@ -8956,6 +8967,9 @@
 
 
 
+
+  
+  
 
 
 

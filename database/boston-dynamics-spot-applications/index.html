@@ -3,30 +3,22 @@
 <html lang="zh" class="no-js">
   <head>
     
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width,initial-scale=1">
-      
-        <meta name="description" content="机器人领域的公共知识库">
-      
-      
-        <meta name="author" content="YFRL">
-      
-      
-        <link rel="canonical" href="https://yfrobotics.github.io/database/boston-dynamics-spot-applications/">
-      
-      
-        <link rel="prev" href="../boston-dynamics-platforms/">
-      
-      
-        <link rel="next" href="../labs/">
-      
-      
-        
-      
-      
-      <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
-    
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Spot 是 Boston Dynamics 第一款真正意义上的商业产品，也是检验足式机器人商业价值的关键样本。其主要落地场景集中在工业巡检、建筑进度测绘、核电与化工等危险环境作业，核心价值并非「能走」，而是把可重复的数据采集任务从人力中剥离。与之相伴的是公司在驱动方案上的路线切换——从奠定其技术声誉的液压系统全面转…">
+  <meta name="author" content="YFRL">
+  
+    <link rel="canonical" href="https://yfrobotics.github.io/robowiki-cn/database/boston-dynamics-spot-applications/">
+  
+  
+    <link rel="prev" href="../boston-dynamics-platforms/">
+  
+  
+    <link rel="next" href="../labs/">
+  
+  <link rel="icon" href="../../assets/images/favicon.png">
+  <meta name="generator" content="mkdocs-1.6.1">
+
     
       
         <title>Spot 商业应用与驱动技术路线 - 云飞机器人中文维基</title>
@@ -73,6 +65,25 @@
 
     
     
+  
+  
+    
+    
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="zh_CN">
+    <meta property="og:site_name" content="云飞机器人中文维基">
+    <meta property="og:title" content="Spot 商业应用与驱动技术路线 - 云飞机器人中文维基">
+    <meta property="og:description" content="Spot 是 Boston Dynamics 第一款真正意义上的商业产品，也是检验足式机器人商业价值的关键样本。其主要落地场景集中在工业巡检、建筑进度测绘、核电与化工等危险环境作业，核心价值并非「能走」，而是把可重复的数据采集任务从人力中剥离。与之相伴的是公司在驱动方案上的路线切换——从奠定其技术声誉的液压系统全面转…">
+    <meta property="og:url" content="https://yfrobotics.github.io/robowiki-cn/database/boston-dynamics-spot-applications/">
+    <meta property="og:image" content="https://yfrobotics.github.io/robowiki-cn/logo.png">
+    <meta property="og:image:alt" content="云飞机器人中文维基标志">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Spot 商业应用与驱动技术路线 - 云飞机器人中文维基">
+    <meta name="twitter:description" content="Spot 是 Boston Dynamics 第一款真正意义上的商业产品，也是检验足式机器人商业价值的关键样本。其主要落地场景集中在工业巡检、建筑进度测绘、核电与化工等危险环境作业，核心价值并非「能走」，而是把可重复的数据采集任务从人力中剥离。与之相伴的是公司在驱动方案上的路线切换——从奠定其技术声誉的液压系统全面转…">
+    <meta name="twitter:image" content="https://yfrobotics.github.io/robowiki-cn/logo.png">
+    <script type="application/ld+json">
+      {"@context": "https://schema.org", "@type": "WebPage", "description": "Spot \u662f Boston Dynamics \u7b2c\u4e00\u6b3e\u771f\u6b63\u610f\u4e49\u4e0a\u7684\u5546\u4e1a\u4ea7\u54c1\uff0c\u4e5f\u662f\u68c0\u9a8c\u8db3\u5f0f\u673a\u5668\u4eba\u5546\u4e1a\u4ef7\u503c\u7684\u5173\u952e\u6837\u672c\u3002\u5176\u4e3b\u8981\u843d\u5730\u573a\u666f\u96c6\u4e2d\u5728\u5de5\u4e1a\u5de1\u68c0\u3001\u5efa\u7b51\u8fdb\u5ea6\u6d4b\u7ed8\u3001\u6838\u7535\u4e0e\u5316\u5de5\u7b49\u5371\u9669\u73af\u5883\u4f5c\u4e1a\uff0c\u6838\u5fc3\u4ef7\u503c\u5e76\u975e\u300c\u80fd\u8d70\u300d\uff0c\u800c\u662f\u628a\u53ef\u91cd\u590d\u7684\u6570\u636e\u91c7\u96c6\u4efb\u52a1\u4ece\u4eba\u529b\u4e2d\u5265\u79bb\u3002\u4e0e\u4e4b\u76f8\u4f34\u7684\u662f\u516c\u53f8\u5728\u9a71\u52a8\u65b9\u6848\u4e0a\u7684\u8def\u7ebf\u5207\u6362\u2014\u2014\u4ece\u5960\u5b9a\u5176\u6280\u672f\u58f0\u8a89\u7684\u6db2\u538b\u7cfb\u7edf\u5168\u9762\u8f6c\u2026", "inLanguage": "zh-CN", "isPartOf": {"@type": "WebSite", "name": "\u4e91\u98de\u673a\u5668\u4eba\u4e2d\u6587\u7ef4\u57fa", "url": "https://yfrobotics.github.io/robowiki-cn/"}, "name": "Spot \u5546\u4e1a\u5e94\u7528\u4e0e\u9a71\u52a8\u6280\u672f\u8def\u7ebf", "url": "https://yfrobotics.github.io/robowiki-cn/database/boston-dynamics-spot-applications/"}
+    </script>
   
   <meta name="google-adsense-account" content="ca-pub-8821428748194648">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8821428748194648"
@@ -617,7 +628,7 @@
   <span class="md-ellipsis">
     
   
-    介绍
+    机器人入门与开发知识库
   
 
     
@@ -8695,6 +8706,9 @@
 
 
 
+
+  
+  
 
 
 

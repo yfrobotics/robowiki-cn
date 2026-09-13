@@ -3,30 +3,22 @@
 <html lang="zh" class="no-js">
   <head>
     
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width,initial-scale=1">
-      
-        <meta name="description" content="机器人领域的公共知识库">
-      
-      
-        <meta name="author" content="YFRL">
-      
-      
-        <link rel="canonical" href="https://yfrobotics.github.io/planning/pathplanning/">
-      
-      
-        <link rel="prev" href="../decisionmaking/">
-      
-      
-        <link rel="next" href="../motionplanning/">
-      
-      
-        
-      
-      
-      <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
-    
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="路径规划 (Path Planning) 是机器人规划中的核心问题之一，其目标是在已知或部分已知的环境中，找到一条从起点到终点的无碰撞路径。路径规划主要关注几何可行性，即路径不与障碍物相交，通常不考虑机器人的动力学约束。本页面介绍路径规划的主要方法及其算法原理。">
+  <meta name="author" content="YFRL">
+  
+    <link rel="canonical" href="https://yfrobotics.github.io/robowiki-cn/planning/pathplanning/">
+  
+  
+    <link rel="prev" href="../decisionmaking/">
+  
+  
+    <link rel="next" href="../motionplanning/">
+  
+  <link rel="icon" href="../../assets/images/favicon.png">
+  <meta name="generator" content="mkdocs-1.6.1">
+
     
       
         <title>路径规划 - 云飞机器人中文维基</title>
@@ -73,6 +65,25 @@
 
     
     
+  
+  
+    
+    
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="zh_CN">
+    <meta property="og:site_name" content="云飞机器人中文维基">
+    <meta property="og:title" content="路径规划 - 云飞机器人中文维基">
+    <meta property="og:description" content="路径规划 (Path Planning) 是机器人规划中的核心问题之一，其目标是在已知或部分已知的环境中，找到一条从起点到终点的无碰撞路径。路径规划主要关注几何可行性，即路径不与障碍物相交，通常不考虑机器人的动力学约束。本页面介绍路径规划的主要方法及其算法原理。">
+    <meta property="og:url" content="https://yfrobotics.github.io/robowiki-cn/planning/pathplanning/">
+    <meta property="og:image" content="https://yfrobotics.github.io/robowiki-cn/logo.png">
+    <meta property="og:image:alt" content="云飞机器人中文维基标志">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="路径规划 - 云飞机器人中文维基">
+    <meta name="twitter:description" content="路径规划 (Path Planning) 是机器人规划中的核心问题之一，其目标是在已知或部分已知的环境中，找到一条从起点到终点的无碰撞路径。路径规划主要关注几何可行性，即路径不与障碍物相交，通常不考虑机器人的动力学约束。本页面介绍路径规划的主要方法及其算法原理。">
+    <meta name="twitter:image" content="https://yfrobotics.github.io/robowiki-cn/logo.png">
+    <script type="application/ld+json">
+      {"@context": "https://schema.org", "@type": "WebPage", "description": "\u8def\u5f84\u89c4\u5212 (Path Planning) \u662f\u673a\u5668\u4eba\u89c4\u5212\u4e2d\u7684\u6838\u5fc3\u95ee\u9898\u4e4b\u4e00\uff0c\u5176\u76ee\u6807\u662f\u5728\u5df2\u77e5\u6216\u90e8\u5206\u5df2\u77e5\u7684\u73af\u5883\u4e2d\uff0c\u627e\u5230\u4e00\u6761\u4ece\u8d77\u70b9\u5230\u7ec8\u70b9\u7684\u65e0\u78b0\u649e\u8def\u5f84\u3002\u8def\u5f84\u89c4\u5212\u4e3b\u8981\u5173\u6ce8\u51e0\u4f55\u53ef\u884c\u6027\uff0c\u5373\u8def\u5f84\u4e0d\u4e0e\u969c\u788d\u7269\u76f8\u4ea4\uff0c\u901a\u5e38\u4e0d\u8003\u8651\u673a\u5668\u4eba\u7684\u52a8\u529b\u5b66\u7ea6\u675f\u3002\u672c\u9875\u9762\u4ecb\u7ecd\u8def\u5f84\u89c4\u5212\u7684\u4e3b\u8981\u65b9\u6cd5\u53ca\u5176\u7b97\u6cd5\u539f\u7406\u3002", "inLanguage": "zh-CN", "isPartOf": {"@type": "WebSite", "name": "\u4e91\u98de\u673a\u5668\u4eba\u4e2d\u6587\u7ef4\u57fa", "url": "https://yfrobotics.github.io/robowiki-cn/"}, "name": "\u8def\u5f84\u89c4\u5212", "url": "https://yfrobotics.github.io/robowiki-cn/planning/pathplanning/"}
+    </script>
   
   <meta name="google-adsense-account" content="ca-pub-8821428748194648">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8821428748194648"
@@ -617,7 +628,7 @@
   <span class="md-ellipsis">
     
   
-    介绍
+    机器人入门与开发知识库
   
 
     
@@ -9441,6 +9452,9 @@ L_{Bug2} \leq d(s, g) + \frac{1}{2} \sum_{i} n_i \cdot p_i
 
 
 
+
+  
+  
 
 
 

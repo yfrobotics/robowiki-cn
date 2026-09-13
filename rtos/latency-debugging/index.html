@@ -3,30 +3,22 @@
 <html lang="zh" class="no-js">
   <head>
     
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width,initial-scale=1">
-      
-        <meta name="description" content="机器人领域的公共知识库">
-      
-      
-        <meta name="author" content="YFRL">
-      
-      
-        <link rel="canonical" href="https://yfrobotics.github.io/rtos/latency-debugging/">
-      
-      
-        <link rel="prev" href="../scheduling-analysis/">
-      
-      
-        <link rel="next" href="../../hardware/">
-      
-      
-        
-      
-      
-      <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
-    
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="实时系统中的延迟（Latency）是指从事件发生到系统响应完成之间的时间间隔。对于机器人控制系统，过高的延迟或不可预测的延迟抖动（Jitter）会导致控制性能下降甚至系统失稳。本文介绍实时系统中延迟的分类、测量方法、常用调试工具以及优化技术。">
+  <meta name="author" content="YFRL">
+  
+    <link rel="canonical" href="https://yfrobotics.github.io/robowiki-cn/rtos/latency-debugging/">
+  
+  
+    <link rel="prev" href="../scheduling-analysis/">
+  
+  
+    <link rel="next" href="../../hardware/">
+  
+  <link rel="icon" href="../../assets/images/favicon.png">
+  <meta name="generator" content="mkdocs-1.6.1">
+
     
       
         <title>延迟调试 - 云飞机器人中文维基</title>
@@ -73,6 +65,25 @@
 
     
     
+  
+  
+    
+    
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="zh_CN">
+    <meta property="og:site_name" content="云飞机器人中文维基">
+    <meta property="og:title" content="延迟调试 - 云飞机器人中文维基">
+    <meta property="og:description" content="实时系统中的延迟（Latency）是指从事件发生到系统响应完成之间的时间间隔。对于机器人控制系统，过高的延迟或不可预测的延迟抖动（Jitter）会导致控制性能下降甚至系统失稳。本文介绍实时系统中延迟的分类、测量方法、常用调试工具以及优化技术。">
+    <meta property="og:url" content="https://yfrobotics.github.io/robowiki-cn/rtos/latency-debugging/">
+    <meta property="og:image" content="https://yfrobotics.github.io/robowiki-cn/logo.png">
+    <meta property="og:image:alt" content="云飞机器人中文维基标志">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="延迟调试 - 云飞机器人中文维基">
+    <meta name="twitter:description" content="实时系统中的延迟（Latency）是指从事件发生到系统响应完成之间的时间间隔。对于机器人控制系统，过高的延迟或不可预测的延迟抖动（Jitter）会导致控制性能下降甚至系统失稳。本文介绍实时系统中延迟的分类、测量方法、常用调试工具以及优化技术。">
+    <meta name="twitter:image" content="https://yfrobotics.github.io/robowiki-cn/logo.png">
+    <script type="application/ld+json">
+      {"@context": "https://schema.org", "@type": "WebPage", "description": "\u5b9e\u65f6\u7cfb\u7edf\u4e2d\u7684\u5ef6\u8fdf\uff08Latency\uff09\u662f\u6307\u4ece\u4e8b\u4ef6\u53d1\u751f\u5230\u7cfb\u7edf\u54cd\u5e94\u5b8c\u6210\u4e4b\u95f4\u7684\u65f6\u95f4\u95f4\u9694\u3002\u5bf9\u4e8e\u673a\u5668\u4eba\u63a7\u5236\u7cfb\u7edf\uff0c\u8fc7\u9ad8\u7684\u5ef6\u8fdf\u6216\u4e0d\u53ef\u9884\u6d4b\u7684\u5ef6\u8fdf\u6296\u52a8\uff08Jitter\uff09\u4f1a\u5bfc\u81f4\u63a7\u5236\u6027\u80fd\u4e0b\u964d\u751a\u81f3\u7cfb\u7edf\u5931\u7a33\u3002\u672c\u6587\u4ecb\u7ecd\u5b9e\u65f6\u7cfb\u7edf\u4e2d\u5ef6\u8fdf\u7684\u5206\u7c7b\u3001\u6d4b\u91cf\u65b9\u6cd5\u3001\u5e38\u7528\u8c03\u8bd5\u5de5\u5177\u4ee5\u53ca\u4f18\u5316\u6280\u672f\u3002", "inLanguage": "zh-CN", "isPartOf": {"@type": "WebSite", "name": "\u4e91\u98de\u673a\u5668\u4eba\u4e2d\u6587\u7ef4\u57fa", "url": "https://yfrobotics.github.io/robowiki-cn/"}, "name": "\u5ef6\u8fdf\u8c03\u8bd5", "url": "https://yfrobotics.github.io/robowiki-cn/rtos/latency-debugging/"}
+    </script>
   
   <meta name="google-adsense-account" content="ca-pub-8821428748194648">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8821428748194648"
@@ -617,7 +628,7 @@
   <span class="md-ellipsis">
     
   
-    介绍
+    机器人入门与开发知识库
   
 
     
@@ -9356,6 +9367,9 @@ awk<span class="w"> </span><span class="s1">'/^#/{next} {print $0}'</span><span 
 
 
 
+
+  
+  
 
 
 

@@ -3,30 +3,22 @@
 <html lang="zh" class="no-js">
   <head>
     
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width,initial-scale=1">
-      
-        <meta name="description" content="机器人领域的公共知识库">
-      
-      
-        <meta name="author" content="YFRL">
-      
-      
-        <link rel="canonical" href="https://yfrobotics.github.io/linux/shell-scripting-ops-toolkit/">
-      
-      
-        <link rel="prev" href="../shell-scripting-automation-patterns/">
-      
-      
-        <link rel="next" href="../shell-scripting-full-reference/">
-      
-      
-        
-      
-      
-      <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
-    
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="机器人系统在部署和运行阶段，运维工程师需要频繁与底层系统交互——监控资源使用、管理进程、调试网络、配置 USB 设备和串口通信。本文整理了机器人运维中最常用的命令行工具和脚本模式，涵盖系统资源监控、进程管理、网络调试、USB 与串口设备管理以及 Docker 容器化部署等内容，帮助开发者快速定位和解决现场问题。">
+  <meta name="author" content="YFRL">
+  
+    <link rel="canonical" href="https://yfrobotics.github.io/robowiki-cn/linux/shell-scripting-ops-toolkit/">
+  
+  
+    <link rel="prev" href="../shell-scripting-automation-patterns/">
+  
+  
+    <link rel="next" href="../shell-scripting-full-reference/">
+  
+  <link rel="icon" href="../../assets/images/favicon.png">
+  <meta name="generator" content="mkdocs-1.6.1">
+
     
       
         <title>Shell 脚本运维工具箱 - 云飞机器人中文维基</title>
@@ -73,6 +65,25 @@
 
     
     
+  
+  
+    
+    
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="zh_CN">
+    <meta property="og:site_name" content="云飞机器人中文维基">
+    <meta property="og:title" content="Shell 脚本运维工具箱 - 云飞机器人中文维基">
+    <meta property="og:description" content="机器人系统在部署和运行阶段，运维工程师需要频繁与底层系统交互——监控资源使用、管理进程、调试网络、配置 USB 设备和串口通信。本文整理了机器人运维中最常用的命令行工具和脚本模式，涵盖系统资源监控、进程管理、网络调试、USB 与串口设备管理以及 Docker 容器化部署等内容，帮助开发者快速定位和解决现场问题。">
+    <meta property="og:url" content="https://yfrobotics.github.io/robowiki-cn/linux/shell-scripting-ops-toolkit/">
+    <meta property="og:image" content="https://yfrobotics.github.io/robowiki-cn/logo.png">
+    <meta property="og:image:alt" content="云飞机器人中文维基标志">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Shell 脚本运维工具箱 - 云飞机器人中文维基">
+    <meta name="twitter:description" content="机器人系统在部署和运行阶段，运维工程师需要频繁与底层系统交互——监控资源使用、管理进程、调试网络、配置 USB 设备和串口通信。本文整理了机器人运维中最常用的命令行工具和脚本模式，涵盖系统资源监控、进程管理、网络调试、USB 与串口设备管理以及 Docker 容器化部署等内容，帮助开发者快速定位和解决现场问题。">
+    <meta name="twitter:image" content="https://yfrobotics.github.io/robowiki-cn/logo.png">
+    <script type="application/ld+json">
+      {"@context": "https://schema.org", "@type": "WebPage", "description": "\u673a\u5668\u4eba\u7cfb\u7edf\u5728\u90e8\u7f72\u548c\u8fd0\u884c\u9636\u6bb5\uff0c\u8fd0\u7ef4\u5de5\u7a0b\u5e08\u9700\u8981\u9891\u7e41\u4e0e\u5e95\u5c42\u7cfb\u7edf\u4ea4\u4e92\u2014\u2014\u76d1\u63a7\u8d44\u6e90\u4f7f\u7528\u3001\u7ba1\u7406\u8fdb\u7a0b\u3001\u8c03\u8bd5\u7f51\u7edc\u3001\u914d\u7f6e USB \u8bbe\u5907\u548c\u4e32\u53e3\u901a\u4fe1\u3002\u672c\u6587\u6574\u7406\u4e86\u673a\u5668\u4eba\u8fd0\u7ef4\u4e2d\u6700\u5e38\u7528\u7684\u547d\u4ee4\u884c\u5de5\u5177\u548c\u811a\u672c\u6a21\u5f0f\uff0c\u6db5\u76d6\u7cfb\u7edf\u8d44\u6e90\u76d1\u63a7\u3001\u8fdb\u7a0b\u7ba1\u7406\u3001\u7f51\u7edc\u8c03\u8bd5\u3001USB \u4e0e\u4e32\u53e3\u8bbe\u5907\u7ba1\u7406\u4ee5\u53ca Docker \u5bb9\u5668\u5316\u90e8\u7f72\u7b49\u5185\u5bb9\uff0c\u5e2e\u52a9\u5f00\u53d1\u8005\u5feb\u901f\u5b9a\u4f4d\u548c\u89e3\u51b3\u73b0\u573a\u95ee\u9898\u3002", "inLanguage": "zh-CN", "isPartOf": {"@type": "WebSite", "name": "\u4e91\u98de\u673a\u5668\u4eba\u4e2d\u6587\u7ef4\u57fa", "url": "https://yfrobotics.github.io/robowiki-cn/"}, "name": "Shell \u811a\u672c\u8fd0\u7ef4\u5de5\u5177\u7bb1", "url": "https://yfrobotics.github.io/robowiki-cn/linux/shell-scripting-ops-toolkit/"}
+    </script>
   
   <meta name="google-adsense-account" content="ca-pub-8821428748194648">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8821428748194648"
@@ -617,7 +628,7 @@
   <span class="md-ellipsis">
     
   
-    介绍
+    机器人入门与开发知识库
   
 
     
@@ -9492,6 +9503,9 @@ sleep<span class="w"> </span><span class="m">3</span>
 
 
 
+
+  
+  
 
 
 

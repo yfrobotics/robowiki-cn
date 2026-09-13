@@ -3,30 +3,22 @@
 <html lang="zh" class="no-js">
   <head>
     
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width,initial-scale=1">
-      
-        <meta name="description" content="机器人领域的公共知识库">
-      
-      
-        <meta name="author" content="YFRL">
-      
-      
-        <link rel="canonical" href="https://yfrobotics.github.io/manipulation/">
-      
-      
-        <link rel="prev" href="../planning/navigation-local-planners/">
-      
-      
-        <link rel="next" href="grasping/">
-      
-      
-        
-      
-      
-      <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
-    
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="操作（Manipulation）研究机器人如何用末端执行器改变物体的状态——抓取、搬运、装配、开门、使用工具。与移动机器人只需在自由空间中避障不同，操作的本质是主动建立并控制接触：机器人必须靠近物体、施加合适的力、在接触约束下完成动作。接触让动力学变得不连续、让感知变得残缺（手会遮挡物体）、让误差变得不可容忍（几毫米…">
+  <meta name="author" content="YFRL">
+  
+    <link rel="canonical" href="https://yfrobotics.github.io/robowiki-cn/manipulation/">
+  
+  
+    <link rel="prev" href="../planning/navigation-local-planners/">
+  
+  
+    <link rel="next" href="grasping/">
+  
+  <link rel="icon" href="../assets/images/favicon.png">
+  <meta name="generator" content="mkdocs-1.6.1">
+
     
       
         <title>机器人操作 - 云飞机器人中文维基</title>
@@ -73,6 +65,25 @@
 
     
     
+  
+  
+    
+    
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="zh_CN">
+    <meta property="og:site_name" content="云飞机器人中文维基">
+    <meta property="og:title" content="机器人操作 - 云飞机器人中文维基">
+    <meta property="og:description" content="操作（Manipulation）研究机器人如何用末端执行器改变物体的状态——抓取、搬运、装配、开门、使用工具。与移动机器人只需在自由空间中避障不同，操作的本质是主动建立并控制接触：机器人必须靠近物体、施加合适的力、在接触约束下完成动作。接触让动力学变得不连续、让感知变得残缺（手会遮挡物体）、让误差变得不可容忍（几毫米…">
+    <meta property="og:url" content="https://yfrobotics.github.io/robowiki-cn/manipulation/">
+    <meta property="og:image" content="https://yfrobotics.github.io/robowiki-cn/logo.png">
+    <meta property="og:image:alt" content="云飞机器人中文维基标志">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="机器人操作 - 云飞机器人中文维基">
+    <meta name="twitter:description" content="操作（Manipulation）研究机器人如何用末端执行器改变物体的状态——抓取、搬运、装配、开门、使用工具。与移动机器人只需在自由空间中避障不同，操作的本质是主动建立并控制接触：机器人必须靠近物体、施加合适的力、在接触约束下完成动作。接触让动力学变得不连续、让感知变得残缺（手会遮挡物体）、让误差变得不可容忍（几毫米…">
+    <meta name="twitter:image" content="https://yfrobotics.github.io/robowiki-cn/logo.png">
+    <script type="application/ld+json">
+      {"@context": "https://schema.org", "@type": "WebPage", "description": "\u64cd\u4f5c\uff08Manipulation\uff09\u7814\u7a76\u673a\u5668\u4eba\u5982\u4f55\u7528\u672b\u7aef\u6267\u884c\u5668\u6539\u53d8\u7269\u4f53\u7684\u72b6\u6001\u2014\u2014\u6293\u53d6\u3001\u642c\u8fd0\u3001\u88c5\u914d\u3001\u5f00\u95e8\u3001\u4f7f\u7528\u5de5\u5177\u3002\u4e0e\u79fb\u52a8\u673a\u5668\u4eba\u53ea\u9700\u5728\u81ea\u7531\u7a7a\u95f4\u4e2d\u907f\u969c\u4e0d\u540c\uff0c\u64cd\u4f5c\u7684\u672c\u8d28\u662f\u4e3b\u52a8\u5efa\u7acb\u5e76\u63a7\u5236\u63a5\u89e6\uff1a\u673a\u5668\u4eba\u5fc5\u987b\u9760\u8fd1\u7269\u4f53\u3001\u65bd\u52a0\u5408\u9002\u7684\u529b\u3001\u5728\u63a5\u89e6\u7ea6\u675f\u4e0b\u5b8c\u6210\u52a8\u4f5c\u3002\u63a5\u89e6\u8ba9\u52a8\u529b\u5b66\u53d8\u5f97\u4e0d\u8fde\u7eed\u3001\u8ba9\u611f\u77e5\u53d8\u5f97\u6b8b\u7f3a\uff08\u624b\u4f1a\u906e\u6321\u7269\u4f53\uff09\u3001\u8ba9\u8bef\u5dee\u53d8\u5f97\u4e0d\u53ef\u5bb9\u5fcd\uff08\u51e0\u6beb\u7c73\u2026", "inLanguage": "zh-CN", "isPartOf": {"@type": "WebSite", "name": "\u4e91\u98de\u673a\u5668\u4eba\u4e2d\u6587\u7ef4\u57fa", "url": "https://yfrobotics.github.io/robowiki-cn/"}, "name": "\u673a\u5668\u4eba\u64cd\u4f5c", "url": "https://yfrobotics.github.io/robowiki-cn/manipulation/"}
+    </script>
   
   <meta name="google-adsense-account" content="ca-pub-8821428748194648">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8821428748194648"
@@ -617,7 +628,7 @@
   <span class="md-ellipsis">
     
   
-    介绍
+    机器人入门与开发知识库
   
 
     
@@ -8684,6 +8695,9 @@
 
 
 
+
+  
+  
 
 
 

@@ -3,30 +3,22 @@
 <html lang="zh" class="no-js">
   <head>
     
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width,initial-scale=1">
-      
-        <meta name="description" content="机器人领域的公共知识库">
-      
-      
-        <meta name="author" content="YFRL">
-      
-      
-        <link rel="canonical" href="https://yfrobotics.github.io/ros/ros2-nav2-microros/">
-      
-      
-        <link rel="prev" href="../ros2-actions-components/">
-      
-      
-        <link rel="next" href="../ros2-migration-playbook/">
-      
-      
-        
-      
-      
-      <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
-    
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Nav2 与 micro-ROS 代表了 ROS 2 向上与向下两个方向的延伸。Nav2 是 ROS 1 Navigation Stack 的完整重写，用行为树（Behavior Tree）替代原先硬编码的状态机，把规划器、控制器、恢复行为都变成可插拔的生命周期节点，从而支持更复杂的任务编排。micro-ROS 则把…">
+  <meta name="author" content="YFRL">
+  
+    <link rel="canonical" href="https://yfrobotics.github.io/robowiki-cn/ros/ros2-nav2-microros/">
+  
+  
+    <link rel="prev" href="../ros2-actions-components/">
+  
+  
+    <link rel="next" href="../ros2-migration-playbook/">
+  
+  <link rel="icon" href="../../assets/images/favicon.png">
+  <meta name="generator" content="mkdocs-1.6.1">
+
     
       
         <title>Nav2 导航框架与 micro-ROS - 云飞机器人中文维基</title>
@@ -73,6 +65,25 @@
 
     
     
+  
+  
+    
+    
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="zh_CN">
+    <meta property="og:site_name" content="云飞机器人中文维基">
+    <meta property="og:title" content="Nav2 导航框架与 micro-ROS - 云飞机器人中文维基">
+    <meta property="og:description" content="Nav2 与 micro-ROS 代表了 ROS 2 向上与向下两个方向的延伸。Nav2 是 ROS 1 Navigation Stack 的完整重写，用行为树（Behavior Tree）替代原先硬编码的状态机，把规划器、控制器、恢复行为都变成可插拔的生命周期节点，从而支持更复杂的任务编排。micro-ROS 则把…">
+    <meta property="og:url" content="https://yfrobotics.github.io/robowiki-cn/ros/ros2-nav2-microros/">
+    <meta property="og:image" content="https://yfrobotics.github.io/robowiki-cn/logo.png">
+    <meta property="og:image:alt" content="云飞机器人中文维基标志">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Nav2 导航框架与 micro-ROS - 云飞机器人中文维基">
+    <meta name="twitter:description" content="Nav2 与 micro-ROS 代表了 ROS 2 向上与向下两个方向的延伸。Nav2 是 ROS 1 Navigation Stack 的完整重写，用行为树（Behavior Tree）替代原先硬编码的状态机，把规划器、控制器、恢复行为都变成可插拔的生命周期节点，从而支持更复杂的任务编排。micro-ROS 则把…">
+    <meta name="twitter:image" content="https://yfrobotics.github.io/robowiki-cn/logo.png">
+    <script type="application/ld+json">
+      {"@context": "https://schema.org", "@type": "WebPage", "description": "Nav2 \u4e0e micro-ROS \u4ee3\u8868\u4e86 ROS 2 \u5411\u4e0a\u4e0e\u5411\u4e0b\u4e24\u4e2a\u65b9\u5411\u7684\u5ef6\u4f38\u3002Nav2 \u662f ROS 1 Navigation Stack \u7684\u5b8c\u6574\u91cd\u5199\uff0c\u7528\u884c\u4e3a\u6811\uff08Behavior Tree\uff09\u66ff\u4ee3\u539f\u5148\u786c\u7f16\u7801\u7684\u72b6\u6001\u673a\uff0c\u628a\u89c4\u5212\u5668\u3001\u63a7\u5236\u5668\u3001\u6062\u590d\u884c\u4e3a\u90fd\u53d8\u6210\u53ef\u63d2\u62d4\u7684\u751f\u547d\u5468\u671f\u8282\u70b9\uff0c\u4ece\u800c\u652f\u6301\u66f4\u590d\u6742\u7684\u4efb\u52a1\u7f16\u6392\u3002micro-ROS \u5219\u628a\u2026", "inLanguage": "zh-CN", "isPartOf": {"@type": "WebSite", "name": "\u4e91\u98de\u673a\u5668\u4eba\u4e2d\u6587\u7ef4\u57fa", "url": "https://yfrobotics.github.io/robowiki-cn/"}, "name": "Nav2 \u5bfc\u822a\u6846\u67b6\u4e0e micro-ROS", "url": "https://yfrobotics.github.io/robowiki-cn/ros/ros2-nav2-microros/"}
+    </script>
   
   <meta name="google-adsense-account" content="ca-pub-8821428748194648">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8821428748194648"
@@ -617,7 +628,7 @@
   <span class="md-ellipsis">
     
   
-    介绍
+    机器人入门与开发知识库
   
 
     
@@ -8843,6 +8854,9 @@ docker<span class="w"> </span>run<span class="w"> </span>-it<span class="w"> </s
 
 
 
+
+  
+  
 
 
 

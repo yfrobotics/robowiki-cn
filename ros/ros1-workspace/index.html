@@ -3,30 +3,22 @@
 <html lang="zh" class="no-js">
   <head>
     
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width,initial-scale=1">
-      
-        <meta name="description" content="机器人领域的公共知识库">
-      
-      
-        <meta name="author" content="YFRL">
-      
-      
-        <link rel="canonical" href="https://yfrobotics.github.io/ros/ros1-workspace/">
-      
-      
-        <link rel="prev" href="../ros1/">
-      
-      
-        <link rel="next" href="../ros1-communication/">
-      
-      
-        
-      
-      
-      <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
-    
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="catkin 工作空间 (workspace) 是 ROS 1 中组织、编译和管理软件包的核心机制。理解工作空间的结构和使用方法，是高效进行 ROS 1 开发的基础。本文详细介绍工作空间的创建、软件包的构建配置、编译工具的选择以及多工作空间叠加等实用技巧。">
+  <meta name="author" content="YFRL">
+  
+    <link rel="canonical" href="https://yfrobotics.github.io/robowiki-cn/ros/ros1-workspace/">
+  
+  
+    <link rel="prev" href="../ros1/">
+  
+  
+    <link rel="next" href="../ros1-communication/">
+  
+  <link rel="icon" href="../../assets/images/favicon.png">
+  <meta name="generator" content="mkdocs-1.6.1">
+
     
       
         <title>ROS 1 工作空间 - 云飞机器人中文维基</title>
@@ -73,6 +65,25 @@
 
     
     
+  
+  
+    
+    
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="zh_CN">
+    <meta property="og:site_name" content="云飞机器人中文维基">
+    <meta property="og:title" content="ROS 1 工作空间 - 云飞机器人中文维基">
+    <meta property="og:description" content="catkin 工作空间 (workspace) 是 ROS 1 中组织、编译和管理软件包的核心机制。理解工作空间的结构和使用方法，是高效进行 ROS 1 开发的基础。本文详细介绍工作空间的创建、软件包的构建配置、编译工具的选择以及多工作空间叠加等实用技巧。">
+    <meta property="og:url" content="https://yfrobotics.github.io/robowiki-cn/ros/ros1-workspace/">
+    <meta property="og:image" content="https://yfrobotics.github.io/robowiki-cn/logo.png">
+    <meta property="og:image:alt" content="云飞机器人中文维基标志">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="ROS 1 工作空间 - 云飞机器人中文维基">
+    <meta name="twitter:description" content="catkin 工作空间 (workspace) 是 ROS 1 中组织、编译和管理软件包的核心机制。理解工作空间的结构和使用方法，是高效进行 ROS 1 开发的基础。本文详细介绍工作空间的创建、软件包的构建配置、编译工具的选择以及多工作空间叠加等实用技巧。">
+    <meta name="twitter:image" content="https://yfrobotics.github.io/robowiki-cn/logo.png">
+    <script type="application/ld+json">
+      {"@context": "https://schema.org", "@type": "WebPage", "description": "catkin \u5de5\u4f5c\u7a7a\u95f4 (workspace) \u662f ROS 1 \u4e2d\u7ec4\u7ec7\u3001\u7f16\u8bd1\u548c\u7ba1\u7406\u8f6f\u4ef6\u5305\u7684\u6838\u5fc3\u673a\u5236\u3002\u7406\u89e3\u5de5\u4f5c\u7a7a\u95f4\u7684\u7ed3\u6784\u548c\u4f7f\u7528\u65b9\u6cd5\uff0c\u662f\u9ad8\u6548\u8fdb\u884c ROS 1 \u5f00\u53d1\u7684\u57fa\u7840\u3002\u672c\u6587\u8be6\u7ec6\u4ecb\u7ecd\u5de5\u4f5c\u7a7a\u95f4\u7684\u521b\u5efa\u3001\u8f6f\u4ef6\u5305\u7684\u6784\u5efa\u914d\u7f6e\u3001\u7f16\u8bd1\u5de5\u5177\u7684\u9009\u62e9\u4ee5\u53ca\u591a\u5de5\u4f5c\u7a7a\u95f4\u53e0\u52a0\u7b49\u5b9e\u7528\u6280\u5de7\u3002", "inLanguage": "zh-CN", "isPartOf": {"@type": "WebSite", "name": "\u4e91\u98de\u673a\u5668\u4eba\u4e2d\u6587\u7ef4\u57fa", "url": "https://yfrobotics.github.io/robowiki-cn/"}, "name": "ROS 1 \u5de5\u4f5c\u7a7a\u95f4", "url": "https://yfrobotics.github.io/robowiki-cn/ros/ros1-workspace/"}
+    </script>
   
   <meta name="google-adsense-account" content="ca-pub-8821428748194648">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8821428748194648"
@@ -617,7 +628,7 @@
   <span class="md-ellipsis">
     
   
-    介绍
+    机器人入门与开发知识库
   
 
     
@@ -9338,6 +9349,9 @@ vcs<span class="w"> </span>import<span class="w"> </span>&lt;<span class="w"> </
 
 
 
+
+  
+  
 
 
 

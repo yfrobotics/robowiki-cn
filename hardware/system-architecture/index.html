@@ -3,30 +3,22 @@
 <html lang="zh" class="no-js">
   <head>
     
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width,initial-scale=1">
-      
-        <meta name="description" content="机器人领域的公共知识库">
-      
-      
-        <meta name="author" content="YFRL">
-      
-      
-        <link rel="canonical" href="https://yfrobotics.github.io/hardware/system-architecture/">
-      
-      
-        <link rel="prev" href="../">
-      
-      
-        <link rel="next" href="../power-thermal/">
-      
-      
-        
-      
-      
-      <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
-    
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="机器人系统架构是指计算单元、传感器、执行器、电源和通信总线之间的组织方式与互联关系。合理的架构设计决定了系统的实时性、可扩展性和可靠性。本文从计算层级、总线拓扑、执行器接口、电源分配和典型机器人架构等方面，系统介绍机器人硬件系统架构的设计原则与工程实践。">
+  <meta name="author" content="YFRL">
+  
+    <link rel="canonical" href="https://yfrobotics.github.io/robowiki-cn/hardware/system-architecture/">
+  
+  
+    <link rel="prev" href="../">
+  
+  
+    <link rel="next" href="../power-thermal/">
+  
+  <link rel="icon" href="../../assets/images/favicon.png">
+  <meta name="generator" content="mkdocs-1.6.1">
+
     
       
         <title>系统架构 - 云飞机器人中文维基</title>
@@ -73,6 +65,25 @@
 
     
     
+  
+  
+    
+    
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="zh_CN">
+    <meta property="og:site_name" content="云飞机器人中文维基">
+    <meta property="og:title" content="系统架构 - 云飞机器人中文维基">
+    <meta property="og:description" content="机器人系统架构是指计算单元、传感器、执行器、电源和通信总线之间的组织方式与互联关系。合理的架构设计决定了系统的实时性、可扩展性和可靠性。本文从计算层级、总线拓扑、执行器接口、电源分配和典型机器人架构等方面，系统介绍机器人硬件系统架构的设计原则与工程实践。">
+    <meta property="og:url" content="https://yfrobotics.github.io/robowiki-cn/hardware/system-architecture/">
+    <meta property="og:image" content="https://yfrobotics.github.io/robowiki-cn/logo.png">
+    <meta property="og:image:alt" content="云飞机器人中文维基标志">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="系统架构 - 云飞机器人中文维基">
+    <meta name="twitter:description" content="机器人系统架构是指计算单元、传感器、执行器、电源和通信总线之间的组织方式与互联关系。合理的架构设计决定了系统的实时性、可扩展性和可靠性。本文从计算层级、总线拓扑、执行器接口、电源分配和典型机器人架构等方面，系统介绍机器人硬件系统架构的设计原则与工程实践。">
+    <meta name="twitter:image" content="https://yfrobotics.github.io/robowiki-cn/logo.png">
+    <script type="application/ld+json">
+      {"@context": "https://schema.org", "@type": "WebPage", "description": "\u673a\u5668\u4eba\u7cfb\u7edf\u67b6\u6784\u662f\u6307\u8ba1\u7b97\u5355\u5143\u3001\u4f20\u611f\u5668\u3001\u6267\u884c\u5668\u3001\u7535\u6e90\u548c\u901a\u4fe1\u603b\u7ebf\u4e4b\u95f4\u7684\u7ec4\u7ec7\u65b9\u5f0f\u4e0e\u4e92\u8054\u5173\u7cfb\u3002\u5408\u7406\u7684\u67b6\u6784\u8bbe\u8ba1\u51b3\u5b9a\u4e86\u7cfb\u7edf\u7684\u5b9e\u65f6\u6027\u3001\u53ef\u6269\u5c55\u6027\u548c\u53ef\u9760\u6027\u3002\u672c\u6587\u4ece\u8ba1\u7b97\u5c42\u7ea7\u3001\u603b\u7ebf\u62d3\u6251\u3001\u6267\u884c\u5668\u63a5\u53e3\u3001\u7535\u6e90\u5206\u914d\u548c\u5178\u578b\u673a\u5668\u4eba\u67b6\u6784\u7b49\u65b9\u9762\uff0c\u7cfb\u7edf\u4ecb\u7ecd\u673a\u5668\u4eba\u786c\u4ef6\u7cfb\u7edf\u67b6\u6784\u7684\u8bbe\u8ba1\u539f\u5219\u4e0e\u5de5\u7a0b\u5b9e\u8df5\u3002", "inLanguage": "zh-CN", "isPartOf": {"@type": "WebSite", "name": "\u4e91\u98de\u673a\u5668\u4eba\u4e2d\u6587\u7ef4\u57fa", "url": "https://yfrobotics.github.io/robowiki-cn/"}, "name": "\u7cfb\u7edf\u67b6\u6784", "url": "https://yfrobotics.github.io/robowiki-cn/hardware/system-architecture/"}
+    </script>
   
   <meta name="google-adsense-account" content="ca-pub-8821428748194648">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8821428748194648"
@@ -617,7 +628,7 @@
   <span class="md-ellipsis">
     
   
-    介绍
+    机器人入门与开发知识库
   
 
     
@@ -9381,6 +9392,9 @@
 
 
 
+
+  
+  
 
 
 

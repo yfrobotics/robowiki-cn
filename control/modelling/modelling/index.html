@@ -3,30 +3,22 @@
 <html lang="zh" class="no-js">
   <head>
     
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width,initial-scale=1">
-      
-        <meta name="description" content="机器人领域的公共知识库">
-      
-      
-        <meta name="author" content="YFRL">
-      
-      
-        <link rel="canonical" href="https://yfrobotics.github.io/control/modelling/modelling/">
-      
-      
-        <link rel="prev" href="../../">
-      
-      
-        <link rel="next" href="../modelling-foundations/">
-      
-      
-        
-      
-      
-      <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
-    
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="系统建模（System Modeling）是控制系统设计的基础。一个核心原则是：你只能控制你能建模的系统。无论是设计PID控制器、状态反馈控制律，还是基于模型预测控制（Model Predictive Control，MPC），都需要一个准确的数学模型来描述系统的动态行为。">
+  <meta name="author" content="YFRL">
+  
+    <link rel="canonical" href="https://yfrobotics.github.io/robowiki-cn/control/modelling/modelling/">
+  
+  
+    <link rel="prev" href="../../">
+  
+  
+    <link rel="next" href="../modelling-foundations/">
+  
+  <link rel="icon" href="../../../assets/images/favicon.png">
+  <meta name="generator" content="mkdocs-1.6.1">
+
     
       
         <title>控制系统建模 - 云飞机器人中文维基</title>
@@ -73,6 +65,25 @@
 
     
     
+  
+  
+    
+    
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="zh_CN">
+    <meta property="og:site_name" content="云飞机器人中文维基">
+    <meta property="og:title" content="控制系统建模 - 云飞机器人中文维基">
+    <meta property="og:description" content="系统建模（System Modeling）是控制系统设计的基础。一个核心原则是：你只能控制你能建模的系统。无论是设计PID控制器、状态反馈控制律，还是基于模型预测控制（Model Predictive Control，MPC），都需要一个准确的数学模型来描述系统的动态行为。">
+    <meta property="og:url" content="https://yfrobotics.github.io/robowiki-cn/control/modelling/modelling/">
+    <meta property="og:image" content="https://yfrobotics.github.io/robowiki-cn/logo.png">
+    <meta property="og:image:alt" content="云飞机器人中文维基标志">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="控制系统建模 - 云飞机器人中文维基">
+    <meta name="twitter:description" content="系统建模（System Modeling）是控制系统设计的基础。一个核心原则是：你只能控制你能建模的系统。无论是设计PID控制器、状态反馈控制律，还是基于模型预测控制（Model Predictive Control，MPC），都需要一个准确的数学模型来描述系统的动态行为。">
+    <meta name="twitter:image" content="https://yfrobotics.github.io/robowiki-cn/logo.png">
+    <script type="application/ld+json">
+      {"@context": "https://schema.org", "@type": "WebPage", "description": "\u7cfb\u7edf\u5efa\u6a21\uff08System Modeling\uff09\u662f\u63a7\u5236\u7cfb\u7edf\u8bbe\u8ba1\u7684\u57fa\u7840\u3002\u4e00\u4e2a\u6838\u5fc3\u539f\u5219\u662f\uff1a\u4f60\u53ea\u80fd\u63a7\u5236\u4f60\u80fd\u5efa\u6a21\u7684\u7cfb\u7edf\u3002\u65e0\u8bba\u662f\u8bbe\u8ba1PID\u63a7\u5236\u5668\u3001\u72b6\u6001\u53cd\u9988\u63a7\u5236\u5f8b\uff0c\u8fd8\u662f\u57fa\u4e8e\u6a21\u578b\u9884\u6d4b\u63a7\u5236\uff08Model Predictive Control\uff0cMPC\uff09\uff0c\u90fd\u9700\u8981\u4e00\u4e2a\u51c6\u786e\u7684\u6570\u5b66\u6a21\u578b\u6765\u63cf\u8ff0\u7cfb\u7edf\u7684\u52a8\u6001\u884c\u4e3a\u3002", "inLanguage": "zh-CN", "isPartOf": {"@type": "WebSite", "name": "\u4e91\u98de\u673a\u5668\u4eba\u4e2d\u6587\u7ef4\u57fa", "url": "https://yfrobotics.github.io/robowiki-cn/"}, "name": "\u63a7\u5236\u7cfb\u7edf\u5efa\u6a21", "url": "https://yfrobotics.github.io/robowiki-cn/control/modelling/modelling/"}
+    </script>
   
   <meta name="google-adsense-account" content="ca-pub-8821428748194648">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8821428748194648"
@@ -617,7 +628,7 @@
   <span class="md-ellipsis">
     
   
-    介绍
+    机器人入门与开发知识库
   
 
     
@@ -9276,6 +9287,9 @@ A = \begin{bmatrix} -R/L & -K_e/L \\ K_t/J & -B/J \end{bmatrix}, \quad B = \begi
 
 
 
+
+  
+  
 
 
 

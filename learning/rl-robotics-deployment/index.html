@@ -3,30 +3,22 @@
 <html lang="zh" class="no-js">
   <head>
     
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width,initial-scale=1">
-      
-        <meta name="description" content="机器人领域的公共知识库">
-      
-      
-        <meta name="author" content="YFRL">
-      
-      
-        <link rel="canonical" href="https://yfrobotics.github.io/learning/rl-robotics-deployment/">
-      
-      
-        <link rel="prev" href="../rl-algorithms-practice/">
-      
-      
-        <link rel="next" href="../rl-advanced-paradigms/">
-      
-      
-        
-      
-      
-      <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
-    
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="将强化学习策略从仿真环境部署到真实机器人（Sim-to-Real Transfer）是 RL 在机器人领域落地的关键挑战。仿真与现实之间的差距（Reality Gap）可能导致在仿真中表现良好的策略在真实世界中完全失效。本文介绍域随机化、系统辨识、安全约束等技术，以及 Jetson 部署和 ROS 2 集成的实践方法。">
+  <meta name="author" content="YFRL">
+  
+    <link rel="canonical" href="https://yfrobotics.github.io/robowiki-cn/learning/rl-robotics-deployment/">
+  
+  
+    <link rel="prev" href="../rl-algorithms-practice/">
+  
+  
+    <link rel="next" href="../rl-advanced-paradigms/">
+  
+  <link rel="icon" href="../../assets/images/favicon.png">
+  <meta name="generator" content="mkdocs-1.6.1">
+
     
       
         <title>强化学习机器人部署 - 云飞机器人中文维基</title>
@@ -73,6 +65,25 @@
 
     
     
+  
+  
+    
+    
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="zh_CN">
+    <meta property="og:site_name" content="云飞机器人中文维基">
+    <meta property="og:title" content="强化学习机器人部署 - 云飞机器人中文维基">
+    <meta property="og:description" content="将强化学习策略从仿真环境部署到真实机器人（Sim-to-Real Transfer）是 RL 在机器人领域落地的关键挑战。仿真与现实之间的差距（Reality Gap）可能导致在仿真中表现良好的策略在真实世界中完全失效。本文介绍域随机化、系统辨识、安全约束等技术，以及 Jetson 部署和 ROS 2 集成的实践方法。">
+    <meta property="og:url" content="https://yfrobotics.github.io/robowiki-cn/learning/rl-robotics-deployment/">
+    <meta property="og:image" content="https://yfrobotics.github.io/robowiki-cn/logo.png">
+    <meta property="og:image:alt" content="云飞机器人中文维基标志">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="强化学习机器人部署 - 云飞机器人中文维基">
+    <meta name="twitter:description" content="将强化学习策略从仿真环境部署到真实机器人（Sim-to-Real Transfer）是 RL 在机器人领域落地的关键挑战。仿真与现实之间的差距（Reality Gap）可能导致在仿真中表现良好的策略在真实世界中完全失效。本文介绍域随机化、系统辨识、安全约束等技术，以及 Jetson 部署和 ROS 2 集成的实践方法。">
+    <meta name="twitter:image" content="https://yfrobotics.github.io/robowiki-cn/logo.png">
+    <script type="application/ld+json">
+      {"@context": "https://schema.org", "@type": "WebPage", "description": "\u5c06\u5f3a\u5316\u5b66\u4e60\u7b56\u7565\u4ece\u4eff\u771f\u73af\u5883\u90e8\u7f72\u5230\u771f\u5b9e\u673a\u5668\u4eba\uff08Sim-to-Real Transfer\uff09\u662f RL \u5728\u673a\u5668\u4eba\u9886\u57df\u843d\u5730\u7684\u5173\u952e\u6311\u6218\u3002\u4eff\u771f\u4e0e\u73b0\u5b9e\u4e4b\u95f4\u7684\u5dee\u8ddd\uff08Reality Gap\uff09\u53ef\u80fd\u5bfc\u81f4\u5728\u4eff\u771f\u4e2d\u8868\u73b0\u826f\u597d\u7684\u7b56\u7565\u5728\u771f\u5b9e\u4e16\u754c\u4e2d\u5b8c\u5168\u5931\u6548\u3002\u672c\u6587\u4ecb\u7ecd\u57df\u968f\u673a\u5316\u3001\u7cfb\u7edf\u8fa8\u8bc6\u3001\u5b89\u5168\u7ea6\u675f\u7b49\u6280\u672f\uff0c\u4ee5\u53ca Jetson \u90e8\u7f72\u548c ROS 2 \u96c6\u6210\u7684\u5b9e\u8df5\u65b9\u6cd5\u3002", "inLanguage": "zh-CN", "isPartOf": {"@type": "WebSite", "name": "\u4e91\u98de\u673a\u5668\u4eba\u4e2d\u6587\u7ef4\u57fa", "url": "https://yfrobotics.github.io/robowiki-cn/"}, "name": "\u5f3a\u5316\u5b66\u4e60\u673a\u5668\u4eba\u90e8\u7f72", "url": "https://yfrobotics.github.io/robowiki-cn/learning/rl-robotics-deployment/"}
+    </script>
   
   <meta name="google-adsense-account" content="ca-pub-8821428748194648">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8821428748194648"
@@ -617,7 +628,7 @@
   <span class="md-ellipsis">
     
   
-    介绍
+    机器人入门与开发知识库
   
 
     
@@ -9460,6 +9471,9 @@ python<span class="w"> </span>scripts/reinforcement_learning/rsl_rl/export_onnx.
 
 
 
+
+  
+  
 
 
 

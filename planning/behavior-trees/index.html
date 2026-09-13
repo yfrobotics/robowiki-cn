@@ -3,30 +3,22 @@
 <html lang="zh" class="no-js">
   <head>
     
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width,initial-scale=1">
-      
-        <meta name="description" content="机器人领域的公共知识库">
-      
-      
-        <meta name="author" content="YFRL">
-      
-      
-        <link rel="canonical" href="https://yfrobotics.github.io/planning/behavior-trees/">
-      
-      
-        <link rel="prev" href="../motionplanning/">
-      
-      
-        <link rel="next" href="../multi-robot-task-allocation/">
-      
-      
-        
-      
-      
-      <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
-    
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="行为树（Behavior Tree, BT）是一种用于描述智能体决策逻辑的树状结构，最早源于游戏 AI 领域，现已广泛应用于机器人任务编排。与有限状态机（Finite State Machine, FSM）相比，行为树具有更好的模块化特性和可扩展性，是 ROS 2 Navigation2 等主流框架的默认任务调度机制。">
+  <meta name="author" content="YFRL">
+  
+    <link rel="canonical" href="https://yfrobotics.github.io/robowiki-cn/planning/behavior-trees/">
+  
+  
+    <link rel="prev" href="../motionplanning/">
+  
+  
+    <link rel="next" href="../multi-robot-task-allocation/">
+  
+  <link rel="icon" href="../../assets/images/favicon.png">
+  <meta name="generator" content="mkdocs-1.6.1">
+
     
       
         <title>行为树 - 云飞机器人中文维基</title>
@@ -73,6 +65,25 @@
 
     
     
+  
+  
+    
+    
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="zh_CN">
+    <meta property="og:site_name" content="云飞机器人中文维基">
+    <meta property="og:title" content="行为树 - 云飞机器人中文维基">
+    <meta property="og:description" content="行为树（Behavior Tree, BT）是一种用于描述智能体决策逻辑的树状结构，最早源于游戏 AI 领域，现已广泛应用于机器人任务编排。与有限状态机（Finite State Machine, FSM）相比，行为树具有更好的模块化特性和可扩展性，是 ROS 2 Navigation2 等主流框架的默认任务调度机制。">
+    <meta property="og:url" content="https://yfrobotics.github.io/robowiki-cn/planning/behavior-trees/">
+    <meta property="og:image" content="https://yfrobotics.github.io/robowiki-cn/logo.png">
+    <meta property="og:image:alt" content="云飞机器人中文维基标志">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="行为树 - 云飞机器人中文维基">
+    <meta name="twitter:description" content="行为树（Behavior Tree, BT）是一种用于描述智能体决策逻辑的树状结构，最早源于游戏 AI 领域，现已广泛应用于机器人任务编排。与有限状态机（Finite State Machine, FSM）相比，行为树具有更好的模块化特性和可扩展性，是 ROS 2 Navigation2 等主流框架的默认任务调度机制。">
+    <meta name="twitter:image" content="https://yfrobotics.github.io/robowiki-cn/logo.png">
+    <script type="application/ld+json">
+      {"@context": "https://schema.org", "@type": "WebPage", "description": "\u884c\u4e3a\u6811\uff08Behavior Tree, BT\uff09\u662f\u4e00\u79cd\u7528\u4e8e\u63cf\u8ff0\u667a\u80fd\u4f53\u51b3\u7b56\u903b\u8f91\u7684\u6811\u72b6\u7ed3\u6784\uff0c\u6700\u65e9\u6e90\u4e8e\u6e38\u620f AI \u9886\u57df\uff0c\u73b0\u5df2\u5e7f\u6cdb\u5e94\u7528\u4e8e\u673a\u5668\u4eba\u4efb\u52a1\u7f16\u6392\u3002\u4e0e\u6709\u9650\u72b6\u6001\u673a\uff08Finite State Machine, FSM\uff09\u76f8\u6bd4\uff0c\u884c\u4e3a\u6811\u5177\u6709\u66f4\u597d\u7684\u6a21\u5757\u5316\u7279\u6027\u548c\u53ef\u6269\u5c55\u6027\uff0c\u662f ROS 2 Navigation2 \u7b49\u4e3b\u6d41\u6846\u67b6\u7684\u9ed8\u8ba4\u4efb\u52a1\u8c03\u5ea6\u673a\u5236\u3002", "inLanguage": "zh-CN", "isPartOf": {"@type": "WebSite", "name": "\u4e91\u98de\u673a\u5668\u4eba\u4e2d\u6587\u7ef4\u57fa", "url": "https://yfrobotics.github.io/robowiki-cn/"}, "name": "\u884c\u4e3a\u6811", "url": "https://yfrobotics.github.io/robowiki-cn/planning/behavior-trees/"}
+    </script>
   
   <meta name="google-adsense-account" content="ca-pub-8821428748194648">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8821428748194648"
@@ -617,7 +628,7 @@
   <span class="md-ellipsis">
     
   
-    介绍
+    机器人入门与开发知识库
   
 
     
@@ -8975,6 +8986,9 @@
 
 
 
+
+  
+  
 
 
 

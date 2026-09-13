@@ -3,30 +3,22 @@
 <html lang="zh" class="no-js">
   <head>
     
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width,initial-scale=1">
-      
-        <meta name="description" content="机器人领域的公共知识库">
-      
-      
-        <meta name="author" content="YFRL">
-      
-      
-        <link rel="canonical" href="https://yfrobotics.github.io/manipulation/grasping/">
-      
-      
-        <link rel="prev" href="../">
-      
-      
-        <link rel="next" href="../force-control/">
-      
-      
-        
-      
-      
-      <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
-    
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="抓取（Grasping）要回答的问题看似简单：手应该放在哪里、以什么姿态闭合，才能稳稳地拿起这个物体。但它同时涉及接触力学（什么样的接触才算稳）、几何推理（夹爪能否无碰撞地插入）、机械臂运动学（这个位姿能否到达），以及在真实场景中最棘手的一点——物体往往是未知的、堆叠的、部分被遮挡的。本页面从力学判据出发，介绍解析方…">
+  <meta name="author" content="YFRL">
+  
+    <link rel="canonical" href="https://yfrobotics.github.io/robowiki-cn/manipulation/grasping/">
+  
+  
+    <link rel="prev" href="../">
+  
+  
+    <link rel="next" href="../force-control/">
+  
+  <link rel="icon" href="../../assets/images/favicon.png">
+  <meta name="generator" content="mkdocs-1.6.1">
+
     
       
         <title>抓取 - 云飞机器人中文维基</title>
@@ -73,6 +65,25 @@
 
     
     
+  
+  
+    
+    
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="zh_CN">
+    <meta property="og:site_name" content="云飞机器人中文维基">
+    <meta property="og:title" content="抓取 - 云飞机器人中文维基">
+    <meta property="og:description" content="抓取（Grasping）要回答的问题看似简单：手应该放在哪里、以什么姿态闭合，才能稳稳地拿起这个物体。但它同时涉及接触力学（什么样的接触才算稳）、几何推理（夹爪能否无碰撞地插入）、机械臂运动学（这个位姿能否到达），以及在真实场景中最棘手的一点——物体往往是未知的、堆叠的、部分被遮挡的。本页面从力学判据出发，介绍解析方…">
+    <meta property="og:url" content="https://yfrobotics.github.io/robowiki-cn/manipulation/grasping/">
+    <meta property="og:image" content="https://yfrobotics.github.io/robowiki-cn/logo.png">
+    <meta property="og:image:alt" content="云飞机器人中文维基标志">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="抓取 - 云飞机器人中文维基">
+    <meta name="twitter:description" content="抓取（Grasping）要回答的问题看似简单：手应该放在哪里、以什么姿态闭合，才能稳稳地拿起这个物体。但它同时涉及接触力学（什么样的接触才算稳）、几何推理（夹爪能否无碰撞地插入）、机械臂运动学（这个位姿能否到达），以及在真实场景中最棘手的一点——物体往往是未知的、堆叠的、部分被遮挡的。本页面从力学判据出发，介绍解析方…">
+    <meta name="twitter:image" content="https://yfrobotics.github.io/robowiki-cn/logo.png">
+    <script type="application/ld+json">
+      {"@context": "https://schema.org", "@type": "WebPage", "description": "\u6293\u53d6\uff08Grasping\uff09\u8981\u56de\u7b54\u7684\u95ee\u9898\u770b\u4f3c\u7b80\u5355\uff1a\u624b\u5e94\u8be5\u653e\u5728\u54ea\u91cc\u3001\u4ee5\u4ec0\u4e48\u59ff\u6001\u95ed\u5408\uff0c\u624d\u80fd\u7a33\u7a33\u5730\u62ff\u8d77\u8fd9\u4e2a\u7269\u4f53\u3002\u4f46\u5b83\u540c\u65f6\u6d89\u53ca\u63a5\u89e6\u529b\u5b66\uff08\u4ec0\u4e48\u6837\u7684\u63a5\u89e6\u624d\u7b97\u7a33\uff09\u3001\u51e0\u4f55\u63a8\u7406\uff08\u5939\u722a\u80fd\u5426\u65e0\u78b0\u649e\u5730\u63d2\u5165\uff09\u3001\u673a\u68b0\u81c2\u8fd0\u52a8\u5b66\uff08\u8fd9\u4e2a\u4f4d\u59ff\u80fd\u5426\u5230\u8fbe\uff09\uff0c\u4ee5\u53ca\u5728\u771f\u5b9e\u573a\u666f\u4e2d\u6700\u68d8\u624b\u7684\u4e00\u70b9\u2014\u2014\u7269\u4f53\u5f80\u5f80\u662f\u672a\u77e5\u7684\u3001\u5806\u53e0\u7684\u3001\u90e8\u5206\u88ab\u906e\u6321\u7684\u3002\u672c\u9875\u9762\u4ece\u529b\u5b66\u5224\u636e\u51fa\u53d1\uff0c\u4ecb\u7ecd\u89e3\u6790\u65b9\u2026", "inLanguage": "zh-CN", "isPartOf": {"@type": "WebSite", "name": "\u4e91\u98de\u673a\u5668\u4eba\u4e2d\u6587\u7ef4\u57fa", "url": "https://yfrobotics.github.io/robowiki-cn/"}, "name": "\u6293\u53d6", "url": "https://yfrobotics.github.io/robowiki-cn/manipulation/grasping/"}
+    </script>
   
   <meta name="google-adsense-account" content="ca-pub-8821428748194648">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8821428748194648"
@@ -617,7 +628,7 @@
   <span class="md-ellipsis">
     
   
-    介绍
+    机器人入门与开发知识库
   
 
     
@@ -9138,6 +9149,9 @@
 
 
 
+
+  
+  
 
 
 

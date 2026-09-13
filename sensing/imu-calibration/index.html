@@ -3,30 +3,22 @@
 <html lang="zh" class="no-js">
   <head>
     
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width,initial-scale=1">
-      
-        <meta name="description" content="机器人领域的公共知识库">
-      
-      
-        <meta name="author" content="YFRL">
-      
-      
-        <link rel="canonical" href="https://yfrobotics.github.io/sensing/imu-calibration/">
-      
-      
-        <link rel="prev" href="../depth-camera/">
-      
-      
-        <link rel="next" href="../sensor-fusion/">
-      
-      
-        
-      
-      
-      <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
-    
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="惯性测量单元（Inertial Measurement Unit, IMU）是移动机器人和无人系统中最重要的自体感知传感器之一。由于 IMU 的输出存在偏置（Bias）、尺度因子误差（Scale Factor）、轴间非正交（Misalignment）以及随机游走（Random Walk）等多种误差，直接使用原始数据进…">
+  <meta name="author" content="YFRL">
+  
+    <link rel="canonical" href="https://yfrobotics.github.io/robowiki-cn/sensing/imu-calibration/">
+  
+  
+    <link rel="prev" href="../depth-camera/">
+  
+  
+    <link rel="next" href="../sensor-fusion/">
+  
+  <link rel="icon" href="../../assets/images/favicon.png">
+  <meta name="generator" content="mkdocs-1.6.1">
+
     
       
         <title>IMU 标定与噪声建模 - 云飞机器人中文维基</title>
@@ -73,6 +65,25 @@
 
     
     
+  
+  
+    
+    
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="zh_CN">
+    <meta property="og:site_name" content="云飞机器人中文维基">
+    <meta property="og:title" content="IMU 标定与噪声建模 - 云飞机器人中文维基">
+    <meta property="og:description" content="惯性测量单元（Inertial Measurement Unit, IMU）是移动机器人和无人系统中最重要的自体感知传感器之一。由于 IMU 的输出存在偏置（Bias）、尺度因子误差（Scale Factor）、轴间非正交（Misalignment）以及随机游走（Random Walk）等多种误差，直接使用原始数据进…">
+    <meta property="og:url" content="https://yfrobotics.github.io/robowiki-cn/sensing/imu-calibration/">
+    <meta property="og:image" content="https://yfrobotics.github.io/robowiki-cn/logo.png">
+    <meta property="og:image:alt" content="云飞机器人中文维基标志">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="IMU 标定与噪声建模 - 云飞机器人中文维基">
+    <meta name="twitter:description" content="惯性测量单元（Inertial Measurement Unit, IMU）是移动机器人和无人系统中最重要的自体感知传感器之一。由于 IMU 的输出存在偏置（Bias）、尺度因子误差（Scale Factor）、轴间非正交（Misalignment）以及随机游走（Random Walk）等多种误差，直接使用原始数据进…">
+    <meta name="twitter:image" content="https://yfrobotics.github.io/robowiki-cn/logo.png">
+    <script type="application/ld+json">
+      {"@context": "https://schema.org", "@type": "WebPage", "description": "\u60ef\u6027\u6d4b\u91cf\u5355\u5143\uff08Inertial Measurement Unit, IMU\uff09\u662f\u79fb\u52a8\u673a\u5668\u4eba\u548c\u65e0\u4eba\u7cfb\u7edf\u4e2d\u6700\u91cd\u8981\u7684\u81ea\u4f53\u611f\u77e5\u4f20\u611f\u5668\u4e4b\u4e00\u3002\u7531\u4e8e IMU \u7684\u8f93\u51fa\u5b58\u5728\u504f\u7f6e\uff08Bias\uff09\u3001\u5c3a\u5ea6\u56e0\u5b50\u8bef\u5dee\uff08Scale Factor\uff09\u3001\u8f74\u95f4\u975e\u6b63\u4ea4\uff08Misalignment\uff09\u4ee5\u53ca\u968f\u673a\u6e38\u8d70\uff08Random Walk\uff09\u7b49\u591a\u79cd\u8bef\u5dee\uff0c\u76f4\u63a5\u4f7f\u7528\u539f\u59cb\u6570\u636e\u8fdb\u2026", "inLanguage": "zh-CN", "isPartOf": {"@type": "WebSite", "name": "\u4e91\u98de\u673a\u5668\u4eba\u4e2d\u6587\u7ef4\u57fa", "url": "https://yfrobotics.github.io/robowiki-cn/"}, "name": "IMU \u6807\u5b9a\u4e0e\u566a\u58f0\u5efa\u6a21", "url": "https://yfrobotics.github.io/robowiki-cn/sensing/imu-calibration/"}
+    </script>
   
   <meta name="google-adsense-account" content="ca-pub-8821428748194648">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8821428748194648"
@@ -617,7 +628,7 @@
   <span class="md-ellipsis">
     
   
-    介绍
+    机器人入门与开发知识库
   
 
     
@@ -8923,6 +8934,9 @@ Q_{bg} = \sigma^2_{g,\text{rw}}\,\Delta t
 
 
 
+
+  
+  
 
 
 

@@ -3,30 +3,22 @@
 <html lang="zh" class="no-js">
   <head>
     
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width,initial-scale=1">
-      
-        <meta name="description" content="机器人领域的公共知识库">
-      
-      
-        <meta name="author" content="YFRL">
-      
-      
-        <link rel="canonical" href="https://yfrobotics.github.io/kinematics/forward-kinematics/">
-      
-      
-        <link rel="prev" href="../spatial-transformation/">
-      
-      
-        <link rel="next" href="../inverse-kinematics/">
-      
-      
-        
-      
-      
-      <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
-    
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="正运动学（Forward Kinematics，FK）解决的问题是：已知机器人各关节的位置，求末端执行器（End Effector）在基座坐标系中的位姿。对串联机器人而言，这是一个&#34;沿着连杆链条把变换矩阵连乘起来&#34;的确定性计算，永远有唯一解。正运动学是碰撞检测、雅可比计算、可视化以及逆运动学数值求解的基础，也是把 U…">
+  <meta name="author" content="YFRL">
+  
+    <link rel="canonical" href="https://yfrobotics.github.io/robowiki-cn/kinematics/forward-kinematics/">
+  
+  
+    <link rel="prev" href="../spatial-transformation/">
+  
+  
+    <link rel="next" href="../inverse-kinematics/">
+  
+  <link rel="icon" href="../../assets/images/favicon.png">
+  <meta name="generator" content="mkdocs-1.6.1">
+
     
       
         <title>正运动学 - 云飞机器人中文维基</title>
@@ -73,6 +65,25 @@
 
     
     
+  
+  
+    
+    
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="zh_CN">
+    <meta property="og:site_name" content="云飞机器人中文维基">
+    <meta property="og:title" content="正运动学 - 云飞机器人中文维基">
+    <meta property="og:description" content="正运动学（Forward Kinematics，FK）解决的问题是：已知机器人各关节的位置，求末端执行器（End Effector）在基座坐标系中的位姿。对串联机器人而言，这是一个&#34;沿着连杆链条把变换矩阵连乘起来&#34;的确定性计算，永远有唯一解。正运动学是碰撞检测、雅可比计算、可视化以及逆运动学数值求解的基础，也是把 U…">
+    <meta property="og:url" content="https://yfrobotics.github.io/robowiki-cn/kinematics/forward-kinematics/">
+    <meta property="og:image" content="https://yfrobotics.github.io/robowiki-cn/logo.png">
+    <meta property="og:image:alt" content="云飞机器人中文维基标志">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="正运动学 - 云飞机器人中文维基">
+    <meta name="twitter:description" content="正运动学（Forward Kinematics，FK）解决的问题是：已知机器人各关节的位置，求末端执行器（End Effector）在基座坐标系中的位姿。对串联机器人而言，这是一个&#34;沿着连杆链条把变换矩阵连乘起来&#34;的确定性计算，永远有唯一解。正运动学是碰撞检测、雅可比计算、可视化以及逆运动学数值求解的基础，也是把 U…">
+    <meta name="twitter:image" content="https://yfrobotics.github.io/robowiki-cn/logo.png">
+    <script type="application/ld+json">
+      {"@context": "https://schema.org", "@type": "WebPage", "description": "\u6b63\u8fd0\u52a8\u5b66\uff08Forward Kinematics\uff0cFK\uff09\u89e3\u51b3\u7684\u95ee\u9898\u662f\uff1a\u5df2\u77e5\u673a\u5668\u4eba\u5404\u5173\u8282\u7684\u4f4d\u7f6e\uff0c\u6c42\u672b\u7aef\u6267\u884c\u5668\uff08End Effector\uff09\u5728\u57fa\u5ea7\u5750\u6807\u7cfb\u4e2d\u7684\u4f4d\u59ff\u3002\u5bf9\u4e32\u8054\u673a\u5668\u4eba\u800c\u8a00\uff0c\u8fd9\u662f\u4e00\u4e2a\"\u6cbf\u7740\u8fde\u6746\u94fe\u6761\u628a\u53d8\u6362\u77e9\u9635\u8fde\u4e58\u8d77\u6765\"\u7684\u786e\u5b9a\u6027\u8ba1\u7b97\uff0c\u6c38\u8fdc\u6709\u552f\u4e00\u89e3\u3002\u6b63\u8fd0\u52a8\u5b66\u662f\u78b0\u649e\u68c0\u6d4b\u3001\u96c5\u53ef\u6bd4\u8ba1\u7b97\u3001\u53ef\u89c6\u5316\u4ee5\u53ca\u9006\u8fd0\u52a8\u5b66\u6570\u503c\u6c42\u89e3\u7684\u57fa\u7840\uff0c\u4e5f\u662f\u628a U\u2026", "inLanguage": "zh-CN", "isPartOf": {"@type": "WebSite", "name": "\u4e91\u98de\u673a\u5668\u4eba\u4e2d\u6587\u7ef4\u57fa", "url": "https://yfrobotics.github.io/robowiki-cn/"}, "name": "\u6b63\u8fd0\u52a8\u5b66", "url": "https://yfrobotics.github.io/robowiki-cn/kinematics/forward-kinematics/"}
+    </script>
   
   <meta name="google-adsense-account" content="ca-pub-8821428748194648">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8821428748194648"
@@ -617,7 +628,7 @@
   <span class="md-ellipsis">
     
   
-    介绍
+    机器人入门与开发知识库
   
 
     
@@ -9289,6 +9300,9 @@ ros2<span class="w"> </span>launch<span class="w"> </span>urdf_launch<span class
 
 
 
+
+  
+  
 
 
 

@@ -3,30 +3,22 @@
 <html lang="zh" class="no-js">
   <head>
     
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width,initial-scale=1">
-      
-        <meta name="description" content="机器人领域的公共知识库">
-      
-      
-        <meta name="author" content="YFRL">
-      
-      
-        <link rel="canonical" href="https://yfrobotics.github.io/sensing/sensor-fusion-engineering/">
-      
-      
-        <link rel="prev" href="../sensor-fusion-architecture/">
-      
-      
-        <link rel="next" href="../sensor-fusion-full-reference/">
-      
-      
-        
-      
-      
-      <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
-    
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="本页面是传感器融合专题的工程实践部分，涵盖扩展卡尔曼滤波器（EKF）的 Python 实现、互补滤波器、ROS 2 robot_localization 包的配置与使用、融合系统调试技巧、异常值剔除以及性能评测方法。">
+  <meta name="author" content="YFRL">
+  
+    <link rel="canonical" href="https://yfrobotics.github.io/robowiki-cn/sensing/sensor-fusion-engineering/">
+  
+  
+    <link rel="prev" href="../sensor-fusion-architecture/">
+  
+  
+    <link rel="next" href="../sensor-fusion-full-reference/">
+  
+  <link rel="icon" href="../../assets/images/favicon.png">
+  <meta name="generator" content="mkdocs-1.6.1">
+
     
       
         <title>传感器融合工程实践 - 云飞机器人中文维基</title>
@@ -73,6 +65,25 @@
 
     
     
+  
+  
+    
+    
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="zh_CN">
+    <meta property="og:site_name" content="云飞机器人中文维基">
+    <meta property="og:title" content="传感器融合工程实践 - 云飞机器人中文维基">
+    <meta property="og:description" content="本页面是传感器融合专题的工程实践部分，涵盖扩展卡尔曼滤波器（EKF）的 Python 实现、互补滤波器、ROS 2 robot_localization 包的配置与使用、融合系统调试技巧、异常值剔除以及性能评测方法。">
+    <meta property="og:url" content="https://yfrobotics.github.io/robowiki-cn/sensing/sensor-fusion-engineering/">
+    <meta property="og:image" content="https://yfrobotics.github.io/robowiki-cn/logo.png">
+    <meta property="og:image:alt" content="云飞机器人中文维基标志">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="传感器融合工程实践 - 云飞机器人中文维基">
+    <meta name="twitter:description" content="本页面是传感器融合专题的工程实践部分，涵盖扩展卡尔曼滤波器（EKF）的 Python 实现、互补滤波器、ROS 2 robot_localization 包的配置与使用、融合系统调试技巧、异常值剔除以及性能评测方法。">
+    <meta name="twitter:image" content="https://yfrobotics.github.io/robowiki-cn/logo.png">
+    <script type="application/ld+json">
+      {"@context": "https://schema.org", "@type": "WebPage", "description": "\u672c\u9875\u9762\u662f\u4f20\u611f\u5668\u878d\u5408\u4e13\u9898\u7684\u5de5\u7a0b\u5b9e\u8df5\u90e8\u5206\uff0c\u6db5\u76d6\u6269\u5c55\u5361\u5c14\u66fc\u6ee4\u6ce2\u5668\uff08EKF\uff09\u7684 Python \u5b9e\u73b0\u3001\u4e92\u8865\u6ee4\u6ce2\u5668\u3001ROS 2 robot_localization \u5305\u7684\u914d\u7f6e\u4e0e\u4f7f\u7528\u3001\u878d\u5408\u7cfb\u7edf\u8c03\u8bd5\u6280\u5de7\u3001\u5f02\u5e38\u503c\u5254\u9664\u4ee5\u53ca\u6027\u80fd\u8bc4\u6d4b\u65b9\u6cd5\u3002", "inLanguage": "zh-CN", "isPartOf": {"@type": "WebSite", "name": "\u4e91\u98de\u673a\u5668\u4eba\u4e2d\u6587\u7ef4\u57fa", "url": "https://yfrobotics.github.io/robowiki-cn/"}, "name": "\u4f20\u611f\u5668\u878d\u5408\u5de5\u7a0b\u5b9e\u8df5", "url": "https://yfrobotics.github.io/robowiki-cn/sensing/sensor-fusion-engineering/"}
+    </script>
   
   <meta name="google-adsense-account" content="ca-pub-8821428748194648">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8821428748194648"
@@ -617,7 +628,7 @@
   <span class="md-ellipsis">
     
   
-    介绍
+    机器人入门与开发知识库
   
 
     
@@ -9150,6 +9161,9 @@ evo_traj<span class="w"> </span>tum<span class="w"> </span>ekf.txt<span class="w
 
 
 
+
+  
+  
 
 
 

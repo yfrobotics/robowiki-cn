@@ -3,30 +3,22 @@
 <html lang="zh" class="no-js">
   <head>
     
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width,initial-scale=1">
-      
-        <meta name="description" content="机器人领域的公共知识库">
-      
-      
-        <meta name="author" content="YFRL">
-      
-      
-        <link rel="canonical" href="https://yfrobotics.github.io/ros/ros1-communication/">
-      
-      
-        <link rel="prev" href="../ros1-workspace/">
-      
-      
-        <link rel="next" href="../ros1-node-programming/">
-      
-      
-        
-      
-      
-      <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
-    
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="ROS 1 提供了三种核心通信模式：话题 (Topics)、服务 (Services) 和动作 (Actions)，分别适用于异步数据流、同步请求-响应和长时间异步任务。本文通过完整的代码示例，深入讲解每种通信机制的原理与使用方法，并介绍参数服务器、自定义消息、Nodelet 零拷贝传输等进阶主题。">
+  <meta name="author" content="YFRL">
+  
+    <link rel="canonical" href="https://yfrobotics.github.io/robowiki-cn/ros/ros1-communication/">
+  
+  
+    <link rel="prev" href="../ros1-workspace/">
+  
+  
+    <link rel="next" href="../ros1-node-programming/">
+  
+  <link rel="icon" href="../../assets/images/favicon.png">
+  <meta name="generator" content="mkdocs-1.6.1">
+
     
       
         <title>ROS 1 通信机制 - 云飞机器人中文维基</title>
@@ -73,6 +65,25 @@
 
     
     
+  
+  
+    
+    
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="zh_CN">
+    <meta property="og:site_name" content="云飞机器人中文维基">
+    <meta property="og:title" content="ROS 1 通信机制 - 云飞机器人中文维基">
+    <meta property="og:description" content="ROS 1 提供了三种核心通信模式：话题 (Topics)、服务 (Services) 和动作 (Actions)，分别适用于异步数据流、同步请求-响应和长时间异步任务。本文通过完整的代码示例，深入讲解每种通信机制的原理与使用方法，并介绍参数服务器、自定义消息、Nodelet 零拷贝传输等进阶主题。">
+    <meta property="og:url" content="https://yfrobotics.github.io/robowiki-cn/ros/ros1-communication/">
+    <meta property="og:image" content="https://yfrobotics.github.io/robowiki-cn/logo.png">
+    <meta property="og:image:alt" content="云飞机器人中文维基标志">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="ROS 1 通信机制 - 云飞机器人中文维基">
+    <meta name="twitter:description" content="ROS 1 提供了三种核心通信模式：话题 (Topics)、服务 (Services) 和动作 (Actions)，分别适用于异步数据流、同步请求-响应和长时间异步任务。本文通过完整的代码示例，深入讲解每种通信机制的原理与使用方法，并介绍参数服务器、自定义消息、Nodelet 零拷贝传输等进阶主题。">
+    <meta name="twitter:image" content="https://yfrobotics.github.io/robowiki-cn/logo.png">
+    <script type="application/ld+json">
+      {"@context": "https://schema.org", "@type": "WebPage", "description": "ROS 1 \u63d0\u4f9b\u4e86\u4e09\u79cd\u6838\u5fc3\u901a\u4fe1\u6a21\u5f0f\uff1a\u8bdd\u9898 (Topics)\u3001\u670d\u52a1 (Services) \u548c\u52a8\u4f5c (Actions)\uff0c\u5206\u522b\u9002\u7528\u4e8e\u5f02\u6b65\u6570\u636e\u6d41\u3001\u540c\u6b65\u8bf7\u6c42-\u54cd\u5e94\u548c\u957f\u65f6\u95f4\u5f02\u6b65\u4efb\u52a1\u3002\u672c\u6587\u901a\u8fc7\u5b8c\u6574\u7684\u4ee3\u7801\u793a\u4f8b\uff0c\u6df1\u5165\u8bb2\u89e3\u6bcf\u79cd\u901a\u4fe1\u673a\u5236\u7684\u539f\u7406\u4e0e\u4f7f\u7528\u65b9\u6cd5\uff0c\u5e76\u4ecb\u7ecd\u53c2\u6570\u670d\u52a1\u5668\u3001\u81ea\u5b9a\u4e49\u6d88\u606f\u3001Nodelet \u96f6\u62f7\u8d1d\u4f20\u8f93\u7b49\u8fdb\u9636\u4e3b\u9898\u3002", "inLanguage": "zh-CN", "isPartOf": {"@type": "WebSite", "name": "\u4e91\u98de\u673a\u5668\u4eba\u4e2d\u6587\u7ef4\u57fa", "url": "https://yfrobotics.github.io/robowiki-cn/"}, "name": "ROS 1 \u901a\u4fe1\u673a\u5236", "url": "https://yfrobotics.github.io/robowiki-cn/ros/ros1-communication/"}
+    </script>
   
   <meta name="google-adsense-account" content="ca-pub-8821428748194648">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8821428748194648"
@@ -617,7 +628,7 @@
   <span class="md-ellipsis">
     
   
-    介绍
+    机器人入门与开发知识库
   
 
     
@@ -9496,6 +9507,9 @@ uint8 MODE_TELEOP = 2
 
 
 
+
+  
+  
 
 
 

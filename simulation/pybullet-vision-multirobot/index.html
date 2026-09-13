@@ -3,30 +3,22 @@
 <html lang="zh" class="no-js">
   <head>
     
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width,initial-scale=1">
-      
-        <meta name="description" content="机器人领域的公共知识库">
-      
-      
-        <meta name="author" content="YFRL">
-      
-      
-        <link rel="canonical" href="https://yfrobotics.github.io/simulation/pybullet-vision-multirobot/">
-      
-      
-        <link rel="prev" href="../pybullet-rl-workflows/">
-      
-      
-        <link rel="next" href="../pybullet-full-reference/">
-      
-      
-        
-      
-      
-      <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
-    
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="PyBullet 除了物理仿真外，还提供了合成图像渲染功能，支持 RGB、深度图和语义分割图的生成。这些功能可用于训练视觉策略、生成合成数据集以及构建多机器人仿真系统。本文介绍 PyBullet 的视觉传感器接口、合成数据生成方法、多机器人场景搭建以及性能优化技巧。">
+  <meta name="author" content="YFRL">
+  
+    <link rel="canonical" href="https://yfrobotics.github.io/robowiki-cn/simulation/pybullet-vision-multirobot/">
+  
+  
+    <link rel="prev" href="../pybullet-rl-workflows/">
+  
+  
+    <link rel="next" href="../pybullet-full-reference/">
+  
+  <link rel="icon" href="../../assets/images/favicon.png">
+  <meta name="generator" content="mkdocs-1.6.1">
+
     
       
         <title>PyBullet 视觉与多机器人 - 云飞机器人中文维基</title>
@@ -73,6 +65,25 @@
 
     
     
+  
+  
+    
+    
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="zh_CN">
+    <meta property="og:site_name" content="云飞机器人中文维基">
+    <meta property="og:title" content="PyBullet 视觉与多机器人 - 云飞机器人中文维基">
+    <meta property="og:description" content="PyBullet 除了物理仿真外，还提供了合成图像渲染功能，支持 RGB、深度图和语义分割图的生成。这些功能可用于训练视觉策略、生成合成数据集以及构建多机器人仿真系统。本文介绍 PyBullet 的视觉传感器接口、合成数据生成方法、多机器人场景搭建以及性能优化技巧。">
+    <meta property="og:url" content="https://yfrobotics.github.io/robowiki-cn/simulation/pybullet-vision-multirobot/">
+    <meta property="og:image" content="https://yfrobotics.github.io/robowiki-cn/logo.png">
+    <meta property="og:image:alt" content="云飞机器人中文维基标志">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="PyBullet 视觉与多机器人 - 云飞机器人中文维基">
+    <meta name="twitter:description" content="PyBullet 除了物理仿真外，还提供了合成图像渲染功能，支持 RGB、深度图和语义分割图的生成。这些功能可用于训练视觉策略、生成合成数据集以及构建多机器人仿真系统。本文介绍 PyBullet 的视觉传感器接口、合成数据生成方法、多机器人场景搭建以及性能优化技巧。">
+    <meta name="twitter:image" content="https://yfrobotics.github.io/robowiki-cn/logo.png">
+    <script type="application/ld+json">
+      {"@context": "https://schema.org", "@type": "WebPage", "description": "PyBullet \u9664\u4e86\u7269\u7406\u4eff\u771f\u5916\uff0c\u8fd8\u63d0\u4f9b\u4e86\u5408\u6210\u56fe\u50cf\u6e32\u67d3\u529f\u80fd\uff0c\u652f\u6301 RGB\u3001\u6df1\u5ea6\u56fe\u548c\u8bed\u4e49\u5206\u5272\u56fe\u7684\u751f\u6210\u3002\u8fd9\u4e9b\u529f\u80fd\u53ef\u7528\u4e8e\u8bad\u7ec3\u89c6\u89c9\u7b56\u7565\u3001\u751f\u6210\u5408\u6210\u6570\u636e\u96c6\u4ee5\u53ca\u6784\u5efa\u591a\u673a\u5668\u4eba\u4eff\u771f\u7cfb\u7edf\u3002\u672c\u6587\u4ecb\u7ecd PyBullet \u7684\u89c6\u89c9\u4f20\u611f\u5668\u63a5\u53e3\u3001\u5408\u6210\u6570\u636e\u751f\u6210\u65b9\u6cd5\u3001\u591a\u673a\u5668\u4eba\u573a\u666f\u642d\u5efa\u4ee5\u53ca\u6027\u80fd\u4f18\u5316\u6280\u5de7\u3002", "inLanguage": "zh-CN", "isPartOf": {"@type": "WebSite", "name": "\u4e91\u98de\u673a\u5668\u4eba\u4e2d\u6587\u7ef4\u57fa", "url": "https://yfrobotics.github.io/robowiki-cn/"}, "name": "PyBullet \u89c6\u89c9\u4e0e\u591a\u673a\u5668\u4eba", "url": "https://yfrobotics.github.io/robowiki-cn/simulation/pybullet-vision-multirobot/"}
+    </script>
   
   <meta name="google-adsense-account" content="ca-pub-8821428748194648">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8821428748194648"
@@ -617,7 +628,7 @@
   <span class="md-ellipsis">
     
   
-    介绍
+    机器人入门与开发知识库
   
 
     
@@ -9029,6 +9040,9 @@ z_{real} = \frac{far \times near}{far - (far - near) \times z_{buffer}}
 
 
 
+
+  
+  
 
 
 

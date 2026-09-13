@@ -3,30 +3,22 @@
 <html lang="zh" class="no-js">
   <head>
     
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width,initial-scale=1">
-      
-        <meta name="description" content="机器人领域的公共知识库">
-      
-      
-        <meta name="author" content="YFRL">
-      
-      
-        <link rel="canonical" href="https://yfrobotics.github.io/learning/embodied-ai-data/">
-      
-      
-        <link rel="prev" href="../embodied-ai-vla/">
-      
-      
-        <link rel="next" href="../../simulation/">
-      
-      
-        
-      
-      
-      <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
-    
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="机器人学习与语言、视觉领域最本质的差别在于数据：文本和图像可以从互联网上抓取，而机器人轨迹必须由人在物理世界中一条一条地做出来。一条演示要实际运行几十秒，硬件会磨损，操作者会疲劳。这个约束塑造了整个领域——它使数据采集本身成为一个研究课题，也解释了为什么行为克隆的理论缺陷（复合误差）在实践中如此棘手。本页面介绍模仿学…">
+  <meta name="author" content="YFRL">
+  
+    <link rel="canonical" href="https://yfrobotics.github.io/robowiki-cn/learning/embodied-ai-data/">
+  
+  
+    <link rel="prev" href="../embodied-ai-vla/">
+  
+  
+    <link rel="next" href="../../simulation/">
+  
+  <link rel="icon" href="../../assets/images/favicon.png">
+  <meta name="generator" content="mkdocs-1.6.1">
+
     
       
         <title>模仿学习与数据采集 - 云飞机器人中文维基</title>
@@ -73,6 +65,25 @@
 
     
     
+  
+  
+    
+    
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="zh_CN">
+    <meta property="og:site_name" content="云飞机器人中文维基">
+    <meta property="og:title" content="模仿学习与数据采集 - 云飞机器人中文维基">
+    <meta property="og:description" content="机器人学习与语言、视觉领域最本质的差别在于数据：文本和图像可以从互联网上抓取，而机器人轨迹必须由人在物理世界中一条一条地做出来。一条演示要实际运行几十秒，硬件会磨损，操作者会疲劳。这个约束塑造了整个领域——它使数据采集本身成为一个研究课题，也解释了为什么行为克隆的理论缺陷（复合误差）在实践中如此棘手。本页面介绍模仿学…">
+    <meta property="og:url" content="https://yfrobotics.github.io/robowiki-cn/learning/embodied-ai-data/">
+    <meta property="og:image" content="https://yfrobotics.github.io/robowiki-cn/logo.png">
+    <meta property="og:image:alt" content="云飞机器人中文维基标志">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="模仿学习与数据采集 - 云飞机器人中文维基">
+    <meta name="twitter:description" content="机器人学习与语言、视觉领域最本质的差别在于数据：文本和图像可以从互联网上抓取，而机器人轨迹必须由人在物理世界中一条一条地做出来。一条演示要实际运行几十秒，硬件会磨损，操作者会疲劳。这个约束塑造了整个领域——它使数据采集本身成为一个研究课题，也解释了为什么行为克隆的理论缺陷（复合误差）在实践中如此棘手。本页面介绍模仿学…">
+    <meta name="twitter:image" content="https://yfrobotics.github.io/robowiki-cn/logo.png">
+    <script type="application/ld+json">
+      {"@context": "https://schema.org", "@type": "WebPage", "description": "\u673a\u5668\u4eba\u5b66\u4e60\u4e0e\u8bed\u8a00\u3001\u89c6\u89c9\u9886\u57df\u6700\u672c\u8d28\u7684\u5dee\u522b\u5728\u4e8e\u6570\u636e\uff1a\u6587\u672c\u548c\u56fe\u50cf\u53ef\u4ee5\u4ece\u4e92\u8054\u7f51\u4e0a\u6293\u53d6\uff0c\u800c\u673a\u5668\u4eba\u8f68\u8ff9\u5fc5\u987b\u7531\u4eba\u5728\u7269\u7406\u4e16\u754c\u4e2d\u4e00\u6761\u4e00\u6761\u5730\u505a\u51fa\u6765\u3002\u4e00\u6761\u6f14\u793a\u8981\u5b9e\u9645\u8fd0\u884c\u51e0\u5341\u79d2\uff0c\u786c\u4ef6\u4f1a\u78e8\u635f\uff0c\u64cd\u4f5c\u8005\u4f1a\u75b2\u52b3\u3002\u8fd9\u4e2a\u7ea6\u675f\u5851\u9020\u4e86\u6574\u4e2a\u9886\u57df\u2014\u2014\u5b83\u4f7f\u6570\u636e\u91c7\u96c6\u672c\u8eab\u6210\u4e3a\u4e00\u4e2a\u7814\u7a76\u8bfe\u9898\uff0c\u4e5f\u89e3\u91ca\u4e86\u4e3a\u4ec0\u4e48\u884c\u4e3a\u514b\u9686\u7684\u7406\u8bba\u7f3a\u9677\uff08\u590d\u5408\u8bef\u5dee\uff09\u5728\u5b9e\u8df5\u4e2d\u5982\u6b64\u68d8\u624b\u3002\u672c\u9875\u9762\u4ecb\u7ecd\u6a21\u4eff\u5b66\u2026", "inLanguage": "zh-CN", "isPartOf": {"@type": "WebSite", "name": "\u4e91\u98de\u673a\u5668\u4eba\u4e2d\u6587\u7ef4\u57fa", "url": "https://yfrobotics.github.io/robowiki-cn/"}, "name": "\u6a21\u4eff\u5b66\u4e60\u4e0e\u6570\u636e\u91c7\u96c6", "url": "https://yfrobotics.github.io/robowiki-cn/learning/embodied-ai-data/"}
+    </script>
   
   <meta name="google-adsense-account" content="ca-pub-8821428748194648">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8821428748194648"
@@ -617,7 +628,7 @@
   <span class="md-ellipsis">
     
   
-    介绍
+    机器人入门与开发知识库
   
 
     
@@ -8914,6 +8925,9 @@
 
 
 
+
+  
+  
 
 
 

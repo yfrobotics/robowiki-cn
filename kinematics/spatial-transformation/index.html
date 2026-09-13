@@ -3,30 +3,22 @@
 <html lang="zh" class="no-js">
   <head>
     
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width,initial-scale=1">
-      
-        <meta name="description" content="机器人领域的公共知识库">
-      
-      
-        <meta name="author" content="YFRL">
-      
-      
-        <link rel="canonical" href="https://yfrobotics.github.io/kinematics/spatial-transformation/">
-      
-      
-        <link rel="prev" href="../">
-      
-      
-        <link rel="next" href="../forward-kinematics/">
-      
-      
-        
-      
-      
-      <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
-    
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="机器人学中几乎所有的计算都涉及&#34;某个量在哪个坐标系下表示&#34;的问题。相机看到的目标点在相机坐标系中，机械臂要抓取它必须转换到基座坐标系；IMU 测得的加速度在机体坐标系中，导航算法需要它在世界坐标系中的分量。本页面系统介绍刚体位姿（Pose）的各种数学表示——旋转矩阵、欧拉角、轴角、四元数——以及它们之间的转换关系和工…">
+  <meta name="author" content="YFRL">
+  
+    <link rel="canonical" href="https://yfrobotics.github.io/robowiki-cn/kinematics/spatial-transformation/">
+  
+  
+    <link rel="prev" href="../">
+  
+  
+    <link rel="next" href="../forward-kinematics/">
+  
+  <link rel="icon" href="../../assets/images/favicon.png">
+  <meta name="generator" content="mkdocs-1.6.1">
+
     
       
         <title>空间描述与变换 - 云飞机器人中文维基</title>
@@ -73,6 +65,25 @@
 
     
     
+  
+  
+    
+    
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="zh_CN">
+    <meta property="og:site_name" content="云飞机器人中文维基">
+    <meta property="og:title" content="空间描述与变换 - 云飞机器人中文维基">
+    <meta property="og:description" content="机器人学中几乎所有的计算都涉及&#34;某个量在哪个坐标系下表示&#34;的问题。相机看到的目标点在相机坐标系中，机械臂要抓取它必须转换到基座坐标系；IMU 测得的加速度在机体坐标系中，导航算法需要它在世界坐标系中的分量。本页面系统介绍刚体位姿（Pose）的各种数学表示——旋转矩阵、欧拉角、轴角、四元数——以及它们之间的转换关系和工…">
+    <meta property="og:url" content="https://yfrobotics.github.io/robowiki-cn/kinematics/spatial-transformation/">
+    <meta property="og:image" content="https://yfrobotics.github.io/robowiki-cn/logo.png">
+    <meta property="og:image:alt" content="云飞机器人中文维基标志">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="空间描述与变换 - 云飞机器人中文维基">
+    <meta name="twitter:description" content="机器人学中几乎所有的计算都涉及&#34;某个量在哪个坐标系下表示&#34;的问题。相机看到的目标点在相机坐标系中，机械臂要抓取它必须转换到基座坐标系；IMU 测得的加速度在机体坐标系中，导航算法需要它在世界坐标系中的分量。本页面系统介绍刚体位姿（Pose）的各种数学表示——旋转矩阵、欧拉角、轴角、四元数——以及它们之间的转换关系和工…">
+    <meta name="twitter:image" content="https://yfrobotics.github.io/robowiki-cn/logo.png">
+    <script type="application/ld+json">
+      {"@context": "https://schema.org", "@type": "WebPage", "description": "\u673a\u5668\u4eba\u5b66\u4e2d\u51e0\u4e4e\u6240\u6709\u7684\u8ba1\u7b97\u90fd\u6d89\u53ca\"\u67d0\u4e2a\u91cf\u5728\u54ea\u4e2a\u5750\u6807\u7cfb\u4e0b\u8868\u793a\"\u7684\u95ee\u9898\u3002\u76f8\u673a\u770b\u5230\u7684\u76ee\u6807\u70b9\u5728\u76f8\u673a\u5750\u6807\u7cfb\u4e2d\uff0c\u673a\u68b0\u81c2\u8981\u6293\u53d6\u5b83\u5fc5\u987b\u8f6c\u6362\u5230\u57fa\u5ea7\u5750\u6807\u7cfb\uff1bIMU \u6d4b\u5f97\u7684\u52a0\u901f\u5ea6\u5728\u673a\u4f53\u5750\u6807\u7cfb\u4e2d\uff0c\u5bfc\u822a\u7b97\u6cd5\u9700\u8981\u5b83\u5728\u4e16\u754c\u5750\u6807\u7cfb\u4e2d\u7684\u5206\u91cf\u3002\u672c\u9875\u9762\u7cfb\u7edf\u4ecb\u7ecd\u521a\u4f53\u4f4d\u59ff\uff08Pose\uff09\u7684\u5404\u79cd\u6570\u5b66\u8868\u793a\u2014\u2014\u65cb\u8f6c\u77e9\u9635\u3001\u6b27\u62c9\u89d2\u3001\u8f74\u89d2\u3001\u56db\u5143\u6570\u2014\u2014\u4ee5\u53ca\u5b83\u4eec\u4e4b\u95f4\u7684\u8f6c\u6362\u5173\u7cfb\u548c\u5de5\u2026", "inLanguage": "zh-CN", "isPartOf": {"@type": "WebSite", "name": "\u4e91\u98de\u673a\u5668\u4eba\u4e2d\u6587\u7ef4\u57fa", "url": "https://yfrobotics.github.io/robowiki-cn/"}, "name": "\u7a7a\u95f4\u63cf\u8ff0\u4e0e\u53d8\u6362", "url": "https://yfrobotics.github.io/robowiki-cn/kinematics/spatial-transformation/"}
+    </script>
   
   <meta name="google-adsense-account" content="ca-pub-8821428748194648">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8821428748194648"
@@ -617,7 +628,7 @@
   <span class="md-ellipsis">
     
   
-    介绍
+    机器人入门与开发知识库
   
 
     
@@ -9309,6 +9320,9 @@ ros2<span class="w"> </span>run<span class="w"> </span>tf2_ros<span class="w"> <
 
 
 
+
+  
+  
 
 
 

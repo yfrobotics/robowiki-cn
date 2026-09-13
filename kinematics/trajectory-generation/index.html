@@ -3,30 +3,22 @@
 <html lang="zh" class="no-js">
   <head>
     
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width,initial-scale=1">
-      
-        <meta name="description" content="机器人领域的公共知识库">
-      
-      
-        <meta name="author" content="YFRL">
-      
-      
-        <link rel="canonical" href="https://yfrobotics.github.io/kinematics/trajectory-generation/">
-      
-      
-        <link rel="prev" href="../dynamics/">
-      
-      
-        <link rel="next" href="../../control/">
-      
-      
-        
-      
-      
-      <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
-    
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="轨迹生成（Trajectory Generation）负责把规划器输出的稀疏路径点变成一条随时间连续、满足速度与加速度限制、且平滑到执行器能够跟踪的时间函数。它处于运动规划与伺服控制之间：规划器回答&#34;走哪条路&#34;，轨迹生成回答&#34;何时走到哪里、以多快的速度&#34;。轨迹的光滑程度直接决定了机械冲击、跟踪误差与末端振动的大小。">
+  <meta name="author" content="YFRL">
+  
+    <link rel="canonical" href="https://yfrobotics.github.io/robowiki-cn/kinematics/trajectory-generation/">
+  
+  
+    <link rel="prev" href="../dynamics/">
+  
+  
+    <link rel="next" href="../../control/">
+  
+  <link rel="icon" href="../../assets/images/favicon.png">
+  <meta name="generator" content="mkdocs-1.6.1">
+
     
       
         <title>轨迹生成 - 云飞机器人中文维基</title>
@@ -73,6 +65,25 @@
 
     
     
+  
+  
+    
+    
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="zh_CN">
+    <meta property="og:site_name" content="云飞机器人中文维基">
+    <meta property="og:title" content="轨迹生成 - 云飞机器人中文维基">
+    <meta property="og:description" content="轨迹生成（Trajectory Generation）负责把规划器输出的稀疏路径点变成一条随时间连续、满足速度与加速度限制、且平滑到执行器能够跟踪的时间函数。它处于运动规划与伺服控制之间：规划器回答&#34;走哪条路&#34;，轨迹生成回答&#34;何时走到哪里、以多快的速度&#34;。轨迹的光滑程度直接决定了机械冲击、跟踪误差与末端振动的大小。">
+    <meta property="og:url" content="https://yfrobotics.github.io/robowiki-cn/kinematics/trajectory-generation/">
+    <meta property="og:image" content="https://yfrobotics.github.io/robowiki-cn/logo.png">
+    <meta property="og:image:alt" content="云飞机器人中文维基标志">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="轨迹生成 - 云飞机器人中文维基">
+    <meta name="twitter:description" content="轨迹生成（Trajectory Generation）负责把规划器输出的稀疏路径点变成一条随时间连续、满足速度与加速度限制、且平滑到执行器能够跟踪的时间函数。它处于运动规划与伺服控制之间：规划器回答&#34;走哪条路&#34;，轨迹生成回答&#34;何时走到哪里、以多快的速度&#34;。轨迹的光滑程度直接决定了机械冲击、跟踪误差与末端振动的大小。">
+    <meta name="twitter:image" content="https://yfrobotics.github.io/robowiki-cn/logo.png">
+    <script type="application/ld+json">
+      {"@context": "https://schema.org", "@type": "WebPage", "description": "\u8f68\u8ff9\u751f\u6210\uff08Trajectory Generation\uff09\u8d1f\u8d23\u628a\u89c4\u5212\u5668\u8f93\u51fa\u7684\u7a00\u758f\u8def\u5f84\u70b9\u53d8\u6210\u4e00\u6761\u968f\u65f6\u95f4\u8fde\u7eed\u3001\u6ee1\u8db3\u901f\u5ea6\u4e0e\u52a0\u901f\u5ea6\u9650\u5236\u3001\u4e14\u5e73\u6ed1\u5230\u6267\u884c\u5668\u80fd\u591f\u8ddf\u8e2a\u7684\u65f6\u95f4\u51fd\u6570\u3002\u5b83\u5904\u4e8e\u8fd0\u52a8\u89c4\u5212\u4e0e\u4f3a\u670d\u63a7\u5236\u4e4b\u95f4\uff1a\u89c4\u5212\u5668\u56de\u7b54\"\u8d70\u54ea\u6761\u8def\"\uff0c\u8f68\u8ff9\u751f\u6210\u56de\u7b54\"\u4f55\u65f6\u8d70\u5230\u54ea\u91cc\u3001\u4ee5\u591a\u5feb\u7684\u901f\u5ea6\"\u3002\u8f68\u8ff9\u7684\u5149\u6ed1\u7a0b\u5ea6\u76f4\u63a5\u51b3\u5b9a\u4e86\u673a\u68b0\u51b2\u51fb\u3001\u8ddf\u8e2a\u8bef\u5dee\u4e0e\u672b\u7aef\u632f\u52a8\u7684\u5927\u5c0f\u3002", "inLanguage": "zh-CN", "isPartOf": {"@type": "WebSite", "name": "\u4e91\u98de\u673a\u5668\u4eba\u4e2d\u6587\u7ef4\u57fa", "url": "https://yfrobotics.github.io/robowiki-cn/"}, "name": "\u8f68\u8ff9\u751f\u6210", "url": "https://yfrobotics.github.io/robowiki-cn/kinematics/trajectory-generation/"}
+    </script>
   
   <meta name="google-adsense-account" content="ca-pub-8821428748194648">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8821428748194648"
@@ -617,7 +628,7 @@
   <span class="md-ellipsis">
     
   
-    介绍
+    机器人入门与开发知识库
   
 
     
@@ -9099,6 +9110,9 @@
 
 
 
+
+  
+  
 
 
 

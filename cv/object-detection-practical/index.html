@@ -3,30 +3,22 @@
 <html lang="zh" class="no-js">
   <head>
     
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width,initial-scale=1">
-      
-        <meta name="description" content="机器人领域的公共知识库">
-      
-      
-        <meta name="author" content="YFRL">
-      
-      
-        <link rel="canonical" href="https://yfrobotics.github.io/cv/object-detection-practical/">
-      
-      
-        <link rel="prev" href="../object-detection/">
-      
-      
-        <link rel="next" href="../object-detection-3d-advanced/">
-      
-      
-        
-      
-      
-      <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
-    
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="本页面是目标检测专题的工程实践部分，涵盖 Ultralytics YOLOv8 完整使用流程、DETR 系列端到端检测器的核心原理与代码、目标检测模型在机器人平台（NVIDIA Jetson / ROS 2）上的部署方法，以及数据标注与数据集管理工具的选型指南。">
+  <meta name="author" content="YFRL">
+  
+    <link rel="canonical" href="https://yfrobotics.github.io/robowiki-cn/cv/object-detection-practical/">
+  
+  
+    <link rel="prev" href="../object-detection/">
+  
+  
+    <link rel="next" href="../object-detection-3d-advanced/">
+  
+  <link rel="icon" href="../../assets/images/favicon.png">
+  <meta name="generator" content="mkdocs-1.6.1">
+
     
       
         <title>目标检测：实战代码与工程部署 - 云飞机器人中文维基</title>
@@ -73,6 +65,25 @@
 
     
     
+  
+  
+    
+    
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="zh_CN">
+    <meta property="og:site_name" content="云飞机器人中文维基">
+    <meta property="og:title" content="目标检测：实战代码与工程部署 - 云飞机器人中文维基">
+    <meta property="og:description" content="本页面是目标检测专题的工程实践部分，涵盖 Ultralytics YOLOv8 完整使用流程、DETR 系列端到端检测器的核心原理与代码、目标检测模型在机器人平台（NVIDIA Jetson / ROS 2）上的部署方法，以及数据标注与数据集管理工具的选型指南。">
+    <meta property="og:url" content="https://yfrobotics.github.io/robowiki-cn/cv/object-detection-practical/">
+    <meta property="og:image" content="https://yfrobotics.github.io/robowiki-cn/logo.png">
+    <meta property="og:image:alt" content="云飞机器人中文维基标志">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="目标检测：实战代码与工程部署 - 云飞机器人中文维基">
+    <meta name="twitter:description" content="本页面是目标检测专题的工程实践部分，涵盖 Ultralytics YOLOv8 完整使用流程、DETR 系列端到端检测器的核心原理与代码、目标检测模型在机器人平台（NVIDIA Jetson / ROS 2）上的部署方法，以及数据标注与数据集管理工具的选型指南。">
+    <meta name="twitter:image" content="https://yfrobotics.github.io/robowiki-cn/logo.png">
+    <script type="application/ld+json">
+      {"@context": "https://schema.org", "@type": "WebPage", "description": "\u672c\u9875\u9762\u662f\u76ee\u6807\u68c0\u6d4b\u4e13\u9898\u7684\u5de5\u7a0b\u5b9e\u8df5\u90e8\u5206\uff0c\u6db5\u76d6 Ultralytics YOLOv8 \u5b8c\u6574\u4f7f\u7528\u6d41\u7a0b\u3001DETR \u7cfb\u5217\u7aef\u5230\u7aef\u68c0\u6d4b\u5668\u7684\u6838\u5fc3\u539f\u7406\u4e0e\u4ee3\u7801\u3001\u76ee\u6807\u68c0\u6d4b\u6a21\u578b\u5728\u673a\u5668\u4eba\u5e73\u53f0\uff08NVIDIA Jetson / ROS 2\uff09\u4e0a\u7684\u90e8\u7f72\u65b9\u6cd5\uff0c\u4ee5\u53ca\u6570\u636e\u6807\u6ce8\u4e0e\u6570\u636e\u96c6\u7ba1\u7406\u5de5\u5177\u7684\u9009\u578b\u6307\u5357\u3002", "inLanguage": "zh-CN", "isPartOf": {"@type": "WebSite", "name": "\u4e91\u98de\u673a\u5668\u4eba\u4e2d\u6587\u7ef4\u57fa", "url": "https://yfrobotics.github.io/robowiki-cn/"}, "name": "\u76ee\u6807\u68c0\u6d4b\uff1a\u5b9e\u6218\u4ee3\u7801\u4e0e\u5de5\u7a0b\u90e8\u7f72", "url": "https://yfrobotics.github.io/robowiki-cn/cv/object-detection-practical/"}
+    </script>
   
   <meta name="google-adsense-account" content="ca-pub-8821428748194648">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8821428748194648"
@@ -617,7 +628,7 @@
   <span class="md-ellipsis">
     
   
-    介绍
+    机器人入门与开发知识库
   
 
     
@@ -9132,6 +9143,9 @@ YoloDetectorNode (GPU 推理)
 
 
 
+
+  
+  
 
 
 

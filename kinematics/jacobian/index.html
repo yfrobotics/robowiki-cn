@@ -3,30 +3,22 @@
 <html lang="zh" class="no-js">
   <head>
     
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width,initial-scale=1">
-      
-        <meta name="description" content="机器人领域的公共知识库">
-      
-      
-        <meta name="author" content="YFRL">
-      
-      
-        <link rel="canonical" href="https://yfrobotics.github.io/kinematics/jacobian/">
-      
-      
-        <link rel="prev" href="../inverse-kinematics/">
-      
-      
-        <link rel="next" href="../dynamics/">
-      
-      
-        
-      
-      
-      <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
-    
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="雅可比矩阵（Jacobian Matrix）是关节空间与笛卡尔空间之间的桥梁：它把关节速度映射为末端速度，也把末端受力映射为关节力矩。几乎所有需要&#34;在笛卡尔空间下指挥机器人&#34;的算法——速度控制、导纳与阻抗控制、数值逆运动学、力控装配、可操作度优化——都建立在雅可比矩阵之上。理解雅可比的秩何时下降，就理解了机器人为什么…">
+  <meta name="author" content="YFRL">
+  
+    <link rel="canonical" href="https://yfrobotics.github.io/robowiki-cn/kinematics/jacobian/">
+  
+  
+    <link rel="prev" href="../inverse-kinematics/">
+  
+  
+    <link rel="next" href="../dynamics/">
+  
+  <link rel="icon" href="../../assets/images/favicon.png">
+  <meta name="generator" content="mkdocs-1.6.1">
+
     
       
         <title>雅可比矩阵与奇异性 - 云飞机器人中文维基</title>
@@ -73,6 +65,25 @@
 
     
     
+  
+  
+    
+    
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="zh_CN">
+    <meta property="og:site_name" content="云飞机器人中文维基">
+    <meta property="og:title" content="雅可比矩阵与奇异性 - 云飞机器人中文维基">
+    <meta property="og:description" content="雅可比矩阵（Jacobian Matrix）是关节空间与笛卡尔空间之间的桥梁：它把关节速度映射为末端速度，也把末端受力映射为关节力矩。几乎所有需要&#34;在笛卡尔空间下指挥机器人&#34;的算法——速度控制、导纳与阻抗控制、数值逆运动学、力控装配、可操作度优化——都建立在雅可比矩阵之上。理解雅可比的秩何时下降，就理解了机器人为什么…">
+    <meta property="og:url" content="https://yfrobotics.github.io/robowiki-cn/kinematics/jacobian/">
+    <meta property="og:image" content="https://yfrobotics.github.io/robowiki-cn/logo.png">
+    <meta property="og:image:alt" content="云飞机器人中文维基标志">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="雅可比矩阵与奇异性 - 云飞机器人中文维基">
+    <meta name="twitter:description" content="雅可比矩阵（Jacobian Matrix）是关节空间与笛卡尔空间之间的桥梁：它把关节速度映射为末端速度，也把末端受力映射为关节力矩。几乎所有需要&#34;在笛卡尔空间下指挥机器人&#34;的算法——速度控制、导纳与阻抗控制、数值逆运动学、力控装配、可操作度优化——都建立在雅可比矩阵之上。理解雅可比的秩何时下降，就理解了机器人为什么…">
+    <meta name="twitter:image" content="https://yfrobotics.github.io/robowiki-cn/logo.png">
+    <script type="application/ld+json">
+      {"@context": "https://schema.org", "@type": "WebPage", "description": "\u96c5\u53ef\u6bd4\u77e9\u9635\uff08Jacobian Matrix\uff09\u662f\u5173\u8282\u7a7a\u95f4\u4e0e\u7b1b\u5361\u5c14\u7a7a\u95f4\u4e4b\u95f4\u7684\u6865\u6881\uff1a\u5b83\u628a\u5173\u8282\u901f\u5ea6\u6620\u5c04\u4e3a\u672b\u7aef\u901f\u5ea6\uff0c\u4e5f\u628a\u672b\u7aef\u53d7\u529b\u6620\u5c04\u4e3a\u5173\u8282\u529b\u77e9\u3002\u51e0\u4e4e\u6240\u6709\u9700\u8981\"\u5728\u7b1b\u5361\u5c14\u7a7a\u95f4\u4e0b\u6307\u6325\u673a\u5668\u4eba\"\u7684\u7b97\u6cd5\u2014\u2014\u901f\u5ea6\u63a7\u5236\u3001\u5bfc\u7eb3\u4e0e\u963b\u6297\u63a7\u5236\u3001\u6570\u503c\u9006\u8fd0\u52a8\u5b66\u3001\u529b\u63a7\u88c5\u914d\u3001\u53ef\u64cd\u4f5c\u5ea6\u4f18\u5316\u2014\u2014\u90fd\u5efa\u7acb\u5728\u96c5\u53ef\u6bd4\u77e9\u9635\u4e4b\u4e0a\u3002\u7406\u89e3\u96c5\u53ef\u6bd4\u7684\u79e9\u4f55\u65f6\u4e0b\u964d\uff0c\u5c31\u7406\u89e3\u4e86\u673a\u5668\u4eba\u4e3a\u4ec0\u4e48\u2026", "inLanguage": "zh-CN", "isPartOf": {"@type": "WebSite", "name": "\u4e91\u98de\u673a\u5668\u4eba\u4e2d\u6587\u7ef4\u57fa", "url": "https://yfrobotics.github.io/robowiki-cn/"}, "name": "\u96c5\u53ef\u6bd4\u77e9\u9635\u4e0e\u5947\u5f02\u6027", "url": "https://yfrobotics.github.io/robowiki-cn/kinematics/jacobian/"}
+    </script>
   
   <meta name="google-adsense-account" content="ca-pub-8821428748194648">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8821428748194648"
@@ -617,7 +628,7 @@
   <span class="md-ellipsis">
     
   
-    介绍
+    机器人入门与开发知识库
   
 
     
@@ -8957,6 +8968,9 @@
 
 
 
+
+  
+  
 
 
 

@@ -3,30 +3,22 @@
 <html lang="zh" class="no-js">
   <head>
     
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width,initial-scale=1">
-      
-        <meta name="description" content="机器人领域的公共知识库">
-      
-      
-        <meta name="author" content="YFRL">
-      
-      
-        <link rel="canonical" href="https://yfrobotics.github.io/simulation/pybullet-rl-workflows/">
-      
-      
-        <link rel="prev" href="../pybullet-control-dynamics/">
-      
-      
-        <link rel="next" href="../pybullet-vision-multirobot/">
-      
-      
-        
-      
-      
-      <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
-    
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="PyBullet 是强化学习机器人控制研究中广泛使用的仿真平台，支持 Gymnasium 接口标准，可与 Stable-Baselines3（SB3）等主流 RL 库无缝集成。本文介绍如何使用 PyBullet 构建自定义 RL 环境、设计奖励函数、进行并行训练以及应用域随机化技术。">
+  <meta name="author" content="YFRL">
+  
+    <link rel="canonical" href="https://yfrobotics.github.io/robowiki-cn/simulation/pybullet-rl-workflows/">
+  
+  
+    <link rel="prev" href="../pybullet-control-dynamics/">
+  
+  
+    <link rel="next" href="../pybullet-vision-multirobot/">
+  
+  <link rel="icon" href="../../assets/images/favicon.png">
+  <meta name="generator" content="mkdocs-1.6.1">
+
     
       
         <title>PyBullet 强化学习工作流 - 云飞机器人中文维基</title>
@@ -73,6 +65,25 @@
 
     
     
+  
+  
+    
+    
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="zh_CN">
+    <meta property="og:site_name" content="云飞机器人中文维基">
+    <meta property="og:title" content="PyBullet 强化学习工作流 - 云飞机器人中文维基">
+    <meta property="og:description" content="PyBullet 是强化学习机器人控制研究中广泛使用的仿真平台，支持 Gymnasium 接口标准，可与 Stable-Baselines3（SB3）等主流 RL 库无缝集成。本文介绍如何使用 PyBullet 构建自定义 RL 环境、设计奖励函数、进行并行训练以及应用域随机化技术。">
+    <meta property="og:url" content="https://yfrobotics.github.io/robowiki-cn/simulation/pybullet-rl-workflows/">
+    <meta property="og:image" content="https://yfrobotics.github.io/robowiki-cn/logo.png">
+    <meta property="og:image:alt" content="云飞机器人中文维基标志">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="PyBullet 强化学习工作流 - 云飞机器人中文维基">
+    <meta name="twitter:description" content="PyBullet 是强化学习机器人控制研究中广泛使用的仿真平台，支持 Gymnasium 接口标准，可与 Stable-Baselines3（SB3）等主流 RL 库无缝集成。本文介绍如何使用 PyBullet 构建自定义 RL 环境、设计奖励函数、进行并行训练以及应用域随机化技术。">
+    <meta name="twitter:image" content="https://yfrobotics.github.io/robowiki-cn/logo.png">
+    <script type="application/ld+json">
+      {"@context": "https://schema.org", "@type": "WebPage", "description": "PyBullet \u662f\u5f3a\u5316\u5b66\u4e60\u673a\u5668\u4eba\u63a7\u5236\u7814\u7a76\u4e2d\u5e7f\u6cdb\u4f7f\u7528\u7684\u4eff\u771f\u5e73\u53f0\uff0c\u652f\u6301 Gymnasium \u63a5\u53e3\u6807\u51c6\uff0c\u53ef\u4e0e Stable-Baselines3\uff08SB3\uff09\u7b49\u4e3b\u6d41 RL \u5e93\u65e0\u7f1d\u96c6\u6210\u3002\u672c\u6587\u4ecb\u7ecd\u5982\u4f55\u4f7f\u7528 PyBullet \u6784\u5efa\u81ea\u5b9a\u4e49 RL \u73af\u5883\u3001\u8bbe\u8ba1\u5956\u52b1\u51fd\u6570\u3001\u8fdb\u884c\u5e76\u884c\u8bad\u7ec3\u4ee5\u53ca\u5e94\u7528\u57df\u968f\u673a\u5316\u6280\u672f\u3002", "inLanguage": "zh-CN", "isPartOf": {"@type": "WebSite", "name": "\u4e91\u98de\u673a\u5668\u4eba\u4e2d\u6587\u7ef4\u57fa", "url": "https://yfrobotics.github.io/robowiki-cn/"}, "name": "PyBullet \u5f3a\u5316\u5b66\u4e60\u5de5\u4f5c\u6d41", "url": "https://yfrobotics.github.io/robowiki-cn/simulation/pybullet-rl-workflows/"}
+    </script>
   
   <meta name="google-adsense-account" content="ca-pub-8821428748194648">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8821428748194648"
@@ -617,7 +628,7 @@
   <span class="md-ellipsis">
     
   
-    介绍
+    机器人入门与开发知识库
   
 
     
@@ -9033,6 +9044,9 @@
 
 
 
+
+  
+  
 
 
 

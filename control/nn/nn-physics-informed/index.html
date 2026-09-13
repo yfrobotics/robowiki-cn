@@ -3,30 +3,22 @@
 <html lang="zh" class="no-js">
   <head>
     
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width,initial-scale=1">
-      
-        <meta name="description" content="机器人领域的公共知识库">
-      
-      
-        <meta name="author" content="YFRL">
-      
-      
-        <link rel="canonical" href="https://yfrobotics.github.io/control/nn/nn-physics-informed/">
-      
-      
-        <link rel="prev" href="../nn/">
-      
-      
-        <link rel="next" href="../nn-policy-learning/">
-      
-      
-        
-      
-      
-      <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
-    
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="传统神经网络控制器把系统当作黑箱，完全依赖数据拟合输入输出映射。物理信息与算子学习方法则把已知的物理规律重新注入网络：物理信息神经网络（Physics-Informed Neural Network, PINN）把微分方程残差写进损失函数，神经微分方程（Neural Ordinary Differential Equ…">
+  <meta name="author" content="YFRL">
+  
+    <link rel="canonical" href="https://yfrobotics.github.io/robowiki-cn/control/nn/nn-physics-informed/">
+  
+  
+    <link rel="prev" href="../nn/">
+  
+  
+    <link rel="next" href="../nn-policy-learning/">
+  
+  <link rel="icon" href="../../../assets/images/favicon.png">
+  <meta name="generator" content="mkdocs-1.6.1">
+
     
       
         <title>物理信息与算子学习控制 - 云飞机器人中文维基</title>
@@ -73,6 +65,25 @@
 
     
     
+  
+  
+    
+    
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="zh_CN">
+    <meta property="og:site_name" content="云飞机器人中文维基">
+    <meta property="og:title" content="物理信息与算子学习控制 - 云飞机器人中文维基">
+    <meta property="og:description" content="传统神经网络控制器把系统当作黑箱，完全依赖数据拟合输入输出映射。物理信息与算子学习方法则把已知的物理规律重新注入网络：物理信息神经网络（Physics-Informed Neural Network, PINN）把微分方程残差写进损失函数，神经微分方程（Neural Ordinary Differential Equ…">
+    <meta property="og:url" content="https://yfrobotics.github.io/robowiki-cn/control/nn/nn-physics-informed/">
+    <meta property="og:image" content="https://yfrobotics.github.io/robowiki-cn/logo.png">
+    <meta property="og:image:alt" content="云飞机器人中文维基标志">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="物理信息与算子学习控制 - 云飞机器人中文维基">
+    <meta name="twitter:description" content="传统神经网络控制器把系统当作黑箱，完全依赖数据拟合输入输出映射。物理信息与算子学习方法则把已知的物理规律重新注入网络：物理信息神经网络（Physics-Informed Neural Network, PINN）把微分方程残差写进损失函数，神经微分方程（Neural Ordinary Differential Equ…">
+    <meta name="twitter:image" content="https://yfrobotics.github.io/robowiki-cn/logo.png">
+    <script type="application/ld+json">
+      {"@context": "https://schema.org", "@type": "WebPage", "description": "\u4f20\u7edf\u795e\u7ecf\u7f51\u7edc\u63a7\u5236\u5668\u628a\u7cfb\u7edf\u5f53\u4f5c\u9ed1\u7bb1\uff0c\u5b8c\u5168\u4f9d\u8d56\u6570\u636e\u62df\u5408\u8f93\u5165\u8f93\u51fa\u6620\u5c04\u3002\u7269\u7406\u4fe1\u606f\u4e0e\u7b97\u5b50\u5b66\u4e60\u65b9\u6cd5\u5219\u628a\u5df2\u77e5\u7684\u7269\u7406\u89c4\u5f8b\u91cd\u65b0\u6ce8\u5165\u7f51\u7edc\uff1a\u7269\u7406\u4fe1\u606f\u795e\u7ecf\u7f51\u7edc\uff08Physics-Informed Neural Network, PINN\uff09\u628a\u5fae\u5206\u65b9\u7a0b\u6b8b\u5dee\u5199\u8fdb\u635f\u5931\u51fd\u6570\uff0c\u795e\u7ecf\u5fae\u5206\u65b9\u7a0b\uff08Neural Ordinary Differential Equ\u2026", "inLanguage": "zh-CN", "isPartOf": {"@type": "WebSite", "name": "\u4e91\u98de\u673a\u5668\u4eba\u4e2d\u6587\u7ef4\u57fa", "url": "https://yfrobotics.github.io/robowiki-cn/"}, "name": "\u7269\u7406\u4fe1\u606f\u4e0e\u7b97\u5b50\u5b66\u4e60\u63a7\u5236", "url": "https://yfrobotics.github.io/robowiki-cn/control/nn/nn-physics-informed/"}
+    </script>
   
   <meta name="google-adsense-account" content="ca-pub-8821428748194648">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8821428748194648"
@@ -617,7 +628,7 @@
   <span class="md-ellipsis">
     
   
-    介绍
+    机器人入门与开发知识库
   
 
     
@@ -8810,6 +8821,9 @@
 
 
 
+
+  
+  
 
 
 

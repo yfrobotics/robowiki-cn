@@ -3,30 +3,22 @@
 <html lang="zh" class="no-js">
   <head>
     
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width,initial-scale=1">
-      
-        <meta name="description" content="机器人领域的公共知识库">
-      
-      
-        <meta name="author" content="YFRL">
-      
-      
-        <link rel="canonical" href="https://yfrobotics.github.io/sensing/sensor-fusion-filters/">
-      
-      
-        <link rel="prev" href="../sensor-fusion/">
-      
-      
-        <link rel="next" href="../sensor-fusion-architecture/">
-      
-      
-        
-      
-      
-      <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
-    
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="传感器融合的数学内核是递归贝叶斯估计：用运动模型预测状态的先验分布，再用观测更新为后验分布。不同滤波器的差别只在于如何表示这个分布与如何处理非线性。卡尔曼滤波（Kalman Filter, KF）假设分布为高斯且系统线性，给出解析最优解；扩展卡尔曼滤波（EKF）用一阶泰勒展开线性化；无迹卡尔曼滤波（UKF）改用确定性…">
+  <meta name="author" content="YFRL">
+  
+    <link rel="canonical" href="https://yfrobotics.github.io/robowiki-cn/sensing/sensor-fusion-filters/">
+  
+  
+    <link rel="prev" href="../sensor-fusion/">
+  
+  
+    <link rel="next" href="../sensor-fusion-architecture/">
+  
+  <link rel="icon" href="../../assets/images/favicon.png">
+  <meta name="generator" content="mkdocs-1.6.1">
+
     
       
         <title>贝叶斯滤波器族 - 云飞机器人中文维基</title>
@@ -73,6 +65,25 @@
 
     
     
+  
+  
+    
+    
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="zh_CN">
+    <meta property="og:site_name" content="云飞机器人中文维基">
+    <meta property="og:title" content="贝叶斯滤波器族 - 云飞机器人中文维基">
+    <meta property="og:description" content="传感器融合的数学内核是递归贝叶斯估计：用运动模型预测状态的先验分布，再用观测更新为后验分布。不同滤波器的差别只在于如何表示这个分布与如何处理非线性。卡尔曼滤波（Kalman Filter, KF）假设分布为高斯且系统线性，给出解析最优解；扩展卡尔曼滤波（EKF）用一阶泰勒展开线性化；无迹卡尔曼滤波（UKF）改用确定性…">
+    <meta property="og:url" content="https://yfrobotics.github.io/robowiki-cn/sensing/sensor-fusion-filters/">
+    <meta property="og:image" content="https://yfrobotics.github.io/robowiki-cn/logo.png">
+    <meta property="og:image:alt" content="云飞机器人中文维基标志">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="贝叶斯滤波器族 - 云飞机器人中文维基">
+    <meta name="twitter:description" content="传感器融合的数学内核是递归贝叶斯估计：用运动模型预测状态的先验分布，再用观测更新为后验分布。不同滤波器的差别只在于如何表示这个分布与如何处理非线性。卡尔曼滤波（Kalman Filter, KF）假设分布为高斯且系统线性，给出解析最优解；扩展卡尔曼滤波（EKF）用一阶泰勒展开线性化；无迹卡尔曼滤波（UKF）改用确定性…">
+    <meta name="twitter:image" content="https://yfrobotics.github.io/robowiki-cn/logo.png">
+    <script type="application/ld+json">
+      {"@context": "https://schema.org", "@type": "WebPage", "description": "\u4f20\u611f\u5668\u878d\u5408\u7684\u6570\u5b66\u5185\u6838\u662f\u9012\u5f52\u8d1d\u53f6\u65af\u4f30\u8ba1\uff1a\u7528\u8fd0\u52a8\u6a21\u578b\u9884\u6d4b\u72b6\u6001\u7684\u5148\u9a8c\u5206\u5e03\uff0c\u518d\u7528\u89c2\u6d4b\u66f4\u65b0\u4e3a\u540e\u9a8c\u5206\u5e03\u3002\u4e0d\u540c\u6ee4\u6ce2\u5668\u7684\u5dee\u522b\u53ea\u5728\u4e8e\u5982\u4f55\u8868\u793a\u8fd9\u4e2a\u5206\u5e03\u4e0e\u5982\u4f55\u5904\u7406\u975e\u7ebf\u6027\u3002\u5361\u5c14\u66fc\u6ee4\u6ce2\uff08Kalman Filter, KF\uff09\u5047\u8bbe\u5206\u5e03\u4e3a\u9ad8\u65af\u4e14\u7cfb\u7edf\u7ebf\u6027\uff0c\u7ed9\u51fa\u89e3\u6790\u6700\u4f18\u89e3\uff1b\u6269\u5c55\u5361\u5c14\u66fc\u6ee4\u6ce2\uff08EKF\uff09\u7528\u4e00\u9636\u6cf0\u52d2\u5c55\u5f00\u7ebf\u6027\u5316\uff1b\u65e0\u8ff9\u5361\u5c14\u66fc\u6ee4\u6ce2\uff08UKF\uff09\u6539\u7528\u786e\u5b9a\u6027\u2026", "inLanguage": "zh-CN", "isPartOf": {"@type": "WebSite", "name": "\u4e91\u98de\u673a\u5668\u4eba\u4e2d\u6587\u7ef4\u57fa", "url": "https://yfrobotics.github.io/robowiki-cn/"}, "name": "\u8d1d\u53f6\u65af\u6ee4\u6ce2\u5668\u65cf", "url": "https://yfrobotics.github.io/robowiki-cn/sensing/sensor-fusion-filters/"}
+    </script>
   
   <meta name="google-adsense-account" content="ca-pub-8821428748194648">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8821428748194648"
@@ -617,7 +628,7 @@
   <span class="md-ellipsis">
     
   
-    介绍
+    机器人入门与开发知识库
   
 
     
@@ -9399,6 +9410,9 @@ N_{\text{eff}} \approx \frac{1}{\sum_{i=1}^{N} \left(w_k^{(i)}\right)^2}
 
 
 
+
+  
+  
 
 
 

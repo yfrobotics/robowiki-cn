@@ -3,30 +3,22 @@
 <html lang="zh" class="no-js">
   <head>
     
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width,initial-scale=1">
-      
-        <meta name="description" content="机器人领域的公共知识库">
-      
-      
-        <meta name="author" content="YFRL">
-      
-      
-        <link rel="canonical" href="https://yfrobotics.github.io/hardware/safety-collaborative-robot/">
-      
-      
-        <link rel="prev" href="../functional-safety/">
-      
-      
-        <link rel="next" href="../../arduino/">
-      
-      
-        
-      
-      
-      <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
-    
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="协作机器人的卖点是「可以不装围栏、和人一起工作」，但这句话在合规意义上并不成立——没有本质安全的机器人，只有本质安全的应用。同一台协作机器人，装上钝头夹爪慢速搬运海绵是安全的，装上刀具高速运动就必须围起来。ISO/TS 15066 给出的正是判断某个具体应用是否安全的方法：四种协作模式各自的要求、可承受的力与压强限值…">
+  <meta name="author" content="YFRL">
+  
+    <link rel="canonical" href="https://yfrobotics.github.io/robowiki-cn/hardware/safety-collaborative-robot/">
+  
+  
+    <link rel="prev" href="../functional-safety/">
+  
+  
+    <link rel="next" href="../../arduino/">
+  
+  <link rel="icon" href="../../assets/images/favicon.png">
+  <meta name="generator" content="mkdocs-1.6.1">
+
     
       
         <title>协作机器人安全 - 云飞机器人中文维基</title>
@@ -73,6 +65,25 @@
 
     
     
+  
+  
+    
+    
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="zh_CN">
+    <meta property="og:site_name" content="云飞机器人中文维基">
+    <meta property="og:title" content="协作机器人安全 - 云飞机器人中文维基">
+    <meta property="og:description" content="协作机器人的卖点是「可以不装围栏、和人一起工作」，但这句话在合规意义上并不成立——没有本质安全的机器人，只有本质安全的应用。同一台协作机器人，装上钝头夹爪慢速搬运海绵是安全的，装上刀具高速运动就必须围起来。ISO/TS 15066 给出的正是判断某个具体应用是否安全的方法：四种协作模式各自的要求、可承受的力与压强限值…">
+    <meta property="og:url" content="https://yfrobotics.github.io/robowiki-cn/hardware/safety-collaborative-robot/">
+    <meta property="og:image" content="https://yfrobotics.github.io/robowiki-cn/logo.png">
+    <meta property="og:image:alt" content="云飞机器人中文维基标志">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="协作机器人安全 - 云飞机器人中文维基">
+    <meta name="twitter:description" content="协作机器人的卖点是「可以不装围栏、和人一起工作」，但这句话在合规意义上并不成立——没有本质安全的机器人，只有本质安全的应用。同一台协作机器人，装上钝头夹爪慢速搬运海绵是安全的，装上刀具高速运动就必须围起来。ISO/TS 15066 给出的正是判断某个具体应用是否安全的方法：四种协作模式各自的要求、可承受的力与压强限值…">
+    <meta name="twitter:image" content="https://yfrobotics.github.io/robowiki-cn/logo.png">
+    <script type="application/ld+json">
+      {"@context": "https://schema.org", "@type": "WebPage", "description": "\u534f\u4f5c\u673a\u5668\u4eba\u7684\u5356\u70b9\u662f\u300c\u53ef\u4ee5\u4e0d\u88c5\u56f4\u680f\u3001\u548c\u4eba\u4e00\u8d77\u5de5\u4f5c\u300d\uff0c\u4f46\u8fd9\u53e5\u8bdd\u5728\u5408\u89c4\u610f\u4e49\u4e0a\u5e76\u4e0d\u6210\u7acb\u2014\u2014\u6ca1\u6709\u672c\u8d28\u5b89\u5168\u7684\u673a\u5668\u4eba\uff0c\u53ea\u6709\u672c\u8d28\u5b89\u5168\u7684\u5e94\u7528\u3002\u540c\u4e00\u53f0\u534f\u4f5c\u673a\u5668\u4eba\uff0c\u88c5\u4e0a\u949d\u5934\u5939\u722a\u6162\u901f\u642c\u8fd0\u6d77\u7ef5\u662f\u5b89\u5168\u7684\uff0c\u88c5\u4e0a\u5200\u5177\u9ad8\u901f\u8fd0\u52a8\u5c31\u5fc5\u987b\u56f4\u8d77\u6765\u3002ISO/TS 15066 \u7ed9\u51fa\u7684\u6b63\u662f\u5224\u65ad\u67d0\u4e2a\u5177\u4f53\u5e94\u7528\u662f\u5426\u5b89\u5168\u7684\u65b9\u6cd5\uff1a\u56db\u79cd\u534f\u4f5c\u6a21\u5f0f\u5404\u81ea\u7684\u8981\u6c42\u3001\u53ef\u627f\u53d7\u7684\u529b\u4e0e\u538b\u5f3a\u9650\u503c\u2026", "inLanguage": "zh-CN", "isPartOf": {"@type": "WebSite", "name": "\u4e91\u98de\u673a\u5668\u4eba\u4e2d\u6587\u7ef4\u57fa", "url": "https://yfrobotics.github.io/robowiki-cn/"}, "name": "\u534f\u4f5c\u673a\u5668\u4eba\u5b89\u5168", "url": "https://yfrobotics.github.io/robowiki-cn/hardware/safety-collaborative-robot/"}
+    </script>
   
   <meta name="google-adsense-account" content="ca-pub-8821428748194648">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8821428748194648"
@@ -617,7 +628,7 @@
   <span class="md-ellipsis">
     
   
-    介绍
+    机器人入门与开发知识库
   
 
     
@@ -8952,6 +8963,9 @@
 
 
 
+
+  
+  
 
 
 

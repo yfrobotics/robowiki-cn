@@ -3,30 +3,22 @@
 <html lang="zh" class="no-js">
   <head>
     
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width,initial-scale=1">
-      
-        <meta name="description" content="机器人领域的公共知识库">
-      
-      
-        <meta name="author" content="YFRL">
-      
-      
-        <link rel="canonical" href="https://yfrobotics.github.io/hardware/power-thermal/">
-      
-      
-        <link rel="prev" href="../system-architecture/">
-      
-      
-        <link rel="next" href="../communication-buses/">
-      
-      
-        
-      
-      
-      <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
-    
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="电源系统和散热设计是机器人硬件工程中容易被低估但极其关键的环节。电源设计不当可能导致系统重启、传感器数据异常甚至硬件损坏；散热不足则会引发计算平台降频，严重影响算法实时性。本文系统介绍电池选型、电源管理、功耗预算、散热方案以及常见嵌入式平台的热管理策略。">
+  <meta name="author" content="YFRL">
+  
+    <link rel="canonical" href="https://yfrobotics.github.io/robowiki-cn/hardware/power-thermal/">
+  
+  
+    <link rel="prev" href="../system-architecture/">
+  
+  
+    <link rel="next" href="../communication-buses/">
+  
+  <link rel="icon" href="../../assets/images/favicon.png">
+  <meta name="generator" content="mkdocs-1.6.1">
+
     
       
         <title>电源与散热 - 云飞机器人中文维基</title>
@@ -73,6 +65,25 @@
 
     
     
+  
+  
+    
+    
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="zh_CN">
+    <meta property="og:site_name" content="云飞机器人中文维基">
+    <meta property="og:title" content="电源与散热 - 云飞机器人中文维基">
+    <meta property="og:description" content="电源系统和散热设计是机器人硬件工程中容易被低估但极其关键的环节。电源设计不当可能导致系统重启、传感器数据异常甚至硬件损坏；散热不足则会引发计算平台降频，严重影响算法实时性。本文系统介绍电池选型、电源管理、功耗预算、散热方案以及常见嵌入式平台的热管理策略。">
+    <meta property="og:url" content="https://yfrobotics.github.io/robowiki-cn/hardware/power-thermal/">
+    <meta property="og:image" content="https://yfrobotics.github.io/robowiki-cn/logo.png">
+    <meta property="og:image:alt" content="云飞机器人中文维基标志">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="电源与散热 - 云飞机器人中文维基">
+    <meta name="twitter:description" content="电源系统和散热设计是机器人硬件工程中容易被低估但极其关键的环节。电源设计不当可能导致系统重启、传感器数据异常甚至硬件损坏；散热不足则会引发计算平台降频，严重影响算法实时性。本文系统介绍电池选型、电源管理、功耗预算、散热方案以及常见嵌入式平台的热管理策略。">
+    <meta name="twitter:image" content="https://yfrobotics.github.io/robowiki-cn/logo.png">
+    <script type="application/ld+json">
+      {"@context": "https://schema.org", "@type": "WebPage", "description": "\u7535\u6e90\u7cfb\u7edf\u548c\u6563\u70ed\u8bbe\u8ba1\u662f\u673a\u5668\u4eba\u786c\u4ef6\u5de5\u7a0b\u4e2d\u5bb9\u6613\u88ab\u4f4e\u4f30\u4f46\u6781\u5176\u5173\u952e\u7684\u73af\u8282\u3002\u7535\u6e90\u8bbe\u8ba1\u4e0d\u5f53\u53ef\u80fd\u5bfc\u81f4\u7cfb\u7edf\u91cd\u542f\u3001\u4f20\u611f\u5668\u6570\u636e\u5f02\u5e38\u751a\u81f3\u786c\u4ef6\u635f\u574f\uff1b\u6563\u70ed\u4e0d\u8db3\u5219\u4f1a\u5f15\u53d1\u8ba1\u7b97\u5e73\u53f0\u964d\u9891\uff0c\u4e25\u91cd\u5f71\u54cd\u7b97\u6cd5\u5b9e\u65f6\u6027\u3002\u672c\u6587\u7cfb\u7edf\u4ecb\u7ecd\u7535\u6c60\u9009\u578b\u3001\u7535\u6e90\u7ba1\u7406\u3001\u529f\u8017\u9884\u7b97\u3001\u6563\u70ed\u65b9\u6848\u4ee5\u53ca\u5e38\u89c1\u5d4c\u5165\u5f0f\u5e73\u53f0\u7684\u70ed\u7ba1\u7406\u7b56\u7565\u3002", "inLanguage": "zh-CN", "isPartOf": {"@type": "WebSite", "name": "\u4e91\u98de\u673a\u5668\u4eba\u4e2d\u6587\u7ef4\u57fa", "url": "https://yfrobotics.github.io/robowiki-cn/"}, "name": "\u7535\u6e90\u4e0e\u6563\u70ed", "url": "https://yfrobotics.github.io/robowiki-cn/hardware/power-thermal/"}
+    </script>
   
   <meta name="google-adsense-account" content="ca-pub-8821428748194648">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8821428748194648"
@@ -617,7 +628,7 @@
   <span class="md-ellipsis">
     
   
-    介绍
+    机器人入门与开发知识库
   
 
     
@@ -9601,6 +9612,9 @@ vcgencmd<span class="w"> </span>get_throttled
 
 
 
+
+  
+  
 
 
 

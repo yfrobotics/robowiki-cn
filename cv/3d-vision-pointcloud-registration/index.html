@@ -3,30 +3,22 @@
 <html lang="zh" class="no-js">
   <head>
     
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width,initial-scale=1">
-      
-        <meta name="description" content="机器人领域的公共知识库">
-      
-      
-        <meta name="author" content="YFRL">
-      
-      
-        <link rel="canonical" href="https://yfrobotics.github.io/cv/3d-vision-pointcloud-registration/">
-      
-      
-        <link rel="prev" href="../3d-vision-stereo-depth/">
-      
-      
-        <link rel="next" href="../3d-vision-reconstruction-radiance/">
-      
-      
-        
-      
-      
-      <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
-    
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="点云配准（Point Cloud Registration）是将多个视角获取的点云数据对齐到统一坐标系的过程，是三维重建、同时定位与建图（Simultaneous Localization and Mapping, SLAM）、物体识别等任务的核心步骤。本文系统介绍迭代最近点（Iterative Closest Po…">
+  <meta name="author" content="YFRL">
+  
+    <link rel="canonical" href="https://yfrobotics.github.io/robowiki-cn/cv/3d-vision-pointcloud-registration/">
+  
+  
+    <link rel="prev" href="../3d-vision-stereo-depth/">
+  
+  
+    <link rel="next" href="../3d-vision-reconstruction-radiance/">
+  
+  <link rel="icon" href="../../assets/images/favicon.png">
+  <meta name="generator" content="mkdocs-1.6.1">
+
     
       
         <title>点云配准 - 云飞机器人中文维基</title>
@@ -73,6 +65,25 @@
 
     
     
+  
+  
+    
+    
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="zh_CN">
+    <meta property="og:site_name" content="云飞机器人中文维基">
+    <meta property="og:title" content="点云配准 - 云飞机器人中文维基">
+    <meta property="og:description" content="点云配准（Point Cloud Registration）是将多个视角获取的点云数据对齐到统一坐标系的过程，是三维重建、同时定位与建图（Simultaneous Localization and Mapping, SLAM）、物体识别等任务的核心步骤。本文系统介绍迭代最近点（Iterative Closest Po…">
+    <meta property="og:url" content="https://yfrobotics.github.io/robowiki-cn/cv/3d-vision-pointcloud-registration/">
+    <meta property="og:image" content="https://yfrobotics.github.io/robowiki-cn/logo.png">
+    <meta property="og:image:alt" content="云飞机器人中文维基标志">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="点云配准 - 云飞机器人中文维基">
+    <meta name="twitter:description" content="点云配准（Point Cloud Registration）是将多个视角获取的点云数据对齐到统一坐标系的过程，是三维重建、同时定位与建图（Simultaneous Localization and Mapping, SLAM）、物体识别等任务的核心步骤。本文系统介绍迭代最近点（Iterative Closest Po…">
+    <meta name="twitter:image" content="https://yfrobotics.github.io/robowiki-cn/logo.png">
+    <script type="application/ld+json">
+      {"@context": "https://schema.org", "@type": "WebPage", "description": "\u70b9\u4e91\u914d\u51c6\uff08Point Cloud Registration\uff09\u662f\u5c06\u591a\u4e2a\u89c6\u89d2\u83b7\u53d6\u7684\u70b9\u4e91\u6570\u636e\u5bf9\u9f50\u5230\u7edf\u4e00\u5750\u6807\u7cfb\u7684\u8fc7\u7a0b\uff0c\u662f\u4e09\u7ef4\u91cd\u5efa\u3001\u540c\u65f6\u5b9a\u4f4d\u4e0e\u5efa\u56fe\uff08Simultaneous Localization and Mapping, SLAM\uff09\u3001\u7269\u4f53\u8bc6\u522b\u7b49\u4efb\u52a1\u7684\u6838\u5fc3\u6b65\u9aa4\u3002\u672c\u6587\u7cfb\u7edf\u4ecb\u7ecd\u8fed\u4ee3\u6700\u8fd1\u70b9\uff08Iterative Closest Po\u2026", "inLanguage": "zh-CN", "isPartOf": {"@type": "WebSite", "name": "\u4e91\u98de\u673a\u5668\u4eba\u4e2d\u6587\u7ef4\u57fa", "url": "https://yfrobotics.github.io/robowiki-cn/"}, "name": "\u70b9\u4e91\u914d\u51c6", "url": "https://yfrobotics.github.io/robowiki-cn/cv/3d-vision-pointcloud-registration/"}
+    </script>
   
   <meta name="google-adsense-account" content="ca-pub-8821428748194648">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8821428748194648"
@@ -617,7 +628,7 @@
   <span class="md-ellipsis">
     
   
-    介绍
+    机器人入门与开发知识库
   
 
     
@@ -9276,6 +9287,9 @@ N = \frac{\log(1-p)}{\log(1-w^n)}
 
 
 
+
+  
+  
 
 
 

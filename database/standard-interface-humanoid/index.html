@@ -3,30 +3,22 @@
 <html lang="zh" class="no-js">
   <head>
     
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width,initial-scale=1">
-      
-        <meta name="description" content="机器人领域的公共知识库">
-      
-      
-        <meta name="author" content="YFRL">
-      
-      
-        <link rel="canonical" href="https://yfrobotics.github.io/database/standard-interface-humanoid/">
-      
-      
-        <link rel="prev" href="../standard-safety/">
-      
-      
-        <link rel="next" href="../competitions/">
-      
-      
-        
-      
-      
-      <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
-    
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="通信与接口标准决定了不同厂商的部件能否组成一个系统：工业现场总线（EtherCAT、CANopen CiA 402、PROFINET）规定了实时控制数据的传输方式，OPC UA Robotics 面向工厂信息层的互通，而 ROS REP 系列虽非正式国际标准，却在开源生态中承担了事实规范的角色（如 REP-103 的…">
+  <meta name="author" content="YFRL">
+  
+    <link rel="canonical" href="https://yfrobotics.github.io/robowiki-cn/database/standard-interface-humanoid/">
+  
+  
+    <link rel="prev" href="../standard-safety/">
+  
+  
+    <link rel="next" href="../competitions/">
+  
+  <link rel="icon" href="../../assets/images/favicon.png">
+  <meta name="generator" content="mkdocs-1.6.1">
+
     
       
         <title>通信接口与人形机器人标准 - 云飞机器人中文维基</title>
@@ -73,6 +65,25 @@
 
     
     
+  
+  
+    
+    
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="zh_CN">
+    <meta property="og:site_name" content="云飞机器人中文维基">
+    <meta property="og:title" content="通信接口与人形机器人标准 - 云飞机器人中文维基">
+    <meta property="og:description" content="通信与接口标准决定了不同厂商的部件能否组成一个系统：工业现场总线（EtherCAT、CANopen CiA 402、PROFINET）规定了实时控制数据的传输方式，OPC UA Robotics 面向工厂信息层的互通，而 ROS REP 系列虽非正式国际标准，却在开源生态中承担了事实规范的角色（如 REP-103 的…">
+    <meta property="og:url" content="https://yfrobotics.github.io/robowiki-cn/database/standard-interface-humanoid/">
+    <meta property="og:image" content="https://yfrobotics.github.io/robowiki-cn/logo.png">
+    <meta property="og:image:alt" content="云飞机器人中文维基标志">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="通信接口与人形机器人标准 - 云飞机器人中文维基">
+    <meta name="twitter:description" content="通信与接口标准决定了不同厂商的部件能否组成一个系统：工业现场总线（EtherCAT、CANopen CiA 402、PROFINET）规定了实时控制数据的传输方式，OPC UA Robotics 面向工厂信息层的互通，而 ROS REP 系列虽非正式国际标准，却在开源生态中承担了事实规范的角色（如 REP-103 的…">
+    <meta name="twitter:image" content="https://yfrobotics.github.io/robowiki-cn/logo.png">
+    <script type="application/ld+json">
+      {"@context": "https://schema.org", "@type": "WebPage", "description": "\u901a\u4fe1\u4e0e\u63a5\u53e3\u6807\u51c6\u51b3\u5b9a\u4e86\u4e0d\u540c\u5382\u5546\u7684\u90e8\u4ef6\u80fd\u5426\u7ec4\u6210\u4e00\u4e2a\u7cfb\u7edf\uff1a\u5de5\u4e1a\u73b0\u573a\u603b\u7ebf\uff08EtherCAT\u3001CANopen CiA 402\u3001PROFINET\uff09\u89c4\u5b9a\u4e86\u5b9e\u65f6\u63a7\u5236\u6570\u636e\u7684\u4f20\u8f93\u65b9\u5f0f\uff0cOPC UA Robotics \u9762\u5411\u5de5\u5382\u4fe1\u606f\u5c42\u7684\u4e92\u901a\uff0c\u800c ROS REP \u7cfb\u5217\u867d\u975e\u6b63\u5f0f\u56fd\u9645\u6807\u51c6\uff0c\u5374\u5728\u5f00\u6e90\u751f\u6001\u4e2d\u627f\u62c5\u4e86\u4e8b\u5b9e\u89c4\u8303\u7684\u89d2\u8272\uff08\u5982 REP-103 \u7684\u2026", "inLanguage": "zh-CN", "isPartOf": {"@type": "WebSite", "name": "\u4e91\u98de\u673a\u5668\u4eba\u4e2d\u6587\u7ef4\u57fa", "url": "https://yfrobotics.github.io/robowiki-cn/"}, "name": "\u901a\u4fe1\u63a5\u53e3\u4e0e\u4eba\u5f62\u673a\u5668\u4eba\u6807\u51c6", "url": "https://yfrobotics.github.io/robowiki-cn/database/standard-interface-humanoid/"}
+    </script>
   
   <meta name="google-adsense-account" content="ca-pub-8821428748194648">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8821428748194648"
@@ -617,7 +628,7 @@
   <span class="md-ellipsis">
     
   
-    介绍
+    机器人入门与开发知识库
   
 
     
@@ -8614,6 +8625,9 @@
 
 
 
+
+  
+  
 
 
 

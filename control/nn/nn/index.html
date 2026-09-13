@@ -3,30 +3,22 @@
 <html lang="zh" class="no-js">
   <head>
     
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width,initial-scale=1">
-      
-        <meta name="description" content="机器人领域的公共知识库">
-      
-      
-        <meta name="author" content="YFRL">
-      
-      
-        <link rel="canonical" href="https://yfrobotics.github.io/control/nn/nn/">
-      
-      
-        <link rel="prev" href="../../mpc/mpc/">
-      
-      
-        <link rel="next" href="../nn-physics-informed/">
-      
-      
-        
-      
-      
-      <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
-    
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="神经网络控制器是一类基于人工神经网络（Artificial Neural Network, ANN）的控制方法，能够通过学习从数据中提取复杂的非线性映射关系。与传统的PID或MPC控制器不同，神经网络控制器不需要精确的系统数学模型，可以直接从输入输出数据中学习控制策略。这使得神经网络控制器特别适用于难以建立精确模型的…">
+  <meta name="author" content="YFRL">
+  
+    <link rel="canonical" href="https://yfrobotics.github.io/robowiki-cn/control/nn/nn/">
+  
+  
+    <link rel="prev" href="../../mpc/mpc/">
+  
+  
+    <link rel="next" href="../nn-physics-informed/">
+  
+  <link rel="icon" href="../../../assets/images/favicon.png">
+  <meta name="generator" content="mkdocs-1.6.1">
+
     
       
         <title>神经网络控制器 (Neural Network Controller) - 云飞机器人中文维基</title>
@@ -73,6 +65,25 @@
 
     
     
+  
+  
+    
+    
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="zh_CN">
+    <meta property="og:site_name" content="云飞机器人中文维基">
+    <meta property="og:title" content="神经网络控制器 (Neural Network Controller) - 云飞机器人中文维基">
+    <meta property="og:description" content="神经网络控制器是一类基于人工神经网络（Artificial Neural Network, ANN）的控制方法，能够通过学习从数据中提取复杂的非线性映射关系。与传统的PID或MPC控制器不同，神经网络控制器不需要精确的系统数学模型，可以直接从输入输出数据中学习控制策略。这使得神经网络控制器特别适用于难以建立精确模型的…">
+    <meta property="og:url" content="https://yfrobotics.github.io/robowiki-cn/control/nn/nn/">
+    <meta property="og:image" content="https://yfrobotics.github.io/robowiki-cn/logo.png">
+    <meta property="og:image:alt" content="云飞机器人中文维基标志">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="神经网络控制器 (Neural Network Controller) - 云飞机器人中文维基">
+    <meta name="twitter:description" content="神经网络控制器是一类基于人工神经网络（Artificial Neural Network, ANN）的控制方法，能够通过学习从数据中提取复杂的非线性映射关系。与传统的PID或MPC控制器不同，神经网络控制器不需要精确的系统数学模型，可以直接从输入输出数据中学习控制策略。这使得神经网络控制器特别适用于难以建立精确模型的…">
+    <meta name="twitter:image" content="https://yfrobotics.github.io/robowiki-cn/logo.png">
+    <script type="application/ld+json">
+      {"@context": "https://schema.org", "@type": "WebPage", "description": "\u795e\u7ecf\u7f51\u7edc\u63a7\u5236\u5668\u662f\u4e00\u7c7b\u57fa\u4e8e\u4eba\u5de5\u795e\u7ecf\u7f51\u7edc\uff08Artificial Neural Network, ANN\uff09\u7684\u63a7\u5236\u65b9\u6cd5\uff0c\u80fd\u591f\u901a\u8fc7\u5b66\u4e60\u4ece\u6570\u636e\u4e2d\u63d0\u53d6\u590d\u6742\u7684\u975e\u7ebf\u6027\u6620\u5c04\u5173\u7cfb\u3002\u4e0e\u4f20\u7edf\u7684PID\u6216MPC\u63a7\u5236\u5668\u4e0d\u540c\uff0c\u795e\u7ecf\u7f51\u7edc\u63a7\u5236\u5668\u4e0d\u9700\u8981\u7cbe\u786e\u7684\u7cfb\u7edf\u6570\u5b66\u6a21\u578b\uff0c\u53ef\u4ee5\u76f4\u63a5\u4ece\u8f93\u5165\u8f93\u51fa\u6570\u636e\u4e2d\u5b66\u4e60\u63a7\u5236\u7b56\u7565\u3002\u8fd9\u4f7f\u5f97\u795e\u7ecf\u7f51\u7edc\u63a7\u5236\u5668\u7279\u522b\u9002\u7528\u4e8e\u96be\u4ee5\u5efa\u7acb\u7cbe\u786e\u6a21\u578b\u7684\u2026", "inLanguage": "zh-CN", "isPartOf": {"@type": "WebSite", "name": "\u4e91\u98de\u673a\u5668\u4eba\u4e2d\u6587\u7ef4\u57fa", "url": "https://yfrobotics.github.io/robowiki-cn/"}, "name": "\u795e\u7ecf\u7f51\u7edc\u63a7\u5236\u5668 (Neural Network Controller)", "url": "https://yfrobotics.github.io/robowiki-cn/control/nn/nn/"}
+    </script>
   
   <meta name="google-adsense-account" content="ca-pub-8821428748194648">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8821428748194648"
@@ -617,7 +628,7 @@
   <span class="md-ellipsis">
     
   
-    介绍
+    机器人入门与开发知识库
   
 
     
@@ -9010,6 +9021,9 @@
 
 
 
+
+  
+  
 
 
 

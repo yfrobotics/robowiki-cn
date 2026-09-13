@@ -3,30 +3,22 @@
 <html lang="zh" class="no-js">
   <head>
     
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width,initial-scale=1">
-      
-        <meta name="description" content="机器人领域的公共知识库">
-      
-      
-        <meta name="author" content="YFRL">
-      
-      
-        <link rel="canonical" href="https://yfrobotics.github.io/hardware/actuators/">
-      
-      
-        <link rel="prev" href="../communication-buses/">
-      
-      
-        <link rel="next" href="../motor-control/">
-      
-      
-        
-      
-      
-      <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
-    
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="执行器（Actuator）决定了机器人能施加多大的力、动得多快、以及在碰到东西时表现得多「柔和」。它不只是「一个电机」——真实的关节是电机、减速器、编码器、驱动器与制动器的组合，其中减速器的选择往往比电机本身更能决定整个关节的性能与手感。本页面介绍常见电机类型的取舍、四类减速器的特性差异、串联弹性与准直驱这两种改变了…">
+  <meta name="author" content="YFRL">
+  
+    <link rel="canonical" href="https://yfrobotics.github.io/robowiki-cn/hardware/actuators/">
+  
+  
+    <link rel="prev" href="../communication-buses/">
+  
+  
+    <link rel="next" href="../motor-control/">
+  
+  <link rel="icon" href="../../assets/images/favicon.png">
+  <meta name="generator" content="mkdocs-1.6.1">
+
     
       
         <title>执行器与传动 - 云飞机器人中文维基</title>
@@ -73,6 +65,25 @@
 
     
     
+  
+  
+    
+    
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="zh_CN">
+    <meta property="og:site_name" content="云飞机器人中文维基">
+    <meta property="og:title" content="执行器与传动 - 云飞机器人中文维基">
+    <meta property="og:description" content="执行器（Actuator）决定了机器人能施加多大的力、动得多快、以及在碰到东西时表现得多「柔和」。它不只是「一个电机」——真实的关节是电机、减速器、编码器、驱动器与制动器的组合，其中减速器的选择往往比电机本身更能决定整个关节的性能与手感。本页面介绍常见电机类型的取舍、四类减速器的特性差异、串联弹性与准直驱这两种改变了…">
+    <meta property="og:url" content="https://yfrobotics.github.io/robowiki-cn/hardware/actuators/">
+    <meta property="og:image" content="https://yfrobotics.github.io/robowiki-cn/logo.png">
+    <meta property="og:image:alt" content="云飞机器人中文维基标志">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="执行器与传动 - 云飞机器人中文维基">
+    <meta name="twitter:description" content="执行器（Actuator）决定了机器人能施加多大的力、动得多快、以及在碰到东西时表现得多「柔和」。它不只是「一个电机」——真实的关节是电机、减速器、编码器、驱动器与制动器的组合，其中减速器的选择往往比电机本身更能决定整个关节的性能与手感。本页面介绍常见电机类型的取舍、四类减速器的特性差异、串联弹性与准直驱这两种改变了…">
+    <meta name="twitter:image" content="https://yfrobotics.github.io/robowiki-cn/logo.png">
+    <script type="application/ld+json">
+      {"@context": "https://schema.org", "@type": "WebPage", "description": "\u6267\u884c\u5668\uff08Actuator\uff09\u51b3\u5b9a\u4e86\u673a\u5668\u4eba\u80fd\u65bd\u52a0\u591a\u5927\u7684\u529b\u3001\u52a8\u5f97\u591a\u5feb\u3001\u4ee5\u53ca\u5728\u78b0\u5230\u4e1c\u897f\u65f6\u8868\u73b0\u5f97\u591a\u300c\u67d4\u548c\u300d\u3002\u5b83\u4e0d\u53ea\u662f\u300c\u4e00\u4e2a\u7535\u673a\u300d\u2014\u2014\u771f\u5b9e\u7684\u5173\u8282\u662f\u7535\u673a\u3001\u51cf\u901f\u5668\u3001\u7f16\u7801\u5668\u3001\u9a71\u52a8\u5668\u4e0e\u5236\u52a8\u5668\u7684\u7ec4\u5408\uff0c\u5176\u4e2d\u51cf\u901f\u5668\u7684\u9009\u62e9\u5f80\u5f80\u6bd4\u7535\u673a\u672c\u8eab\u66f4\u80fd\u51b3\u5b9a\u6574\u4e2a\u5173\u8282\u7684\u6027\u80fd\u4e0e\u624b\u611f\u3002\u672c\u9875\u9762\u4ecb\u7ecd\u5e38\u89c1\u7535\u673a\u7c7b\u578b\u7684\u53d6\u820d\u3001\u56db\u7c7b\u51cf\u901f\u5668\u7684\u7279\u6027\u5dee\u5f02\u3001\u4e32\u8054\u5f39\u6027\u4e0e\u51c6\u76f4\u9a71\u8fd9\u4e24\u79cd\u6539\u53d8\u4e86\u2026", "inLanguage": "zh-CN", "isPartOf": {"@type": "WebSite", "name": "\u4e91\u98de\u673a\u5668\u4eba\u4e2d\u6587\u7ef4\u57fa", "url": "https://yfrobotics.github.io/robowiki-cn/"}, "name": "\u6267\u884c\u5668\u4e0e\u4f20\u52a8", "url": "https://yfrobotics.github.io/robowiki-cn/hardware/actuators/"}
+    </script>
   
   <meta name="google-adsense-account" content="ca-pub-8821428748194648">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8821428748194648"
@@ -617,7 +628,7 @@
   <span class="md-ellipsis">
     
   
-    介绍
+    机器人入门与开发知识库
   
 
     
@@ -8862,6 +8873,9 @@
 
 
 
+
+  
+  
 
 
 

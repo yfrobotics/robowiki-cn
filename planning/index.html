@@ -3,30 +3,22 @@
 <html lang="zh" class="no-js">
   <head>
     
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width,initial-scale=1">
-      
-        <meta name="description" content="机器人领域的公共知识库">
-      
-      
-        <meta name="author" content="YFRL">
-      
-      
-        <link rel="canonical" href="https://yfrobotics.github.io/planning/">
-      
-      
-        <link rel="prev" href="../cv/3d-vision-full-reference/">
-      
-      
-        <link rel="next" href="decisionmaking/">
-      
-      
-        
-      
-      
-      <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
-    
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="规划 (Planning) 是机器人自主行为的核心能力之一。它使机器人能够根据当前状态、环境信息和任务目标，自动生成一系列动作序列以完成指定任务。本页面概述了机器人规划的体系结构、核心概念及各子领域之间的关系。">
+  <meta name="author" content="YFRL">
+  
+    <link rel="canonical" href="https://yfrobotics.github.io/robowiki-cn/planning/">
+  
+  
+    <link rel="prev" href="../cv/3d-vision-full-reference/">
+  
+  
+    <link rel="next" href="decisionmaking/">
+  
+  <link rel="icon" href="../assets/images/favicon.png">
+  <meta name="generator" content="mkdocs-1.6.1">
+
     
       
         <title>机器人规划 - 云飞机器人中文维基</title>
@@ -73,6 +65,25 @@
 
     
     
+  
+  
+    
+    
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="zh_CN">
+    <meta property="og:site_name" content="云飞机器人中文维基">
+    <meta property="og:title" content="机器人规划 - 云飞机器人中文维基">
+    <meta property="og:description" content="规划 (Planning) 是机器人自主行为的核心能力之一。它使机器人能够根据当前状态、环境信息和任务目标，自动生成一系列动作序列以完成指定任务。本页面概述了机器人规划的体系结构、核心概念及各子领域之间的关系。">
+    <meta property="og:url" content="https://yfrobotics.github.io/robowiki-cn/planning/">
+    <meta property="og:image" content="https://yfrobotics.github.io/robowiki-cn/logo.png">
+    <meta property="og:image:alt" content="云飞机器人中文维基标志">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="机器人规划 - 云飞机器人中文维基">
+    <meta name="twitter:description" content="规划 (Planning) 是机器人自主行为的核心能力之一。它使机器人能够根据当前状态、环境信息和任务目标，自动生成一系列动作序列以完成指定任务。本页面概述了机器人规划的体系结构、核心概念及各子领域之间的关系。">
+    <meta name="twitter:image" content="https://yfrobotics.github.io/robowiki-cn/logo.png">
+    <script type="application/ld+json">
+      {"@context": "https://schema.org", "@type": "WebPage", "description": "\u89c4\u5212 (Planning) \u662f\u673a\u5668\u4eba\u81ea\u4e3b\u884c\u4e3a\u7684\u6838\u5fc3\u80fd\u529b\u4e4b\u4e00\u3002\u5b83\u4f7f\u673a\u5668\u4eba\u80fd\u591f\u6839\u636e\u5f53\u524d\u72b6\u6001\u3001\u73af\u5883\u4fe1\u606f\u548c\u4efb\u52a1\u76ee\u6807\uff0c\u81ea\u52a8\u751f\u6210\u4e00\u7cfb\u5217\u52a8\u4f5c\u5e8f\u5217\u4ee5\u5b8c\u6210\u6307\u5b9a\u4efb\u52a1\u3002\u672c\u9875\u9762\u6982\u8ff0\u4e86\u673a\u5668\u4eba\u89c4\u5212\u7684\u4f53\u7cfb\u7ed3\u6784\u3001\u6838\u5fc3\u6982\u5ff5\u53ca\u5404\u5b50\u9886\u57df\u4e4b\u95f4\u7684\u5173\u7cfb\u3002", "inLanguage": "zh-CN", "isPartOf": {"@type": "WebSite", "name": "\u4e91\u98de\u673a\u5668\u4eba\u4e2d\u6587\u7ef4\u57fa", "url": "https://yfrobotics.github.io/robowiki-cn/"}, "name": "\u673a\u5668\u4eba\u89c4\u5212", "url": "https://yfrobotics.github.io/robowiki-cn/planning/"}
+    </script>
   
   <meta name="google-adsense-account" content="ca-pub-8821428748194648">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8821428748194648"
@@ -617,7 +628,7 @@
   <span class="md-ellipsis">
     
   
-    介绍
+    机器人入门与开发知识库
   
 
     
@@ -8838,6 +8849,9 @@ T(\ldots T(T(s_0, a_1), a_2) \ldots, a_n) \in \mathcal{G}
 
 
 
+
+  
+  
 
 
 

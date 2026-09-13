@@ -3,30 +3,22 @@
 <html lang="zh" class="no-js">
   <head>
     
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width,initial-scale=1">
-      
-        <meta name="description" content="机器人领域的公共知识库">
-      
-      
-        <meta name="author" content="YFRL">
-      
-      
-        <link rel="canonical" href="https://yfrobotics.github.io/cv/3d-vision-stereo-depth/">
-      
-      
-        <link rel="prev" href="../3d-vision/">
-      
-      
-        <link rel="next" href="../3d-vision-pointcloud-registration/">
-      
-      
-        
-      
-      
-      <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
-    
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="深度感知是机器人理解三维世界的基础能力。立体视觉（Stereo Vision）通过模拟人类双眼的视差原理来恢复场景深度，而单目深度估计（Monocular Depth Estimation）则利用深度学习从单张图像中推断深度信息。本文系统介绍立体视觉的几何原理、主流匹配算法、单目深度估计方法，以及主动深度传感器的工作…">
+  <meta name="author" content="YFRL">
+  
+    <link rel="canonical" href="https://yfrobotics.github.io/robowiki-cn/cv/3d-vision-stereo-depth/">
+  
+  
+    <link rel="prev" href="../3d-vision/">
+  
+  
+    <link rel="next" href="../3d-vision-pointcloud-registration/">
+  
+  <link rel="icon" href="../../assets/images/favicon.png">
+  <meta name="generator" content="mkdocs-1.6.1">
+
     
       
         <title>立体视觉与深度估计 - 云飞机器人中文维基</title>
@@ -73,6 +65,25 @@
 
     
     
+  
+  
+    
+    
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="zh_CN">
+    <meta property="og:site_name" content="云飞机器人中文维基">
+    <meta property="og:title" content="立体视觉与深度估计 - 云飞机器人中文维基">
+    <meta property="og:description" content="深度感知是机器人理解三维世界的基础能力。立体视觉（Stereo Vision）通过模拟人类双眼的视差原理来恢复场景深度，而单目深度估计（Monocular Depth Estimation）则利用深度学习从单张图像中推断深度信息。本文系统介绍立体视觉的几何原理、主流匹配算法、单目深度估计方法，以及主动深度传感器的工作…">
+    <meta property="og:url" content="https://yfrobotics.github.io/robowiki-cn/cv/3d-vision-stereo-depth/">
+    <meta property="og:image" content="https://yfrobotics.github.io/robowiki-cn/logo.png">
+    <meta property="og:image:alt" content="云飞机器人中文维基标志">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="立体视觉与深度估计 - 云飞机器人中文维基">
+    <meta name="twitter:description" content="深度感知是机器人理解三维世界的基础能力。立体视觉（Stereo Vision）通过模拟人类双眼的视差原理来恢复场景深度，而单目深度估计（Monocular Depth Estimation）则利用深度学习从单张图像中推断深度信息。本文系统介绍立体视觉的几何原理、主流匹配算法、单目深度估计方法，以及主动深度传感器的工作…">
+    <meta name="twitter:image" content="https://yfrobotics.github.io/robowiki-cn/logo.png">
+    <script type="application/ld+json">
+      {"@context": "https://schema.org", "@type": "WebPage", "description": "\u6df1\u5ea6\u611f\u77e5\u662f\u673a\u5668\u4eba\u7406\u89e3\u4e09\u7ef4\u4e16\u754c\u7684\u57fa\u7840\u80fd\u529b\u3002\u7acb\u4f53\u89c6\u89c9\uff08Stereo Vision\uff09\u901a\u8fc7\u6a21\u62df\u4eba\u7c7b\u53cc\u773c\u7684\u89c6\u5dee\u539f\u7406\u6765\u6062\u590d\u573a\u666f\u6df1\u5ea6\uff0c\u800c\u5355\u76ee\u6df1\u5ea6\u4f30\u8ba1\uff08Monocular Depth Estimation\uff09\u5219\u5229\u7528\u6df1\u5ea6\u5b66\u4e60\u4ece\u5355\u5f20\u56fe\u50cf\u4e2d\u63a8\u65ad\u6df1\u5ea6\u4fe1\u606f\u3002\u672c\u6587\u7cfb\u7edf\u4ecb\u7ecd\u7acb\u4f53\u89c6\u89c9\u7684\u51e0\u4f55\u539f\u7406\u3001\u4e3b\u6d41\u5339\u914d\u7b97\u6cd5\u3001\u5355\u76ee\u6df1\u5ea6\u4f30\u8ba1\u65b9\u6cd5\uff0c\u4ee5\u53ca\u4e3b\u52a8\u6df1\u5ea6\u4f20\u611f\u5668\u7684\u5de5\u4f5c\u2026", "inLanguage": "zh-CN", "isPartOf": {"@type": "WebSite", "name": "\u4e91\u98de\u673a\u5668\u4eba\u4e2d\u6587\u7ef4\u57fa", "url": "https://yfrobotics.github.io/robowiki-cn/"}, "name": "\u7acb\u4f53\u89c6\u89c9\u4e0e\u6df1\u5ea6\u4f30\u8ba1", "url": "https://yfrobotics.github.io/robowiki-cn/cv/3d-vision-stereo-depth/"}
+    </script>
   
   <meta name="google-adsense-account" content="ca-pub-8821428748194648">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8821428748194648"
@@ -617,7 +628,7 @@
   <span class="md-ellipsis">
     
   
-    介绍
+    机器人入门与开发知识库
   
 
     
@@ -9268,6 +9279,9 @@ D_{dense}(p) = \frac{\sum_{q \in \mathcal{N}(p)} w(p, q) \cdot D_{sparse}(q)}{\s
 
 
 
+
+  
+  
 
 
 

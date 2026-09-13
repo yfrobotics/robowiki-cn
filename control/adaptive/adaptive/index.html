@@ -3,30 +3,22 @@
 <html lang="zh" class="no-js">
   <head>
     
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width,initial-scale=1">
-      
-        <meta name="description" content="机器人领域的公共知识库">
-      
-      
-        <meta name="author" content="YFRL">
-      
-      
-        <link rel="canonical" href="https://yfrobotics.github.io/control/adaptive/adaptive/">
-      
-      
-        <link rel="prev" href="../../nn/nn-policy-learning/">
-      
-      
-        <link rel="next" href="../../../sensing/">
-      
-      
-        
-      
-      
-      <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
-    
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="经典控制器（如 PID、线性二次型调节器 Linear Quadratic Regulator, LQR）在设计时通常假设系统模型已知且参数固定不变。然而，实际机器人系统的参数会随时间发生变化：抓取物体时负载突然变化、关节摩擦系数因磨损而漂移、水下机器人随水流和深度变化而动力学特性改变。自适应控制（Adaptive…">
+  <meta name="author" content="YFRL">
+  
+    <link rel="canonical" href="https://yfrobotics.github.io/robowiki-cn/control/adaptive/adaptive/">
+  
+  
+    <link rel="prev" href="../../nn/nn-policy-learning/">
+  
+  
+    <link rel="next" href="../../../sensing/">
+  
+  <link rel="icon" href="../../../assets/images/favicon.png">
+  <meta name="generator" content="mkdocs-1.6.1">
+
     
       
         <title>自适应控制 - 云飞机器人中文维基</title>
@@ -73,6 +65,25 @@
 
     
     
+  
+  
+    
+    
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="zh_CN">
+    <meta property="og:site_name" content="云飞机器人中文维基">
+    <meta property="og:title" content="自适应控制 - 云飞机器人中文维基">
+    <meta property="og:description" content="经典控制器（如 PID、线性二次型调节器 Linear Quadratic Regulator, LQR）在设计时通常假设系统模型已知且参数固定不变。然而，实际机器人系统的参数会随时间发生变化：抓取物体时负载突然变化、关节摩擦系数因磨损而漂移、水下机器人随水流和深度变化而动力学特性改变。自适应控制（Adaptive…">
+    <meta property="og:url" content="https://yfrobotics.github.io/robowiki-cn/control/adaptive/adaptive/">
+    <meta property="og:image" content="https://yfrobotics.github.io/robowiki-cn/logo.png">
+    <meta property="og:image:alt" content="云飞机器人中文维基标志">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="自适应控制 - 云飞机器人中文维基">
+    <meta name="twitter:description" content="经典控制器（如 PID、线性二次型调节器 Linear Quadratic Regulator, LQR）在设计时通常假设系统模型已知且参数固定不变。然而，实际机器人系统的参数会随时间发生变化：抓取物体时负载突然变化、关节摩擦系数因磨损而漂移、水下机器人随水流和深度变化而动力学特性改变。自适应控制（Adaptive…">
+    <meta name="twitter:image" content="https://yfrobotics.github.io/robowiki-cn/logo.png">
+    <script type="application/ld+json">
+      {"@context": "https://schema.org", "@type": "WebPage", "description": "\u7ecf\u5178\u63a7\u5236\u5668\uff08\u5982 PID\u3001\u7ebf\u6027\u4e8c\u6b21\u578b\u8c03\u8282\u5668 Linear Quadratic Regulator, LQR\uff09\u5728\u8bbe\u8ba1\u65f6\u901a\u5e38\u5047\u8bbe\u7cfb\u7edf\u6a21\u578b\u5df2\u77e5\u4e14\u53c2\u6570\u56fa\u5b9a\u4e0d\u53d8\u3002\u7136\u800c\uff0c\u5b9e\u9645\u673a\u5668\u4eba\u7cfb\u7edf\u7684\u53c2\u6570\u4f1a\u968f\u65f6\u95f4\u53d1\u751f\u53d8\u5316\uff1a\u6293\u53d6\u7269\u4f53\u65f6\u8d1f\u8f7d\u7a81\u7136\u53d8\u5316\u3001\u5173\u8282\u6469\u64e6\u7cfb\u6570\u56e0\u78e8\u635f\u800c\u6f02\u79fb\u3001\u6c34\u4e0b\u673a\u5668\u4eba\u968f\u6c34\u6d41\u548c\u6df1\u5ea6\u53d8\u5316\u800c\u52a8\u529b\u5b66\u7279\u6027\u6539\u53d8\u3002\u81ea\u9002\u5e94\u63a7\u5236\uff08Adaptive\u2026", "inLanguage": "zh-CN", "isPartOf": {"@type": "WebSite", "name": "\u4e91\u98de\u673a\u5668\u4eba\u4e2d\u6587\u7ef4\u57fa", "url": "https://yfrobotics.github.io/robowiki-cn/"}, "name": "\u81ea\u9002\u5e94\u63a7\u5236", "url": "https://yfrobotics.github.io/robowiki-cn/control/adaptive/adaptive/"}
+    </script>
   
   <meta name="google-adsense-account" content="ca-pub-8821428748194648">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8821428748194648"
@@ -617,7 +628,7 @@
   <span class="md-ellipsis">
     
   
-    介绍
+    机器人入门与开发知识库
   
 
     
@@ -9302,6 +9313,9 @@
 
 
 
+
+  
+  
 
 
 

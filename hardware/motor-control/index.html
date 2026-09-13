@@ -3,30 +3,22 @@
 <html lang="zh" class="no-js">
   <head>
     
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width,initial-scale=1">
-      
-        <meta name="description" content="机器人领域的公共知识库">
-      
-      
-        <meta name="author" content="YFRL">
-      
-      
-        <link rel="canonical" href="https://yfrobotics.github.io/hardware/motor-control/">
-      
-      
-        <link rel="prev" href="../actuators/">
-      
-      
-        <link rel="next" href="../functional-safety/">
-      
-      
-        
-      
-      
-      <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
-    
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="电机驱动器把控制指令变成流过绕组的电流。它决定了关节能多快响应力矩指令、转矩有多平滑、以及能否用电流反推外力。对机器人而言最关键的技术是磁场定向控制（Field-Oriented Control，FOC）——它把三相交流电机在数学上变换成一台直流电机，从而可以像调 PID 一样直接控制转矩。本页面介绍功率级结构、六步…">
+  <meta name="author" content="YFRL">
+  
+    <link rel="canonical" href="https://yfrobotics.github.io/robowiki-cn/hardware/motor-control/">
+  
+  
+    <link rel="prev" href="../actuators/">
+  
+  
+    <link rel="next" href="../functional-safety/">
+  
+  <link rel="icon" href="../../assets/images/favicon.png">
+  <meta name="generator" content="mkdocs-1.6.1">
+
     
       
         <title>电机驱动与控制 - 云飞机器人中文维基</title>
@@ -73,6 +65,25 @@
 
     
     
+  
+  
+    
+    
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="zh_CN">
+    <meta property="og:site_name" content="云飞机器人中文维基">
+    <meta property="og:title" content="电机驱动与控制 - 云飞机器人中文维基">
+    <meta property="og:description" content="电机驱动器把控制指令变成流过绕组的电流。它决定了关节能多快响应力矩指令、转矩有多平滑、以及能否用电流反推外力。对机器人而言最关键的技术是磁场定向控制（Field-Oriented Control，FOC）——它把三相交流电机在数学上变换成一台直流电机，从而可以像调 PID 一样直接控制转矩。本页面介绍功率级结构、六步…">
+    <meta property="og:url" content="https://yfrobotics.github.io/robowiki-cn/hardware/motor-control/">
+    <meta property="og:image" content="https://yfrobotics.github.io/robowiki-cn/logo.png">
+    <meta property="og:image:alt" content="云飞机器人中文维基标志">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="电机驱动与控制 - 云飞机器人中文维基">
+    <meta name="twitter:description" content="电机驱动器把控制指令变成流过绕组的电流。它决定了关节能多快响应力矩指令、转矩有多平滑、以及能否用电流反推外力。对机器人而言最关键的技术是磁场定向控制（Field-Oriented Control，FOC）——它把三相交流电机在数学上变换成一台直流电机，从而可以像调 PID 一样直接控制转矩。本页面介绍功率级结构、六步…">
+    <meta name="twitter:image" content="https://yfrobotics.github.io/robowiki-cn/logo.png">
+    <script type="application/ld+json">
+      {"@context": "https://schema.org", "@type": "WebPage", "description": "\u7535\u673a\u9a71\u52a8\u5668\u628a\u63a7\u5236\u6307\u4ee4\u53d8\u6210\u6d41\u8fc7\u7ed5\u7ec4\u7684\u7535\u6d41\u3002\u5b83\u51b3\u5b9a\u4e86\u5173\u8282\u80fd\u591a\u5feb\u54cd\u5e94\u529b\u77e9\u6307\u4ee4\u3001\u8f6c\u77e9\u6709\u591a\u5e73\u6ed1\u3001\u4ee5\u53ca\u80fd\u5426\u7528\u7535\u6d41\u53cd\u63a8\u5916\u529b\u3002\u5bf9\u673a\u5668\u4eba\u800c\u8a00\u6700\u5173\u952e\u7684\u6280\u672f\u662f\u78c1\u573a\u5b9a\u5411\u63a7\u5236\uff08Field-Oriented Control\uff0cFOC\uff09\u2014\u2014\u5b83\u628a\u4e09\u76f8\u4ea4\u6d41\u7535\u673a\u5728\u6570\u5b66\u4e0a\u53d8\u6362\u6210\u4e00\u53f0\u76f4\u6d41\u7535\u673a\uff0c\u4ece\u800c\u53ef\u4ee5\u50cf\u8c03 PID \u4e00\u6837\u76f4\u63a5\u63a7\u5236\u8f6c\u77e9\u3002\u672c\u9875\u9762\u4ecb\u7ecd\u529f\u7387\u7ea7\u7ed3\u6784\u3001\u516d\u6b65\u2026", "inLanguage": "zh-CN", "isPartOf": {"@type": "WebSite", "name": "\u4e91\u98de\u673a\u5668\u4eba\u4e2d\u6587\u7ef4\u57fa", "url": "https://yfrobotics.github.io/robowiki-cn/"}, "name": "\u7535\u673a\u9a71\u52a8\u4e0e\u63a7\u5236", "url": "https://yfrobotics.github.io/robowiki-cn/hardware/motor-control/"}
+    </script>
   
   <meta name="google-adsense-account" content="ca-pub-8821428748194648">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8821428748194648"
@@ -617,7 +628,7 @@
   <span class="md-ellipsis">
     
   
-    介绍
+    机器人入门与开发知识库
   
 
     
@@ -9004,6 +9015,9 @@
 
 
 
+
+  
+  
 
 
 

@@ -3,30 +3,22 @@
 <html lang="zh" class="no-js">
   <head>
     
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width,initial-scale=1">
-      
-        <meta name="description" content="机器人领域的公共知识库">
-      
-      
-        <meta name="author" content="YFRL">
-      
-      
-        <link rel="canonical" href="https://yfrobotics.github.io/kinematics/dynamics/">
-      
-      
-        <link rel="prev" href="../jacobian/">
-      
-      
-        <link rel="next" href="../trajectory-generation/">
-      
-      
-        
-      
-      
-      <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
-    
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="运动学只描述&#34;怎么动&#34;，动力学（Dynamics）回答&#34;为什么这样动&#34;——它把关节力矩与运动联系起来，引入质量、惯量、重力与摩擦。低速运动时可以忽略动力学，用位置环加减速度前馈就足够；但一旦机器人高速运动、负载变化、或需要力控与柔顺交互，动力学模型就成为必需品。它同时也是强化学习仿真环境、模型预测控制与全身控制的核心。">
+  <meta name="author" content="YFRL">
+  
+    <link rel="canonical" href="https://yfrobotics.github.io/robowiki-cn/kinematics/dynamics/">
+  
+  
+    <link rel="prev" href="../jacobian/">
+  
+  
+    <link rel="next" href="../trajectory-generation/">
+  
+  <link rel="icon" href="../../assets/images/favicon.png">
+  <meta name="generator" content="mkdocs-1.6.1">
+
     
       
         <title>机器人动力学 - 云飞机器人中文维基</title>
@@ -73,6 +65,25 @@
 
     
     
+  
+  
+    
+    
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="zh_CN">
+    <meta property="og:site_name" content="云飞机器人中文维基">
+    <meta property="og:title" content="机器人动力学 - 云飞机器人中文维基">
+    <meta property="og:description" content="运动学只描述&#34;怎么动&#34;，动力学（Dynamics）回答&#34;为什么这样动&#34;——它把关节力矩与运动联系起来，引入质量、惯量、重力与摩擦。低速运动时可以忽略动力学，用位置环加减速度前馈就足够；但一旦机器人高速运动、负载变化、或需要力控与柔顺交互，动力学模型就成为必需品。它同时也是强化学习仿真环境、模型预测控制与全身控制的核心。">
+    <meta property="og:url" content="https://yfrobotics.github.io/robowiki-cn/kinematics/dynamics/">
+    <meta property="og:image" content="https://yfrobotics.github.io/robowiki-cn/logo.png">
+    <meta property="og:image:alt" content="云飞机器人中文维基标志">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="机器人动力学 - 云飞机器人中文维基">
+    <meta name="twitter:description" content="运动学只描述&#34;怎么动&#34;，动力学（Dynamics）回答&#34;为什么这样动&#34;——它把关节力矩与运动联系起来，引入质量、惯量、重力与摩擦。低速运动时可以忽略动力学，用位置环加减速度前馈就足够；但一旦机器人高速运动、负载变化、或需要力控与柔顺交互，动力学模型就成为必需品。它同时也是强化学习仿真环境、模型预测控制与全身控制的核心。">
+    <meta name="twitter:image" content="https://yfrobotics.github.io/robowiki-cn/logo.png">
+    <script type="application/ld+json">
+      {"@context": "https://schema.org", "@type": "WebPage", "description": "\u8fd0\u52a8\u5b66\u53ea\u63cf\u8ff0\"\u600e\u4e48\u52a8\"\uff0c\u52a8\u529b\u5b66\uff08Dynamics\uff09\u56de\u7b54\"\u4e3a\u4ec0\u4e48\u8fd9\u6837\u52a8\"\u2014\u2014\u5b83\u628a\u5173\u8282\u529b\u77e9\u4e0e\u8fd0\u52a8\u8054\u7cfb\u8d77\u6765\uff0c\u5f15\u5165\u8d28\u91cf\u3001\u60ef\u91cf\u3001\u91cd\u529b\u4e0e\u6469\u64e6\u3002\u4f4e\u901f\u8fd0\u52a8\u65f6\u53ef\u4ee5\u5ffd\u7565\u52a8\u529b\u5b66\uff0c\u7528\u4f4d\u7f6e\u73af\u52a0\u51cf\u901f\u5ea6\u524d\u9988\u5c31\u8db3\u591f\uff1b\u4f46\u4e00\u65e6\u673a\u5668\u4eba\u9ad8\u901f\u8fd0\u52a8\u3001\u8d1f\u8f7d\u53d8\u5316\u3001\u6216\u9700\u8981\u529b\u63a7\u4e0e\u67d4\u987a\u4ea4\u4e92\uff0c\u52a8\u529b\u5b66\u6a21\u578b\u5c31\u6210\u4e3a\u5fc5\u9700\u54c1\u3002\u5b83\u540c\u65f6\u4e5f\u662f\u5f3a\u5316\u5b66\u4e60\u4eff\u771f\u73af\u5883\u3001\u6a21\u578b\u9884\u6d4b\u63a7\u5236\u4e0e\u5168\u8eab\u63a7\u5236\u7684\u6838\u5fc3\u3002", "inLanguage": "zh-CN", "isPartOf": {"@type": "WebSite", "name": "\u4e91\u98de\u673a\u5668\u4eba\u4e2d\u6587\u7ef4\u57fa", "url": "https://yfrobotics.github.io/robowiki-cn/"}, "name": "\u673a\u5668\u4eba\u52a8\u529b\u5b66", "url": "https://yfrobotics.github.io/robowiki-cn/kinematics/dynamics/"}
+    </script>
   
   <meta name="google-adsense-account" content="ca-pub-8821428748194648">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8821428748194648"
@@ -617,7 +628,7 @@
   <span class="md-ellipsis">
     
   
-    介绍
+    机器人入门与开发知识库
   
 
     
@@ -9241,6 +9252,9 @@
 
 
 
+
+  
+  
 
 
 

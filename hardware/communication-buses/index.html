@@ -3,30 +3,22 @@
 <html lang="zh" class="no-js">
   <head>
     
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width,initial-scale=1">
-      
-        <meta name="description" content="机器人领域的公共知识库">
-      
-      
-        <meta name="author" content="YFRL">
-      
-      
-        <link rel="canonical" href="https://yfrobotics.github.io/hardware/communication-buses/">
-      
-      
-        <link rel="prev" href="../power-thermal/">
-      
-      
-        <link rel="next" href="../actuators/">
-      
-      
-        
-      
-      
-      <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
-    
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="通信总线是连接机器人各子系统（传感器、执行器、计算单元）的数据传输通道。选择合适的总线协议直接影响系统的实时性、可靠性和可扩展性。本文详细介绍机器人中常用的通信总线协议，包括 I2C、SPI、UART、CAN、USB 和以太网/EtherCAT，并提供协议对比和选型指南。">
+  <meta name="author" content="YFRL">
+  
+    <link rel="canonical" href="https://yfrobotics.github.io/robowiki-cn/hardware/communication-buses/">
+  
+  
+    <link rel="prev" href="../power-thermal/">
+  
+  
+    <link rel="next" href="../actuators/">
+  
+  <link rel="icon" href="../../assets/images/favicon.png">
+  <meta name="generator" content="mkdocs-1.6.1">
+
     
       
         <title>通信总线 - 云飞机器人中文维基</title>
@@ -73,6 +65,25 @@
 
     
     
+  
+  
+    
+    
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="zh_CN">
+    <meta property="og:site_name" content="云飞机器人中文维基">
+    <meta property="og:title" content="通信总线 - 云飞机器人中文维基">
+    <meta property="og:description" content="通信总线是连接机器人各子系统（传感器、执行器、计算单元）的数据传输通道。选择合适的总线协议直接影响系统的实时性、可靠性和可扩展性。本文详细介绍机器人中常用的通信总线协议，包括 I2C、SPI、UART、CAN、USB 和以太网/EtherCAT，并提供协议对比和选型指南。">
+    <meta property="og:url" content="https://yfrobotics.github.io/robowiki-cn/hardware/communication-buses/">
+    <meta property="og:image" content="https://yfrobotics.github.io/robowiki-cn/logo.png">
+    <meta property="og:image:alt" content="云飞机器人中文维基标志">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="通信总线 - 云飞机器人中文维基">
+    <meta name="twitter:description" content="通信总线是连接机器人各子系统（传感器、执行器、计算单元）的数据传输通道。选择合适的总线协议直接影响系统的实时性、可靠性和可扩展性。本文详细介绍机器人中常用的通信总线协议，包括 I2C、SPI、UART、CAN、USB 和以太网/EtherCAT，并提供协议对比和选型指南。">
+    <meta name="twitter:image" content="https://yfrobotics.github.io/robowiki-cn/logo.png">
+    <script type="application/ld+json">
+      {"@context": "https://schema.org", "@type": "WebPage", "description": "\u901a\u4fe1\u603b\u7ebf\u662f\u8fde\u63a5\u673a\u5668\u4eba\u5404\u5b50\u7cfb\u7edf\uff08\u4f20\u611f\u5668\u3001\u6267\u884c\u5668\u3001\u8ba1\u7b97\u5355\u5143\uff09\u7684\u6570\u636e\u4f20\u8f93\u901a\u9053\u3002\u9009\u62e9\u5408\u9002\u7684\u603b\u7ebf\u534f\u8bae\u76f4\u63a5\u5f71\u54cd\u7cfb\u7edf\u7684\u5b9e\u65f6\u6027\u3001\u53ef\u9760\u6027\u548c\u53ef\u6269\u5c55\u6027\u3002\u672c\u6587\u8be6\u7ec6\u4ecb\u7ecd\u673a\u5668\u4eba\u4e2d\u5e38\u7528\u7684\u901a\u4fe1\u603b\u7ebf\u534f\u8bae\uff0c\u5305\u62ec I2C\u3001SPI\u3001UART\u3001CAN\u3001USB \u548c\u4ee5\u592a\u7f51/EtherCAT\uff0c\u5e76\u63d0\u4f9b\u534f\u8bae\u5bf9\u6bd4\u548c\u9009\u578b\u6307\u5357\u3002", "inLanguage": "zh-CN", "isPartOf": {"@type": "WebSite", "name": "\u4e91\u98de\u673a\u5668\u4eba\u4e2d\u6587\u7ef4\u57fa", "url": "https://yfrobotics.github.io/robowiki-cn/"}, "name": "\u901a\u4fe1\u603b\u7ebf", "url": "https://yfrobotics.github.io/robowiki-cn/hardware/communication-buses/"}
+    </script>
   
   <meta name="google-adsense-account" content="ca-pub-8821428748194648">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8821428748194648"
@@ -617,7 +628,7 @@
   <span class="md-ellipsis">
     
   
-    介绍
+    机器人入门与开发知识库
   
 
     
@@ -9796,6 +9807,9 @@ sudo<span class="w"> </span>udevadm<span class="w"> </span>control<span class="w
 
 
 
+
+  
+  
 
 
 

@@ -3,30 +3,22 @@
 <html lang="zh" class="no-js">
   <head>
     
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width,initial-scale=1">
-      
-        <meta name="description" content="机器人领域的公共知识库">
-      
-      
-        <meta name="author" content="YFRL">
-      
-      
-        <link rel="canonical" href="https://yfrobotics.github.io/simulation/pybullet-control-dynamics/">
-      
-      
-        <link rel="prev" href="../pybullet/">
-      
-      
-        <link rel="next" href="../pybullet-rl-workflows/">
-      
-      
-        
-      
-      
-      <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
-    
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="PyBullet 基于 Bullet 物理引擎，提供了丰富的关节控制和动力学仿真功能。本文介绍 PyBullet 中的关节控制模式、PD 控制、逆运动学（Inverse Kinematics, IK）、逆动力学（Inverse Dynamics）、接触力与约束等核心功能，并给出机械臂和四足机器人的控制示例。">
+  <meta name="author" content="YFRL">
+  
+    <link rel="canonical" href="https://yfrobotics.github.io/robowiki-cn/simulation/pybullet-control-dynamics/">
+  
+  
+    <link rel="prev" href="../pybullet/">
+  
+  
+    <link rel="next" href="../pybullet-rl-workflows/">
+  
+  <link rel="icon" href="../../assets/images/favicon.png">
+  <meta name="generator" content="mkdocs-1.6.1">
+
     
       
         <title>PyBullet 控制与动力学 - 云飞机器人中文维基</title>
@@ -73,6 +65,25 @@
 
     
     
+  
+  
+    
+    
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="zh_CN">
+    <meta property="og:site_name" content="云飞机器人中文维基">
+    <meta property="og:title" content="PyBullet 控制与动力学 - 云飞机器人中文维基">
+    <meta property="og:description" content="PyBullet 基于 Bullet 物理引擎，提供了丰富的关节控制和动力学仿真功能。本文介绍 PyBullet 中的关节控制模式、PD 控制、逆运动学（Inverse Kinematics, IK）、逆动力学（Inverse Dynamics）、接触力与约束等核心功能，并给出机械臂和四足机器人的控制示例。">
+    <meta property="og:url" content="https://yfrobotics.github.io/robowiki-cn/simulation/pybullet-control-dynamics/">
+    <meta property="og:image" content="https://yfrobotics.github.io/robowiki-cn/logo.png">
+    <meta property="og:image:alt" content="云飞机器人中文维基标志">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="PyBullet 控制与动力学 - 云飞机器人中文维基">
+    <meta name="twitter:description" content="PyBullet 基于 Bullet 物理引擎，提供了丰富的关节控制和动力学仿真功能。本文介绍 PyBullet 中的关节控制模式、PD 控制、逆运动学（Inverse Kinematics, IK）、逆动力学（Inverse Dynamics）、接触力与约束等核心功能，并给出机械臂和四足机器人的控制示例。">
+    <meta name="twitter:image" content="https://yfrobotics.github.io/robowiki-cn/logo.png">
+    <script type="application/ld+json">
+      {"@context": "https://schema.org", "@type": "WebPage", "description": "PyBullet \u57fa\u4e8e Bullet \u7269\u7406\u5f15\u64ce\uff0c\u63d0\u4f9b\u4e86\u4e30\u5bcc\u7684\u5173\u8282\u63a7\u5236\u548c\u52a8\u529b\u5b66\u4eff\u771f\u529f\u80fd\u3002\u672c\u6587\u4ecb\u7ecd PyBullet \u4e2d\u7684\u5173\u8282\u63a7\u5236\u6a21\u5f0f\u3001PD \u63a7\u5236\u3001\u9006\u8fd0\u52a8\u5b66\uff08Inverse Kinematics, IK\uff09\u3001\u9006\u52a8\u529b\u5b66\uff08Inverse Dynamics\uff09\u3001\u63a5\u89e6\u529b\u4e0e\u7ea6\u675f\u7b49\u6838\u5fc3\u529f\u80fd\uff0c\u5e76\u7ed9\u51fa\u673a\u68b0\u81c2\u548c\u56db\u8db3\u673a\u5668\u4eba\u7684\u63a7\u5236\u793a\u4f8b\u3002", "inLanguage": "zh-CN", "isPartOf": {"@type": "WebSite", "name": "\u4e91\u98de\u673a\u5668\u4eba\u4e2d\u6587\u7ef4\u57fa", "url": "https://yfrobotics.github.io/robowiki-cn/"}, "name": "PyBullet \u63a7\u5236\u4e0e\u52a8\u529b\u5b66", "url": "https://yfrobotics.github.io/robowiki-cn/simulation/pybullet-control-dynamics/"}
+    </script>
   
   <meta name="google-adsense-account" content="ca-pub-8821428748194648">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8821428748194648"
@@ -617,7 +628,7 @@
   <span class="md-ellipsis">
     
   
-    介绍
+    机器人入门与开发知识库
   
 
     
@@ -8985,6 +8996,9 @@
 
 
 
+
+  
+  
 
 
 

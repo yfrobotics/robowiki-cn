@@ -3,30 +3,22 @@
 <html lang="zh" class="no-js">
   <head>
     
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width,initial-scale=1">
-      
-        <meta name="description" content="机器人领域的公共知识库">
-      
-      
-        <meta name="author" content="YFRL">
-      
-      
-        <link rel="canonical" href="https://yfrobotics.github.io/simulation/vrep-performance-debugging/">
-      
-      
-        <link rel="prev" href="../vrep-scripting-rl/">
-      
-      
-        <link rel="next" href="../vrep-full-reference/">
-      
-      
-        
-      
-      
-      <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
-    
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="CoppeliaSim 仿真的性能和精度取决于多种因素的配置，包括仿真步长、物理引擎选择、碰撞检测设置等。本文介绍如何调优仿真性能、选择合适的物理引擎、优化碰撞计算，以及常用的调试技巧和无头模式运行方法。">
+  <meta name="author" content="YFRL">
+  
+    <link rel="canonical" href="https://yfrobotics.github.io/robowiki-cn/simulation/vrep-performance-debugging/">
+  
+  
+    <link rel="prev" href="../vrep-scripting-rl/">
+  
+  
+    <link rel="next" href="../vrep-full-reference/">
+  
+  <link rel="icon" href="../../assets/images/favicon.png">
+  <meta name="generator" content="mkdocs-1.6.1">
+
     
       
         <title>CoppeliaSim 性能与调试 - 云飞机器人中文维基</title>
@@ -73,6 +65,25 @@
 
     
     
+  
+  
+    
+    
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="zh_CN">
+    <meta property="og:site_name" content="云飞机器人中文维基">
+    <meta property="og:title" content="CoppeliaSim 性能与调试 - 云飞机器人中文维基">
+    <meta property="og:description" content="CoppeliaSim 仿真的性能和精度取决于多种因素的配置，包括仿真步长、物理引擎选择、碰撞检测设置等。本文介绍如何调优仿真性能、选择合适的物理引擎、优化碰撞计算，以及常用的调试技巧和无头模式运行方法。">
+    <meta property="og:url" content="https://yfrobotics.github.io/robowiki-cn/simulation/vrep-performance-debugging/">
+    <meta property="og:image" content="https://yfrobotics.github.io/robowiki-cn/logo.png">
+    <meta property="og:image:alt" content="云飞机器人中文维基标志">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="CoppeliaSim 性能与调试 - 云飞机器人中文维基">
+    <meta name="twitter:description" content="CoppeliaSim 仿真的性能和精度取决于多种因素的配置，包括仿真步长、物理引擎选择、碰撞检测设置等。本文介绍如何调优仿真性能、选择合适的物理引擎、优化碰撞计算，以及常用的调试技巧和无头模式运行方法。">
+    <meta name="twitter:image" content="https://yfrobotics.github.io/robowiki-cn/logo.png">
+    <script type="application/ld+json">
+      {"@context": "https://schema.org", "@type": "WebPage", "description": "CoppeliaSim \u4eff\u771f\u7684\u6027\u80fd\u548c\u7cbe\u5ea6\u53d6\u51b3\u4e8e\u591a\u79cd\u56e0\u7d20\u7684\u914d\u7f6e\uff0c\u5305\u62ec\u4eff\u771f\u6b65\u957f\u3001\u7269\u7406\u5f15\u64ce\u9009\u62e9\u3001\u78b0\u649e\u68c0\u6d4b\u8bbe\u7f6e\u7b49\u3002\u672c\u6587\u4ecb\u7ecd\u5982\u4f55\u8c03\u4f18\u4eff\u771f\u6027\u80fd\u3001\u9009\u62e9\u5408\u9002\u7684\u7269\u7406\u5f15\u64ce\u3001\u4f18\u5316\u78b0\u649e\u8ba1\u7b97\uff0c\u4ee5\u53ca\u5e38\u7528\u7684\u8c03\u8bd5\u6280\u5de7\u548c\u65e0\u5934\u6a21\u5f0f\u8fd0\u884c\u65b9\u6cd5\u3002", "inLanguage": "zh-CN", "isPartOf": {"@type": "WebSite", "name": "\u4e91\u98de\u673a\u5668\u4eba\u4e2d\u6587\u7ef4\u57fa", "url": "https://yfrobotics.github.io/robowiki-cn/"}, "name": "CoppeliaSim \u6027\u80fd\u4e0e\u8c03\u8bd5", "url": "https://yfrobotics.github.io/robowiki-cn/simulation/vrep-performance-debugging/"}
+    </script>
   
   <meta name="google-adsense-account" content="ca-pub-8821428748194648">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8821428748194648"
@@ -617,7 +628,7 @@
   <span class="md-ellipsis">
     
   
-    介绍
+    机器人入门与开发知识库
   
 
     
@@ -9254,6 +9265,9 @@
 
 
 
+
+  
+  
 
 
 

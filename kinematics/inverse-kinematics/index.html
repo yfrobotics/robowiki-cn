@@ -3,30 +3,22 @@
 <html lang="zh" class="no-js">
   <head>
     
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width,initial-scale=1">
-      
-        <meta name="description" content="机器人领域的公共知识库">
-      
-      
-        <meta name="author" content="YFRL">
-      
-      
-        <link rel="canonical" href="https://yfrobotics.github.io/kinematics/inverse-kinematics/">
-      
-      
-        <link rel="prev" href="../forward-kinematics/">
-      
-      
-        <link rel="next" href="../jacobian/">
-      
-      
-        
-      
-      
-      <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
-    
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="逆运动学（Inverse Kinematics，IK）求解的是正运动学的反问题：已知末端执行器的目标位姿，求各关节应当处于什么位置。与正运动学不同，逆运动学是非线性问题，可能无解、有有限多解、甚至有无穷多解，是机器人学中最具工程挑战性的基础问题之一。抓取、示教、轨迹跟踪、遥操作等任务都依赖逆运动学把笛卡尔空间的指令翻…">
+  <meta name="author" content="YFRL">
+  
+    <link rel="canonical" href="https://yfrobotics.github.io/robowiki-cn/kinematics/inverse-kinematics/">
+  
+  
+    <link rel="prev" href="../forward-kinematics/">
+  
+  
+    <link rel="next" href="../jacobian/">
+  
+  <link rel="icon" href="../../assets/images/favicon.png">
+  <meta name="generator" content="mkdocs-1.6.1">
+
     
       
         <title>逆运动学 - 云飞机器人中文维基</title>
@@ -73,6 +65,25 @@
 
     
     
+  
+  
+    
+    
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="zh_CN">
+    <meta property="og:site_name" content="云飞机器人中文维基">
+    <meta property="og:title" content="逆运动学 - 云飞机器人中文维基">
+    <meta property="og:description" content="逆运动学（Inverse Kinematics，IK）求解的是正运动学的反问题：已知末端执行器的目标位姿，求各关节应当处于什么位置。与正运动学不同，逆运动学是非线性问题，可能无解、有有限多解、甚至有无穷多解，是机器人学中最具工程挑战性的基础问题之一。抓取、示教、轨迹跟踪、遥操作等任务都依赖逆运动学把笛卡尔空间的指令翻…">
+    <meta property="og:url" content="https://yfrobotics.github.io/robowiki-cn/kinematics/inverse-kinematics/">
+    <meta property="og:image" content="https://yfrobotics.github.io/robowiki-cn/logo.png">
+    <meta property="og:image:alt" content="云飞机器人中文维基标志">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="逆运动学 - 云飞机器人中文维基">
+    <meta name="twitter:description" content="逆运动学（Inverse Kinematics，IK）求解的是正运动学的反问题：已知末端执行器的目标位姿，求各关节应当处于什么位置。与正运动学不同，逆运动学是非线性问题，可能无解、有有限多解、甚至有无穷多解，是机器人学中最具工程挑战性的基础问题之一。抓取、示教、轨迹跟踪、遥操作等任务都依赖逆运动学把笛卡尔空间的指令翻…">
+    <meta name="twitter:image" content="https://yfrobotics.github.io/robowiki-cn/logo.png">
+    <script type="application/ld+json">
+      {"@context": "https://schema.org", "@type": "WebPage", "description": "\u9006\u8fd0\u52a8\u5b66\uff08Inverse Kinematics\uff0cIK\uff09\u6c42\u89e3\u7684\u662f\u6b63\u8fd0\u52a8\u5b66\u7684\u53cd\u95ee\u9898\uff1a\u5df2\u77e5\u672b\u7aef\u6267\u884c\u5668\u7684\u76ee\u6807\u4f4d\u59ff\uff0c\u6c42\u5404\u5173\u8282\u5e94\u5f53\u5904\u4e8e\u4ec0\u4e48\u4f4d\u7f6e\u3002\u4e0e\u6b63\u8fd0\u52a8\u5b66\u4e0d\u540c\uff0c\u9006\u8fd0\u52a8\u5b66\u662f\u975e\u7ebf\u6027\u95ee\u9898\uff0c\u53ef\u80fd\u65e0\u89e3\u3001\u6709\u6709\u9650\u591a\u89e3\u3001\u751a\u81f3\u6709\u65e0\u7a77\u591a\u89e3\uff0c\u662f\u673a\u5668\u4eba\u5b66\u4e2d\u6700\u5177\u5de5\u7a0b\u6311\u6218\u6027\u7684\u57fa\u7840\u95ee\u9898\u4e4b\u4e00\u3002\u6293\u53d6\u3001\u793a\u6559\u3001\u8f68\u8ff9\u8ddf\u8e2a\u3001\u9065\u64cd\u4f5c\u7b49\u4efb\u52a1\u90fd\u4f9d\u8d56\u9006\u8fd0\u52a8\u5b66\u628a\u7b1b\u5361\u5c14\u7a7a\u95f4\u7684\u6307\u4ee4\u7ffb\u2026", "inLanguage": "zh-CN", "isPartOf": {"@type": "WebSite", "name": "\u4e91\u98de\u673a\u5668\u4eba\u4e2d\u6587\u7ef4\u57fa", "url": "https://yfrobotics.github.io/robowiki-cn/"}, "name": "\u9006\u8fd0\u52a8\u5b66", "url": "https://yfrobotics.github.io/robowiki-cn/kinematics/inverse-kinematics/"}
+    </script>
   
   <meta name="google-adsense-account" content="ca-pub-8821428748194648">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8821428748194648"
@@ -617,7 +628,7 @@
   <span class="md-ellipsis">
     
   
-    介绍
+    机器人入门与开发知识库
   
 
     
@@ -9100,6 +9111,9 @@
 
 
 
+
+  
+  
 
 
 

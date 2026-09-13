@@ -3,30 +3,22 @@
 <html lang="zh" class="no-js">
   <head>
     
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width,initial-scale=1">
-      
-        <meta name="description" content="机器人领域的公共知识库">
-      
-      
-        <meta name="author" content="YFRL">
-      
-      
-        <link rel="canonical" href="https://yfrobotics.github.io/linux/shell-scripting-automation-patterns/">
-      
-      
-        <link rel="prev" href="../shell-scripting-robot-startup/">
-      
-      
-        <link rel="next" href="../shell-scripting-ops-toolkit/">
-      
-      
-        
-      
-      
-      <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
-    
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="在机器人系统的日常运维中，大量重复性任务可以通过 Shell 脚本实现自动化。从开机自启动、进程监控到日志管理和数据备份，良好的自动化模式能够显著提升系统可靠性并减少人工干预。本文介绍机器人开发和部署中常用的 Shell 脚本自动化模式，涵盖 systemd 服务管理、定时任务、看门狗脚本、日志轮转、网络监控以及 C…">
+  <meta name="author" content="YFRL">
+  
+    <link rel="canonical" href="https://yfrobotics.github.io/robowiki-cn/linux/shell-scripting-automation-patterns/">
+  
+  
+    <link rel="prev" href="../shell-scripting-robot-startup/">
+  
+  
+    <link rel="next" href="../shell-scripting-ops-toolkit/">
+  
+  <link rel="icon" href="../../assets/images/favicon.png">
+  <meta name="generator" content="mkdocs-1.6.1">
+
     
       
         <title>Shell 脚本自动化模式 - 云飞机器人中文维基</title>
@@ -73,6 +65,25 @@
 
     
     
+  
+  
+    
+    
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="zh_CN">
+    <meta property="og:site_name" content="云飞机器人中文维基">
+    <meta property="og:title" content="Shell 脚本自动化模式 - 云飞机器人中文维基">
+    <meta property="og:description" content="在机器人系统的日常运维中，大量重复性任务可以通过 Shell 脚本实现自动化。从开机自启动、进程监控到日志管理和数据备份，良好的自动化模式能够显著提升系统可靠性并减少人工干预。本文介绍机器人开发和部署中常用的 Shell 脚本自动化模式，涵盖 systemd 服务管理、定时任务、看门狗脚本、日志轮转、网络监控以及 C…">
+    <meta property="og:url" content="https://yfrobotics.github.io/robowiki-cn/linux/shell-scripting-automation-patterns/">
+    <meta property="og:image" content="https://yfrobotics.github.io/robowiki-cn/logo.png">
+    <meta property="og:image:alt" content="云飞机器人中文维基标志">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Shell 脚本自动化模式 - 云飞机器人中文维基">
+    <meta name="twitter:description" content="在机器人系统的日常运维中，大量重复性任务可以通过 Shell 脚本实现自动化。从开机自启动、进程监控到日志管理和数据备份，良好的自动化模式能够显著提升系统可靠性并减少人工干预。本文介绍机器人开发和部署中常用的 Shell 脚本自动化模式，涵盖 systemd 服务管理、定时任务、看门狗脚本、日志轮转、网络监控以及 C…">
+    <meta name="twitter:image" content="https://yfrobotics.github.io/robowiki-cn/logo.png">
+    <script type="application/ld+json">
+      {"@context": "https://schema.org", "@type": "WebPage", "description": "\u5728\u673a\u5668\u4eba\u7cfb\u7edf\u7684\u65e5\u5e38\u8fd0\u7ef4\u4e2d\uff0c\u5927\u91cf\u91cd\u590d\u6027\u4efb\u52a1\u53ef\u4ee5\u901a\u8fc7 Shell \u811a\u672c\u5b9e\u73b0\u81ea\u52a8\u5316\u3002\u4ece\u5f00\u673a\u81ea\u542f\u52a8\u3001\u8fdb\u7a0b\u76d1\u63a7\u5230\u65e5\u5fd7\u7ba1\u7406\u548c\u6570\u636e\u5907\u4efd\uff0c\u826f\u597d\u7684\u81ea\u52a8\u5316\u6a21\u5f0f\u80fd\u591f\u663e\u8457\u63d0\u5347\u7cfb\u7edf\u53ef\u9760\u6027\u5e76\u51cf\u5c11\u4eba\u5de5\u5e72\u9884\u3002\u672c\u6587\u4ecb\u7ecd\u673a\u5668\u4eba\u5f00\u53d1\u548c\u90e8\u7f72\u4e2d\u5e38\u7528\u7684 Shell \u811a\u672c\u81ea\u52a8\u5316\u6a21\u5f0f\uff0c\u6db5\u76d6 systemd \u670d\u52a1\u7ba1\u7406\u3001\u5b9a\u65f6\u4efb\u52a1\u3001\u770b\u95e8\u72d7\u811a\u672c\u3001\u65e5\u5fd7\u8f6e\u8f6c\u3001\u7f51\u7edc\u76d1\u63a7\u4ee5\u53ca C\u2026", "inLanguage": "zh-CN", "isPartOf": {"@type": "WebSite", "name": "\u4e91\u98de\u673a\u5668\u4eba\u4e2d\u6587\u7ef4\u57fa", "url": "https://yfrobotics.github.io/robowiki-cn/"}, "name": "Shell \u811a\u672c\u81ea\u52a8\u5316\u6a21\u5f0f", "url": "https://yfrobotics.github.io/robowiki-cn/linux/shell-scripting-automation-patterns/"}
+    </script>
   
   <meta name="google-adsense-account" content="ca-pub-8821428748194648">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8821428748194648"
@@ -617,7 +628,7 @@
   <span class="md-ellipsis">
     
   
-    介绍
+    机器人入门与开发知识库
   
 
     
@@ -9250,6 +9261,9 @@ sleep<span class="w"> </span><span class="m">5</span>
 
 
 
+
+  
+  
 
 
 

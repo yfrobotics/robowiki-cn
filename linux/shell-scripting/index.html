@@ -3,30 +3,22 @@
 <html lang="zh" class="no-js">
   <head>
     
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width,initial-scale=1">
-      
-        <meta name="description" content="机器人领域的公共知识库">
-      
-      
-        <meta name="author" content="YFRL">
-      
-      
-        <link rel="canonical" href="https://yfrobotics.github.io/linux/shell-scripting/">
-      
-      
-        <link rel="prev" href="../commands/">
-      
-      
-        <link rel="next" href="../shell-scripting-robot-startup/">
-      
-      
-        
-      
-      
-      <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
-    
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="机器人系统往往部署在无人值守的环境中，需要在上电后自动完成环境初始化、传感器检测、节点启动等一系列操作。Shell 脚本（Shell Script）能够将这些繁琐的手动步骤固化为可重复执行的自动化流程，显著降低人为操作失误的风险。本文介绍 Bash 核心语法、机器人启动脚本模式、systemd 服务化、udev 设备…">
+  <meta name="author" content="YFRL">
+  
+    <link rel="canonical" href="https://yfrobotics.github.io/robowiki-cn/linux/shell-scripting/">
+  
+  
+    <link rel="prev" href="../commands/">
+  
+  
+    <link rel="next" href="../shell-scripting-robot-startup/">
+  
+  <link rel="icon" href="../../assets/images/favicon.png">
+  <meta name="generator" content="mkdocs-1.6.1">
+
     
       
         <title>Shell 脚本与机器人自动化 - 云飞机器人中文维基</title>
@@ -73,6 +65,25 @@
 
     
     
+  
+  
+    
+    
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="zh_CN">
+    <meta property="og:site_name" content="云飞机器人中文维基">
+    <meta property="og:title" content="Shell 脚本与机器人自动化 - 云飞机器人中文维基">
+    <meta property="og:description" content="机器人系统往往部署在无人值守的环境中，需要在上电后自动完成环境初始化、传感器检测、节点启动等一系列操作。Shell 脚本（Shell Script）能够将这些繁琐的手动步骤固化为可重复执行的自动化流程，显著降低人为操作失误的风险。本文介绍 Bash 核心语法、机器人启动脚本模式、systemd 服务化、udev 设备…">
+    <meta property="og:url" content="https://yfrobotics.github.io/robowiki-cn/linux/shell-scripting/">
+    <meta property="og:image" content="https://yfrobotics.github.io/robowiki-cn/logo.png">
+    <meta property="og:image:alt" content="云飞机器人中文维基标志">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Shell 脚本与机器人自动化 - 云飞机器人中文维基">
+    <meta name="twitter:description" content="机器人系统往往部署在无人值守的环境中，需要在上电后自动完成环境初始化、传感器检测、节点启动等一系列操作。Shell 脚本（Shell Script）能够将这些繁琐的手动步骤固化为可重复执行的自动化流程，显著降低人为操作失误的风险。本文介绍 Bash 核心语法、机器人启动脚本模式、systemd 服务化、udev 设备…">
+    <meta name="twitter:image" content="https://yfrobotics.github.io/robowiki-cn/logo.png">
+    <script type="application/ld+json">
+      {"@context": "https://schema.org", "@type": "WebPage", "description": "\u673a\u5668\u4eba\u7cfb\u7edf\u5f80\u5f80\u90e8\u7f72\u5728\u65e0\u4eba\u503c\u5b88\u7684\u73af\u5883\u4e2d\uff0c\u9700\u8981\u5728\u4e0a\u7535\u540e\u81ea\u52a8\u5b8c\u6210\u73af\u5883\u521d\u59cb\u5316\u3001\u4f20\u611f\u5668\u68c0\u6d4b\u3001\u8282\u70b9\u542f\u52a8\u7b49\u4e00\u7cfb\u5217\u64cd\u4f5c\u3002Shell \u811a\u672c\uff08Shell Script\uff09\u80fd\u591f\u5c06\u8fd9\u4e9b\u7e41\u7410\u7684\u624b\u52a8\u6b65\u9aa4\u56fa\u5316\u4e3a\u53ef\u91cd\u590d\u6267\u884c\u7684\u81ea\u52a8\u5316\u6d41\u7a0b\uff0c\u663e\u8457\u964d\u4f4e\u4eba\u4e3a\u64cd\u4f5c\u5931\u8bef\u7684\u98ce\u9669\u3002\u672c\u6587\u4ecb\u7ecd Bash \u6838\u5fc3\u8bed\u6cd5\u3001\u673a\u5668\u4eba\u542f\u52a8\u811a\u672c\u6a21\u5f0f\u3001systemd \u670d\u52a1\u5316\u3001udev \u8bbe\u5907\u2026", "inLanguage": "zh-CN", "isPartOf": {"@type": "WebSite", "name": "\u4e91\u98de\u673a\u5668\u4eba\u4e2d\u6587\u7ef4\u57fa", "url": "https://yfrobotics.github.io/robowiki-cn/"}, "name": "Shell \u811a\u672c\u4e0e\u673a\u5668\u4eba\u81ea\u52a8\u5316", "url": "https://yfrobotics.github.io/robowiki-cn/linux/shell-scripting/"}
+    </script>
   
   <meta name="google-adsense-account" content="ca-pub-8821428748194648">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8821428748194648"
@@ -617,7 +628,7 @@
   <span class="md-ellipsis">
     
   
-    介绍
+    机器人入门与开发知识库
   
 
     
@@ -8761,6 +8772,9 @@ cleanup<span class="o">()</span><span class="w"> </span><span class="o">{</span>
 
 
 
+
+  
+  
 
 
 

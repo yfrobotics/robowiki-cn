@@ -3,30 +3,22 @@
 <html lang="zh" class="no-js">
   <head>
     
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width,initial-scale=1">
-      
-        <meta name="description" content="机器人领域的公共知识库">
-      
-      
-        <meta name="author" content="YFRL">
-      
-      
-        <link rel="canonical" href="https://yfrobotics.github.io/planning/navigation-local-planners/">
-      
-      
-        <link rel="prev" href="../navigation-costmap/">
-      
-      
-        <link rel="next" href="../../manipulation/">
-      
-      
-        
-      
-      
-      <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
-    
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="局部规划器（Local Planner，在 Nav2 中称为 Controller）位于导航栈的最末端：它接收全局路径与实时代价地图，输出直接驱动轮子的速度指令。它同时要做三件相互冲突的事——跟上全局路径、避开突然出现的障碍、生成机器人执行得了的平滑运动。这三者的权衡由一堆权重参数控制，也正因如此，局部规划器是整个导…">
+  <meta name="author" content="YFRL">
+  
+    <link rel="canonical" href="https://yfrobotics.github.io/robowiki-cn/planning/navigation-local-planners/">
+  
+  
+    <link rel="prev" href="../navigation-costmap/">
+  
+  
+    <link rel="next" href="../../manipulation/">
+  
+  <link rel="icon" href="../../assets/images/favicon.png">
+  <meta name="generator" content="mkdocs-1.6.1">
+
     
       
         <title>局部规划器 - 云飞机器人中文维基</title>
@@ -73,6 +65,25 @@
 
     
     
+  
+  
+    
+    
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="zh_CN">
+    <meta property="og:site_name" content="云飞机器人中文维基">
+    <meta property="og:title" content="局部规划器 - 云飞机器人中文维基">
+    <meta property="og:description" content="局部规划器（Local Planner，在 Nav2 中称为 Controller）位于导航栈的最末端：它接收全局路径与实时代价地图，输出直接驱动轮子的速度指令。它同时要做三件相互冲突的事——跟上全局路径、避开突然出现的障碍、生成机器人执行得了的平滑运动。这三者的权衡由一堆权重参数控制，也正因如此，局部规划器是整个导…">
+    <meta property="og:url" content="https://yfrobotics.github.io/robowiki-cn/planning/navigation-local-planners/">
+    <meta property="og:image" content="https://yfrobotics.github.io/robowiki-cn/logo.png">
+    <meta property="og:image:alt" content="云飞机器人中文维基标志">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="局部规划器 - 云飞机器人中文维基">
+    <meta name="twitter:description" content="局部规划器（Local Planner，在 Nav2 中称为 Controller）位于导航栈的最末端：它接收全局路径与实时代价地图，输出直接驱动轮子的速度指令。它同时要做三件相互冲突的事——跟上全局路径、避开突然出现的障碍、生成机器人执行得了的平滑运动。这三者的权衡由一堆权重参数控制，也正因如此，局部规划器是整个导…">
+    <meta name="twitter:image" content="https://yfrobotics.github.io/robowiki-cn/logo.png">
+    <script type="application/ld+json">
+      {"@context": "https://schema.org", "@type": "WebPage", "description": "\u5c40\u90e8\u89c4\u5212\u5668\uff08Local Planner\uff0c\u5728 Nav2 \u4e2d\u79f0\u4e3a Controller\uff09\u4f4d\u4e8e\u5bfc\u822a\u6808\u7684\u6700\u672b\u7aef\uff1a\u5b83\u63a5\u6536\u5168\u5c40\u8def\u5f84\u4e0e\u5b9e\u65f6\u4ee3\u4ef7\u5730\u56fe\uff0c\u8f93\u51fa\u76f4\u63a5\u9a71\u52a8\u8f6e\u5b50\u7684\u901f\u5ea6\u6307\u4ee4\u3002\u5b83\u540c\u65f6\u8981\u505a\u4e09\u4ef6\u76f8\u4e92\u51b2\u7a81\u7684\u4e8b\u2014\u2014\u8ddf\u4e0a\u5168\u5c40\u8def\u5f84\u3001\u907f\u5f00\u7a81\u7136\u51fa\u73b0\u7684\u969c\u788d\u3001\u751f\u6210\u673a\u5668\u4eba\u6267\u884c\u5f97\u4e86\u7684\u5e73\u6ed1\u8fd0\u52a8\u3002\u8fd9\u4e09\u8005\u7684\u6743\u8861\u7531\u4e00\u5806\u6743\u91cd\u53c2\u6570\u63a7\u5236\uff0c\u4e5f\u6b63\u56e0\u5982\u6b64\uff0c\u5c40\u90e8\u89c4\u5212\u5668\u662f\u6574\u4e2a\u5bfc\u2026", "inLanguage": "zh-CN", "isPartOf": {"@type": "WebSite", "name": "\u4e91\u98de\u673a\u5668\u4eba\u4e2d\u6587\u7ef4\u57fa", "url": "https://yfrobotics.github.io/robowiki-cn/"}, "name": "\u5c40\u90e8\u89c4\u5212\u5668", "url": "https://yfrobotics.github.io/robowiki-cn/planning/navigation-local-planners/"}
+    </script>
   
   <meta name="google-adsense-account" content="ca-pub-8821428748194648">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8821428748194648"
@@ -617,7 +628,7 @@
   <span class="md-ellipsis">
     
   
-    介绍
+    机器人入门与开发知识库
   
 
     
@@ -8813,6 +8824,9 @@ ros2<span class="w"> </span>topic<span class="w"> </span><span class="nb">echo</
 
 
 
+
+  
+  
 
 
 

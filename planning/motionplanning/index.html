@@ -3,30 +3,22 @@
 <html lang="zh" class="no-js">
   <head>
     
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width,initial-scale=1">
-      
-        <meta name="description" content="机器人领域的公共知识库">
-      
-      
-        <meta name="author" content="YFRL">
-      
-      
-        <link rel="canonical" href="https://yfrobotics.github.io/planning/motionplanning/">
-      
-      
-        <link rel="prev" href="../pathplanning/">
-      
-      
-        <link rel="next" href="../behavior-trees/">
-      
-      
-        
-      
-      
-      <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
-    
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="运动规划 (Motion Planning) 在路径规划的基础上，进一步考虑机器人的运动学 (Kinematics) 和动力学 (Dynamics) 约束，生成一条可实际执行的轨迹 (Trajectory)。与路径规划仅关注几何可行性不同，运动规划需要生成带有时间参数的状态序列，包括位置、速度、加速度等信息，使机器人…">
+  <meta name="author" content="YFRL">
+  
+    <link rel="canonical" href="https://yfrobotics.github.io/robowiki-cn/planning/motionplanning/">
+  
+  
+    <link rel="prev" href="../pathplanning/">
+  
+  
+    <link rel="next" href="../behavior-trees/">
+  
+  <link rel="icon" href="../../assets/images/favicon.png">
+  <meta name="generator" content="mkdocs-1.6.1">
+
     
       
         <title>运动规划 - 云飞机器人中文维基</title>
@@ -73,6 +65,25 @@
 
     
     
+  
+  
+    
+    
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="zh_CN">
+    <meta property="og:site_name" content="云飞机器人中文维基">
+    <meta property="og:title" content="运动规划 - 云飞机器人中文维基">
+    <meta property="og:description" content="运动规划 (Motion Planning) 在路径规划的基础上，进一步考虑机器人的运动学 (Kinematics) 和动力学 (Dynamics) 约束，生成一条可实际执行的轨迹 (Trajectory)。与路径规划仅关注几何可行性不同，运动规划需要生成带有时间参数的状态序列，包括位置、速度、加速度等信息，使机器人…">
+    <meta property="og:url" content="https://yfrobotics.github.io/robowiki-cn/planning/motionplanning/">
+    <meta property="og:image" content="https://yfrobotics.github.io/robowiki-cn/logo.png">
+    <meta property="og:image:alt" content="云飞机器人中文维基标志">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="运动规划 - 云飞机器人中文维基">
+    <meta name="twitter:description" content="运动规划 (Motion Planning) 在路径规划的基础上，进一步考虑机器人的运动学 (Kinematics) 和动力学 (Dynamics) 约束，生成一条可实际执行的轨迹 (Trajectory)。与路径规划仅关注几何可行性不同，运动规划需要生成带有时间参数的状态序列，包括位置、速度、加速度等信息，使机器人…">
+    <meta name="twitter:image" content="https://yfrobotics.github.io/robowiki-cn/logo.png">
+    <script type="application/ld+json">
+      {"@context": "https://schema.org", "@type": "WebPage", "description": "\u8fd0\u52a8\u89c4\u5212 (Motion Planning) \u5728\u8def\u5f84\u89c4\u5212\u7684\u57fa\u7840\u4e0a\uff0c\u8fdb\u4e00\u6b65\u8003\u8651\u673a\u5668\u4eba\u7684\u8fd0\u52a8\u5b66 (Kinematics) \u548c\u52a8\u529b\u5b66 (Dynamics) \u7ea6\u675f\uff0c\u751f\u6210\u4e00\u6761\u53ef\u5b9e\u9645\u6267\u884c\u7684\u8f68\u8ff9 (Trajectory)\u3002\u4e0e\u8def\u5f84\u89c4\u5212\u4ec5\u5173\u6ce8\u51e0\u4f55\u53ef\u884c\u6027\u4e0d\u540c\uff0c\u8fd0\u52a8\u89c4\u5212\u9700\u8981\u751f\u6210\u5e26\u6709\u65f6\u95f4\u53c2\u6570\u7684\u72b6\u6001\u5e8f\u5217\uff0c\u5305\u62ec\u4f4d\u7f6e\u3001\u901f\u5ea6\u3001\u52a0\u901f\u5ea6\u7b49\u4fe1\u606f\uff0c\u4f7f\u673a\u5668\u4eba\u2026", "inLanguage": "zh-CN", "isPartOf": {"@type": "WebSite", "name": "\u4e91\u98de\u673a\u5668\u4eba\u4e2d\u6587\u7ef4\u57fa", "url": "https://yfrobotics.github.io/robowiki-cn/"}, "name": "\u8fd0\u52a8\u89c4\u5212", "url": "https://yfrobotics.github.io/robowiki-cn/planning/motionplanning/"}
+    </script>
   
   <meta name="google-adsense-account" content="ca-pub-8821428748194648">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8821428748194648"
@@ -617,7 +628,7 @@
   <span class="md-ellipsis">
     
   
-    介绍
+    机器人入门与开发知识库
   
 
     
@@ -9273,6 +9284,9 @@ x_k \in \mathcal{X}, \quad u_k \in \mathcal{U}, \quad x_0 = x_{current}
 
 
 
+
+  
+  
 
 
 

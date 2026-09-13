@@ -3,30 +3,22 @@
 <html lang="zh" class="no-js">
   <head>
     
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width,initial-scale=1">
-      
-        <meta name="description" content="机器人领域的公共知识库">
-      
-      
-        <meta name="author" content="YFRL">
-      
-      
-        <link rel="canonical" href="https://yfrobotics.github.io/learning/embodied-ai/">
-      
-      
-        <link rel="prev" href="../dl-full-reference/">
-      
-      
-        <link rel="next" href="../embodied-ai-vla/">
-      
-      
-        
-      
-      
-      <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
-    
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="具身智能（Embodied AI）指智能体通过身体与物理世界交互来获得能力，而不是仅在数据集上做被动的模式识别。这个概念本身并不新——机器人学从诞生起就在做这件事——真正新的是方法论：过去每个任务都要单独建模、单独编程，而现在的路线是用大规模数据训练一个通用策略，让它像语言模型泛化到新句子那样泛化到新任务与新物体。本…">
+  <meta name="author" content="YFRL">
+  
+    <link rel="canonical" href="https://yfrobotics.github.io/robowiki-cn/learning/embodied-ai/">
+  
+  
+    <link rel="prev" href="../dl-full-reference/">
+  
+  
+    <link rel="next" href="../embodied-ai-vla/">
+  
+  <link rel="icon" href="../../assets/images/favicon.png">
+  <meta name="generator" content="mkdocs-1.6.1">
+
     
       
         <title>具身智能 - 云飞机器人中文维基</title>
@@ -73,6 +65,25 @@
 
     
     
+  
+  
+    
+    
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="zh_CN">
+    <meta property="og:site_name" content="云飞机器人中文维基">
+    <meta property="og:title" content="具身智能 - 云飞机器人中文维基">
+    <meta property="og:description" content="具身智能（Embodied AI）指智能体通过身体与物理世界交互来获得能力，而不是仅在数据集上做被动的模式识别。这个概念本身并不新——机器人学从诞生起就在做这件事——真正新的是方法论：过去每个任务都要单独建模、单独编程，而现在的路线是用大规模数据训练一个通用策略，让它像语言模型泛化到新句子那样泛化到新任务与新物体。本…">
+    <meta property="og:url" content="https://yfrobotics.github.io/robowiki-cn/learning/embodied-ai/">
+    <meta property="og:image" content="https://yfrobotics.github.io/robowiki-cn/logo.png">
+    <meta property="og:image:alt" content="云飞机器人中文维基标志">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="具身智能 - 云飞机器人中文维基">
+    <meta name="twitter:description" content="具身智能（Embodied AI）指智能体通过身体与物理世界交互来获得能力，而不是仅在数据集上做被动的模式识别。这个概念本身并不新——机器人学从诞生起就在做这件事——真正新的是方法论：过去每个任务都要单独建模、单独编程，而现在的路线是用大规模数据训练一个通用策略，让它像语言模型泛化到新句子那样泛化到新任务与新物体。本…">
+    <meta name="twitter:image" content="https://yfrobotics.github.io/robowiki-cn/logo.png">
+    <script type="application/ld+json">
+      {"@context": "https://schema.org", "@type": "WebPage", "description": "\u5177\u8eab\u667a\u80fd\uff08Embodied AI\uff09\u6307\u667a\u80fd\u4f53\u901a\u8fc7\u8eab\u4f53\u4e0e\u7269\u7406\u4e16\u754c\u4ea4\u4e92\u6765\u83b7\u5f97\u80fd\u529b\uff0c\u800c\u4e0d\u662f\u4ec5\u5728\u6570\u636e\u96c6\u4e0a\u505a\u88ab\u52a8\u7684\u6a21\u5f0f\u8bc6\u522b\u3002\u8fd9\u4e2a\u6982\u5ff5\u672c\u8eab\u5e76\u4e0d\u65b0\u2014\u2014\u673a\u5668\u4eba\u5b66\u4ece\u8bde\u751f\u8d77\u5c31\u5728\u505a\u8fd9\u4ef6\u4e8b\u2014\u2014\u771f\u6b63\u65b0\u7684\u662f\u65b9\u6cd5\u8bba\uff1a\u8fc7\u53bb\u6bcf\u4e2a\u4efb\u52a1\u90fd\u8981\u5355\u72ec\u5efa\u6a21\u3001\u5355\u72ec\u7f16\u7a0b\uff0c\u800c\u73b0\u5728\u7684\u8def\u7ebf\u662f\u7528\u5927\u89c4\u6a21\u6570\u636e\u8bad\u7ec3\u4e00\u4e2a\u901a\u7528\u7b56\u7565\uff0c\u8ba9\u5b83\u50cf\u8bed\u8a00\u6a21\u578b\u6cdb\u5316\u5230\u65b0\u53e5\u5b50\u90a3\u6837\u6cdb\u5316\u5230\u65b0\u4efb\u52a1\u4e0e\u65b0\u7269\u4f53\u3002\u672c\u2026", "inLanguage": "zh-CN", "isPartOf": {"@type": "WebSite", "name": "\u4e91\u98de\u673a\u5668\u4eba\u4e2d\u6587\u7ef4\u57fa", "url": "https://yfrobotics.github.io/robowiki-cn/"}, "name": "\u5177\u8eab\u667a\u80fd", "url": "https://yfrobotics.github.io/robowiki-cn/learning/embodied-ai/"}
+    </script>
   
   <meta name="google-adsense-account" content="ca-pub-8821428748194648">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8821428748194648"
@@ -617,7 +628,7 @@
   <span class="md-ellipsis">
     
   
-    介绍
+    机器人入门与开发知识库
   
 
     
@@ -8704,6 +8715,9 @@
 
 
 
+
+  
+  
 
 
 

@@ -3,30 +3,22 @@
 <html lang="zh" class="no-js">
   <head>
     
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width,initial-scale=1">
-      
-        <meta name="description" content="机器人领域的公共知识库">
-      
-      
-        <meta name="author" content="YFRL">
-      
-      
-        <link rel="canonical" href="https://yfrobotics.github.io/control/modelling/modelling-discrete-identification/">
-      
-      
-        <link rel="prev" href="../modelling-foundations/">
-      
-      
-        <link rel="next" href="../state-space/">
-      
-      
-        
-      
-      
-      <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
-    
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="本页面是控制系统建模专题的离散系统与系统辨识部分。连续系统模型需要通过离散化才能在数字计算机上实现控制器，而系统辨识则是从实验数据中提取系统模型的实用技术。本文介绍 z 变换基础、常用离散化方法、以及参数辨识和频率响应辨识的完整工作流程。">
+  <meta name="author" content="YFRL">
+  
+    <link rel="canonical" href="https://yfrobotics.github.io/robowiki-cn/control/modelling/modelling-discrete-identification/">
+  
+  
+    <link rel="prev" href="../modelling-foundations/">
+  
+  
+    <link rel="next" href="../state-space/">
+  
+  <link rel="icon" href="../../../assets/images/favicon.png">
+  <meta name="generator" content="mkdocs-1.6.1">
+
     
       
         <title>离散系统与系统辨识 - 云飞机器人中文维基</title>
@@ -73,6 +65,25 @@
 
     
     
+  
+  
+    
+    
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="zh_CN">
+    <meta property="og:site_name" content="云飞机器人中文维基">
+    <meta property="og:title" content="离散系统与系统辨识 - 云飞机器人中文维基">
+    <meta property="og:description" content="本页面是控制系统建模专题的离散系统与系统辨识部分。连续系统模型需要通过离散化才能在数字计算机上实现控制器，而系统辨识则是从实验数据中提取系统模型的实用技术。本文介绍 z 变换基础、常用离散化方法、以及参数辨识和频率响应辨识的完整工作流程。">
+    <meta property="og:url" content="https://yfrobotics.github.io/robowiki-cn/control/modelling/modelling-discrete-identification/">
+    <meta property="og:image" content="https://yfrobotics.github.io/robowiki-cn/logo.png">
+    <meta property="og:image:alt" content="云飞机器人中文维基标志">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="离散系统与系统辨识 - 云飞机器人中文维基">
+    <meta name="twitter:description" content="本页面是控制系统建模专题的离散系统与系统辨识部分。连续系统模型需要通过离散化才能在数字计算机上实现控制器，而系统辨识则是从实验数据中提取系统模型的实用技术。本文介绍 z 变换基础、常用离散化方法、以及参数辨识和频率响应辨识的完整工作流程。">
+    <meta name="twitter:image" content="https://yfrobotics.github.io/robowiki-cn/logo.png">
+    <script type="application/ld+json">
+      {"@context": "https://schema.org", "@type": "WebPage", "description": "\u672c\u9875\u9762\u662f\u63a7\u5236\u7cfb\u7edf\u5efa\u6a21\u4e13\u9898\u7684\u79bb\u6563\u7cfb\u7edf\u4e0e\u7cfb\u7edf\u8fa8\u8bc6\u90e8\u5206\u3002\u8fde\u7eed\u7cfb\u7edf\u6a21\u578b\u9700\u8981\u901a\u8fc7\u79bb\u6563\u5316\u624d\u80fd\u5728\u6570\u5b57\u8ba1\u7b97\u673a\u4e0a\u5b9e\u73b0\u63a7\u5236\u5668\uff0c\u800c\u7cfb\u7edf\u8fa8\u8bc6\u5219\u662f\u4ece\u5b9e\u9a8c\u6570\u636e\u4e2d\u63d0\u53d6\u7cfb\u7edf\u6a21\u578b\u7684\u5b9e\u7528\u6280\u672f\u3002\u672c\u6587\u4ecb\u7ecd z \u53d8\u6362\u57fa\u7840\u3001\u5e38\u7528\u79bb\u6563\u5316\u65b9\u6cd5\u3001\u4ee5\u53ca\u53c2\u6570\u8fa8\u8bc6\u548c\u9891\u7387\u54cd\u5e94\u8fa8\u8bc6\u7684\u5b8c\u6574\u5de5\u4f5c\u6d41\u7a0b\u3002", "inLanguage": "zh-CN", "isPartOf": {"@type": "WebSite", "name": "\u4e91\u98de\u673a\u5668\u4eba\u4e2d\u6587\u7ef4\u57fa", "url": "https://yfrobotics.github.io/robowiki-cn/"}, "name": "\u79bb\u6563\u7cfb\u7edf\u4e0e\u7cfb\u7edf\u8fa8\u8bc6", "url": "https://yfrobotics.github.io/robowiki-cn/control/modelling/modelling-discrete-identification/"}
+    </script>
   
   <meta name="google-adsense-account" content="ca-pub-8821428748194648">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8821428748194648"
@@ -617,7 +628,7 @@
   <span class="md-ellipsis">
     
   
-    介绍
+    机器人入门与开发知识库
   
 
     
@@ -9314,6 +9325,9 @@ A(z^{-1})y[k] = B(z^{-1})u[k] + C(z^{-1})e[k]
 
 
 
+
+  
+  
 
 
 

@@ -3,30 +3,22 @@
 <html lang="zh" class="no-js">
   <head>
     
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width,initial-scale=1">
-      
-        <meta name="description" content="机器人领域的公共知识库">
-      
-      
-        <meta name="author" content="YFRL">
-      
-      
-        <link rel="canonical" href="https://yfrobotics.github.io/planning/navigation-costmap/">
-      
-      
-        <link rel="prev" href="../navigation/">
-      
-      
-        <link rel="next" href="../navigation-local-planners/">
-      
-      
-        
-      
-      
-      <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
-    
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="代价地图（Costmap）是导航栈中所有规划器共同依赖的世界模型：它把传感器观测、静态地图与机器人尺寸统一成一张二维的代价栅格，规划器只需要在这张图上避开高代价区域即可。绝大多数「机器人不动了」「路径贴着墙」「过不了门」的问题，根源都在代价地图的配置而不在规划算法本身。本页面介绍分层结构、代价值的含义、膨胀模型的数学…">
+  <meta name="author" content="YFRL">
+  
+    <link rel="canonical" href="https://yfrobotics.github.io/robowiki-cn/planning/navigation-costmap/">
+  
+  
+    <link rel="prev" href="../navigation/">
+  
+  
+    <link rel="next" href="../navigation-local-planners/">
+  
+  <link rel="icon" href="../../assets/images/favicon.png">
+  <meta name="generator" content="mkdocs-1.6.1">
+
     
       
         <title>代价地图 - 云飞机器人中文维基</title>
@@ -73,6 +65,25 @@
 
     
     
+  
+  
+    
+    
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="zh_CN">
+    <meta property="og:site_name" content="云飞机器人中文维基">
+    <meta property="og:title" content="代价地图 - 云飞机器人中文维基">
+    <meta property="og:description" content="代价地图（Costmap）是导航栈中所有规划器共同依赖的世界模型：它把传感器观测、静态地图与机器人尺寸统一成一张二维的代价栅格，规划器只需要在这张图上避开高代价区域即可。绝大多数「机器人不动了」「路径贴着墙」「过不了门」的问题，根源都在代价地图的配置而不在规划算法本身。本页面介绍分层结构、代价值的含义、膨胀模型的数学…">
+    <meta property="og:url" content="https://yfrobotics.github.io/robowiki-cn/planning/navigation-costmap/">
+    <meta property="og:image" content="https://yfrobotics.github.io/robowiki-cn/logo.png">
+    <meta property="og:image:alt" content="云飞机器人中文维基标志">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="代价地图 - 云飞机器人中文维基">
+    <meta name="twitter:description" content="代价地图（Costmap）是导航栈中所有规划器共同依赖的世界模型：它把传感器观测、静态地图与机器人尺寸统一成一张二维的代价栅格，规划器只需要在这张图上避开高代价区域即可。绝大多数「机器人不动了」「路径贴着墙」「过不了门」的问题，根源都在代价地图的配置而不在规划算法本身。本页面介绍分层结构、代价值的含义、膨胀模型的数学…">
+    <meta name="twitter:image" content="https://yfrobotics.github.io/robowiki-cn/logo.png">
+    <script type="application/ld+json">
+      {"@context": "https://schema.org", "@type": "WebPage", "description": "\u4ee3\u4ef7\u5730\u56fe\uff08Costmap\uff09\u662f\u5bfc\u822a\u6808\u4e2d\u6240\u6709\u89c4\u5212\u5668\u5171\u540c\u4f9d\u8d56\u7684\u4e16\u754c\u6a21\u578b\uff1a\u5b83\u628a\u4f20\u611f\u5668\u89c2\u6d4b\u3001\u9759\u6001\u5730\u56fe\u4e0e\u673a\u5668\u4eba\u5c3a\u5bf8\u7edf\u4e00\u6210\u4e00\u5f20\u4e8c\u7ef4\u7684\u4ee3\u4ef7\u6805\u683c\uff0c\u89c4\u5212\u5668\u53ea\u9700\u8981\u5728\u8fd9\u5f20\u56fe\u4e0a\u907f\u5f00\u9ad8\u4ee3\u4ef7\u533a\u57df\u5373\u53ef\u3002\u7edd\u5927\u591a\u6570\u300c\u673a\u5668\u4eba\u4e0d\u52a8\u4e86\u300d\u300c\u8def\u5f84\u8d34\u7740\u5899\u300d\u300c\u8fc7\u4e0d\u4e86\u95e8\u300d\u7684\u95ee\u9898\uff0c\u6839\u6e90\u90fd\u5728\u4ee3\u4ef7\u5730\u56fe\u7684\u914d\u7f6e\u800c\u4e0d\u5728\u89c4\u5212\u7b97\u6cd5\u672c\u8eab\u3002\u672c\u9875\u9762\u4ecb\u7ecd\u5206\u5c42\u7ed3\u6784\u3001\u4ee3\u4ef7\u503c\u7684\u542b\u4e49\u3001\u81a8\u80c0\u6a21\u578b\u7684\u6570\u5b66\u2026", "inLanguage": "zh-CN", "isPartOf": {"@type": "WebSite", "name": "\u4e91\u98de\u673a\u5668\u4eba\u4e2d\u6587\u7ef4\u57fa", "url": "https://yfrobotics.github.io/robowiki-cn/"}, "name": "\u4ee3\u4ef7\u5730\u56fe", "url": "https://yfrobotics.github.io/robowiki-cn/planning/navigation-costmap/"}
+    </script>
   
   <meta name="google-adsense-account" content="ca-pub-8821428748194648">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8821428748194648"
@@ -617,7 +628,7 @@
   <span class="md-ellipsis">
     
   
-    介绍
+    机器人入门与开发知识库
   
 
     
@@ -8833,6 +8844,9 @@
 
 
 
+
+  
+  
 
 
 

@@ -3,30 +3,22 @@
 <html lang="zh" class="no-js">
   <head>
     
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width,initial-scale=1">
-      
-        <meta name="description" content="机器人领域的公共知识库">
-      
-      
-        <meta name="author" content="YFRL">
-      
-      
-        <link rel="canonical" href="https://yfrobotics.github.io/cv/pose-estimation/">
-      
-      
-        <link rel="prev" href="../tracking/">
-      
-      
-        <link rel="next" href="../3d-vision/">
-      
-      
-        
-      
-      
-      <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
-    
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="位姿估计（Pose Estimation）是计算机视觉与机器人学的交汇领域，旨在从传感器数据中恢复物体或人体在三维空间中的位置与姿态。在机器人应用中，准确的位姿估计是实现自主抓取、人机协作和环境理解的基础。本文分别介绍物体 6DoF 位姿估计和人体姿态估计两大任务的方法、评测体系与工程实践。">
+  <meta name="author" content="YFRL">
+  
+    <link rel="canonical" href="https://yfrobotics.github.io/robowiki-cn/cv/pose-estimation/">
+  
+  
+    <link rel="prev" href="../tracking/">
+  
+  
+    <link rel="next" href="../3d-vision/">
+  
+  <link rel="icon" href="../../assets/images/favicon.png">
+  <meta name="generator" content="mkdocs-1.6.1">
+
     
       
         <title>位姿估计 - 云飞机器人中文维基</title>
@@ -73,6 +65,25 @@
 
     
     
+  
+  
+    
+    
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="zh_CN">
+    <meta property="og:site_name" content="云飞机器人中文维基">
+    <meta property="og:title" content="位姿估计 - 云飞机器人中文维基">
+    <meta property="og:description" content="位姿估计（Pose Estimation）是计算机视觉与机器人学的交汇领域，旨在从传感器数据中恢复物体或人体在三维空间中的位置与姿态。在机器人应用中，准确的位姿估计是实现自主抓取、人机协作和环境理解的基础。本文分别介绍物体 6DoF 位姿估计和人体姿态估计两大任务的方法、评测体系与工程实践。">
+    <meta property="og:url" content="https://yfrobotics.github.io/robowiki-cn/cv/pose-estimation/">
+    <meta property="og:image" content="https://yfrobotics.github.io/robowiki-cn/logo.png">
+    <meta property="og:image:alt" content="云飞机器人中文维基标志">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="位姿估计 - 云飞机器人中文维基">
+    <meta name="twitter:description" content="位姿估计（Pose Estimation）是计算机视觉与机器人学的交汇领域，旨在从传感器数据中恢复物体或人体在三维空间中的位置与姿态。在机器人应用中，准确的位姿估计是实现自主抓取、人机协作和环境理解的基础。本文分别介绍物体 6DoF 位姿估计和人体姿态估计两大任务的方法、评测体系与工程实践。">
+    <meta name="twitter:image" content="https://yfrobotics.github.io/robowiki-cn/logo.png">
+    <script type="application/ld+json">
+      {"@context": "https://schema.org", "@type": "WebPage", "description": "\u4f4d\u59ff\u4f30\u8ba1\uff08Pose Estimation\uff09\u662f\u8ba1\u7b97\u673a\u89c6\u89c9\u4e0e\u673a\u5668\u4eba\u5b66\u7684\u4ea4\u6c47\u9886\u57df\uff0c\u65e8\u5728\u4ece\u4f20\u611f\u5668\u6570\u636e\u4e2d\u6062\u590d\u7269\u4f53\u6216\u4eba\u4f53\u5728\u4e09\u7ef4\u7a7a\u95f4\u4e2d\u7684\u4f4d\u7f6e\u4e0e\u59ff\u6001\u3002\u5728\u673a\u5668\u4eba\u5e94\u7528\u4e2d\uff0c\u51c6\u786e\u7684\u4f4d\u59ff\u4f30\u8ba1\u662f\u5b9e\u73b0\u81ea\u4e3b\u6293\u53d6\u3001\u4eba\u673a\u534f\u4f5c\u548c\u73af\u5883\u7406\u89e3\u7684\u57fa\u7840\u3002\u672c\u6587\u5206\u522b\u4ecb\u7ecd\u7269\u4f53 6DoF \u4f4d\u59ff\u4f30\u8ba1\u548c\u4eba\u4f53\u59ff\u6001\u4f30\u8ba1\u4e24\u5927\u4efb\u52a1\u7684\u65b9\u6cd5\u3001\u8bc4\u6d4b\u4f53\u7cfb\u4e0e\u5de5\u7a0b\u5b9e\u8df5\u3002", "inLanguage": "zh-CN", "isPartOf": {"@type": "WebSite", "name": "\u4e91\u98de\u673a\u5668\u4eba\u4e2d\u6587\u7ef4\u57fa", "url": "https://yfrobotics.github.io/robowiki-cn/"}, "name": "\u4f4d\u59ff\u4f30\u8ba1", "url": "https://yfrobotics.github.io/robowiki-cn/cv/pose-estimation/"}
+    </script>
   
   <meta name="google-adsense-account" content="ca-pub-8821428748194648">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8821428748194648"
@@ -617,7 +628,7 @@
   <span class="md-ellipsis">
     
   
-    介绍
+    机器人入门与开发知识库
   
 
     
@@ -9930,6 +9941,9 @@ e_\text{proj} = \frac{1}{m} \sum_{\mathbf{x} \in \mathcal{M}} \left\| \pi(\mathb
 
 
 
+
+  
+  
 
 
 

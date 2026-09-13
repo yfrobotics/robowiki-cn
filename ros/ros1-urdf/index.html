@@ -3,30 +3,22 @@
 <html lang="zh" class="no-js">
   <head>
     
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width,initial-scale=1">
-      
-        <meta name="description" content="机器人领域的公共知识库">
-      
-      
-        <meta name="author" content="YFRL">
-      
-      
-        <link rel="canonical" href="https://yfrobotics.github.io/ros/ros1-urdf/">
-      
-      
-        <link rel="prev" href="../ros1-tf-launch-bag/">
-      
-      
-        <link rel="next" href="../ros1-navigation/">
-      
-      
-        
-      
-      
-      <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
-    
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="统一机器人描述格式（Unified Robot Description Format, URDF）是 ROS 1 中描述机器人三维结构的标准 XML 格式，定义连杆与关节的层次关系、视觉外观、碰撞几何与惯性参数。URDF 是整个 ROS 生态的公共输入：robot_state_publisher 依据它发布 TF 树…">
+  <meta name="author" content="YFRL">
+  
+    <link rel="canonical" href="https://yfrobotics.github.io/robowiki-cn/ros/ros1-urdf/">
+  
+  
+    <link rel="prev" href="../ros1-tf-launch-bag/">
+  
+  
+    <link rel="next" href="../ros1-navigation/">
+  
+  <link rel="icon" href="../../assets/images/favicon.png">
+  <meta name="generator" content="mkdocs-1.6.1">
+
     
       
         <title>ROS 1 URDF 机器人建模 - 云飞机器人中文维基</title>
@@ -73,6 +65,25 @@
 
     
     
+  
+  
+    
+    
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="zh_CN">
+    <meta property="og:site_name" content="云飞机器人中文维基">
+    <meta property="og:title" content="ROS 1 URDF 机器人建模 - 云飞机器人中文维基">
+    <meta property="og:description" content="统一机器人描述格式（Unified Robot Description Format, URDF）是 ROS 1 中描述机器人三维结构的标准 XML 格式，定义连杆与关节的层次关系、视觉外观、碰撞几何与惯性参数。URDF 是整个 ROS 生态的公共输入：robot_state_publisher 依据它发布 TF 树…">
+    <meta property="og:url" content="https://yfrobotics.github.io/robowiki-cn/ros/ros1-urdf/">
+    <meta property="og:image" content="https://yfrobotics.github.io/robowiki-cn/logo.png">
+    <meta property="og:image:alt" content="云飞机器人中文维基标志">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="ROS 1 URDF 机器人建模 - 云飞机器人中文维基">
+    <meta name="twitter:description" content="统一机器人描述格式（Unified Robot Description Format, URDF）是 ROS 1 中描述机器人三维结构的标准 XML 格式，定义连杆与关节的层次关系、视觉外观、碰撞几何与惯性参数。URDF 是整个 ROS 生态的公共输入：robot_state_publisher 依据它发布 TF 树…">
+    <meta name="twitter:image" content="https://yfrobotics.github.io/robowiki-cn/logo.png">
+    <script type="application/ld+json">
+      {"@context": "https://schema.org", "@type": "WebPage", "description": "\u7edf\u4e00\u673a\u5668\u4eba\u63cf\u8ff0\u683c\u5f0f\uff08Unified Robot Description Format, URDF\uff09\u662f ROS 1 \u4e2d\u63cf\u8ff0\u673a\u5668\u4eba\u4e09\u7ef4\u7ed3\u6784\u7684\u6807\u51c6 XML \u683c\u5f0f\uff0c\u5b9a\u4e49\u8fde\u6746\u4e0e\u5173\u8282\u7684\u5c42\u6b21\u5173\u7cfb\u3001\u89c6\u89c9\u5916\u89c2\u3001\u78b0\u649e\u51e0\u4f55\u4e0e\u60ef\u6027\u53c2\u6570\u3002URDF \u662f\u6574\u4e2a ROS \u751f\u6001\u7684\u516c\u5171\u8f93\u5165\uff1arobot_state_publisher \u4f9d\u636e\u5b83\u53d1\u5e03 TF \u6811\u2026", "inLanguage": "zh-CN", "isPartOf": {"@type": "WebSite", "name": "\u4e91\u98de\u673a\u5668\u4eba\u4e2d\u6587\u7ef4\u57fa", "url": "https://yfrobotics.github.io/robowiki-cn/"}, "name": "ROS 1 URDF \u673a\u5668\u4eba\u5efa\u6a21", "url": "https://yfrobotics.github.io/robowiki-cn/ros/ros1-urdf/"}
+    </script>
   
   <meta name="google-adsense-account" content="ca-pub-8821428748194648">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8821428748194648"
@@ -617,7 +628,7 @@
   <span class="md-ellipsis">
     
   
-    介绍
+    机器人入门与开发知识库
   
 
     
@@ -8768,6 +8779,9 @@ xacro<span class="w"> </span>robot.urdf.xacro<span class="w"> </span>&gt;<span c
 
 
 
+
+  
+  
 
 
 

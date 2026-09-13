@@ -3,30 +3,22 @@
 <html lang="zh" class="no-js">
   <head>
     
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width,initial-scale=1">
-      
-        <meta name="description" content="机器人领域的公共知识库">
-      
-      
-        <meta name="author" content="YFRL">
-      
-      
-        <link rel="canonical" href="https://yfrobotics.github.io/planning/multi-robot-task-allocation/">
-      
-      
-        <link rel="prev" href="../behavior-trees/">
-      
-      
-        <link rel="next" href="../replanning-safety/">
-      
-      
-        
-      
-      
-      <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
-    
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="多机器人任务分配（Multi-Robot Task Allocation, MRTA）是多机器人系统中的核心问题之一，研究如何将一组任务有效地分配给多个机器人，使得整体性能最优。随着仓储物流、搜救、农业等领域对多机器人协作的需求日益增长，MRTA 已成为机器人学的重要研究方向。">
+  <meta name="author" content="YFRL">
+  
+    <link rel="canonical" href="https://yfrobotics.github.io/robowiki-cn/planning/multi-robot-task-allocation/">
+  
+  
+    <link rel="prev" href="../behavior-trees/">
+  
+  
+    <link rel="next" href="../replanning-safety/">
+  
+  <link rel="icon" href="../../assets/images/favicon.png">
+  <meta name="generator" content="mkdocs-1.6.1">
+
     
       
         <title>多机器人任务分配 - 云飞机器人中文维基</title>
@@ -73,6 +65,25 @@
 
     
     
+  
+  
+    
+    
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="zh_CN">
+    <meta property="og:site_name" content="云飞机器人中文维基">
+    <meta property="og:title" content="多机器人任务分配 - 云飞机器人中文维基">
+    <meta property="og:description" content="多机器人任务分配（Multi-Robot Task Allocation, MRTA）是多机器人系统中的核心问题之一，研究如何将一组任务有效地分配给多个机器人，使得整体性能最优。随着仓储物流、搜救、农业等领域对多机器人协作的需求日益增长，MRTA 已成为机器人学的重要研究方向。">
+    <meta property="og:url" content="https://yfrobotics.github.io/robowiki-cn/planning/multi-robot-task-allocation/">
+    <meta property="og:image" content="https://yfrobotics.github.io/robowiki-cn/logo.png">
+    <meta property="og:image:alt" content="云飞机器人中文维基标志">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="多机器人任务分配 - 云飞机器人中文维基">
+    <meta name="twitter:description" content="多机器人任务分配（Multi-Robot Task Allocation, MRTA）是多机器人系统中的核心问题之一，研究如何将一组任务有效地分配给多个机器人，使得整体性能最优。随着仓储物流、搜救、农业等领域对多机器人协作的需求日益增长，MRTA 已成为机器人学的重要研究方向。">
+    <meta name="twitter:image" content="https://yfrobotics.github.io/robowiki-cn/logo.png">
+    <script type="application/ld+json">
+      {"@context": "https://schema.org", "@type": "WebPage", "description": "\u591a\u673a\u5668\u4eba\u4efb\u52a1\u5206\u914d\uff08Multi-Robot Task Allocation, MRTA\uff09\u662f\u591a\u673a\u5668\u4eba\u7cfb\u7edf\u4e2d\u7684\u6838\u5fc3\u95ee\u9898\u4e4b\u4e00\uff0c\u7814\u7a76\u5982\u4f55\u5c06\u4e00\u7ec4\u4efb\u52a1\u6709\u6548\u5730\u5206\u914d\u7ed9\u591a\u4e2a\u673a\u5668\u4eba\uff0c\u4f7f\u5f97\u6574\u4f53\u6027\u80fd\u6700\u4f18\u3002\u968f\u7740\u4ed3\u50a8\u7269\u6d41\u3001\u641c\u6551\u3001\u519c\u4e1a\u7b49\u9886\u57df\u5bf9\u591a\u673a\u5668\u4eba\u534f\u4f5c\u7684\u9700\u6c42\u65e5\u76ca\u589e\u957f\uff0cMRTA \u5df2\u6210\u4e3a\u673a\u5668\u4eba\u5b66\u7684\u91cd\u8981\u7814\u7a76\u65b9\u5411\u3002", "inLanguage": "zh-CN", "isPartOf": {"@type": "WebSite", "name": "\u4e91\u98de\u673a\u5668\u4eba\u4e2d\u6587\u7ef4\u57fa", "url": "https://yfrobotics.github.io/robowiki-cn/"}, "name": "\u591a\u673a\u5668\u4eba\u4efb\u52a1\u5206\u914d", "url": "https://yfrobotics.github.io/robowiki-cn/planning/multi-robot-task-allocation/"}
+    </script>
   
   <meta name="google-adsense-account" content="ca-pub-8821428748194648">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8821428748194648"
@@ -617,7 +628,7 @@
   <span class="md-ellipsis">
     
   
-    介绍
+    机器人入门与开发知识库
   
 
     
@@ -9062,6 +9073,9 @@ ros2<span class="w"> </span>launch<span class="w"> </span>my_robot<span class="w
 
 
 
+
+  
+  
 
 
 

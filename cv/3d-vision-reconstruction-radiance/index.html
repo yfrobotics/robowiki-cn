@@ -3,30 +3,22 @@
 <html lang="zh" class="no-js">
   <head>
     
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width,initial-scale=1">
-      
-        <meta name="description" content="机器人领域的公共知识库">
-      
-      
-        <meta name="author" content="YFRL">
-      
-      
-        <link rel="canonical" href="https://yfrobotics.github.io/cv/3d-vision-reconstruction-radiance/">
-      
-      
-        <link rel="prev" href="../3d-vision-pointcloud-registration/">
-      
-      
-        <link rel="next" href="../3d-vision-full-reference/">
-      
-      
-        
-      
-      
-      <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
-    
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="三维重建（3D Reconstruction）是从二维图像或传感器数据恢复场景三维结构的过程，是机器人环境感知、自主导航和数字孪生的重要基础。传统方法以运动恢复结构（Structure from Motion, SfM）和多视角立体（Multi-View Stereo, MVS）为代表，近年来神经辐射场（Neural…">
+  <meta name="author" content="YFRL">
+  
+    <link rel="canonical" href="https://yfrobotics.github.io/robowiki-cn/cv/3d-vision-reconstruction-radiance/">
+  
+  
+    <link rel="prev" href="../3d-vision-pointcloud-registration/">
+  
+  
+    <link rel="next" href="../3d-vision-full-reference/">
+  
+  <link rel="icon" href="../../assets/images/favicon.png">
+  <meta name="generator" content="mkdocs-1.6.1">
+
     
       
         <title>三维重建与辐射场 - 云飞机器人中文维基</title>
@@ -73,6 +65,25 @@
 
     
     
+  
+  
+    
+    
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="zh_CN">
+    <meta property="og:site_name" content="云飞机器人中文维基">
+    <meta property="og:title" content="三维重建与辐射场 - 云飞机器人中文维基">
+    <meta property="og:description" content="三维重建（3D Reconstruction）是从二维图像或传感器数据恢复场景三维结构的过程，是机器人环境感知、自主导航和数字孪生的重要基础。传统方法以运动恢复结构（Structure from Motion, SfM）和多视角立体（Multi-View Stereo, MVS）为代表，近年来神经辐射场（Neural…">
+    <meta property="og:url" content="https://yfrobotics.github.io/robowiki-cn/cv/3d-vision-reconstruction-radiance/">
+    <meta property="og:image" content="https://yfrobotics.github.io/robowiki-cn/logo.png">
+    <meta property="og:image:alt" content="云飞机器人中文维基标志">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="三维重建与辐射场 - 云飞机器人中文维基">
+    <meta name="twitter:description" content="三维重建（3D Reconstruction）是从二维图像或传感器数据恢复场景三维结构的过程，是机器人环境感知、自主导航和数字孪生的重要基础。传统方法以运动恢复结构（Structure from Motion, SfM）和多视角立体（Multi-View Stereo, MVS）为代表，近年来神经辐射场（Neural…">
+    <meta name="twitter:image" content="https://yfrobotics.github.io/robowiki-cn/logo.png">
+    <script type="application/ld+json">
+      {"@context": "https://schema.org", "@type": "WebPage", "description": "\u4e09\u7ef4\u91cd\u5efa\uff083D Reconstruction\uff09\u662f\u4ece\u4e8c\u7ef4\u56fe\u50cf\u6216\u4f20\u611f\u5668\u6570\u636e\u6062\u590d\u573a\u666f\u4e09\u7ef4\u7ed3\u6784\u7684\u8fc7\u7a0b\uff0c\u662f\u673a\u5668\u4eba\u73af\u5883\u611f\u77e5\u3001\u81ea\u4e3b\u5bfc\u822a\u548c\u6570\u5b57\u5b6a\u751f\u7684\u91cd\u8981\u57fa\u7840\u3002\u4f20\u7edf\u65b9\u6cd5\u4ee5\u8fd0\u52a8\u6062\u590d\u7ed3\u6784\uff08Structure from Motion, SfM\uff09\u548c\u591a\u89c6\u89d2\u7acb\u4f53\uff08Multi-View Stereo, MVS\uff09\u4e3a\u4ee3\u8868\uff0c\u8fd1\u5e74\u6765\u795e\u7ecf\u8f90\u5c04\u573a\uff08Neural\u2026", "inLanguage": "zh-CN", "isPartOf": {"@type": "WebSite", "name": "\u4e91\u98de\u673a\u5668\u4eba\u4e2d\u6587\u7ef4\u57fa", "url": "https://yfrobotics.github.io/robowiki-cn/"}, "name": "\u4e09\u7ef4\u91cd\u5efa\u4e0e\u8f90\u5c04\u573a", "url": "https://yfrobotics.github.io/robowiki-cn/cv/3d-vision-reconstruction-radiance/"}
+    </script>
   
   <meta name="google-adsense-account" content="ca-pub-8821428748194648">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8821428748194648"
@@ -617,7 +628,7 @@
   <span class="md-ellipsis">
     
   
-    介绍
+    机器人入门与开发知识库
   
 
     
@@ -9234,6 +9245,9 @@ ns-export<span class="w"> </span>pointcloud<span class="w"> </span><span class="
 
 
 
+
+  
+  
 
 
 

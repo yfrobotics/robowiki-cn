@@ -3,30 +3,22 @@
 <html lang="zh" class="no-js">
   <head>
     
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width,initial-scale=1">
-      
-        <meta name="description" content="机器人领域的公共知识库">
-      
-      
-        <meta name="author" content="YFRL">
-      
-      
-        <link rel="canonical" href="https://yfrobotics.github.io/ros/ros1-navigation/">
-      
-      
-        <link rel="prev" href="../ros1-urdf/">
-      
-      
-        <link rel="next" href="../ros1-full-reference/">
-      
-      
-        
-      
-      
-      <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
-    
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="ROS Navigation Stack（导航栈）是 ROS 1 中移动机器人自主导航的标准框架，提供从原始传感器数据到底盘速度指令的完整处理流程。其核心是 move_base 节点：它维护全局与局部两层代价地图（Costmap），调用全局规划器生成从当前位置到目标点的路径，再由局部规划器结合实时障碍物生成速度指令，…">
+  <meta name="author" content="YFRL">
+  
+    <link rel="canonical" href="https://yfrobotics.github.io/robowiki-cn/ros/ros1-navigation/">
+  
+  
+    <link rel="prev" href="../ros1-urdf/">
+  
+  
+    <link rel="next" href="../ros1-full-reference/">
+  
+  <link rel="icon" href="../../assets/images/favicon.png">
+  <meta name="generator" content="mkdocs-1.6.1">
+
     
       
         <title>ROS 1 Navigation Stack - 云飞机器人中文维基</title>
@@ -73,6 +65,25 @@
 
     
     
+  
+  
+    
+    
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="zh_CN">
+    <meta property="og:site_name" content="云飞机器人中文维基">
+    <meta property="og:title" content="ROS 1 Navigation Stack - 云飞机器人中文维基">
+    <meta property="og:description" content="ROS Navigation Stack（导航栈）是 ROS 1 中移动机器人自主导航的标准框架，提供从原始传感器数据到底盘速度指令的完整处理流程。其核心是 move_base 节点：它维护全局与局部两层代价地图（Costmap），调用全局规划器生成从当前位置到目标点的路径，再由局部规划器结合实时障碍物生成速度指令，…">
+    <meta property="og:url" content="https://yfrobotics.github.io/robowiki-cn/ros/ros1-navigation/">
+    <meta property="og:image" content="https://yfrobotics.github.io/robowiki-cn/logo.png">
+    <meta property="og:image:alt" content="云飞机器人中文维基标志">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="ROS 1 Navigation Stack - 云飞机器人中文维基">
+    <meta name="twitter:description" content="ROS Navigation Stack（导航栈）是 ROS 1 中移动机器人自主导航的标准框架，提供从原始传感器数据到底盘速度指令的完整处理流程。其核心是 move_base 节点：它维护全局与局部两层代价地图（Costmap），调用全局规划器生成从当前位置到目标点的路径，再由局部规划器结合实时障碍物生成速度指令，…">
+    <meta name="twitter:image" content="https://yfrobotics.github.io/robowiki-cn/logo.png">
+    <script type="application/ld+json">
+      {"@context": "https://schema.org", "@type": "WebPage", "description": "ROS Navigation Stack\uff08\u5bfc\u822a\u6808\uff09\u662f ROS 1 \u4e2d\u79fb\u52a8\u673a\u5668\u4eba\u81ea\u4e3b\u5bfc\u822a\u7684\u6807\u51c6\u6846\u67b6\uff0c\u63d0\u4f9b\u4ece\u539f\u59cb\u4f20\u611f\u5668\u6570\u636e\u5230\u5e95\u76d8\u901f\u5ea6\u6307\u4ee4\u7684\u5b8c\u6574\u5904\u7406\u6d41\u7a0b\u3002\u5176\u6838\u5fc3\u662f move_base \u8282\u70b9\uff1a\u5b83\u7ef4\u62a4\u5168\u5c40\u4e0e\u5c40\u90e8\u4e24\u5c42\u4ee3\u4ef7\u5730\u56fe\uff08Costmap\uff09\uff0c\u8c03\u7528\u5168\u5c40\u89c4\u5212\u5668\u751f\u6210\u4ece\u5f53\u524d\u4f4d\u7f6e\u5230\u76ee\u6807\u70b9\u7684\u8def\u5f84\uff0c\u518d\u7531\u5c40\u90e8\u89c4\u5212\u5668\u7ed3\u5408\u5b9e\u65f6\u969c\u788d\u7269\u751f\u6210\u901f\u5ea6\u6307\u4ee4\uff0c\u2026", "inLanguage": "zh-CN", "isPartOf": {"@type": "WebSite", "name": "\u4e91\u98de\u673a\u5668\u4eba\u4e2d\u6587\u7ef4\u57fa", "url": "https://yfrobotics.github.io/robowiki-cn/"}, "name": "ROS 1 Navigation Stack", "url": "https://yfrobotics.github.io/robowiki-cn/ros/ros1-navigation/"}
+    </script>
   
   <meta name="google-adsense-account" content="ca-pub-8821428748194648">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8821428748194648"
@@ -617,7 +628,7 @@
   <span class="md-ellipsis">
     
   
-    介绍
+    机器人入门与开发知识库
   
 
     
@@ -8683,6 +8694,9 @@
 
 
 
+
+  
+  
 
 
 

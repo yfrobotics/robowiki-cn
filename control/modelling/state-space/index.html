@@ -3,30 +3,22 @@
 <html lang="zh" class="no-js">
   <head>
     
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width,initial-scale=1">
-      
-        <meta name="description" content="机器人领域的公共知识库">
-      
-      
-        <meta name="author" content="YFRL">
-      
-      
-        <link rel="canonical" href="https://yfrobotics.github.io/control/modelling/state-space/">
-      
-      
-        <link rel="prev" href="../modelling-discrete-identification/">
-      
-      
-        <link rel="next" href="../modelling-examples/">
-      
-      
-        
-      
-      
-      <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
-    
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="状态空间法（State-Space Method）是现代控制理论的核心框架，通过引入状态变量（State Variables）来描述系统的内部行为。与传递函数方法仅关注输入输出关系不同，状态空间法能够揭示系统的全部内部特性，并自然地扩展到多输入多输出（MIMO）系统。状态空间法为控制器设计提供了系统化的工具，包括极点…">
+  <meta name="author" content="YFRL">
+  
+    <link rel="canonical" href="https://yfrobotics.github.io/robowiki-cn/control/modelling/state-space/">
+  
+  
+    <link rel="prev" href="../modelling-discrete-identification/">
+  
+  
+    <link rel="next" href="../modelling-examples/">
+  
+  <link rel="icon" href="../../../assets/images/favicon.png">
+  <meta name="generator" content="mkdocs-1.6.1">
+
     
       
         <title>状态空间法 - 云飞机器人中文维基</title>
@@ -73,6 +65,25 @@
 
     
     
+  
+  
+    
+    
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="zh_CN">
+    <meta property="og:site_name" content="云飞机器人中文维基">
+    <meta property="og:title" content="状态空间法 - 云飞机器人中文维基">
+    <meta property="og:description" content="状态空间法（State-Space Method）是现代控制理论的核心框架，通过引入状态变量（State Variables）来描述系统的内部行为。与传递函数方法仅关注输入输出关系不同，状态空间法能够揭示系统的全部内部特性，并自然地扩展到多输入多输出（MIMO）系统。状态空间法为控制器设计提供了系统化的工具，包括极点…">
+    <meta property="og:url" content="https://yfrobotics.github.io/robowiki-cn/control/modelling/state-space/">
+    <meta property="og:image" content="https://yfrobotics.github.io/robowiki-cn/logo.png">
+    <meta property="og:image:alt" content="云飞机器人中文维基标志">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="状态空间法 - 云飞机器人中文维基">
+    <meta name="twitter:description" content="状态空间法（State-Space Method）是现代控制理论的核心框架，通过引入状态变量（State Variables）来描述系统的内部行为。与传递函数方法仅关注输入输出关系不同，状态空间法能够揭示系统的全部内部特性，并自然地扩展到多输入多输出（MIMO）系统。状态空间法为控制器设计提供了系统化的工具，包括极点…">
+    <meta name="twitter:image" content="https://yfrobotics.github.io/robowiki-cn/logo.png">
+    <script type="application/ld+json">
+      {"@context": "https://schema.org", "@type": "WebPage", "description": "\u72b6\u6001\u7a7a\u95f4\u6cd5\uff08State-Space Method\uff09\u662f\u73b0\u4ee3\u63a7\u5236\u7406\u8bba\u7684\u6838\u5fc3\u6846\u67b6\uff0c\u901a\u8fc7\u5f15\u5165\u72b6\u6001\u53d8\u91cf\uff08State Variables\uff09\u6765\u63cf\u8ff0\u7cfb\u7edf\u7684\u5185\u90e8\u884c\u4e3a\u3002\u4e0e\u4f20\u9012\u51fd\u6570\u65b9\u6cd5\u4ec5\u5173\u6ce8\u8f93\u5165\u8f93\u51fa\u5173\u7cfb\u4e0d\u540c\uff0c\u72b6\u6001\u7a7a\u95f4\u6cd5\u80fd\u591f\u63ed\u793a\u7cfb\u7edf\u7684\u5168\u90e8\u5185\u90e8\u7279\u6027\uff0c\u5e76\u81ea\u7136\u5730\u6269\u5c55\u5230\u591a\u8f93\u5165\u591a\u8f93\u51fa\uff08MIMO\uff09\u7cfb\u7edf\u3002\u72b6\u6001\u7a7a\u95f4\u6cd5\u4e3a\u63a7\u5236\u5668\u8bbe\u8ba1\u63d0\u4f9b\u4e86\u7cfb\u7edf\u5316\u7684\u5de5\u5177\uff0c\u5305\u62ec\u6781\u70b9\u2026", "inLanguage": "zh-CN", "isPartOf": {"@type": "WebSite", "name": "\u4e91\u98de\u673a\u5668\u4eba\u4e2d\u6587\u7ef4\u57fa", "url": "https://yfrobotics.github.io/robowiki-cn/"}, "name": "\u72b6\u6001\u7a7a\u95f4\u6cd5", "url": "https://yfrobotics.github.io/robowiki-cn/control/modelling/state-space/"}
+    </script>
   
   <meta name="google-adsense-account" content="ca-pub-8821428748194648">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8821428748194648"
@@ -617,7 +628,7 @@
   <span class="md-ellipsis">
     
   
-    介绍
+    机器人入门与开发知识库
   
 
     
@@ -8870,6 +8881,9 @@ u(t) = r(t) - KX = r(t) - \begin{pmatrix}k_1 & k_2 & k_3\end{pmatrix}
 
 
 
+
+  
+  
 
 
 

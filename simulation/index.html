@@ -3,30 +3,22 @@
 <html lang="zh" class="no-js">
   <head>
     
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width,initial-scale=1">
-      
-        <meta name="description" content="机器人领域的公共知识库">
-      
-      
-        <meta name="author" content="YFRL">
-      
-      
-        <link rel="canonical" href="https://yfrobotics.github.io/simulation/">
-      
-      
-        <link rel="prev" href="../learning/embodied-ai-data/">
-      
-      
-        <link rel="next" href="gazebo/">
-      
-      
-        
-      
-      
-      <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
-    
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="机器人系统的开发与验证离不开仿真（Simulation）工具的支持。在真实硬件平台上调试算法代价高昂：一次失误可能损坏价值数万元的机械臂或移动底盘，强化学习（Reinforcement Learning）所需的数百万次探索在物理机器人上几乎无法实现，而危险场景（如消防机器人、核电检修机器人）更无法反复重演。仿真环境让…">
+  <meta name="author" content="YFRL">
+  
+    <link rel="canonical" href="https://yfrobotics.github.io/robowiki-cn/simulation/">
+  
+  
+    <link rel="prev" href="../learning/embodied-ai-data/">
+  
+  
+    <link rel="next" href="gazebo/">
+  
+  <link rel="icon" href="../assets/images/favicon.png">
+  <meta name="generator" content="mkdocs-1.6.1">
+
     
       
         <title>机器人仿真 - 云飞机器人中文维基</title>
@@ -73,6 +65,25 @@
 
     
     
+  
+  
+    
+    
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="zh_CN">
+    <meta property="og:site_name" content="云飞机器人中文维基">
+    <meta property="og:title" content="机器人仿真 - 云飞机器人中文维基">
+    <meta property="og:description" content="机器人系统的开发与验证离不开仿真（Simulation）工具的支持。在真实硬件平台上调试算法代价高昂：一次失误可能损坏价值数万元的机械臂或移动底盘，强化学习（Reinforcement Learning）所需的数百万次探索在物理机器人上几乎无法实现，而危险场景（如消防机器人、核电检修机器人）更无法反复重演。仿真环境让…">
+    <meta property="og:url" content="https://yfrobotics.github.io/robowiki-cn/simulation/">
+    <meta property="og:image" content="https://yfrobotics.github.io/robowiki-cn/logo.png">
+    <meta property="og:image:alt" content="云飞机器人中文维基标志">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="机器人仿真 - 云飞机器人中文维基">
+    <meta name="twitter:description" content="机器人系统的开发与验证离不开仿真（Simulation）工具的支持。在真实硬件平台上调试算法代价高昂：一次失误可能损坏价值数万元的机械臂或移动底盘，强化学习（Reinforcement Learning）所需的数百万次探索在物理机器人上几乎无法实现，而危险场景（如消防机器人、核电检修机器人）更无法反复重演。仿真环境让…">
+    <meta name="twitter:image" content="https://yfrobotics.github.io/robowiki-cn/logo.png">
+    <script type="application/ld+json">
+      {"@context": "https://schema.org", "@type": "WebPage", "description": "\u673a\u5668\u4eba\u7cfb\u7edf\u7684\u5f00\u53d1\u4e0e\u9a8c\u8bc1\u79bb\u4e0d\u5f00\u4eff\u771f\uff08Simulation\uff09\u5de5\u5177\u7684\u652f\u6301\u3002\u5728\u771f\u5b9e\u786c\u4ef6\u5e73\u53f0\u4e0a\u8c03\u8bd5\u7b97\u6cd5\u4ee3\u4ef7\u9ad8\u6602\uff1a\u4e00\u6b21\u5931\u8bef\u53ef\u80fd\u635f\u574f\u4ef7\u503c\u6570\u4e07\u5143\u7684\u673a\u68b0\u81c2\u6216\u79fb\u52a8\u5e95\u76d8\uff0c\u5f3a\u5316\u5b66\u4e60\uff08Reinforcement Learning\uff09\u6240\u9700\u7684\u6570\u767e\u4e07\u6b21\u63a2\u7d22\u5728\u7269\u7406\u673a\u5668\u4eba\u4e0a\u51e0\u4e4e\u65e0\u6cd5\u5b9e\u73b0\uff0c\u800c\u5371\u9669\u573a\u666f\uff08\u5982\u6d88\u9632\u673a\u5668\u4eba\u3001\u6838\u7535\u68c0\u4fee\u673a\u5668\u4eba\uff09\u66f4\u65e0\u6cd5\u53cd\u590d\u91cd\u6f14\u3002\u4eff\u771f\u73af\u5883\u8ba9\u2026", "inLanguage": "zh-CN", "isPartOf": {"@type": "WebSite", "name": "\u4e91\u98de\u673a\u5668\u4eba\u4e2d\u6587\u7ef4\u57fa", "url": "https://yfrobotics.github.io/robowiki-cn/"}, "name": "\u673a\u5668\u4eba\u4eff\u771f", "url": "https://yfrobotics.github.io/robowiki-cn/simulation/"}
+    </script>
   
   <meta name="google-adsense-account" content="ca-pub-8821428748194648">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8821428748194648"
@@ -617,7 +628,7 @@
   <span class="md-ellipsis">
     
   
-    介绍
+    机器人入门与开发知识库
   
 
     
@@ -9513,6 +9524,9 @@
 
 
 
+
+  
+  
 
 
 

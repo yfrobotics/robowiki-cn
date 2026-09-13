@@ -3,30 +3,22 @@
 <html lang="zh" class="no-js">
   <head>
     
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width,initial-scale=1">
-      
-        <meta name="description" content="机器人领域的公共知识库">
-      
-      
-        <meta name="author" content="YFRL">
-      
-      
-        <link rel="canonical" href="https://yfrobotics.github.io/ros/ros2-qos-dds/">
-      
-      
-        <link rel="prev" href="../ros2/">
-      
-      
-        <link rel="next" href="../ros2-node-programming/">
-      
-      
-        
-      
-      
-      <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
-    
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="DDS (Data Distribution Service，数据分发服务) 是 ROS 2 的底层通信中间件，其 QoS (Quality of Service，服务质量) 策略为机器人系统提供了细粒度的通信质量控制能力。理解 DDS 架构和 QoS 配置，是构建可靠、高性能 ROS 2 系统的关键。">
+  <meta name="author" content="YFRL">
+  
+    <link rel="canonical" href="https://yfrobotics.github.io/robowiki-cn/ros/ros2-qos-dds/">
+  
+  
+    <link rel="prev" href="../ros2/">
+  
+  
+    <link rel="next" href="../ros2-node-programming/">
+  
+  <link rel="icon" href="../../assets/images/favicon.png">
+  <meta name="generator" content="mkdocs-1.6.1">
+
     
       
         <title>ROS 2 QoS 与 DDS - 云飞机器人中文维基</title>
@@ -73,6 +65,25 @@
 
     
     
+  
+  
+    
+    
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="zh_CN">
+    <meta property="og:site_name" content="云飞机器人中文维基">
+    <meta property="og:title" content="ROS 2 QoS 与 DDS - 云飞机器人中文维基">
+    <meta property="og:description" content="DDS (Data Distribution Service，数据分发服务) 是 ROS 2 的底层通信中间件，其 QoS (Quality of Service，服务质量) 策略为机器人系统提供了细粒度的通信质量控制能力。理解 DDS 架构和 QoS 配置，是构建可靠、高性能 ROS 2 系统的关键。">
+    <meta property="og:url" content="https://yfrobotics.github.io/robowiki-cn/ros/ros2-qos-dds/">
+    <meta property="og:image" content="https://yfrobotics.github.io/robowiki-cn/logo.png">
+    <meta property="og:image:alt" content="云飞机器人中文维基标志">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="ROS 2 QoS 与 DDS - 云飞机器人中文维基">
+    <meta name="twitter:description" content="DDS (Data Distribution Service，数据分发服务) 是 ROS 2 的底层通信中间件，其 QoS (Quality of Service，服务质量) 策略为机器人系统提供了细粒度的通信质量控制能力。理解 DDS 架构和 QoS 配置，是构建可靠、高性能 ROS 2 系统的关键。">
+    <meta name="twitter:image" content="https://yfrobotics.github.io/robowiki-cn/logo.png">
+    <script type="application/ld+json">
+      {"@context": "https://schema.org", "@type": "WebPage", "description": "DDS (Data Distribution Service\uff0c\u6570\u636e\u5206\u53d1\u670d\u52a1) \u662f ROS 2 \u7684\u5e95\u5c42\u901a\u4fe1\u4e2d\u95f4\u4ef6\uff0c\u5176 QoS (Quality of Service\uff0c\u670d\u52a1\u8d28\u91cf) \u7b56\u7565\u4e3a\u673a\u5668\u4eba\u7cfb\u7edf\u63d0\u4f9b\u4e86\u7ec6\u7c92\u5ea6\u7684\u901a\u4fe1\u8d28\u91cf\u63a7\u5236\u80fd\u529b\u3002\u7406\u89e3 DDS \u67b6\u6784\u548c QoS \u914d\u7f6e\uff0c\u662f\u6784\u5efa\u53ef\u9760\u3001\u9ad8\u6027\u80fd ROS 2 \u7cfb\u7edf\u7684\u5173\u952e\u3002", "inLanguage": "zh-CN", "isPartOf": {"@type": "WebSite", "name": "\u4e91\u98de\u673a\u5668\u4eba\u4e2d\u6587\u7ef4\u57fa", "url": "https://yfrobotics.github.io/robowiki-cn/"}, "name": "ROS 2 QoS \u4e0e DDS", "url": "https://yfrobotics.github.io/robowiki-cn/ros/ros2-qos-dds/"}
+    </script>
   
   <meta name="google-adsense-account" content="ca-pub-8821428748194648">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8821428748194648"
@@ -617,7 +628,7 @@
   <span class="md-ellipsis">
     
   
-    介绍
+    机器人入门与开发知识库
   
 
     
@@ -9498,6 +9509,9 @@ sudo<span class="w"> </span>ufw<span class="w"> </span>allow<span class="w"> </s
 
 
 
+
+  
+  
 
 
 
