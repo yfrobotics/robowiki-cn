@@ -250,7 +250,7 @@
           
   
   
-  运动学与动力学
+  建模
 
         </a>
       </li>
@@ -817,7 +817,7 @@
   <span class="md-ellipsis">
     
   
-    运动学与动力学
+    建模
   
 
     
@@ -833,7 +833,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    运动学与动力学
+    建模
   
 
           </label>
@@ -853,7 +853,7 @@
   <span class="md-ellipsis">
     
   
-    运动学与动力学
+    建模
   
 
     
@@ -8670,7 +8670,7 @@
 <p>一条实践经验：<strong>碰撞检测和力控制对传感器带宽的要求截然不同</strong>。碰撞检测只需要判断"是否撞到了"，用关节电流在 100 Hz 就够；而稳定的力控闭环通常需要 500 Hz 以上，且传感器噪声必须足够低，否则微分项会引入振荡。</p>
 <h2 id="_7">与其他章节的关系</h2>
 <ul>
-<li><a href="../kinematics/">运动学与动力学</a>：<a href="../kinematics/inverse-kinematics/">逆运动学</a> 决定抓取位姿是否可达，<a href="../kinematics/jacobian/">雅可比矩阵</a> 的静力学对偶 <script type="math/tex">\boldsymbol{\tau} = J^T\mathcal{F}</script> 是力控的基础，<a href="../kinematics/dynamics/">动力学</a> 支撑阻抗控制的实现</li>
+<li><a href="../kinematics/">建模</a>：<a href="../kinematics/inverse-kinematics/">逆运动学</a> 决定抓取位姿是否可达，<a href="../kinematics/jacobian/">雅可比矩阵</a> 的静力学对偶 <script type="math/tex">\boldsymbol{\tau} = J^T\mathcal{F}</script> 是力控的基础，<a href="../kinematics/dynamics/">动力学</a> 支撑阻抗控制的实现</li>
 <li><a href="../cv/">视觉</a>：<a href="../cv/pose-estimation/">位姿估计</a> 提供物体的 6D 位姿，<a href="../cv/segmentation/">分割</a> 在杂乱场景中分离物体，<a href="../cv/3d-vision/">三维视觉</a> 提供点云输入</li>
 <li><a href="../planning/">规划</a>：<a href="../planning/motionplanning/">运动规划</a> 生成趋近与撤离轨迹，需要在含物体的规划场景中做碰撞检测</li>
 <li><a href="../control/">控制</a>：力控是控制方法在接触任务中的具体应用</li>
