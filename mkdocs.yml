@@ -42,7 +42,7 @@ nav:
       - kinematics/trajectory-generation.md
     - 控制: 
       - control/index.md
-      - 建模:
+      - 控制建模:
         - control/modelling/modelling.md
         - control/modelling/modelling-foundations.md
         - control/modelling/modelling-discrete-identification.md

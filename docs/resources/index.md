@@ -19,6 +19,16 @@
 | [图书推荐](books.md) | 控制、感知、规划、机器学习各方向经典教材 |
 | [视频课程](videos.md) | Coursera、YouTube、Bilibili 精选机器人课程 |
 
+## 相关项目
+
+除本维基外，云飞机器人实验室（YF Robotics）及本站作者还维护以下中文资料，可作为延伸阅读：
+
+| 项目 | 内容 | 链接 |
+|------|------|------|
+| 宇树 G1 使用手册 | 宇树科技 G1 人形机器人的上手、开发与调试指南 | [yfrobotics.github.io/unitree-g1-handbook](https://yfrobotics.github.io/unitree-g1-handbook/) |
+| 自动驾驶技术指南 | 自动驾驶（Autonomous Driving）从基础概念到工程实践的系统性中文教程 | [yfrobotics.github.io/self-driving-handbook-cn](https://yfrobotics.github.io/self-driving-handbook-cn/) |
+| 机器人与电子设计开源项目列表 | 机器人、电子设计与机器学习方向的中文开源项目清单 | [github.com/automaticdai/awesome-robotics-ee-opensource](https://github.com/automaticdai/awesome-robotics-ee-opensource) |
+
 ## 如何入门机器人学
 
 机器人学（Robotics）是一个高度交叉的学科，涉及机械工程、电子工程、计算机科学和控制工程等多个领域。对于初学者，建议按照以下路径循序渐进：
