@@ -1,5 +1,8 @@
 # Unitree H1 / G1
 
+!!! tip "延伸阅读"
+    本站作者另维护有《[宇树 G1 使用手册](https://yfrobotics.github.io/unitree-g1-handbook/)》，内容涵盖 G1 的开箱与安全操作、网络连接、SDK2 与灵巧手开发、ROS 2 集成、仿真以及具身学习实践，可作为本文的实操补充。
+
 !!! note "引言"
     H1 和 G1 是由中国杭州宇树科技有限公司（Unitree Robotics）研发的人形机器人。宇树科技以高性价比的四足机器人（如 Go 系列、B 系列）闻名全球，其人形机器人同样延续了高性能与低成本并重的策略。H1 于 2023 年发布，是中国首个实现全身动态运动的全尺寸人形机器人；G1 作为小型化版本于 2024 年发布，以低于 10 万元人民币的起售价引发行业震动。两款机器人均采用宇树自研关节电机与基于强化学习（Reinforcement Learning, RL）的运动控制框架，代表了中国在具身智能（Embodied Intelligence）领域的重要突破。
 
@@ -529,3 +532,4 @@ G1 发布后，行业竞争格局发生了显著变化：
 8. [宇树科技](https://baike.baidu.com/item/宇树科技)，百度百科
 9. Peng, X. B. et al., "Learning to Walk in Minutes Using Massively Parallel Deep Reinforcement Learning"，*arXiv: 2109.11978*，2021
 10. [Unitree H1 sets humanoid robot speed record at 3.3 m/s](https://www.unitree.com/h1)，Unitree Robotics，2024
+11. [宇树 G1 使用手册](https://yfrobotics.github.io/unitree-g1-handbook/)，云飞机器人实验室
