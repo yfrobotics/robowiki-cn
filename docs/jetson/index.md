@@ -1,4 +1,4 @@
-# Nvidia Jetson
+# NVIDIA Jetson
 
 !!! note "引言"
     Nvidia Jetson是英伟达（Nvidia）推出的面向边缘AI计算的嵌入式硬件平台。与传统的嵌入式处理器不同，Jetson系列集成了Nvidia GPU，能够在低功耗条件下运行深度学习推理、计算机视觉和传感器融合等计算密集型任务。Jetson平台在自主机器人、无人机、自动驾驶和智能摄像头等领域得到广泛应用。
@@ -7,61 +7,83 @@ Jetson是英伟达推出的面向嵌入式计算的硬件平台。
 
 ## 1. Jetson型号
 
-Jetson的主要型号系列包括：
+Jetson 系列按 GPU 架构可分为：
 
-**Xavier 系列（2018～2021年）**
-
-- Jetson Nano
-- Jetson TX1
-- Jetson TX2
-- Jetson Xavier（AGX Xavier）
-- Jetson Xavier NX
-
-**Orin 系列（2022年起）**
-
-- Jetson Orin Nano
-- Jetson Orin NX
-- Jetson AGX Orin
+- **早期平台**：Jetson TK1（Kepler）、TX1 / Nano（Maxwell）、TX2 / TX2i / TX2 NX（Pascal）。
+- **Xavier 系列**：Jetson AGX Xavier、Xavier NX，采用 Volta GPU。
+- **Orin 系列**：Jetson AGX Orin、Orin NX、Orin Nano，采用 Ampere GPU；另有新公布的 Orin Nano 2。
+- **Thor 系列**：Jetson T5000、T4000，以及新公布的 T3000、T2000，采用 Blackwell GPU；Jetson AGX Thor 是搭载 T5000 的开发套件名称。
 
 
 ## 2. Jetson各型号对比
 
-### Xavier 系列对比
+### 全系列 AI 算力对比
 
-Jetson Xavier 系列各型号的对比如下：
+以下按代际列出 Jetson 各型号及内存、工业版本，包含历史产品和已公布的新型号。数据核对日期：**2026-09-19**。以量产模块为主；同算力开发套件合并说明，单独列出 Nano 2GB 和 Orin Nano Super 开发套件。
 
-| 硬件特性 | Jetson Nano | Jetson TX1 | Jetson TX2/TX2i | Jetson Xavier | Jetson Xavier NX |
-|----------|-------------|-----------|----------------|--------------|----------------|
-| CPU | 4核 ARM A57 @ 1.43 GHz | 4核 ARM Cortex-A57 @ 1.73 GHz | 4核 ARM Cortex-A57 @ 2 GHz + 2核 Denver2 @ 2 GHz | 8核 ARM Carmel v8.2 @ 2.26 GHz | 6核 NVIDIA Carmel ARM v8.2 |
-| GPU | 128核 Maxwell @ 921 MHz | 256核 Maxwell @ 998 MHz | 256核 Pascal @ 1.3 GHz | 512核 Volta @ 1.37 GHz | 384核 NVIDIA Volta |
-| 内存 | 4 GB LPDDR4，25.6 GB/s | 4 GB LPDDR4，25.6 GB/s | 8 GB 128位 LPDDR4，58.3 GB/s | 16 GB 256位 LPDDR4，137 GB/s | 8 GB 128位 LPDDR4x，51.2 GB/s |
-| 存储 | MicroSD | 16 GB eMMC 5.1 | 32 GB eMMC 5.1 | 32 GB eMMC 5.1 | 16 GB eMMC 5.1 |
-| Tensor 核心 | — | — | — | 64 | 48 |
-| AI 算力 | 0.5 TOPS | — | 1.3 TOPS | 32 TOPS | 21 TOPS |
-| 功耗 | 5W / 10W | 10W | 7.5W / 15W | 10W / 15W / 30W | 10W / 15W |
-| USB | 4× USB 3.0 + Micro-USB 2.0 | 1× USB 3.0 + 1× USB 2.0 | 1× USB 3.0 + 1× USB 2.0 | 3× USB 3.1 + 4× USB 2.0 | — |
-| PCIe | 4通道 Gen 2 | 5通道 Gen 2 | 5通道 Gen 2 | 16通道 Gen 4 | 1×1 + 1×4 Gen 3 |
+!!! note "比较前先看精度和统计口径"
+    TOPS 表示每秒万亿次运算，TFLOPS 表示每秒万亿次浮点运算，1 TFLOPS = 1000 GFLOPS。FP32、FP16、FP4 和 INT8 是不同精度，不能直接按数值排名或换算成实际推理速度。稀疏（Sparse）峰值需要模型满足相应稀疏条件；稠密（Dense）模型不能直接达到该指标。带深度学习加速器（DLA）的型号，其整机 AI 峰值可能合计 GPU 与 DLA，并不代表单个网络只在 GPU 上的性能。
+
+| 系列 | 型号 / 内存版本 | 官方最高 AI 算力 | 精度 / 口径 | 说明 / 来源 |
+|------|----------------|-----------------|-------------|-------------|
+| TK1 | Jetson TK1 开发套件（2GB） | 326 GFLOPS | FP32，GPU | 早期 Kepler 平台，[TK1 发布资料](https://nvidianews.nvidia.com/news/nvidia-unveils-first-mobile-supercomputer-for-embedded-systems-6622566) |
+| TX1 | Jetson TX1（4GB） | 1 TFLOPS | FP16，GPU | [TX1 规格](https://images.nvidia.com/content/tegra/embedded-systems/pdf/JTX1-Module-Product-sheet.pdf) |
+| Nano | Jetson Nano（4GB，含开发套件） | 472 GFLOPS | FP16，GPU | [模块对比](https://www.nvidia.com/en-us/autonomous-machines/embedded-systems/) |
+| Nano | Jetson Nano 2GB 开发套件 | 472 GFLOPS | FP16，GPU | [Nano 2GB 发布资料](https://developer.nvidia.com/blog/ultimate-starter-ai-computer-jetson-nano-2gb-developer-kit/) |
+| TX2 | Jetson TX2（8GB） | 1.33 TFLOPS | FP16，GPU | [模块对比](https://www.nvidia.com/en-us/autonomous-machines/embedded-systems/) |
+| TX2 | Jetson TX2 4GB | 1.33 TFLOPS | FP16，GPU | 同上 |
+| TX2 | Jetson TX2i（8GB） | 1.26 TFLOPS | FP16，GPU | 工业版，同上 |
+| TX2 | Jetson TX2 NX（4GB） | 1.33 TFLOPS | FP16，GPU | 同上 |
+| Xavier | Jetson AGX Xavier 8GB | 约 19.3 TOPS | INT8，稠密，GPU + DLA | 由官方 GPU 11.1 + DLA 8.2 合计，[历史规格](https://www.nvidia.com/en-gb/autonomous-machines/embedded-systems/jetson-agx-xavier/) |
+| Xavier | Jetson AGX Xavier 16GB | 32 TOPS | INT8，稠密，GPU + DLA | [历史规格](https://www.nvidia.com/en-gb/autonomous-machines/embedded-systems/jetson-agx-xavier/) |
+| Xavier | Jetson AGX Xavier 32GB | 32 TOPS | INT8，稠密，GPU + DLA | [Xavier 规格](https://www.nvidia.com/en-gb/autonomous-machines/embedded-systems/jetson-xavier-series/) |
+| Xavier | Jetson AGX Xavier 64GB | 32 TOPS | INT8，稠密，GPU + DLA | 同上 |
+| Xavier | Jetson AGX Xavier Industrial（32GB） | 30 TOPS | INT8，稠密，GPU + DLA | 工业版，同上 |
+| Xavier | Jetson Xavier NX 8GB | 21 TOPS | INT8，稠密，GPU + DLA | 同上 |
+| Xavier | Jetson Xavier NX 16GB | 21 TOPS | INT8，稠密，GPU + DLA | 同上 |
+| Orin | Jetson Orin Nano 4GB | 34 TOPS | INT8，稀疏，GPU | Super 模式，[Orin 规格](https://www.nvidia.com/en-us/autonomous-machines/embedded-systems/jetson-orin/) |
+| Orin | Jetson Orin Nano 8GB | 67 TOPS | INT8，稀疏，GPU | Super 模式，同上 |
+| Orin | Jetson Orin Nano Super 开发套件（8GB） | 67 TOPS | INT8，稀疏，GPU | 同上 |
+| Orin | Jetson Orin NX 8GB | 117 TOPS | INT8，稀疏，GPU + DLA | Super 模式，同上 |
+| Orin | Jetson Orin NX 16GB | 157 TOPS | INT8，稀疏，GPU + DLA | Super 模式，同上 |
+| Orin | Jetson AGX Orin 32GB | 241 TOPS | INT8，稀疏，GPU + DLA | 官方规格主表；口径差异见下文 |
+| Orin | Jetson AGX Orin 64GB | 275 TOPS | INT8，稀疏，GPU + DLA | [Orin 规格](https://www.nvidia.com/en-us/autonomous-machines/embedded-systems/jetson-orin/) |
+| Orin | Jetson AGX Orin 开发套件（32GB / 64GB） | 275 TOPS | INT8，稀疏，GPU + DLA | 两版算力相同，[开发套件 FAQ](https://developer.nvidia.com/embedded/faq) |
+| Orin | Jetson AGX Orin Industrial（64GB） | 248 TOPS | INT8，稀疏，GPU + DLA | 工业版，同上 |
+| Orin | Jetson Orin Nano 2（8GB） | 78 TOPS | 公告未明确精度 / 稀疏口径 | 已公布，[Nano 2 公告](https://nvidianews.nvidia.com/news/nvidia-announces-jetson-orin-nano-2-robotics-computer-to-redefine-entry-level-edge-ai) |
+| Thor | Jetson T2000（16GB） | 400 TFLOPS | FP4；公告未明确稀疏口径 | 已公布，[T2000 / T3000 公告](https://blogs.nvidia.com/blog/jetson-thor-robotics-edge-ai-agent/) |
+| Thor | Jetson T3000（32GB） | 865 TFLOPS | FP4；公告未明确稀疏口径 | 已公布，同上 |
+| Thor | Jetson T4000（64GB） | 1200 TFLOPS | FP4，稀疏，GPU | [Thor 规格](https://www.nvidia.com/en-us/autonomous-machines/embedded-systems/jetson-thor/) |
+| Thor | Jetson T5000（128GB，含 AGX Thor 开发套件） | 2070 TFLOPS | FP4，稀疏，GPU | 同上 |
+
+**读表说明**：
+
+- 表中为理论峰值，实际延迟、帧率和生成速度还受模型、量化精度、内存带宽、批量大小、软件版本、功耗模式与散热影响。对比实际部署时应使用相同模型和输入条件实测。
+- Orin Nano / NX 的 Super 峰值需要支持的 JetPack、功耗配置及载板供电与散热。历史资料中的 Nano 4GB / 8GB（20 / 40 TOPS）和 NX 8GB / 16GB（70 / 100 TOPS）不能与 Super 模式混用；Super 开发套件也不是独立的新 GPU 架构。参见 [JetPack 6.2 Super 模式说明](https://developer.nvidia.com/blog/?p=95089)。
+- NVIDIA 的 Orin 规格主表将 AGX Orin 32GB 标为 **241 TOPS**，同页下方的 Compute Comparison 仍标 **200 TOPS**。此处采用主表，并保留这一来源差异；部署时需核对具体模块数据表和软件功耗配置。
+- 开发套件的内存和算力不一定与同容量量产模块相同，尤其是早期 AGX Orin 32GB 开发套件；请按具体套件规格核对，不能仅凭“32GB”套用量产模块行。
 
 
-### Jetson Orin 系列（2022年新品）
+### NVIDIA Jetson Thor
 
-Orin 系列采用 NVIDIA Ampere 架构 GPU 和 ARM Cortex-A78AE CPU，相比 Xavier 系列性能大幅提升，尤其在深度学习推理算力方面有显著进步：
+Thor 面向具身智能、视觉语言动作模型（VLA）和多模态生成式 AI。T5000 / T4000 使用 Blackwell GPU 与第五代 Tensor Core，支持多实例 GPU（Multi-Instance GPU，MIG），可为并行工作负载划分 GPU 资源。[Thor 官方产品页](https://www.nvidia.com/en-us/autonomous-machines/embedded-systems/jetson-thor/)给出的主要硬件规格如下：
 
-| 型号 | AI 算力 | CPU | GPU | 内存 | 功耗 | 定位 |
-|------|---------|-----|-----|------|------|------|
-| Jetson Orin Nano 4GB | 20 TOPS | 6核 ARM Cortex-A78AE | 512核 Ampere | 4 GB LPDDR5 | 7W～10W | 入门级，替代 Jetson Nano |
-| Jetson Orin Nano 8GB | 20 TOPS | 6核 ARM Cortex-A78AE | 512核 Ampere | 8 GB LPDDR5 | 7W～15W | 入门级 |
-| Jetson Orin NX 8GB | 70 TOPS | 6核 ARM Cortex-A78AE | 1024核 Ampere | 8 GB LPDDR5 | 10W～20W | 中端，替代 Xavier NX |
-| Jetson Orin NX 16GB | 100 TOPS | 8核 ARM Cortex-A78AE | 1024核 Ampere | 16 GB LPDDR5 | 10W～25W | 中端 |
-| Jetson AGX Orin 32GB | 200 TOPS | 12核 ARM Cortex-A78AE | 2048核 Ampere | 32 GB LPDDR5 | 15W～40W | 旗舰，替代 AGX Xavier |
-| Jetson AGX Orin 64GB | 275 TOPS | 12核 ARM Cortex-A78AE | 2048核 Ampere | 64 GB LPDDR5 | 15W～60W | 旗舰最高配 |
+| 硬件特性 | Jetson T5000 | Jetson T4000 |
+|----------|-------------|-------------|
+| CPU | 14 核 Arm Neoverse-V3AE | 12 核 Arm Neoverse-V3AE |
+| GPU | 2560 核 Blackwell | 1536 核 Blackwell |
+| 内存 | 128 GB LPDDR5X | 64 GB LPDDR5X |
+| 内存带宽 | 273 GB/s | 273 GB/s |
+| 模块功耗范围 | 40～130 W | 40～70 W |
 
-相比 Xavier 系列，Orin 的主要改进有：
+Jetson AGX Thor 开发套件搭载 T5000，并提供参考载板、散热方案和 1 TB NVMe 存储。机器人集成时需要根据峰值功耗设计供电与散热，并为模型权重、运行时缓存和传感器处理预留内存。2070 FP4 TFLOPS 与 AGX Orin 的 275 INT8 TOPS 精度不同，两数相除不能作为同一模型的加速比。
 
-- **Ampere GPU**：支持第三代 Tensor Core，INT8 和 FP16 推理速度大幅提升
-- **更大内存与更高带宽**：LPDDR5 内存带宽比 Xavier 提高 50%～100%
-- **新增 DLA（Deep Learning Accelerator）**：两个专用推理加速器，可在不占用 GPU 的情况下运行网络推理
-- **视频编解码能力大幅增强**：支持 AV1 硬件解码，可并行处理更多路视频流
+T3000 / T2000 为新公布的较低算力档位；NVIDIA 提供通过 AGX Thor 开发套件模拟这些模块的开发路径，详细交付状态和规格应以[对应公告](https://blogs.nvidia.com/blog/jetson-thor-robotics-edge-ai-agent/)及后续模块资料为准。
+
+
+### Jetson Orin 系列
+
+Orin 采用 Ampere GPU 和 Arm Cortex-A78AE CPU。Orin Nano 4GB 配备 512 个 CUDA 核心，8GB 配备 1024 个；AGX Orin 32GB 配备 1792 个 CUDA 核心和 8 核 CPU，64GB 配备 2048 个 CUDA 核心和 12 核 CPU。Orin NX 和 AGX Orin 带有 DLA，Orin Nano 不带 DLA；Xavier 系列也已有 DLA，因此它并非 Orin 新增的功能。详见 [Orin 官方规格](https://www.nvidia.com/en-us/autonomous-machines/embedded-systems/jetson-orin/)。
 
 
 ## 3. JetPack SDK
@@ -80,9 +102,12 @@ JetPack是Nvidia为Jetson平台提供的官方软件开发套件（Software Deve
 
 | JetPack 版本 | 支持平台 | Ubuntu 版本 | CUDA 版本 | 状态 |
 |-------------|---------|------------|----------|------|
-| JetPack 4.x | Nano, TX1/TX2, Xavier | Ubuntu 18.04 | CUDA 10.2 | 维护中 |
-| JetPack 5.x | Xavier, Orin | Ubuntu 20.04 | CUDA 11.4 | 当前主流 |
-| JetPack 6.x | Orin | Ubuntu 22.04 | CUDA 12.x | 最新版本 |
+| JetPack 4.x | Nano, TX1/TX2, Xavier | Ubuntu 18.04 | CUDA 10.2 | 旧平台版本 |
+| JetPack 5.x | Xavier, Orin | Ubuntu 20.04 | CUDA 11.4 | Xavier / Orin 软件分支 |
+| JetPack 6.x | Orin | Ubuntu 22.04 | CUDA 12.x | 6.2 引入 Nano / NX Super 模式 |
+| JetPack 7.x | Thor；Orin 支持取决于具体版本 | Ubuntu 24.04 | CUDA 13.x | Thor 软件分支，后续版本扩展 Orin 支持 |
+
+Thor 请使用对应模块支持的 JetPack 7.x 镜像；各小版本支持的平台与组件版本需核对 [JetPack 下载与发行说明](https://developer.nvidia.com/embedded/jetpack)。原有 Orin / Xavier / Nano 的刷机镜像与安装命令不能直接套用到 Thor。
 
 ### 刷机方法
 
@@ -479,15 +504,15 @@ watch -n 1 "tegrastats | grep -o 'GPU@[0-9.]*C\|CPU@[0-9.]*C\|Tboard@[0-9.]*C'"
 | 特性 | Raspberry Pi 4 (4GB) | Raspberry Pi 5 (8GB) | Jetson Orin Nano 8GB | Jetson Orin NX 16GB |
 |------|---------------------|---------------------|---------------------|---------------------|
 | CPU | 4核 ARM Cortex-A72 @ 1.8 GHz | 4核 ARM Cortex-A76 @ 2.4 GHz | 6核 ARM Cortex-A78AE @ 1.5 GHz | 8核 ARM Cortex-A78AE @ 2.0 GHz |
-| GPU | VideoCore VI（无 CUDA） | VideoCore VII（无 CUDA） | 512核 NVIDIA Ampere | 1024核 NVIDIA Ampere |
-| AI 加速 | 无 | 无 | 20 TOPS | 70～100 TOPS |
+| GPU | VideoCore VI（无 CUDA） | VideoCore VII（无 CUDA） | 1024核 NVIDIA Ampere | 1024核 NVIDIA Ampere |
+| AI 加速 | 无 | 无 | 最高 67 TOPS（INT8 稀疏，Super） | 最高 157 TOPS（INT8 稀疏，Super） |
 | 内存 | 4 GB LPDDR4X | 8 GB LPDDR4X | 8 GB LPDDR5 | 16 GB LPDDR5 |
-| 功耗 | 5W～15W | 5W～20W | 7W～15W | 10W～25W |
+| 功耗 | 5W～15W | 5W～20W | 7W～25W | 10W～40W |
 | 参考价格 | ¥300～500 | ¥400～700 | ¥800～1200 | ¥1500～2500 |
 | CUDA 支持 | 否 | 否 | 是 | 是 |
 | TensorRT | 否 | 否 | 是 | 是 |
 | ROS 2 支持 | 社区支持 | 社区支持 | NVIDIA 官方支持 | NVIDIA 官方支持 |
-| 深度学习推理 | 仅 CPU，较慢 | 仅 CPU，较慢 | GPU + DLA 加速 | GPU + DLA 加速 |
+| 深度学习推理 | 仅 CPU，较慢 | 仅 CPU，较慢 | GPU 加速 | GPU + DLA 加速 |
 | 适用场景 | 教学、轻量控制任务 | 教学、中等计算任务 | 边缘 AI 机器人 | 复杂感知与自主导航 |
 
 **选型建议**：
@@ -519,3 +544,9 @@ watch -n 1 "tegrastats | grep -o 'GPU@[0-9.]*C\|CPU@[0-9.]*C\|Tboard@[0-9.]*C'"
 6. [Jetson Orin 系列产品页面](https://developer.nvidia.com/embedded/jetson-orin)
 7. [jetson-inference 开源库](https://github.com/dusty-nv/jetson-inference)
 8. [NVIDIA TAO Toolkit 文档](https://docs.nvidia.com/tao/tao-toolkit/)
+9. [NVIDIA Jetson 全系列模块规格](https://www.nvidia.com/en-us/autonomous-machines/embedded-systems/)
+10. [NVIDIA Jetson Thor 规格与开发套件](https://www.nvidia.com/en-us/autonomous-machines/embedded-systems/jetson-thor/)
+11. [NVIDIA Jetson Orin 规格与算力口径](https://www.nvidia.com/en-us/autonomous-machines/embedded-systems/jetson-orin/)
+12. [NVIDIA Jetson Xavier 系列规格](https://www.nvidia.com/en-gb/autonomous-machines/embedded-systems/jetson-xavier-series/)
+13. [NVIDIA Jetson T3000 / T2000 公告](https://blogs.nvidia.com/blog/jetson-thor-robotics-edge-ai-agent/)
+14. [NVIDIA Jetson Orin Nano 2 公告](https://nvidianews.nvidia.com/news/nvidia-announces-jetson-orin-nano-2-robotics-computer-to-redefine-entry-level-edge-ai)
