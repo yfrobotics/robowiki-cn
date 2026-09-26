@@ -93,14 +93,13 @@ MuJoCo 使用 MJCF（MuJoCo Modeling Format）格式的 XML 文件描述机器�
 ```xml
 <mujoco model="my_robot">
   <!-- 编译器选项 -->
-  <compiler angle="radian" coordinate="local"/>
+  <compiler angle="radian"/>
 
   <!-- 物理引擎选项 -->
   <option timestep="0.002" gravity="0 0 -9.81" integrator="RK4"/>
 
   <!-- 资产（网格、材质、纹理） -->
   <asset>
-    <mesh name="body_mesh" file="body.stl" scale="0.001 0.001 0.001"/>
     <material name="blue" rgba="0.2 0.4 0.8 1"/>
   </asset>
 
@@ -117,6 +116,7 @@ MuJoCo 使用 MJCF（MuJoCo Modeling Format）格式的 XML 文件描述机器�
 
     <body name="torso" pos="0 0 1.0">
       <freejoint/>  <!-- 6 DoF 自由关节 -->
+      <site name="torso_site" pos="0 0 0" size="0.01"/>
       <geom name="torso_geom" type="capsule" fromto="0 0 -0.2 0 0 0.2" size="0.06"/>
 
       <body name="left_arm" pos="0 0.2 0.1">
@@ -128,7 +128,7 @@ MuJoCo 使用 MJCF（MuJoCo Modeling Format）格式的 XML 文件描述机器�
 
   <!-- 执行器 -->
   <actuator>
-    <motor name="left_shoulder_motor" joint="left_shoulder" gear="100" ctrllimit="-1 1"/>
+    <motor name="left_shoulder_motor" joint="left_shoulder" gear="100" ctrllimited="true" ctrlrange="-1 1"/>
   </actuator>
 
   <!-- 传感器 -->
@@ -215,6 +215,71 @@ with mujoco.viewer.launch_passive(model, data) as viewer:
 | `data.xmat` | 所有刚体的旋转矩阵 |
 | `model.nq` | 广义坐标维度 |
 | `model.nu` | 执行器数量 |
+
+## 无窗口运行的最小控制实验
+
+下面的完整示例不依赖外部模型文件或图形窗口。模型只有一个转动关节，使用比例-微分（Proportional-Derivative，PD）控制跟踪 0.5 rad 的目标。为便于观察控制响应，例子关闭重力；它用于验证接口和时间推进，不是机械臂操作基准。
+
+在安装 `mujoco` 后，将代码保存为 `minimal_control.py`，运行 `python minimal_control.py`。模型加载、状态访问与仿真推进接口见 [MuJoCo Python 文档](https://mujoco.readthedocs.io/en/stable/python.html)。
+
+```python
+import mujoco
+import numpy as np
+
+xml = """
+<mujoco model="single_joint_control">
+  <compiler angle="radian"/>
+  <option timestep="0.002" gravity="0 0 0"/>
+  <worldbody>
+    <body name="link">
+      <joint name="hinge" type="hinge" axis="0 0 1" damping="0.1"/>
+      <geom type="capsule" fromto="0 0 0 0.3 0 0" size="0.025" mass="1"/>
+    </body>
+  </worldbody>
+  <actuator>
+    <motor name="motor" joint="hinge" gear="1"
+           ctrllimited="true" ctrlrange="-2 2"/>
+  </actuator>
+</mujoco>
+"""
+
+model = mujoco.MjModel.from_xml_string(xml)
+data = mujoco.MjData(model)
+mujoco.mj_resetData(model, data)
+mujoco.mj_forward(model, data)
+
+target = 0.5
+control_dt = 0.01
+substeps = round(control_dt / model.opt.timestep)
+if substeps < 1 or not np.isclose(substeps * model.opt.timestep, control_dt):
+    raise ValueError("该示例要求控制周期是物理周期的整数倍")
+
+history = []
+for _ in range(200):
+    q = float(data.joint("hinge").qpos[0])
+    dq = float(data.joint("hinge").qvel[0])
+    torque = np.clip(5.0 * (target - q) - 0.8 * dq, -2.0, 2.0)
+    data.ctrl[0] = torque
+    for _ in range(substeps):
+        mujoco.mj_step(model, data)
+    history.append((data.time, float(data.joint("hinge").qpos[0])))
+
+print(f"仿真时间：{data.time:.3f} s")
+print(f"最终角度：{history[-1][1]:.4f} rad，目标：{target:.4f} rad")
+print(f"控制采样数：{len(history)}")
+```
+
+控制周期为 0.01 秒、物理周期为 0.002 秒，因此每次计算力矩后推进五个物理步，总仿真时间为两秒。计算机运行这段程序的实际耗时是另一回事；无窗口模式不会自动按真实时间等待。
+
+这里 `gear="1"` 的转动关节 motor 使控制输入对应关节力矩。换成位置执行器后，`data.ctrl` 表示目标位置而不是力矩；换成其他传动比，也不能再按同样的数值解释关节力矩。执行器与限幅参数见 [MJCF 参考](https://mujoco.readthedocs.io/en/stable/XMLreference.html)。
+
+
+### 状态维度与派生量
+
+自由关节用三维位置和四元数表示位姿，因此占据 7 个 `qpos` 元素，但速度只有 6 维。球关节同样存在位置表示与速度维度不同的情况。不要假定 `model.nq == model.nv`，也不要把 `qpos` 的简单差分直接作为所有关节的速度。
+
+直接修改 `data.qpos` 后，若需要立即读取刚体世界坐标或传感器派生量，应先调用 `mujoco.mj_forward` 更新。保存轨迹数组时使用 `.copy()`，因为很多 Python 数组访问指向内部可变缓冲区；仅保存引用可能得到被后续仿真覆盖的数据。[Python 数据访问说明](https://mujoco.readthedocs.io/en/stable/python.html)
+
 
 ## MJX：GPU 加速仿真
 

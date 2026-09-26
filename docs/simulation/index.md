@@ -269,6 +269,9 @@
 
 ## 本章内容
 
+面向机器人学习的完整实验流程，见[机器人学习仿真与评测](robot-learning-benchmarks.md)：涵盖 ManiSkill、LIBERO、SimplerEnv、并行采样、域随机化和可复现评测。
+
+
 本章依次介绍各主流仿真平台的功能特性、安装方式与典型使用示例，涵盖以下工具：
 
 - **[Gazebo](gazebo.md)**：ROS 生态系统的标准仿真平台，支持 ODE、Bullet、DART 等多种物理引擎，适合移动机器人与 ROS 开发；

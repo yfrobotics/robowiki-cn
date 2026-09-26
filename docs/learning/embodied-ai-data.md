@@ -22,7 +22,7 @@ Ross 与 Bagnell 给出了这一现象的理论刻画：若每步的期望误差
 
 $$J(\pi_\theta) - J(\pi^*) \le \mathcal{O}(\epsilon T^2)$$
 
-关键在于**\(T^2\) 而非 \(T\)**：任务越长，误差不是线性累积，而是平方增长。这正是短任务（抓取单个物体）容易做好、长任务（完整装配流程）成功率骤降的理论原因。
+这里的 \(T^2\) 描述特定假设下的最坏情况上界，不是每个任务的实测误差都必然按平方增长。它揭示了长任务的风险：早期偏差可以影响许多后续决策。环境是否具有自恢复性、专家误差如何定义，以及策略能否获得纠正数据，都会影响实际表现。
 
 ![行为克隆的复合误差与几种缓解手段](assets/imitation-compounding-error.svg)
 
@@ -30,9 +30,9 @@ $$J(\pi_\theta) - J(\pi^*) \le \mathcal{O}(\epsilon T^2)$$
 
 **DAgger（Dataset Aggregation）**：让策略自己跑，在它到达的状态上请专家标注正确动作，把这些数据加入训练集并重新训练，反复迭代。理论上可把误差界改善到 \(\mathcal{O}(\epsilon T)\)，即线性而非平方。代价是需要专家持续在线标注——在机器人上意味着操作者要盯着机器人跑并随时接管，成本很高。
 
-**动作块**：一次预测未来 \(H\) 步，把决策次数从 \(T\) 降到 \(T/H\)，等效缩短了复合误差的累积链条。这是 ACT 的核心贡献之一，也是它被广泛采用的原因。
+**动作块**：一次预测未来 \(H\) 步，可以建模时间相关性并减少推理调用。但开环执行越长，利用新观测纠错的机会也越少，不能直接把误差上界中的 \(T\) 替换成 \(T/H\)。实践中常执行动作块前几步后重新规划，见[VLA 微调与评测](vla-training-evaluation.md)。
 
-**有意加入扰动的演示**：采集时故意让机器人偏离最优轨迹，再演示如何纠正回来。这直接扩大了数据覆盖的状态分布，让策略学会「出错了怎么办」。这一招简单有效，但很多数据采集流程都忽略了它——**只演示成功轨迹的数据集，教不会策略从失败中恢复**。
+**有意加入扰动的演示**：采集时让机器人进入可恢复的偏离状态，再演示如何纠正。这扩大了数据覆盖的状态分布。最终成功的轨迹也可以包含抓空、重新对准和再次抓取；判断恢复数据是否充足，需要查看纠正片段，不能只看 episode 的成功标签。
 
 **多模态建模**：用扩散或流匹配替代回归，避免把多种合理做法平均成一种不合理的做法，见 [VLA 模型](embodied-ai-vla.md) 中的动作表示讨论。
 
@@ -43,7 +43,7 @@ $$J(\pi_\theta) - J(\pi^*) \le \mathcal{O}(\epsilon T^2)$$
 
 Action Chunking with Transformers 用 Transformer 编码多视角图像与本体状态，一次输出未来约 100 步的动作序列，并用条件变分自编码器（CVAE）建模演示中的多样性。
 
-它的两个关键设计是**动作块**与**时序集成**：前者缩短误差累积链，后者把多次推理对同一时刻的预测加权平均，显著平滑轨迹。ACT 的实用价值在于**用几十条演示就能完成精细双臂任务**（穿电缆扎带、装电池），这在它之前是难以想象的样本效率。
+它的两个关键设计是**动作块**与**时序集成**：前者预测连续动作序列，后者把多次推理对同一时刻的预测加权组合以平滑轨迹。ACT 在论文中的精细双臂任务上展示了较少演示下的学习能力；迁移到新任务时，仍需检查动作表示、数据覆盖和闭环反馈，不能把演示数量视为通用保证。
 
 ### 扩散策略
 
@@ -115,6 +115,9 @@ Diffusion Policy 把动作生成建模为去噪过程：从高斯噪声出发，
 
 ## 代码：数据集质量检查
 
+下面检查已经对齐的动作和时间戳，包括形状、非有限值、时间单调性及统计摘要。它不解码图像，也不能判断相机与控制器是否同步；后两项需要独立的传感器时间戳、时钟映射和视频抽查。恒定动作维度可能是任务约束，也可能是记录错误，应结合任务解释。
+
+
 ```python
 import numpy as np
 
@@ -124,15 +127,31 @@ def check_dataset(episodes, dt_expected, action_dim):
 
     episodes: 列表，每项为 dict，含 'timestamps'、'actions'、'images'、'success'
     """
+    if not episodes or not np.isfinite(dt_expected) or dt_expected <= 0 or action_dim <= 0:
+        raise ValueError('需要非空数据集、正采样周期和正动作维度')
+    for index, ep in enumerate(episodes):
+        timestamps = np.asarray(ep['timestamps'], dtype=float)
+        actions = np.asarray(ep['actions'], dtype=float)
+        if timestamps.ndim != 1 or len(timestamps) < 2:
+            raise ValueError(f'episode {index}: 至少需要两个一维时间戳')
+        if actions.shape != (len(timestamps), action_dim):
+            raise ValueError(f'episode {index}: 动作维度或时间长度不匹配')
+        if not np.isfinite(timestamps).all() or not np.isfinite(actions).all():
+            raise ValueError(f'episode {index}: 数据含非有限值')
+        if np.any(np.diff(timestamps) <= 0):
+            raise ValueError(f'episode {index}: 时间戳必须严格递增')
     report = {}
 
-    # 1) 时间同步：采样间隔是否稳定
+    # 1) 单路采样间隔；不能据此判断不同传感器之间是否同步
     jitters = []
+    interval_errors = []
     for ep in episodes:
         d = np.diff(np.asarray(ep['timestamps']))
         jitters.append(np.std(d) / dt_expected)
+        interval_errors.append(abs(np.mean(d) - dt_expected) / dt_expected)
     report['时间抖动(相对)'] = f'{np.mean(jitters):.3f}'
-    report['时间同步'] = '正常' if np.mean(jitters) < 0.1 else '异常：采样间隔不稳定'
+    report['平均周期偏差(相对)'] = f'{np.mean(interval_errors):.3f}'
+    report['跨传感器同步'] = '需要各传感器时间戳与时钟映射，当前检查无法判定'
 
     # 2) 动作量级：各维度的分布，用于确定归一化参数
     A = np.concatenate([np.asarray(ep['actions']) for ep in episodes])
@@ -150,11 +169,14 @@ def check_dataset(episodes, dt_expected, action_dim):
     lens = np.array([len(ep['actions']) for ep in episodes])
     report['轨迹长度'] = f'{lens.mean():.0f} ± {lens.std():.0f} (min {lens.min()}, max {lens.max()})'
 
-    # 4) 失败与恢复：只有成功轨迹的数据集教不会策略恢复
-    n_fail = sum(1 for ep in episodes if not ep.get('success', True))
-    report['失败轨迹占比'] = f'{n_fail / len(episodes):.1%}'
-    if n_fail == 0:
-        report['提示'] = '数据集中没有失败或纠正轨迹，策略将学不会从偏差中恢复'
+    # 4) 最终结果不能代替恢复片段标签；缺失标签不视为成功
+    labeled = [ep for ep in episodes if ep.get('success') is not None]
+    n_fail = sum(1 for ep in labeled if not ep['success'])
+    report['结果标签覆盖率'] = f'{len(labeled) / len(episodes):.1%}'
+    report['已标注轨迹中的失败占比'] = (
+        f'{n_fail / len(labeled):.1%}' if labeled else '无结果标签'
+    )
+    report['恢复覆盖'] = '需单独标注和检查纠正片段，不能由最终成功率推断'
 
     return report
 
@@ -173,6 +195,24 @@ if __name__ == '__main__':
     for k, v in check_dataset(eps, dt_expected=0.02, action_dim=7).items():
         print(f'{k}: {v}')
 ```
+
+
+## 如何补采恢复演示
+
+恢复数据的目标是覆盖策略实际遇到的偏离状态。建议先在[仿真评测](../simulation/robot-learning-benchmarks.md)中聚类失败，再为常见失败设计采集任务，而不是任意增加动作噪声。
+
+| 失败类型 | 可采集的恢复过程 | 需要确认的观测 |
+|----------|------------------|----------------|
+| 抓空 | 退出当前姿态、重新对准、再次闭合 | 夹爪内是否有物体、目标是否仍可见 |
+| 物体滑落 | 松开并退让、重新定位物体、重新抓取 | 滑落后的位置、遮挡与夹爪状态 |
+| 放置偏移 | 再抓取或推动修正，再确认目标区域 | 目标区域边界与物体相对位置 |
+| 遮挡导致犹豫 | 调整视角或末端位置，再继续任务 | 历史图像与新视角是否足以消除歧义 |
+
+记录偏离起点、专家接管点、恢复完成点和动作来源。用于普通行为克隆时，应筛选需要模仿的专家纠正段；此前模型产生的错误动作不能仅因轨迹最终成功就自动成为专家标签。
+
+验证恢复能力时，保留一组未用于采集的扰动条件，并同时报告正常初始状态下的成功率和扰动后的恢复率。恢复数据增加后，还需要检查策略是否过度谨慎、是否延长原本简单任务的完成时间。
+
+关于失败标签、空闲过滤和数据划分，继续阅读[开放机器人数据集实践](../database/open-robot-datasets.md)。
 
 
 ## 参考资料

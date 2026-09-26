@@ -122,9 +122,11 @@ nav:
       - 具身智能:
         - learning/embodied-ai.md
         - learning/embodied-ai-vla.md
+        - learning/vla-training-evaluation.md
         - learning/embodied-ai-data.md
     - 仿真:
       - simulation/index.md
+      - simulation/robot-learning-benchmarks.md
       - simulation/gazebo.md
       - CoppeliaSim:
         - simulation/vrep.md
@@ -198,6 +200,7 @@ nav:
     - 数据库:
       - database/index.md
       - database/dataset.md
+      - database/open-robot-datasets.md
       - 机器人图鉴:
           - 机器人图鉴:
               - database/robots.md

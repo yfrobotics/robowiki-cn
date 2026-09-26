@@ -107,6 +107,9 @@ KITTI 包含 22 个驾驶序列，支持视觉里程计（Visual Odometry）、�
 
 ## 机器人操作数据集
 
+数据下载后的处理流程见[开放机器人数据集实践](open-robot-datasets.md)，包括 OXE、BridgeData V2、DROID、RLDS 与 LeRobotDataset 的使用入口，以及转换、质量检查、划分和数据混合方法。
+
+
 机器人操作（Robot Manipulation）数据集记录机械臂完成抓取、装配、整理等任务的过程数据，是模仿学习（Imitation Learning）和具身智能（Embodied Intelligence）研究的核心资源。
 
 | 数据集 | 发布机构 | 年份 | 规模 | 机器人平台 | 主要特点 |
@@ -126,7 +129,7 @@ KITTI 包含 22 个驾驶序列，支持视觉里程计（Visual Odometry）、�
 
 - 汇聚了 22 种不同机械臂与移动操作平台的数据
 - 覆盖抓取、放置、开关门、倒水等多种操作任务
-- 使用统一的 RLDS（Robot Learning Dataset Specification）格式存储
+- 使用 RLDS（Reinforcement Learning Datasets）组织 episode 与 step；统一存储结构后仍需检查各子集的动作语义，见 [RLDS 官方规范](https://github.com/google-research/rlds)
 - 与 RT-X 模型（Robotics Transformer X）联合发布，支持跨具身模型训练
 
 ### YCB 物体集
